@@ -1,15 +1,22 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var tabletop = require('tabletop');
+
 
 var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy$/;
-
-  if(request.text && botRegex.test(request.text)) {
+      botRegexIndex = ['/^\/cool guy$/','/^\/scores$/'],
+      flag = false,
+      key;
+  for (i=0;i<botRegexIndex.length;i++) {
+    flag = botRegexIndex[i].test(request.text);
+    key = i;
+  }
+  if(request.text && flag) {
     this.res.writeHead(200);
-    postMessage();
+    postMessage(key);
     this.res.end();
   } else {
     console.log("don't care");
@@ -18,11 +25,21 @@ function respond() {
   }
 }
 
-function postMessage() {
+function postMessage(key) {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
 
+  botResponse = "Do it yourself.";
+  
+  switch (key) {
+    case 0:
+      botResponse = cool();
+      break;
+    case 1:
+      botResponse = "There's nothing here yet.";
+      break;      
+  }
+  
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -53,5 +70,23 @@ function postMessage() {
   botReq.end(JSON.stringify(body));
 }
 
+function testMessage(key) {
+  var botResponse;
+
+  botResponse = "Do it yourself.";
+  
+  switch (key) {
+    case '\/cool':
+      botResponse = cool();
+      break;
+    case '\/scores':
+      botResponse = "There's nothing here yet.";
+      break;      
+  }
+
+  console.log('sending ' + botResponse + ' to ' + botID);
+  callTable();
+}
 
 exports.respond = respond;
+exports.testMessage = testMessage;
