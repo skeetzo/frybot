@@ -3,18 +3,19 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
+var regex = [
+	"^\/cool guy$",
+   "^\/scores$"
+];
+regex = new RegExp(regex.join("|"), "i");
+
+
 function respond() {
-  var request = JSON.parse(this.req.chunks[0]),
-      botRegexIndex = ['/^\/cool guy$/','/^\/scores$/'],
-      flag = false,
-      key;
-  for (i=0;i<botRegexIndex.length;i++) {
-    flag = botRegexIndex[i].test(request.text);
-    key = i;
-  }
-  if(request.text && flag) {
+  var request = JSON.parse(this.req.chunks[0]);
+
+  if (request.text && request.text.match(regex)) {
     this.res.writeHead(200);
-    postMessage(key);
+    postMessage(request.text);
     this.res.end();
   } else {
     console.log("don't care");
@@ -26,17 +27,11 @@ function respond() {
 function postMessage(key) {
   var botResponse, options, body, botReq;
 
-
   botResponse = "Do it yourself.";
-  
-  switch (key) {
-    case 0:
-      botResponse = cool();
-      break;
-    case 1:
-      botResponse = "There's nothing here yet.";
-      break;      
-  }
+  if (key=='/cool guy')
+    botResponse = cool();
+  else if (key=='/scores')
+    botResponse = "There's nothing here yet.";
   
   options = {
     hostname: 'api.groupme.com',
