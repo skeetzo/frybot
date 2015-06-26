@@ -1,7 +1,5 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var tabletop = require('tabletop');
-
 
 var botID = process.env.BOT_ID;
 
@@ -85,7 +83,6 @@ function testMessage(key) {
   }
 
   console.log('sending ' + botResponse + ' to ' + botID);
-  callTable();
 }
 
 exports.respond = respond;
