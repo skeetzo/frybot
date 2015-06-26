@@ -1,7 +1,7 @@
 {
-  "name": "Cool guy bot",
-  "description": "Basic Groupme Bot written in Node",
-  "repository": "https://github.com/petemcgrath/cool-guy-bot",
-  "logo": "http://www.tailgate365.com/wp-content/uploads/2011/06/tom-hanks-906.jpg",
+  "name": "frybot",
+  "description": "Basic Groupme Bot written in Node forked from groupme/bot-tutorial-nodejs",
+  "repository": "https://github.com/brainlessdg13/frybot",
+  "logo": "", // some url
   "keywords": []
 }
