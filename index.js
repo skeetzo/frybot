@@ -31,5 +31,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hey, I\'m frybot.");
+  this.res.end("Hey, I'm frybot.");
 }
