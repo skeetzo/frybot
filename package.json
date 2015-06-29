@@ -1,26 +1,33 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.2",
-  "description": "A sample Node.js app using Express 4",
+  "name": "frybot",
+  "version": "0.0.1",
+  "description": "Pool League GroupMe bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
+    "cool-ascii-faces": "~1.3.x",
     "director": "",
-    "cool-ascii-faces": "~1.3.x"
+    "moment": "~2.10.3",
+    "dotenv": "~1.2.0",
+    "edit-google-spreadsheet": "0.2.19"
   },
   "engines": {
     "node": "0.10.x"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/brainlessdg13/frybot"
   },
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
+    "groupme",
+    "bot",
+    "google",
+    "sheets"
   ],
   "license": "MIT"
 }
