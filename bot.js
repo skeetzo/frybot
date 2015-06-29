@@ -37,7 +37,7 @@ function frybot() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  function respond() {
+  frybot.respond = function() {
     var request = JSON.parse(this.req.chunks[0]);
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
