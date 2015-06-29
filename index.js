@@ -13,7 +13,7 @@ function respond() {
 router = new director.http.Router({
   '/' : {
     post: respond,
-    get: respond
+    get: ping
   }
 });
 
