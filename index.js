@@ -6,7 +6,7 @@ cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
 
 var frybot = new bot.frybot();
-var respond = frybot.respond();
+var respond = frybot.respond;
 
 router = new director.http.Router({
   '/' : {
