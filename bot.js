@@ -44,6 +44,8 @@ function scytalia() {
     var request = JSON.parse(this.req.chunks[0]);
     if (request.text)
       botResponse = request.text;
+    else
+      botResponse = 'nope';
 
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
@@ -56,7 +58,6 @@ function scytalia() {
     } else {
     //  console.log("don't care");
       this.res.writeHead(200);
-      botResponse = 'nope';
       this.res.end();
     }
 
