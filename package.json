@@ -2,6 +2,8 @@
   "name": "frybot",
   "version": "0.0.1",
   "description": "Pool League GroupMe bot",
+  "version": "0.0.0",
+  "description": "Basic Groupme Bot written in Node forked from groupme/bot-tutorial-nodejs",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -11,7 +13,9 @@
     "director": "",
     "moment": "~2.10.3",
     "dotenv": "~1.2.0",
-    "edit-google-spreadsheet": "0.2.19"
+    "edit-google-spreadsheet": "0.2.19",
+    "director": "",
+    "cool-ascii-faces": "~1.3.x"
   },
   "engines": {
     "node": "0.10.x"
@@ -28,6 +32,7 @@
     "bot",
     "google",
     "sheets"
+    "express"
   ],
   "license": "MIT"
 }
