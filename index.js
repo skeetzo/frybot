@@ -2,8 +2,8 @@ var http, director, cool, bot, router, server, port;
 
 http        = require('http');
 director    = require('director');
-//cool        = require('cool-ascii-faces');
-bot         = require('./bot.js');
+cool        = require('cool-ascii-faces');
+//bot         = require('./bot.js');
 
 //var frybot = new bot.frybot();
 
