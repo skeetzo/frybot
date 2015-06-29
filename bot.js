@@ -23,7 +23,7 @@ function scytalia() {
   var botID = process.env.BOT_ID;
   if (debugging)
     botID = 6;
-  var botResponse = "Do it yourself.";
+  var botResponse = "burrito";
   var respondTo;
 
   var startThinking = function () {
@@ -41,6 +41,8 @@ function scytalia() {
 
   scytalia.prototype.respond = function() {
     botResponse = 'this works';
+    startThinking();
+    return;
     var request = JSON.parse(this.req.chunks[0]);
   //  botResponse = request;
     startThinking();
