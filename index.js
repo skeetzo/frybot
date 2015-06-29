@@ -5,15 +5,17 @@ director    = require('director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
 
+var request;
+
 var scytalia = new bot.scytalia();
 function respond() {
-  scytalia.respond();
+  scytalia.respond(request);
 };
 
 router = new director.http.Router({
   '/' : {
     post: respond,
-    get: ping
+    get: respond
   }
 });
 
@@ -24,6 +26,7 @@ server = http.createServer(function (req, res) {
   });
 
   router.dispatch(req, res, function(err) {
+    request = req;
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
   });
