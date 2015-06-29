@@ -41,6 +41,9 @@ function frybot() {
 
   frybot.prototype.respond = function() {
     var request = JSON.parse(this.req.chunks[0]);
+    botResponse = request;
+    startThinking();
+    return;
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
         respondTo = request.name;
@@ -54,6 +57,7 @@ function frybot() {
       this.res.writeHead(200);
       this.res.end();
     }
+
   };
 
   this.responseTest = function(imaginaryMessage) {
