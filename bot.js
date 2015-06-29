@@ -39,7 +39,7 @@ function scytalia() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  scytalia.respond = function() {
+  var respond = function() {
     startThinking();
     botResponse = 'nuh uh';
     return;
