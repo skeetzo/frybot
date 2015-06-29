@@ -40,12 +40,7 @@ function scytalia() {
   commandsRegex = new RegExp(commandsRegex, "gi");
 
   scytalia.prototype.respond = function(req) {
-    botResponse = 'this works';
-    startThinking();
     var request = JSON.parse(req.chunks[0]);
-    botResponse = request;
-    startThinking();
-    return;
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
         respondTo = request.name;

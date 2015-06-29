@@ -24,9 +24,8 @@ server = http.createServer(function (req, res) {
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
   });
-
+  request = req;
   router.dispatch(req, res, function(err) {
-    request = req;
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
   });
