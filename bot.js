@@ -20,8 +20,7 @@ var debugging = false;
      */
 
 function frybot() {
-  var botID = 6;
-  //process.env.BOT_ID;
+  var botID = process.env.BOT_ID;
   var botResponse = "Do it yourself.";
   var respondTo;
 
