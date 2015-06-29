@@ -5,13 +5,9 @@ director    = require('director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
 
-
-var frybot = new bot.frybot();
-//var respond = frybot.respond();
-
 router = new director.http.Router({
   '/' : {
-    post: frybot.respond,
+    post: bot.respond,
     get: ping
   }
 });
