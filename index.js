@@ -9,7 +9,7 @@ var frybot = new bot.frybot();
 
 router = new director.http.Router({
   '/' : {
-    post: frybot['respond'],
+    post: frybot.respond,
     get: ping
   }
 });
