@@ -7,7 +7,7 @@ bot         = require('./bot.js');
 
 var frybot = new bot.frybot();
 function respond() {
-  frybot.respond;
+  frybot.respond();
 };
 
 router = new director.http.Router({
