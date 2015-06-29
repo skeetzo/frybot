@@ -1,6 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var Spreadsheet = require('./node_modules/edit-google-spreadsheet');
+var Spreadsheet = require('edit-google-spreadsheet');
 require('dotenv').load();
 require("colors");
 
