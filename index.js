@@ -15,7 +15,7 @@ function respond() {
 router = new director.http.Router({
   '/' : {
     post: respond,
-    get: respond
+    get: ping
   }
 });
 
@@ -37,5 +37,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hi, I'm scytalia.");
+  this.res.end("Hi, I'm scytalia. And I totally work."+request);
 }
