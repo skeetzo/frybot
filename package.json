@@ -31,7 +31,7 @@
     "groupme",
     "bot",
     "google",
-    "sheets"
+    "sheets",
     "express"
   ],
   "license": "MIT"
