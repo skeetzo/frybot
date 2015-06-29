@@ -40,7 +40,6 @@ function frybot() {
   commandsRegex = new RegExp(commandsRegex, "gi");
 
   frybot.prototype.respond = function() {
-    return 'your mom';
     var request = JSON.parse(this.req.chunks[0]);
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
