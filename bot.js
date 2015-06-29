@@ -21,6 +21,8 @@ var debugging = false;
 
 function frybot() {
   var botID = process.env.BOT_ID;
+  if (debugging)
+    botID = 6;
   var botResponse = "Do it yourself.";
   var respondTo;
 
@@ -37,7 +39,7 @@ function frybot() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  frybot.respond = function() {
+  frybot.prototype.respond = function() {
     var request = JSON.parse(this.req.chunks[0]);
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
@@ -287,5 +289,5 @@ function frybot() {
 };
 
 exports.frybot = frybot;
-//exports.respond = frybot.respond;
+exports.respond = frybot.respond;
 //exports.responseTest = frybot.responseTest;
