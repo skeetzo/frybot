@@ -41,6 +41,8 @@ function scytalia() {
 
   scytalia.prototype.respond = function() {
     startThinking();
+    botResponse = 'nuh uh';
+    return;
     var request = JSON.parse(this.req.chunks[0]);
     if (request.text)
       botResponse = request.text;
