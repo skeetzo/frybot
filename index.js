@@ -37,5 +37,6 @@ server.listen(port);
 function ping() {
   this.res.writeHead(200);
 //  var that = JSON.stringify(request);
-  this.res.end("Hi, I'm scytalia. And I totally work."+this.req);
+var word = JSON.stringify(this.req);
+  this.res.end("Hi, I'm scytalia. And I totally work."+word);
 }
