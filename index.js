@@ -7,7 +7,7 @@ bot         = require('./bot.js');
 
 
 var frybot = new bot.frybot();
-var respond = frybot.respond();
+//var respond = frybot.respond();
 
 router = new director.http.Router({
   '/' : {
@@ -33,5 +33,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hey, I'm frybot. "+frybot.respond());
+  this.res.end("Hey, I'm frybot.");
 }
