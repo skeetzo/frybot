@@ -9,7 +9,7 @@ var request;
 
 var scytalia = new bot.scytalia();
 function respond() {
-  scytalia.respond(request);
+  scytalia.respond();
 };
 
 router = new director.http.Router({
@@ -24,7 +24,7 @@ server = http.createServer(function (req, res) {
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
   });
-  request = req;
+
   router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
@@ -37,5 +37,5 @@ server.listen(port);
 function ping() {
   this.res.writeHead(200);
 //  var that = JSON.stringify(request);
-  this.res.end("Hi, I'm scytalia. And I totally work."+this.req.toSource());
+  this.res.end("Hi, I'm scytalia. And I totally work."+this.req);
 }

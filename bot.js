@@ -39,8 +39,8 @@ function scytalia() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  scytalia.prototype.respond = function(req) {
-    var request = JSON.parse(req.chunks[0]);
+  scytalia.prototype.respond = function() {
+    var request = JSON.parse(this.req.chunks[0]);
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
         respondTo = request.name;
