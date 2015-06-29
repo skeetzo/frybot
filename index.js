@@ -10,7 +10,7 @@ var request;
 var scytalia = new bot.scytalia();
 function respond() {
   this.res.writeHead(200);
-  scytalia.respond();
+  scytalia.respond;
   this.res.end("Hi, I am scytalia."+this.req);
 };
 
