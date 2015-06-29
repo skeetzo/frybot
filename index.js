@@ -7,7 +7,7 @@ bot         = require('./bot.js');
 
 var scytalia = new bot.scytalia();
 function respond() {
-  scytalia.respond();
+  scytalia.respond(this.req);
 };
 
 router = new director.http.Router({
