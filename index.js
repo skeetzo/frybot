@@ -8,13 +8,13 @@ bot         = require('./bot.js');
 var request;
 
 var scytalia = new bot.scytalia();
-function respond() {
-  scytalia.respond;
-};
+//function respond() {
+//  scytalia.respond;
+//};
 
 router = new director.http.Router({
   '/' : {
-    post: respond,
+    post: scytalia.respond,
     get: ping
   }
 });
@@ -37,5 +37,5 @@ server.listen(port);
 function ping() {
   this.res.writeHead(200);
 //  var that = JSON.stringify(request);
-  this.res.end("Hi, I'm scytalia. And I totally work."+this.req);
+  this.res.end("Hi, I'm scytalia. And I totally work."+this.req.toString());
 }
