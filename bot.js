@@ -33,7 +33,6 @@ function scytalia() {
           'scores',
           'suck'
   ];
-
   this.comandsArguments = ["add","undo","my"];
   this.commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   this.commandsRegex = new RegExp(commandsRegex, "gi");
@@ -47,8 +46,7 @@ function scytalia() {
   this.dateDayRegex = '[\-]{1}([\\d]{2})[T]{1}';
   this.dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
   this.dateYearRegex = '[\\d]{4}';
-
-}
+};
 
 
 scytalia.prototype.startThinking = function () {
@@ -60,11 +58,11 @@ scytalia.prototype.respond = function() {
 //   return;
   if (this.req==undefined) {
     console.log('undefined');
-    botResponse = 'undefined';
+    this.botResponse = 'undefined';
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
-  botResponse = request;
+  this.botResponse = request;
   if (request.text && request.text.match(commandsRegex)) {
     if (request.name) 
       respondTo = request.name;
