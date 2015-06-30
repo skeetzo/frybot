@@ -41,13 +41,14 @@ function scytalia() {
   commandsRegex = new RegExp(commandsRegex, "gi");
 
   scytalia.prototype.respond = function() {
+    startThinking();
     if (this.req==undefined) {
       console.log('undefined');
+      botResponse = 'undefined';
       return;
     }
     var request = JSON.parse(this.req.chunks[0]);
     botResponse = request;
-    startThinking();
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
         respondTo = request.name;
