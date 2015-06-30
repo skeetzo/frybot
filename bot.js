@@ -27,7 +27,7 @@ function scytalia() {
   var respondTo;
 
   var startThinking = function () {
-    setTimeout(postMessage,10000);
+    setTimeout(postMessage,3000);
   };
 
   var commands = [
@@ -40,6 +40,7 @@ function scytalia() {
   commandsRegex = new RegExp(commandsRegex, "gi");
 
   scytalia.prototype.respond = function(arguments) {
+    botResponse = JSON.stringify(arguments);
     startThinking();
     return;
     if (arguments.req==undefined) {
