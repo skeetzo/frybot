@@ -21,7 +21,7 @@ var debugging = false;
 
 function scytalia() {
   var botID = process.env.BOT_ID;
-  this.req = this.req;
+  var this = scytalia
   if (debugging)
     botID = 6;
   var botResponse = "burrito";
@@ -40,27 +40,27 @@ function scytalia() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  scytalia.prototype.respond = function() {
+  scytalia.prototype.respond = function(arguments) {
     startThinking();
-    if (this.req==undefined) {
+    if (arguments.req==undefined) {
       console.log('undefined');
       botResponse = 'undefined';
       return;
     }
-    var request = JSON.parse(this.req.chunks[0]);
+    var request = JSON.parse(arguments.req.chunks[0]);
     botResponse = request;
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
         respondTo = request.name;
       else
         respondTo = 'whoever you are';
-      this.res.writeHead(200);
+      arguments.res.writeHead(200);
       messageCheck(request.text);
-      this.res.end();
+      arguments.res.end();
     } else {
     //  console.log("don't care");
-      this.res.writeHead(200);
-      this.res.end();
+      arguments.res.writeHead(200);
+      arguments.res.end();
     }
 
   };
