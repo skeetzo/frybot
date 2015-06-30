@@ -8,7 +8,7 @@ require('dotenv').load();
 require("colors");
 //bot         = require('./bot.js');
 var debugging = false;
-
+var show = 'this';
 var request;
 
 //var scytalia = new bot.scytalia();
@@ -41,7 +41,7 @@ server.listen(port);
 function ping() {
   this.res.writeHead(200);
 //  var that = JSON.stringify(request);
-  this.res.end("Hi, I'm scytalia. And I totally work."+this.req.toString());
+  this.res.end("Hi, I'm scytalia. And I totally work."+show);
 }
 
 
@@ -70,6 +70,7 @@ function scytalia() {
   scytalia.respond = function () {
     startThinking();
     botResponse = 'nuh uh';
+    show = 'this works';
   //  return;
     var request = JSON.parse(this.req.chunks[0]);
     if (request.text)
