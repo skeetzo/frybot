@@ -1,18 +1,16 @@
 var http, director, cool, bot, router, server, port;
-
-http        = require('http');
-director    = require('director');
-cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
+cool        = require('cool-ascii-faces');
+director    = require('director');
+http        = require('http');
+require('dotenv').load();
+require("colors");
 
-var frybot = new bot.frybot();
-function respond() {
-  frybot.respond();
-};
+//var scytalia = new bot.scytalia();
 
 router = new director.http.Router({
   '/' : {
-    post: respond,
+    post: bot.scytalia.respond,
     get: ping
   }
 });
@@ -34,5 +32,6 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hey, I'm frybot.");
+  scytalia.respond();
+  this.res.end("Hi, I'm scytalia. And I totally work.");
 }
