@@ -9,13 +9,13 @@ var request;
 
 var scytalia = new bot.scytalia();
 
-function respond() {
-  scytalia.respond(this.req);
-};
+//function respond() {
+//  scytalia.respond(this.req, this.res);
+//};
 
 router = new director.http.Router({
   '/' : {
-    post: respond,
+    post: respond(this.req,this.res),
     get: ping
   }
 });
