@@ -8,13 +8,10 @@ bot         = require('./bot.js');
 var request;
 
 var scytalia = new bot.scytalia();
-//function respond() {
-//  scytalia.respond;
-//};
 
 router = new director.http.Router({
   '/' : {
-    post: scytalia.respond,
+    post: scytalia.call(respond),
     get: ping
   }
 });
