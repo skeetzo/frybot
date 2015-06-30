@@ -19,11 +19,11 @@ var debugging = false;
        botResponse = "x\'s total points are...";
      */
 
-function frybot() {
+function scytalia() {
   var botID = process.env.BOT_ID;
   if (debugging)
     botID = 6;
-  var botResponse = "Do it yourself.";
+  var botResponse = "burrito";
   var respondTo;
 
   var startThinking = function () {
@@ -39,9 +39,9 @@ function frybot() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  frybot.prototype.respond = function() {
-    var request = JSON.parse(this.req.chunks[0]);
-    botResponse = request;
+  scytalia.prototype.respond = function() {
+    //var request = JSON.parse(this.req.chunks[0]);
+    //botResponse = request;
     startThinking();
     return;
     if (request.text && request.text.match(commandsRegex)) {
@@ -103,7 +103,7 @@ function frybot() {
     var argument = message.match(commandsRegex)[2];
     console.log('Command:'+command);
     console.log('Argument:'+argument);
-    frybot[command](argument,message);
+    scytalia[command](argument,message);
     startThinking();
   }
 
@@ -125,11 +125,11 @@ function frybot() {
 
   var moment = require ('moment');
 
-  frybot.cool = function(arguments) {
+  scytalia.cool = function(arguments) {
     botResponse = cool();
   };
 
-  frybot.scores = function(argument, theMessage) {
+  scytalia.scores = function(argument, theMessage) {
 
     function parseForScores(message) {
       // Parse stats
@@ -261,29 +261,29 @@ function frybot() {
     };
     // command referenced functions
     // add scores
-    frybot.scores.add = function() {
+    scytalia.scores.add = function() {
       botResponse = 'Adding scores! I think...';
       addScores(parseForScores(theMessage));
     };
     // undo scores
-    frybot.scores.undo = function() {
+    scytalia.scores.undo = function() {
       botResponse = 'fix your own mistakes';
       undoScores();
     }
     if (argument)
-      frybot.scores[argument]();
+      scytalia.scores[argument]();
     else
       botResponse = 'What about the scores '+respondTo+'?';
   };
 
-  frybot.suck = function(arguments, theMessage) {
+  scytalia.suck = function(arguments, theMessage) {
       if (respondTo!='Alex Oberg'|'Alex')
         return;
-      frybot.suck.my = function() {
+      scytalia.suck.my = function() {
         botResponse = 'yeah suck '+respondTo+'\'s dick!';
       };
       if (argument)
-        frybot.suck[argument]();
+        scytalia.suck[argument]();
       else
         botResponse = 'What about sucking '+respondTo+'\'s dick?';
   };
@@ -292,6 +292,6 @@ function frybot() {
 
 };
 
-exports.frybot = frybot;
-exports.respond = frybot.respond;
-//exports.responseTest = frybot.responseTest;
+exports.scytalia = scytalia;
+exports.respond = scytalia.respond;
+//exports.responseTest = scytalia.responseTest;
