@@ -19,15 +19,15 @@ var debugging = false;
        botResponse = "x\'s total points are...";
      */
 
-function scytalia() {
+function frybot() {
   var botID = process.env.BOT_ID;
   if (debugging)
     botID = 6;
-  var botResponse = "burrito";
+  var botResponse = "Do it yourself.";
   var respondTo;
 
   var startThinking = function () {
-    setTimeout(postMessage,3000);
+    setTimeout(postMessage,10000);
   };
 
   var commands = [
@@ -39,16 +39,11 @@ function scytalia() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  scytalia.respond = function (req) {
-    startThinking();
-    botResponse = 'nuh uh';
-    return;
+  frybot.prototype.respond = function() {
     var request = JSON.parse(this.req.chunks[0]);
-    if (request.text)
-      botResponse = request.text;
-    else
-      botResponse = 'nope';
-
+    botResponse = request;
+    startThinking();
+    return;
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
         respondTo = request.name;
@@ -108,8 +103,8 @@ function scytalia() {
     var argument = message.match(commandsRegex)[2];
     console.log('Command:'+command);
     console.log('Argument:'+argument);
-    scytalia[command](argument,message);
-  //  startThinking();
+    frybot[command](argument,message);
+    startThinking();
   }
 
   //         messageRegexes
@@ -130,11 +125,11 @@ function scytalia() {
 
   var moment = require ('moment');
 
-  scytalia.cool = function(arguments) {
+  frybot.cool = function(arguments) {
     botResponse = cool();
   };
 
-  scytalia.scores = function(argument, theMessage) {
+  frybot.scores = function(argument, theMessage) {
 
     function parseForScores(message) {
       // Parse stats
@@ -266,29 +261,29 @@ function scytalia() {
     };
     // command referenced functions
     // add scores
-    scytalia.scores.add = function() {
+    frybot.scores.add = function() {
       botResponse = 'Adding scores! I think...';
       addScores(parseForScores(theMessage));
     };
     // undo scores
-    scytalia.scores.undo = function() {
+    frybot.scores.undo = function() {
       botResponse = 'fix your own mistakes';
       undoScores();
     }
     if (argument)
-      scytalia.scores[argument]();
+      frybot.scores[argument]();
     else
       botResponse = 'What about the scores '+respondTo+'?';
   };
 
-  scytalia.suck = function(arguments, theMessage) {
+  frybot.suck = function(arguments, theMessage) {
       if (respondTo!='Alex Oberg'|'Alex')
         return;
-      scytalia.suck.my = function() {
+      frybot.suck.my = function() {
         botResponse = 'yeah suck '+respondTo+'\'s dick!';
       };
       if (argument)
-        scytalia.suck[argument]();
+        frybot.suck[argument]();
       else
         botResponse = 'What about sucking '+respondTo+'\'s dick?';
   };
@@ -297,6 +292,6 @@ function scytalia() {
 
 };
 
-exports.scytalia = scytalia;
-exports.respond = scytalia.respond;
-//exports.responseTest = scytalia.responseTest;
+exports.frybot = frybot;
+exports.respond = frybot.respond;
+//exports.responseTest = frybot.responseTest;
