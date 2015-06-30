@@ -71,7 +71,7 @@ function scytalia() {
     startThinking();
     botResponse = 'nuh uh';
     return;
-    var request = JSON.parse(req.chunks[0]);
+    var request = JSON.parse(this.req.chunks[0]);
     if (request.text)
       botResponse = request.text;
     else
@@ -82,13 +82,13 @@ function scytalia() {
         respondTo = request.name;
       else
         respondTo = 'whoever you are';
-      res.writeHead(200);
+      this.res.writeHead(200);
       messageCheck(request.text);
-      res.end();
+      this.res.end();
     } else {
     //  console.log("don't care");
-      res.writeHead(200);
-      res.end();
+      this.res.writeHead(200);
+      this.res.end();
     }
 
   };
