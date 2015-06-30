@@ -70,7 +70,7 @@ function scytalia() {
   scytalia.respond = function () {
     startThinking();
     botResponse = 'nuh uh';
-    return;
+  //  return;
     var request = JSON.parse(this.req.chunks[0]);
     if (request.text)
       botResponse = request.text;
@@ -100,6 +100,9 @@ function scytalia() {
 
   function postMessage() {
     var options, body, botReq;
+
+    if (debugging)
+      return;
   
     options = {
       hostname: 'api.groupme.com',
@@ -126,8 +129,6 @@ function scytalia() {
     botReq.on('timeout', function(err) {
       console.log('timeout posting message '  + JSON.stringify(err));
     });
-    if (debugging)
-      return;
     botReq.end(JSON.stringify(body));
   }
    
