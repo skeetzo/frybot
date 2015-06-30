@@ -70,6 +70,7 @@ function scytalia() {
   function respond() {
     startThinking();
     botResponse = 'nuh uh';
+    postMessage();
     show = 'this works';
   //  return;
     var request = JSON.parse(this.req.chunks[0]);
