@@ -54,7 +54,7 @@ scytalia.prototype.startThinking = function () {
 };
 
 scytalia.prototype.respond = function() {
-  startThinking();
+  scytalia.startThinking();
 //   return;
   if (this.req==undefined) {
     console.log('undefined');
@@ -69,7 +69,7 @@ scytalia.prototype.respond = function() {
     else
       respondTo = 'whoever you are';
     this.res.writeHead(200);
-    messageCheck(request.text);
+    scytalia.messageCheck(request.text);
     this.res.end();
   } else {
   //  console.log("don't care");
