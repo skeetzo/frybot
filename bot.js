@@ -21,6 +21,8 @@ var debugging = false;
 
 function scytalia() {
   var botID = process.env.BOT_ID;
+  var that = this;
+  
   if (debugging)
     botID = 6;
   var botResponse = "burrito";
@@ -40,7 +42,6 @@ function scytalia() {
   commandsRegex = new RegExp(commandsRegex, "gi");
 
   scytalia.prototype.respond = function() {
-    var that = this;
     startThinking();
  //   return;
     if (that.req==undefined) {
