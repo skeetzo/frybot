@@ -40,7 +40,7 @@ function scytalia() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  scytalia.prototype.respond = function() {
+  var respond = function() {
     if (this.req==undefined) {
       console.log('undefined');
       return;
