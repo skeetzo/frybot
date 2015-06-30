@@ -8,14 +8,15 @@ bot         = require('./bot.js');
 var request;
 
 var scytalia = new bot.scytalia();
+var reqs, ress;
 
-//function respond() {
-//  scytalia.respond(this.req, this.res);
-//};
+function respond() {
+  scytalia.respond(reqs, ress);
+};
 
 router = new director.http.Router({
   '/' : {
-    post: 'respond(this.req,this.res)',
+    post: respond,
     get: ping
   }
 });
@@ -28,6 +29,8 @@ server = http.createServer(function (req, res) {
 
   router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
+    reqs = req;
+    ress = res;
     res.end(err.message);
   });
 });
