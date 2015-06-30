@@ -40,9 +40,9 @@ function scytalia() {
   commandsRegex = new RegExp(commandsRegex, "gi");
 
   scytalia.prototype.respond = function(arguments) {
-    botResponse = arguments.toString();
+  //  botResponse = arguments.toString();
     startThinking();
-    return;
+ //   return;
     if (arguments.req==undefined) {
       console.log('undefined');
       botResponse = 'undefined';
