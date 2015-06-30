@@ -1,17 +1,16 @@
 var http, director, cool, bot, router, server, port;
-
-http        = require('http');
-director    = require('director');
-cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
-
-var request;
+cool        = require('cool-ascii-faces');
+director    = require('director');
+http        = require('http');
+require('dotenv').load();
+require("colors");
 
 var scytalia = new bot.scytalia();
 
 router = new director.http.Router({
   '/' : {
-    post: scytalia.call(respond),
+    post: scytalia.respond,
     get: ping
   }
 });
@@ -33,6 +32,6 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-//  var that = JSON.stringify(request);
-  this.res.end("Hi, I'm scytalia. And I totally work."+this.req.toString());
+  scytalia.respond();
+  this.res.end("Hi, I'm scytalia. And I totally work.");
 }

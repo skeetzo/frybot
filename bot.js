@@ -39,16 +39,10 @@ function scytalia() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  scytalia.respond = function () {
-    startThinking();
-    botResponse = 'nuh uh';
-    return;
+  scytalia.respond = function() {
     var request = JSON.parse(this.req.chunks[0]);
-    if (request.text)
-      botResponse = request.text;
-    else
-      botResponse = 'nope';
-
+    botResponse = request;
+    startThinking();
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
         respondTo = request.name;
@@ -109,7 +103,7 @@ function scytalia() {
     console.log('Command:'+command);
     console.log('Argument:'+argument);
     scytalia[command](argument,message);
-  //  startThinking();
+    startThinking();
   }
 
   //         messageRegexes
@@ -298,5 +292,5 @@ function scytalia() {
 };
 
 exports.scytalia = scytalia;
-exports.respond = scytalia.respond;
+//exports.respond = scytalia.respond;
 //exports.responseTest = scytalia.responseTest;
