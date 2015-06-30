@@ -9,7 +9,7 @@ var request;
 
 var scytalia = new bot.scytalia();
 function respond() {
-  scytalia.call(respond);
+  scytalia.call(scytalia.respond);
 };
 
 router = new director.http.Router({
