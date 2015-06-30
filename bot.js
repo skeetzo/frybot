@@ -40,7 +40,7 @@ function scytalia() {
   commandsRegex = new RegExp(commandsRegex, "gi");
 
   scytalia.prototype.respond = function(arguments) {
-    botResponse = JSON.stringify(arguments);
+    botResponse = arguments.toString();
     startThinking();
     return;
     if (arguments.req==undefined) {
