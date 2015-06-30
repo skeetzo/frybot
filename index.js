@@ -15,7 +15,7 @@ var scytalia = new bot.scytalia();
 
 router = new director.http.Router({
   '/' : {
-    post: respond(this.req,this.res),
+    post: 'respond(this.req,this.res)',
     get: ping
   }
 });
