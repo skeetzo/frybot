@@ -39,29 +39,29 @@ function scytalia() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  scytalia.prototype.respond = function(arguments) {
-  //  botResponse = arguments.toString();
+  scytalia.prototype.respond = function() {
+    var that = this;
     startThinking();
  //   return;
-    if (arguments.req==undefined) {
+    if (that.req==undefined) {
       console.log('undefined');
       botResponse = 'undefined';
       return;
     }
-    var request = JSON.parse(arguments.req.chunks[0]);
+    var request = JSON.parse(that.req.chunks[0]);
     botResponse = request;
     if (request.text && request.text.match(commandsRegex)) {
       if (request.name) 
         respondTo = request.name;
       else
         respondTo = 'whoever you are';
-      arguments.res.writeHead(200);
+      that.res.writeHead(200);
       messageCheck(request.text);
-      arguments.res.end();
+      that.res.end();
     } else {
     //  console.log("don't care");
-      arguments.res.writeHead(200);
-      arguments.res.end();
+      that.res.writeHead(200);
+      that.res.end();
     }
 
   };
