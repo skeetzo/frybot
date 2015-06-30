@@ -41,6 +41,7 @@ function scytalia() {
 
   scytalia.prototype.respond = function(arguments) {
     startThinking();
+    return;
     if (arguments.req==undefined) {
       console.log('undefined');
       botResponse = 'undefined';
