@@ -7,11 +7,10 @@ require("colors");
 
 var scytalia = new bot.scytalia();
 
-var request;
 
 router = new director.http.Router({
   '/' : {
-    post: scytalia.respond(request),
+    post: scytalia.respond,
     get: ping
   }
 });
@@ -23,7 +22,6 @@ server = http.createServer(function (req, res) {
   });
 
   router.dispatch(req, res, function(err) {
-    request = req;
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
   });
