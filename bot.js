@@ -27,7 +27,7 @@ function scytalia() {
   var respondTo;
 
   var startThinking = function () {
-    setTimeout(postMessage,10000);
+    setTimeout(postMessage,3000);
   };
 
   var commands = [
@@ -39,7 +39,7 @@ function scytalia() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  function respond() {
+  scytalia.respond = function () {
     startThinking();
     botResponse = 'nuh uh';
     return;
