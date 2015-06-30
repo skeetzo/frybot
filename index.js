@@ -1,5 +1,5 @@
 var http, director, cool, bot, router, server, port;
-
+var HTTPS = require('https');
 http        = require('http');
 director    = require('director');
 cool        = require('cool-ascii-faces');
