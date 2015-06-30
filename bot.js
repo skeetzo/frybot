@@ -39,7 +39,11 @@ function scytalia() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  scytalia.respond = function() {
+  scytalia.prototype.respond = function() {
+    if (this.req==undefined) {
+      console.log('undefined');
+      return;
+    }
     var request = JSON.parse(this.req.chunks[0]);
     botResponse = request;
     startThinking();
@@ -268,7 +272,7 @@ function scytalia() {
     scytalia.scores.undo = function() {
       botResponse = 'fix your own mistakes';
       undoScores();
-    }
+    };
     if (argument)
       scytalia.scores[argument]();
     else
