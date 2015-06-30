@@ -21,7 +21,6 @@ var debugging = false;
 
 function scytalia() {
   var botID = process.env.BOT_ID;
-  var this = scytalia
   if (debugging)
     botID = 6;
   var botResponse = "burrito";
