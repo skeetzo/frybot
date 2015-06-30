@@ -7,6 +7,7 @@ var Spreadsheet = require('edit-google-spreadsheet');
 require('dotenv').load();
 require("colors");
 //bot         = require('./bot.js');
+var debugging = false;
 
 var request;
 
