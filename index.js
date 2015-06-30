@@ -8,9 +8,10 @@ require("colors");
 var scytalia = new bot.scytalia();
 
 
+
 router = new director.http.Router({
   '/' : {
-    post: scytalia.respond,
+    post: scytalia.respond(this.req),
     get: ping
   }
 });
@@ -32,6 +33,6 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
- // scytalia.respond();
+  scytalia.respond();
   this.res.end("Hi, I'm scytalia. And I totally work.");
 }
