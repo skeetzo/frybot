@@ -21,7 +21,7 @@ var debugging = false;
 
 function scytalia() {
   var botID = process.env.BOT_ID;
-  this = this;
+  this.req = this.req;
   if (debugging)
     botID = 6;
   var botResponse = "burrito";
@@ -40,7 +40,7 @@ function scytalia() {
   var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
   commandsRegex = new RegExp(commandsRegex, "gi");
 
-  var respond = function() {
+  scytalia.prototype.respond = function() {
     if (this.req==undefined) {
       console.log('undefined');
       return;
