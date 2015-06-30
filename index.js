@@ -3,6 +3,9 @@ var http, director, cool, bot, router, server, port;
 http        = require('http');
 director    = require('director');
 cool        = require('cool-ascii-faces');
+var Spreadsheet = require('edit-google-spreadsheet');
+require('dotenv').load();
+require("colors");
 //bot         = require('./bot.js');
 
 var request;
