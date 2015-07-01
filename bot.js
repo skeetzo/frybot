@@ -144,6 +144,10 @@ function cool(arguments) {
 
 function scores(argument, theMessage) {
 
+
+  botResponse = 'cool';
+  return;
+
   function parseForScores(message) {
     // Parse stats
     var newStats = [];
