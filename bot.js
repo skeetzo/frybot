@@ -56,7 +56,10 @@ function respond() {
     botResponse = 'null chunks';
     return;
   }
-  botResponse = this + '';
+  botResponse = '';
+  this.forEach(function(theThing) {
+    botResponse+=theThing.toString();
+  });
   return;
   var request = JSON.parse(this.req.chunks[0]);
   if (request.text && request.text.match(commandsRegex)) {
