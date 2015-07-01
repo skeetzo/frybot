@@ -115,7 +115,7 @@ function messageCheck(message) {
   // do message - command - argument
   console.log('Command:'+command);
   console.log('Argument:'+argument);
-  window[command](argument,message);
+  this.window[command](argument,message);
   botResponse = message;
 
 
