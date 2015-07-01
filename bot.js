@@ -4,6 +4,8 @@ var Spreadsheet = require('edit-google-spreadsheet');
 require('dotenv').load();
 require("colors");
 
+var bot = this;
+
 var debugging = false;
 
      /*
@@ -115,7 +117,7 @@ function messageCheck(message) {
   // do message - command - argument
   console.log('Command:'+command);
   console.log('Argument:'+argument);
-  this.window[command](argument,message);
+  bot[command](argument,message);
   botResponse = message;
 
 
@@ -146,7 +148,7 @@ function cool(arguments) {
   botResponse = cool();
 };
 
-window.scores = function(argument, theMessage) {
+function scores(argument, theMessage) {
 
 
   botResponse = 'cool';
@@ -282,22 +284,22 @@ window.scores = function(argument, theMessage) {
   };
   // command referenced functions
   // add scores
-  scores.add = function() {
-    botResponse = 'Adding scores! I think...';
-    addScores(parseForScores(theMessage));
-  };
+ // scores.add = function() {
+ //   botResponse = 'Adding scores! I think...';
+//    addScores(parseForScores(theMessage));
+  //};
   // undo scores
-  scores.undo = function() {
-    botResponse = 'fix your own mistakes';
-    undoScores();
-  }
-  if (argument)
-    this.scores[argument]();
-  else
-    botResponse = 'What about the scores '+respondTo+'?';
+ // scores.undo = function() {
+  //  botResponse = 'fix your own mistakes';
+ //   undoScores();
+  //}
+ // if (argument)
+  //  this.scores[argument]();
+  //else
+  //  botResponse = 'What about the scores '+respondTo+'?';
 };
 this.scores = scores;
-
+/*
 function suck(arguments, theMessage) {
     if (respondTo!='Alex Oberg'|'Alex')
       return;
@@ -310,6 +312,7 @@ function suck(arguments, theMessage) {
       botResponse = 'What about sucking '+respondTo+'\'s dick?';
 };
 this.suck = suck;
+*/
   
 
 exports.respond = respond;
