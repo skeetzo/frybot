@@ -40,7 +40,6 @@ commandsRegex = new RegExp(commandsRegex, "gi");
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
-  startThinking();
   if (this.req == undefined) {
     botResponse = 'undefined';
     return;
@@ -59,10 +58,10 @@ function respond() {
   }
   
   if (request.text && request.text.match(commandsRegex)) {
-    if (request.name) 
-      respondTo = request.name;
-    else
-      respondTo = 'whoever you are';
+ //   if (request.name) 
+ //     respondTo = request.name;
+ //   else
+ //     respondTo = 'whoever you are';
     this.res.writeHead(200);
     messageCheck(request.text);
     this.res.end();
@@ -117,7 +116,7 @@ function messageCheck(message) {
   console.log('Command:'+command);
   console.log('Argument:'+argument);
   scytalia[command](argument,message);
- // startThinking();
+  startThinking();
 }
 
 //         messageRegexes
