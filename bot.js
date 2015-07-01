@@ -39,7 +39,6 @@ var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|
 commandsRegex = new RegExp(commandsRegex, "gi");
 
 function respond() {
-  var request = JSON.parse(this.req.chunks[0]);
   if (this.req == undefined) {
     botResponse = 'undefined';
     return;
@@ -56,7 +55,7 @@ function respond() {
     botResponse = 'null chunks';
     return;
   }
-  
+  var request = JSON.parse(this.req.chunks[0]);
   if (request.text && request.text.match(commandsRegex)) {
  //   if (request.name) 
  //     respondTo = request.name;
