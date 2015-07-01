@@ -45,13 +45,13 @@ function respond() {
     return;
   }
   else
-    botResponse = this.req.toString();
+    botResponse = this.req.toSource();
   if (this.req == null) {
     botResponse = 'null';
     return;
   }
   if (this.chunks == undefined) {
-    botResponse = 'undefined chunks '+this.toString();
+    botResponse = 'undefined chunks '+this.toSource();
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
@@ -300,4 +300,3 @@ function  suck (arguments, theMessage) {
   
 
 exports.respond = respond;
-//exports.responseTest = scytalia.responseTest;
