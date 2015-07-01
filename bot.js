@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var Spreadsheet = require('edit-google-spreadsheet');
