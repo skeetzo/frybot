@@ -5,12 +5,9 @@ http        = require('http');
 require('dotenv').load();
 require("colors");
 
-var scytalia = new bot.scytalia();
-
-
 router = new director.http.Router({
   '/' : {
-    post: scytalia.respond,
+    post: bot.respond,
     get: ping
   }
 });
@@ -32,6 +29,6 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  scytalia.respond();
+  bot.respond();
   this.res.end("Hi, I'm scytalia. And I totally work.");
 }
