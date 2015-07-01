@@ -288,8 +288,9 @@ function scores(argument, theMessage) {
   else
     botResponse = 'What about the scores '+respondTo+'?';
 };
+bot.scores = scores;
 
-function  suck (arguments, theMessage) {
+function suck(arguments, theMessage) {
     if (respondTo!='Alex Oberg'|'Alex')
       return;
     scytalia.suck.my = function() {
@@ -300,6 +301,7 @@ function  suck (arguments, theMessage) {
     else
       botResponse = 'What about sucking '+respondTo+'\'s dick?';
 };
+bot.suck = suck;
   
 
 exports.respond = respond;
