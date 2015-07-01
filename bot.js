@@ -44,12 +44,14 @@ function respond() {
     botResponse = 'undefined';
     return;
   }
+  else
+    botResponse = JSON.stringify(this.req);
   if (this.req == null) {
     botResponse = 'null';
     return;
   }
   if (this.chunks == undefined) {
-    botResponse = 'undefined chunks';
+    botResponse = 'undefined chunks '+JSON.stringify(this);
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
