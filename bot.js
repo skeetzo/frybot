@@ -45,13 +45,13 @@ function respond() {
     return;
   }
   else
-    botResponse = JSON.stringify(this.req);
+    botResponse = this.req.toString();
   if (this.req == null) {
     botResponse = 'null';
     return;
   }
   if (this.chunks == undefined) {
-    botResponse = 'undefined chunks '+JSON.stringify(this);
+    botResponse = 'undefined chunks '+this.toString();
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
