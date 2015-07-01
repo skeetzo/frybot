@@ -284,24 +284,24 @@ function scores(argument, theMessage) {
     undoScores();
   }
   if (argument)
-    scytalia.scores[argument]();
+    this.scores[argument]();
   else
     botResponse = 'What about the scores '+respondTo+'?';
 };
-bot.scores = scores;
+this.scores = scores;
 
 function suck(arguments, theMessage) {
     if (respondTo!='Alex Oberg'|'Alex')
       return;
-    scytalia.suck.my = function() {
+    this.suck.my = function() {
       botResponse = 'yeah suck '+respondTo+'\'s dick!';
     };
     if (argument)
-      scytalia.suck[argument]();
+      this.suck[argument]();
     else
       botResponse = 'What about sucking '+respondTo+'\'s dick?';
 };
-bot.suck = suck;
+this.suck = suck;
   
 
 exports.respond = respond;
