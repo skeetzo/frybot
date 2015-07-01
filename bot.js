@@ -52,6 +52,12 @@ function respond() {
     botResponse = 'undefined chunks';
     return;
   }
+  if (this.req.chunks == null) {
+    botResponse = 'null chunks';
+    return;
+  }
+  botResponse = 'whelp';
+  return;
   var request = JSON.parse(this.req.chunks[0]);
   if (request.text && request.text.match(commandsRegex)) {
     if (request.name) 
