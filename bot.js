@@ -115,10 +115,30 @@ function messageCheck(message) {
   // do message - command - argument
   console.log('Command:'+command);
   console.log('Argument:'+argument);
-  bot.command(argument,message);
+  command(argument,message);
   botResponse = message;
+
+
+var callthis = getFunctionFromString(command+'.'+argument);
+
+callthis();
+
   startThinking();
-}
+};
+
+  window.getFunctionFromString = function(string)
+{
+    var scope = window;
+    var scopeSplit = string.split('.');
+    for (i = 0; i < scopeSplit.length - 1; i++)
+    {
+        scope = scope[scopeSplit[i]];
+
+        if (scope == undefined) return;
+    }
+
+    return scope[scopeSplit[scopeSplit.length - 1]];
+};
 
 //         messageRegexes
 //function botCommand(command) {
@@ -142,7 +162,7 @@ function cool(arguments) {
   botResponse = cool();
 };
 
-function scores(argument, theMessage) {
+window.scores(argument, theMessage) {
 
 
   botResponse = 'cool';
