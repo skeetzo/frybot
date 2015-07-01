@@ -44,8 +44,6 @@ function respond() {
     botResponse = 'undefined';
     return;
   }
-  else
-    botResponse = this.req.toSource();
   if (this.req == null) {
     botResponse = 'null';
     return;
