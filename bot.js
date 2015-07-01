@@ -114,7 +114,7 @@ function messageCheck(message) {
   var argument = message.match(commandsRegex)[2];
   console.log('Command:'+command);
   console.log('Argument:'+argument);
-  this[command](argument,message);
+  global[command](argument,message);
   botResponse = message;
   startThinking();
 }
