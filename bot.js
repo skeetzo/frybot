@@ -50,8 +50,8 @@ function respond() {
     botResponse = 'null';
     return;
   }
-  if (this.chunks == undefined) {
-    botResponse = 'undefined chunks '+this.toSource();
+  if (this.req.chunks == undefined) {
+    botResponse = 'undefined chunks';
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
