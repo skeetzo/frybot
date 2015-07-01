@@ -2,8 +2,6 @@ var http, director, bot, router, server, port;
 bot         = require('./bot.js');
 director    = require('director');
 http        = require('http');
-require('dotenv').load();
-require("colors");
 
 router = new director.http.Router({
   '/' : {
@@ -29,6 +27,6 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  bot.respond();
+ // bot.respond();
   this.res.end("Hi, I'm scytalia. And I totally work.");
 }
