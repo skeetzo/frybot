@@ -112,9 +112,10 @@ function postMessage() {
 function messageCheck(message) {
   var command = message.match(commandsRegex)[0];
   var argument = message.match(commandsRegex)[2];
+  // do message - command - argument
   console.log('Command:'+command);
   console.log('Argument:'+argument);
-  //window[command](argument,message);
+  bot.global[command](argument,message);
   botResponse = message;
   startThinking();
 }
