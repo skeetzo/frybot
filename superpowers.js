@@ -1,4 +1,5 @@
 var bot = require('./bot.js');
+var cool = require('cool-ascii-faces');
 var Spreadsheet = require('edit-google-spreadsheet');
 var moment = require ('moment');
 require("colors");
@@ -9,7 +10,7 @@ var five = 5;
 var debugging = false;
 var thinkingSpeed = five*seconds;
 
-var thoughts = 'huh';
+var thoughts = ['huh'];
 var thinking;
 
 var powerup = function thinkAboutWhatToDo() {
@@ -17,8 +18,9 @@ var powerup = function thinkAboutWhatToDo() {
 };
 
 function unload() {
-	bot.postMessage(thoughts);
-	cooldown();
+	bot.postMessage(thoughts.shift());
+  if (thoughts.size==0)
+	 cooldown();
 }
 
 function cooldown() {
@@ -32,7 +34,7 @@ function availablePowers(command, argument, message) {
 		argument = 'empty argument';
 	if (!command)
 		return 'empty command';
-	thoughts = 'huh?';
+	thoughts = ['huh?'];
 	powerup();
 	this[command](argument, message);
 };
@@ -47,8 +49,8 @@ var dateDayRegex = '[\-]{1}([\\d]{2})[T]{1}';
 var dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
 var dateYearRegex = '[\\d]{4}';
 
-function cool(arguments) {
- // return cool();
+function cool() {
+    thoughts.push(cool());
 };
 
 function scores(argument, theMessage) {
@@ -134,7 +136,7 @@ function scores(argument, theMessage) {
 			   return;
 	     spreadsheet.send(function(err) {
           if(err) console.log(err);
-            thoughts = 'Scores added!';
+            thoughts.push('Scores added!');
         });
       });
     });
@@ -176,7 +178,7 @@ function scores(argument, theMessage) {
           return;
         spreadsheet.send(function(err) {
           if(err) console.log(err);
-            thoughts = 'Scores undone!';
+            thoughts.push('Scores undone!');
         });
       });
     });
@@ -186,17 +188,17 @@ function scores(argument, theMessage) {
   // add scores
   scores.add = function() {
     addScores(parseForScores(theMessage));
-    thoughts = 'Adding scores! I think...';
+    thoughts.push('Adding scores! I think...');
   };
   // undo scores
   scores.undo = function() {
    // undoScores();
-    thoughts = 'fix your own mistakes';
+    thoughts.push('fix your own mistakes');
   }
   if (argument)
     this.scores[argument]();
   else
-    thoughts = 'What about the scores '+'[respondTo]'+'?';
+    thoughts.push('What about the scores '+'[respondTo]'+'?');
 };
 this.scores = scores;
 
@@ -204,12 +206,12 @@ function suck(argument, theMessage) {
   //  if (respondTo!='Alex Oberg'|'Alex')
   //    return;
     suck.my = function() {
-      thoughts = 'yeah suck '+'[respondTo]'+'\'s dick!';
+      thoughts.push('yeah suck '+'[respondTo]'+'\'s dick!');
     };
     if (argument)
       this.suck[argument]();
     else
-      thoughts = 'What about sucking '+'[respondTo]'+'\'s dick?';
+      thoughts.push('What about sucking '+'[respondTo]'+'\'s dick?');
 };
 this.suck = suck;
 
