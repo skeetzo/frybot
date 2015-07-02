@@ -19,7 +19,7 @@ var powerup = function thinkAboutWhatToDo() {
 
 function unload() {
 	bot.postMessage(thoughts.shift());
-  if (thoughts.size==0)
+  if (thoughts.length==0)
 	 cooldown();
 }
 
@@ -34,8 +34,7 @@ function availablePowers(command, argument, message) {
 		argument = 'empty argument';
 	if (!command)
 		return 'empty command';
-//	thoughts = ['huh?'];
-thoughts = [];
+  thoughts = ['huh?'];
 	powerup();
 	this[command](argument, message);
 };
