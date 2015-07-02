@@ -4,7 +4,7 @@ var Spreadsheet = require('edit-google-spreadsheet');
 require('dotenv').load();
 require("colors");
 
-var bot = this;
+var commands = require('./commands.js');
 
 var debugging = false;
 
@@ -117,7 +117,7 @@ function messageCheck(message) {
   // do message - command - argument
   console.log('Command:'+command);
   console.log('Argument:'+argument);
-  window.this[command](argument,message);
+  botResponse = commands.availableCommands(command,argument,message);
   botResponse = message;
 
 
