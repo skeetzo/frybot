@@ -190,7 +190,7 @@ function scores(argument, theMessage) {
   };
   // undo scores
   scores.undo = function() {
-    undoScores();
+   // undoScores();
     thoughts = 'fix your own mistakes';
   }
   if (argument)
