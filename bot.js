@@ -35,7 +35,7 @@ var commands = [
         'suck'
   ];
 var comandsArguments = ["add","undo","my"];
-var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
+var commandsRegex = "([/]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
 
 function respond() {
@@ -74,8 +74,7 @@ function respond() {
 function responseTest() {
 //  if (commandsRegex.test(imaginaryMessage))
  //   messageCheck(imaginaryMessage);
-   var testMessage =  'scores add Coco 2:0 Mike 3:0 Oberg 3:0 Danny 3:0 Civi 3:0';
-   testMessage = 'suck my dick';
+   var testMessage =  '/scores add Coco 2:0 Mike 3:0 Oberg 3:0 Danny 3:0 Civi 3:0';
 messageCheck(testMessage);
 };
 
