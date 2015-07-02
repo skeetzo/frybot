@@ -4,9 +4,11 @@ var Spreadsheet = require('edit-google-spreadsheet');
 require('dotenv').load();
 require("colors");
 
-var commands = require('./commands.js');
+var superpowers = require('./superpowers.js');
 
 var debugging = false;
+
+// add a bot thought process tree on an interval that gets cleared upon final function success / fail
 
      /*
      if (key=='/cool guy')
@@ -26,10 +28,6 @@ if (debugging)
   botID = 6;
 var botResponse = "burrito";
 var respondTo;
-
-var startThinking = function () {
-  setTimeout(postMessage,5000);
-};
 
 var commands = [
         'cool',
@@ -73,12 +71,15 @@ function respond() {
   }
 };
 
-function responseTest(imaginaryMessage) {
-  if (commandsRegex.test(imaginaryMessage))
-    messageCheck(imaginaryMessage);
+function responseTest() {
+//  if (commandsRegex.test(imaginaryMessage))
+ //   messageCheck(imaginaryMessage);
+   var testMessage =  'scores add Coco 2:0 Mike 3:0 Oberg 3:0 Danny 3:0 Civi 3:0';
+   testMessage = 'suck my dick';
+messageCheck(testMessage);
 };
 
-function postMessage() {
+function postMessage(message) {
   var options, body, botReq;
 
   options = {
@@ -89,9 +90,9 @@ function postMessage() {
 
   body = {
     "bot_id" : botID,
-    "text" : botResponse
+    "text" : message
   };
-  console.log(('sending ' + botResponse + ' to ' + botID).green);
+  console.log(('sending ' + message + ' to ' + botID).green);
   botReq = HTTPS.request(options, function(res) {
       if(res.statusCode == 202) {
         //neat
@@ -117,202 +118,10 @@ function messageCheck(message) {
   // do message - command - argument
   console.log('Command:'+command);
   console.log('Argument:'+argument);
-  botResponse = commands.availableCommands(command,argument,message);
-  botResponse = message;
-
-
-  startThinking();
+  superpowers.availablePowers(command,argument,message);
 };
 
- 
-
-//         messageRegexes
-//function botCommand(command) {
-//  if (command=='/scores')
- //   addStats();
-// };
-//
-var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
-var nameRegex = '[A-Za-z]+';
-var scoreRegex = '\\d{1}\\D*\\d{1}$';
-var pointsEarnedRegex = '\\d{1}';
-var pointsGivenRegex = '\\d{1}$';
-var dateRegex;
-var dateDayRegex = '[\-]{1}([\\d]{2})[T]{1}';
-var dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
-var dateYearRegex = '[\\d]{4}';
-
-var moment = require ('moment');
-
-function cool(arguments) {
-  botResponse = cool();
-};
-
-function scores(argument, theMessage) {
-
-
-  botResponse = 'cool';
-  return;
-
-  function parseForScores(message) {
-    // Parse stats
-    var newStats = [];
-    regex = new RegExp(statsRegex, "g");
-    var statResults = message.match(regex);
-    var matchNum = 1;
-    statResults.forEach(function (theMessage) {
-      var stats = [];
-      // find name
-      regex = new RegExp(nameRegex);
-      var name = regex.exec(theMessage);
-      name = name[0];
-      // find points earned
-      regex = new RegExp(pointsEarnedRegex);
-      var pointsEarned = regex.exec(theMessage);
-      pointsEarned = pointsEarned[0];
-      // find points given
-      regex = new RegExp(pointsGivenRegex);
-      var pointsGiven = regex.exec(theMessage);
-      pointsGiven = pointsGiven[0];
-      var timestamp = moment().format();
-      dateRegex = new RegExp(dateDayRegex);
-      var day = dateRegex.exec(timestamp);
-      day = day[1];
-      dateRegex = new RegExp(dateMonthRegex);
-      var month = dateRegex.exec(timestamp);
-      month = month[1];
-      dateRegex = new RegExp(dateYearRegex);
-      var year = dateRegex.exec(timestamp);
-      stats.push(timestamp);
-      stats.push(name);
-      stats.push(pointsEarned);
-      stats.push(pointsGiven);
-      stats.push(matchNum+'');
-      stats.push(month+'/'+day+'/'+year);
-      newStats.push(stats);
-      matchNum++;
-    });
-    // Add stats
-    var startRow;
-    var endRow;
-    return newStats;
-  };
-
-  function addScores(stats) {
-    Spreadsheet.load({
-      debug: true,
-      spreadsheetName: 'NEW It Is What It Is Tracker',
-      spreadsheetId: '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08',
-      worksheetId: "ot3ufy3",
-      worksheetName: 'Stats Form Responses',
-      oauth : {
-        email: '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com',
-        keyFile: 'secret.pem'
-      }
-    }, 
-    function sheetReady(err, spreadsheet) {
-      if(err) throw err;
-      spreadsheet.receive(function(err, rows, info) {
-        if(err) throw err;
-        startRow = info.lastRow+1;
-        endRow = startRow + stats.length;
-        for (var i = startRow,r=0;i < endRow;i++,r++) {
-          var front = "{\""+i+"\": { ";
-          var tail = "} }";
-          var middle = "";
-          var splitStats = stats[r].toString().split(",");
-          for (var col = 1; col<=splitStats.length;col++) {   // for each column of data into cells by ,
-            if (col==splitStats.length)
-              middle += "\""+col+"\": \""+splitStats[col-1]+"\""; // particular json seperation and labeling
-            else
-              middle += "\""+col+"\": \""+splitStats[col-1]+"\","; // particular json seperation and labeling
-          }
-          var all = front + middle + tail;
-          var jsonObj = JSON.parse(all);
-          spreadsheet.add(jsonObj); // adds row one by one
-        }
-        if (debugging)
-          return;
-        spreadsheet.send(function(err) {
-          if(err) console.log(err);
-            botResponse = 'Scores added!';
-        });
-      });
-    });
-  };
-  function undoScores(stats) {
-    Spreadsheet.load({
-      debug: true,
-      spreadsheetName: 'NEW It Is What It Is Tracker',
-      spreadsheetId: '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08',
-      worksheetId: "ot3ufy3",
-      worksheetName: 'Stats Form Responses',
-      oauth : {
-        email: '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com',
-        keyFile: 'secret.pem'
-      }
-    }, 
-    function sheetReady(err, spreadsheet) {
-      if(err) throw err;
-      spreadsheet.receive(function(err, rows, info) {
-        if(err) throw err;
-        startRow = info.lastRow;
-        endRow = startRow - stats.length;
-        for (var i = startRow,r=0;i > endRow;i--,r--) {
-          var front = "{\""+i+"\": { ";
-          var tail = "} }";
-          var middle = "";
-          var splitStats = stats[r].toString().split(",");
-          for (var col = 1; col<=splitStats.length;col++) {   // for each column of data into cells by ,
-            if (col==splitStats.length)
-              middle += "\""+col+"\": \" \""; // particular json seperation and labeling
-            else
-              middle += "\""+col+"\": \" \","; // particular json seperation and labeling
-          }
-          var all = front + middle + tail;
-          var jsonObj = JSON.parse(all);
-          spreadsheet.add(jsonObj); // adds row one by one
-        }
-        if (debugging)
-          return;
-        spreadsheet.send(function(err) {
-          if(err) console.log(err);
-            botResponse = 'Scores undone!';
-        });
-      });
-    });
-  };
-  // command referenced functions
-  // add scores
- // scores.add = function() {
- //   botResponse = 'Adding scores! I think...';
-//    addScores(parseForScores(theMessage));
-  //};
-  // undo scores
- // scores.undo = function() {
-  //  botResponse = 'fix your own mistakes';
- //   undoScores();
-  //}
- // if (argument)
-  //  this.scores[argument]();
-  //else
-  //  botResponse = 'What about the scores '+respondTo+'?';
-};
-this.scores = scores;
-/*
-function suck(arguments, theMessage) {
-    if (respondTo!='Alex Oberg'|'Alex')
-      return;
-    this.suck.my = function() {
-      botResponse = 'yeah suck '+respondTo+'\'s dick!';
-    };
-    if (argument)
-      this.suck[argument]();
-    else
-      botResponse = 'What about sucking '+respondTo+'\'s dick?';
-};
-this.suck = suck;
-*/
-  
 
 exports.respond = respond;
+exports.postMessage = postMessage;
+exports.responseTest = responseTest;
