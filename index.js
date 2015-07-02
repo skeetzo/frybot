@@ -1,15 +1,11 @@
-var http, director, cool, bot, router, server, port;
-
-http        = require('http');
-director    = require('director');
-cool        = require('cool-ascii-faces');
+var http, director, bot, router, server, port;
 bot         = require('./bot.js');
-
-var frybot = new bot.frybot();
+director    = require('director');
+http        = require('http');
 
 router = new director.http.Router({
   '/' : {
-    post: frybot.respond,
+    post: bot.respond,
     get: ping
   }
 });
@@ -31,5 +27,7 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hey, I'm frybot.");
+  //bot.responseTest();
+  this.res.end("Hi, I'm scytalia. And I totally work.");
 }
+
