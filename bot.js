@@ -35,7 +35,7 @@ var commands = [
         'suck'
   ];
 var comandsArguments = ["add","undo","my"];
-var commandsRegex = "([/]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
+var commandsRegex = "([\/]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
 
 function respond() {
