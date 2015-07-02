@@ -34,7 +34,8 @@ function availablePowers(command, argument, message) {
 		argument = 'empty argument';
 	if (!command)
 		return 'empty command';
-	thoughts = ['huh?'];
+//	thoughts = ['huh?'];
+thoughts = [];
 	powerup();
 	this[command](argument, message);
 };
