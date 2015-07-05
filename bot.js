@@ -31,7 +31,7 @@ function respond() {
   }
   var request = JSON.parse(this.req.chunks[0]);
 
-  postMessage(JSON.stringify(request));
+  postMessage(request.toString());
   return;
   // request.text.match(codes.commandsRegex)
   if (request.text && commands.exists(request.text)) {
