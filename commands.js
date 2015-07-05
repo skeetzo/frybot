@@ -29,7 +29,7 @@ function activate(theCommand, theSender) {
   var command = theCommand.match(commandsRegex)[0];
   var argument = theCommand.match(commandsRegex)[2];
 
-  var message = theCommand.match(commandsRegex)[3];
+  var message = theCommand.replace(commandsRegex,'');
 
   if (theSender) {
     var i = theSender.indexOf(' ');
