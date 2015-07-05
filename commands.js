@@ -41,6 +41,10 @@ function activate(theCommand, theSender) {
 function run(command, argument, message, sender) {
 	if (!message)
 		message = 'empty message';
+  else {
+    var i = message.lastIndexOf(commandsRegex);
+    message = message.substring(i);
+  }
 	if (!argument)
 		argument = 'empty argument';
 	if (!command)
