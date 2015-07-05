@@ -5,7 +5,7 @@ var commands = require('./commands.js');
 require('dotenv').load();
 require("colors");
 
-var debugging = true;
+var debugging = false;
 
 var botID = process.env.BOT_ID;
 if (debugging)
@@ -41,7 +41,7 @@ function respond() {
 
   postMessage(name);
   return;
-  if (request.text && commands.exists(request.text)) {
+  if (request.text ) {
     // grab all response info
 
 
