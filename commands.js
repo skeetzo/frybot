@@ -34,7 +34,7 @@ function activate(theCommand, theSender) {
   if (theSender) {
     var i = theSender.indexOf(' ');
     theSender = theSender.substring(0,i);
-    run(command,argument,theCommand,theSender);
+    run(command,argument,message,theSender);
   }
   else
     run(command,argument,message);
