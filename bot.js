@@ -1,68 +1,51 @@
-var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var HTTPS = require('https');
 var Spreadsheet = require('edit-google-spreadsheet');
+var commands = require('./commands.js');
 require('dotenv').load();
 require("colors");
 
-var superpowers = require('./superpowers.js');
-
-var debugging = false;
-
-// add a bot thought process tree on an interval that gets cleared upon final function success / fail
-
-     /*
-     if (key=='/cool guy')
-       botResponse = cool();
-     else if (key=='/scores')
-       botResponse = botCommand('scores');
-     else if (key=='/bottle')
-       botResponse = "Who's got bottle service?";
-     else if (key=='/roster')
-       botResponse = "The players on the team are...";
-     else if (key=='/player\'s score')
-       botResponse = "x\'s total points are...";
-     */
+var debugging = true;
 
 var botID = process.env.BOT_ID;
 if (debugging)
   botID = 6;
-var botResponse = "burrito";
-var respondTo;
-
-var commands = [
-        'cool',
-        'scores',
-        'suck'
-  ];
-var comandsArguments = ["add","undo","my"];
-var commandsRegex = "([\/]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
-commandsRegex = new RegExp(commandsRegex, "gi");
+var defaultResponse = "burrito";
 
 function respond() {
   if (this.req == undefined) {
-    botResponse = 'undefined';
+    defaultResponse = 'undefined';
     return;
   }
   if (this.req == null) {
-    botResponse = 'null';
+    defaultResponse = 'null';
     return;
   }
   if (this.req.chunks == undefined) {
-    botResponse = 'undefined chunks';
+    defaultResponse = 'undefined chunks';
     return;
   }
   if (this.req.chunks == null) {
-    botResponse = 'null chunks';
+    defaultResponse = 'null chunks';
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
-  if (request.text && request.text.match(commandsRegex)) {
- //   if (request.name) 
- //     respondTo = request.name;
- //   else
- //     respondTo = 'whoever you are';
+
+  postMessage(request);
+  return;
+  // request.text.match(codes.commandsRegex)
+  if (request.text && commands.exists(request.text)) {
+    console.log(JSON.stringify(request));
+    return;
+    // grab all response info
+    var command = function() {
+      this.message = request.text,
+      this.sender = request.name
+    };
+
+    commands.activate(command());
+
     this.res.writeHead(200);
-    messageCheck(request.text);
     this.res.end();
   } else {
   //  console.log("don't care");
@@ -109,18 +92,12 @@ function postMessage(message) {
   if (debugging)
     return;
   botReq.end(JSON.stringify(body));
-}
- 
-function messageCheck(message) {
-  var command = message.match(commandsRegex)[0];
-  var argument = message.match(commandsRegex)[2];
-  // do message - command - argument
-  console.log('Command:'+command);
-  console.log('Argument:'+argument);
-  superpowers.availablePowers(command,argument,message);
 };
+ 
 
+
+function test() {};
 
 exports.respond = respond;
 exports.postMessage = postMessage;
-exports.responseTest = responseTest;
+exports.test = test;
