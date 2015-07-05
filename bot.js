@@ -38,7 +38,7 @@ function respond() {
   if (request.name)
     name = request.name;
 
-  postMessage(request.toString());
+  postMessage(JSON.stringify(request));
   return;
   if (request.text ) {
     // grab all response info
