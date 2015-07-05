@@ -29,22 +29,20 @@ function activate(theCommand, theSender) {
   var command = theCommand.match(commandsRegex)[0];
   var argument = theCommand.match(commandsRegex)[2];
 
+  var message = theCommand.substring(theCommand.lastIndexOf(commandsRegex));
+
   if (theSender) {
     var i = theSender.indexOf(' ');
     theSender = theSender.substring(0,i);
     run(command,argument,theCommand,theSender);
   }
   else
-    run(command,argument,theCommand);
+    run(command,argument,message);
 };
 
 function run(command, argument, message, sender) {
 	if (!message)
 		message = 'empty message';
-  else {
-    var i = message.lastIndexOf(commandsRegex);
-    message = message.substring(i);
-  }
 	if (!argument)
 		argument = 'empty argument';
 	if (!command)
