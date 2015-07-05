@@ -31,7 +31,7 @@ function respond() {
   }
   var request = JSON.parse(this.req.chunks[0]);
 
-  var text, name;
+  var text, name = 'nope';
 
   if (request.text)
     text = request.text
