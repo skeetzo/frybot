@@ -201,24 +201,24 @@ function scores(argument, message, sender) {
   if (argument)
     this.scores[argument]();
   else
-    bot.addThought('What about the scores '+'[respondTo]'+'?');
+    bot.addThought('What about the scores '+sender+'?');
 };
 this.scores = scores;
 
-function suck(argument, theMessage) {
-  //  if (respondTo!='Alex Oberg'|'Alex')
+function suck(argument, theMessage, sender) {
+  //  if (sender!='Alex Oberg'|'Alex')
   //    return;
     suck.my = function() {
-      bot.addThought('yeah suck '+'[respondTo]'+'\'s dick!');
+      bot.addThought('yeah suck '+sender+'\'s dick!');
     };
     if (argument)
       this.suck[argument]();
     else
-      bot.addThought('What about sucking '+'[respondTo]'+'\'s dick?');
+      bot.addThought('What about sucking '+sender+'\'s dick?');
 };
 this.suck = suck;
 
 
 
-exports.exists = exists;
+exports.matches = matches;
 exports.activate = activate;
