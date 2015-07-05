@@ -31,12 +31,10 @@ function respond() {
   }
   var request = JSON.parse(this.req.chunks[0]);
 
-  postMessage(request);
+  postMessage(JSON.stringify(request));
   return;
   // request.text.match(codes.commandsRegex)
   if (request.text && commands.exists(request.text)) {
-    console.log(JSON.stringify(request));
-    return;
     // grab all response info
     var command = function() {
       this.message = request.text,
