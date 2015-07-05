@@ -31,14 +31,19 @@ function respond() {
   }
   var request = JSON.parse(this.req.chunks[0]);
 
+  var text, name;
+
+  if (request.text)
+    text = request.text
+  if (request.subject)
+    if (request.subject.name)
+      name = request.subject.name;
+
+  postMessage(name);
+  return;
   if (request.text && commands.exists(request.text)) {
     // grab all response info
-    var command = function() {
-      this.message: request.text,
-      this.sender: request.name
-    };
 
-    commands.activate(command());
 
     this.res.writeHead(200);
     this.res.end();
