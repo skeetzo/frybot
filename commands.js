@@ -28,8 +28,12 @@ function matches(message) {
 function activate(theCommand, theSender) {
   var command = theCommand.match(commandsRegex)[0];
   var argument = theCommand.match(commandsRegex)[2];
-  if (theSender)
+
+  if (theSender) {
+    var i = theSender.indexOf(' ');
+    theSender = theSender.substring(0,i);
     run(command,argument,theCommand,theSender);
+  }
   else
     run(command,argument,theCommand);
 };
@@ -214,12 +218,12 @@ function suck(argument, theMessage, sender) {
   //  if (sender!='Alex Oberg'|'Alex')
   //    return;
     suck.my = function() {
-      bot.addThought('yeah suck '+sender+'\'s dick!');
+      bot.addThought('yeah suck '+sender+'\'s '+theMessage+'!');
     };
     if (argument)
       this.suck[argument]();
     else
-      bot.addThought('What about sucking '+sender+'\'s dick?');
+      bot.addThought('What about sucking '+sender+'\'s '+theMessage+'?');
 };
 this.suck = suck;
 
