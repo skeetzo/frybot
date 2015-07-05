@@ -1,27 +1,28 @@
-var HTTPS = require('https');
+var codes = require('./codes.js');
 var cool = require('cool-ascii-faces');
+var HTTPS = require('https');
 var Spreadsheet = require('edit-google-spreadsheet');
+var superpowers = require('./superpowers.js');
 require('dotenv').load();
 require("colors");
 
-var superpowers = require('./superpowers.js');
 
-var debugging = false;
+var debugging = true;
 
 // add a bot thought process tree on an interval that gets cleared upon final function success / fail
 
-     /*
-     if (key=='/cool guy')
-       botResponse = cool();
-     else if (key=='/scores')
-       botResponse = botCommand('scores');
-     else if (key=='/bottle')
-       botResponse = "Who's got bottle service?";
-     else if (key=='/roster')
-       botResponse = "The players on the team are...";
-     else if (key=='/player\'s score')
-       botResponse = "x\'s total points are...";
-     */
+/*
+if (key=='/cool guy')
+ botResponse = cool();
+else if (key=='/scores')
+ botResponse = botCommand('scores');
+else if (key=='/bottle')
+ botResponse = "Who's got bottle service?";
+else if (key=='/roster')
+ botResponse = "The players on the team are...";
+else if (key=='/player\'s score')
+ botResponse = "x\'s total points are...";
+*/
 
 var botID = process.env.BOT_ID;
 if (debugging)
@@ -34,9 +35,10 @@ var commands = [
         'scores',
         'suck'
   ];
-var comandsArguments = ["add","undo","my"];
-var commandsRegex = "([\/]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
+var commandsArguments = ["add","undo","my"];
+var commandsRegex = "([\/]{1}"+commands.join("|")+")?("+commandsArguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
+commandsRegex = codes.
 
 function respond() {
   if (this.req == undefined) {
@@ -56,11 +58,14 @@ function respond() {
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
+
+  postMessage(request);
+  return;
   if (request.text && request.text.match(commandsRegex)) {
- //   if (request.name) 
- //     respondTo = request.name;
- //   else
- //     respondTo = 'whoever you are';
+    if (request.name) 
+      respondTo = request.name;
+    else
+      respondTo = 'whoever you are';
     this.res.writeHead(200);
     messageCheck(request.text);
     this.res.end();
@@ -109,7 +114,7 @@ function postMessage(message) {
   if (debugging)
     return;
   botReq.end(JSON.stringify(body));
-}
+};
  
 function messageCheck(message) {
   var command = message.match(commandsRegex)[0];
@@ -120,7 +125,8 @@ function messageCheck(message) {
   superpowers.availablePowers(command,argument,message);
 };
 
+function test() {};
 
 exports.respond = respond;
 exports.postMessage = postMessage;
-exports.responseTest = responseTest;
+exports.test = test;
