@@ -38,7 +38,7 @@ var commands = [
 var commandsArguments = ["add","undo","my"];
 var commandsRegex = "([\/]{1}"+commands.join("|")+")?("+commandsArguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
-commandsRegex = codes.
+//commandsRegex = codes.
 
 function respond() {
   if (this.req == undefined) {
