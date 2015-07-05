@@ -38,7 +38,7 @@ function respond() {
   if (request.name)
     name = request.name;
 
-  postMessage(name);
+  postMessage(request.toString());
   return;
   if (request.text ) {
     // grab all response info
