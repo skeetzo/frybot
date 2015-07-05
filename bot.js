@@ -31,28 +31,38 @@ function respond() {
   }
   var request = JSON.parse(this.req.chunks[0]);
 
-  var text, name = 'nope';
-
-  if (request.text)
-    text = request.text
-  if (request.name)
-    name = request.name;
-
-  postMessage(JSON.stringify(request));
-  return;
-  if (request.text ) {
-    // grab all response info
-
-
+  if (request.text && request.name && commands.matches(request.text)) {
+    if (request.name)
+      commands.activate(request.text,request.name);
+    else
+      commands.activate(request.text);
     this.res.writeHead(200);
     this.res.end();
   } else {
-  //  console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
   }
 };
 
+var thinker; // the timeout function
+var thoughts = []; // the thoughts to be posted
+function addThought(thought) {
+  thoughts.push(thought);
+  think();
+};
+
+function think() {
+  clearTimeout(thinker);
+  var speedofthought = 6000;
+  thinker = setTimeout(responder,speedofthought);
+};
+
+var responder = function() {
+  if (thoughts.length==1)
+    postMessage(thoughts.shift());
+  else if (thoughts.length>0)
+    postMessage(thoughts.join('.. '));
+};
 
 function postMessage(message) {
   var options, body, botReq;
@@ -90,3 +100,4 @@ function postMessage(message) {
 
 exports.respond = respond;
 exports.postMessage = postMessage;
+exports.addThought = addThought;

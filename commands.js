@@ -4,11 +4,7 @@ var Spreadsheet = require('edit-google-spreadsheet');
 var moment = require ('moment');
 require("colors");
 
-var seconds = 1000;
-var five = 5;
-
 var debugging = false;
-
 
 var commands = [
   'cool',
@@ -23,24 +19,27 @@ var arguments = [
 var commandsRegex = "([\/]{1}"+commands.join("|")+")?("+arguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
 
-function exists(message) {
+function matches(message) {
   return message.match(commandsRegex);
 };
 
-function activate(theCommand) {
-  var command = theCommand.message.match(commandsRegex)[0];
-  var argument = theCommand.message.match(commandsRegex)[2];
-  run(command,argument,theCommand.message);
+function activate(theCommand, theSender) {
+  var command = theCommand.match(commandsRegex)[0];
+  var argument = theCommand.match(commandsRegex)[2];
+  if (theSender)
+    run(command,argument,theCommand,theSender);
+  else
+    run(command,argument,theCommand)
 };
 
-function run(command, argument, message) {
+function run(command, argument, message, sender) {
 	if (!message)
 		message = 'empty message';
 	if (!argument)
 		argument = 'empty argument';
 	if (!command)
 		return 'empty command';
-	this[command](argument, message);
+	this[command](argument, message, sender);
 };
 
 var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
@@ -54,30 +53,30 @@ var dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
 var dateYearRegex = '[\\d]{4}';
 
 function cool() {
-    thoughts.push(cool());
+    bot.addThought(cool());
 };
 
-function scores(argument, theMessage) {
+function scores(argument, message, sender) {
 
-  function parseForScores(message) {
-    // Parse stats
+  function parseForScores(text) {
+    // Parse parsedStats
     var newStats = [];
     regex = new RegExp(statsRegex, "g");
-    var statResults = message.match(regex);
+    var statResults = text.match(regex);
     var matchNum = 1;
-    statResults.forEach(function (theMessage) {
-      var stats = [];
+    statResults.forEach(function (stat) {
+      var parsedStats = [];
       // find name
       regex = new RegExp(nameRegex);
-      var name = regex.exec(theMessage);
+      var name = regex.exec(stat);
       name = name[0];
       // find points earned
       regex = new RegExp(pointsEarnedRegex);
-      var pointsEarned = regex.exec(theMessage);
+      var pointsEarned = regex.exec(stat);
       pointsEarned = pointsEarned[0];
       // find points given
       regex = new RegExp(pointsGivenRegex);
-      var pointsGiven = regex.exec(theMessage);
+      var pointsGiven = regex.exec(stat);
       pointsGiven = pointsGiven[0];
       var timestamp = moment().format();
       dateRegex = new RegExp(dateDayRegex);
@@ -88,16 +87,16 @@ function scores(argument, theMessage) {
       month = month[1];
       dateRegex = new RegExp(dateYearRegex);
       var year = dateRegex.exec(timestamp);
-      stats.push(timestamp);
-      stats.push(name);
-      stats.push(pointsEarned);
-      stats.push(pointsGiven);
-      stats.push(matchNum+'');
-      stats.push(month+'/'+day+'/'+year);
-      newStats.push(stats);
+      parsedStats.push(timestamp);
+      parsedStats.push(name);
+      parsedStats.push(pointsEarned);
+      parsedStats.push(pointsGiven);
+      parsedStats.push(matchNum+'');
+      parsedStats.push(month+'/'+day+'/'+year);
+      newStats.push(parsedStats);
       matchNum++;
     });
-    // Add stats
+    // Add parsedStats
     var startRow;
     var endRow;
     return newStats;
@@ -140,7 +139,7 @@ function scores(argument, theMessage) {
 			   return;
 	     spreadsheet.send(function(err) {
           if(err) console.log(err);
-            thoughts.push('Scores added!');
+            bot.addThought('Scores added!');
         });
       });
     });
@@ -182,7 +181,7 @@ function scores(argument, theMessage) {
           return;
         spreadsheet.send(function(err) {
           if(err) console.log(err);
-            thoughts.push('Scores undone!');
+            bot.addThought('Scores undone!');
         });
       });
     });
@@ -191,18 +190,18 @@ function scores(argument, theMessage) {
   // command referenced functions
   // add scores
   scores.add = function() {
-    addScores(parseForScores(theMessage));
-    thoughts.push('Adding scores! I think...');
+    addScores(parseForScores(message));
+    bot.addThought('Adding scores! I think...');
   };
   // undo scores
   scores.undo = function() {
    // undoScores();
-    thoughts.push('fix your own mistakes');
+    bot.addThought('fix your own mistakes');
   }
   if (argument)
     this.scores[argument]();
   else
-    thoughts.push('What about the scores '+'[respondTo]'+'?');
+    bot.addThought('What about the scores '+'[respondTo]'+'?');
 };
 this.scores = scores;
 
@@ -210,17 +209,14 @@ function suck(argument, theMessage) {
   //  if (respondTo!='Alex Oberg'|'Alex')
   //    return;
     suck.my = function() {
-      thoughts.push('yeah suck '+'[respondTo]'+'\'s dick!');
+      bot.addThought('yeah suck '+'[respondTo]'+'\'s dick!');
     };
     if (argument)
       this.suck[argument]();
     else
-      thoughts.push('What about sucking '+'[respondTo]'+'\'s dick?');
+      bot.addThought('What about sucking '+'[respondTo]'+'\'s dick?');
 };
 this.suck = suck;
-
-
-
 
 
 
