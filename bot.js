@@ -96,7 +96,6 @@ function postMessage(message) {
     return;
   botReq.end(JSON.stringify(body));
 };
- 
 
 exports.respond = respond;
 exports.postMessage = postMessage;

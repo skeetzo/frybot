@@ -6,6 +6,8 @@ require("colors");
 
 var debugging = false;
 
+var this_ = this;
+
 var commands = [
   'cool',
   'scores',
@@ -29,7 +31,7 @@ function activate(theCommand, theSender) {
   if (theSender)
     run(command,argument,theCommand,theSender);
   else
-    run(command,argument,theCommand)
+    run(command,argument,theCommand);
 };
 
 function run(command, argument, message, sender) {
@@ -39,7 +41,10 @@ function run(command, argument, message, sender) {
 		argument = 'empty argument';
 	if (!command)
 		return 'empty command';
-	this[command](argument, message, sender);
+  if (sender)
+	  this_[command](argument, message, sender);
+  else
+    this_[command](argument, message);
 };
 
 var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
