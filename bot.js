@@ -31,14 +31,11 @@ function respond() {
   }
   var request = JSON.parse(this.req.chunks[0]);
 
-  postMessage(request.toString());
-  return;
-  // request.text.match(codes.commandsRegex)
   if (request.text && commands.exists(request.text)) {
     // grab all response info
     var command = function() {
-      this.message = request.text,
-      this.sender = request.name
+      this.message: request.text,
+      this.sender: request.name
     };
 
     commands.activate(command());
@@ -52,12 +49,6 @@ function respond() {
   }
 };
 
-function responseTest() {
-//  if (commandsRegex.test(imaginaryMessage))
- //   messageCheck(imaginaryMessage);
-   var testMessage =  '/scores add Coco 2:0 Mike 3:0 Oberg 3:0 Danny 3:0 Civi 3:0';
-messageCheck(testMessage);
-};
 
 function postMessage(message) {
   var options, body, botReq;
@@ -93,9 +84,5 @@ function postMessage(message) {
 };
  
 
-
-function test() {};
-
 exports.respond = respond;
 exports.postMessage = postMessage;
-exports.test = test;

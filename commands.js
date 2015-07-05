@@ -30,7 +30,7 @@ function exists(message) {
 function activate(theCommand) {
   var command = theCommand.message.match(commandsRegex)[0];
   var argument = theCommand.message.match(commandsRegex)[2];
-  run(command,argument,message);
+  run(command,argument,theCommand.message);
 };
 
 function run(command, argument, message) {
