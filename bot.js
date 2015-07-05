@@ -35,9 +35,8 @@ function respond() {
 
   if (request.text)
     text = request.text
-  if (request.subject)
-    if (request.subject.name)
-      name = request.subject.name;
+  if (request.name)
+    name = request.name;
 
   postMessage(name);
   return;
