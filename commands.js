@@ -313,16 +313,16 @@ this.suck = suck;
 * @calls {bot.addThought(thoughts)}
 */
 function bottle(argument, message, sender) {
-    suck.who = function() {
+    bottle.who = function() {
       API.Groups.show(ACCESS_TOKEN, ItIsWhatItIs_ID,function(err,ret) {
         if (!err) {
           var members = [];
           ret.members.forEach(function(member) {members.push(member.nickname);});
-          bots.addThought(members[Math.random()*members.length]+' on duty');
+          bot.addThought(members[Math.round(Math.random(0,members.length))]+' on duty');
         }
       });    
     };
-    suck.what = function() {
+    bottle.what = function() {
       bots.addThought('rum');
     };
     if (argument)
