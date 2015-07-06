@@ -9,7 +9,6 @@
     "express",
     "groupme",
     "bot",
-    "google",
-    "sheets"
+    "google sheets"
     ]
 }

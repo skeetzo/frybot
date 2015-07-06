@@ -4,53 +4,77 @@ var Spreadsheet = require('edit-google-spreadsheet');
 var moment = require ('moment');
 require("colors");
 
+const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
+var API = require('groupme').Stateless
+var ItIsWhatItIs_ID = 14734775;
+
 var debugging = false;
 
 var this_ = this;
 
+/**
+* does
+*
+* @param {number} num - The number for things
+* @return {number}
+*/
+
 var commands = [
   'cool',
   'scores',
-  'suck'
+  'suck',
+  'bottle'
 ];
 var arguments = [
   "add",
   "undo",
-  "my"
+  "my",
+  "his",
+  "who",
+  "what"
 ];
 var commandsRegex = "([\/]{1}"+commands.join("|")+")?("+arguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
 
+/**
+* checks regex matches
+*
+* @param {string} message - the message to be checked
+* @return {true/false}
+*/
 function matches(message) {
   return message.match(commandsRegex);
 };
 
-function activate(theCommand, theSender) {
-  var command = theCommand.match(commandsRegex)[0];
-  var argument = theCommand.match(commandsRegex)[2];
 
-  var message = theCommand.substring(command.length+argument.length+1);
-
-  if (theSender) {
-    var i = theSender.indexOf(' ');
-    theSender = theSender.substring(0,i);
-    run(command,argument,message,theSender);
-  }
-  else
-    run(command,argument,message);
+/**
+* filter function activates the command process to be run
+*
+* @param {string} message - the string containing the message/command to be run
+* @param {string} sender - the string containing the name of the sender; parsed into just the first name
+* @calls {run(command,argument,message,sender)}
+*/
+function activate(message, sender) {
+  var command = message.match(commandsRegex)[0];
+  var argument = message.match(commandsRegex)[2];
+  message = message.substring(command.length+argument.length+1);
+  var i = sender.indexOf(' ');
+  sender = sender.substring(0,i);
+  run(command,argument,message,sender);
 };
 
+
+/**
+* runs the command
+*
+* @param {string} command - the command
+* @param {string} argument - the argument
+* @param {string} message - the string containing the message/command to be run
+* @param {string} sender - the string containing the name of the sender; already parsed into just the first name
+* @calls {this[command](argument, message, sender)}
+*/
 function run(command, argument, message, sender) {
-	if (!message)
-		message = 'empty message';
-	if (!argument)
-		argument = 'empty argument';
-	if (!command)
-		return 'empty command';
-  if (sender)
 	  this_[command](argument, message, sender);
-  else
-    this_[command](argument, message);
 };
 
 var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
@@ -63,10 +87,32 @@ var dateDayRegex = '[\-]{1}([\\d]{2})[T]{1}';
 var dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
 var dateYearRegex = '[\\d]{4}';
 
+/**
+* runs the cool guy thing
+*
+* @return {cool guy face as string}
+*/
 function cool() {
     bot.addThought(cool());
 };
 
+/**
+* scores command
+*
+* arguments: add, undo
+*
+* thoughts: 
+*    Adding scores! I think...
+*      Scores added!
+*    fix your own mistakes
+*      Scores undone!
+*   What about the scores sender?
+*
+* @param {string} argument - The argument to call
+* @param {string} message - The message it's from
+* @param {string} sender - The sender it's from
+* @calls {bot.addThought(thoughts)}
+*/
 function scores(argument, message, sender) {
 
   function parseForScores(text) {
@@ -216,18 +262,76 @@ function scores(argument, message, sender) {
 };
 this.scores = scores;
 
-function suck(argument, theMessage, sender) {
+/**
+* suck command
+*
+* arguments: my, his
+*
+* thoughts: 
+*    yeah suck sender's message!
+*    yeah suck his message!
+*      wait, what?
+*   What about sucking sender's message?
+*
+* @param {string} argument - The argument to call
+* @param {string} message - The message it's from
+* @param {string} sender - The sender it's from
+* @calls {bot.addThought(thoughts)}
+*/
+function suck(argument, message, sender) {
   //  if (sender!='Alex Oberg'|'Alex')
   //    return;
     suck.my = function() {
-      bot.addThought('yeah suck '+sender+'\'s '+theMessage+'!');
+      bot.addThought('yeah suck '+sender+'\'s '+message+'!');
+    };
+    suck.his = function() {
+      bot.addThought('yeah suck his '+message+'!');
+      bot.addThought('wait, what?');
     };
     if (argument)
       this.suck[argument]();
     else
-      bot.addThought('What about sucking '+sender+'\'s '+theMessage+'?');
+      bot.addThought('What about sucking '+sender+'\'s '+message+'?');
 };
 this.suck = suck;
+
+/**
+* bottle command
+*
+* arguments: who, what
+*
+* thoughts: 
+*   What about the scores sender?
+*     Adding scores! I think...
+*     fix your own mistakes
+*       Scores added!
+*       Scores undone!
+*
+* @param {string} argument - The argument to call
+* @param {string} message - The message it's from
+* @param {string} sender - The sender it's from
+* @calls {bot.addThought(thoughts)}
+*/
+function bottle(argument, message, sender) {
+    suck.who = function() {
+      API.Groups.show(ACCESS_TOKEN, ItIsWhatItIs_ID,function(err,ret) {
+        if (!err) {
+          var members = [];
+          ret.members.forEach(function(member) {members.push(member.nickname);});
+          bots.addThought(members[Math.random()*members.length]+' on duty');
+        }
+      });    
+    };
+    suck.what = function() {
+      bots.addThought('rum');
+    };
+    if (argument)
+      this.bottle[argument]();
+    else
+      bot.addThought('bottle fail');
+
+};
+this.bottle = bottle;
 
 
 

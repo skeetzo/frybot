@@ -13,3 +13,6 @@ v0.0.2
 7/5/2015
 superpowers restructured into commands.js
 commands structure solidifed
+
+v0.0.3
+bottle added
