@@ -318,7 +318,8 @@ function bottle(argument, message, sender) {
         if (!err) {
           var members = [];
           ret.members.forEach(function(member) {members.push(member.nickname);});
-          bot.addThought(members[Math.round(Math.random(0,members.length))]+' on duty');
+          var whom = Math.round(Math.random(0,members.length));
+          bot.addThought(members[whom]+' on duty');
         }
       });    
     };
