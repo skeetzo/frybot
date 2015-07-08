@@ -10,7 +10,7 @@ var API = require('groupme').Stateless
 var ItIsWhatItIs_ID = 14734775;
 
 var debugging = false;
-var responding = false;
+var responding = true;
 
 var botID = process.env.BOT_ID;
 if (debugging)
@@ -41,7 +41,8 @@ function respond() {
       commands.activate(request.text,request.name);
     else
       commands.activate(request.text);
-    likeMessage(request.id);
+    if (request.id)
+      likeMessage(request.id);
     this.res.writeHead(200);
     this.res.end();
   } else {
