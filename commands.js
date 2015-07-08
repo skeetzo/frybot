@@ -33,7 +33,7 @@ var arguments = [
   "who",
   "what"
 ];
-var commandsRegex = "([\/]{1}"+commands.join("|")+")?("+arguments.join("|")+")?";
+var commandsRegex = "([\/]{1}"+commands.join("|")+"){1}("+arguments.join("|")+")+";
 commandsRegex = new RegExp(commandsRegex, "gi");
 
 /**
@@ -57,6 +57,7 @@ function matches(message) {
 function activate(message, sender) {
   var command = message.match(commandsRegex)[1];
   var argument = message.match(commandsRegex)[2];
+  // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
   message = message.substring(command.length+argument.length+1);
   var i = sender.indexOf(' ');
   sender = sender.substring(0,i);
