@@ -35,13 +35,13 @@ function respond() {
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
-
   if (request.text && request.name && commands.matches(request.text)) {
     if (request.name)
       commands.activate(request.text,request.name);
     else
       commands.activate(request.text);
-    likeMessage(request.id);
+    if (request.id)
+      likeMessage(request.id);
     this.res.writeHead(200);
     this.res.end();
   } else {
@@ -74,13 +74,11 @@ var responder = function() {
 
 function postMessage(message) {
   var options, body, botReq;
-
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
     method: 'POST'
   };
-
   body = {
     "bot_id" : botID,
     "text" : message
@@ -93,7 +91,6 @@ function postMessage(message) {
         console.log('rejecting bad status code ' + res.statusCode);
       }
   });
-
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
   });
@@ -106,7 +103,7 @@ function postMessage(message) {
 };
 
 // implementation intent is for liked messages to confirm receivement of commands
-function likeMessage(message_id) {API.Likes.create(ACCESS_TOKEN, ItIsWhatItIs_ID,message_id, function(err,ret) {});}
+function likeMessage(message_id) {API.Likes.create(ACCESS_TOKEN, ItIsWhatItIs_ID,message_id, function(err,ret) {});};
 
 function test(testMessage) {
   commands.activate(testMessage,'nobody smith');
