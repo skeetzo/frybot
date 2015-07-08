@@ -10,7 +10,7 @@ v0.0.0
 
 v0.0.1
 7/2/2015
-commands introduced,
+commands introduced
 
 v0.0.2
 7/5/2015
