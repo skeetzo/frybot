@@ -6,7 +6,7 @@ require("colors");
 
 const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
 var API = require('groupme').Stateless
-var ItIsWhatItIs_ID = 14734775;
+var ItIsWhatItIs_ID = 7054026;
 
 var debugging = false;
 
@@ -57,6 +57,7 @@ function matches(message) {
 function activate(message, sender) {
   var command = message.match(commandsRegex)[0];
   var argument = message.match(commandsRegex)[2];
+  // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
   message = message.substring(command.length+argument.length+1);
   var i = sender.indexOf(' ');
   sender = sender.substring(0,i);
@@ -330,7 +331,6 @@ function bottle(argument, message, sender) {
       this.bottle[argument]();
     else
       bot.addThought('bottle fail');
-
 };
 this.bottle = bottle;
 

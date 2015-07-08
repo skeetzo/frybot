@@ -7,7 +7,7 @@ require("colors");
 
 const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
 var API = require('groupme').Stateless
-var ItIsWhatItIs_ID = 14734775;
+var ItIsWhatItIs_ID = 7054026;
 
 var debugging = false;
 var responding = false;
