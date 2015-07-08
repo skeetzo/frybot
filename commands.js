@@ -55,7 +55,7 @@ function matches(message) {
 * @calls {run(command,argument,message,sender)}
 */
 function activate(message, sender) {
-  var command = message.match(commandsRegex)[0];
+  var command = message.match(commandsRegex)[1];
   var argument = message.match(commandsRegex)[2];
   message = message.substring(command.length+argument.length+1);
   var i = sender.indexOf(' ');
