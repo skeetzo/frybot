@@ -33,7 +33,7 @@ var arguments = [
   "who",
   "what"
 ];
-var commandsRegex = "([\/]{1}"+commands.join("|")+"){1}("+arguments.join("|")+")+";
+var commandsRegex = "([\/]{1}"+commands.join("|")+")?("+arguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
 
 /**
