@@ -27,7 +27,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  //bot.responseTest();
   this.res.end("Hi, I'm scytalia. And I totally work.");
 }
-

@@ -1,82 +1,75 @@
-var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var HTTPS = require('https');
 var Spreadsheet = require('edit-google-spreadsheet');
+var commands = require('./commands.js');
 require('dotenv').load();
 require("colors");
 
-var superpowers = require('./superpowers.js');
+const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
+var API = require('groupme').Stateless
+var ItIsWhatItIs_ID = 14734775;
 
 var debugging = false;
-
-// add a bot thought process tree on an interval that gets cleared upon final function success / fail
-
-     /*
-     if (key=='/cool guy')
-       botResponse = cool();
-     else if (key=='/scores')
-       botResponse = botCommand('scores');
-     else if (key=='/bottle')
-       botResponse = "Who's got bottle service?";
-     else if (key=='/roster')
-       botResponse = "The players on the team are...";
-     else if (key=='/player\'s score')
-       botResponse = "x\'s total points are...";
-     */
+var responding = false;
 
 var botID = process.env.BOT_ID;
 if (debugging)
   botID = 6;
-var botResponse = "burrito";
-var respondTo;
-
-var commands = [
-        'cool',
-        'scores',
-        'suck'
-  ];
-var comandsArguments = ["add","undo","my"];
-var commandsRegex = "([//]{1}"+commands.join("|")+")?("+comandsArguments.join("|")+")?";
-commandsRegex = new RegExp(commandsRegex, "gi");
+var defaultResponse = "burrito";
 
 function respond() {
   if (this.req == undefined) {
-    botResponse = 'undefined';
+    defaultResponse = 'undefined';
     return;
   }
   if (this.req == null) {
-    botResponse = 'null';
+    defaultResponse = 'null';
     return;
   }
   if (this.req.chunks == undefined) {
-    botResponse = 'undefined chunks';
+    defaultResponse = 'undefined chunks';
     return;
   }
   if (this.req.chunks == null) {
-    botResponse = 'null chunks';
+    defaultResponse = 'null chunks';
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
-  if (request.text && request.text.match(commandsRegex)) {
- //   if (request.name) 
- //     respondTo = request.name;
- //   else
- //     respondTo = 'whoever you are';
+
+  if (request.text && request.name && commands.matches(request.text)) {
+    if (request.name)
+      commands.activate(request.text,request.name);
+    else
+      commands.activate(request.text);
+    likeMessage(request.id);
     this.res.writeHead(200);
-    messageCheck(request.text);
     this.res.end();
   } else {
-  //  console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
   }
 };
 
-function responseTest() {
-//  if (commandsRegex.test(imaginaryMessage))
- //   messageCheck(imaginaryMessage);
-   var testMessage =  'scores add Coco 2:0 Mike 3:0 Oberg 3:0 Danny 3:0 Civi 3:0';
-   testMessage = 'suck my dick';
-messageCheck(testMessage);
+var thinker; // the timeout function
+var thoughts = []; // the thoughts to be posted
+function addThought(thought) {
+  thoughts.push(thought);
+  think();
+};
+
+function think() {
+  clearTimeout(thinker);
+  var speedofthought = 6000;
+  thinker = setTimeout(responder,speedofthought);
+};
+
+var responder = function() {
+  if (!responding)
+    return;
+  if (thoughts.length==1)
+    postMessage(thoughts.shift());
+  else if (thoughts.length>0)
+    postMessage(thoughts.join('.. '));
 };
 
 function postMessage(message) {
@@ -110,18 +103,16 @@ function postMessage(message) {
   if (debugging)
     return;
   botReq.end(JSON.stringify(body));
-}
- 
-function messageCheck(message) {
-  var command = message.match(commandsRegex)[0];
-  var argument = message.match(commandsRegex)[2];
-  // do message - command - argument
-  console.log('Command:'+command);
-  console.log('Argument:'+argument);
-  superpowers.availablePowers(command,argument,message);
 };
 
+// implementation intent is for liked messages to confirm receivement of commands
+function likeMessage(message_id) {API.Likes.create(ACCESS_TOKEN, ItIsWhatItIs_ID,message_id, function(err,ret) {});}
+
+function test(testMessage) {
+  commands.activate(testMessage,'nobody smith');
+};
 
 exports.respond = respond;
 exports.postMessage = postMessage;
-exports.responseTest = responseTest;
+exports.addThought = addThought;
+exports.test = test;

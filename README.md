@@ -2,20 +2,8 @@
 
 ## Introduction
 
-This project shows the capability of a bot to react to messages sent within a group.
+  Pool League GroupMe chat bot
+  
+  Dedicated to Francis Fry Fernandez, 'ex' Captain of It Is What It Is
 
-Version 0.0.1
-Spreadsheet access.
-
-## Contents
-
-  * [this is in brackets](#hashtag parantheses)
-    * asterisk
-  * Forked from and built upon
-   * https://github.com/groupme/bot-tutorial-nodejs
-
-## Requirements:
-
-  * GroupMe account
-  * Heroku account
-  * [Heroku Toolbelt](https://toolbelt.heroku.com/)
+Version 0.0.3
