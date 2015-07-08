@@ -33,8 +33,8 @@ var arguments = [
   "who",
   "what"
 ];
-var commandsRegex = "((\/){1}("+commands.join("|")+")?)("+arguments.join("|")+")?";
-commandsRegex = new RegExp(commandsRegex, "gix");
+var commandsRegex = "((\/){1}"+commands.join("|")+")?("+arguments.join("|")+")?";
+commandsRegex = new RegExp(commandsRegex, "gi");
 
 /**
 * checks regex matches
