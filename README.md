@@ -1,18 +1,23 @@
 # scytalia
 
+### Current Stable Version: 0.0.3
+
+## Version History
+
 v0.0.0
 6/28/2015
 ...
 
 v0.0.1
 7/2/2015
-Superpowers introduced,
-commands regex mostly works
+commands introduced,
 
 v0.0.2
 7/5/2015
-superpowers restructured into commands.js
-commands structure solidifed
+commands restructured
 
 v0.0.3
+7/7/2015
 bottle added
+groupme added
+like confirmation added
