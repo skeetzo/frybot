@@ -5,7 +5,12 @@ var commands = require('./commands.js');
 require('dotenv').load();
 require("colors");
 
+const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
+var API = require('groupme').Stateless
+var ItIsWhatItIs_ID = 14734775;
+
 var debugging = false;
+var responding = false;
 
 var botID = process.env.BOT_ID;
 if (debugging)
@@ -36,6 +41,7 @@ function respond() {
       commands.activate(request.text,request.name);
     else
       commands.activate(request.text);
+    likeMessage(request.id);
     this.res.writeHead(200);
     this.res.end();
   } else {
@@ -58,6 +64,8 @@ function think() {
 };
 
 var responder = function() {
+  if (!responding)
+    return;
   if (thoughts.length==1)
     postMessage(thoughts.shift());
   else if (thoughts.length>0)
@@ -97,6 +105,14 @@ function postMessage(message) {
   botReq.end(JSON.stringify(body));
 };
 
+// implementation intent is for liked messages to confirm receivement of commands
+function likeMessage(message_id) {API.Likes.create(ACCESS_TOKEN, ItIsWhatItIs_ID,message_id, function(err,ret) {});};
+
+function test(testMessage) {
+  commands.activate(testMessage,'nobody smith');
+};
+
 exports.respond = respond;
 exports.postMessage = postMessage;
 exports.addThought = addThought;
+exports.test = test;

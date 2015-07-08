@@ -1,6 +1,7 @@
 {
   "name": "scytalia",
   "version": "0.0.1",
+  "author": "brainlessdg13",
   "description": "testing bot",
   "main": "index.js",
   "scripts": {
