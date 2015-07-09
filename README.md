@@ -9,12 +9,12 @@
 
 ## Commands
   
-  /bottle who|what
-  /cool
-  /scores add|undo
-  /suck my|his
+  /bottle who|what  
+  /cool  
+  /scores add|undo  
+  /suck my|his  
 
 ## Cron Jobs
 
-  ### reminder
-        called every Monday at 7:30
+### reminder
+  called every Monday at 7:30
