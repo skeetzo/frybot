@@ -21,3 +21,4 @@ v0.0.3
 bottle added
 groupme added
 like confirmation added
+reminder/cron added

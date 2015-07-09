@@ -1,7 +1,8 @@
 var http, director, bot, router, server, port;
-bot         = require('./bot.js');
-director    = require('director');
-http        = require('http');
+bot = require('./bot.js');
+director = require('director');
+http = require('http');
+require('dotenv').load();
 
 router = new director.http.Router({
   '/' : {
@@ -27,5 +28,20 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hi, I'm scytalia. And I totally work.");
+  this.res.end("Hi, I'm "+process.env.NAME+". And I totally work.");
 }
+
+var CronJob = require('cron').CronJob;
+var job = new CronJob({
+  cronTime: '00 30 19 * * 1',
+  onTick: function() {
+    /*
+     * Runs every Monday
+     * at 7:30:00 PM.
+     */
+     bot.reminder();
+  },
+  start: true,
+  timeZone: 'America/Los_Angeles'
+});
+//job.start();

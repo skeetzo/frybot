@@ -7,7 +7,7 @@ require("colors");
 
 const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
 var API = require('groupme').Stateless
-var ItIsWhatItIs_ID = 14734775;
+var ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
 
 var debugging = false;
 var responding = true;
@@ -35,7 +35,6 @@ function respond() {
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
-
   if (request.text && request.name && commands.matches(request.text)) {
     if (request.name)
       commands.activate(request.text,request.name);
@@ -75,13 +74,11 @@ var responder = function() {
 
 function postMessage(message) {
   var options, body, botReq;
-
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
     method: 'POST'
   };
-
   body = {
     "bot_id" : botID,
     "text" : message
@@ -94,7 +91,6 @@ function postMessage(message) {
         console.log('rejecting bad status code ' + res.statusCode);
       }
   });
-
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
   });
@@ -109,11 +105,28 @@ function postMessage(message) {
 // implementation intent is for liked messages to confirm receivement of commands
 function likeMessage(message_id) {API.Likes.create(ACCESS_TOKEN, ItIsWhatItIs_ID,message_id, function(err,ret) {});};
 
+function reminder() {
+  var message = 'Weekly Bottle Reminder- ';
+  API.Groups.show(ACCESS_TOKEN, ItIsWhatItIs_ID,function(err,ret) {
+    if (!err) {
+      var members = [];
+      ret.members.forEach(function(member) {members.push(member.nickname);});
+      var whom = Math.round(Math.random(0,members.length));
+      message+=members[whom];
+      postMessage(message);
+    }
+  });  
+
+
+
+}
+
 function test(testMessage) {
-  commands.activate(testMessage,'nobody smith');
+  postMessage(testMessage);
 };
 
 exports.respond = respond;
 exports.postMessage = postMessage;
 exports.addThought = addThought;
+exports.reminder = reminder;
 exports.test = test;
