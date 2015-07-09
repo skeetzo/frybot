@@ -1,4 +1,5 @@
 # frybot
+### Current Stable Version: 0.0.3
 
 ## Introduction
 
@@ -6,4 +7,14 @@
   
   Dedicated to Francis Fry Fernandez, 'ex' Captain of It Is What It Is
 
-Version 0.0.3
+## Commands
+  
+  /bottle who|what
+  /cool
+  /scores add|undo
+  /suck my|his
+
+## Cron Jobs
+
+  ### reminder
+        called every Monday at 7:30

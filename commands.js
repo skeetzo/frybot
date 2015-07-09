@@ -2,23 +2,36 @@ var bot = require('./bot.js');
 var cool = require('cool-ascii-faces');
 var Spreadsheet = require('edit-google-spreadsheet');
 var moment = require ('moment');
+require('dotenv').load();
 require("colors");
 
 const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
 var API = require('groupme').Stateless
-var ItIsWhatItIs_ID = 7054026;
+var ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
 
 var debugging = false;
+var doesnotwork = true;
 
 var this_ = this;
 
 /**
-* does
+* template
 *
-* @param {number} num - The number for things
-* @return {number}
+* arguments: things
+*
+* thoughts: 
+*    yeah suck sender's message!
+*    yeah suck his message!
+*      wait, what?
+*   What about sucking sender's message?
+*
+* @param {string} argument - The argument to call
+* @param {string} message - The message it's from
+* @param {string} sender - The sender it's from
+* @calls {bot.addThought(thoughts)}
 */
 
+// list of all available commands and arguments
 var commands = [
   'cool',
   'scores',
@@ -33,7 +46,7 @@ var arguments = [
   "who",
   "what"
 ];
-var commandsRegex = "([\/]{1}"+commands.join("|")+")?("+arguments.join("|")+")?";
+var commandsRegex = "(\/"+commands.join("|")+")?("+arguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
 
 /**
@@ -46,7 +59,6 @@ function matches(message) {
   return message.match(commandsRegex);
 };
 
-
 /**
 * filter function activates the command process to be run
 *
@@ -55,15 +67,21 @@ function matches(message) {
 * @calls {run(command,argument,message,sender)}
 */
 function activate(message, sender) {
-  var command = message.match(commandsRegex)[0];
-  var argument = message.match(commandsRegex)[2];
+  var command = message.match(commandsRegex)[1];
+  var argument = message.match(commandsRegex)[3];
   // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
   message = message.substring(command.length+argument.length+1);
+  if (debugging) {
+    console.log('regex: '+message.match(commandsRegex).toString());
+    console.log('command: '+command);
+    console.log('argument: '+argument);
+    console.log('message: '+message);
+    return;
+  }
   var i = sender.indexOf(' ');
   sender = sender.substring(0,i);
   run(command,argument,message,sender);
 };
-
 
 /**
 * runs the command
@@ -74,9 +92,7 @@ function activate(message, sender) {
 * @param {string} sender - the string containing the name of the sender; already parsed into just the first name
 * @calls {this[command](argument, message, sender)}
 */
-function run(command, argument, message, sender) {
-    this_[command](argument, message, sender);
-};
+function run(command, argument, message, sender) {this_[command](argument, message, sender);};
 
 var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
 var nameRegex = '[A-Za-z]+';
@@ -116,6 +132,7 @@ function cool() {
 */
 function scores(argument, message, sender) {
 
+  // used to parse the stats from the message
   function parseForScores(text) {
     // Parse parsedStats
     var newStats = [];
@@ -157,7 +174,7 @@ function scores(argument, message, sender) {
     // Add parsedStats
     var startRow;
     var endRow;
-    return newStats;
+    return newStats; // parsed stats
   };
 
   function addScores(stats) {
@@ -202,6 +219,7 @@ function scores(argument, message, sender) {
       });
     });
   };
+  // doesn't work
   function undoScores(stats) {
     Spreadsheet.load({
       debug: true,
@@ -235,7 +253,7 @@ function scores(argument, message, sender) {
           var jsonObj = JSON.parse(all);
           spreadsheet.add(jsonObj); // adds row one by one
         }
-        if (debugging)
+        if (debugging||doesnotwork)
           return;
         spreadsheet.send(function(err) {
           if(err) console.log(err);
@@ -302,11 +320,8 @@ this.suck = suck;
 * arguments: who, what
 *
 * thoughts: 
-*   What about the scores sender?
-*     Adding scores! I think...
-*     fix your own mistakes
-*       Scores added!
-*       Scores undone!
+*   bottle fail
+*     [random name] on duty
 *
 * @param {string} argument - The argument to call
 * @param {string} message - The message it's from
@@ -325,7 +340,8 @@ function bottle(argument, message, sender) {
       });    
     };
     bottle.what = function() {
-      bots.addThought('rum');
+      var bottles = ['rum','vodka','whiskey','jaeger'];
+      bots.addThought(bottles[Math.random(0,bottles.length)]);
     };
     if (argument)
       this.bottle[argument]();
@@ -333,8 +349,6 @@ function bottle(argument, message, sender) {
       bot.addThought('bottle fail');
 };
 this.bottle = bottle;
-
-
 
 exports.matches = matches;
 exports.activate = activate;
