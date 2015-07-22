@@ -8,6 +8,7 @@ require("colors");
 const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
 var API = require('groupme').Stateless
 var ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
+var currentSeasonStatsSheet = 'Current Season Stats';
 
 var debugging = false;
 var doesnotwork = true;
@@ -183,7 +184,7 @@ function scores(argument, message, sender) {
       spreadsheetName: 'NEW It Is What It Is Tracker',
       spreadsheetId: '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08',
       worksheetId: "ot3ufy3",
-      worksheetName: 'Stats Form Responses',
+      worksheetName: currentSeasonStatsSheet,
       oauth : {
         email: '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com',
         keyFile: 'secret.pem'
@@ -211,8 +212,8 @@ function scores(argument, message, sender) {
           spreadsheet.add(jsonObj); // adds row one by one
         }
        if (debugging)
-			   return;
-	     spreadsheet.send(function(err) {
+         return;
+       spreadsheet.send(function(err) {
           if(err) console.log(err);
             bot.addThought('Scores added!');
         });
@@ -226,7 +227,7 @@ function scores(argument, message, sender) {
       spreadsheetName: 'NEW It Is What It Is Tracker',
       spreadsheetId: '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08',
       worksheetId: "ot3ufy3",
-      worksheetName: 'Stats Form Responses',
+      worksheetName: currentSeasonStatsSheet,
       oauth : {
         email: '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com',
         keyFile: 'secret.pem'
