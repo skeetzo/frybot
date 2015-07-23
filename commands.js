@@ -8,6 +8,7 @@ require("colors");
 const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
 var API = require('groupme').Stateless
 var ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
+var currentSeasonStatsSheet = 'Current Season Stats';
 
 var debugging = false;
 var doesnotwork = true;
@@ -70,7 +71,7 @@ function activate(message, sender) {
   var command = message.match(commandsRegex)[1];
   var argument = message.match(commandsRegex)[3];
   // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
-  message = message.substring(command.length+argument.length+1);
+  message = message.substring(1+command.length+1+argument.length+1);
   if (debugging) {
     console.log('regex: '+message.match(commandsRegex).toString());
     console.log('command: '+command);
@@ -183,7 +184,7 @@ function scores(argument, message, sender) {
       spreadsheetName: 'NEW It Is What It Is Tracker',
       spreadsheetId: '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08',
       worksheetId: "ot3ufy3",
-      worksheetName: 'Stats Form Responses',
+      worksheetName: currentSeasonStatsSheet,
       oauth : {
         email: '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com',
         keyFile: 'secret.pem'
@@ -211,8 +212,8 @@ function scores(argument, message, sender) {
           spreadsheet.add(jsonObj); // adds row one by one
         }
        if (debugging)
-			   return;
-	     spreadsheet.send(function(err) {
+         return;
+       spreadsheet.send(function(err) {
           if(err) console.log(err);
             bot.addThought('Scores added!');
         });
@@ -226,7 +227,7 @@ function scores(argument, message, sender) {
       spreadsheetName: 'NEW It Is What It Is Tracker',
       spreadsheetId: '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08',
       worksheetId: "ot3ufy3",
-      worksheetName: 'Stats Form Responses',
+      worksheetName: currentSeasonStatsSheet,
       oauth : {
         email: '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com',
         keyFile: 'secret.pem'
