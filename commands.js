@@ -5,15 +5,27 @@ var moment = require ('moment');
 require('dotenv').load();
 require("colors");
 
-const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
-var API = require('groupme').Stateless
-var ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
-var currentSeasonStatsSheet = 'Current Season Stats';
+
 
 var debugging = false;
 var doesnotwork = true;
 
 var this_ = this;
+
+
+// GroupMe API
+const GROUPME_ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
+var GROUPME_API = require('groupme').Stateless
+var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
+
+// Google
+var ItIsWhatItIs_serviceEmail = '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com';
+var ItIsWhatItIs_keyFile = 'secret.pem';
+var ItIsWhatItIs_SpreadsheetName = 'NEW It Is What It Is Tracker';
+var ItIsWhatItIs_SpreadsheetID = '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08';
+    // scores
+var ItIsWhatItIs_statsSheetName = 'Current Season Stats';
+var ItIsWhatItIs_statsSheetID = 'ot3ufy3';
 
 /**
 * template
@@ -72,6 +84,7 @@ function activate(message, sender) {
   var argument = message.match(commandsRegex)[3];
   // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
   message = message.substring(1+command.length+1+argument.length+1);
+                            // slash + space + space
   if (debugging) {
     console.log('regex: '+message.match(commandsRegex).toString());
     console.log('command: '+command);
@@ -181,13 +194,13 @@ function scores(argument, message, sender) {
   function addScores(stats) {
     Spreadsheet.load({
       debug: true,
-      spreadsheetName: 'NEW It Is What It Is Tracker',
-      spreadsheetId: '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08',
-      worksheetId: "ot3ufy3",
-      worksheetName: currentSeasonStatsSheet,
+      spreadsheetName: ItIsWhatItIs_SpreadsheetName,
+      spreadsheetId: ItIsWhatItIs_SpreadsheetID,
+      worksheetId: ItIsWhatItIs_statsSheetID,
+      worksheetName: ItIsWhatItIs_statsSheetName,
       oauth : {
-        email: '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com',
-        keyFile: 'secret.pem'
+        email: ItIsWhatItIs_serviceEmail,
+        keyFile: ItIsWhatItIs_keyFile
       }
     }, 
     function sheetReady(err, spreadsheet) {
@@ -224,13 +237,13 @@ function scores(argument, message, sender) {
   function undoScores(stats) {
     Spreadsheet.load({
       debug: true,
-      spreadsheetName: 'NEW It Is What It Is Tracker',
-      spreadsheetId: '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08',
-      worksheetId: "ot3ufy3",
-      worksheetName: currentSeasonStatsSheet,
+      spreadsheetName: ItIsWhatItIs_SpreadsheetName,
+      spreadsheetId: ItIsWhatItIs_SpreadsheetID,
+      worksheetId: ItIsWhatItIs_statsSheetID,
+      worksheetName: ItIsWhatItIs_statsSheetName,
       oauth : {
-        email: '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com',
-        keyFile: 'secret.pem'
+        email: ItIsWhatItIs_serviceEmail,
+        keyFile: ItIsWhatItIs_keyFile
       }
     }, 
     function sheetReady(err, spreadsheet) {
@@ -331,7 +344,7 @@ this.suck = suck;
 */
 function bottle(argument, message, sender) {
     bottle.who = function() {
-      API.Groups.show(ACCESS_TOKEN, ItIsWhatItIs_ID,function(err,ret) {
+      GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
         if (!err) {
           var members = [];
           ret.members.forEach(function(member) {members.push(member.nickname);});
