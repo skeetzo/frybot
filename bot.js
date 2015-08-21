@@ -10,7 +10,7 @@ var API = require('groupme').Stateless
 var ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
 
 var debugging = false;
-var responding = true;
+var responding = false;
 
 var botID = process.env.BOT_ID;
 if (debugging)
