@@ -106,16 +106,17 @@ function postMessage(message) {
 function likeMessage(message_id) {API.Likes.create(ACCESS_TOKEN, ItIsWhatItIs_ID,message_id, function(err,ret) {});};
 
 function reminder() {
-  var message = 'Weekly Bottle Reminder- ';
-  API.Groups.show(ACCESS_TOKEN, ItIsWhatItIs_ID,function(err,ret) {
-    if (!err) {
-      var members = [];
-      ret.members.forEach(function(member) {members.push(member.nickname);});
-      var whom = Math.round(Math.random(0,members.length));
-      message+=members[whom];
-      postMessage(message);
-    }
-  });  
+  var message = 'Weekly Bottle Reminder';
+  // API.Groups.show(ACCESS_TOKEN, ItIsWhatItIs_ID,function(err,ret) {
+  //   if (!err) {
+  //     var members = [];
+  //     ret.members.forEach(function(member) {members.push(member.nickname);});
+  //     var whom = Math.round(Math.random(0,members.length));
+  //     message+=members[whom];
+  //     postMessage(message);
+  //   }
+  // });  
+  postMessage(message);
 }
 
 function test(testMessage) {
