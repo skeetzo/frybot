@@ -32,16 +32,16 @@ function ping() {
 }
 
 var CronJob = require('cron').CronJob;
-var job = new CronJob({
-  cronTime: '00 00 14 * * 0-6',
-  onTick: function() {
-    /*
-     * Runs every Monday
-     * at 7:30:00 PM.
-     */
-     bot.reminder();
+var job = new CronJob('00 10 15 * * 0-6', function() {
+  bot.reminder();
+  /*
+   * Runs every weekday (Monday through Friday)
+   * at 11:30:00 AM. It does not run on Saturday
+   * or Sunday.
+   */
+  }, function () {
+    /* This function is executed when the job stops */
   },
-  start: true,
-  timeZone: 'America/Los_Angeles'
-});
- job.start();
+  true, /* Start the job right now */
+  timeZone /* Time zone of this job. */
+);
