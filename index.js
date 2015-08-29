@@ -32,7 +32,7 @@ function ping() {
 }
 
 var CronJob = require('cron').CronJob;
-var job = new CronJob('00 10 15 * * 0-6', function() {
+var job = new CronJob('00 15 16 * * 0-6', function() {
   bot.reminder();
   /*
    * Runs every weekday (Monday through Friday)
