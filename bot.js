@@ -5,12 +5,13 @@ var commands = require('./commands.js');
 require('dotenv').load();
 require("colors");
 
-const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
-var API = require('groupme').Stateless
-var ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
+// GroupMe API
+const GROUPME_ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
+var GROUPME_API = require('groupme').Stateless
+var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
 
 var debugging = false;
-var responding = false;
+var responding = true;
 
 var botID = process.env.BOT_ID;
 if (debugging)
@@ -103,28 +104,22 @@ function postMessage(message) {
 };
 
 // implementation intent is for liked messages to confirm receivement of commands
-function likeMessage(message_id) {API.Likes.create(ACCESS_TOKEN, ItIsWhatItIs_ID,message_id, function(err,ret) {});};
+function likeMessage(message_id) {GROUPME_API.Likes.create(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,message_id, function(err,ret) {});};
 
 function reminder() {
-  var message = 'Weekly Bottle Reminder';
-  // API.Groups.show(ACCESS_TOKEN, ItIsWhatItIs_ID,function(err,ret) {
-  //   if (!err) {
-  //     var members = [];
-  //     ret.members.forEach(function(member) {members.push(member.nickname);});
-  //     var whom = Math.round(Math.random(0,members.length));
-  //     message+=members[whom];
-  //     postMessage(message);
-  //   }
-  // });  
-  postMessage(message);
+  var message = 'Weekly Bottle Reminder- ';
+  GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
+    if (!err) {
+      var members = [];
+      ret.members.forEach(function(member) {members.push(member.nickname);});
+      var whom = Math.round(Math.random(0,members.length));
+      message+=members[whom];
+      postMessage(message);
+    }
+  });  
 }
-
-function test(testMessage) {
-  postMessage(testMessage);
-};
 
 exports.respond = respond;
 exports.postMessage = postMessage;
 exports.addThought = addThought;
 exports.reminder = reminder;
-exports.test = test;
