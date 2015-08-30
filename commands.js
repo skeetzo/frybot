@@ -209,7 +209,7 @@ function scores(argument, message, sender) {
         if(err) throw err;
         startRow = info.lastRow+1;
         endRow = startRow + stats.length;
-        for (var i = startRow,r=0;i < endRow;i++,r++) {
+        for (var i = startRow;i < endRow;i++) {
           var front = "{\""+i+"\": { ";
           var tail = "} }";
           var middle = "";
