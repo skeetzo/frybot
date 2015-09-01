@@ -33,8 +33,7 @@ function ping() {
 
 var CronJob = require('cron').CronJob;
 var job = new CronJob({
-//  cronTime: '00 30 19 * * 1',
-  cronTime: '00 10 13 * * *',
+  cronTime: '00 30 19 * * 1',
   onTick: function() {
     /*
      * Runs every Monday
