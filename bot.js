@@ -112,14 +112,19 @@ function reminder() {
     if (!err) {
       var members = [];
       ret.members.forEach(function(member) {members.push(member.nickname);});
-      var whom = Math.round(Math.random(0,members.length));
+      var whom = Math.round(Math.random(0,members.length-1));
       message+=members[whom];
       postMessage(message);
     }
   });  
 }
 
+function test(testMessage) {
+  postMessage(testMessage);
+};
+
 exports.respond = respond;
 exports.postMessage = postMessage;
 exports.addThought = addThought;
 exports.reminder = reminder;
+exports.test = test;
