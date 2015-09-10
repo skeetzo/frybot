@@ -110,7 +110,7 @@ function postMessage(message) {
 function likeMessage(message_id) {GROUPME_API.Likes.create(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,message_id, function(err,ret) {});};
 
 function bottleReminder() {
-  postMessage('Weekly Bottle Reminder- '+commands.getBottleDuty());
+  postMessage('Weekly Bottle Reminder- '+commands.bottleDuty());
 }
 
 function poke() {
