@@ -11,12 +11,15 @@ var GROUPME_API = require('groupme').Stateless
 var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
 
 var debugging = false;
-var responding = true;
+var responding = false;
 
 var botID = process.env.BOT_ID;
 if (debugging)
   botID = 6;
 var defaultResponse = "burrito";
+
+// bottle number needs to be saved somewhere or else remembered while it's on for weeks at a time?
+// update .env variable?
 
 function respond() {
   if (this.req == undefined) {
@@ -106,17 +109,12 @@ function postMessage(message) {
 // implementation intent is for liked messages to confirm receivement of commands
 function likeMessage(message_id) {GROUPME_API.Likes.create(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,message_id, function(err,ret) {});};
 
-function reminder() {
-  var message = 'Weekly Bottle Reminder- ';
-  GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
-    if (!err) {
-      var members = [];
-      ret.members.forEach(function(member) {members.push(member.nickname);});
-      var whom = Math.round(Math.random(0,members.length));
-      message+=members[whom];
-      postMessage(message);
-    }
-  });  
+function bottleReminder() {
+  postMessage('Weekly Bottle Reminder- '+commands.getBottleDuty());
+}
+
+function poke() {
+
 }
 
 function test(testMessage) {
@@ -126,5 +124,5 @@ function test(testMessage) {
 exports.respond = respond;
 exports.postMessage = postMessage;
 exports.addThought = addThought;
-exports.reminder = reminder;
+exports.bottleReminder = bottleReminder;
 exports.test = test;

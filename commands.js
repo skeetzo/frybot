@@ -26,7 +26,8 @@ var ItIsWhatItIs_SpreadsheetID = '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08';
     // scores
 var ItIsWhatItIs_statsSheetName = 'Current Season Stats';
 var ItIsWhatItIs_statsSheetID = 'ot3ufy3';
-
+var ItIsWhatItIs_frybotSheetName = 'frybot';
+var ItIsWhatItIs_frybotSheetID = 'frybot';
 /**
 * template
 *
@@ -214,7 +215,8 @@ function scores(argument, message, sender) {
           var tail = "} }";
           var middle = "";
           var splitStats = stats[r].toString().split(",");
-          for (var col = 1; col<=splitStats.length;col++) {   // for each column of data into cells by ,
+          // for each column of data into cells by
+          for (var col = 1; col<=splitStats.length;col++) {   
             if (col==splitStats.length)
               middle += "\""+col+"\": \""+splitStats[col-1]+"\""; // particular json seperation and labeling
             else
@@ -257,7 +259,8 @@ function scores(argument, message, sender) {
           var tail = "} }";
           var middle = "";
           var splitStats = stats[r].toString().split(",");
-          for (var col = 1; col<=splitStats.length;col++) {   // for each column of data into cells by ,
+          // for each column of data into cells by
+          for (var col = 1; col<=splitStats.length;col++) {   
             if (col==splitStats.length)
               middle += "\""+col+"\": \" \""; // particular json seperation and labeling
             else
@@ -364,5 +367,56 @@ function bottle(argument, message, sender) {
 };
 this.bottle = bottle;
 
+function bottleDuty() {
+  var person = '';
+
+  Spreadsheet.load({
+    debug: true,
+    spreadsheetId: ItIsWhatItIs_SpreadsheetID,
+    // worksheetId: ItIsWhatItIs_frybotSheetID,
+    worksheetName: ItIsWhatItIs_frybotSheetName,
+    oauth : {
+      email: ItIsWhatItIs_serviceEmail,
+      keyFile: ItIsWhatItIs_keyFile
+    }
+  }, 
+  function sheetReady(err, spreadsheet) {
+    if(err) throw err;
+    spreadsheet.receive(function(err, rows, info) {
+      if(err) throw err;
+      var players = [];
+      rows = _.toArray(rows);
+      _.forEach(rows, function(col) {
+        players.push(col[1]);
+      });
+      person = players[0];
+      players.push(players.shift());
+      for (var i = startRow;i < endRow;i++) {
+        var front = "{\""+i+"\": { ";
+        var tail = "} }";
+        var middle = "";
+        // for each column of data into cells by
+        for (var col = 1; col<=players.length;col++) {   
+          if (col==players.length)
+            middle += "\""+col+"\": \""+players[col-1]+"\""; // particular json seperation and labeling
+          else
+            middle += "\""+col+"\": \""+players[col-1]+"\","; // particular json seperation and labeling
+        }
+        var all = front + middle + tail;
+        var jsonObj = JSON.parse(all);
+        spreadsheet.add(jsonObj); // adds row one by one
+      }
+      spreadsheet.send(function(err) {
+        if(err) console.log(err);
+        return person;
+      });
+    });
+  });
+
+  
+
+}
+
 exports.matches = matches;
 exports.activate = activate;
+exports.bottleDuty = bottleDuty;
