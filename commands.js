@@ -2,6 +2,7 @@ var bot = require('./bot.js');
 var cool = require('cool-ascii-faces');
 var Spreadsheet = require('edit-google-spreadsheet');
 var moment = require ('moment');
+var _ = require('underscore');
 require('dotenv').load();
 require("colors");
 
@@ -27,7 +28,7 @@ var ItIsWhatItIs_SpreadsheetID = '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08';
 var ItIsWhatItIs_statsSheetName = 'Current Season Stats';
 var ItIsWhatItIs_statsSheetID = 'ot3ufy3';
 var ItIsWhatItIs_frybotSheetName = 'frybot';
-var ItIsWhatItIs_frybotSheetID = 'frybot';
+var ItIsWhatItIs_frybotSheetID = 'om5ojbr';
 /**
 * template
 *
@@ -230,7 +231,7 @@ function scores(argument, message, sender) {
          return;
        spreadsheet.send(function(err) {
           if(err) console.log(err);
-            bot.addThought('Scores added!');
+            // bot.addThought('Scores added!');
         });
       });
     });
@@ -274,7 +275,7 @@ function scores(argument, message, sender) {
           return;
         spreadsheet.send(function(err) {
           if(err) console.log(err);
-            bot.addThought('Scores undone!');
+            // bot.addThought('Scores undone!');
         });
       });
     });
@@ -368,13 +369,12 @@ function bottle(argument, message, sender) {
 this.bottle = bottle;
 
 function bottleDuty() {
-  var person = '';
-
+  var person = 'Nico duh';
   Spreadsheet.load({
     debug: true,
     spreadsheetId: ItIsWhatItIs_SpreadsheetID,
-    // worksheetId: ItIsWhatItIs_frybotSheetID,
-    worksheetName: ItIsWhatItIs_frybotSheetName,
+    worksheetId: ItIsWhatItIs_frybotSheetID,
+    // worksheetName: ItIsWhatItIs_frybotSheetName,
     oauth : {
       email: ItIsWhatItIs_serviceEmail,
       keyFile: ItIsWhatItIs_keyFile
@@ -386,35 +386,35 @@ function bottleDuty() {
       if(err) throw err;
       var players = [];
       rows = _.toArray(rows);
+      rows.shift();
+      console.log(rows);
       _.forEach(rows, function(col) {
         players.push(col[1]);
       });
       person = players[0];
+      // var temp = players.shift
       players.push(players.shift());
-      for (var i = startRow;i < endRow;i++) {
-        var front = "{\""+i+"\": { ";
+      for (var row = 2;row < players.length+2;row++) {
+        var front = "{\""+row+"\": { ";
         var tail = "} }";
         var middle = "";
         // for each column of data into cells by
-        for (var col = 1; col<=players.length;col++) {   
-          if (col==players.length)
-            middle += "\""+col+"\": \""+players[col-1]+"\""; // particular json seperation and labeling
-          else
-            middle += "\""+col+"\": \""+players[col-1]+"\","; // particular json seperation and labeling
-        }
+        if (row==players.length)
+          middle += "\"1\": \""+players[row-2]+"\""; // particular json seperation and labeling
+        else
+          middle += "\"1\": \""+players[row-2]+"\""; // particular json seperation and labeling
         var all = front + middle + tail;
+        // console.log('all: '+all);
         var jsonObj = JSON.parse(all);
         spreadsheet.add(jsonObj); // adds row one by one
       }
       spreadsheet.send(function(err) {
         if(err) console.log(err);
-        return person;
+        // console.log('person: '+person);
+        bot.addThought('Weekly Bottle Reminder- '+person);
       });
     });
   });
-
-  
-
 }
 
 exports.matches = matches;

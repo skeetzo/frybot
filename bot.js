@@ -11,7 +11,7 @@ var GROUPME_API = require('groupme').Stateless
 var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
 
 var debugging = false;
-var responding = false;
+var responding = true;
 
 var botID = process.env.BOT_ID;
 if (debugging)
@@ -70,7 +70,7 @@ function think() {
 var responder = function() {
   if (!responding)
     return;
-  if (thoughts.length==1)
+  if (thoughts.length>=1)
     postMessage(thoughts.shift());
   else if (thoughts.length>0)
     postMessage(thoughts.join('.. '));
@@ -110,11 +110,11 @@ function postMessage(message) {
 function likeMessage(message_id) {GROUPME_API.Likes.create(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,message_id, function(err,ret) {});};
 
 function bottleReminder() {
-  postMessage('Weekly Bottle Reminder- '+commands.bottleDuty());
+  commands.bottleDuty();
 }
 
 function poke() {
-
+  think();
 }
 
 function test(testMessage) {
