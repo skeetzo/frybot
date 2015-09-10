@@ -2,19 +2,33 @@ var bot = require('./bot.js');
 var cool = require('cool-ascii-faces');
 var Spreadsheet = require('edit-google-spreadsheet');
 var moment = require ('moment');
+var _ = require('underscore');
 require('dotenv').load();
 require("colors");
 
-const ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
-var API = require('groupme').Stateless
-var ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
-var currentSeasonStatsSheet = 'Current Season Stats';
+
 
 var debugging = false;
 var doesnotwork = true;
 
 var this_ = this;
 
+
+// GroupMe API
+const GROUPME_ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
+var GROUPME_API = require('groupme').Stateless
+var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
+
+// Google
+var ItIsWhatItIs_serviceEmail = '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com';
+var ItIsWhatItIs_keyFile = 'secret.pem';
+var ItIsWhatItIs_SpreadsheetName = 'NEW It Is What It Is Tracker';
+var ItIsWhatItIs_SpreadsheetID = '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08';
+    // scores
+var ItIsWhatItIs_statsSheetName = 'Current Season Stats';
+var ItIsWhatItIs_statsSheetID = 'ot3ufy3';
+var ItIsWhatItIs_frybotSheetName = 'frybot';
+var ItIsWhatItIs_frybotSheetID = 'om5ojbr';
 /**
 * template
 *
@@ -71,7 +85,8 @@ function activate(message, sender) {
   var command = message.match(commandsRegex)[1];
   var argument = message.match(commandsRegex)[3];
   // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
-  message = message.substring(command.length+argument.length+1);
+  message = message.substring(1+command.length+1+argument.length+1);
+                            // slash + space + space
   if (debugging) {
     console.log('regex: '+message.match(commandsRegex).toString());
     console.log('command: '+command);
@@ -181,13 +196,13 @@ function scores(argument, message, sender) {
   function addScores(stats) {
     Spreadsheet.load({
       debug: true,
-      spreadsheetName: 'NEW It Is What It Is Tracker',
-      spreadsheetId: '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08',
-      worksheetId: "ot3ufy3",
-      worksheetName: currentSeasonStatsSheet,
+      spreadsheetName: ItIsWhatItIs_SpreadsheetName,
+      spreadsheetId: ItIsWhatItIs_SpreadsheetID,
+      worksheetId: ItIsWhatItIs_statsSheetID,
+      worksheetName: ItIsWhatItIs_statsSheetName,
       oauth : {
-        email: '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com',
-        keyFile: 'secret.pem'
+        email: ItIsWhatItIs_serviceEmail,
+        keyFile: ItIsWhatItIs_keyFile
       }
     }, 
     function sheetReady(err, spreadsheet) {
@@ -196,12 +211,13 @@ function scores(argument, message, sender) {
         if(err) throw err;
         startRow = info.lastRow+1;
         endRow = startRow + stats.length;
-        for (var i = startRow,r=0;i < endRow;i++,r++) {
+        for (var i = startRow;i < endRow;i++) {
           var front = "{\""+i+"\": { ";
           var tail = "} }";
           var middle = "";
           var splitStats = stats[r].toString().split(",");
-          for (var col = 1; col<=splitStats.length;col++) {   // for each column of data into cells by ,
+          // for each column of data into cells by
+          for (var col = 1; col<=splitStats.length;col++) {   
             if (col==splitStats.length)
               middle += "\""+col+"\": \""+splitStats[col-1]+"\""; // particular json seperation and labeling
             else
@@ -215,7 +231,7 @@ function scores(argument, message, sender) {
          return;
        spreadsheet.send(function(err) {
           if(err) console.log(err);
-            bot.addThought('Scores added!');
+            // bot.addThought('Scores added!');
         });
       });
     });
@@ -224,13 +240,13 @@ function scores(argument, message, sender) {
   function undoScores(stats) {
     Spreadsheet.load({
       debug: true,
-      spreadsheetName: 'NEW It Is What It Is Tracker',
-      spreadsheetId: '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08',
-      worksheetId: "ot3ufy3",
-      worksheetName: currentSeasonStatsSheet,
+      spreadsheetName: ItIsWhatItIs_SpreadsheetName,
+      spreadsheetId: ItIsWhatItIs_SpreadsheetID,
+      worksheetId: ItIsWhatItIs_statsSheetID,
+      worksheetName: ItIsWhatItIs_statsSheetName,
       oauth : {
-        email: '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com',
-        keyFile: 'secret.pem'
+        email: ItIsWhatItIs_serviceEmail,
+        keyFile: ItIsWhatItIs_keyFile
       }
     }, 
     function sheetReady(err, spreadsheet) {
@@ -244,7 +260,8 @@ function scores(argument, message, sender) {
           var tail = "} }";
           var middle = "";
           var splitStats = stats[r].toString().split(",");
-          for (var col = 1; col<=splitStats.length;col++) {   // for each column of data into cells by ,
+          // for each column of data into cells by
+          for (var col = 1; col<=splitStats.length;col++) {   
             if (col==splitStats.length)
               middle += "\""+col+"\": \" \""; // particular json seperation and labeling
             else
@@ -258,7 +275,7 @@ function scores(argument, message, sender) {
           return;
         spreadsheet.send(function(err) {
           if(err) console.log(err);
-            bot.addThought('Scores undone!');
+            // bot.addThought('Scores undone!');
         });
       });
     });
@@ -331,7 +348,7 @@ this.suck = suck;
 */
 function bottle(argument, message, sender) {
     bottle.who = function() {
-      API.Groups.show(ACCESS_TOKEN, ItIsWhatItIs_ID,function(err,ret) {
+      GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
         if (!err) {
           var members = [];
           ret.members.forEach(function(member) {members.push(member.nickname);});
@@ -351,5 +368,55 @@ function bottle(argument, message, sender) {
 };
 this.bottle = bottle;
 
+function bottleDuty() {
+  var person = 'Nico duh';
+  Spreadsheet.load({
+    debug: true,
+    spreadsheetId: ItIsWhatItIs_SpreadsheetID,
+    worksheetId: ItIsWhatItIs_frybotSheetID,
+    // worksheetName: ItIsWhatItIs_frybotSheetName,
+    oauth : {
+      email: ItIsWhatItIs_serviceEmail,
+      keyFile: ItIsWhatItIs_keyFile
+    }
+  }, 
+  function sheetReady(err, spreadsheet) {
+    if(err) throw err;
+    spreadsheet.receive(function(err, rows, info) {
+      if(err) throw err;
+      var players = [];
+      rows = _.toArray(rows);
+      rows.shift();
+      console.log(rows);
+      _.forEach(rows, function(col) {
+        players.push(col[1]);
+      });
+      person = players[0];
+      // var temp = players.shift
+      players.push(players.shift());
+      for (var row = 2;row < players.length+2;row++) {
+        var front = "{\""+row+"\": { ";
+        var tail = "} }";
+        var middle = "";
+        // for each column of data into cells by
+        if (row==players.length)
+          middle += "\"1\": \""+players[row-2]+"\""; // particular json seperation and labeling
+        else
+          middle += "\"1\": \""+players[row-2]+"\""; // particular json seperation and labeling
+        var all = front + middle + tail;
+        // console.log('all: '+all);
+        var jsonObj = JSON.parse(all);
+        spreadsheet.add(jsonObj); // adds row one by one
+      }
+      spreadsheet.send(function(err) {
+        if(err) console.log(err);
+        // console.log('person: '+person);
+        bot.addThought('Weekly Bottle Reminder- '+person);
+      });
+    });
+  });
+}
+
 exports.matches = matches;
 exports.activate = activate;
+exports.bottleDuty = bottleDuty;

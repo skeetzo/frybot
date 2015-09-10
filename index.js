@@ -33,13 +33,13 @@ function ping() {
 
 var CronJob = require('cron').CronJob;
 var job = new CronJob({
-  cronTime: '00 30 19 * * 1',
+ cronTime: '00 30 19 * * 1',
   onTick: function() {
     /*
      * Runs every Monday
      * at 7:30:00 PM.
      */
-     bot.reminder();
+     bot.bottleReminder();
   },
   start: true,
   timeZone: 'America/Los_Angeles'
