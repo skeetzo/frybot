@@ -11,7 +11,7 @@ var GROUPME_API = require('groupme').Stateless
 var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
 
 var debugging = false;
-var responding = true;
+var responding = false;
 
 var botID = process.env.BOT_ID;
 if (debugging)
