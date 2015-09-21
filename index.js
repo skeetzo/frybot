@@ -31,16 +31,14 @@ function ping() {
   this.res.end("Hi, I'm "+process.env.NAME+" and I totally work.");
 }
 
+/*
+   * Runs every Monday
+   * at 7:30:00 PM.
+*/
 var CronJob = require('cron').CronJob;
 var job = new CronJob({
  cronTime: '00 30 19 * * 1',
-  onTick: function() {
-    /*
-     * Runs every Monday
-     * at 7:30:00 PM.
-     */
-     bot.bottleReminder();
-  },
+  onTick: bot.bottleReminder,
   start: true,
   timeZone: 'America/Los_Angeles'
 });
