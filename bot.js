@@ -7,7 +7,7 @@ require("colors");
 
 // GroupMe API
 const GROUPME_ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
-var GROUPME_API = require('groupme').Stateless
+var GROUPME_API = require('groupme').Stateless;
 var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
 
 var debugging = false;
@@ -111,11 +111,11 @@ function likeMessage(message_id) {GROUPME_API.Likes.create(GROUPME_ACCESS_TOKEN,
 
 function bottleReminder() {
   commands.bottleDuty();
-}
+};
 
 function poke() {
   think();
-}
+};
 
 function test(testMessage) {
   postMessage(testMessage);
