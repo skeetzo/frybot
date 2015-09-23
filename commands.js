@@ -16,7 +16,7 @@ var this_ = this;
 
 // GroupMe API
 const GROUPME_ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
-var GROUPME_API = require('groupme').Stateless
+var GROUPME_API = require('groupme').Stateless;
 var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
 
 // Google
