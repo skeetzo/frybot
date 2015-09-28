@@ -16,7 +16,7 @@ var this_ = this;
 
 // GroupMe API
 const GROUPME_ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
-var GROUPME_API = require('groupme').Stateless;
+var GROUPME_API = require('groupme').Stateless
 var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
 
 // Google
@@ -34,7 +34,7 @@ var ItIsWhatItIs_frybotSheetID = 'om5ojbr';
 *
 * arguments: things
 *
-* thoughts: 
+* thoughts:
 *    yeah suck sender's message!
 *    yeah suck his message!
 *      wait, what?
@@ -134,7 +134,7 @@ function cool() {
 *
 * arguments: add, undo
 *
-* thoughts: 
+* thoughts:
 *    Adding scores! I think...
 *      Scores added!
 *    fix your own mistakes
@@ -204,7 +204,7 @@ function scores(argument, message, sender) {
         email: ItIsWhatItIs_serviceEmail,
         keyFile: ItIsWhatItIs_keyFile
       }
-    }, 
+    },
     function sheetReady(err, spreadsheet) {
       if(err) throw err;
       spreadsheet.receive(function(err, rows, info) {
@@ -217,7 +217,7 @@ function scores(argument, message, sender) {
           var middle = "";
           var splitStats = stats[r].toString().split(",");
           // for each column of data into cells by
-          for (var col = 1; col<=splitStats.length;col++) {   
+          for (var col = 1; col<=splitStats.length;col++) {
             if (col==splitStats.length)
               middle += "\""+col+"\": \""+splitStats[col-1]+"\""; // particular json seperation and labeling
             else
@@ -248,7 +248,7 @@ function scores(argument, message, sender) {
         email: ItIsWhatItIs_serviceEmail,
         keyFile: ItIsWhatItIs_keyFile
       }
-    }, 
+    },
     function sheetReady(err, spreadsheet) {
       if(err) throw err;
       spreadsheet.receive(function(err, rows, info) {
@@ -261,7 +261,7 @@ function scores(argument, message, sender) {
           var middle = "";
           var splitStats = stats[r].toString().split(",");
           // for each column of data into cells by
-          for (var col = 1; col<=splitStats.length;col++) {   
+          for (var col = 1; col<=splitStats.length;col++) {
             if (col==splitStats.length)
               middle += "\""+col+"\": \" \""; // particular json seperation and labeling
             else
@@ -285,7 +285,7 @@ function scores(argument, message, sender) {
   // add scores
   scores.add = function() {
     addScores(parseForScores(message));
-    bot.addThought('Adding scores! I think...');
+    // bot.addThought('Adding scores! I think...');
   };
   // undo scores
   scores.undo = function() {
@@ -304,7 +304,7 @@ this.scores = scores;
 *
 * arguments: my, his
 *
-* thoughts: 
+* thoughts:
 *    yeah suck sender's message!
 *    yeah suck his message!
 *      wait, what?
@@ -337,7 +337,7 @@ this.suck = suck;
 *
 * arguments: who, what
 *
-* thoughts: 
+* thoughts:
 *   bottle fail
 *     [random name] on duty
 *
@@ -346,27 +346,27 @@ this.suck = suck;
 * @param {string} sender - The sender it's from
 * @calls {bot.addThought(thoughts)}
 */
-function bottle(argument, message, sender) {
-    bottle.who = function() {
-      GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
-        if (!err) {
-          var members = [];
-          ret.members.forEach(function(member) {members.push(member.nickname);});
-          var whom = Math.round(Math.random(0,members.length));
-          bot.addThought(members[whom]+' on duty');
-        }
-      });    
-    };
-    bottle.what = function() {
-      var bottles = ['rum','vodka','whiskey','jaeger'];
-      bots.addThought(bottles[Math.random(0,bottles.length)]);
-    };
-    if (argument)
-      this.bottle[argument]();
-    else
-      bot.addThought('bottle fail');
-};
-this.bottle = bottle;
+// function bottle(argument, message, sender) {
+//     bottle.who = function() {
+//       GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
+//         if (!err) {
+//           var members = [];
+//           ret.members.forEach(function(member) {members.push(member.nickname);});
+//           var whom = Math.round(Math.random(0,members.length));
+//           bot.addThought(members[whom]+' on duty');
+//         }
+//       });
+//     };
+//     bottle.what = function() {
+//       var bottles = ['rum','vodka','whiskey','jaeger'];
+//       bots.addThought(bottles[Math.random(0,bottles.length)]);
+//     };
+//     if (argument)
+//       this.bottle[argument]();
+//     else
+//       bot.addThought('bottle fail');
+// };
+// this.bottle = bottle;
 
 function bottleDuty() {
   var person = 'Nico duh';
@@ -379,7 +379,7 @@ function bottleDuty() {
       email: ItIsWhatItIs_serviceEmail,
       keyFile: ItIsWhatItIs_keyFile
     }
-  }, 
+  },
   function sheetReady(err, spreadsheet) {
     if(err) throw err;
     spreadsheet.receive(function(err, rows, info) {
