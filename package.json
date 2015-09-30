@@ -31,10 +31,5 @@
     "bot",
     "google sheets",
   ],
-  "bugs":
-    { 
-      "url" : "https://github.com/owner/project/issues", 
-      "email" : "project@hostname.com"
-    },
   "license": "MIT"
 }
