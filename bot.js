@@ -1,4 +1,4 @@
-require('dotenv').load();
+// require('dotenv').load();
 
 var cool = require('cool-ascii-faces');
 var HTTPS = require('https');
