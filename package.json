@@ -13,7 +13,6 @@
     "director": "1.2.8",
     "edit-google-spreadsheet": "0.2.19",
     "moment": "~2.10.3",
-    // "dotenv": "1.2.0",
     "groupme": "0.5.6",
     "cron": "1.0.9"
   },
