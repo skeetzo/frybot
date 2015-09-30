@@ -1,8 +1,8 @@
 // require('dotenv').load();
 var http, director, bot, router, server, port;
-bot = require('./bot.js');
-director = require('director');
 http = require('http');
+director = require('director');
+bot = require('./bot.js');
 
 router = new director.http.Router({
   '/' : {
