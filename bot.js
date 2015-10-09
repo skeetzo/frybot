@@ -1,3 +1,4 @@
+var config = require('./config.js');
 
 var cool = require('cool-ascii-faces');
 var HTTPS = require('https');

@@ -1,4 +1,4 @@
-// require('dotenv').load();
+var config = require('./config.js');
 
 var bot = require('./bot.js');
 var cool = require('cool-ascii-faces');
