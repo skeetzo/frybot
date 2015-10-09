@@ -345,7 +345,7 @@ function ready(argument, message, sender) {
     var readyTimer;
     var readiedUp = [];
     function readyTimeUp() {
-      if (readiedUp>=5) {
+      if (readiedUp.length>=5) {
         bot.addThought('Ready check complete!');
         bot.addThought('Competing players: '+readiedUp.join(', '));
         clearInterval(readyTimer);
@@ -358,7 +358,7 @@ function ready(argument, message, sender) {
       var todayPlusOne = '';
       bot.addThought('Commencing ready check');
       // start timer that eventually ends once 5 players have readied up
-      readyTimer = setInterval(readyTimeUp,120000);
+      readyTimer = setInterval(readyTimeUp,10000);
       readiedUp = [];
       bot.addThought('Available players for '+todayPlusOne+' say: /ready up');
     };
