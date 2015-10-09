@@ -71,7 +71,7 @@ var responder = function() {
   if (!responding)
     return;
   if (thoughts.length>=1)
-    postMessage(thoughts.shift());
+    postMessage(thoughts.join('\\n'));
   else if (thoughts.length>0)
     postMessage(thoughts.join('.. '));
 };
@@ -118,7 +118,7 @@ function poke() {
 };
 
 function test(testMessage) {
-  postMessage(testMessage);
+  commands.activate("/ready check","Alex O");
 };
 
 exports.respond = respond;
