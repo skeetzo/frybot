@@ -71,7 +71,7 @@ var responder = function() {
   if (!responding)
     return;
   if (thoughts.length>=1)
-    postMessage(thoughts.join('\\n'));
+    postMessage(thoughts.join(' '));
   else if (thoughts.length>0)
     postMessage(thoughts.join('.. '));
 };

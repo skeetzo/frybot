@@ -347,7 +347,7 @@ function ready(argument, message, sender) {
     function readyTimeUp() {
       if (readiedUp.length>=5) {
         bot.addThought('Ready check complete!');
-        bot.addThought('Competing players: '+readiedUp.join(', '));
+        bot.addThought('Competing players: '+readiedUp.join(', ')+'.');
         clearInterval(readyTimer);
       }
       else {
@@ -356,11 +356,11 @@ function ready(argument, message, sender) {
     }
     ready.check = function() {
       var todayPlusOne = '';
-      bot.addThought('Commencing ready check');
+      bot.addThought('Commencing ready check...');
       // start timer that eventually ends once 5 players have readied up
       readyTimer = setInterval(readyTimeUp,10000);
       readiedUp = [];
-      bot.addThought('Available players for '+todayPlusOne+' say: /ready up');
+      bot.addThought('Available players for '+todayPlusOne+' say: /ready up .');
     };
     ready.up = function() {
       readiedUp.push(sender);
