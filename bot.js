@@ -40,6 +40,8 @@ function respond() {
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
+  if (request.name == 'Scytalia')
+    return;
   if (request.text && request.name && commands.matches(request.text)) {
     if (request.name)
       commands.activate(request.text,request.name);
