@@ -107,7 +107,7 @@ function postMessage(message) {
 };
 
 // implementation intent is for liked messages to confirm receivement of commands
-function likeMessage(message_id) {GROUPME_API.Likes.create(GroupMe_AccessToken, ItIsWhatItIs_GroupMeID,message_id, function(err,ret) {});};
+function likeMessage(message_id) {GroupMe_API.Likes.create(GroupMe_AccessToken, ItIsWhatItIs_GroupMeID,message_id, function(err,ret) {});};
 
 function bottleReminder() {
   commands.bottleDuty();
