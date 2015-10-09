@@ -95,7 +95,7 @@ function postMessage(message) {
   };
   body = {
     "bot_id" : botID,
-    "text" : message
+    "text" : message,
     "source_guid": guid
   };
   console.log(('sending ' + message + ' to ' + botID).green);
