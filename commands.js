@@ -344,7 +344,7 @@ function ready(argument, message, sender) {
 
     var readyTimer;
     var readiedUp = [];
-    function readyTimeUp = {
+    function readyTimeUp() {
       if (readiedUp>=5) {
         bot.addThought('Ready check complete!');
         bot.addThought('Competing players: '+readiedUp.join(', '));
