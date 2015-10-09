@@ -350,7 +350,8 @@ function ready(argument, message, sender) {
   //  if (sender!='Alex Oberg'|'Alex')
   //    return;    
     function readyTimeUp() {
-      if (readiedUp.length>=5) {
+      if (readiedUp.length>=1) {
+        readiedUp.push('Scytalia');
         bot.addThought('Ready check complete!');
         bot.addThought('Competing players: '+readiedUp.join(', ')+'.');
         clearInterval(readyTimer);
