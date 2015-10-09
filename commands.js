@@ -8,6 +8,7 @@ var _ = require('underscore');
 require("colors");
 
 // taco banana
+var silenced = false;
 
 var debugging = false;
 var doesnotwork = true;
@@ -63,7 +64,11 @@ var arguments = [
   "who",
   "what",
   "up",
-  "check"
+  "check",
+  "down",
+  "stop",
+  "silence",
+  "unsilence"
 ];
 var commandsRegex = "(\/"+commands.join("|")+")?("+arguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
@@ -336,14 +341,14 @@ function suck(argument, message, sender) {
 };
 this.suck = suck;
 
+
+var readyTimer;
+var readiedUp = [];
 function ready(argument, message, sender) {
   // cache system for people ready'ing up
 
   //  if (sender!='Alex Oberg'|'Alex')
-  //    return;
-
-    var readyTimer;
-    var readiedUp = [];
+  //    return;    
     function readyTimeUp() {
       if (readiedUp.length>=5) {
         bot.addThought('Ready check complete!');
@@ -351,21 +356,41 @@ function ready(argument, message, sender) {
         clearInterval(readyTimer);
       }
       else {
-        bot.addThought('..waiting on players..');
+        if (readiedUp.length>0&&!silenced)
+          bot.addThought('..waiting on more players..');
+        else if (!silenced)
+          bot.addThought('..waiting on players..');
       }
     }
     ready.check = function() {
-      var todayPlusOne = '';
+      var todaysDatePlusOne = 'todaysDatePlusOne';
       bot.addThought('Commencing ready check...');
       // start timer that eventually ends once 5 players have readied up
       readyTimer = setInterval(readyTimeUp,10000);
       readiedUp = [];
-      bot.addThought('Available players for '+todayPlusOne+' say: /ready up .');
+      bot.addThought('Available players for '+todaysDatePlusOne+' say: /ready up .');
     };
     ready.up = function() {
       readiedUp.push(sender);
       bot.addThought(sender+' has readied up.');
     };
+    ready.down = function() {
+      // find sender in readiedUp and remove
+      var newReadiedUp = readiedUp.splice(readiedUp.indexOf('sender'),1);
+      readiedUp = newReadiedUp;  
+      bot.addThought(sender+' has chickened out.');
+    };
+    ready.stop = function() {
+      clearInterval(readyTimer);
+      bot.addThought('Ready Check stopped'.);
+    };
+    ready.silence = function() {
+      silenced = true;
+    };
+    ready.unsilence = function() {
+      silenced = false;
+    };
+
     if (argument)
       this.ready[argument]();
     else
