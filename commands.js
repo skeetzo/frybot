@@ -1,12 +1,13 @@
+var config = require('./config.js');
+
 var bot = require('./bot.js');
 var cool = require('cool-ascii-faces');
 var Spreadsheet = require('edit-google-spreadsheet');
 var moment = require ('moment');
 var _ = require('underscore');
-require('dotenv').load();
 require("colors");
 
-
+// taco banana
 
 var debugging = false;
 var doesnotwork = true;
@@ -14,13 +15,13 @@ var doesnotwork = true;
 var this_ = this;
 
 
-// GroupMe API
-const GROUPME_ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
-var GROUPME_API = require('groupme').Stateless
-var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
+// // GroupMe API
+// const GROUPME_ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
+// var GROUPME_API = require('groupme').Stateless
+// var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
 
 // Google
-var ItIsWhatItIs_serviceEmail = '615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com';
+var ItIsWhatItIs_serviceEmail = config.ItIsWhatItIs_serviceEmail;
 var ItIsWhatItIs_keyFile = 'secret.pem';
 var ItIsWhatItIs_SpreadsheetName = 'NEW It Is What It Is Tracker';
 var ItIsWhatItIs_SpreadsheetID = '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08';
@@ -34,7 +35,7 @@ var ItIsWhatItIs_frybotSheetID = 'om5ojbr';
 *
 * arguments: things
 *
-* thoughts: 
+* thoughts:
 *    yeah suck sender's message!
 *    yeah suck his message!
 *      wait, what?
@@ -134,7 +135,7 @@ function cool() {
 *
 * arguments: add, undo
 *
-* thoughts: 
+* thoughts:
 *    Adding scores! I think...
 *      Scores added!
 *    fix your own mistakes
@@ -204,7 +205,7 @@ function scores(argument, message, sender) {
         email: ItIsWhatItIs_serviceEmail,
         keyFile: ItIsWhatItIs_keyFile
       }
-    }, 
+    },
     function sheetReady(err, spreadsheet) {
       if(err) throw err;
       spreadsheet.receive(function(err, rows, info) {
@@ -217,7 +218,7 @@ function scores(argument, message, sender) {
           var middle = "";
           var splitStats = stats[r].toString().split(",");
           // for each column of data into cells by
-          for (var col = 1; col<=splitStats.length;col++) {   
+          for (var col = 1; col<=splitStats.length;col++) {
             if (col==splitStats.length)
               middle += "\""+col+"\": \""+splitStats[col-1]+"\""; // particular json seperation and labeling
             else
@@ -248,7 +249,7 @@ function scores(argument, message, sender) {
         email: ItIsWhatItIs_serviceEmail,
         keyFile: ItIsWhatItIs_keyFile
       }
-    }, 
+    },
     function sheetReady(err, spreadsheet) {
       if(err) throw err;
       spreadsheet.receive(function(err, rows, info) {
@@ -261,7 +262,7 @@ function scores(argument, message, sender) {
           var middle = "";
           var splitStats = stats[r].toString().split(",");
           // for each column of data into cells by
-          for (var col = 1; col<=splitStats.length;col++) {   
+          for (var col = 1; col<=splitStats.length;col++) {
             if (col==splitStats.length)
               middle += "\""+col+"\": \" \""; // particular json seperation and labeling
             else
@@ -285,7 +286,7 @@ function scores(argument, message, sender) {
   // add scores
   scores.add = function() {
     addScores(parseForScores(message));
-    bot.addThought('Adding scores! I think...');
+    // bot.addThought('Adding scores! I think...');
   };
   // undo scores
   scores.undo = function() {
@@ -304,7 +305,7 @@ this.scores = scores;
 *
 * arguments: my, his
 *
-* thoughts: 
+* thoughts:
 *    yeah suck sender's message!
 *    yeah suck his message!
 *      wait, what?
@@ -337,7 +338,7 @@ this.suck = suck;
 *
 * arguments: who, what
 *
-* thoughts: 
+* thoughts:
 *   bottle fail
 *     [random name] on duty
 *
@@ -346,27 +347,27 @@ this.suck = suck;
 * @param {string} sender - The sender it's from
 * @calls {bot.addThought(thoughts)}
 */
-function bottle(argument, message, sender) {
-    bottle.who = function() {
-      GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
-        if (!err) {
-          var members = [];
-          ret.members.forEach(function(member) {members.push(member.nickname);});
-          var whom = Math.round(Math.random(0,members.length));
-          bot.addThought(members[whom]+' on duty');
-        }
-      });    
-    };
-    bottle.what = function() {
-      var bottles = ['rum','vodka','whiskey','jaeger'];
-      bots.addThought(bottles[Math.random(0,bottles.length)]);
-    };
-    if (argument)
-      this.bottle[argument]();
-    else
-      bot.addThought('bottle fail');
-};
-this.bottle = bottle;
+// function bottle(argument, message, sender) {
+//     bottle.who = function() {
+//       GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
+//         if (!err) {
+//           var members = [];
+//           ret.members.forEach(function(member) {members.push(member.nickname);});
+//           var whom = Math.round(Math.random(0,members.length));
+//           bot.addThought(members[whom]+' on duty');
+//         }
+//       });
+//     };
+//     bottle.what = function() {
+//       var bottles = ['rum','vodka','whiskey','jaeger'];
+//       bots.addThought(bottles[Math.random(0,bottles.length)]);
+//     };
+//     if (argument)
+//       this.bottle[argument]();
+//     else
+//       bot.addThought('bottle fail');
+// };
+// this.bottle = bottle;
 
 function bottleDuty() {
   var person = 'Nico duh';
@@ -379,7 +380,7 @@ function bottleDuty() {
       email: ItIsWhatItIs_serviceEmail,
       keyFile: ItIsWhatItIs_keyFile
     }
-  }, 
+  },
   function sheetReady(err, spreadsheet) {
     if(err) throw err;
     spreadsheet.receive(function(err, rows, info) {

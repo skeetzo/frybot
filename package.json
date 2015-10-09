@@ -1,6 +1,7 @@
 {
   "name": "frybot",
   "version": "0.0.3",
+  "author": "Schizo",
   "description": "Pool League GroupMe bot",
   "main": "index.js",
   "scripts": {
@@ -30,8 +31,7 @@
     "groupme",
     "bot",
     "google",
-    "sheets",
-    "express"
-  ],
+    "sheets"
+    ],
   "license": "MIT"
 }

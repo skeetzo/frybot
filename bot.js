@@ -1,19 +1,20 @@
+var config = require('./config.js');
+
 var cool = require('cool-ascii-faces');
 var HTTPS = require('https');
 var Spreadsheet = require('edit-google-spreadsheet');
 var commands = require('./commands.js');
-require('dotenv').load();
 require("colors");
 
 // GroupMe API
-const GROUPME_ACCESS_TOKEN = "2f738e5005bc0133e1287ef6bffc9e1d";
-var GROUPME_API = require('groupme').Stateless
-var GROUPME_ItIsWhatItIs_ID = process.env.ItIsWhatItIs_ID;
+var GroupMe_API = require('groupme').Stateless;
+var GroupMe_AccessToken = config.GroupMe_AccessToken;
+var ItIsWhatItIs_GroupMeID = config.ItIsWhatItIs_GroupMeID;
 
 var debugging = false;
-var responding = false;
+var responding = true;
 
-var botID = process.env.BOT_ID;
+var botID = config.botID;
 if (debugging)
   botID = 6;
 var defaultResponse = "burrito";
@@ -63,8 +64,7 @@ function addThought(thought) {
 
 function think() {
   clearTimeout(thinker);
-  var speedofthought = 6000;
-  thinker = setTimeout(responder,speedofthought);
+  thinker = setTimeout(responder,6000);
 };
 
 var responder = function() {
@@ -107,15 +107,15 @@ function postMessage(message) {
 };
 
 // implementation intent is for liked messages to confirm receivement of commands
-function likeMessage(message_id) {GROUPME_API.Likes.create(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,message_id, function(err,ret) {});};
+function likeMessage(message_id) {GROUPME_API.Likes.create(GroupMe_AccessToken, ItIsWhatItIs_GroupMeID,message_id, function(err,ret) {});};
 
 function bottleReminder() {
   commands.bottleDuty();
-}
+};
 
 function poke() {
   think();
-}
+};
 
 function test(testMessage) {
   postMessage(testMessage);
