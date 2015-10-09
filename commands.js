@@ -353,7 +353,13 @@ function ready(argument, message, sender) {
       if (readiedUp.length>=1) {
         readiedUp.push('Scytalia');
         bot.addThought('Ready check complete!');
-        bot.addThought('Competing players: '+readiedUp.join(', ')+'.');
+        var sentence = 'Competing players: '+readiedUp.join(', ')+'.';
+        var incompleteSentence = sentence.substring(0,sentence.lastIndexOf(','));
+        var completeSentence = sentence.substring(sentence.lastIndexOf(",")+1);
+        completeSentence = incompleteSentence + " and" + completeSentence;
+
+        bot.addThought(completeSentence);
+
         clearInterval(readyTimer);
       }
       else {
