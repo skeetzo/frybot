@@ -76,18 +76,18 @@ var responder = function() {
     postMessage(thoughts.join('.. '));
 };
 
-// // Helper function to construct the the source_guid string.
-// function generateGUID() {
-//     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (a) {
-//         var b, c;
-//         return b = Math.random() * 16 | 0, c = a === "x" ? b : b & 3 | 8, c.toString(16);
-//     });
-// };
+// Helper function to construct the the source_guid string.
+function generateGUID() {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (a) {
+        var b, c;
+        return b = Math.random() * 16 | 0, c = a === "x" ? b : b & 3 | 8, c.toString(16);
+    });
+};
 
 function postMessage(message) {
   var options, body, botReq;
-  opts.message.source_guid
-  // var guid = generateGUID();
+  // opts.message.source_guid
+  var guid = generateGUID();
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -96,6 +96,7 @@ function postMessage(message) {
   body = {
     "bot_id" : botID,
     "text" : message
+    "source_guid": guid
   };
   console.log(('sending ' + message + ' to ' + botID).green);
   botReq = HTTPS.request(options, function(res) {
