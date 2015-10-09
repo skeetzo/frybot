@@ -1,4 +1,5 @@
-// require('dotenv').load();
+var config = require('./config.js');
+
 var http, director, bot, router, server, port;
 http = require('http');
 director = require('director');
@@ -23,12 +24,11 @@ server = http.createServer(function (req, res) {
   });
 });
 
-port = Number(process.env.PORT || 3000);
-server.listen(port);
+server.listen(config.port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hi, I'm "+process.env.NAME+" and I totally work.");
+  this.res.end("Hi, I'm "+config.name+" and I totally work.");
 }
 
 var CronJob = require('cron').CronJob;

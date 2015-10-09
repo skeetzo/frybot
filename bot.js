@@ -1,4 +1,3 @@
-// require('dotenv').load();
 
 var cool = require('cool-ascii-faces');
 var HTTPS = require('https');
@@ -8,13 +7,13 @@ require("colors");
 
 // GroupMe API
 var GroupMe_API = require('groupme').Stateless;
-var GroupMe_AccessToken = process.env.GroupMe_AccessToken;
-var ItIsWhatItIs_GroupMeID = process.env.ItIsWhatItIs_GroupMeID;
+var GroupMe_AccessToken = "2f738e5005bc0133e1287ef6bffc9e1d";
+var ItIsWhatItIs_GroupMeID = "14734775";
 
 var debugging = false;
 var responding = true;
 
-var botID = process.env.BOT_ID;
+var botID = "6c15e36d3a1ac9b72b3cd3049d";
 if (debugging)
   botID = 6;
 var defaultResponse = "burrito";
