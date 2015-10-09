@@ -70,12 +70,14 @@ function think() {
 };
 
 var responder = function() {
+  var caughtThoughts = thoughts;
+  thoughts = [];
   if (!responding)
     return;
-  if (thoughts.length>=1)
-    postMessage(thoughts.join(' '));
-  else if (thoughts.length>0)
-    postMessage(thoughts.join('.. '));
+  if (caughtThoughts.length>=1)
+    postMessage(caughtThoughts.join(' '));
+  else if (caughtThoughts.length>0)
+    postMessage(caughtThoughts.join('.. '));
 };
 
 // Helper function to construct the the source_guid string.
