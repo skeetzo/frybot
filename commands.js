@@ -382,7 +382,7 @@ function ready(argument, message, sender) {
     };
     ready.stop = function() {
       clearInterval(readyTimer);
-      bot.addThought('Ready Check stopped'.);
+      bot.addThought('Ready Check stopped.');
     };
     ready.silence = function() {
       silenced = true;
