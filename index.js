@@ -36,6 +36,7 @@ var job = new CronJob({
  cronTime: '00 30 19 * * 1',
   onTick: function() {
      bot.bottleReminder();
+     setTimeout(bot.readyChecker(),10000);
   },
   start: true,
   timeZone: 'America/Los_Angeles'

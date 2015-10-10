@@ -1,6 +1,6 @@
 {
   "name": "frybot",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Schizo",
   "description": "Pool League GroupMe bot",
   "main": "index.js",

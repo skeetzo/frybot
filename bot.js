@@ -40,6 +40,8 @@ function respond() {
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
+  if (request.name == 'Scytalia')
+    return;
   if (request.text && request.name && commands.matches(request.text)) {
     if (request.name)
       commands.activate(request.text,request.name);
@@ -68,16 +70,28 @@ function think() {
 };
 
 var responder = function() {
+  var caughtThoughts = thoughts;
+  thoughts = [];
   if (!responding)
     return;
-  if (thoughts.length>=1)
-    postMessage(thoughts.shift());
-  else if (thoughts.length>0)
-    postMessage(thoughts.join('.. '));
+  if (caughtThoughts.length>=1)
+    postMessage(caughtThoughts.join(' '));
+  else if (caughtThoughts.length>0)
+    postMessage(caughtThoughts.join('.. '));
+};
+
+// Helper function to construct the the source_guid string.
+function generateGUID() {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (a) {
+        var b, c;
+        return b = Math.random() * 16 | 0, c = a === "x" ? b : b & 3 | 8, c.toString(16);
+    });
 };
 
 function postMessage(message) {
   var options, body, botReq;
+  // opts.message.source_guid
+  var guid = generateGUID();
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -85,7 +99,8 @@ function postMessage(message) {
   };
   body = {
     "bot_id" : botID,
-    "text" : message
+    "text" : message,
+    "source_guid": guid
   };
   console.log(('sending ' + message + ' to ' + botID).green);
   botReq = HTTPS.request(options, function(res) {
@@ -107,10 +122,14 @@ function postMessage(message) {
 };
 
 // implementation intent is for liked messages to confirm receivement of commands
-function likeMessage(message_id) {GROUPME_API.Likes.create(GroupMe_AccessToken, ItIsWhatItIs_GroupMeID,message_id, function(err,ret) {});};
+function likeMessage(message_id) {GroupMe_API.Likes.create(GroupMe_AccessToken, ItIsWhatItIs_GroupMeID,message_id, function(err,ret) {});};
 
 function bottleReminder() {
   commands.bottleDuty();
+};
+
+function readyChecker() {
+  commands.activate("/ready check",config.name);
 };
 
 function poke() {
@@ -118,11 +137,12 @@ function poke() {
 };
 
 function test(testMessage) {
-  postMessage(testMessage);
+  commands.activate("/ready check","Alex O");
 };
 
 exports.respond = respond;
 exports.postMessage = postMessage;
 exports.addThought = addThought;
 exports.bottleReminder = bottleReminder;
+exports.readyChecker = readyChecker;
 exports.test = test;

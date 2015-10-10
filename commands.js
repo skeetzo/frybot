@@ -8,6 +8,7 @@ var _ = require('underscore');
 require("colors");
 
 // taco banana
+var silenced = false;
 
 var debugging = false;
 var doesnotwork = true;
@@ -52,7 +53,8 @@ var commands = [
   'cool',
   'scores',
   'suck',
-  'bottle'
+  'bottle',
+  'ready'
 ];
 var arguments = [
   "add",
@@ -60,7 +62,13 @@ var arguments = [
   "my",
   "his",
   "who",
-  "what"
+  "what",
+  "up",
+  "check",
+  "down",
+  "stop",
+  "silence",
+  "unsilence"
 ];
 var commandsRegex = "(\/"+commands.join("|")+")?("+arguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
@@ -332,6 +340,69 @@ function suck(argument, message, sender) {
       bot.addThought('What about sucking '+sender+'\'s '+message+'?');
 };
 this.suck = suck;
+
+
+var readyTimer;
+var readiedUp = [];
+function ready(argument, message, sender) {
+  // cache system for people ready'ing up
+
+  //  if (sender!='Alex Oberg'|'Alex')
+  //    return;    
+    function readyTimeUp() {
+      if (readiedUp.length>=config.minimumReadyPlayers) {
+        if (config.name=="Scytalia")
+          readiedUp.push('Scytalia');
+        bot.addThought('Ready check complete!');
+        var sentence = 'Available players: '+readiedUp.join(', ')+'.';
+        var incompleteSentence = sentence.substring(0,sentence.lastIndexOf(','));
+        var completeSentence = sentence.substring(sentence.lastIndexOf(",")+1);
+        completeSentence = incompleteSentence + " and" + completeSentence;
+        bot.addThought(completeSentence);
+        clearInterval(readyTimer);
+      }
+      else {
+        if (readiedUp.length>0&&!silenced)
+          bot.addThought('..waiting on more players..');
+        else if (!silenced)
+          bot.addThought('..waiting on players..');
+      }
+    }
+    ready.check = function() {
+      var todaysDatePlusOne = 'todaysDatePlusOne';
+      bot.addThought('Commencing ready check...');
+      // start timer that eventually ends once 5 players have readied up
+      readyTimer = setInterval(readyTimeUp,10000);
+      readiedUp = [];
+      bot.addThought('Available players for '+todaysDatePlusOne+' say: /ready up .');
+    };
+    ready.up = function() {
+      readiedUp.push(sender);
+      bot.addThought(sender+' has readied up.');
+    };
+    ready.down = function() {
+      // find sender in readiedUp and remove
+      var newReadiedUp = readiedUp.splice(readiedUp.indexOf('sender'),1);
+      readiedUp = newReadiedUp;  
+      bot.addThought(sender+' has chickened out.');
+    };
+    ready.stop = function() {
+      clearInterval(readyTimer);
+      bot.addThought('Ready Check stopped.');
+    };
+    ready.silence = function() {
+      silenced = true;
+    };
+    ready.unsilence = function() {
+      silenced = false;
+    };
+
+    if (argument)
+      this.ready[argument]();
+    else
+      bot.addThought('What about readying up?');
+};
+this.ready = ready;
 
 /**
 * bottle command
