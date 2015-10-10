@@ -128,6 +128,10 @@ function bottleReminder() {
   commands.bottleDuty();
 };
 
+function readyChecker() {
+  commands.activate("/ready check",config.name);
+};
+
 function poke() {
   think();
 };
