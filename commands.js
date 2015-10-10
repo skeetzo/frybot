@@ -372,7 +372,7 @@ function ready(argument, message, sender) {
       var todaysDatePlusOne = 'todaysDatePlusOne';
       bot.addThought('Commencing ready check...');
       // start timer that eventually ends once 5 players have readied up
-      readyTimer = setInterval(readyTimeUp,10000);
+      readyTimer = setInterval(readyTimeUp,config.readyTimerDelay);
       readiedUp = [];
       bot.addThought('Available players for '+todaysDatePlusOne+' say: /ready up .');
     };
