@@ -1,6 +1,6 @@
 # scytalia  
   
-### Current Stable Version: 0.0.3  
+### Current Stable Version: 0.0.4  
   
 ## Version History  
   
@@ -21,8 +21,11 @@ v0.0.3
 bottle added  
 groupme added  
 like confirmation added  
-reminder/cron added  
+bottleReminder/cron added  
   
 v0.0.4  
 9/9/2015  
 fiddling  
+10/10  
+config.js added  
+readyCheck added  

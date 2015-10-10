@@ -350,16 +350,15 @@ function ready(argument, message, sender) {
   //  if (sender!='Alex Oberg'|'Alex')
   //    return;    
     function readyTimeUp() {
-      if (readiedUp.length>=1) {
-        readiedUp.push('Scytalia');
+      if (readiedUp.length>=config.minimumReadyPlayers) {
+        if (config.name=="Scytalia")
+          readiedUp.push('Scytalia');
         bot.addThought('Ready check complete!');
-        var sentence = 'Competing players: '+readiedUp.join(', ')+'.';
+        var sentence = 'Available players: '+readiedUp.join(', ')+'.';
         var incompleteSentence = sentence.substring(0,sentence.lastIndexOf(','));
         var completeSentence = sentence.substring(sentence.lastIndexOf(",")+1);
         completeSentence = incompleteSentence + " and" + completeSentence;
-
         bot.addThought(completeSentence);
-
         clearInterval(readyTimer);
       }
       else {
