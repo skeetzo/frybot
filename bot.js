@@ -144,4 +144,5 @@ exports.respond = respond;
 exports.postMessage = postMessage;
 exports.addThought = addThought;
 exports.bottleReminder = bottleReminder;
+exports.readyChecker = readyChecker;
 exports.test = test;
