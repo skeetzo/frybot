@@ -33,7 +33,7 @@ function ping() {
 
 var CronJob = require('cron').CronJob;
 var job = new CronJob({
- cronTime: '00 30 19 * * 1',
+ cronTime: '00 40 09 * * 6',
   onTick: function() {
      bot.bottleReminder();
      setTimeout(bot.readyChecker(),10000);
