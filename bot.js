@@ -40,6 +40,7 @@ function respond() {
     return;
   }
   var request = JSON.parse(this.req.chunks[0]);
+  addThought(request.name);
   if (request.name == config.name && !config.talkingToMyself)
     return;
   if (request.text && request.name && commands.matches(request.text)) {
