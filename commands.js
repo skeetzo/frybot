@@ -104,8 +104,10 @@ function activate(message, sender) {
     console.log('message: '+message);
     return;
   }
-  var i = sender.indexOf(' ');
-  sender = sender.substring(0,i);
+  if (~sender.indexOf(' ')) {
+    var i = sender.indexOf(' ');
+    sender = sender.substring(0,i);
+  }
   run(command,argument,message,sender);
 };
 
@@ -352,14 +354,9 @@ function ready(argument, message, sender) {
   //    return;    
     function readyTimeUp() {
       if (readiedUp.length>=config.minimumReadyPlayers) {
-        if (config.name=="Scytalia")
-          readiedUp.push('Scytalia');
+        readiedUp.push("and "+config.name);
         bot.addThought('Ready check complete!');
-        var sentence = 'Available players: '+readiedUp.join(', ')+'.';
-        var incompleteSentence = sentence.substring(0,sentence.lastIndexOf(','));
-        var completeSentence = sentence.substring(sentence.lastIndexOf(",")+1);
-        completeSentence = incompleteSentence + " and" + completeSentence;
-        bot.addThought(completeSentence);
+        bot.addThought('Available players: '+readiedUp.join(', '));
         clearInterval(readyTimer);
       }
       else {
@@ -370,12 +367,11 @@ function ready(argument, message, sender) {
       }
     }
     ready.check = function() {
-      var todaysDatePlusOne = 'todaysDatePlusOne';
       bot.addThought('Commencing ready check...');
       // start timer that eventually ends once 5 players have readied up
       readyTimer = setInterval(readyTimeUp,config.readyTimerDelay);
       readiedUp = [];
-      bot.addThought('Available players for '+todaysDatePlusOne+' say: /ready up .');
+      bot.addThought('Available players for the upcoming match say: /ready up .');
     };
     ready.up = function() {
       readiedUp.push(sender);
