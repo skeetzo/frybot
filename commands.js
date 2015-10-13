@@ -68,7 +68,8 @@ var arguments = [
   "down",
   "stop",
   "silence",
-  "unsilence"
+  "unsilence",
+  "duty"
 ];
 var commandsRegex = "(\/"+commands.join("|")+")?("+arguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
@@ -418,27 +419,30 @@ this.ready = ready;
 * @param {string} sender - The sender it's from
 * @calls {bot.addThought(thoughts)}
 */
-// function bottle(argument, message, sender) {
-//     bottle.who = function() {
-//       GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
-//         if (!err) {
-//           var members = [];
-//           ret.members.forEach(function(member) {members.push(member.nickname);});
-//           var whom = Math.round(Math.random(0,members.length));
-//           bot.addThought(members[whom]+' on duty');
-//         }
-//       });
-//     };
-//     bottle.what = function() {
-//       var bottles = ['rum','vodka','whiskey','jaeger'];
-//       bots.addThought(bottles[Math.random(0,bottles.length)]);
-//     };
-//     if (argument)
-//       this.bottle[argument]();
-//     else
-//       bot.addThought('bottle fail');
-// };
-// this.bottle = bottle;
+function bottle(argument, message, sender) {
+    // bottle.who = function() {
+    //   GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
+    //     if (!err) {
+    //       var members = [];
+    //       ret.members.forEach(function(member) {members.push(member.nickname);});
+    //       var whom = Math.round(Math.random(0,members.length));
+    //       bot.addThought(members[whom]+' on duty');
+    //     }
+    //   });
+    // };
+    // bottle.what = function() {
+    //   var bottles = ['rum','vodka','whiskey','jaeger'];
+    //   bots.addThought(bottles[Math.random(0,bottles.length)]);
+    // };
+    bottle.duty = function() {
+      bottleDuty();
+    };
+    if (argument)
+      this.bottle[argument]();
+    else
+      bot.addThought('bottle fail');
+};
+this.bottle = bottle;
 
 function bottleDuty() {
   var person = 'Nico duh';
