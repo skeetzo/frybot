@@ -9,6 +9,8 @@ config.botID = "6c15e36d3a1ac9b72b3cd3049d";
 
 config.minimumReadyPlayers = 1;
 config.readyTimerDelay = 10000;
+config.talkingToMyself = false;
+
 
 config.ItIsWhatItIs_serviceEmail = "615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com";
 
