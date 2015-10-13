@@ -41,8 +41,10 @@ function respond() {
   }
   var request = JSON.parse(this.req.chunks[0]);
   addThought(request.name+'taco');
-  if (request.name == config.name && !config.talkingToMyself)
+  if (request.name == config.name && !config.talkingToMyself) {
+    addThought('noping out');
     return;
+  }
   if (request.text && request.name && commands.matches(request.text)) {
     if (request.name)
       commands.activate(request.text,request.name);
