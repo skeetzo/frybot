@@ -1,15 +1,14 @@
 {
   "name": "frybot",
-  "description": "Pool League GroupMe bot",
-  "repository": "https://github.com/brainlessdg13/frybot",
-  "logo": "",
+  "description": "Pool League GroupMe Chatbot",
   "keywords": [
-  	"node",
+    "node",
     "heroku",
-    "express",
     "groupme",
     "bot",
     "google",
-    "sheets"
-    ]
+   ],
+  "website": "https://sites.google.com/site/itiswhatitisleague",
+  "repository": "https://github.com/brainlessdg13/frybot",
+  "logo": ""
 }
