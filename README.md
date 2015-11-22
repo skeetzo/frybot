@@ -1,3 +1,3 @@
-# frybot  
+# frybot 
+v0.0.5  
 ## Pool League GroupMe chat bot  
-### v0.0.5  
