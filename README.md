@@ -1,6 +1,3 @@
-# frybot
-#### Current Stable Version: 0.0.3
-
-## Introduction
-
-  Pool League GroupMe chat bot
+# frybot  
+## Pool League GroupMe chat bot  
+### v0.0.5  
