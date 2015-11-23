@@ -32,7 +32,7 @@ server.listen(port);
 function ping() {
   this.res.writeHead(200);
   this.res.end("Hi, I'm "+config.NAME+" and I totally work.");
-  scytalia.respond();
+  // scytalia.ping();
 }
 
 var CronJob = require('cron').CronJob;
