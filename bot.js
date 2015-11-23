@@ -133,7 +133,7 @@ var Scytalia = function() {
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
-  * @calls {bot.addThought(thoughts)}
+  * @calls {addThought(thoughts)}
   */
 
 
@@ -200,7 +200,7 @@ var Scytalia = function() {
   * @return {cool guy face as string}
   */
   function cool() {
-      bot.addThought(cool());
+      addThought(cool());
   };
 
   /**
@@ -218,7 +218,7 @@ var Scytalia = function() {
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
-  * @calls {bot.addThought(thoughts)}
+  * @calls {addThought(thoughts)}
   */
   function scores(argument, message, sender) {
 
@@ -305,7 +305,7 @@ var Scytalia = function() {
            return;
          spreadsheet.send(function(err) {
             if(err) console.log(err);
-              // bot.addThought('Scores added!');
+              // addThought('Scores added!');
           });
         });
       });
@@ -349,7 +349,7 @@ var Scytalia = function() {
             return;
           spreadsheet.send(function(err) {
             if(err) console.log(err);
-              // bot.addThought('Scores undone!');
+              // addThought('Scores undone!');
           });
         });
       });
@@ -359,17 +359,17 @@ var Scytalia = function() {
     // add scores
     scores.add = function() {
       addScores(parseForScores(message));
-      // bot.addThought('Adding scores! I think...');
+      // addThought('Adding scores! I think...');
     };
     // undo scores
     scores.undo = function() {
      // undoScores();
-      bot.addThought('fix your own mistakes');
+      addThought('fix your own mistakes');
     }
     if (argument)
       this.scores[argument]();
     else
-      bot.addThought('What about the scores '+sender+'?');
+      addThought('What about the scores '+sender+'?');
   };
   this.scores = scores;
 
@@ -387,22 +387,22 @@ var Scytalia = function() {
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
-  * @calls {bot.addThought(thoughts)}
+  * @calls {addThought(thoughts)}
   */
   function suck(argument, message, sender) {
     //  if (sender!='Alex Oberg'|'Alex')
     //    return;
       suck.my = function() {
-        bot.addThought('yeah suck '+sender+'\'s '+message+'!');
+        addThought('yeah suck '+sender+'\'s '+message+'!');
       };
       suck.his = function() {
-        bot.addThought('yeah suck his '+message+'!');
-        bot.addThought('wait, what?');
+        addThought('yeah suck his '+message+'!');
+        addThought('wait, what?');
       };
       if (argument)
         this.suck[argument]();
       else
-        bot.addThought('What about sucking '+sender+'\'s '+message+'?');
+        addThought('What about sucking '+sender+'\'s '+message+'?');
   };
   this.suck = suck;
 
@@ -418,7 +418,7 @@ var Scytalia = function() {
 * @param {string} argument - The argument to call
 * @param {string} message - The message it's from
 * @param {string} sender - The sender it's from
-* @calls {bot.addThought(thoughts)}
+* @calls {addThought(thoughts)}
 */
 // function bottle(argument, message, sender) {
 //     bottle.who = function() {
@@ -427,7 +427,7 @@ var Scytalia = function() {
 //           var members = [];
 //           ret.members.forEach(function(member) {members.push(member.nickname);});
 //           var whom = Math.round(Math.random(0,members.length));
-//           bot.addThought(members[whom]+' on duty');
+//           addThought(members[whom]+' on duty');
 //         }
 //       });
 //     };
@@ -438,7 +438,7 @@ var Scytalia = function() {
 //     if (argument)
 //       this.bottle[argument]();
 //     else
-//       bot.addThought('bottle fail');
+//       addThought('bottle fail');
 // };
 // this.bottle = bottle;
 
@@ -481,7 +481,7 @@ var Scytalia = function() {
         }
         spreadsheet.send(function(err) {
           if(err) console.log(err);
-          bot.addThought('Weekly Bottle Reminder- '+person);
+          addThought('Weekly Bottle Reminder- '+person);
         });
       });
     });
