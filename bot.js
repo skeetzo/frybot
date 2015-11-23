@@ -7,7 +7,7 @@ var _ = require('underscore');
 var config = require('./config.js');
 require("colors");
 
-var GroupMe_API = require('groupme').Stateless;
+var config.GroupMe_AccessToken = require('groupme').Stateless;
 
 
 var util = require('util');
@@ -113,7 +113,7 @@ var Scytalia = function() {
     botReq.end(JSON.stringify(body));
   };
 
-  function likeMessage(message_id) {GROUPME_API.Likes.create(GroupMe_AccessToken, Scytalia_GroupMeID,message_id, function(err,ret) {});};
+  function likeMessage(message_id) {config.GroupMe_AccessToken.Likes.create(GroupMe_AccessToken, Scytalia_GroupMeID,message_id, function(err,ret) {});};
 
   function bottleReminder() {
     bottleDuty();
@@ -422,7 +422,7 @@ var Scytalia = function() {
 */
 // function bottle(argument, message, sender) {
 //     bottle.who = function() {
-//       GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
+//       config.GroupMe_AccessToken.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
 //         if (!err) {
 //           var members = [];
 //           ret.members.forEach(function(member) {members.push(member.nickname);});
