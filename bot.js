@@ -7,6 +7,9 @@ var _ = require('underscore');
 var config = require('config');
 require("colors");
 
+var GroupMe_API = require('groupme').Stateless;
+
+
 // var util = require('util');
 // var EventEmitter = require('events').EventEmitter;
 
