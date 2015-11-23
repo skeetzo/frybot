@@ -5,6 +5,8 @@ config.debugging = true;
 config.NAME = "Scytalia";
 config.PORT = 3000;
 config.botID = "219f82d5b599637927f208bb61";
+config.responding = true;
+
 if (config.debugging)
   config.botID = 6;
 
