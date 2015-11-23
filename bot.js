@@ -140,7 +140,7 @@ var Scytalia = function() {
   * @return {true/false}
   */
   function matches(message) {
-    return match(commandsRegex);
+    return message.match(commandsRegex);
   };
 
   /**
