@@ -110,7 +110,7 @@ var Scytalia = function() {
     botReq.end(JSON.stringify(body));
   };
 
-  function likeMessage(message_id) {GROUPME_API.Likes.create(GroupMe_AccessToken, ItIsWhatItIs_GroupMeID,message_id, function(err,ret) {});};
+  function likeMessage(message_id) {GROUPME_API.Likes.create(GroupMe_AccessToken, Scytalia_GroupMeID,message_id, function(err,ret) {});};
 
   function bottleReminder() {
     bottleDuty();
@@ -267,10 +267,10 @@ var Scytalia = function() {
     function addScores(stats) {
       Spreadsheet.load({
         debug: true,
-        spreadsheetName: ItIsWhatItIs_SpreadsheetName,
+        spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
         spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
-        worksheetId: ItIsWhatItIs_statsSheetID,
-        worksheetName: ItIsWhatItIs_statsSheetName,
+        worksheetId: config.ItIsWhatItIs_statsSheetID,
+        worksheetName: config.ItIsWhatItIs_statsSheetName,
         oauth : {
           email: config.ItIsWhatItIs_serviceEmail,
           keyFile: config.ItIsWhatItIs_keyFile
@@ -311,10 +311,10 @@ var Scytalia = function() {
     function undoScores(stats) {
       Spreadsheet.load({
         debug: true,
-        spreadsheetName: ItIsWhatItIs_SpreadsheetName,
+        spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
         spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
-        worksheetId: ItIsWhatItIs_statsSheetID,
-        worksheetName: ItIsWhatItIs_statsSheetName,
+        worksheetId: config.ItIsWhatItIs_statsSheetID,
+        worksheetName: config.ItIsWhatItIs_statsSheetName,
         oauth : {
           email: config.ItIsWhatItIs_serviceEmail,
           keyFile: config.ItIsWhatItIs_keyFile
