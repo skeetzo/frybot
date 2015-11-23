@@ -113,7 +113,7 @@ var Scytalia = function() {
     botReq.end(JSON.stringify(body));
   };
 
-  function likeMessage(message_id) {GROUPME_API.Likes.create(config.GroupMe_AccessToken, config.Scytalia_GroupMeID,message_id, function(err,ret) {});};
+  function likeMessage(message_id) {GroupMe_API.Likes.create(config.GroupMe_AccessToken, config.Scytalia_GroupMeID,message_id, function(err,ret) {});};
 
   function bottleReminder() {
     bottleDuty();
