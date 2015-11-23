@@ -1,6 +1,6 @@
 var config = {};
 
-config.debugging = true;
+config.debugging = false;
 
 config.NAME = "Scytalia";
 config.PORT = 3000;
