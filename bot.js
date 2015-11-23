@@ -47,12 +47,12 @@ var Scytalia = function() {
     if (request.text && request.name && request.text.match(commandsRegex)) {
           addThought("really thinking");
 
-      if (request.name)
-        activate(request.text,request.name);
-      else
-        activate(request.text);
-      if (request.id)
-        likeMessage(request.id);
+      // if (request.name)
+      //   activate(request.text,request.name);
+      // else
+      //   activate(request.text);
+      // if (request.id)
+      //   likeMessage(request.id);
       this.res.writeHead(200);
       this.res.end();
     } else {
