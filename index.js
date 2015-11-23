@@ -3,6 +3,8 @@ var http, director, bot, router, server, port;
 http = require('http');
 director = require('director');
 bot = require('./bot.js');
+var config = require('./config.js');
+
 var scytalia = new bot();
 
 router = new director.http.Router({

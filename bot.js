@@ -4,14 +4,14 @@ var HTTPS = require('https');
 var Spreadsheet = require('edit-google-spreadsheet');
 var moment = require ('moment');
 var _ = require('underscore');
-var config = require('config');
+var config = require('./config.js');
 require("colors");
 
 var GroupMe_API = require('groupme').Stateless;
 
 
-// var util = require('util');
-// var EventEmitter = require('events').EventEmitter;
+var util = require('util');
+var EventEmitter = require('events').EventEmitter;
 
 // list of all available commands and arguments
 var commands = [
