@@ -3,10 +3,11 @@ var http, director, bot, router, server, port;
 http = require('http');
 director = require('director');
 bot = require('./bot.js');
+var scytalia = new bot();
 
 router = new director.http.Router({
   '/' : {
-    post: bot.respond,
+    post: scytalia.respond,
     get: ping
   }
 });
@@ -23,19 +24,19 @@ server = http.createServer(function (req, res) {
   });
 });
 
-port = Number(process.env.PORT || 3000);
+port = Number(config.PORT || 3000);
 server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hi, I'm "+process.env.NAME+" and I totally work.");
+  this.res.end("Hi, I'm "+config.NAME+" and I totally work.");
 }
 
 var CronJob = require('cron').CronJob;
 var job = new CronJob({
  cronTime: '00 45 2 * * *',
   onTick: function() {
-     bot.bottleReminder();
+     scytalia.bottleReminder();
   },
   start: true,
   timeZone: 'America/Los_Angeles'

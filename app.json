@@ -1,14 +1,14 @@
 {
   "name": "scytalia",
   "description": "testing bot",
-  "repository": "https://github.com/brainlessdg13/scytalia",
-  "logo": "",
   "keywords": [
-  	"node",
+    "node",
     "heroku",
-    "express",
     "groupme",
     "bot",
-    "google sheets"
-    ]
+    "google",
+   ],
+  "website": "",
+  "repository": "https://github.com/brainlessdg13/scytalia",
+  "logo": ""
 }
