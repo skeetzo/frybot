@@ -44,7 +44,7 @@ var Scytalia = function() {
     if (this.req.chunks == undefined || this.req.chunks == null) 
       return;
     var request = JSON.parse(this.req.chunks[0]);
-    if (request.text && request.name && request.text.search(commandsRegex)) {
+    if (request.text && request.name) {
       console.log("the search: "+request.text.search(commandsRegex));
           // addThought("really thinking");
 
