@@ -7,7 +7,7 @@ var _ = require('underscore');
 var config = require('./config.js');
 require("colors");
 
-var config.GroupMe_AccessToken = require('groupme').Stateless;
+var GroupMe_API = require('groupme').Stateless;
 
 
 var util = require('util');
@@ -113,7 +113,7 @@ var Scytalia = function() {
     botReq.end(JSON.stringify(body));
   };
 
-  function likeMessage(message_id) {config.GroupMe_AccessToken.Likes.create(GroupMe_AccessToken, Scytalia_GroupMeID,message_id, function(err,ret) {});};
+  function likeMessage(message_id) {GROUPME_API.Likes.create(config.GroupMe_AccessToken, config.Scytalia_GroupMeID,message_id, function(err,ret) {});};
 
   function bottleReminder() {
     bottleDuty();
@@ -133,7 +133,7 @@ var Scytalia = function() {
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
-  * @calls {addThought(thoughts)}
+  * @calls {bot.addThought(thoughts)}
   */
 
 
@@ -200,7 +200,7 @@ var Scytalia = function() {
   * @return {cool guy face as string}
   */
   function cool() {
-      addThought(cool());
+      bot.addThought(cool());
   };
 
   /**
@@ -218,7 +218,7 @@ var Scytalia = function() {
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
-  * @calls {addThought(thoughts)}
+  * @calls {bot.addThought(thoughts)}
   */
   function scores(argument, message, sender) {
 
@@ -305,7 +305,7 @@ var Scytalia = function() {
            return;
          spreadsheet.send(function(err) {
             if(err) console.log(err);
-              // addThought('Scores added!');
+              // bot.addThought('Scores added!');
           });
         });
       });
@@ -349,7 +349,7 @@ var Scytalia = function() {
             return;
           spreadsheet.send(function(err) {
             if(err) console.log(err);
-              // addThought('Scores undone!');
+              // bot.addThought('Scores undone!');
           });
         });
       });
@@ -359,17 +359,17 @@ var Scytalia = function() {
     // add scores
     scores.add = function() {
       addScores(parseForScores(message));
-      // addThought('Adding scores! I think...');
+      // bot.addThought('Adding scores! I think...');
     };
     // undo scores
     scores.undo = function() {
      // undoScores();
-      addThought('fix your own mistakes');
+      bot.addThought('fix your own mistakes');
     }
     if (argument)
       this.scores[argument]();
     else
-      addThought('What about the scores '+sender+'?');
+      bot.addThought('What about the scores '+sender+'?');
   };
   this.scores = scores;
 
@@ -387,22 +387,22 @@ var Scytalia = function() {
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
-  * @calls {addThought(thoughts)}
+  * @calls {bot.addThought(thoughts)}
   */
   function suck(argument, message, sender) {
     //  if (sender!='Alex Oberg'|'Alex')
     //    return;
       suck.my = function() {
-        addThought('yeah suck '+sender+'\'s '+message+'!');
+        bot.addThought('yeah suck '+sender+'\'s '+message+'!');
       };
       suck.his = function() {
-        addThought('yeah suck his '+message+'!');
-        addThought('wait, what?');
+        bot.addThought('yeah suck his '+message+'!');
+        bot.addThought('wait, what?');
       };
       if (argument)
         this.suck[argument]();
       else
-        addThought('What about sucking '+sender+'\'s '+message+'?');
+        bot.addThought('What about sucking '+sender+'\'s '+message+'?');
   };
   this.suck = suck;
 
@@ -418,16 +418,16 @@ var Scytalia = function() {
 * @param {string} argument - The argument to call
 * @param {string} message - The message it's from
 * @param {string} sender - The sender it's from
-* @calls {addThought(thoughts)}
+* @calls {bot.addThought(thoughts)}
 */
 // function bottle(argument, message, sender) {
 //     bottle.who = function() {
-//       config.GroupMe_AccessToken.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
+//       GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
 //         if (!err) {
 //           var members = [];
 //           ret.members.forEach(function(member) {members.push(member.nickname);});
 //           var whom = Math.round(Math.random(0,members.length));
-//           addThought(members[whom]+' on duty');
+//           bot.addThought(members[whom]+' on duty');
 //         }
 //       });
 //     };
@@ -438,7 +438,7 @@ var Scytalia = function() {
 //     if (argument)
 //       this.bottle[argument]();
 //     else
-//       addThought('bottle fail');
+//       bot.addThought('bottle fail');
 // };
 // this.bottle = bottle;
 
@@ -481,7 +481,7 @@ var Scytalia = function() {
         }
         spreadsheet.send(function(err) {
           if(err) console.log(err);
-          addThought('Weekly Bottle Reminder- '+person);
+          bot.addThought('Weekly Bottle Reminder- '+person);
         });
       });
     });
