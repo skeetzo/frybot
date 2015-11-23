@@ -37,7 +37,7 @@ var Scytalia = function() {
   var this_ = this;
 
   this.respond = function() {
-              addThought("maybe thinking");
+              // addThought("maybe thinking");
 
     if (this.req == undefined || this.req == null) 
       return;
@@ -48,12 +48,12 @@ var Scytalia = function() {
       console.log("the search: "+request.text.search(commandsRegex));
           // addThought("really thinking");
 
-      // if (request.name)
-      //   activate(request.text,request.name);
-      // else
-      //   activate(request.text);
-      // if (request.id)
-      //   likeMessage(request.id);
+      if (request.name)
+        activate(request.text,request.name);
+      else
+        activate(request.text);
+      if (request.id)
+        likeMessage(request.id);
       this.res.writeHead(200);
       this.res.end();
     } else {
