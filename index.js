@@ -26,7 +26,7 @@ server = http.createServer(function (req, res) {
   });
 });
 
-port = Number(config.PORT || 3000);
+port = Number(process.env.PORT || config.PORT);
 server.listen(port);
 
 function ping() {
