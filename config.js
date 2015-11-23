@@ -6,7 +6,7 @@ config.NAME = "Scytalia";
 config.PORT = 3000;
 var Frybot_botID = "219f82d5b599637927f208bb61";
 var Scytalia_botID = "6c15e36d3a1ac9b72b3cd3049d";
-config.botId = Scytalia_botId;
+config.botId = Scytalia_botID;
 config.responding = true;
 
 if (config.debugging)
