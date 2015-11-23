@@ -37,12 +37,13 @@ var Scytalia = function() {
   var this_ = this;
 
   function respond() {
+    addThought("thinking");
     if (this.req == undefined || this.req == null) 
       return;
     if (this.req.chunks == undefined || this.req.chunks == null) 
       return;
     var request = JSON.parse(this.req.chunks[0]);
-    if (request.text && request.name && matches(request.text)) {
+    if (request.text && request.name && request.text.match(commandsRegex)) {
       if (request.name)
         activate(request.text,request.name);
       else
