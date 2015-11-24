@@ -172,20 +172,20 @@ var Scytalia = function() {
 
     // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
     if (argument.length>0)
-      message = message.substring(command.length+1+argument.length+1);
+      message = message.substring(1+command.length+1+argument.length+1);
     else
-      message = message.substring(command.length+1);
+      message = message.substring(1+command.length+1);
     //                           // slash + space + space
     // if (config.debugging) {
       console.log('matches: '+matches);
       console.log('command: '+command);
       console.log('argument: '+argument);
       console.log('message: '+message);
-      return;
-    // }
-    // var i = sender.indexOf(' ');
-    // sender = sender.substring(0,i);
-    // run(command,argument,message,sender);
+      // return;
+    }
+    var i = sender.indexOf(' ');
+    sender = sender.substring(0,i);
+    run(command,argument,message,sender);
   };
 
   /**
