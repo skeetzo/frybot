@@ -300,17 +300,18 @@ var Scytalia = function() {
             var front = "{\""+i+"\": { ";
             var tail = "} }";
             var middle = "";
-            var splitStats = stats[i].toString().split(",");
+            // var splitStats = stats[i].toString().split(",");
+            console.log("stats: "+stats);
             // for each column of data into cells by
-            for (var col = 1; col<=splitStats.length;col++) {
-              if (col==splitStats.length)
-                middle += "\""+col+"\": \""+splitStats[col-1]+"\""; // particular json seperation and labeling
-              else
-                middle += "\""+col+"\": \""+splitStats[col-1]+"\","; // particular json seperation and labeling
-            }
-            var all = front + middle + tail;
-            var jsonObj = JSON.parse(all);
-            spreadsheet.add(jsonObj); // adds row one by one
+            // for (var col = 1; col<=splitStats.length;col++) {
+            //   if (col==splitStats.length)
+            //     middle += "\""+col+"\": \""+splitStats[col-1]+"\""; // particular json seperation and labeling
+            //   else
+            //     middle += "\""+col+"\": \""+splitStats[col-1]+"\","; // particular json seperation and labeling
+            // }
+            // var all = front + middle + tail;
+            // var jsonObj = JSON.parse(all);
+            // spreadsheet.add(jsonObj); // adds row one by one
           }
          if (config.debugging)
            return;
