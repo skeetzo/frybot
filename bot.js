@@ -203,9 +203,12 @@ var Scytalia = function() {
   pointsEarnedRegex = new RegExp(pointsEarnedRegex, 'gi');
   var pointsGivenRegex = "\\d{1}$";
   pointsGivenRegex = new RegExp(pointsGivenRegex, 'i');
-  var dateDayRegex = new RegExp(/[\-]{1}([\\d]{2})[T]{1}/);
-  var dateMonthRegex = new RegExp(/[\-]{1}([\\d]{2})[\-]{1}/);
-  var dateYearRegex = new RegExp(/[\\d]{4}/);
+  var dateDayRegex = "[\-]{1}([\\d]{2})[T]{1}";
+  dateDayRegex = new RegExp(dateDayRegex, 'i');
+  var dateMonthRegex = "[\-]{1}([\\d]{2})[\-]{1}";
+  dateMonthRegex = new RegExp(dateMonthRegex, 'i');
+  var dateYearRegex = "[\\d]{4}";
+  dateYearRegex = new RegExp(dateYearRegex, 'i');
 
   /**
   * runs the cool guy thing
