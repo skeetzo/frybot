@@ -9,7 +9,7 @@ var scytalia = new bot();
 
 router = new director.http.Router({
   '/' : {
-    post: bot.respond,
+    post: scytalia.respond,
     get: ping
   }
 });
@@ -32,11 +32,7 @@ server.listen(port);
 function ping() {
   this.res.writeHead(200);
   this.res.end("Hi, I'm "+config.NAME+" and I totally work.");
-<<<<<<< HEAD
-  scytalia.respond();
-=======
   // scytalia.ping();
->>>>>>> 60053326f735be07c01db23ce0d0bf19214a6726
 }
 
 var CronJob = require('cron').CronJob;

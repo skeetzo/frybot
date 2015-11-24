@@ -28,7 +28,7 @@ var arguments = [
   "who",
   "what"
 ];
-var commandsRegex = "(\/"+commands.join("|")+")?("+arguments.join("|")+")?";
+var commandsRegex = "(\/"+commands.join("|\/")+")?("+arguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
 
 
@@ -37,13 +37,17 @@ var Scytalia = function() {
   var this_ = this;
 
   Scytalia.prototype.respond = function() {
-    addThought("thinking");
     if (this.req == undefined || this.req == null) 
       return;
     if (this.req.chunks == undefined || this.req.chunks == null) 
       return;
     var request = JSON.parse(this.req.chunks[0]);
-    if (request.text && request.name && request.text.match(commandsRegex)) {
+    if (!request.text && !request.name)
+      return;
+    if (request.name==config.NAME)
+      return;
+    if (request.text.search(commandsRegex)!=-1) {
+      var tex = request.text;
       if (request.name)
         activate(request.text,request.name);
       else
@@ -109,7 +113,7 @@ var Scytalia = function() {
     botReq.end(JSON.stringify(body));
   };
 
-  function likeMessage(message_id) {GROUPME_API.Likes.create(GroupMe_AccessToken, ItIsWhatItIs_GroupMeID,message_id, function(err,ret) {});};
+  function likeMessage(message_id) {GroupMe_API.Likes.create(config.GroupMe_AccessToken, config.Scytalia_GroupMeID,message_id, function(err,ret) {});};
 
   function bottleReminder() {
     bottleDuty();
@@ -129,7 +133,7 @@ var Scytalia = function() {
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
-  * @calls {bot.addThought(thoughts)}
+  * @calls {addThought(thoughts)}
   */
 
 
@@ -152,18 +156,29 @@ var Scytalia = function() {
   * @calls {run(command,argument,message,sender)}
   */
   function activate(message, sender) {
-    var command = message.match(commandsRegex)[1];
-    var argument = message.match(commandsRegex)[3];
+    var matches = message.match(commandsRegex);
+    for (i=0;i<matches.length;i++) {
+      if (matches[i]==='')
+        matches.splice(i,1);
+
+    }
+
+    var command = matches[0].substring(1);
+    var argument = matches[1];
+
     // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
-    message = message.substring(1+command.length+1+argument.length+1);
-                              // slash + space + space
-    if (config.debugging) {
-      console.log('regex: '+message.match(commandsRegex).toString());
+    if (argument.length>0)
+      message = message.substring(1+command.length+1+argument.length+1);
+    else
+      message = message.substring(1+command.length+1);
+    //                           // slash + space + space
+    // if (config.debugging) {
+      console.log('matches: '+matches);
       console.log('command: '+command);
       console.log('argument: '+argument);
       console.log('message: '+message);
-      return;
-    }
+      // return;
+    
     var i = sender.indexOf(' ');
     sender = sender.substring(0,i);
     run(command,argument,message,sender);
@@ -196,7 +211,7 @@ var Scytalia = function() {
   * @return {cool guy face as string}
   */
   function cool() {
-      bot.addThought(cool());
+      addThought(cool());
   };
 
   /**
@@ -214,7 +229,7 @@ var Scytalia = function() {
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
-  * @calls {bot.addThought(thoughts)}
+  * @calls {addThought(thoughts)}
   */
   function scores(argument, message, sender) {
 
@@ -266,10 +281,10 @@ var Scytalia = function() {
     function addScores(stats) {
       Spreadsheet.load({
         debug: true,
-        spreadsheetName: ItIsWhatItIs_SpreadsheetName,
+        spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
         spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
-        worksheetId: ItIsWhatItIs_statsSheetID,
-        worksheetName: ItIsWhatItIs_statsSheetName,
+        worksheetId: config.ItIsWhatItIs_statsSheetID,
+        worksheetName: config.ItIsWhatItIs_statsSheetName,
         oauth : {
           email: config.ItIsWhatItIs_serviceEmail,
           keyFile: config.ItIsWhatItIs_keyFile
@@ -281,17 +296,19 @@ var Scytalia = function() {
           if(err) throw err;
           startRow = info.lastRow+1;
           endRow = startRow + stats.length;
+          console.log("end row: "+endRow);
           for (var i = startRow;i < endRow;i++) {
             var front = "{\""+i+"\": { ";
             var tail = "} }";
             var middle = "";
-            var splitStats = stats[r].toString().split(",");
+            stats = stats.join(",");
+            console.log("stats: "+stats);
             // for each column of data into cells by
-            for (var col = 1; col<=splitStats.length;col++) {
-              if (col==splitStats.length)
-                middle += "\""+col+"\": \""+splitStats[col-1]+"\""; // particular json seperation and labeling
+            for (var col = 1; col<=stats.length;col++) {
+              if (col==stats.length)
+                middle += "\""+col+"\": \""+stats[col-1]+"\""; // particular json seperation and labeling
               else
-                middle += "\""+col+"\": \""+splitStats[col-1]+"\","; // particular json seperation and labeling
+                middle += "\""+col+"\": \""+stats[col-1]+"\","; // particular json seperation and labeling
             }
             var all = front + middle + tail;
             var jsonObj = JSON.parse(all);
@@ -301,7 +318,7 @@ var Scytalia = function() {
            return;
          spreadsheet.send(function(err) {
             if(err) console.log(err);
-              // bot.addThought('Scores added!');
+              // addThought('Scores added!');
           });
         });
       });
@@ -310,10 +327,10 @@ var Scytalia = function() {
     function undoScores(stats) {
       Spreadsheet.load({
         debug: true,
-        spreadsheetName: ItIsWhatItIs_SpreadsheetName,
+        spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
         spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
-        worksheetId: ItIsWhatItIs_statsSheetID,
-        worksheetName: ItIsWhatItIs_statsSheetName,
+        worksheetId: config.ItIsWhatItIs_statsSheetID,
+        worksheetName: config.ItIsWhatItIs_statsSheetName,
         oauth : {
           email: config.ItIsWhatItIs_serviceEmail,
           keyFile: config.ItIsWhatItIs_keyFile
@@ -345,7 +362,7 @@ var Scytalia = function() {
             return;
           spreadsheet.send(function(err) {
             if(err) console.log(err);
-              // bot.addThought('Scores undone!');
+              // addThought('Scores undone!');
           });
         });
       });
@@ -355,17 +372,17 @@ var Scytalia = function() {
     // add scores
     scores.add = function() {
       addScores(parseForScores(message));
-      // bot.addThought('Adding scores! I think...');
+      // addThought('Adding scores! I think...');
     };
     // undo scores
     scores.undo = function() {
      // undoScores();
-      bot.addThought('fix your own mistakes');
+      addThought('fix your own mistakes');
     }
     if (argument)
       this.scores[argument]();
     else
-      bot.addThought('What about the scores '+sender+'?');
+      addThought('What about the scores '+sender+'?');
   };
   this.scores = scores;
 
@@ -383,22 +400,22 @@ var Scytalia = function() {
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
-  * @calls {bot.addThought(thoughts)}
+  * @calls {addThought(thoughts)}
   */
   function suck(argument, message, sender) {
     //  if (sender!='Alex Oberg'|'Alex')
     //    return;
       suck.my = function() {
-        bot.addThought('yeah suck '+sender+'\'s '+message+'!');
+        addThought('yeah suck '+sender+'\'s '+message+'!');
       };
       suck.his = function() {
-        bot.addThought('yeah suck his '+message+'!');
-        bot.addThought('wait, what?');
+        addThought('yeah suck his '+message+'!');
+        addThought('wait, what?');
       };
       if (argument)
         this.suck[argument]();
       else
-        bot.addThought('What about sucking '+sender+'\'s '+message+'?');
+        addThought('What about sucking '+sender+'\'s '+message+'?');
   };
   this.suck = suck;
 
@@ -414,7 +431,7 @@ var Scytalia = function() {
 * @param {string} argument - The argument to call
 * @param {string} message - The message it's from
 * @param {string} sender - The sender it's from
-* @calls {bot.addThought(thoughts)}
+* @calls {addThought(thoughts)}
 */
 // function bottle(argument, message, sender) {
 //     bottle.who = function() {
@@ -423,7 +440,7 @@ var Scytalia = function() {
 //           var members = [];
 //           ret.members.forEach(function(member) {members.push(member.nickname);});
 //           var whom = Math.round(Math.random(0,members.length));
-//           bot.addThought(members[whom]+' on duty');
+//           addThought(members[whom]+' on duty');
 //         }
 //       });
 //     };
@@ -434,7 +451,7 @@ var Scytalia = function() {
 //     if (argument)
 //       this.bottle[argument]();
 //     else
-//       bot.addThought('bottle fail');
+//       addThought('bottle fail');
 // };
 // this.bottle = bottle;
 
@@ -477,7 +494,7 @@ var Scytalia = function() {
         }
         spreadsheet.send(function(err) {
           if(err) console.log(err);
-          bot.addThought('Weekly Bottle Reminder- '+person);
+          addThought('Weekly Bottle Reminder- '+person);
         });
       });
     });
@@ -491,11 +508,7 @@ var Scytalia = function() {
     postMessage(testMessage);
   };
 
-  // this.on('newListener', function(listener) {console.log(('Event Listener: ' + listener+' listening to pan.').blue);});
-  
-  // this.on('', function() {
-    
-  // });
+
 }
 
 util.inherits(Scytalia, EventEmitter);
