@@ -182,7 +182,7 @@ var Scytalia = function() {
       console.log('argument: '+argument);
       console.log('message: '+message);
       // return;
-    }
+    
     var i = sender.indexOf(' ');
     sender = sender.substring(0,i);
     run(command,argument,message,sender);
