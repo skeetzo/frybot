@@ -195,15 +195,14 @@ var Scytalia = function() {
   */
   function run(command, argument, message, sender) {this_[command](argument, message, sender);};
 
-  var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
-  var nameRegex = '[A-Za-z]+';
-  var scoreRegex = '\\d{1}\\D*\\d{1}$';
-  var pointsEarnedRegex = '\\d{1}';
-  var pointsGivenRegex = '\\d{1}$';
-  var dateRegex;
-  var dateDayRegex = '[\-]{1}([\\d]{2})[T]{1}';
-  var dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
-  var dateYearRegex = '[\\d]{4}';
+  var statsRegex = new RegExp('([A-Za-z]+\\s*\\d{1}\\D*\\d{1})', "g");
+  var nameRegex = new RegExp('[A-Za-z]+', "g");
+  var scoreRegex = new RegExp('\\d{1}\\D*\\d{1}$', "g");
+  var pointsEarnedRegex = new RegExp('\\d{1}', "g");
+  var pointsGivenRegex = new RegExp('\\d{1}$', "g");
+  var dateDayRegex = new RegExp('[\-]{1}([\\d]{2})[T]{1}', "g");
+  var dateMonthRegex = new RegExp('[\-]{1}([\\d]{2})[\-]{1}', "g");
+  var dateYearRegex = new RegExp('[\\d]{4}', "g");
 
   /**
   * runs the cool guy thing
@@ -237,32 +236,20 @@ var Scytalia = function() {
     function parseForScores(text) {
       // Parse parsedStats
       var newStats = [];
-      regex = new RegExp(statsRegex, "g");
-      var statResults = text.match(regex);
+      var statResults = text.match(statsRegex);
       var matchNum = 1;
       statResults.forEach(function (stat) {
         var parsedStats = [];
         // find name
-        regex = new RegExp(nameRegex);
-        var name = regex.exec(stat);
-        name = name[0];
+        var name = nameRegex.exec(stat)[0];
         // find points earned
-        regex = new RegExp(pointsEarnedRegex);
-        var pointsEarned = regex.exec(stat);
-        pointsEarned = pointsEarned[0];
+        var pointsEarned = pointsEarnedRegex.exec(stat)[0];
         // find points given
-        regex = new RegExp(pointsGivenRegex);
-        var pointsGiven = regex.exec(stat);
-        pointsGiven = pointsGiven[0];
+        var pointsGiven = pointsGivenRegex.exec(stat)[0];
         var timestamp = moment().format();
-        dateRegex = new RegExp(dateDayRegex);
-        var day = dateRegex.exec(timestamp);
-        day = day[1];
-        dateRegex = new RegExp(dateMonthRegex);
-        var month = dateRegex.exec(timestamp);
-        month = month[1];
-        dateRegex = new RegExp(dateYearRegex);
-        var year = dateRegex.exec(timestamp);
+        var day = dateDayRegex.exec(timestamp)[1];
+        var month = dateMonthRegex.exec(timestamp)[0];
+        var year = dateYearRegex.exec(timestamp);
         parsedStats.push(timestamp);
         parsedStats.push(name);
         parsedStats.push(pointsEarned);
@@ -273,8 +260,6 @@ var Scytalia = function() {
         matchNum++;
       });
       // Add parsedStats
-      var startRow;
-      var endRow;
       return newStats; // parsed stats
     };
 
@@ -294,8 +279,8 @@ var Scytalia = function() {
         if(err) throw err;
         spreadsheet.receive(function(err, rows, info) {
           if(err) throw err;
-          startRow = info.lastRow+1;
-          endRow = startRow + stats.length;
+          var startRow = info.lastRow+1;
+          var endRow = startRow + stats.length;
           console.log("end row: "+endRow);
           for (var i = startRow;i < endRow;i++) {
             var front = "{\""+i+"\": { ";
