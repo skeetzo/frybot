@@ -491,7 +491,11 @@ var Scytalia = function() {
     postMessage(testMessage);
   };
 
-
+  // this.on('newListener', function(listener) {console.log(('Event Listener: ' + listener+' listening to pan.').blue);});
+  
+  // this.on('', function() {
+    
+  // });
 }
 
 util.inherits(Scytalia, EventEmitter);

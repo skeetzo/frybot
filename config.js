@@ -4,7 +4,11 @@ config.debugging = false;
 
 config.NAME = "Scytalia";
 config.PORT = 3000;
-config.botID = "219f82d5b599637927f208bb61";
+var Frybot_botID = "219f82d5b599637927f208bb61";
+var Scytalia_botID = "6c15e36d3a1ac9b72b3cd3049d";
+config.botID = Scytalia_botID;
+config.responding = true;
+
 if (config.debugging)
   config.botID = 6;
 
@@ -23,7 +27,7 @@ config.ItIsWhatItIs_frybotSheetID = 'om5ojbr';
 
 // GroupMe API
 config.GroupMe_AccessToken = "2f738e5005bc0133e1287ef6bffc9e1d";
-config.ItIsWhatItIs_GroupMeID = "7054026";
 config.Scytalia_GroupMeID = "14734775";
+config.Frybot_GroupMeID = "7054026";
 
 module.exports = config;
