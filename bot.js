@@ -161,6 +161,12 @@ var Scytalia = function() {
   */
   function activate(message, sender) {
     var matches = message.match(commandsRegex);
+    for (i=0;i<matches.length;i++) {
+      if (matches[i]=='')
+        matches.splice(i,1);
+
+    }
+
     var command = matches[1];
     var argument = matches[3];
 
