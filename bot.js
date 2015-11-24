@@ -238,8 +238,10 @@ var Scytalia = function() {
       var newStats = [];
       var statResults = text.match(statsRegex);
       var matchNum = 1;
+      console.log("text: "+text);
       statResults.forEach(function (stat) {
         var parsedStats = [];
+        console.log("stat: "+stat);
         // find name
         var name = nameRegex.exec(stat)[0];
         // find points earned
