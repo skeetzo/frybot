@@ -1,12 +1,14 @@
 var config = {};
 
-config.debugging = true;
+config.debugging = false;
 
 config.NAME = "Scytalia";
 config.PORT = 3000;
 config.botID = "219f82d5b599637927f208bb61";
 if (config.debugging)
   config.botID = 6;
+
+config.responding = true;
 
 // Google
 config.ItIsWhatItIs_serviceEmail = "615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com";

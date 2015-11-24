@@ -36,7 +36,7 @@ var Scytalia = function() {
 
   var this_ = this;
 
-  function respond() {
+  Scytalia.prototype.respond = function() {
     addThought("thinking");
     if (this.req == undefined || this.req == null) 
       return;
