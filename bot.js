@@ -300,7 +300,7 @@ var Scytalia = function() {
             var front = "{\""+i+"\": { ";
             var tail = "} }";
             var middle = "";
-            var splitStats = stats[r].toString().split(",");
+            var splitStats = stats[i].toString().split(",");
             // for each column of data into cells by
             for (var col = 1; col<=splitStats.length;col++) {
               if (col==splitStats.length)
