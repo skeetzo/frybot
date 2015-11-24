@@ -162,22 +162,25 @@ var Scytalia = function() {
   function activate(message, sender) {
     var matches = message.match(commandsRegex);
     for (i=0;i<matches.length;i++) {
-      if (matches[i]=='')
+      if (matches[i]==='')
         matches.splice(i,1);
 
     }
 
-    var command = matches[1];
-    var argument = matches[3];
+    var command = matches[0].substring(1);
+    var argument = matches[1];
 
     // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
-    // message = message.substring(1+command.length+1+argument.length+1);
+    if (argument.length>0)
+      message = message.substring(command.length+1+argument.length+1);
+    else
+      message = message.substring(command.length+1);
     //                           // slash + space + space
     // if (config.debugging) {
       console.log('matches: '+matches);
       console.log('command: '+command);
       console.log('argument: '+argument);
-      // console.log('message: '+message);
+      console.log('message: '+message);
       return;
     // }
     // var i = sender.indexOf(' ');
