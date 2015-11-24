@@ -296,22 +296,23 @@ var Scytalia = function() {
           if(err) throw err;
           startRow = info.lastRow+1;
           endRow = startRow + stats.length;
+          console.log("end row: "+endRow);
           for (var i = startRow;i < endRow;i++) {
             var front = "{\""+i+"\": { ";
             var tail = "} }";
             var middle = "";
-            // var splitStats = stats[i].toString().split(",");
+            stats = stats.split(",");
             console.log("stats: "+stats);
             // for each column of data into cells by
-            // for (var col = 1; col<=splitStats.length;col++) {
-            //   if (col==splitStats.length)
-            //     middle += "\""+col+"\": \""+splitStats[col-1]+"\""; // particular json seperation and labeling
-            //   else
-            //     middle += "\""+col+"\": \""+splitStats[col-1]+"\","; // particular json seperation and labeling
-            // }
-            // var all = front + middle + tail;
-            // var jsonObj = JSON.parse(all);
-            // spreadsheet.add(jsonObj); // adds row one by one
+            for (var col = 1; col<=stats.length;col++) {
+              if (col==stats.length)
+                middle += "\""+col+"\": \""+stats[col-1]+"\""; // particular json seperation and labeling
+              else
+                middle += "\""+col+"\": \""+stats[col-1]+"\","; // particular json seperation and labeling
+            }
+            var all = front + middle + tail;
+            var jsonObj = JSON.parse(all);
+            spreadsheet.add(jsonObj); // adds row one by one
           }
          if (config.debugging)
            return;
