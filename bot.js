@@ -195,14 +195,15 @@ var Scytalia = function() {
   */
   function run(command, argument, message, sender) {this_[command](argument, message, sender);};
 
-  var statsRegex = new RegExp(/([A-Za-z]+\\s*\\d{1}\\D*\\d{1})/, 'g');
-  var nameRegex = new RegExp(/[A-Za-z]+/, 'g');
-  var scoreRegex = new RegExp(/\\d{1}\\D*\\d{1}$/, 'g');
-  var pointsEarnedRegex = new RegExp(/\\d{1}/, 'g');
-  var pointsGivenRegex = new RegExp(/\\d{1}$/, 'g');
-  var dateDayRegex = new RegExp(/[\-]{1}([\\d]{2})[T]{1}/, 'g');
-  var dateMonthRegex = new RegExp(/[\-]{1}([\\d]{2})[\-]{1}/, 'g');
-  var dateYearRegex = new RegExp(/[\\d]{4}/, 'g');
+  var statsRegex = "([A-Za-z]+\\s*\\d{1}\\D*\\d{1})";
+  statsRegex = new RegExp(statsRegex, 'g');
+  var nameRegex = new RegExp(/[A-Za-z]+/);
+  var scoreRegex = new RegExp(/\\d{1}\\D*\\d{1}$/);
+  var pointsEarnedRegex = new RegExp(/\\d{1}/);
+  var pointsGivenRegex = new RegExp(/\\d{1}$/);
+  var dateDayRegex = new RegExp(/[\-]{1}([\\d]{2})[T]{1}/);
+  var dateMonthRegex = new RegExp(/[\-]{1}([\\d]{2})[\-]{1}/);
+  var dateYearRegex = new RegExp(/[\\d]{4}/);
 
   /**
   * runs the cool guy thing
