@@ -28,7 +28,7 @@ var arguments = [
   "who",
   "what"
 ];
-var commandsRegex = "(\/"+commands.join("|")+")?("+arguments.join("|")+")?";
+var commandsRegex = "(\/"+commands.join("|\/")+")?("+arguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
 
 
@@ -44,7 +44,9 @@ var Scytalia = function() {
     if (this.req.chunks == undefined || this.req.chunks == null) 
       return;
     var request = JSON.parse(this.req.chunks[0]);
-    if (request.text && request.name) {
+    if (!request.text && !request.name)
+      return;
+    if (request.text.search(commandsRegex)!=-1) {
       console.log("text: "+request.text);
       var tex = request.text;
       console.log(tex.match(commandsRegex));
@@ -158,21 +160,23 @@ var Scytalia = function() {
   * @calls {run(command,argument,message,sender)}
   */
   function activate(message, sender) {
-    var command = message.match(commandsRegex)[1];
-    var argument = message.match(commandsRegex)[3];
+    var matches = message.match(commandsRegex);
+    var command = matches[1];
+    var argument = matches[3];
+
     // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
-    message = message.substring(1+command.length+1+argument.length+1);
-                              // slash + space + space
-    if (config.debugging) {
-      console.log('regex: '+message.match(commandsRegex).toString());
+    // message = message.substring(1+command.length+1+argument.length+1);
+    //                           // slash + space + space
+    // if (config.debugging) {
+      console.log('matches: '+matches);
       console.log('command: '+command);
       console.log('argument: '+argument);
-      console.log('message: '+message);
+      // console.log('message: '+message);
       return;
-    }
-    var i = sender.indexOf(' ');
-    sender = sender.substring(0,i);
-    run(command,argument,message,sender);
+    // }
+    // var i = sender.indexOf(' ');
+    // sender = sender.substring(0,i);
+    // run(command,argument,message,sender);
   };
 
   /**
