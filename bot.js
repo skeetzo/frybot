@@ -46,10 +46,11 @@ var Scytalia = function() {
     var request = JSON.parse(this.req.chunks[0]);
     if (!request.text && !request.name)
       return;
+        console.log("name: "+request.name);
+    console.log("ot name: "+config.NAME);
     if (request.name==config.NAME)
       return;
-    console.log("name: "+request.name);
-    console.log("ot name: "+config.NAME);
+
     if (request.text.search(commandsRegex)!=-1) {
       console.log("text: "+request.text);
       var tex = request.text;
