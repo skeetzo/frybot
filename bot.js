@@ -251,12 +251,18 @@ var Scytalia = function() {
         // find name
         var name = nameRegex.exec(stat)[0];
         // find points earned
-        var pointsEarned = pointsEarnedRegex.exec(stat)[0];
+        var pointsEarned = pointsEarnedRegex.exec(stat);
+        if (pointsEarned!=null)
+          pointsEarned = pointsEarned[0];
         // find points given
-        var pointsGiven = pointsGivenRegex.exec(stat)[0];
+        var pointsGiven = pointsGivenRegex.exec(stat);
+        if (pointsGiven!=null)
+          pointsGiven = pointsGiven[0];
         var timestamp = moment().format();
         var day = dateDayRegex.exec(timestamp)[1];
+       
         var month = dateMonthRegex.exec(timestamp)[0];
+       
         var year = dateYearRegex.exec(timestamp);
         parsedStats.push(timestamp);
         parsedStats.push(name);
