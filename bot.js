@@ -215,7 +215,8 @@ var bot = function() {
   * @return {cool guy face as string}
   */
   function coolguy() {
-    addThought(cool());
+    var thought = cool();
+    addThought(thought);
   };
   this.coolguy = coolguy;
   /**
