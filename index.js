@@ -1,20 +1,17 @@
-// require('dotenv').load();
-var http, director, bot, router, server, port;
-http = require('http');
-director = require('director');
-bot = require('./bot.js');
-var config = require('./config.js');
-
+var bot = require('./bot.js');
 bot = new bot();
+var config = require('./config.js');
+var director = require('director');
+var http = require('http');
 
-router = new director.http.Router({
+var router = new director.http.Router({
   '/' : {
     post: bot.respond,
     get: ping
   }
 });
 
-server = http.createServer(function (req, res) {
+var server = http.createServer(function (req, res) {
   req.chunks = [];
   req.on('data', function (chunk) {
     req.chunks.push(chunk.toString());
@@ -26,7 +23,7 @@ server = http.createServer(function (req, res) {
   });
 });
 
-port = Number(process.env.PORT || config.PORT);
+var port = Number(process.env.PORT || config.PORT);
 server.listen(port);
 
 function ping() {
@@ -35,13 +32,12 @@ function ping() {
   // bot.ping();
 }
 
-// var CronJob = require('cron').CronJob;
-// var job = new CronJob({
-//  cronTime: '00 45 2 * * *',
-//   onTick: function() {
-//      bot.bottleReminder();
-//   },
-//   start: true,
-//   timeZone: 'America/Los_Angeles'
-// });
-// //job.start();
+var CronJob = require('cron').CronJob;
+var job = new CronJob({
+ cronTime: '00 20 4 * * 2',
+  onTick: function() {
+     bot.bottle.duty();
+  },
+  start: true,
+  timeZone: 'America/Los_Angeles'
+});

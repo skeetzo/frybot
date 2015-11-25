@@ -24,5 +24,5 @@ v0.0.4
 fiddling  
   
 v0.0.5  
-11/22/15  
-reorg  
+11/25/15  
+reorg and notations    
