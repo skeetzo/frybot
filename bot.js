@@ -195,7 +195,7 @@ var bot = function() {
   * @calls {this[command](argument, message, sender)}
   */
   function run(command, argument, message, sender) {
-    // if (typeof command === "function" )
+    if (typeof this_[command] === "function" )
       this_[command](argument, message, sender);
   };
 
