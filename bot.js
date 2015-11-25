@@ -25,6 +25,7 @@ var arguments = [
   "undo",
   "my",
   "his",
+  "duty",
   "who",
   "what"
 ];
