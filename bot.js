@@ -15,7 +15,7 @@ var EventEmitter = require('events').EventEmitter;
 
 // list of all available commands and arguments
 var commands = [
-  'face',
+  'coolguy',
   'scores',
   'suck',
   'bottle'
@@ -214,10 +214,10 @@ var bot = function() {
   *
   * @return {cool guy face as string}
   */
-  function face() {
+  function coolguy() {
     addThought(cool());
   };
-  this.face = face;
+  this.coolguy = coolguy;
   /**
   * scores command
   *
