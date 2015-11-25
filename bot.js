@@ -33,7 +33,7 @@ var commandsRegex = "(\/"+commands.join("|\/")+")?("+arguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
 
 
-var Scytalia = function() {
+var bot = function() {
 
   var this_ = this;
 
@@ -114,7 +114,7 @@ var Scytalia = function() {
     botReq.end(JSON.stringify(body));
   };
 
-  function likeMessage(message_id) {GroupMe_API.Likes.create(config.GroupMe_AccessToken, config.Scytalia_GroupMeID,message_id, function(err,ret) {});};
+  function likeMessage(message_id) {GroupMe_API.Likes.create(config.GroupMe_AccessToken, config.GroupMeID,message_id, function(err,ret) {});};
 
   function bottleReminder() {
     bottleDuty();
@@ -518,9 +518,9 @@ this.bottle = bottle;
 
 }
 
-util.inherits(Scytalia, EventEmitter);
+util.inherits(bot, EventEmitter);
 
-module.exports = Scytalia;
+module.exports = bot;
 
 
 

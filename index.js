@@ -5,11 +5,11 @@ director = require('director');
 bot = require('./bot.js');
 var config = require('./config.js');
 
-var scytalia = new bot();
+bot = new bot();
 
 router = new director.http.Router({
   '/' : {
-    post: scytalia.respond,
+    post: bot.respond,
     get: ping
   }
 });
@@ -32,16 +32,16 @@ server.listen(port);
 function ping() {
   this.res.writeHead(200);
   this.res.end("Hi, I'm "+config.NAME+" and I totally work.");
-  // scytalia.ping();
+  // bot.ping();
 }
 
-var CronJob = require('cron').CronJob;
-var job = new CronJob({
- cronTime: '00 45 2 * * *',
-  onTick: function() {
-     scytalia.bottleReminder();
-  },
-  start: true,
-  timeZone: 'America/Los_Angeles'
-});
-//job.start();
+// var CronJob = require('cron').CronJob;
+// var job = new CronJob({
+//  cronTime: '00 45 2 * * *',
+//   onTick: function() {
+//      bot.bottleReminder();
+//   },
+//   start: true,
+//   timeZone: 'America/Los_Angeles'
+// });
+// //job.start();

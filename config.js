@@ -27,7 +27,8 @@ config.ItIsWhatItIs_frybotSheetID = 'om5ojbr';
 
 // GroupMe API
 config.GroupMe_AccessToken = "2f738e5005bc0133e1287ef6bffc9e1d";
-config.Scytalia_GroupMeID = "14734775";
-config.Frybot_GroupMeID = "7054026";
+var Scytalia_GroupMeID = "14734775";
+var Frybot_GroupMeID = "7054026";
+config.GroupMeID = Scytalia_GroupMeID;
 
 module.exports = config;
