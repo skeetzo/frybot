@@ -15,7 +15,7 @@ var EventEmitter = require('events').EventEmitter;
 
 // list of all available commands and arguments
 var commands = [
-  'cool',
+  'coolguy',
   'scores',
   'suck',
   'bottle'
@@ -168,7 +168,7 @@ var bot = function() {
     var argument = matches[1];
 
     // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
-    if (argument.length>0)
+    if (argument!=undefined)
       message = message.substring(1+command.length+1+argument.length+1);
     else
       message = message.substring(1+command.length+1);
@@ -194,7 +194,10 @@ var bot = function() {
   * @param {string} sender - the string containing the name of the sender; already parsed into just the first name
   * @calls {this[command](argument, message, sender)}
   */
-  function run(command, argument, message, sender) {this_[command](argument, message, sender);};
+  function run(command, argument, message, sender) {
+    // if (typeof command === "function" )
+      this_[command](argument, message, sender);
+  };
 
   var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
   var nameRegex = '[A-Za-z]+';
@@ -211,10 +214,11 @@ var bot = function() {
   *
   * @return {cool guy face as string}
   */
-  function cool() {
-      addThought(cool());
+  function coolguy() {
+    var thought = cool();
+    addThought(thought);
   };
-
+  this.coolguy = coolguy;
   /**
   * scores command
   *

@@ -1,8 +1,13 @@
 {
   "name": "frybot",
-  "version": "0.0.4",
-  "author": "Schizo",
-  "description": "Pool League GroupMe bot",
+  "author": {
+    "name": "Alex Oberg",
+    "email": "brainlessdg13@gmail.com",
+    "url": ""
+    },
+  "version": "0.0.3",
+  "description": "Pool League GroupMe Chatbot",
+  "homepage": "https://sites.google.com/site/itiswhatitisleague",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -10,11 +15,11 @@
   "dependencies": {
     "colors": "^1.0.3",
     "cool-ascii-faces": "~1.3.x",
-    "director": "",
+    "director": "*",
+    "dotenv": "~1.2.0",
     "edit-google-spreadsheet": "0.2.19",
     "moment": "~2.10.3",
     "groupme": "0.5.6",
-    "underscore": "",
     "cron": "1.0.9"
   },
   "engines": {
@@ -32,6 +37,6 @@
     "bot",
     "google",
     "sheets"
-    ],
+  ],
   "license": "MIT"
 }
