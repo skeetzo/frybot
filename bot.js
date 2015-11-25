@@ -1,84 +1,37 @@
-
-var cool = require('cool-ascii-faces');
-var HTTPS = require('https');
-var Spreadsheet = require('edit-google-spreadsheet');
-var moment = require ('moment');
-var _ = require('underscore');
-var config = require('./config.js');
 require("colors");
-
-var GroupMe_API = require('groupme').Stateless;
-
-
-var util = require('util');
+var _ = require('underscore');
+var cool = require('cool-ascii-faces');
+var config = require('./config.js');
 var EventEmitter = require('events').EventEmitter;
-
-// list of all available commands and arguments
-var commands = [
-  'coolguy',
-  'scores',
-  'suck',
-  'bottle'
-];
-var arguments = [
-  "add",
-  "undo",
-  "my",
-  "his",
-  "duty",
-  "who",
-  "what"
-];
-var commandsRegex = "(\/"+commands.join("|\/")+")?("+arguments.join("|")+")?";
-commandsRegex = new RegExp(commandsRegex, "gi");
-
+var GroupMe_API = require('groupme').Stateless;
+var HTTPS = require('https');
+var moment = require ('moment');
+var Spreadsheet = require('edit-google-spreadsheet');
+var util = require('util');
 
 var bot = function() {
-
   var this_ = this;
 
-  this.respond = function() {
-    if (this.req == undefined || this.req == null) 
-      return;
-    if (this.req.chunks == undefined || this.req.chunks == null) 
-      return;
-    var request = JSON.parse(this.req.chunks[0]);
-    if (!request.text && !request.name)
-      return;
-    if (request.name==config.NAME)
-      return;
-    if (request.text.search(commandsRegex)!=-1) {
-        activate(request);
-  
-      this.res.writeHead(200);
-      this.res.end();
-    } else {
-      this.res.writeHead(200);
-      this.res.end();
-    }
-  };
-
-  var thinker; // the timeout function
+  /**
+  * Adds a thought {string} to the thoughts {array} that will be POSTed
+  * @param thought {string} what will be POSTed 
+  */
   var thoughts = []; // the thoughts to be posted
   function addThought(thought) {
     thoughts.push(thought);
-    think();
+    this_.emit("thought added");
   };
 
-  function think() {
-    clearTimeout(thinker);
-    thinker = setTimeout(responder,6000);
-  };
+  /**
+  * Likes the message with the given id
+  * @param {string} message_id - The message's id
+  */
+  function likeMessage(message_id) {GroupMe_API.Likes.create(config.GroupMe_AccessToken, config.GroupMeID,message_id, function(err,ret) {});};
 
-  var responder = function() {
-    if (!config.responding)
-      return;
-    if (thoughts.length>=1)
-      postMessage(thoughts.shift());
-    else if (thoughts.length>0)
-      postMessage(thoughts.join('.. '));
-  };
-
+  /**
+  * Posts the given message via the GroupMe bot
+  * @param message
+  */
   function postMessage(message) {
     var options, body, botReq;
     options = {
@@ -93,7 +46,7 @@ var bot = function() {
     console.log(('sending ' + message + ' to ' + config.botID).green);
     botReq = HTTPS.request(options, function(res) {
         if(res.statusCode == 202) {
-          //neat
+          // neat, why is this even here?
         } else {
           console.log('rejecting bad status code ' + res.statusCode);
         }
@@ -109,134 +62,156 @@ var bot = function() {
     botReq.end(JSON.stringify(body));
   };
 
-  function likeMessage(message_id) {GroupMe_API.Likes.create(config.GroupMe_AccessToken, config.GroupMeID,message_id, function(err,ret) {});};
-
-  function bottleReminder() {
-    bottleDuty();
+  // Runs activate(request) upon successful match
+  this.respond = function() {
+    if (this.req == undefined || this.req == null) 
+      return;
+    if (this.req.chunks == undefined || this.req.chunks == null) 
+      return;
+    var request = JSON.parse(this.req.chunks[0]);
+    if (!request.text && !request.name)
+      return;
+    if (request.name==config.NAME)
+      return;
+    if (request.text.search(config.commandsRegex)!=-1) 
+      activate(request);
+    this.res.writeHead(200);
+    this.res.end();
   };
 
-  /**
-  * template
-  *
-  * arguments: things
-  *
-  * thoughts:
-  *    yeah suck sender's message!
-  *    yeah suck his message!
-  *      wait, what?
-  *   What about sucking sender's message?
-  *
-  * @param {string} argument - The argument to call
-  * @param {string} message - The message it's from
-  * @param {string} sender - The sender it's from
-  * @calls {addThought(thoughts)}
-  */
-
-
-
-  /**
-  * checks regex matches
-  *
-  * @param {string} message - the message to be checked
-  * @return {true/false}
-  */
-  function matches(message) {
-    return message.match(commandsRegex);
+  // Prepares the thoughts to be POSTed
+  var responder = function() {
+    if (!config.responding)
+      return;
+    if (thoughts.length>=1)
+      postMessage(thoughts.shift());
+    else if (thoughts.length>0)
+      postMessage(thoughts.join('.. '));
   };
 
+  // Commands
+
   /**
-  * filter function activates the command process to be run
-  *
-  * @param {string} message - the string containing the message/command to be run
-  * @param {string} sender - the string containing the name of the sender; parsed into just the first name
-  * @calls {run(command,argument,message,sender)}
+  * Filter function activates the command process to be run
+  * @param {Object} request - the request as passed from respond(), includes text and id
   */
   function activate(request) {
     var message = request.text;
     var sender = request.id;
-
-    var matches = message.match(commandsRegex);
-    console.log("matches before: "+matches);
+    var matches = message.match(config.commandsRegex);
+    if (config.debugging) console.log("matches before: "+matches);
     for (i=0;i<matches.length;i++) 
-      if (matches[i]=='')
+      if (matches[i]==""||matches[i]==="")
         matches.splice(i,1);
-    console.log("matches after: "+matches);
-
-    var command = matches[0].substring(1);
-    var argument = matches[1];
-
-    // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
+    if (config.debugging) console.log("matches after: "+matches);
+    var command = matches[0].substring(1); // the first command match minus the slash
+    var argument = matches[1]; // the first argument match
     if (argument!=undefined)
       message = message.substring(1+command.length+1+argument.length+1);
     else
       message = message.substring(1+command.length+1);
     //                           // slash + space + space
-    // if (config.debugging) {
+    if (config.debugging) {
       console.log('matches: '+matches);
       console.log('command: '+command);
       console.log('argument: '+argument);
       console.log('message: '+message);
-      // return;
-    
+      return;
+    }
     var i = sender.indexOf(' ');
     sender = sender.substring(0,i);
-    run(command,argument,message,sender);
-  };
-
-  /**
-  * runs the command
-  *
-  * @param {string} command - the command
-  * @param {string} argument - the argument
-  * @param {string} message - the string containing the message/command to be run
-  * @param {string} sender - the string containing the name of the sender; already parsed into just the first name
-  * @calls {this[command](argument, message, sender)}
-  */
-  function run(command, argument, message, sender) {
     if (typeof this_[command] === "function" ) {
       this_[command](argument, message, sender);
       likeMessage(sender);
     }
   };
 
-  var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
-  var nameRegex = '[A-Za-z]+';
-  var scoreRegex = '\\d{1}\\D*\\d{1}$';
-  var pointsEarnedRegex = '\\d{1}';
-  var pointsGivenRegex = '\\d{1}$';
-  var dateRegex;
-  var dateDayRegex = '[\-]{1}([\\d]{2})[T]{1}';
-  var dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
-  var dateYearRegex = '[\\d]{4}';
-
   /**
-  * runs the cool guy thing
-  *
-  * @return {cool guy face as string}
-  */
-  function coolguy() {
-    var thought = cool();
-    addThought(thought);
-  };
-  this.coolguy = coolguy;
-  /**
-  * scores command
-  *
-  * arguments: add, undo
-  *
-  * thoughts:
-  *    Adding scores! I think...
-  *      Scores added!
-  *    fix your own mistakes
-  *      Scores undone!
-  *   What about the scores sender?
-  *
+  * Bottle command functions
+  *  who, what
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
-  * @calls {addThought(thoughts)}
+  */
+  function bottle(argument, message, sender) {
+    bottle.duty = function () {
+      Spreadsheet.load({
+        debug: true,
+        spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
+        worksheetId: config.ItIsWhatItIs_frybotSheetID,
+        oauth : {
+          email: config.ItIsWhatItIs_serviceEmail,
+          keyFile: config.ItIsWhatItIs_keyFile
+        }
+      },
+      function sheetReady(err, spreadsheet) {
+        if(err) throw err;
+        spreadsheet.receive(function(err, rows, info) {
+          if(err) throw err;
+          var players = [];
+          rows = _.toArray(rows);
+          rows.shift();
+          console.log("rows: "+rows);
+          _.forEach(rows, function(col) {
+            players.push(col[1]);
+          });
+          var person = players[0];
+          players.push(players.shift());
+          for (var row = 2;row < players.length+2;row++) {
+            var front = "{\""+row+"\": { ";
+            var tail = "} }";
+            var middle = "";
+            if (row==players.length)
+              middle += "\"1\": \""+players[row-2]+"\"";
+            else
+              middle += "\"1\": \""+players[row-2]+"\"";
+            var all = front + middle + tail;
+            var jsonObj = JSON.parse(all);
+            spreadsheet.add(jsonObj);
+          }
+          spreadsheet.send(function(err) {
+            if (err) console.log(err);
+            addThought('Weekly Bottle Reminder- '+person);
+          });
+        });
+      });
+    };
+    bottle.who = function() {};
+    bottle.what = function() {
+      var bottles = ['rum','vodka','whiskey','jaeger'];
+      bots.addThought(bottles[Math.random(0,bottles.length)]);
+    };
+    if (argument)
+      this.bottle[argument]();
+    else
+      addThought('bottle fail');
+  };
+  this.bottle = bottle;
+
+  // Runs the cool guy thing
+  function coolguy() {
+    addThought(cool());
+  };
+  this.coolguy = coolguy;
+
+  /**
+  * Scores command functions
+  *   add, undo
+  * @param {string} argument - The argument to call
+  * @param {string} message - The message it's from
+  * @param {string} sender - The sender it's from
   */
   function scores(argument, message, sender) {
+    // Regexes used for parsing stat info
+    var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
+    var nameRegex = '[A-Za-z]+';
+    var scoreRegex = '\\d{1}\\D*\\d{1}$';
+    var pointsEarnedRegex = '\\d{1}';
+    var pointsGivenRegex = '\\d{1}$';
+    var dateRegex;
+    var dateDayRegex = '[\-]{1}([\\d]{2})[T]{1}';
+    var dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
+    var dateYearRegex = '[\\d]{4}';
 
     // used to parse the stats from the message
     function parseForScores(text) {
@@ -328,7 +303,8 @@ var bot = function() {
         });
       });
     };
-    // doesn't work
+
+    // doesn't work yet
     function undoScores(stats) {
       Spreadsheet.load({
         debug: true,
@@ -361,28 +337,22 @@ var bot = function() {
             }
             var all = front + middle + tail;
             var jsonObj = JSON.parse(all);
-            spreadsheet.add(jsonObj); // adds row one by one
+            console.log("jsonObj: "+jsonObj);
+            // spreadsheet.add(jsonObj); // adds row one by one
           }
-          if (config.debugging)
-            return;
-          spreadsheet.send(function(err) {
-            if(err) console.log(err);
+          // spreadsheet.send(function(err) {
+          //   if(err) console.log(err);
               // addThought('Scores undone!');
-          });
+          // });
         });
       });
     };
 
-    // command referenced functions
-    // add scores
     scores.add = function() {
       addScores(parseForScores(message));
-      // addThought('Adding scores! I think...');
     };
-    // undo scores
     scores.undo = function() {
-     // undoScores();
-      addThought('fix your own mistakes');
+      undoScores();
     }
     if (argument)
       this.scores[argument]();
@@ -392,150 +362,36 @@ var bot = function() {
   this.scores = scores;
 
   /**
-  * suck command
-  *
-  * arguments: my, his
-  *
-  * thoughts:
-  *    yeah suck sender's message!
-  *    yeah suck his message!
-  *      wait, what?
-  *   What about sucking sender's message?
-  *
+  * Suck command functions
+  *   my, his
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
-  * @calls {addThought(thoughts)}
   */
   function suck(argument, message, sender) {
-    //  if (sender!='Alex Oberg'|'Alex')
-    //    return;
-      suck.my = function() {
-        addThought('yeah suck '+sender+'\'s '+message+'!');
-      };
-      suck.his = function() {
-        addThought('yeah suck his '+message+'!');
-        addThought('wait, what?');
-      };
-      if (argument)
-        this.suck[argument]();
-      else
-        addThought('What about sucking '+sender+'\'s '+message+'?');
+    if (sender!='Alex Oberg'||'Alex')
+       return;
+    // if (sender=='Nico Mendoza'||'Nico') {}
+    suck.my = function() {
+      addThought('yeah suck '+sender+'\'s '+message+'!');
+    };
+    suck.his = function() {
+      addThought('yeah suck his '+message+'! ');
+      addThought('wait, what?');
+    };
+    if (argument)
+      this.suck[argument]();
+    else
+      addThought('What about sucking '+sender+'\'s '+message+'?');
   };
   this.suck = suck;
 
-/**
-* bottle command
-*
-* arguments: who, what
-*
-* thoughts:
-*   bottle fail
-*     [random name] on duty
-*
-* @param {string} argument - The argument to call
-* @param {string} message - The message it's from
-* @param {string} sender - The sender it's from
-* @calls {addThought(thoughts)}
-*/
-function bottle(argument, message, sender) {
-
-  function bottleDuty() {
-    Spreadsheet.load({
-      debug: true,
-      spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
-      worksheetId: config.ItIsWhatItIs_frybotSheetID,
-      oauth : {
-        email: config.ItIsWhatItIs_serviceEmail,
-        keyFile: config.ItIsWhatItIs_keyFile
-      }
-    },
-    function sheetReady(err, spreadsheet) {
-      if(err) throw err;
-      spreadsheet.receive(function(err, rows, info) {
-        if(err) throw err;
-        var players = [];
-        rows = _.toArray(rows);
-        rows.shift();
-        console.log(rows);
-        _.forEach(rows, function(col) {
-          players.push(col[1]);
-        });
-        var person = players[0];
-        // var temp = players.shift
-        players.push(players.shift());
-        for (var row = 2;row < players.length+2;row++) {
-          var front = "{\""+row+"\": { ";
-          var tail = "} }";
-          var middle = "";
-          if (row==players.length)
-            middle += "\"1\": \""+players[row-2]+"\"";
-          else
-            middle += "\"1\": \""+players[row-2]+"\"";
-          var all = front + middle + tail;
-          var jsonObj = JSON.parse(all);
-          spreadsheet.add(jsonObj);
-        }
-        spreadsheet.send(function(err) {
-          if(err) console.log(err);
-          addThought('Weekly Bottle Reminder- '+person);
-        });
-      });
-    });
-  };
-
-  bottle.duty = function () {
-    bottleDuty();
-  }
-  bottle.who = function() {
-    GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
-      if (!err) {
-        var members = [];
-        ret.members.forEach(function(member) {members.push(member.nickname);});
-        var whom = Math.round(Math.random(0,members.length));
-        addThought(members[whom]+' on duty');
-      }
-    });
-  };
-  bottle.what = function() {
-    var bottles = ['rum','vodka','whiskey','jaeger'];
-    bots.addThought(bottles[Math.random(0,bottles.length)]);
-  };
-  if (argument)
-    this.bottle[argument]();
-  else
-    addThought('bottle fail');
-};
-this.bottle = bottle;
-
-
-  
-
-  function poke() {
-    think();
-  };
-
-  function test(testMessage) {
-    postMessage(testMessage);
-  };
-
-
+  // "thought added" event calls responder() to say all current thoughts
+  this.on("thought added", function() {
+    setTimeout(responder,config.responseTime);
+  });
 }
 
 util.inherits(bot, EventEmitter);
 
 module.exports = bot;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
