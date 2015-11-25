@@ -28,7 +28,7 @@ var arguments = [
   "who",
   "what"
 ];
-var commandsRegex = "(\/"+commands.join("|")+")?("+arguments.join("|")+")?";
+var commandsRegex = "(\/"+commands.join("|\/")+")?("+arguments.join("|")+")?";
 commandsRegex = new RegExp(commandsRegex, "gi");
 
 
@@ -37,19 +37,17 @@ var Scytalia = function() {
   var this_ = this;
 
   this.respond = function() {
-              // addThought("maybe thinking");
-
     if (this.req == undefined || this.req == null) 
       return;
     if (this.req.chunks == undefined || this.req.chunks == null) 
       return;
     var request = JSON.parse(this.req.chunks[0]);
-    if (request.text && request.name) {
-      console.log("text: "+request.text);
+    if (!request.text && !request.name)
+      return;
+    if (request.name==config.NAME)
+      return;
+    if (request.text.search(commandsRegex)!=-1) {
       var tex = request.text;
-      console.log(tex.match(commandsRegex));
-          // addThought("really thinking");
-
       if (request.name)
         activate(request.text,request.name);
       else
@@ -158,18 +156,29 @@ var Scytalia = function() {
   * @calls {run(command,argument,message,sender)}
   */
   function activate(message, sender) {
-    var command = message.match(commandsRegex)[1];
-    var argument = message.match(commandsRegex)[3];
+    var matches = message.match(commandsRegex);
+    for (i=0;i<matches.length;i++) {
+      if (matches[i]==='')
+        matches.splice(i,1);
+
+    }
+
+    var command = matches[0].substring(1);
+    var argument = matches[1];
+
     // if the command is using multiple arguments then it needs to check each returned match in the [array] being checked with
-    message = message.substring(1+command.length+1+argument.length+1);
-                              // slash + space + space
-    if (config.debugging) {
-      console.log('regex: '+message.match(commandsRegex).toString());
+    if (argument.length>0)
+      message = message.substring(1+command.length+1+argument.length+1);
+    else
+      message = message.substring(1+command.length+1);
+    //                           // slash + space + space
+    // if (config.debugging) {
+      console.log('matches: '+matches);
       console.log('command: '+command);
       console.log('argument: '+argument);
       console.log('message: '+message);
-      return;
-    }
+      // return;
+    
     var i = sender.indexOf(' ');
     sender = sender.substring(0,i);
     run(command,argument,message,sender);
@@ -287,17 +296,19 @@ var Scytalia = function() {
           if(err) throw err;
           startRow = info.lastRow+1;
           endRow = startRow + stats.length;
+          console.log("end row: "+endRow);
           for (var i = startRow;i < endRow;i++) {
             var front = "{\""+i+"\": { ";
             var tail = "} }";
             var middle = "";
-            var splitStats = stats[r].toString().split(",");
+            stats = stats.join(",");
+            console.log("stats: "+stats);
             // for each column of data into cells by
-            for (var col = 1; col<=splitStats.length;col++) {
-              if (col==splitStats.length)
-                middle += "\""+col+"\": \""+splitStats[col-1]+"\""; // particular json seperation and labeling
+            for (var col = 1; col<=stats.length;col++) {
+              if (col==stats.length)
+                middle += "\""+col+"\": \""+stats[col-1]+"\""; // particular json seperation and labeling
               else
-                middle += "\""+col+"\": \""+splitStats[col-1]+"\","; // particular json seperation and labeling
+                middle += "\""+col+"\": \""+stats[col-1]+"\","; // particular json seperation and labeling
             }
             var all = front + middle + tail;
             var jsonObj = JSON.parse(all);
@@ -422,28 +433,7 @@ var Scytalia = function() {
 * @param {string} sender - The sender it's from
 * @calls {addThought(thoughts)}
 */
-// function bottle(argument, message, sender) {
-//     bottle.who = function() {
-//       GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
-//         if (!err) {
-//           var members = [];
-//           ret.members.forEach(function(member) {members.push(member.nickname);});
-//           var whom = Math.round(Math.random(0,members.length));
-//           addThought(members[whom]+' on duty');
-//         }
-//       });
-//     };
-//     bottle.what = function() {
-//       var bottles = ['rum','vodka','whiskey','jaeger'];
-//       bots.addThought(bottles[Math.random(0,bottles.length)]);
-//     };
-//     if (argument)
-//       this.bottle[argument]();
-//     else
-//       addThought('bottle fail');
-// };
-// this.bottle = bottle;
-
+function bottle(argument, message, sender) {
 
   function bottleDuty() {
     Spreadsheet.load({
@@ -488,6 +478,33 @@ var Scytalia = function() {
       });
     });
   };
+
+  bottle.duty = function () {
+    bottleDuty();
+  }
+  bottle.who = function() {
+    GROUPME_API.Groups.show(GROUPME_ACCESS_TOKEN, GROUPME_ItIsWhatItIs_ID,function(err,ret) {
+      if (!err) {
+        var members = [];
+        ret.members.forEach(function(member) {members.push(member.nickname);});
+        var whom = Math.round(Math.random(0,members.length));
+        addThought(members[whom]+' on duty');
+      }
+    });
+  };
+  bottle.what = function() {
+    var bottles = ['rum','vodka','whiskey','jaeger'];
+    bots.addThought(bottles[Math.random(0,bottles.length)]);
+  };
+  if (argument)
+    this.bottle[argument]();
+  else
+    addThought('bottle fail');
+};
+this.bottle = bottle;
+
+
+  
 
   function poke() {
     think();
