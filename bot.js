@@ -48,13 +48,8 @@ var bot = function() {
     if (request.name==config.NAME)
       return;
     if (request.text.search(commandsRegex)!=-1) {
-      var tex = request.text;
-      if (request.name)
-        activate(request.text,request.name);
-      else
-        activate(request.text);
-      if (request.id)
-        likeMessage(request.id);
+        activate(request);
+  
       this.res.writeHead(200);
       this.res.end();
     } else {
@@ -156,13 +151,16 @@ var bot = function() {
   * @param {string} sender - the string containing the name of the sender; parsed into just the first name
   * @calls {run(command,argument,message,sender)}
   */
-  function activate(message, sender) {
-    var matches = message.match(commandsRegex);
-    for (i=0;i<matches.length;i++) {
-      if (matches[i]==='')
-        matches.splice(i,1);
+  function activate(request) {
+    var message = request.text;
+    var sender = request.id;
 
-    }
+    var matches = message.match(commandsRegex);
+    console.log("matches before: "+matches);
+    for (i=0;i<matches.length;i++) 
+      if (matches[i]=='')
+        matches.splice(i,1);
+    console.log("matches after: "+matches);
 
     var command = matches[0].substring(1);
     var argument = matches[1];
@@ -195,8 +193,10 @@ var bot = function() {
   * @calls {this[command](argument, message, sender)}
   */
   function run(command, argument, message, sender) {
-    if (typeof this_[command] === "function" )
+    if (typeof this_[command] === "function" ) {
       this_[command](argument, message, sender);
+      likeMessage(sender);
+    }
   };
 
   var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
