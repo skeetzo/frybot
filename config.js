@@ -12,6 +12,8 @@ config.responding = true;
 if (config.debugging)
   config.botID = 6;
 
+config.responding = true;
+
 // Google
 config.ItIsWhatItIs_serviceEmail = "615638101068-ddthvbjttd2076flaqi1rm54divhpqvk@developer.gserviceaccount.com";
 config.ItIsWhatItIs_keyFile = 'secret.pem';
