@@ -194,7 +194,10 @@ var bot = function() {
   * @param {string} sender - the string containing the name of the sender; already parsed into just the first name
   * @calls {this[command](argument, message, sender)}
   */
-  function run(command, argument, message, sender) {this_[command](argument, message, sender);};
+  function run(command, argument, message, sender) {
+    if (command typeof "function" )
+      this_[command](argument, message, sender);
+  };
 
   var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
   var nameRegex = '[A-Za-z]+';
