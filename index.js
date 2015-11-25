@@ -1,9 +1,11 @@
-var config = require('./config.js');
-
+// require('dotenv').load();
 var http, director, bot, router, server, port;
 http = require('http');
 director = require('director');
 bot = require('./bot.js');
+var config = require('./config.js');
+
+bot = new bot();
 
 router = new director.http.Router({
   '/' : {
@@ -24,21 +26,22 @@ server = http.createServer(function (req, res) {
   });
 });
 
-server.listen(config.port);
+port = Number(process.env.PORT || config.PORT);
+server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hi, I'm "+config.name+" and I totally work.");
+  this.res.end("Hi, I'm "+config.NAME+" and I totally work.");
+  // bot.ping();
 }
 
-var CronJob = require('cron').CronJob;
-var job = new CronJob({
- cronTime: '00 30 19 * * 1',
-  onTick: function() {
-     bot.bottleReminder();
-     // setTimeout(bot.readyChecker(),10000);
-  },
-  start: true,
-  timeZone: 'America/Los_Angeles'
-});
-job.start();
+// var CronJob = require('cron').CronJob;
+// var job = new CronJob({
+//  cronTime: '00 45 2 * * *',
+//   onTick: function() {
+//      bot.bottleReminder();
+//   },
+//   start: true,
+//   timeZone: 'America/Los_Angeles'
+// });
+// //job.start();
