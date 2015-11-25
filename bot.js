@@ -214,7 +214,7 @@ var bot = function() {
   function cool() {
       addThought(cool());
   };
-
+  this.cool = cool;
   /**
   * scores command
   *
