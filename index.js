@@ -32,12 +32,12 @@ function ping() {
   // bot.ping();
 }
 
-// var CronJob = require('cron').CronJob;
-// var job = new CronJob({
-//  cronTime: '00 20 4 * * 2',
-//   onTick: function() {
-//      bot.bottle.duty();
-//   },
-//   start: true,
-//   timeZone: 'America/Los_Angeles'
-// });
+var CronJob = require('cron').CronJob;
+var job = new CronJob({
+ cronTime: '00 20 4 * * 2',
+  onTick: function() {
+     bot.bottle.duty();
+  },
+  start: true,
+  timeZone: 'America/Los_Angeles'
+});
