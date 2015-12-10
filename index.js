@@ -34,9 +34,9 @@ function ping() {
 
 var CronJob = require('cron').CronJob;
 var job = new CronJob({
- cronTime: '00 45 9 * * 4',
+ cronTime: '00 51 9 * * 4',
   onTick: function() {
-     bot.bottle.duty();
+     bot.bottle().duty();
   },
   start: true,
   timeZone: 'America/Los_Angeles'
