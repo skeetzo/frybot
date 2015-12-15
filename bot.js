@@ -97,6 +97,8 @@ var bot = function() {
 
   // Commands
 
+  var confirmedCommand;
+
   /**
   * Filter function activates the command process to be run
   * @param {Object} request - the request as passed from post(), includes text and id
@@ -207,7 +209,6 @@ var bot = function() {
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
   */
-      var confirmedCommand;
   function scores(argument, message, sender) {
     // Regexes used for parsing stat info
     var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
@@ -311,14 +312,14 @@ var bot = function() {
 
     scores.add = function() {
       postThought_('Adding scores.');
-      
-      confirmedCommand = setTimeout(function() {
-        addScores_(parseForScores(message));
-      },config.brainfart);
+      confirmedCommand = setTimeout(
+        function() {
+          addScores_(parseForScores(message));
+        },
+        config.brainfart);
     };
     scores.undo = function() {
-      postThought_('jk');
-      clearTimeout(confirmedCommand);
+
     }
     if (argument)
       this.scores[argument]();
@@ -326,6 +327,16 @@ var bot = function() {
       postThought_('What about the scores '+sender+'?');
   };
   this.scores = scores;
+
+  function jk(argument, message, sender) {
+    if (argument)
+      this.jk[argument]();
+    else {
+      postThought_('jk');
+      clearTimeout(confirmedCommand);
+    }
+  }
+  this.jk = jk;
 
   /**
   * Suck command functions
