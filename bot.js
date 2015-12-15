@@ -12,27 +12,49 @@ var util = require('util');
 var bot = function() {
   var this_ = this;
 
-  /**
-  * Adds a thought {string} to the thoughts {array} that will be POSTed
-  * @param thought {string} what will be POSTed 
-  */
-  var thoughts = []; // the thoughts to be posted
-  function addThought(thought) {
-    thoughts.push(thought);
-    this_.emit("thought added");
-  };
+  // Post
 
   /**
   * Likes the message with the given id
   * @param {string} message_id - The message's id
   */
-  function likeMessage(message_id) {GroupMe_API.Likes.create(config.GroupMe_AccessToken, config.GroupMeID,message_id, function(err,ret) {});};
+  function likeMessage_(message_id) {GroupMe_API.Likes.create(config.GroupMe_AccessToken, config.GroupMeID,message_id, function(err,ret) {});};
+
+  /**
+  * Called from index.js upon groupme posts
+  * Runs activate(request) upon successful match
+  */
+  bot.prototype.post = function() {
+    if (this.req == undefined || this.req == null) 
+      return;
+    if (this.req.chunks == undefined || this.req.chunks == null) 
+      return;
+    var request = JSON.parse(this.req.chunks[0]);
+    if (!request.text || !request.name || !request.id)
+      return;
+    if (request.name==config.NAME&&config.notTalkingToMyself)
+      return;
+    if (request.text.search(config.commandsRegex)!=-1) 
+      activate_(request);
+    this.res.writeHead(200);
+    this.res.end();
+  };
+
+  // Prepares the thoughts_ to be POSTed based upon length
+  var postMaster_ = function() {
+    if (!config.responding)
+      return;
+    if (thoughts_.length>=3)
+      postMessage_(thoughts_.join('.. '));
+    else
+      postMessage_(thoughts_.shift());
+  };
 
   /**
   * Posts the given message via the GroupMe bot
   * @param message
   */
-  function postMessage(message) {
+  function postMessage_(message) {
     var options, body, botReq;
     options = {
       hostname: 'api.groupme.com',
@@ -60,40 +82,24 @@ var bot = function() {
     botReq.end(JSON.stringify(body));
   };
 
-  // Runs activate(request) upon successful match
-  this.respond = function() {
-    if (this.req == undefined || this.req == null) 
-      return;
-    if (this.req.chunks == undefined || this.req.chunks == null) 
-      return;
-    var request = JSON.parse(this.req.chunks[0]);
-    if (!request.text && !request.name)
-      return;
-    if (request.name==config.NAME)
-      return;
-    if (request.text.search(config.commandsRegex)!=-1) 
-      activate(request);
-    this.res.writeHead(200);
-    this.res.end();
-  };
-
-  // Prepares the thoughts to be POSTed
-  var responder = function() {
-    if (!config.responding)
-      return;
-    if (thoughts.length>=1)
-      postMessage(thoughts.shift());
-    else if (thoughts.length>0)
-      postMessage(thoughts.join('.. '));
+  /**
+  * Adds a thought {string} to the thoughts_ {array} that will be POSTed
+  * @param thought {string} what will be POSTed 
+  */
+  var thoughts_ = []; // the thoughts_ to be posted
+  function postThought_(thought) {
+    thoughts_.push(thought);
+    clearTimeout(postMaster_);
+    setTimeout(postMaster_, config.responseTime);
   };
 
   // Commands
 
   /**
   * Filter function activates the command process to be run
-  * @param {Object} request - the request as passed from respond(), includes text and id
+  * @param {Object} request - the request as passed from post(), includes text and id
   */
-  function activate(request) {
+  function activate_(request) {
     var message = request.text;
     var sender = request.id;
     var matches = message.match(config.commandsRegex);
@@ -120,7 +126,7 @@ var bot = function() {
     sender = sender.substring(0,i);
     if (typeof this_[command] === "function" ) {
       this_[command](argument, message, sender);
-      likeMessage(sender);
+      likeMessage_(sender);
     }
   };
 
@@ -169,7 +175,7 @@ var bot = function() {
           }
           spreadsheet.send(function(err) {
             if (err) console.log(err);
-            addThought('Weekly Bottle Reminder- '+person);
+            postThought_('Weekly Bottle Reminder- '+person);
           });
         });
       });
@@ -177,18 +183,18 @@ var bot = function() {
     bottle.who = function() {};
     bottle.what = function() {
       var bottles = ['rum','vodka','whiskey','jaeger'];
-      bots.addThought(bottles[Math.random(0,bottles.length)]);
+      bots.postThought_(bottles[Math.random(0,bottles.length)]);
     };
     if (argument)
       this.bottle[argument]();
     else
-      addThought('bottle fail');
+      postThought_('bottle fail');
   };
   this.bottle = bottle;
 
   // Runs the cool guy thing
   function coolguy() {
-    addThought(cool());
+    postThought_(cool());
   };
   this.coolguy = coolguy;
 
@@ -294,7 +300,7 @@ var bot = function() {
           }
          spreadsheet.send(function(err) {
             if(err) console.log(err);
-            addThought('Scores added!');
+            postThought_('Scores added!');
           });
         });
       });
@@ -338,7 +344,7 @@ var bot = function() {
           }
           // spreadsheet.send(function(err) {
           //   if(err) console.log(err);
-              // addThought('Scores undone!');
+              // postThought_('Scores undone!');
           // });
         });
       });
@@ -353,7 +359,7 @@ var bot = function() {
     if (argument)
       this.scores[argument]();
     else
-      addThought('What about the scores '+sender+'?');
+      postThought_('What about the scores '+sender+'?');
   };
   this.scores = scores;
 
@@ -369,23 +375,18 @@ var bot = function() {
        return;
     // if (sender=='Nico Mendoza'||'Nico') {}
     suck.my = function() {
-      addThought('yeah suck '+sender+'\'s '+message+'!');
+      postThought_('yeah suck '+sender+'\'s '+message+'!');
     };
     suck.his = function() {
-      addThought('yeah suck his '+message+'! ');
-      addThought('wait, what?');
+      postThought_('yeah suck his '+message+'! ');
+      postThought_('wait, what?');
     };
     if (argument)
       this.suck[argument]();
     else
-      addThought('What about sucking '+sender+'\'s '+message+'?');
+      postThought_('What about sucking '+sender+'\'s '+message+'?');
   };
   this.suck = suck;
-
-  // "thought added" event calls responder() to say all current thoughts
-  this.on("thought added", function() {
-    setTimeout(responder,config.responseTime);
-  });
 }
 
 util.inherits(bot, EventEmitter);

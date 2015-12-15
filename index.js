@@ -6,7 +6,7 @@ var http = require('http');
 
 var router = new director.http.Router({
   '/' : {
-    post: bot.respond,
+    post: bot.post,
     get: ping
   }
 });
