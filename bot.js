@@ -329,13 +329,13 @@ var bot = function() {
   this.scores = scores;
 
   function jk(argument, message, sender) {
-    if (argument)
-      this.jk[argument]();
-    else {
+    // if (argument)
+    //   this.jk[argument]();
+    // else {
       postThought_('jk');
       clearTimeout(confirmedCommand);
-    }
-  }
+    // }
+  };
   this.jk = jk;
 
   /**
