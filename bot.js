@@ -32,7 +32,7 @@ var bot = function() {
     var request = JSON.parse(this.req.chunks[0]);
     if (!request.text || !request.name || !request.id)
       return;
-    if (request.name==config.NAME&&config.notTalkingToMyself)
+    if (request.name==config.NAME)
       return;
     if (request.text.search(config.commandsRegex)!=-1) 
       activate_(request);
