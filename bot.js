@@ -308,12 +308,10 @@ var bot = function() {
       });
     };
 
-    var confirmed = function() {
-        addScores_(parseForScores(message));
-      };
+    var confirmed;
     scores.add = function() {
       postThought_('Adding scores.');
-      setTimeout(confirmed,config.brainfart);
+      confirmed = setTimeout(addScores_(parseForScores(message)),config.brainfart);
     };
     scores.undo = function() {
       postThought_('jk');
