@@ -44,8 +44,10 @@ var bot = function() {
   var postMaster_ = function() {
     if (!config.responding)
       return;
-    if (thoughts_.length>=3)
+    if (thoughts_.length>=3) {
       postMessage_(thoughts_.join('.. '));
+      thoughts_ = [];
+    }
     else
       postMessage_(thoughts_.shift());
   };
