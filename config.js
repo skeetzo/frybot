@@ -9,7 +9,8 @@ var commands = [
   'coolguy',
   'scores',
   'suck',
-  'bottle'
+  'bottle',
+  'jk'
 ];
 var arguments = [
   "add",
