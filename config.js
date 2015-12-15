@@ -44,6 +44,7 @@ config.NAME = "Scytalia";
 config.PORT = 3000;
 config.responding = true;
 config.responseTime = 6000;
+config.brainfart = 10000;
 config.notTalkingToMyself = true;
 
 module.exports = config;

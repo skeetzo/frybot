@@ -262,7 +262,7 @@ var bot = function() {
       return newStats; // parsed stats
     };
 
-    function addScores(stats) {
+    var addScores = function(stats) {
       Spreadsheet.load({
         debug: true,
         spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
@@ -306,55 +306,13 @@ var bot = function() {
       });
     };
 
-    // doesn't work yet
-    function undoScores(stats) {
-      Spreadsheet.load({
-        debug: true,
-        spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
-        spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
-        worksheetId: config.ItIsWhatItIs_statsSheetID,
-        worksheetName: config.ItIsWhatItIs_statsSheetName,
-        oauth : {
-          email: config.ItIsWhatItIs_serviceEmail,
-          keyFile: config.ItIsWhatItIs_keyFile
-        }
-      },
-      function sheetReady(err, spreadsheet) {
-        if(err) throw err;
-        spreadsheet.receive(function(err, rows, info) {
-          if(err) throw err;
-          startRow = info.lastRow;
-          endRow = startRow - stats.length;
-          for (var i = startRow,r=0;i > endRow;i--,r--) {
-            var front = "{\""+i+"\": { ";
-            var tail = "} }";
-            var middle = "";
-            var splitStats = stats[r].toString().split(",");
-            // for each column of data into cells by
-            for (var col = 1; col<=splitStats.length;col++) {
-              if (col==splitStats.length)
-                middle += "\""+col+"\": \" \""; // particular json seperation and labeling
-              else
-                middle += "\""+col+"\": \" \","; // particular json seperation and labeling
-            }
-            var all = front + middle + tail;
-            var jsonObj = JSON.parse(all);
-            console.log("jsonObj: "+jsonObj);
-            // spreadsheet.add(jsonObj); // adds row one by one
-          }
-          // spreadsheet.send(function(err) {
-          //   if(err) console.log(err);
-              // postThought_('Scores undone!');
-          // });
-        });
-      });
-    };
-
     scores.add = function() {
-      addScores(parseForScores(message));
+      postThought_('Adding scores.');
+      setTimeout(addScores(parseForScores(message)),config.brainfart);
     };
     scores.undo = function() {
-      undoScores();
+      postThought_('jk');
+      clearTimeout(addScores);
     }
     if (argument)
       this.scores[argument]();
