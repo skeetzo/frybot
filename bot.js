@@ -310,7 +310,8 @@ var bot = function() {
 
     scores.add = function() {
       postThought_('Adding scores.');
-      setTimeout(addScores_(parseForScores(message)),config.brainfart);
+      var parse = parseForScores(message);
+      setTimeout(function() {addScores_(parse)},config.brainfart);
     };
     scores.undo = function() {
       postThought_('jk');
