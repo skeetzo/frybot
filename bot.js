@@ -207,6 +207,7 @@ var bot = function() {
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
   */
+      var confirmedCommand;
   function scores(argument, message, sender) {
     // Regexes used for parsing stat info
     var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
@@ -308,17 +309,16 @@ var bot = function() {
       });
     };
 
-    var confirmed;
     scores.add = function() {
       postThought_('Adding scores.');
       
-      confirmed = window.setTimeout(function() {
+      confirmedCommand = setTimeout(function() {
         addScores_(parseForScores(message));
       },config.brainfart);
     };
     scores.undo = function() {
       postThought_('jk');
-      window.clearTimeout(confirmed);
+      clearTimeout(confirmedCommand);
     }
     if (argument)
       this.scores[argument]();
