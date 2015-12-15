@@ -350,3 +350,40 @@ var bot = function() {
 util.inherits(bot, EventEmitter);
 
 module.exports = bot;
+
+
+
+
+
+
+
+
+
+
+
+
+/*   To Do
+
+On the starting of a new season, do newSeasonStuff() {
+  announce a new season and its dates
+  reset the sheets somehow, perhaps by affecting a cell that contains a date that the google scripts trigger off of
+  introduce the players with introduce()
+  remind returning players of past failures by using all of their stats to calculate those who got skunked the most
+    offer to remove lowest player from the team
+  wishes everyone (except nico) good luck
+}
+
+introduce() {
+  says random shit for each player in a WWE style intro
+}
+
+
+
+
+
+
+
+
+
+
+*/
