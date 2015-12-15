@@ -262,7 +262,7 @@ var bot = function() {
       return newStats; // parsed stats
     };
 
-    var addScores = function(stats) {
+    var addScores_ = function(stats) {
       Spreadsheet.load({
         debug: true,
         spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
@@ -308,11 +308,11 @@ var bot = function() {
 
     scores.add = function() {
       postThought_('Adding scores.');
-      setTimeout(addScores(parseForScores(message)),config.brainfart);
+      setTimeout(addScores_(parseForScores(message)),config.brainfart);
     };
     scores.undo = function() {
       postThought_('jk');
-      clearTimeout(addScores);
+      clearTimeout(addScores_);
     }
     if (argument)
       this.scores[argument]();
