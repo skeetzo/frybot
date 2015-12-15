@@ -311,7 +311,10 @@ var bot = function() {
     var confirmed;
     scores.add = function() {
       postThought_('Adding scores.');
-      confirmed = setTimeout(addScores_(parseForScores(message)),config.brainfart);
+      
+      confirmed = setTimeout(function() {
+        addScores_(parseForScores(message));
+      },config.brainfart);
     };
     scores.undo = function() {
       postThought_('jk');
