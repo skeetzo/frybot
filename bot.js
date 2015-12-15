@@ -312,13 +312,13 @@ var bot = function() {
     scores.add = function() {
       postThought_('Adding scores.');
       
-      confirmed = setTimeout(function() {
+      confirmed = window.setTimeout(function() {
         addScores_(parseForScores(message));
       },config.brainfart);
     };
     scores.undo = function() {
       postThought_('jk');
-      clearTimeout(confirmed);
+      window.clearTimeout(confirmed);
     }
     if (argument)
       this.scores[argument]();
