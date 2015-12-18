@@ -282,6 +282,7 @@ var bot = function() {
         if(err) throw err;
         spreadsheet.receive(function(err, rows, info) {
           if(err) throw err;
+          console.log("stats: "+stats);
           startRow = info.lastRow+1;
           endRow = startRow + stats.length;
           console.log("end row: "+endRow);
