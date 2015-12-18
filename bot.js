@@ -299,6 +299,7 @@ var bot = function() {
                 middle += "\""+col+"\": \""+stats[col-1]+"\","; // particular json seperation and labeling
             }
             var all = front + middle + tail;
+            console.log("all: "+all);
             var jsonObj = JSON.parse(all);
             spreadsheet.add(jsonObj); // adds row one by one
           }
