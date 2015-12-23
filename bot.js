@@ -114,7 +114,7 @@ var bot = function() {
         if (thought.match(endSentenceRegex))
           return ' ';
         return '. ';
-      )});
+      }));
       thoughts_ = [];
     }
     else
