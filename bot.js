@@ -43,7 +43,7 @@ var bot = function() {
   *
   * started- yes
   */
-  var pregameJob = new CronJob({
+  var pregameJob_ = new CronJob({
     cronTime: '00 45 00 * * 3',
       onTick: function pregame() {
         // get location
@@ -433,6 +433,40 @@ var bot = function() {
       postThought_('What about sucking '+sender+'\'s '+message+'?');
   };
   this.suck = suck;
+
+  // Google Sheets
+  /**
+  * Reads the frybot sheet in It Is What It Is
+  *  and returns it as JSON
+  *   
+  */
+  function readSheet() {
+    Spreadsheet.load({
+      debug: true,
+      spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
+      spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
+      worksheetId: config.ItIsWhatItIs_statsSheetID,
+      worksheetName: config.ItIsWhatItIs_statsSheetName,
+      oauth : {
+        email: config.ItIsWhatItIs_serviceEmail,
+        keyFile: config.ItIsWhatItIs_keyFile
+      }
+    },
+    function sheetReady(err, spreadsheet) {
+      if(err) throw err;
+      spreadsheet.receive(function(err, rows, info) {
+        if(err) throw err;
+        var obj = JSON.parse(rows);
+        console.log("obj: "+obj);
+
+
+      });
+    });
+  }
+
+  function test() {
+    readSheet();
+  }
 }
 
 util.inherits(bot, EventEmitter);
