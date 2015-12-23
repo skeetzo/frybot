@@ -37,14 +37,18 @@ var bot = function() {
   * Called weekly on Tuesday at 6:00 PM before 7:30 PM league match
   *  by index.js  
   *  
+  *
+  *  [sample chat input here]
+  *
+  *
   * started- yes
   */
   var pregameJob = new CronJob({
-    cronTime: '00 15 23 * * 2',
+    cronTime: '00 45 23 * * 2',
       onTick: function pregame() {
         // get location
         var location = 'a place';
-        postThought_('Game Night Bitches');
+        postThought_('It\'s League night bitches!');
         postThought_('Playing @: '+location);
         // postThought_();
                    // Bottle Duty: (a name)
@@ -95,11 +99,22 @@ var bot = function() {
   };
 
   // Prepares the thoughts_ to be POSTed based upon length
+
+  var endSentenceRegex = '.!?-:,';
+  endSentenceRegex = new RegExp(endSentenceRegex, "g");
+
   var postMaster_ = function() {
     if (!config.responding)
       return;
     if (thoughts_.length>=3) {
-      postMessage_(thoughts_.join('.. '));
+      postMessage_(thoughts_.join(function(thought) {
+        // thought string is checked for regex end sentence chars
+        // return their same thing
+        // else return default sentence smash
+        if (thought.match(endSentenceRegex))
+          return ' ';
+        return '. ';
+      )});
       thoughts_ = [];
     }
     else
