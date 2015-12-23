@@ -44,7 +44,7 @@ var bot = function() {
   * started- yes
   */
   var pregameJob = new CronJob({
-    cronTime: '00 13 00 * * 2',
+    cronTime: '00 20 00 * * 2',
       onTick: function pregame() {
         // get location
         var location = 'a place';
