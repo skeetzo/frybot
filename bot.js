@@ -27,10 +27,12 @@ add the (commander) lock
  
 */
 // Updated via updatePlayers
-var players = [];
+var all_players_ = [];
+var all_matches_ = [];
 
 var bot = function() {
   var this_ = this;
+  var lastMatchNum_ = 0;
 
   // CronJob activities
 
@@ -438,16 +440,14 @@ var bot = function() {
 
   // Google Sheets
   /**
-  * Reads the frybot sheet in It Is What It Is
-  *  and returns it as JSON
+  * Resets Player scores for the season
+  *  Resets Array of the season's match data
   *
-  * Used in: bottle.duty,
-  *
-  * @param boolean asJSON returns the cells parsed in a JSON with n col
-  *                               or as a single array if w/o   
-  * @param function callback the function to be called once done loading and reading the sheet
+  * @param function callback the function to be called once done loading and reading the sheet and updating the arrays
   */
-  function readFrybotSheet_(asJSON, callback) {
+  function cachePlayers_(callback) {
+    all_players_ = [];
+    all_matches_ = [];
     Spreadsheet.load({
       debug: true,
       spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
@@ -463,14 +463,51 @@ var bot = function() {
       if(err) throw err;
       spreadsheet.receive(function(err, rows, info) {
         if(err) throw err;
-        var read = [];
+        // header pickoff
+        var once = true;
+        var keys = '{"player":"","pointsEarned":"","pointsGiven":"","matchNumber":"","matchDate":""}';
         _.forEach(rows, function(row) {
-          if (!asJSON)
-            _.forEach(row, function(value) {read.push(value);});
-          else
-            read.push(value);
+            if (once) {
+              once = false;
+            }
+            else {
+              var match = JSON.parse(keys);
+              // match = JSON.parse(match);
+              match.player = row[1];
+              match.pointsEarned = row[2];
+              match.pointsGiven = row[3];
+              match.matchNumber = row[4];
+              lastMatchNum_ = row[4];
+              match.matchDate = row[5];
+              console.log('match: '+JSON.stringify(match));
+              // Adds to array of JSON of all matches
+              all_matches_.push(match);
+              // Adds the Player if new, updates scores afterwards
+              if (all_players_.length==0) {
+                if (config.debugging) console.log('Adding the first player: '+match.player);
+                var newPlayer = new Player({"name":match.player})
+                newPlayer.addMatchStats(match.pointsEarned,match.pointsGiven,match.matchDate,match.matchNumber);
+                all_players_.push(newPlayer);
+              }
+              else {
+                var found = false;
+                for (j=0;j<all_players_.length;j++) 
+                  if (all_players_[j].name==match.player) {
+                    if (config.debugging) console.log('Found player: '+match.player);
+                    found = true;
+                    all_players_[j].addMatchStats(match.pointsEarned,match.pointsGiven,match.matchDate,match.matchNumber);
+                  }
+                if (!found) {
+                  if (config.debugging) console.log('Adding new player: '+match.player);
+                  var newPlayer = new Player({"name":match.player})
+                  newPlayer.addMatchStats(match.pointsEarned,match.pointsGiven,match.matchDate,match.matchNumber);
+                  all_players_.push(newPlayer);
+                }
+              }
+            }
         });
-        return callback(read);
+        if (callback)
+          callback();
       });
     });
   }
@@ -584,52 +621,12 @@ var bot = function() {
     }
   };
 
-  /**
-  * Updates Players by reading the scores from It Is What It Is's Current Season Stats
-  *
-  */
-  function updatePlayers() {
-    readFrybotSheet_(false, function pleaseWork(playerArray) {
-      players = [];
-      // shift off headers
-      for (i=0;i<6;i++)
-        playerArray.shift();
-      // shifts off each score input until empty, updating match stats for each found player
-      // creates new players as necessary
-      while (playerArray.length>0) {
-        var timestamp = playerArray.shift();
-        var name = playerArray.shift();
-        var pointsEarned = playerArray.shift();
-        var pointsGiven = playerArray.shift();
-        var matchNumber = playerArray.shift();
-        var matchDate = playerArray.shift();
-        if (players.length==0) {
-          if (config.debugging) console.log('Adding the first player: '+name);
-          var newPlayer = new Player({"name":name})
-          newPlayer.addMatchStats(pointsEarned,pointsGiven,matchDate,matchNumber);
-          players.push(newPlayer);
-        }
-        else {
-          var found = false;
-          for (j=0;j<players.length;j++) 
-            if (players[j].name==name) {
-              if (config.debugging) console.log('Found player: '+name);
-              found = true;
-              players[j].addMatchStats(pointsEarned,pointsGiven,matchDate,matchNumber);
-            }
-          if (!found) {
-            if (config.debugging) console.log('Adding new player: '+name);
-            var newPlayer = new Player({"name":name})
-            newPlayer.addMatchStats(pointsEarned,pointsGiven,matchDate,matchNumber);
-            players.push(newPlayer);
-          }
-        }
-      }
-    });
-  };
-
   bot.prototype.test = function() {
-    updatePlayers();
+    cachePlayers_(function theCallback() {
+      // console.log(JSON.stringify(playerArray));
+
+
+    });
   };
 }
 
