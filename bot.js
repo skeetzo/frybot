@@ -44,7 +44,7 @@ var bot = function() {
   * started- yes
   */
   var pregameJob = new CronJob({
-    cronTime: '00 50 23 * * 2',
+    cronTime: '00 13 00 * * 2',
       onTick: function pregame() {
         // get location
         var location = 'a place';
@@ -99,22 +99,21 @@ var bot = function() {
   };
 
   // Prepares the thoughts_ to be POSTed based upon length
-
-  var endSentenceRegex = '.!?-:,';
-  endSentenceRegex = new RegExp(endSentenceRegex, "g");
-
   var postMaster_ = function() {
     if (!config.responding)
       return;
     if (thoughts_.length>=3) {
-      postMessage_(thoughts_.join(function(thought) {
-        // thought string is checked for regex end sentence chars
-        // return their same thing
-        // else return default sentence smash
-        if (thought.match(endSentenceRegex))
-          return ' ';
-        return '. ';
-      }));
+      // thought string is checked for end of sentence chars
+      // return their same thing
+      // else return default sentence smash
+      for (i=0;i<thoughts_.length;i++) {
+        if ((thoughts_[i].charAt(thoughts_[i].length-1)!='!')&&(thoughts_[i].charAt(thoughts_[i].length-1)!='-')&&(thoughts_[i].charAt(thoughts_[i].length-1)!=':')&&(thoughts_[i].charAt(thoughts_[i].length-1)!=',')&&(thoughts_[i].charAt(thoughts_[i].length-1)!='.'))
+          thoughts_[i]+='. ';
+        else
+          thoughts_[i]+=' '; 
+      }
+      thoughts_ = thoughts_.join();   
+      postMessage(thoughts_);
       thoughts_ = [];
     }
     else
