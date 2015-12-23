@@ -9,6 +9,17 @@ var moment = require ('moment');
 var Spreadsheet = require('edit-google-spreadsheet');
 var util = require('util');
 
+/* To-do
+
+
+ 
+
+
+
+
+
+*/
+
 var bot = function() {
   var this_ = this;
 
