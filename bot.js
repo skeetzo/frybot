@@ -44,7 +44,7 @@ var bot = function() {
   * started- yes
   */
   var pregameJob = new CronJob({
-    cronTime: '00 35 00 * * 3',
+    cronTime: '00 45 00 * * 3',
       onTick: function pregame() {
         // get location
         var location = 'a place';
@@ -112,7 +112,7 @@ var bot = function() {
         else
           thoughts_[i]+=' '; 
       }
-      thoughts_ = thoughts_.join();   
+      thoughts_ = thoughts_.join('');   
       postMessage_(thoughts_);
       thoughts_ = [];
     }
