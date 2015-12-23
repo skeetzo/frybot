@@ -2,6 +2,7 @@ require("colors");
 var _ = require('underscore');
 var cool = require('cool-ascii-faces');
 var config = require('./config.js');
+var CronJob = require('cron').CronJob;
 var EventEmitter = require('events').EventEmitter;
 var GroupMe_API = require('groupme').Stateless;
 var HTTPS = require('https');
@@ -27,6 +28,43 @@ add the (commander) lock
 
 var bot = function() {
   var this_ = this;
+
+
+  // CronJob activities
+
+
+  /**
+  * Called weekly on Tuesday at 6:00 PM before 7:30 PM league match
+  *  by index.js  
+  *  
+  * started- yes
+  */
+  var pregameJob = new CronJob({
+    cronTime: '00 15 23 * * 2',
+      onTick: function pregame() {
+        // get location
+        var location = 'a place';
+        postThought_('Game Night Bitches');
+        postThought_('Playing @: '+location);
+        // postThought_();
+                   // Bottle Duty: (a name)
+        this_.bottle('duty');
+
+        var currentMVP = 'DROD';
+        var currentLVP = 'Gabe';
+        var hotStreaker = 'Alex';
+        var hotStreak = 6; //hotStreaker's wins
+        postThought_('Current MVP: '+currentMVP);
+        postThought_('Current LVP: '+currentLVP);
+        postThought_('And finally, '+hotStreaker+' is on a hot streak with '+hotStreak+' wins!');
+
+
+
+      },
+      start: true,
+      timeZone: 'America/Los_Angeles'
+  });
+
 
   // Post
 
@@ -195,7 +233,8 @@ var bot = function() {
           }
           spreadsheet.send(function(err) {
             if (err) console.log(err);
-            postThought_('Weekly Bottle Reminder- '+person);
+            // to-do; add a different range of ways to respond who's responsibility it is for bottle
+            postThought_('Bottle Duty: '+person);
           });
         });
       });
