@@ -11,7 +11,12 @@ var util = require('util');
 
 /* To-do
 
-
+and calling recent stats by season etc by name like a real db	
+calling out hot streaks in the next season	
+calling out losing streaks in the next season	
+fix / update adding scores regexes	
+add the (commander) lock	
+	and (master) lock
  
 
 
