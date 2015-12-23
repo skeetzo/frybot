@@ -342,54 +342,66 @@ var bot = function() {
     };
 
     var addScores_ = function(stats) {
-      Spreadsheet.load({
-        debug: true,
-        spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
-        spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
-        worksheetId: config.ItIsWhatItIs_statsSheetID,
-        worksheetName: config.ItIsWhatItIs_statsSheetName,
-        oauth : {
-          email: config.ItIsWhatItIs_serviceEmail,
-          keyFile: config.ItIsWhatItIs_keyFile
-        }
-      },
-      function sheetReady(err, spreadsheet) {
-        if(err) throw err;
-        spreadsheet.receive(function(err, rows, info) {
-          if(err) throw err;
-          console.log("stats: "+stats);
-          startRow = info.lastRow+1;
-          endRow = startRow + stats.length;
-          console.log("end row: "+endRow);
-          for (var i = startRow;i < endRow;i++) {
-            var front = "{\""+i+"\": { ";
-            var tail = "} }";
-            var middle = "";
-            stats = stats.join(",");
-            // for each column of data into cells by
-            for (var col = 1; col<=stats.length;col++) {
-              if (col==stats.length)
-                middle += "\""+col+"\": \""+stats[col-1]+"\""; // particular json seperation and labeling
-              else
-                middle += "\""+col+"\": \""+stats[col-1]+"\","; // particular json seperation and labeling
-            }
-            var all = front + middle + tail;
-            console.log("all: "+all);
-            var jsonObj = JSON.parse(all);
-            // spreadsheet.add(jsonObj); // adds row one by one
+
+      readFrybotSheet_(true, function pleaseWork(all_matches) {
+        // for (i=0;i<6;i++)
+        //   all_matches.shift();
+        console.log("this right here: "+JSON.stringify(all_matches));
+        return;
+
+        Spreadsheet.load({
+          debug: true,
+          spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
+          spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
+          worksheetId: config.ItIsWhatItIs_statsSheetID,
+          worksheetName: config.ItIsWhatItIs_statsSheetName,
+          oauth : {
+            email: config.ItIsWhatItIs_serviceEmail,
+            keyFile: config.ItIsWhatItIs_keyFile
           }
-         // spreadsheet.send(function(err) {
-         //    if(err) console.log(err);
-         //    postThought_('Scores added!');
-         //  });
+        },
+        function sheetReady(err, spreadsheet) {
+          if(err) throw err;
+          spreadsheet.receive(function(err, rows, info) {
+            if(err) throw err;
+            console.log("stats: "+stats);
+            startRow = info.lastRow+1;
+            endRow = startRow + stats.length;
+            console.log("end row: "+endRow);
+            for (var i = startRow;i < endRow;i++) {
+              var front = "{\""+i+"\": { ";
+              var tail = "} }";
+              var middle = "";
+              stats = stats.join(",");
+              // for each column of data into cells by
+              for (var col = 1; col<=stats.length;col++) {
+                if (col==stats.length)
+                  middle += "\""+col+"\": \""+stats[col-1]+"\""; // particular json seperation and labeling
+                else
+                  middle += "\""+col+"\": \""+stats[col-1]+"\","; // particular json seperation and labeling
+              }
+              var all = front + middle + tail;
+              console.log("all: "+all);
+              var jsonObj = JSON.parse(all);
+              // spreadsheet.add(jsonObj); // adds row one by one
+            }
+           // spreadsheet.send(function(err) {
+           //    if(err) console.log(err);
+           //    postThought_('Scores added!');
+           //  });
+          });
         });
+
       });
+
+
+
     };
     scores.add = function() {
       postThought_('Adding scores.');
       confirmedCommand = setTimeout(
         function() {
-          addScores_(parseForScores_(message));
+          addScores_();
         },
         config.brainfart);
     };
@@ -463,6 +475,7 @@ var bot = function() {
       if(err) throw err;
       spreadsheet.receive(function(err, rows, info) {
         if(err) throw err;
+<<<<<<< HEAD
         // header pickoff
         var once = true;
         var keys = '{"player":"","pointsEarned":"","pointsGiven":"","matchNumber":"","matchDate":""}';
@@ -505,6 +518,19 @@ var bot = function() {
                 }
               }
             }
+=======
+        var read = [];
+
+        _.forEach(rows, function(row) {
+          if (!asJSON)
+            _.forEach(row, function(value) {read.push(value);});
+          else {
+
+
+            read.push(row);
+            
+          }
+>>>>>>> d851daf7869c63b258e34842f8f72e21324381c0
         });
         if (callback)
           callback();
@@ -622,11 +648,15 @@ var bot = function() {
   };
 
   bot.prototype.test = function() {
+<<<<<<< HEAD
     cachePlayers_(function theCallback() {
       // console.log(JSON.stringify(playerArray));
 
 
     });
+=======
+    scores('add','Coco 2:1');
+>>>>>>> d851daf7869c63b258e34842f8f72e21324381c0
   };
 }
 
