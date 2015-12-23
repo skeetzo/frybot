@@ -25,4 +25,8 @@ fiddling
   
 v0.0.5  
 11/25/15  
-reorg and notations    
+reorg and notations  
+  
+v0.0.6  
+12/23/15  
+Player level updates  

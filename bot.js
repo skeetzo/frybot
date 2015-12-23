@@ -10,6 +10,12 @@ var moment = require ('moment');
 var Spreadsheet = require('edit-google-spreadsheet');
 var util = require('util');
 
+/**
+ * @title It Is What It Is GroupMe Bot, Frybot
+ * @author Schizo
+ * @version 0.0.6
+ */
+
 /* To-do
 
 and calling recent stats by season etc by name like a real db	
@@ -19,19 +25,14 @@ fix / update adding scores regexes
 add the (commander) lock	
 	and (master) lock
  
-
-
-
-
-
 */
+// Updated via updatePlayers
+var players = [];
 
 var bot = function() {
   var this_ = this;
 
-
   // CronJob activities
-
 
   /**
   * Called weekly on Tuesday at 6:00 PM before 7:30 PM league match
@@ -44,8 +45,11 @@ var bot = function() {
   * started- yes
   */
   var pregameJob_ = new CronJob({
-    cronTime: '00 45 00 * * 3',
+    cronTime: '00 45 00 * * 2',
       onTick: function pregame() {
+
+        // should call updatePlayers() as a callback in a way
+
         // get location
         var location = 'a place';
         postThought_('It\'s League night bitches!');
@@ -68,7 +72,6 @@ var bot = function() {
       start: true,
       timeZone: 'America/Los_Angeles'
   });
-
 
   // Post
 
@@ -291,7 +294,7 @@ var bot = function() {
     var dateYearRegex = '[\\d]{4}';
 
     // used to parse the stats from the message
-    function parseForScores(text) {
+    function parseForScores_(text) {
       // Parse parsedStats
       var newStats = [];
       regex = new RegExp(statsRegex, "g");
@@ -332,6 +335,7 @@ var bot = function() {
       // Add parsedStats
       var startRow;
       var endRow;
+      console.log('new stats: '+newStats);
       return newStats; // parsed stats
     };
 
@@ -360,7 +364,6 @@ var bot = function() {
             var tail = "} }";
             var middle = "";
             stats = stats.join(",");
-            console.log("stats: "+stats);
             // for each column of data into cells by
             for (var col = 1; col<=stats.length;col++) {
               if (col==stats.length)
@@ -371,21 +374,20 @@ var bot = function() {
             var all = front + middle + tail;
             console.log("all: "+all);
             var jsonObj = JSON.parse(all);
-            spreadsheet.add(jsonObj); // adds row one by one
+            // spreadsheet.add(jsonObj); // adds row one by one
           }
-         spreadsheet.send(function(err) {
-            if(err) console.log(err);
-            postThought_('Scores added!');
-          });
+         // spreadsheet.send(function(err) {
+         //    if(err) console.log(err);
+         //    postThought_('Scores added!');
+         //  });
         });
       });
     };
-
     scores.add = function() {
       postThought_('Adding scores.');
       confirmedCommand = setTimeout(
         function() {
-          addScores_(parseForScores(message));
+          addScores_(parseForScores_(message));
         },
         config.brainfart);
     };
@@ -393,7 +395,7 @@ var bot = function() {
 
     }
     if (argument)
-      this.scores[argument]();
+      this_.scores[argument]();
     else
       postThought_('What about the scores '+sender+'?');
   };
@@ -438,9 +440,14 @@ var bot = function() {
   /**
   * Reads the frybot sheet in It Is What It Is
   *  and returns it as JSON
-  *   
+  *
+  * Used in: bottle.duty,
+  *
+  * @param boolean asJSON returns the cells parsed in a JSON with n col
+  *                               or as a single array if w/o   
+  * @param function callback the function to be called once done loading and reading the sheet
   */
-  function readSheet() {
+  function readFrybotSheet_(asJSON, callback) {
     Spreadsheet.load({
       debug: true,
       spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
@@ -456,17 +463,174 @@ var bot = function() {
       if(err) throw err;
       spreadsheet.receive(function(err, rows, info) {
         if(err) throw err;
-        var obj = JSON.parse(rows);
-        console.log("obj: "+obj);
-
-
+        var read = [];
+        _.forEach(rows, function(row) {
+          if (!asJSON)
+            _.forEach(row, function(value) {read.push(value);});
+          else
+            read.push(value);
+        });
+        return callback(read);
       });
     });
   }
 
-  function test() {
-    readSheet();
-  }
+  /**
+  * 12/23/15
+  * @author Schizo
+  *
+  * Player Class from It Is What It Is Sheet Scripts modified for easy Player manipulation
+  *  records name, matches (earned, given, match#), won, lost, skunks, skunked, sl
+  *
+  * @constructor
+  * @param stats {data} the data of the player in the format of {"name":name,"sl":sl,etc}
+  */
+  function Player(stats) {
+    if (stats.name==null||stats.name==undefined)
+      stats.name = "Default";
+    if (stats.matches==null||stats.matches==undefined)
+      stats.matches = [];
+    if (stats.pointsEarned==null||stats.pointsEarned==undefined)
+      stats.pointsEarned = 0;
+    if (stats.pointsGiven==null||stats.pointsGiven==undefined)
+      stats.pointsGiven = 0;
+    if (stats.matchesWon==null||stats.matchesWon==undefined)
+      stats.matchesWon = 0;
+    if (stats.matchesLost==null||stats.matchesLost==undefined)
+      stats.matchesLost = 0;
+    if (stats.skunks==null||stats.skunks==undefined)
+      stats.skunks = 0;
+    if (stats.skunked==null||stats.skunked==undefined)
+      stats.skunked = 0;
+    if (stats.sl==null||stats.sl==undefined)
+      stats.sl = 3;
+    console.log("New Player: "+stats.name+' - '+stats.sl);
+    this.name = stats.name;
+    this.matches = stats.matches; // [[pointsEarned,pointsGiven,when]]
+    this.pointsEarned = stats.pointsEarned;
+    this.pointsGiven = stats.pointsGiven;
+    this.matchesWon = stats.matchesWon;
+    this.matchesLost = stats.matchesLost;
+    this.skunks = stats.skunks;
+    this.skunked = stats.skunked;
+    this.sl = stats.sl;
+  };
+
+  Player.prototype = {
+    // MATCH
+    addMatchStats: function(pointsEarned, pointsGiven, matchDate, matchNum) {
+      this.matches.push([pointsEarned, pointsGiven, matchDate, matchNum]);
+      this.pointsEarned+=pointsEarned;
+      this.pointsGiven+=pointsGiven;
+      if (pointsEarned>pointsGiven)
+        this.matchesWon++;
+      else
+        this.matchesLost++;
+      this.skunkCheck(pointsEarned,pointsGiven);
+    },
+    // SKUNKS
+    addSkunk: function() {
+        this.skunks++;
+    },
+    addSkunked: function() {
+        this.skunked++;
+    },
+    skunkCheck: function(earned, given) {
+      if (earned==3&&given==0)
+        this.addSkunk();
+      if (given==3&&earned==0)
+        this.addSkunked();
+      // if (this.name=="Danny")
+        // this.addSkunk();
+    },
+    getName: function() {
+      return this.name.toString();},
+    getWins: function() {
+      return this.pointsEarned;},
+    getLosses: function() {
+      return this.pointsGiven;},
+    getMatches: function() {
+      return this.matches;},
+    getMatchWins: function() {
+      return this.matchesWon;},
+    getMatchLosses: function() {
+      return this.matchesLost;},
+    getSkunks: function() {
+      return this.skunks;},
+    getSkunked: function() {
+      return this.skunked;},
+    getSL: function() {
+      return this.sl;},
+    toString: function() {
+      var returned = [];
+      returned.push("{ Name: "+this.name);
+      returned.push(" Points Earned: "+this.pointsEarned);
+      returned.push(" Points Given: "+this.pointsGiven);
+      returned.push(" Matches Won: "+this.matchesWon);
+      returned.push(" Matches Lost: "+this.matchesLost);
+      returned.push(" Skunks: "+this.skunks);
+      returned.push(" Skunked: "+this.skunked+" }");
+      return returned.toString();
+    },
+    statsToRow: function() {
+      returned.push(this.name);
+      returned.push(this.pointsEarned);
+      returned.push(this.pointsGiven);
+      returned.push(this.matchesWon);
+      returned.push(this.matchesLost);
+      returned.push(this.skunks);
+      returned.push(this.skunked);
+      return returned;
+    }
+  };
+
+  /**
+  * Updates Players by reading the scores from It Is What It Is's Current Season Stats
+  *
+  */
+  function updatePlayers() {
+    readFrybotSheet_(false, function pleaseWork(playerArray) {
+      players = [];
+      // shift off headers
+      for (i=0;i<6;i++)
+        playerArray.shift();
+      // shifts off each score input until empty, updating match stats for each found player
+      // creates new players as necessary
+      while (playerArray.length>0) {
+        var timestamp = playerArray.shift();
+        var name = playerArray.shift();
+        var pointsEarned = playerArray.shift();
+        var pointsGiven = playerArray.shift();
+        var matchNumber = playerArray.shift();
+        var matchDate = playerArray.shift();
+        if (players.length==0) {
+          if (config.debugging) console.log('Adding the first player: '+name);
+          var newPlayer = new Player({"name":name})
+          newPlayer.addMatchStats(pointsEarned,pointsGiven,matchDate,matchNumber);
+          players.push(newPlayer);
+        }
+        else {
+          var found = false;
+          for (j=0;j<players.length;j++) 
+            if (players[j].name==name) {
+              if (config.debugging) console.log('Found player: '+name);
+              found = true;
+              players[j].addMatchStats(pointsEarned,pointsGiven,matchDate,matchNumber);
+            }
+          if (!found) {
+            if (config.debugging) console.log('Adding new player: '+name);
+            var newPlayer = new Player({"name":name})
+            newPlayer.addMatchStats(pointsEarned,pointsGiven,matchDate,matchNumber);
+            players.push(newPlayer);
+          }
+        }
+      }
+    });
+  };
+
+  bot.prototype.test = function() {
+    updatePlayers();
+  };
 }
 
 util.inherits(bot, EventEmitter);
