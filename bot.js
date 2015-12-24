@@ -294,54 +294,9 @@ var bot = function() {
     var dateDayRegex = '[\-]{1}([\\d]{2})[T]{1}';
     var dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
     var dateYearRegex = '[\\d]{4}';
+    statsRegex = new RegExp(statsRegex, "g");
 
-    // used to parse the stats from the message
-    function parseForScores_(text) {
-      // Parse parsedStats
-      var newStats = [];
-      regex = new RegExp(statsRegex, "g");
-      var statResults = text.match(regex);
-      var matchNum = 1;
-      statResults.forEach(function (stat) {
-        var parsedStats = [];
-        // find name
-        regex = new RegExp(nameRegex);
-        var name = regex.exec(stat);
-        name = name[0];
-        // find points earned
-        regex = new RegExp(pointsEarnedRegex);
-        var pointsEarned = regex.exec(stat);
-        pointsEarned = pointsEarned[0];
-        // find points given
-        regex = new RegExp(pointsGivenRegex);
-        var pointsGiven = regex.exec(stat);
-        pointsGiven = pointsGiven[0];
-        var timestamp = moment().format();
-        dateRegex = new RegExp(dateDayRegex);
-        var day = dateRegex.exec(timestamp);
-        day = day[1];
-        dateRegex = new RegExp(dateMonthRegex);
-        var month = dateRegex.exec(timestamp);
-        month = month[1];
-        dateRegex = new RegExp(dateYearRegex);
-        var year = dateRegex.exec(timestamp);
-        parsedStats.push(timestamp);
-        parsedStats.push(name);
-        parsedStats.push(pointsEarned);
-        parsedStats.push(pointsGiven);
-        parsedStats.push(matchNum+'');
-        parsedStats.push(month+'/'+day+'/'+year);
-        newStats.push(parsedStats);
-        matchNum++;
-      });
-      // Add parsedStats
-      var startRow;
-      var endRow;
-      console.log('new stats: '+newStats);
-      return newStats; // parsed stats
-    };
-
-    var addScores_ = function(stats) {
+    var addScores_ = function() {
       Spreadsheet.load({
         debug: true,
         spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
@@ -357,31 +312,59 @@ var bot = function() {
         if(err) throw err;
         spreadsheet.receive(function(err, rows, info) {
           if(err) throw err;
-          console.log("stats: "+stats);
-          startRow = info.lastRow+1;
-          endRow = startRow + stats.length;
-          console.log("end row: "+endRow);
-          for (var i = startRow;i < endRow;i++) {
-            var front = "{\""+i+"\": { ";
-            var tail = "} }";
-            var middle = "";
-            stats = stats.join(",");
-            // for each column of data into cells by
-            for (var col = 1; col<=stats.length;col++) {
-              if (col==stats.length)
-                middle += "\""+col+"\": \""+stats[col-1]+"\""; // particular json seperation and labeling
-              else
-                middle += "\""+col+"\": \""+stats[col-1]+"\","; // particular json seperation and labeling
+          var matches = [];
+          var statResults = message.match(statsRegex);
+          statResults.forEach(function (stat) {
+            var match = '{"player":"","pointsEarned":"","pointsGiven":"","matchNumber":"","matchDate":""}';
+            match = JSON.parse(match);
+            // find name
+            statsRegex = new RegExp(nameRegex);
+            match.player = statsRegex.exec(stat);
+            match.player = match.player[0];
+            // find points earned
+            statsRegex = new RegExp(pointsEarnedRegex);
+            match.pointsEarned = statsRegex.exec(stat);
+            match.pointsEarned = match.pointsEarned[0];
+            // find points given
+            statsRegex = new RegExp(pointsGivenRegex);
+            match.pointsGiven = statsRegex.exec(stat);
+            match.pointsGiven = match.pointsGiven[0];
+            var timestamp = moment().format();
+            dateRegex = new RegExp(dateDayRegex);
+            var day = dateRegex.exec(timestamp);
+            day = day[1];
+            dateRegex = new RegExp(dateMonthRegex);
+            var month = dateRegex.exec(timestamp);
+            month = month[1];
+            dateRegex = new RegExp(dateYearRegex);
+            var year = dateRegex.exec(timestamp);
+            // last match number maintained automatically with overall last point of reference
+            if (lastMatchNum_==5)
+              lastMatchNum_ = 1;
+            else
+              lastMatchNum_++;
+            match.matchNumber = lastMatchNum_;
+            match.matchDate = month+'/'+day+'/'+year;
+            // arrays and Player info updated accordingly
+            for (i=0;i<all_players_.length;i++) {
+              if (all_players_[i].name==match.player)
+                all_players_[i].addMatchStats(match.pointsEarned, match.pointsGiven, match.matchNumber, match.matchDate);
             }
-            var all = front + middle + tail;
-            console.log("all: "+all);
-            var jsonObj = JSON.parse(all);
-            // spreadsheet.add(jsonObj); // adds row one by one
+            var addedMatchJSONasString = '{ "1": "'+match.player+'", "2": "'+match.pointsEarned+'", "3":"'+match.pointsGiven+'", "4":"'+match.matchNumber+'", "5":"'+match.matchDate+'" }';                                    
+            matches.push(addedMatchJSONasString);
+            all_matches_.push(match);
+          });
+          // shifts each generated match into a row and added to the spreadsheet
+          var endRow = info.lastRow+1+matches.length;
+          for (i=info.lastRow+1;i<endRow;i++) {
+            var jsonObj = "{\""+i+"\":"+matches.shift()+"}";
+            jsonObj = JSON.parse(jsonObj);
+            spreadsheet.add(jsonObj); // adds row one by one
           }
-         // spreadsheet.send(function(err) {
-         //    if(err) console.log(err);
-         //    postThought_('Scores added!');
-         //  });
+          spreadsheet.send(function(err) {
+            if(err) console.log(err);
+              postThought_('Scores added!');
+          });
         });
       });
     };
@@ -389,7 +372,8 @@ var bot = function() {
       postThought_('Adding scores.');
       confirmedCommand = setTimeout(
         function() {
-          addScores_(parseForScores_(message));
+          if (message.match(statsRegex)!=null)
+            addScores_();
         },
         config.brainfart);
     };
@@ -479,7 +463,7 @@ var bot = function() {
               match.matchNumber = row[4];
               lastMatchNum_ = row[4];
               match.matchDate = row[5];
-              console.log('match: '+JSON.stringify(match));
+              // console.log('match: '+JSON.stringify(match));
               // Adds to array of JSON of all matches
               all_matches_.push(match);
               // Adds the Player if new, updates scores afterwards
@@ -541,7 +525,7 @@ var bot = function() {
       stats.skunked = 0;
     if (stats.sl==null||stats.sl==undefined)
       stats.sl = 3;
-    console.log("New Player: "+stats.name+' - '+stats.sl);
+    // console.log("New Player: "+stats.name+' - '+stats.sl);
     this.name = stats.name;
     this.matches = stats.matches; // [[pointsEarned,pointsGiven,when]]
     this.pointsEarned = stats.pointsEarned;
@@ -624,7 +608,7 @@ var bot = function() {
   bot.prototype.test = function() {
     cachePlayers_(function theCallback() {
       // console.log(JSON.stringify(playerArray));
-
+      scores('add','Taco 2:1 Banana 3:2');
 
     });
   };
