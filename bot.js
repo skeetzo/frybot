@@ -709,8 +709,8 @@ var bot = function() {
         var currentLVP = 'Gabe';
         var hotStreaker = 'Alex';
         var hotStreak = 6; //hotStreaker's wins
-        self_.postThought_('Current MVP: '+self_.scores('mvp');
-        self_.postThought_('Current LVP: '+self_.scores('lvp');
+        self_.postThought_('Current MVP: '+self_.scores('mvp'));
+        self_.postThought_('Current LVP: '+self_.scores('lvp'));
         self_.postThought_('And finally, '+hotStreaker+' is on a hot streak with '+hotStreak+' wins!');
       },
       start: true,
