@@ -24,7 +24,7 @@ var arguments = [
 var commandsRegex = "(\/"+commands.join("|\/")+")?("+arguments.join("|")+")?";
 config.commandsRegex = new RegExp(commandsRegex, "gi");
 // Debugging
-config.debugging = false;
+config.debugging = true;
 // ItIsWhatItIs
 config.ItIsWhatItIs_statsSheetName = 'Current Season Stats';
 config.ItIsWhatItIs_statsSheetID = 'ot3ufy3';
