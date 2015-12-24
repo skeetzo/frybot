@@ -1,4 +1,3 @@
 var bot = require('./bot.js');
+bot = new bot();
 
-console.log('doing stuff');
-bot.test();

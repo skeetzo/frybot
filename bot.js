@@ -10,28 +10,35 @@ var moment = require ('moment');
 var Spreadsheet = require('edit-google-spreadsheet');
 var util = require('util');
 
+/**
+ * @title It Is What It Is GroupMe Bot, Frybot
+ * @author Schizo
+ * @version 0.0.6
+ */
+
 /* To-do
 
-and calling recent stats by season etc by name like a real db	
-calling out hot streaks in the next season	
-calling out losing streaks in the next season	
-fix / update adding scores regexes	
+calling recent stats by season etc by name like a real db	
+
+
+
 add the (commander) lock	
 	and (master) lock
  
-
-
-
-
-
 */
 
 var bot = function() {
-  var this_ = this;
+  var self_ = this;
+  // Lock
+  var thinking = false;
+  // Updated when adding match stats
+  var lastMatchNum_ = 0;
+  // Updated during caching
+  var all_players_ = [];
+  var all_matches_ = [];
 
 
-  // CronJob activities
-
+  // CronJobs
 
   /**
   * Called weekly on Tuesday at 6:00 PM before 7:30 PM league match
@@ -43,16 +50,19 @@ var bot = function() {
   *
   * started- yes
   */
-  var pregameJob = new CronJob({
-    cronTime: '00 35 00 * * 3',
+  var pregameJob_ = new CronJob({
+    cronTime: '00 45 00 * * 2',
       onTick: function pregame() {
+
+        // should call updatePlayers() as a callback in a way
+
         // get location
         var location = 'a place';
         postThought_('It\'s League night bitches!');
         postThought_('Playing @: '+location);
         // postThought_();
                    // Bottle Duty: (a name)
-        this_.bottle('duty');
+        self_.bottle('duty');
 
         var currentMVP = 'DROD';
         var currentLVP = 'Gabe';
@@ -69,8 +79,28 @@ var bot = function() {
       timeZone: 'America/Los_Angeles'
   });
 
+  /**
+  * Called weekly on Wednesday at 12:00 PM
+  *
+  * started- yes
+  */
+  var afterpartyJob_ = new CronJob({
+    cronTime: '00 35 19 * * 3',
+      onTick: function pregame() {
+        // messages about last nights game
+        // did we win or lose
+        // who did the best
+        // who did the worst
+        postThought_('Get ready for updates yo');
+        self_.scores('callout');
+      },
+      start: true,
+      timeZone: 'America/Los_Angeles'
+  });
 
-  // Post
+
+
+  // Posts
 
   /**
   * Likes the message with the given id
@@ -99,25 +129,27 @@ var bot = function() {
   };
 
   // Prepares the thoughts_ to be POSTed based upon length
-  var postMaster_ = function() {
+  function postMaster_() {
+    var tempThoughts_ = thoughts_;
+    thoughts_ = [];
     if (!config.responding)
       return;
-    if (thoughts_.length>=3) {
+    if (tempThoughts_.length>=3) {
       // thought string is checked for end of sentence chars
       // return their same thing
       // else return default sentence smash
-      for (i=0;i<thoughts_.length;i++) {
-        if ((thoughts_[i].charAt(thoughts_[i].length-1)!='!')&&(thoughts_[i].charAt(thoughts_[i].length-1)!='-')&&(thoughts_[i].charAt(thoughts_[i].length-1)!=':')&&(thoughts_[i].charAt(thoughts_[i].length-1)!=',')&&(thoughts_[i].charAt(thoughts_[i].length-1)!='.'))
-          thoughts_[i]+='. ';
+      for (i=0;i<tempThoughts_.length;i++) {
+        if ((tempThoughts_[i].charAt(tempThoughts_[i].length-1)!='!')&&(tempThoughts_[i].charAt(tempThoughts_[i].length-1)!='-')&&(tempThoughts_[i].charAt(tempThoughts_[i].length-1)!=':')&&(tempThoughts_[i].charAt(tempThoughts_[i].length-1)!=',')&&(tempThoughts_[i].charAt(tempThoughts_[i].length-1)!='.'))
+          tempThoughts_[i]+='. ';
         else
-          thoughts_[i]+=' '; 
+          tempThoughts_[i]+=' '; 
       }
-      thoughts_ = thoughts_.join();   
-      postMessage_(thoughts_);
-      thoughts_ = [];
+      tempThoughts_ = tempThoughts_.join('');   
+      postMessage_(tempThoughts_);
+      // tempThoughts_ = [];
     }
     else
-      postMessage_(thoughts_.shift());
+      postMessage_(tempThoughts_.shift());
   };
 
   /**
@@ -135,6 +167,8 @@ var bot = function() {
       "bot_id" : config.botID,
       "text" : message
     };
+    if (message==undefined)
+      return;
     console.log(('sending ' + message + ' to ' + config.botID).green);
     botReq = HTTPS.request(options, function(res) {
         if(res.statusCode == 202) {
@@ -157,10 +191,14 @@ var bot = function() {
   * @param thought {string} what will be POSTed 
   */
   var thoughts_ = []; // the thoughts_ to be posted
+  var postman = function() {};
   function postThought_(thought) {
     thoughts_.push(thought);
-    clearTimeout(postMaster_);
-    setTimeout(postMaster_, config.responseTime);
+    clearTimeout(postman);
+    postman = function() {
+      postMaster_();
+    }
+    setTimeout(postman, config.responseTime);
   };
 
   // Commands
@@ -175,11 +213,9 @@ var bot = function() {
     var message = request.text;
     var sender = request.id;
     var matches = message.match(config.commandsRegex);
-    if (config.debugging) console.log("matches before: "+matches);
     for (i=0;i<matches.length;i++) 
       if (matches[i]==""||matches[i]==="")
         matches.splice(i,1);
-    if (config.debugging) console.log("matches after: "+matches);
     var command = matches[0].substring(1); // the first command match minus the slash
     var argument = matches[1]; // the first argument match
     if (argument!=undefined)
@@ -187,17 +223,10 @@ var bot = function() {
     else
       message = message.substring(1+command.length+1);
     //                           // slash + space + space
-    if (config.debugging) {
-      console.log('matches: '+matches);
-      console.log('command: '+command);
-      console.log('argument: '+argument);
-      console.log('message: '+message);
-      return;
-    }
     var i = sender.indexOf(' ');
     sender = sender.substring(0,i);
-    if (typeof this_[command] === "function" ) {
-      this_[command](argument, message, sender);
+    if (typeof self_[command] === "function" ) {
+      self_[command](argument, message, sender);
       likeMessage_(sender);
     }
   };
@@ -205,6 +234,9 @@ var bot = function() {
   /**
   * Bottle command functions
   *  who, what
+  *
+  * Tells the group who/what is responsible for booze
+  *
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
@@ -253,7 +285,9 @@ var bot = function() {
         });
       });
     };
-    bottle.who = function() {};
+    bottle.who = function() {
+      // to-do; return random person on the team
+    };
     bottle.what = function() {
       var bottles = ['rum','vodka','whiskey','jaeger'];
       bots.postThought_(bottles[Math.random(0,bottles.length)]);
@@ -274,6 +308,9 @@ var bot = function() {
   /**
   * Scores command functions
   *   add, undo
+  *
+  * Adds Player scores to the It Is What It Is scoresheet
+  *
   * @param {string} argument - The argument to call
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
@@ -289,123 +326,185 @@ var bot = function() {
     var dateDayRegex = '[\-]{1}([\\d]{2})[T]{1}';
     var dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
     var dateYearRegex = '[\\d]{4}';
+    statsRegex = new RegExp(statsRegex, "g");
 
-    // used to parse the stats from the message
-    function parseForScores(text) {
-      // Parse parsedStats
-      var newStats = [];
-      regex = new RegExp(statsRegex, "g");
-      var statResults = text.match(regex);
-      var matchNum = 1;
-      statResults.forEach(function (stat) {
-        var parsedStats = [];
-        // find name
-        regex = new RegExp(nameRegex);
-        var name = regex.exec(stat);
-        name = name[0];
-        // find points earned
-        regex = new RegExp(pointsEarnedRegex);
-        var pointsEarned = regex.exec(stat);
-        pointsEarned = pointsEarned[0];
-        // find points given
-        regex = new RegExp(pointsGivenRegex);
-        var pointsGiven = regex.exec(stat);
-        pointsGiven = pointsGiven[0];
-        var timestamp = moment().format();
-        dateRegex = new RegExp(dateDayRegex);
-        var day = dateRegex.exec(timestamp);
-        day = day[1];
-        dateRegex = new RegExp(dateMonthRegex);
-        var month = dateRegex.exec(timestamp);
-        month = month[1];
-        dateRegex = new RegExp(dateYearRegex);
-        var year = dateRegex.exec(timestamp);
-        parsedStats.push(timestamp);
-        parsedStats.push(name);
-        parsedStats.push(pointsEarned);
-        parsedStats.push(pointsGiven);
-        parsedStats.push(matchNum+'');
-        parsedStats.push(month+'/'+day+'/'+year);
-        newStats.push(parsedStats);
-        matchNum++;
-      });
-      // Add parsedStats
-      var startRow;
-      var endRow;
-      return newStats; // parsed stats
-    };
-
-    var addScores_ = function(stats) {
-      Spreadsheet.load({
-        debug: true,
-        spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
-        spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
-        worksheetId: config.ItIsWhatItIs_statsSheetID,
-        worksheetName: config.ItIsWhatItIs_statsSheetName,
-        oauth : {
-          email: config.ItIsWhatItIs_serviceEmail,
-          keyFile: config.ItIsWhatItIs_keyFile
-        }
-      },
-      function sheetReady(err, spreadsheet) {
-        if(err) throw err;
-        spreadsheet.receive(function(err, rows, info) {
-          if(err) throw err;
-          console.log("stats: "+stats);
-          startRow = info.lastRow+1;
-          endRow = startRow + stats.length;
-          console.log("end row: "+endRow);
-          for (var i = startRow;i < endRow;i++) {
-            var front = "{\""+i+"\": { ";
-            var tail = "} }";
-            var middle = "";
-            stats = stats.join(",");
-            console.log("stats: "+stats);
-            // for each column of data into cells by
-            for (var col = 1; col<=stats.length;col++) {
-              if (col==stats.length)
-                middle += "\""+col+"\": \""+stats[col-1]+"\""; // particular json seperation and labeling
-              else
-                middle += "\""+col+"\": \""+stats[col-1]+"\","; // particular json seperation and labeling
-            }
-            var all = front + middle + tail;
-            console.log("all: "+all);
-            var jsonObj = JSON.parse(all);
-            spreadsheet.add(jsonObj); // adds row one by one
-          }
-         spreadsheet.send(function(err) {
-            if(err) console.log(err);
-            postThought_('Scores added!');
-          });
-        });
-      });
-    };
 
     scores.add = function() {
       postThought_('Adding scores.');
+
+      var addScores_ = function() {
+        Spreadsheet.load({
+          debug: true,
+          spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
+          spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
+          worksheetId: config.ItIsWhatItIs_statsSheetID,
+          worksheetName: config.ItIsWhatItIs_statsSheetName,
+          oauth : {
+            email: config.ItIsWhatItIs_serviceEmail,
+            keyFile: config.ItIsWhatItIs_keyFile
+          }
+        },
+        function sheetReady(err, spreadsheet) {
+          if(err) throw err;
+          spreadsheet.receive(function(err, rows, info) {
+            if(err) throw err;
+            var matches = [];
+            var statResults = message.match(statsRegex);
+            statResults.forEach(function (stat) {
+              var match = '{"player":"","pointsEarned":"","pointsGiven":"","matchNumber":"","matchDate":""}';
+              match = JSON.parse(match);
+              // find name
+              statsRegex = new RegExp(nameRegex);
+              match.player = statsRegex.exec(stat);
+              match.player = match.player[0];
+              // find points earned
+              statsRegex = new RegExp(pointsEarnedRegex);
+              match.pointsEarned = statsRegex.exec(stat);
+              match.pointsEarned = match.pointsEarned[0];
+              // find points given
+              statsRegex = new RegExp(pointsGivenRegex);
+              match.pointsGiven = statsRegex.exec(stat);
+              match.pointsGiven = match.pointsGiven[0];
+              var timestamp = moment().format();
+              dateRegex = new RegExp(dateDayRegex);
+              var day = dateRegex.exec(timestamp);
+              day = day[1];
+              dateRegex = new RegExp(dateMonthRegex);
+              var month = dateRegex.exec(timestamp);
+              month = month[1];
+              dateRegex = new RegExp(dateYearRegex);
+              var year = dateRegex.exec(timestamp);
+              // last match number maintained automatically with overall last point of reference
+              if (lastMatchNum_==5)
+                lastMatchNum_ = 1;
+              else
+                lastMatchNum_++;
+              match.matchNumber = lastMatchNum_;
+              match.matchDate = month+'/'+day+'/'+year;
+              // arrays and Player info updated accordingly
+              for (i=0;i<all_players_.length;i++) {
+                if (all_players_[i].name==match.player)
+                  all_players_[i].addMatchStats(match.pointsEarned, match.pointsGiven, match.matchNumber, match.matchDate);
+              }
+              var addedMatchJSONasString = '{ "1": "'+match.player+'", "2": "'+match.pointsEarned+'", "3":"'+match.pointsGiven+'", "4":"'+match.matchNumber+'", "5":"'+match.matchDate+'" }';                                    
+              matches.push(addedMatchJSONasString);
+              all_matches_.push(match);
+            });
+            // shifts each generated match into a row and added to the spreadsheet
+            var endRow = info.lastRow+1+matches.length;
+            for (i=info.lastRow+1;i<endRow;i++) {
+              var jsonObj = "{\""+i+"\":"+matches.shift()+"}";
+              jsonObj = JSON.parse(jsonObj);
+              spreadsheet.add(jsonObj); // adds row one by one
+            }
+            spreadsheet.send(function(err) {
+              if(err) console.log(err);
+                postThought_('Scores added!');
+            });
+          });
+        });
+      };
+
       confirmedCommand = setTimeout(
         function() {
-          addScores_(parseForScores(message));
+          if (message.match(statsRegex)!=null) {
+            if (all_players_.length<=0||all_matches_.length<=0)
+              cachePlayers_(addScores_);
+            else
+              addScores_();
+          }
         },
         config.brainfart);
     };
+    scores.callouts = function() {
+      console.log('Callouts incoming');
+      _.forEach(all_players_,function streakCheck(player) {
+        var matches = player.matches;
+        var streak = '';
+        var streakN = 0;
+        for (i=0;i<matches.length;i++) {
+          // to-do; could add in ways to track each individual hot streak
+          if (matches[i][0]>matches[i][1]) {
+            if (streak=='cold')
+              streakN = 0;
+            streak = 'hot';
+            streakN++;
+          }
+          else {
+            if (streak=='hot')
+              streakN = 0;
+            streak = 'cold';
+            streakN++;
+          }
+        }
+        var mod = '+';
+        if (streak=='cold')
+          mod = '-';
+        if (streakN==1)
+          streak = 'nothing special';
+        else if (streakN==2) {
+          if (streak=='cold')
+            streak = 'chillin out';
+          else
+            streak = 'heating up';
+        }
+        else if (streakN==3) {
+          if (streak=='cold')
+            streak = 'ice cold';
+          else
+            streak = 'on fire';
+        }
+        else if (streakN>=5&&streakN<10) {
+          if (streak=='cold')
+            streak = 'falling asleep on the job';
+          else
+            streak = 'ablaze with glory';
+        }
+        else if (streakN>=10) {
+          if (streak=='cold')
+            streak = 'waking up in a dystopian future';
+          else
+            streak = 'selling their soul for victory';
+        }
+        else {
+          if (streak=='cold')
+            streak = 'dysfunctional';
+          else
+            streak = 'enh';
+        }
+        postThought_(player.name+' is '+streak+' with ('+mod+streakN+')');
+      });
+    };
     scores.undo = function() {
 
-    }
+    };
     if (argument)
-      this.scores[argument]();
+      self_.scores[argument]();
     else
       postThought_('What about the scores '+sender+'?');
   };
   this.scores = scores;
 
+  /**
+  * jk command functions
+  *   butnotreally
+  * 
+  * Used to cancel the previously activated command within config.brainfart delay
+  *
+  * @param {string} argument - The argument to call
+  * @param {string} message - The message it's from
+  * @param {string} sender - The sender it's from
+  */
   function jk(argument, message, sender) {
-    // if (argument)
-    //   this.jk[argument]();
-    // else {
+    jk.butnotreally = function() {
+      postThought_('trololjk');
+    };
+    if (argument)
+      this.jk[argument]();
+    else {
       postThought_('jk');
       clearTimeout(confirmedCommand);
-    // }
+    }
   };
   this.jk = jk;
 
@@ -433,6 +532,173 @@ var bot = function() {
       postThought_('What about sucking '+sender+'\'s '+message+'?');
   };
   this.suck = suck;
+
+  // Google Sheets
+  /**
+  * Resets Player scores for the season
+  *  Resets Array of the season's match data
+  *
+  * @param function callback the function to be called once done loading and reading the sheet and updating the arrays
+  */
+  function cachePlayers_(callback) {
+    console.log('Caching Players from Scoresheet');
+    thinking = true;
+    all_players_ = [];
+    all_matches_ = [];
+    Spreadsheet.load({
+      debug: true,
+      spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
+      spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
+      worksheetId: config.ItIsWhatItIs_statsSheetID,
+      worksheetName: config.ItIsWhatItIs_statsSheetName,
+      oauth : {
+        email: config.ItIsWhatItIs_serviceEmail,
+        keyFile: config.ItIsWhatItIs_keyFile
+      }
+    },
+    function sheetReady(err, spreadsheet) {
+      if(err) throw err;
+      spreadsheet.receive(function(err, rows, info) {
+        if(err) throw err;
+        // header pickoff
+        var once = true;
+        var keys = '{"player":"","pointsEarned":"","pointsGiven":"","matchNumber":"","matchDate":""}';
+        _.forEach(rows, function(row) {
+            if (once) {
+              once = false;
+            }
+            else {
+              var match = JSON.parse(keys);
+              // match = JSON.parse(match);
+              match.player = row[1];
+              match.pointsEarned = row[2];
+              match.pointsGiven = row[3];
+              match.matchNumber = row[4];
+              lastMatchNum_ = row[4];
+              match.matchDate = row[5];
+              // console.log('match: '+JSON.stringify(match));
+              // Adds to array of JSON of all matches
+              all_matches_.push(match);
+              // Adds the Player if new, updates scores afterwards
+              if (all_players_.length==0) {
+                // console.log('Adding the first player: '+match.player);
+                var newPlayer = new Player({"name":match.player})
+                newPlayer.addMatchStats(match.pointsEarned,match.pointsGiven,match.matchDate,match.matchNumber);
+                all_players_.push(newPlayer);
+              }
+              else {
+                var found = false;
+                for (j=0;j<all_players_.length;j++) 
+                  if (all_players_[j].name==match.player) {
+                    // console.log('Found player: '+match.player);
+                    found = true;
+                    all_players_[j].addMatchStats(match.pointsEarned,match.pointsGiven,match.matchDate,match.matchNumber);
+                  }
+                if (!found) {
+                  // console.log('Adding new player: '+match.player);
+                  var newPlayer = new Player({"name":match.player})
+                  newPlayer.addMatchStats(match.pointsEarned,match.pointsGiven,match.matchDate,match.matchNumber);
+                  all_players_.push(newPlayer);
+                }
+              }
+            }
+        });
+        self_.emit('cache loaded');
+        if (callback)
+          callback();
+      });
+    });
+  }
+
+  /**
+  * 12/23/15
+  * @author Schizo
+  *
+  * Player Class from It Is What It Is Sheet Scripts modified for easy Player manipulation
+  *  records name, matches (earned, given, match#), won, lost, skunks, skunked, sl
+  *
+  * @constructor
+  * @param stats {data} the data of the player in the format of {"name":name,"sl":sl,etc}
+  */
+  function Player(stats) {
+    if (stats.name==null||stats.name==undefined)
+      stats.name = "Default";
+    if (stats.matches==null||stats.matches==undefined)
+      stats.matches = [];
+    if (stats.pointsEarned==null||stats.pointsEarned==undefined)
+      stats.pointsEarned = 0;
+    if (stats.pointsGiven==null||stats.pointsGiven==undefined)
+      stats.pointsGiven = 0;
+    if (stats.matchesWon==null||stats.matchesWon==undefined)
+      stats.matchesWon = 0;
+    if (stats.matchesLost==null||stats.matchesLost==undefined)
+      stats.matchesLost = 0;
+    if (stats.skunks==null||stats.skunks==undefined)
+      stats.skunks = 0;
+    if (stats.skunked==null||stats.skunked==undefined)
+      stats.skunked = 0;
+    if (stats.sl==null||stats.sl==undefined)
+      stats.sl = 3;
+    // console.log("New Player: "+stats.name+' - '+stats.sl);
+    this.name = stats.name;
+    this.matches = stats.matches; // [[pointsEarned,pointsGiven,when]]
+    this.pointsEarned = stats.pointsEarned;
+    this.pointsGiven = stats.pointsGiven;
+    this.matchesWon = stats.matchesWon;
+    this.matchesLost = stats.matchesLost;
+    this.skunks = stats.skunks;
+    this.skunked = stats.skunked;
+    this.sl = stats.sl;
+  };
+
+  Player.prototype = {
+    // MATCH
+    addMatchStats: function(pointsEarned, pointsGiven, matchDate, matchNum) {
+      this.matches.push([pointsEarned, pointsGiven, matchDate, matchNum]);
+      this.pointsEarned+=pointsEarned;
+      this.pointsGiven+=pointsGiven;
+      if (pointsEarned>pointsGiven)
+        this.matchesWon++;
+      else
+        this.matchesLost++;
+      this.skunkCheck(pointsEarned,pointsGiven);
+    },
+    // SKUNKS
+    skunkCheck: function(earned, given) {
+      if (earned==3&&given==0)
+        this.skunks++;
+      if (given==3&&earned==0)
+        this.skunked++;
+      // if (this.name=="Danny")
+        // this.addSkunk();
+    },
+    toString: function() {
+      var returned = [];
+      returned.push("{ Name: "+this.name);
+      returned.push(" Points Earned: "+this.pointsEarned);
+      returned.push(" Points Given: "+this.pointsGiven);
+      returned.push(" Matches Won: "+this.matchesWon);
+      returned.push(" Matches Lost: "+this.matchesLost);
+      returned.push(" Skunks: "+this.skunks);
+      returned.push(" Skunked: "+this.skunked+" }");
+      return returned.toString();
+    }
+  };
+
+  bot.prototype.test = function() {
+    scores('callouts');
+  };
+
+  this.once('cache loaded', function() {
+    if (config.debugging) console.log('Running Tests'.red);
+    self_.test();
+  });
+ 
+  // Main
+  (function main() {
+    console.log('Booting up: '+config.NAME);
+    cachePlayers_();
+  })();
 }
 
 util.inherits(bot, EventEmitter);
