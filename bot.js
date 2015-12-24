@@ -85,7 +85,7 @@ var bot = function() {
   * started- yes
   */
   var afterpartyJob_ = new CronJob({
-    cronTime: '00 45 20 * * 3',
+    cronTime: '00 51 20 * * 3',
       onTick: function() {
         // messages about last nights game
         // did we win or lose
@@ -629,7 +629,6 @@ var bot = function() {
               }
             }
         });
-        console.log('Players Loaded');
         self_.emit('cache loaded');
         if (callback)
           callback();
@@ -719,6 +718,8 @@ var bot = function() {
   };
 
   self_.once('cache loaded', function() {
+    // to-do; add in a redundancy check, maybe not for this function but to catch after a crash
+    console.log('Cache Loaded');
     if (config.debugging) {
       console.log('Running Tests'.red);
       self_.test();
