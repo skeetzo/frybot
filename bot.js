@@ -20,6 +20,8 @@ var util = require('util');
 
 calling recent stats by season etc by name like a real db	
 
+update scores.mvp and scores.lvp to provide a less computerish response
+
 On the starting of a new season, do newSeasonStuff() {
   announce a new season and its dates
   reset the sheets somehow, perhaps by affecting a cell that contains a date that the google scripts trigger off of
@@ -46,70 +48,6 @@ var bot = function() {
   // Updated during caching
   var all_players_ = [];
   var all_matches_ = [];
-
-
-  // CronJobs
-
-  /**
-  * Called weekly on Tuesday at 6:00 PM before 7:30 PM league match
-  *  by index.js  
-  *  
-  *
-  *  [sample chat input here]
-  *
-  *
-  * started- yes
-  */
-  var pregameJob_ = new CronJob({
-    cronTime: '00 45 00 * * 2',
-      onTick: function pregame() {
-
-        // should call updatePlayers() as a callback in a way
-
-        // get location
-        var location = 'a place';
-        self_.postThought_('It\'s League night bitches!');
-        self_.postThought_('Playing @: '+location);
-        // self_.postThought_();
-                   // Bottle Duty: (a name)
-        self_.bottle('duty');
-
-        var currentMVP = 'DROD';
-        var currentLVP = 'Gabe';
-        var hotStreaker = 'Alex';
-        var hotStreak = 6; //hotStreaker's wins
-        self_.postThought_('Current MVP: '+currentMVP);
-        self_.postThought_('Current LVP: '+currentLVP);
-        self_.postThought_('And finally, '+hotStreaker+' is on a hot streak with '+hotStreak+' wins!');
-
-
-
-      },
-      start: true,
-      timeZone: 'America/Los_Angeles'
-  });
-
-  /**
-  * Called weekly on Wednesday at 12:00 PM
-  *
-  * started- yes
-  */
-  var afterpartyJob_ = new CronJob({
-    cronTime: '00 05 21 * * 3',
-      onTick: function() {
-        // messages about last nights game
-        // did we win or lose
-        // who did the best
-        // who did the worst
-        self_.postThought_('Get ready for updates yo');
-        self_.players('best');
-        self_.players('worst');
-      },
-      start: true,
-      timeZone: 'America/Los_Angeles'
-  });
-
-
 
   // Posts
 
@@ -732,6 +670,82 @@ var bot = function() {
   bot.prototype.test = function() {
 
   };
+
+  // CronJobs
+
+  /**
+  * Called weekly on Tuesday at 6:00 PM before 7:30 PM league match
+  *  by index.js  
+  *  
+  *
+  *  [sample chat input here]
+  *
+  *
+  * started- yes
+  */
+  var pregameJob_ = new CronJob({
+    cronTime: '00 45 00 * * 2',
+      onTick: function pregame() {
+        // to-do; test this
+        // should call updatePlayers() as a callback in a way
+        // get location
+        var location = 'a place';
+        self_.postThought_('It\'s League night bitches!');
+        self_.postThought_('Playing @: '+location);
+        // self_.postThought_();
+                   // Bottle Duty: (a name)
+        self_.bottle('duty');
+        var currentMVP = 'DROD';
+        var currentLVP = 'Gabe';
+        var hotStreaker = 'Alex';
+        var hotStreak = 6; //hotStreaker's wins
+        self_.postThought_('Current MVP: '+currentMVP);
+        self_.postThought_('Current LVP: '+currentLVP);
+        self_.postThought_('And finally, '+hotStreaker+' is on a hot streak with '+hotStreak+' wins!');
+      },
+      start: true,
+      timeZone: 'America/Los_Angeles'
+  });
+
+  /**
+  * Called weekly on Wednesday at 12:00 PM
+  *
+  * started- yes
+  */
+  var afterpartyJob_ = new CronJob({
+    cronTime: '00 05 21 * * 3',
+      onTick: function() {
+        // messages about last nights game
+        // did we win or lose
+        // who did the best
+        // who did the worst
+        self_.postThought_('Get ready for updates yo');
+        self_.players('best');
+        self_.players('worst');
+      },
+      start: true,
+      timeZone: 'America/Los_Angeles'
+  });
+
+  /**
+  * Called once per season to start the new season off
+  *
+  * started- maybe
+  */
+  var newSeason_ = new CronJob({
+    cronTime: '00 05 21 * * 3',
+      onTick: function() {
+        // to-do; all of this
+        // messages about a hopeful new season
+        // did we win last season
+        // are we going to win this season
+        // who is we, introduce all the players
+        // create introduce() and timeoutdelay for each player
+      },
+      start: true,
+      timeZone: 'America/Los_Angeles'
+  });
+  // add a (if after date) then don't start else start
 
   self_.once('cache loaded', function() {
     // to-do; add in a redundancy check, maybe not for this function but to catch after a crash
