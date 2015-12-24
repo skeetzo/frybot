@@ -58,9 +58,9 @@ var bot = function() {
 
         // get location
         var location = 'a place';
-        postThought_('It\'s League night bitches!');
-        postThought_('Playing @: '+location);
-        // postThought_();
+        self_.postThought_('It\'s League night bitches!');
+        self_.postThought_('Playing @: '+location);
+        // self_.postThought_();
                    // Bottle Duty: (a name)
         self_.bottle('duty');
 
@@ -68,9 +68,9 @@ var bot = function() {
         var currentLVP = 'Gabe';
         var hotStreaker = 'Alex';
         var hotStreak = 6; //hotStreaker's wins
-        postThought_('Current MVP: '+currentMVP);
-        postThought_('Current LVP: '+currentLVP);
-        postThought_('And finally, '+hotStreaker+' is on a hot streak with '+hotStreak+' wins!');
+        self_.postThought_('Current MVP: '+currentMVP);
+        self_.postThought_('Current LVP: '+currentLVP);
+        self_.postThought_('And finally, '+hotStreaker+' is on a hot streak with '+hotStreak+' wins!');
 
 
 
@@ -85,7 +85,7 @@ var bot = function() {
   * started- yes
   */
   var afterpartyJob_ = new CronJob({
-    cronTime: '00 17 20 * * 3',
+    cronTime: '00 19 20 * * 3',
       onTick: function() {
         // messages about last nights game
         // did we win or lose
@@ -280,7 +280,7 @@ var bot = function() {
           spreadsheet.send(function(err) {
             if (err) console.log(err);
             // to-do; add a different range of ways to respond who's responsibility it is for bottle
-            postThought_('Bottle Duty: '+person);
+            self_.postThought_('Bottle Duty: '+person);
           });
         });
       });
@@ -290,18 +290,18 @@ var bot = function() {
     };
     bottle.what = function() {
       var bottles = ['rum','vodka','whiskey','jaeger'];
-      bots.postThought_(bottles[Math.random(0,bottles.length)]);
+      self_.postThought_(bottles[Math.random(0,bottles.length)]);
     };
     if (argument)
       this.bottle[argument]();
     else
-      postThought_('bottle fail');
+      self_.postThought_('bottle fail');
   };
   this.bottle = bottle;
 
   // Runs the cool guy thing
   function coolguy() {
-    postThought_(cool());
+    self_.postThought_(cool());
   };
   this.coolguy = coolguy;
 
@@ -330,7 +330,7 @@ var bot = function() {
 
 
     scores.add = function() {
-      postThought_('Adding scores.');
+      self_.postThought_('Adding scores.');
 
       var addScores_ = function() {
         Spreadsheet.load({
@@ -399,7 +399,7 @@ var bot = function() {
             }
             spreadsheet.send(function(err) {
               if(err) console.log(err);
-                postThought_('Scores added!');
+                self_.postThought_('Scores added!');
             });
           });
         });
@@ -472,7 +472,7 @@ var bot = function() {
           else
             streak = 'enh';
         }
-        postThought_(player.name+' is '+streak+' with ('+mod+streakN+')');
+        self_.postThought_(player.name+' is '+streak+' with ('+mod+streakN+')');
       });
     };
     scores.lvp = function() {
@@ -482,22 +482,22 @@ var bot = function() {
           leastValuablePlayer = player;
         else if (player.mvp<leastValuablePlayer.mvp)
           leastValuablePlayer = player;
-
       });
+      self_.postThought_('Current LVP: '+leastValuablePlayer);
     }
     scores.mvp = function() {
-      var leastValuablePlayer = 'Nico';
+      var mostValuablePlayer = 'Oberg';
       _.forEach(all_players_, function (player) {
-        if (leastValuablePlayer=='Nico')
-          leastValuablePlayer = player;
-        else if (player.mvp<leastValuablePlayer.mvp)
-          leastValuablePlayer = player;
-
+        if (mostValuablePlayer=='Oberg')
+          mostValuablePlayer = player;
+        else if (player.mvp>mostValuablePlayer.mvp)
+          mostValuablePlayer = player;
       });
+      self_.postThought_('Current MVP: '+mostValuablePlayer);
     };
     scores.update = function() {
       cachePlayers_();
-      postThought_('Updating season scores');
+      self_.postThought_('Updating season scores');
     };
     scores.undo = function() {
 
@@ -505,7 +505,7 @@ var bot = function() {
     if (argument)
       self_.scores[argument]();
     else
-      postThought_('What about the scores '+sender+'?');
+      self_.postThought_('What about the scores '+sender+'?');
   };
   this.scores = scores;
 
@@ -521,12 +521,12 @@ var bot = function() {
   */
   function jk(argument, message, sender) {
     jk.butnotreally = function() {
-      postThought_('trololjk');
+      self_.postThought_('trololjk');
     };
     if (argument)
       this.jk[argument]();
     else {
-      postThought_('jk');
+      self_.postThought_('jk');
       clearTimeout(confirmedCommand);
     }
   };
@@ -544,16 +544,16 @@ var bot = function() {
        return;
     // if (sender=='Nico Mendoza'||'Nico') {}
     suck.my = function() {
-      postThought_('yeah suck '+sender+'\'s '+message+'!');
+      self_.postThought_('yeah suck '+sender+'\'s '+message+'!');
     };
     suck.his = function() {
-      postThought_('yeah suck his '+message+'! ');
-      postThought_('wait, what?');
+      self_.postThought_('yeah suck his '+message+'! ');
+      self_.postThought_('wait, what?');
     };
     if (argument)
       this.suck[argument]();
     else
-      postThought_('What about sucking '+sender+'\'s '+message+'?');
+      self_.postThought_('What about sucking '+sender+'\'s '+message+'?');
   };
   this.suck = suck;
 
