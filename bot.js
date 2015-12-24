@@ -85,7 +85,7 @@ var bot = function() {
   * started- yes
   */
   var afterpartyJob_ = new CronJob({
-    cronTime: '00 19 20 * * 3',
+    cronTime: '00 25 20 * * 3',
       onTick: function() {
         // messages about last nights game
         // did we win or lose
@@ -503,7 +503,7 @@ var bot = function() {
 
     };
     if (argument)
-      self_.scores[argument]();
+      this.scores[argument]();
     else
       self_.postThought_('What about the scores '+sender+'?');
   };
