@@ -495,6 +495,12 @@ var bot = function() {
       });
       self_.postThought_('Current MVP: '+mostValuablePlayer);
     };
+    scores.of = function() {
+      _.forEach(all_players_, function (player) {
+        if (player.name==message)
+          self_.postThought_('Stats: '+player);
+      });
+    };
     scores.update = function() {
       cachePlayers_();
       self_.postThought_('Updating season scores');
@@ -714,7 +720,7 @@ var bot = function() {
   };
 
   bot.prototype.test = function() {
-    scores('callouts');
+
   };
 
   self_.once('cache loaded', function() {

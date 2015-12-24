@@ -22,7 +22,8 @@ var arguments = [
   "what",
   "mvp",
   "lvp",
-  "callouts"
+  "callouts",
+  "of"
 ];
 var commandsRegex = "(\/"+commands.join("|\/")+")?("+arguments.join("|")+")?";
 config.commandsRegex = new RegExp(commandsRegex, "gi");
