@@ -719,8 +719,10 @@ var bot = function() {
   };
 
   this.once('cache loaded', function() {
-    if (config.debugging) console.log('Running Tests'.red);
+    if (config.debugging) {
+      console.log('Running Tests'.red);
       self_.test();
+    }
     else
       self_.main();
   });
