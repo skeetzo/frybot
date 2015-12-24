@@ -19,7 +19,10 @@ var arguments = [
   "his",
   "duty",
   "who",
-  "what"
+  "what",
+  "mvp",
+  "lvp",
+  "callouts"
 ];
 var commandsRegex = "(\/"+commands.join("|\/")+")?("+arguments.join("|")+")?";
 config.commandsRegex = new RegExp(commandsRegex, "gi");
