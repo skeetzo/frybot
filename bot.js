@@ -503,7 +503,7 @@ var bot = function() {
 
     };
     if (argument)
-      $this.scores[argument]();
+      scores[argument]();
     else
       self_.postThought_('What about the scores '+sender+'?');
   };
