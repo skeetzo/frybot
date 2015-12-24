@@ -315,7 +315,7 @@ var bot = function() {
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
   */
-  function scores(argument, message, sender) {
+  bot.prototype.scores(argument, message, sender) {
     // Regexes used for parsing stat info
     var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
     var nameRegex = '[A-Za-z]+';
@@ -507,7 +507,7 @@ var bot = function() {
     else
       self_.postThought_('What about the scores '+sender+'?');
   };
-  this.scores = scores;
+  // this.scores = scores;
 
   /**
   * jk command functions
