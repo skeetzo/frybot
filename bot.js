@@ -85,7 +85,7 @@ var bot = function() {
   * started- yes
   */
   var afterpartyJob_ = new CronJob({
-    cronTime: '00 55 20 * * 3',
+    cronTime: '00 05 21 * * 3',
       onTick: function() {
         // messages about last nights game
         // did we win or lose
