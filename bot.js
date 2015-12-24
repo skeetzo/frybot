@@ -85,7 +85,7 @@ var bot = function() {
   * started- yes
   */
   var afterpartyJob_ = new CronJob({
-    cronTime: '00 25 20 * * 3',
+    cronTime: '00 45 20 * * 3',
       onTick: function() {
         // messages about last nights game
         // did we win or lose
@@ -293,7 +293,7 @@ var bot = function() {
       self_.postThought_(bottles[Math.random(0,bottles.length)]);
     };
     if (argument)
-      this.bottle[argument]();
+      bottle[argument]();
     else
       self_.postThought_('bottle fail');
   };
@@ -315,7 +315,7 @@ var bot = function() {
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
   */
-  bot.prototype.scores = function(argument, message, sender) {
+  function scores(argument, message, sender) {
     // Regexes used for parsing stat info
     var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
     var nameRegex = '[A-Za-z]+';
@@ -507,7 +507,7 @@ var bot = function() {
     else
       self_.postThought_('What about the scores '+sender+'?');
   };
-  // this.scores = scores;
+  this.scores = scores;
 
   /**
   * jk command functions
@@ -551,13 +551,15 @@ var bot = function() {
       self_.postThought_('wait, what?');
     };
     if (argument)
-      this.suck[argument]();
+      suck[argument]();
     else
       self_.postThought_('What about sucking '+sender+'\'s '+message+'?');
   };
   this.suck = suck;
 
-  // Google Sheets
+  // End of Commands
+
+  // all_players_ and all_matches_ cacher
   /**
   * Resets Player scores for the season
   *  Resets Array of the season's match data
@@ -627,6 +629,7 @@ var bot = function() {
               }
             }
         });
+        console.log('Players Loaded');
         self_.emit('cache loaded');
         if (callback)
           callback();
@@ -712,19 +715,33 @@ var bot = function() {
   };
 
   bot.prototype.test = function() {
-    bot.scores('callouts');
+    scores('callouts');
   };
 
   this.once('cache loaded', function() {
     if (config.debugging) console.log('Running Tests'.red);
-    self_.test();
+      self_.test();
+    else
+      self_.main();
+  });
+
+  this.on('uncaughtException', function (er) {
+    console.log('Gotcha! Uhh: '+er);
+    console.log('Let\'s try this again...');
+    self_.main();
+
   });
  
-  // Main
-  (function main() {
+  // Boot
+  (function boot() {
     console.log('Booting up: '+config.NAME);
     cachePlayers_();
   })();
+  // Main
+  function main() {
+    console.log('Main Party Starting');
+
+  };
 }
 
 util.inherits(bot, EventEmitter);
