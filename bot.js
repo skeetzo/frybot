@@ -315,7 +315,7 @@ var bot = function() {
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
   */
-  bot.prototype.scores(argument, message, sender) {
+  bot.prototype.scores = function(argument, message, sender) {
     // Regexes used for parsing stat info
     var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
     var nameRegex = '[A-Za-z]+';
