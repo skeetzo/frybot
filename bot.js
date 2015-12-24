@@ -484,7 +484,7 @@ var bot = function() {
           leastValuablePlayer = player;
       });
       self_.postThought_('Current LVP: '+leastValuablePlayer);
-    }
+    };
     scores.mvp = function() {
       var mostValuablePlayer = 'Oberg';
       _.forEach(all_players_, function (player) {
@@ -503,7 +503,7 @@ var bot = function() {
 
     };
     if (argument)
-      this.scores[argument]();
+      $this.scores[argument]();
     else
       self_.postThought_('What about the scores '+sender+'?');
   };
