@@ -712,7 +712,7 @@ var bot = function() {
   };
 
   bot.prototype.test = function() {
-    scores('callouts');
+    bot.scores('callouts');
   };
 
   this.once('cache loaded', function() {
