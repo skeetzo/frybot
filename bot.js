@@ -20,10 +20,20 @@ var util = require('util');
 
 calling recent stats by season etc by name like a real db	
 
-
+On the starting of a new season, do newSeasonStuff() {
+  announce a new season and its dates
+  reset the sheets somehow, perhaps by affecting a cell that contains a date that the google scripts trigger off of
+  introduce the players with introduce()
+  remind returning players of past failures by using all of their stats to calculate those who got skunked the most
+    offer to remove lowest player from the team
+  wishes everyone (except nico) good luck
 
 add the (commander) lock	
 	and (master) lock
+
+  introduce() {
+  says random shit for each player in a WWE style intro
+}
  
 */
 
@@ -92,7 +102,8 @@ var bot = function() {
         // who did the best
         // who did the worst
         self_.postThought_('Get ready for updates yo');
-        self_.scores('callout');
+        self_.players('best');
+        self_.players('worst');
       },
       start: true,
       timeZone: 'America/Los_Angeles'
@@ -305,6 +316,19 @@ var bot = function() {
   };
   this.coolguy = coolguy;
 
+
+  // Regexes used for parsing stat info
+  //   only currently used in scores
+  var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
+  var nameRegex = '[A-Za-z]+';
+  var scoreRegex = '\\d{1}\\D*\\d{1}$';
+  var pointsEarnedRegex = '\\d{1}';
+  var pointsGivenRegex = '\\d{1}$';
+  var dateRegex;
+  var dateDayRegex = '[\-]{1}([\\d]{2})[T]{1}';
+  var dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
+  var dateYearRegex = '[\\d]{4}';
+  statsRegex = new RegExp(statsRegex, "g");
   /**
   * Scores command functions
   *   add, undo
@@ -316,19 +340,6 @@ var bot = function() {
   * @param {string} sender - The sender it's from
   */
   function scores(argument, message, sender) {
-    // Regexes used for parsing stat info
-    var statsRegex = '([A-Za-z]+\\s*\\d{1}\\D*\\d{1})';
-    var nameRegex = '[A-Za-z]+';
-    var scoreRegex = '\\d{1}\\D*\\d{1}$';
-    var pointsEarnedRegex = '\\d{1}';
-    var pointsGivenRegex = '\\d{1}$';
-    var dateRegex;
-    var dateDayRegex = '[\-]{1}([\\d]{2})[T]{1}';
-    var dateMonthRegex = '[\-]{1}([\\d]{2})[\-]{1}';
-    var dateYearRegex = '[\\d]{4}';
-    statsRegex = new RegExp(statsRegex, "g");
-
-
     scores.add = function() {
       self_.postThought_('Adding scores.');
 
@@ -404,7 +415,6 @@ var bot = function() {
           });
         });
       };
-
       confirmedCommand = setTimeout(
         function() {
           if (message.match(statsRegex)!=null) {
@@ -483,7 +493,7 @@ var bot = function() {
         else if (player.mvp<leastValuablePlayer.mvp)
           leastValuablePlayer = player;
       });
-      self_.postThought_('Current LVP: '+leastValuablePlayer);
+      self_.postThought_('Current LVP: '+JSON.stringify(leastValuablePlayer));
     };
     scores.mvp = function() {
       var mostValuablePlayer = 'Oberg';
@@ -756,40 +766,3 @@ var bot = function() {
 util.inherits(bot, EventEmitter);
 
 module.exports = bot;
-
-
-
-
-
-
-
-
-
-
-
-
-/*   To Do
-
-On the starting of a new season, do newSeasonStuff() {
-  announce a new season and its dates
-  reset the sheets somehow, perhaps by affecting a cell that contains a date that the google scripts trigger off of
-  introduce the players with introduce()
-  remind returning players of past failures by using all of their stats to calculate those who got skunked the most
-    offer to remove lowest player from the team
-  wishes everyone (except nico) good luck
-}
-
-introduce() {
-  says random shit for each player in a WWE style intro
-}
-
-
-
-
-
-
-
-
-
-
-*/
