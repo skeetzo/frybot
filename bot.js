@@ -630,7 +630,7 @@ var bot = function() {
             }
         });
         console.log('Players Loaded');
-        self_.emit('cache loaded');
+        this.emit('cache loaded');
         if (callback)
           callback();
       });
