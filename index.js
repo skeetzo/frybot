@@ -31,5 +31,3 @@ function ping() {
   this.res.end("Hi, I'm "+config.NAME+" and I totally work.");
   // bot.ping();
 }
-
-
