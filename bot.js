@@ -85,13 +85,13 @@ var bot = function() {
   * started- yes
   */
   var afterpartyJob_ = new CronJob({
-    cronTime: '00 05 20 * * 3',
+    cronTime: '00 07 20 * * 3',
       onTick: function() {
         // messages about last nights game
         // did we win or lose
         // who did the best
         // who did the worst
-        postThought_('Get ready for updates yo');
+        self_.postThought_('Get ready for updates yo');
         self_.scores('callout');
       },
       start: true,
