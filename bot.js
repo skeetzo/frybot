@@ -630,7 +630,7 @@ var bot = function() {
             }
         });
         console.log('Players Loaded');
-        this.emit('cache loaded');
+        self_.emit('cache loaded');
         if (callback)
           callback();
       });
@@ -718,7 +718,7 @@ var bot = function() {
     scores('callouts');
   };
 
-  this.once('cache loaded', function() {
+  self_.once('cache loaded', function() {
     if (config.debugging) {
       console.log('Running Tests'.red);
       self_.test();
@@ -727,7 +727,7 @@ var bot = function() {
       self_.main();
   });
 
-  this.on('uncaughtException', function (er) {
+  self_.on('uncaughtException', function (er) {
     console.log('Gotcha! Uhh: '+er);
     console.log('Let\'s try this again...');
     self_.main();
