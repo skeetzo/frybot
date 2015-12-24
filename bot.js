@@ -398,9 +398,9 @@ var bot = function() {
     };
     scores.streak = function (player) {
       // forces player from string to obj
-      if (player !typeof Object)
+      if (typeof player != Object)
         _.forEach(all_players_, function (players) {
-          if (player !typeof Object)
+          if (typeof player != Object)
             if (players.name==player)
               player = players;
         });
