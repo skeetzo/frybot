@@ -740,7 +740,7 @@ var bot = function() {
     cachePlayers_();
   })();
   // Main
-  function main() {
+  this.main = function() {
     console.log('Main Party Starting');
 
   };
