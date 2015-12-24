@@ -85,7 +85,7 @@ var bot = function() {
   * started- yes
   */
   var afterpartyJob_ = new CronJob({
-    cronTime: '00 07 20 * * 3',
+    cronTime: '00 17 20 * * 3',
       onTick: function() {
         // messages about last nights game
         // did we win or lose
@@ -192,7 +192,7 @@ var bot = function() {
   */
   var thoughts_ = []; // the thoughts_ to be posted
   var postman = function() {};
-  function postThought_(thought) {
+  bot.prototype.postThought_ = function(thought) {
     thoughts_.push(thought);
     clearTimeout(postman);
     postman = function() {
@@ -475,6 +475,30 @@ var bot = function() {
         postThought_(player.name+' is '+streak+' with ('+mod+streakN+')');
       });
     };
+    scores.lvp = function() {
+      var leastValuablePlayer = 'Nico';
+      _.forEach(all_players_, function (player) {
+        if (leastValuablePlayer=='Nico')
+          leastValuablePlayer = player;
+        else if (player.mvp<leastValuablePlayer.mvp)
+          leastValuablePlayer = player;
+
+      });
+    }
+    scores.mvp = function() {
+      var leastValuablePlayer = 'Nico';
+      _.forEach(all_players_, function (player) {
+        if (leastValuablePlayer=='Nico')
+          leastValuablePlayer = player;
+        else if (player.mvp<leastValuablePlayer.mvp)
+          leastValuablePlayer = player;
+
+      });
+    };
+    scores.update = function() {
+      cachePlayers_();
+      postThought_('Updating season scores');
+    };
     scores.undo = function() {
 
     };
@@ -646,6 +670,7 @@ var bot = function() {
     this.pointsGiven = stats.pointsGiven;
     this.matchesWon = stats.matchesWon;
     this.matchesLost = stats.matchesLost;
+    this.mvp = (this.pointsEarned/(this.matchesWon+this.matchesLost));
     this.skunks = stats.skunks;
     this.skunked = stats.skunked;
     this.sl = stats.sl;
@@ -662,6 +687,7 @@ var bot = function() {
       else
         this.matchesLost++;
       this.skunkCheck(pointsEarned,pointsGiven);
+      this.mvp = (this.pointsEarned/(this.matchesWon+this.matchesLost));
     },
     // SKUNKS
     skunkCheck: function(earned, given) {
