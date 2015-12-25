@@ -378,7 +378,7 @@ var bot = function() {
         else if (player.mvp<leastValuablePlayer.mvp)
           leastValuablePlayer = player;
       });
-      self_.postThought_('Current LVP: '+JSON.stringify(leastValuablePlayer));
+      self_.postThought_('Current LVP: '+leastValuablePlayer.stats);
     };
     scores.mvp = function() {
       var mostValuablePlayer = 'Oberg';
@@ -388,7 +388,7 @@ var bot = function() {
         else if (player.mvp>mostValuablePlayer.mvp)
           mostValuablePlayer = player;
       });
-      self_.postThought_('Current MVP: '+mostValuablePlayer);
+      self_.postThought_('Current MVP: '+mostValuablePlayer.stats);
     };
     scores.of = function() {
       _.forEach(all_players_, function (player) {
@@ -664,9 +664,9 @@ var bot = function() {
       // if (this.name=="Danny")
         // this.addSkunk();
     },
-    printScore: function() {
+    stats: function() {
 
-      return this.name+': ';
+      return this.name+': Matches Won: '+this.matchesWon+', Matches Lost: '+this.matchesLost+', Points Earned: '+this.pointsEarned+', Points Given: '+this.pointsGiven+', Skunks: '+this.skunks+', Skunked: '+this.skunked+', PPM: '+this.mvp;
     },
     toString: function() {
       var returned = [];
@@ -768,7 +768,7 @@ var bot = function() {
   */
   // this will probably ulimately be an array of cronjobs set to go off on specific holidays
   var christmasJob_ = new CronJob({
-    cronTime: '00 04 01 25 11 *',          // this needs to be done dynamically
+    cronTime: '00 11 01 25 11 *',          // this needs to be done dynamically
       onTick: function() {
         // to-do; all of this
         // generic holiday message
