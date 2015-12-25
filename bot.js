@@ -664,6 +664,10 @@ var bot = function() {
       // if (this.name=="Danny")
         // this.addSkunk();
     },
+    printScore: function() {
+
+      return this.name+': ';
+    },
     toString: function() {
       var returned = [];
       returned.push("{ Name: "+this.name);
@@ -756,17 +760,23 @@ var bot = function() {
       timeZone: 'America/Los_Angeles'
   });
   // add a (if after date) then don't start else start
+
   /**
   * Called once per season to start the new season off
   *
   * started- maybe
   */
   // this will probably ulimately be an array of cronjobs set to go off on specific holidays
-  var holidayJobs_ = new CronJob({
-    cronTime: '00 05 21 * * 3',          // this needs to be done dynamically
+  var christmasJob_ = new CronJob({
+    cronTime: '00 59 00 25 11 *',          // this needs to be done dynamically
       onTick: function() {
         // to-do; all of this
         // generic holiday message
+        _self.postThought_('Merry Christmas Bitches!');
+        _self.postThought_('Don\'t forget- Spring Session starts on 1/2');
+        _self.postThought_('And finally...');
+        _self.scores('mvp');
+        _self.scores('lvp');
       },
       start: true,
       timeZone: 'America/Los_Angeles'
