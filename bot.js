@@ -768,15 +768,15 @@ var bot = function() {
   */
   // this will probably ulimately be an array of cronjobs set to go off on specific holidays
   var christmasJob_ = new CronJob({
-    cronTime: '00 59 00 25 11 *',          // this needs to be done dynamically
+    cronTime: '00 04 01 25 11 *',          // this needs to be done dynamically
       onTick: function() {
         // to-do; all of this
         // generic holiday message
-        _self.postThought_('Merry Christmas Bitches!');
-        _self.postThought_('Don\'t forget- Spring Session starts on 1/2');
-        _self.postThought_('And finally...');
-        _self.scores('mvp');
-        _self.scores('lvp');
+        self_.postThought_('Merry Christmas Bitches!');
+        self_.postThought_('Don\'t forget- Spring Session starts on 1/2');
+        self_.postThought_('And finally...');
+        self_.scores('mvp');
+        self_.scores('lvp');
       },
       start: true,
       timeZone: 'America/Los_Angeles'
