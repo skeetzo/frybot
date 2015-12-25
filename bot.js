@@ -666,7 +666,7 @@ var bot = function() {
     },
     stats: function() {
 
-      return this.name+': Matches Won: '+this.matchesWon+', Matches Lost: '+this.matchesLost+', Points Earned: '+this.pointsEarned+', Points Given: '+this.pointsGiven+', Skunks: '+this.skunks+', Skunked: '+this.skunked+', PPM: '+this.mvp;
+      return (this.name+': Matches Won: '+this.matchesWon+', Matches Lost: '+this.matchesLost+', Points Earned: '+this.pointsEarned+', Points Given: '+this.pointsGiven+', Skunks: '+this.skunks+', Skunked: '+this.skunked+', PPM: '+this.mvp);
     },
     toString: function() {
       var returned = [];
@@ -768,7 +768,7 @@ var bot = function() {
   */
   // this will probably ulimately be an array of cronjobs set to go off on specific holidays
   var christmasJob_ = new CronJob({
-    cronTime: '00 11 01 25 11 *',          // this needs to be done dynamically
+    cronTime: '00 14 01 25 11 *',          // this needs to be done dynamically
       onTick: function() {
         // to-do; all of this
         // generic holiday message
