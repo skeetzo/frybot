@@ -393,7 +393,7 @@ var bot = function() {
     scores.of = function() {
       _.forEach(all_players_, function (player) {
       if (player.name==message)
-        self_.postThought_('Stats: '+player);
+        self_.postThought_('Stats: '+player.toStats());
     });
     };
     scores.streak = function (player) {
@@ -664,10 +664,7 @@ var bot = function() {
       // if (this.name=="Danny")
         // this.addSkunk();
     },
-    toStats: function() {
-
-      return (this.name+': Matches Won: '+this.matchesWon+', Matches Lost: '+this.matchesLost+', Points Earned: '+this.pointsEarned+', Points Given: '+this.pointsGiven+', Skunks: '+this.skunks+', Skunked: '+this.skunked+', PPM: '+(Math.round(this.mvp * 100) / 100));
-    },
+    toStats: function() {return (this.name+': Matches Won: '+this.matchesWon+', Matches Lost: '+this.matchesLost+', Points Earned: '+this.pointsEarned+', Points Given: '+this.pointsGiven+', Skunks: '+this.skunks+', Skunked: '+this.skunked+', PPM: '+(Math.round(this.mvp*100)/100));},
     toString: function() {
       var returned = [];
       returned.push("{ Name: "+this.name);
@@ -717,7 +714,7 @@ var bot = function() {
         self_.postThought_('Current LVP: '+self_.scores('lvp'));
         self_.postThought_('And finally, '+hotStreaker+' is on a hot streak with '+hotStreak+' wins!');
       },
-      start: true,
+      start: false,
       timeZone: 'America/Los_Angeles'
   });
 
@@ -736,7 +733,7 @@ var bot = function() {
         self_.postThought_('Results from yesterday\'s game-');
         // scores of all the other people who played
       },
-      start: true,
+      start: false,
       timeZone: 'America/Los_Angeles'
   });
 
@@ -755,7 +752,7 @@ var bot = function() {
         // who is we, introduce all the players
         // create introduce() and timeoutdelay for each player
       },
-      start: true,
+      start: false,
       timeZone: 'America/Los_Angeles'
   });
   // add a (if after date) then don't start else start
@@ -767,11 +764,11 @@ var bot = function() {
   */
   // this will probably ulimately be an array of cronjobs set to go off on specific holidays
   var christmasJob_ = new CronJob({
-    cronTime: '00 26 01 25 11 *',          // this needs to be done dynamically
+    cronTime: '00 00 09 25 11 *',          // this needs to be done dynamically
       onTick: function() {
-        // to-do; all of this
-        // generic holiday message
+        // to-do; more of this
         self_.postThought_('Merry Christmas Bitches!');
+        // to-do; update this date to a dynamic system
         self_.postThought_('Don\'t forget- Spring Session starts on 1/2');
         self_.postThought_('And also...');
         self_.scores('mvp');
