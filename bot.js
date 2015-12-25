@@ -666,7 +666,7 @@ var bot = function() {
     },
     toStats: function() {
 
-      return (this.name+': Matches Won: '+this.matchesWon+', Matches Lost: '+this.matchesLost+', Points Earned: '+this.pointsEarned+', Points Given: '+this.pointsGiven+', Skunks: '+this.skunks+', Skunked: '+this.skunked+', PPM: '+this.mvp);
+      return (this.name+': Matches Won: '+this.matchesWon+', Matches Lost: '+this.matchesLost+', Points Earned: '+this.pointsEarned+', Points Given: '+this.pointsGiven+', Skunks: '+this.skunks+', Skunked: '+this.skunked+', PPM: '+Math.round(this.mvp,2));
     },
     toString: function() {
       var returned = [];
@@ -731,11 +731,10 @@ var bot = function() {
       onTick: function() {
         // messages about last nights game
         // did we win or lose
-        // who did the best
-        // who did the worst
+        // who did the best for the night
+        // who did the worst for the night
         self_.postThought_('Results from yesterday\'s game-');
-        self_.scores('mvp');
-        self_.scores('lvp');
+        // scores of all the other people who played
       },
       start: true,
       timeZone: 'America/Los_Angeles'
@@ -768,13 +767,13 @@ var bot = function() {
   */
   // this will probably ulimately be an array of cronjobs set to go off on specific holidays
   var christmasJob_ = new CronJob({
-    cronTime: '00 18 01 25 11 *',          // this needs to be done dynamically
+    cronTime: '00 26 01 25 11 *',          // this needs to be done dynamically
       onTick: function() {
         // to-do; all of this
         // generic holiday message
         self_.postThought_('Merry Christmas Bitches!');
         self_.postThought_('Don\'t forget- Spring Session starts on 1/2');
-        self_.postThought_('And finally...');
+        self_.postThought_('And also...');
         self_.scores('mvp');
         self_.scores('lvp');
       },
