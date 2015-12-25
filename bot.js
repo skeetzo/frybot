@@ -378,7 +378,7 @@ var bot = function() {
         else if (player.mvp<leastValuablePlayer.mvp)
           leastValuablePlayer = player;
       });
-      self_.postThought_('Current LVP: '+JSON.stringify(leastValuablePlayer));
+      self_.postThought_('Current LVP: '+leastValuablePlayer.printScore());
     };
     scores.mvp = function() {
       var mostValuablePlayer = 'Oberg';
@@ -388,13 +388,21 @@ var bot = function() {
         else if (player.mvp>mostValuablePlayer.mvp)
           mostValuablePlayer = player;
       });
-      self_.postThought_('Current MVP: '+mostValuablePlayer);
+      self_.postThought_('Current MVP: '+mostValuablePlayer.printScore());
+    };
+    // @param string player
+    scores.print = function(player) {
+      // to-do; print out scores by player name
+      _.forEach(all_players_, function (players) {
+      if (players.name==player)
+        self_.postThought_(players.printScore());
+      });
     };
     scores.of = function() {
       _.forEach(all_players_, function (player) {
       if (player.name==message)
         self_.postThought_('Stats: '+player);
-    });
+      });
     };
     scores.streak = function (player) {
       // forces player from string to obj
@@ -663,6 +671,11 @@ var bot = function() {
         this.skunked++;
       // if (this.name=="Danny")
         // this.addSkunk();
+    },
+    printScore: function() {
+      var returned = '';
+      // name, match history, total points given/earned, skunks/ed
+      return this.name+': ';
     },
     toString: function() {
       var returned = [];
