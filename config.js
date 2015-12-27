@@ -43,12 +43,15 @@ config.ItIsWhatItIs_SpreadsheetID = '1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT0
 config.GroupMe_AccessToken = "2f738e5005bc0133e1287ef6bffc9e1d";
 var Scytalia_GroupMeID = "14734775";
 var Frybot_GroupMeID = "7054026";
-config.GroupMeID = Scytalia_GroupMeID;
 // Misc
-if (config.botID==Frybot_botID)
+if (config.botID==Frybot_botID) {
   config.NAME = "Frybot";
-else
+  config.GroupMeID = Frybot_GroupMeID;
+}
+else {
   config.NAME = "Scytalia";
+  config.GroupMeID = Scytalia_GroupMeID;
+}
 config.PORT = 3000;
 config.responding = true;
 config.responseTime = 6000;
