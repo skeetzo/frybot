@@ -367,7 +367,7 @@ var bot = function() {
     scores.callouts = function() {
       console.log('Callouts incoming');
       _.forEach(all_players_,function (player) {
-        streak(player);
+        scores.streak(player);
       });
     };
     scores.lvp = function() {
