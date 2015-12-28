@@ -55,7 +55,7 @@ var bot = function() {
   * Likes the message with the given id
   * @param {string} message_id - The message's id
   */
-  function likeMessage_(message_id) {GroupMe_API.Likes.create(config.GroupMe_AccessToken, config.GroupMeID,message_id, function(err,ret) {});};
+  function likeMessage_(message_id) {GroupMe_API.Likes.create(config.GroupMe_AccessToken, config.GroupMe_group_ID, message_id, function(err,ret) {});};
 
   /**
   * Called from index.js upon groupme posts
@@ -194,11 +194,11 @@ var bot = function() {
     bottle.duty = function () {
       Spreadsheet.load({
         debug: true,
-        spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
+        spreadsheetId: config.ItIsWhatItIs_Spreadsheet_ID,
         worksheetId: config.ItIsWhatItIs_frybotSheetID,
         oauth : {
-          email: config.ItIsWhatItIs_serviceEmail,
-          keyFile: config.ItIsWhatItIs_keyFile
+          email: config.Frybot_Google_ServiceEmail,
+          key: config.Frybot_Google_key
         }
       },
       function sheetReady(err, spreadsheet) {
@@ -284,13 +284,11 @@ var bot = function() {
       var addScores_ = function() {
         Spreadsheet.load({
           debug: true,
-          spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
-          spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
+          spreadsheetId: config.ItIsWhatItIs_Spreadsheet_ID,
           worksheetId: config.ItIsWhatItIs_statsSheetID,
-          worksheetName: config.ItIsWhatItIs_statsSheetName,
           oauth : {
-            email: config.ItIsWhatItIs_serviceEmail,
-            keyFile: config.ItIsWhatItIs_keyFile
+            email: config.Frybot_Google_ServiceEmail,
+            key: config.Frybot_Google_key
           }
         },
         function sheetReady(err, spreadsheet) {
@@ -537,13 +535,11 @@ var bot = function() {
     all_matches_ = [];
     Spreadsheet.load({
       debug: true,
-      spreadsheetName: config.ItIsWhatItIs_SpreadsheetName,
-      spreadsheetId: config.ItIsWhatItIs_SpreadsheetID,
+      spreadsheetId: config.ItIsWhatItIs_Spreadsheet_ID,
       worksheetId: config.ItIsWhatItIs_statsSheetID,
-      worksheetName: config.ItIsWhatItIs_statsSheetName,
       oauth : {
-        email: config.ItIsWhatItIs_serviceEmail,
-        keyFile: config.ItIsWhatItIs_keyFile
+        email: config.Frybot_Google_ServiceEmail,
+        keyFile: config.Frybot_Google_key
       }
     },
     function sheetReady(err, spreadsheet) {
@@ -798,7 +794,7 @@ var bot = function() {
  
   // Boot
   (function boot() {
-    console.log('Booting up: '+config.NAME);
+    console.log('Booting up: '+config.name);
     cachePlayers_();
   })();
   // Main
