@@ -539,7 +539,7 @@ var bot = function() {
       worksheetId: config.ItIsWhatItIs_statsSheetID,
       oauth : {
         email: config.Frybot_Google_ServiceEmail,
-        keyFile: config.Frybot_Google_key
+        key: config.Frybot_Google_key
       }
     },
     function sheetReady(err, spreadsheet) {
