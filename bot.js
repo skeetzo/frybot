@@ -795,7 +795,7 @@ var bot = function() {
   // Boot
   (function boot() {
     console.log('Booting up: '+config.name);
-    cachePlayers_();
+    setTimeout(cachePlayers_,3000);
   })();
   // Main
   this.main = function() {
