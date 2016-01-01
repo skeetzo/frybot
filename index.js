@@ -6,7 +6,7 @@ var http = require('http');
 
 var router = new director.http.Router({
   '/' : {
-    post: bot.respond,
+    post: bot.post,
     get: ping
   }
 });
@@ -31,13 +31,3 @@ function ping() {
   this.res.end("Hi, I'm "+config.NAME+" and I totally work.");
   // bot.ping();
 }
-
-var CronJob = require('cron').CronJob;
-var job = new CronJob({
- cronTime: '00 20 4 * * 2',
-  onTick: function() {
-     bot.bottle.duty();
-  },
-  start: true,
-  timeZone: 'America/Los_Angeles'
-});
