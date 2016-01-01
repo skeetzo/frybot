@@ -23,11 +23,11 @@ var server = http.createServer(function (req, res) {
   });
 });
 
-var port = Number(process.env.PORT || config.PORT);
+var port = Number(process.env.PORT || config.port);
 server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hi, I'm "+config.NAME+" and I totally work.");
+  this.res.end("Hi, I'm "+config.name+" and I totally work.");
   // bot.ping();
 }
