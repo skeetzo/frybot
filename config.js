@@ -40,7 +40,7 @@ config.responseTime = 6000;
 config.brainfart = 10000;
 
 // Debugging sets personality switch
-config.debugging = false;
+config.debugging = true;
 if (!config.debugging) {
   config.name = "Frybot";
   config.GroupMe_group_ID = process.env.Frybot_GroupMe_Group_ID;
