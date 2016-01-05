@@ -44,12 +44,12 @@ config.debugging = false;
 if (!config.debugging) {
   config.name = "Frybot";
   config.GroupMe_group_ID = process.env.Frybot_GroupMe_Group_ID;
-  config.botID = process.env.Frybot_GroupMe_bot_ID
+  config.botID = process.env.Frybot_GroupMe_bot_ID;
 }
 else {
   config.name = "Naivi";
   config.GroupMeID = process.env.Naivi_GroupMe_Group_ID;
-  config.botID = process.env.Naivi_GroupMe_bot_ID
+  config.botID = process.env.Naivi_GroupMe_bot_ID;
 }
 
 module.exports = config;
