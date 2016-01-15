@@ -159,9 +159,8 @@ var bot = function() {
   * @param {Object} request - the request as passed from post(), includes text and id
   */
   function activate_(request) {
-    console.log(JSON.stringify(request));
     var message = request.text;
-    var sender = request.id;
+    var sender = request.name;
     var matches = message.match(config.commandsRegex);
     for (i=0;i<matches.length;i++) 
       if (matches[i]==""||matches[i]==="")
@@ -173,7 +172,6 @@ var bot = function() {
     else
       message = message.substring(1+command.length+1);
     //                           // slash + space + space
-    console.log('sender: '+sender);
     var i = sender.indexOf(' ');
     sender = sender.substring(0,i);
     if (typeof self_[command] === "function" ) {
@@ -505,7 +503,7 @@ var bot = function() {
   * @param {string} sender - The sender it's from
   */
   function suck(argument, message, sender) {
-    if (sender!='Alex Oberg'||'Alex'||'Alex is Awesome')
+    if (sender!='Alex')
        return;
     // if (sender=='Nico Mendoza'||'Nico') {}
     suck.my = function() {
