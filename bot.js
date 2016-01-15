@@ -172,9 +172,8 @@ var bot = function() {
     else
       message = message.substring(1+command.length+1);
     //                           // slash + space + space
-    console.log('sender: '+sender);
-    var i = sender.indexOf(' ');
-    sender = sender.substring(0,i);
+    // var i = sender.indexOf(' ');
+    // sender = sender.substring(0,i);
     if (typeof self_[command] === "function" ) {
       console.log('Activating: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
       self_[command](argument, message, sender);
@@ -504,7 +503,7 @@ var bot = function() {
   * @param {string} sender - The sender it's from
   */
   function suck(argument, message, sender) {
-    if (sender!='Alex Oberg'||'Alex'||'Alex is Awesome')
+    if (sender!='Alex Oberg'||'Alex'||'Alex is Awesome'||'Schizo')
        return;
     // if (sender=='Nico Mendoza'||'Nico') {}
     suck.my = function() {
