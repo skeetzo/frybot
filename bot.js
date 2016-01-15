@@ -502,7 +502,7 @@ var bot = function() {
   * @param {string} sender - The sender it's from
   */
   function suck(argument, message, sender) {
-    if (sender!='Alex Oberg'||'Alex')
+    if (sender!='Alex Oberg'||'Alex'||'Alex is Awesome')
        return;
     // if (sender=='Nico Mendoza'||'Nico') {}
     suck.my = function() {
