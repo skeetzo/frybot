@@ -172,10 +172,11 @@ var bot = function() {
     else
       message = message.substring(1+command.length+1);
     //                           // slash + space + space
+    console.log('sender: '+sender);
     var i = sender.indexOf(' ');
     sender = sender.substring(0,i);
     if (typeof self_[command] === "function" ) {
-      console.log('Activating: '+command+'['+argument+']'+' of '+sender+': \''+message+'\'');
+      console.log('Activating: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
       self_[command](argument, message, sender);
       likeMessage_(sender);
     }
