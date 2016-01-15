@@ -503,11 +503,13 @@ var bot = function() {
   * @param {string} sender - The sender it's from
   */
   function suck(argument, message, sender) {
-    if (sender!='Alex is Awesome'&&sender!='Schizo')
-       return;
-    // if (sender=='Nico Mendoza'||'Nico') {}
     suck.my = function() {
-      self_.postThought_('yeah suck '+sender+'\'s '+message+'!');
+      // if (sender!='Alex is Awesome'&&sender!='Schizo')
+      //  return;
+      if (sender=='Nico Mendoza'||sender=='Nico')
+        self_.postThought_('yeah suck '+sender+'\'s tiny '+message+'!');
+      else
+        self_.postThought_('yeah suck '+sender+'\'s '+message+'!');
     };
     suck.his = function() {
       self_.postThought_('yeah suck his '+message+'! ');
