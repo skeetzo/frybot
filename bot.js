@@ -159,6 +159,7 @@ var bot = function() {
   * @param {Object} request - the request as passed from post(), includes text and id
   */
   function activate_(request) {
+    console.log(JSON.stringify(request));
     var message = request.text;
     var sender = request.id;
     var matches = message.match(config.commandsRegex);
