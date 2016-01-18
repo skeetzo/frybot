@@ -79,26 +79,25 @@ var bot = function() {
 
   // Prepares the thoughts_ to be POSTed based upon length
   function postMaster_() {
-    var tempThoughts_ = thoughts_;
-    thoughts_ = [];
     if (!config.responding)
       return;
-    if (tempThoughts_.length>=3) {
+    if (thoughts_.length>=3) {
       // thought string is checked for end of sentence chars
       // return their same thing
       // else return default sentence smash
-      for (i=0;i<tempThoughts_.length;i++) {
-        if ((tempThoughts_[i].charAt(tempThoughts_[i].length-1)!='!')&&(tempThoughts_[i].charAt(tempThoughts_[i].length-1)!='-')&&(tempThoughts_[i].charAt(tempThoughts_[i].length-1)!=':')&&(tempThoughts_[i].charAt(tempThoughts_[i].length-1)!=',')&&(tempThoughts_[i].charAt(tempThoughts_[i].length-1)!='.'))
-          tempThoughts_[i]+='. ';
+      for (i=0;i<thoughts_.length;i++) {
+        if ((thoughts_[i].charAt(thoughts_[i].length-1)!='!')&&(thoughts_[i].charAt(thoughts_[i].length-1)!='-')&&(thoughts_[i].charAt(thoughts_[i].length-1)!=':')&&(thoughts_[i].charAt(thoughts_[i].length-1)!=',')&&(thoughts_[i].charAt(thoughts_[i].length-1)!='.'))
+          thoughts_[i]+='. ';
         else
-          tempThoughts_[i]+=' '; 
+          thoughts_[i]+=' '; 
       }
-      tempThoughts_ = tempThoughts_.join('');   
-      postMessage_(tempThoughts_);
-      // tempThoughts_ = [];
+      thoughts_ = thoughts_.join('');   
+      postMessage_(thoughts_);
+      // thoughts_ = [];
     }
     else
-      postMessage_(tempThoughts_.shift());
+      postMessage_(thoughts_.shift());
+    thoughts_ = [];
   };
 
   /**
@@ -694,7 +693,7 @@ var bot = function() {
   * started- yes
   */
   var pregameJob_ = new CronJob({
-    cronTime: '00 49 13 * * 1',
+    cronTime: '00 53 13 * * 1',
       onTick: function pregame() {
         // to-do; test this
         // should call updatePlayers() as a callback in a way
