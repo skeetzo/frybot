@@ -694,12 +694,12 @@ var bot = function() {
   * started- yes
   */
   var pregameJob_ = new CronJob({
-    cronTime: '00 45 00 * * 2',
+    cronTime: '00 41 13 * * 1',
       onTick: function pregame() {
         // to-do; test this
         // should call updatePlayers() as a callback in a way
         // get location
-        var location = 'a place';
+        var location = 'The Copper Bucket';
         self_.postThought_('It\'s League night bitches!');
         self_.postThought_('Playing @: '+location);
         // self_.postThought_();
@@ -707,13 +707,13 @@ var bot = function() {
         self_.bottle('duty');
         var currentMVP = 'DROD';
         var currentLVP = 'Gabe';
-        var hotStreaker = 'Alex';
-        var hotStreak = 6; //hotStreaker's wins
+        // var hotStreaker = 'Alex';
+        // var hotStreak = 6; //hotStreaker's wins
         self_.postThought_('Current MVP: '+self_.scores('mvp'));
         self_.postThought_('Current LVP: '+self_.scores('lvp'));
-        self_.postThought_('And finally, '+hotStreaker+' is on a hot streak with '+hotStreak+' wins!');
+        self_.postThought_(self_.scores('callouts'));
       },
-      start: false,
+      start: true,
       timeZone: 'America/Los_Angeles'
   });
 
