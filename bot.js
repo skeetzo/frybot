@@ -693,7 +693,7 @@ var bot = function() {
   * started- yes
   */
   var pregameJob_ = new CronJob({
-    cronTime: '00 53 13 * * 1',
+    cronTime: '30 22 01 * * 2',
       onTick: function pregame() {
         // to-do; test this
         // should call updatePlayers() as a callback in a way
