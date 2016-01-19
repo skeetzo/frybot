@@ -86,6 +86,8 @@ var bot = function() {
       // return their same thing
       // else return default sentence smash
       for (i=0;i<thoughts_.length;i++) {
+        if (thoughts_[i]===undefined)
+          continue;
         if ((thoughts_[i].charAt(thoughts_[i].length-1)!='!')&&(thoughts_[i].charAt(thoughts_[i].length-1)!='-')&&(thoughts_[i].charAt(thoughts_[i].length-1)!=':')&&(thoughts_[i].charAt(thoughts_[i].length-1)!=',')&&(thoughts_[i].charAt(thoughts_[i].length-1)!='.'))
           thoughts_[i]+='. ';
         else
@@ -712,7 +714,7 @@ var bot = function() {
         self_.postThought_('Current LVP: '+self_.scores('lvp'));
         self_.postThought_(self_.scores('callouts'));
       },
-      start: true,
+      start: false,
       timeZone: 'America/Los_Angeles'
   });
 
