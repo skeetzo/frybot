@@ -695,7 +695,7 @@ var bot = function() {
   * started- yes
   */
   var pregameJob_ = new CronJob({
-    cronTime: '30 22 01 * * 2',
+    cronTime: '30 40 01 * * 2',
       onTick: function pregame() {
         // to-do; test this
         // should call updatePlayers() as a callback in a way
@@ -714,7 +714,7 @@ var bot = function() {
         self_.postThought_('Current LVP: '+self_.scores('lvp'));
         self_.postThought_(self_.scores('callouts'));
       },
-      start: false,
+      start: true,
       timeZone: 'America/Los_Angeles'
   });
 
