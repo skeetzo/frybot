@@ -614,36 +614,12 @@ var bot = function() {
   * started- yes
   */
   var pregameJob_ = new CronJob({
-<<<<<<< HEAD
-    cronTime: '30 44 01 * * 2',
-=======
     cronTime: '00 00 18 * * 2',
->>>>>>> 159822fe72b74feb8cfa99762b649df7fc624cda
       onTick: function pregame() {
         var location = 'The Copper Bucket';
-<<<<<<< HEAD
-        self_.postThought_('It\'s League night bitches!');
-        self_.postThought_('Playing @: '+self_.season('current'
 
-          ));
-        // self_.postThought_();
-        // Bottle Duty: (a name)
-        self_.bottle('duty');
-        var currentMVP = 'DROD';
-        var currentLVP = 'Gabe';
-        // var hotStreaker = 'Alex';
-        // var hotStreak = 6; //hotStreaker's wins
-        self_.scores('mvp','current');
-        self_.scores('lvp','current');
-        self_.scores('callouts');
-=======
-        self_.postThought_('It\'s League night bitch niggas!');
-        self_.postThought_('Playing @ '+location);
-        self_.bottle('duty');
-        self_.postThought_('Don\'t fuck up!');
->>>>>>> 159822fe72b74feb8cfa99762b649df7fc624cda
       },
-      start: true,
+      start: false,
       timeZone: 'America/Los_Angeles'
   });
 
