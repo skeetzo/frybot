@@ -28,5 +28,10 @@ v0.0.5
 reorg and notations  
   
 v0.0.6  
-12/23/15  
+12/27/15  
 Player level rehaul  
+testing bot merged to frybot  
+
+v.0.0.7  
+1/19/16  
+json updates  

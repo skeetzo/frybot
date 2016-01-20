@@ -1,16 +1,21 @@
 {
-  "name": "scytalia",
-  "version": "0.0.5",
-  "author": "schizo",
-  "description": "testing bot",
+  "name": "naivi",
+  "author": {
+    "name": "Alex Oberg",
+    "email": "alexjoberg@gmail.com",
+    "url": ""
+    },
+  "version": "0.0.6",
+  "description": "Pool League GroupMe test bot",
+  "homepage": "https://sites.google.com/site/itiswhatitisleague",
   "main": "index.js",
   "scripts": {
-    "start": "nodejs index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "colors": "^1.0.3",
     "cool-ascii-faces": "~1.3.x",
-    "director": "1.2.8",
+    "director": "*",
     "edit-google-spreadsheet": "0.2.19",
     "moment": "~2.10.3",
     "groupme": "0.5.6",
@@ -22,19 +27,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/brainlessdg13/scytalia"
+    "url": "https://github.com/brainlessdg13/frybot"
   },
   "keywords": [
     "node",
     "heroku",
+    "express",
     "groupme",
     "bot",
-    "google sheets"
+    "google",
+    "sheets"
   ],
-  "bugs":
-    { 
-      "url" : "https://github.com/owner/project/issues", 
-      "email" : "project@hostname.com"
-    },
   "license": "MIT"
 }

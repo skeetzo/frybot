@@ -1,6 +1,6 @@
 {
-  "name": "scytalia",
-  "description": "testing bot",
+  "name": "naivi",
+  "description": "Pool League GroupMe test bot",
   "keywords": [
     "node",
     "heroku",
@@ -8,7 +8,6 @@
     "bot",
     "google",
    ],
-  "website": "",
-  "repository": "https://github.com/brainlessdg13/scytalia",
+  "repository": "https://github.com/brainlessdg13/frybot",
   "logo": ""
 }

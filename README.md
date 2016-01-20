@@ -1,3 +1,3 @@
-# scytalia  
-test bot  
-v0.0.6  
+# naivi  
+Pool League Testing Chatbot  
+v0.0.7  
