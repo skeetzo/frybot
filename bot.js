@@ -611,19 +611,17 @@ var bot = function() {
   * Called weekly on Tuesday at 6:00 PM before 7:30 PM league match
   *  by index.js  
   *  
-  *
-  *  [sample chat input here]
-  *
-  *
   * started- yes
   */
   var pregameJob_ = new CronJob({
+<<<<<<< HEAD
     cronTime: '30 44 01 * * 2',
+=======
+    cronTime: '00 00 18 * * 2',
+>>>>>>> 159822fe72b74feb8cfa99762b649df7fc624cda
       onTick: function pregame() {
-        // to-do; test this
-        // should call updatePlayers() as a callback in a way
-        // get location
         var location = 'The Copper Bucket';
+<<<<<<< HEAD
         self_.postThought_('It\'s League night bitches!');
         self_.postThought_('Playing @: '+self_.season('current'
 
@@ -638,6 +636,12 @@ var bot = function() {
         self_.scores('mvp','current');
         self_.scores('lvp','current');
         self_.scores('callouts');
+=======
+        self_.postThought_('It\'s League night bitch niggas!');
+        self_.postThought_('Playing @ '+location);
+        self_.bottle('duty');
+        self_.postThought_('Don\'t fuck up!');
+>>>>>>> 159822fe72b74feb8cfa99762b649df7fc624cda
       },
       start: true,
       timeZone: 'America/Los_Angeles'
