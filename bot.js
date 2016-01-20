@@ -611,35 +611,16 @@ var bot = function() {
   * @param stats {data} the data of the player in the format of {"name":name,"sl":sl,etc}
   */
   function Player(stats) {
-    if (stats.name==null||stats.name==undefined)
-      stats.name = "Default";
-    if (stats.matches==null||stats.matches==undefined)
-      stats.matches = [];
-    if (stats.pointsEarned==null||stats.pointsEarned==undefined)
-      stats.pointsEarned = 0;
-    if (stats.pointsGiven==null||stats.pointsGiven==undefined)
-      stats.pointsGiven = 0;
-    if (stats.matchesWon==null||stats.matchesWon==undefined)
-      stats.matchesWon = 0;
-    if (stats.matchesLost==null||stats.matchesLost==undefined)
-      stats.matchesLost = 0;
-    if (stats.skunks==null||stats.skunks==undefined)
-      stats.skunks = 0;
-    if (stats.skunked==null||stats.skunked==undefined)
-      stats.skunked = 0;
-    if (stats.sl==null||stats.sl==undefined)
-      stats.sl = 3;
-    // console.log("New Player: "+stats.name+' - '+stats.sl);
-    this.name = stats.name;
-    this.matches = stats.matches; // [[pointsEarned,pointsGiven,when]]
-    this.pointsEarned = stats.pointsEarned;
-    this.pointsGiven = stats.pointsGiven;
-    this.matchesWon = stats.matchesWon;
-    this.matchesLost = stats.matchesLost;
+    this.name = stats.name || 'Default';
+    this.matches = stats.matches || []; // [[pointsEarned,pointsGiven,when]]
+    this.pointsEarned = stats.pointsEarned || 0;
+    this.pointsGiven = stats.pointsGiven || 0;
+    this.matchesWon = stats.matchesWon || 0;
+    this.matchesLost = stats.matchesLost || 0;
     this.mvp = (this.pointsEarned/(this.matchesWon+this.matchesLost));
-    this.skunks = stats.skunks;
-    this.skunked = stats.skunked;
-    this.sl = stats.sl;
+    this.skunks = stats.skunks || 0;
+    this.skunked = stats.skunked || 0;
+    this.sl = stats.sl || 3;
   };
 
   Player.prototype = {
