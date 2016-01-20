@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 /**
 * 12/23/15
 * @author Schizo
@@ -116,14 +118,50 @@ function League(data) {
   this.currentPlayers;
 
   this.locations;
-  this.currentLocations;
 
 
 };
 
 League.prototype = {
 
+  boot: function() {
+    // Resets
+    seasons = [];
+    players = [];
+    // opponents = [];
+    locations = [];
+    matchups = [];
 
+    function loadSeasons(data) {
+      _.forEach(data, function (season) {
+        var label_ = season.label || 'missing season label';
+        var matchups_ = [];
+        if (data.matchups!=undefined)
+          _.forEach(data.matchups, function (matchup) {
+            // matchup as a whole
+            matchups.push(matchup);
+            // location, players, opponents as single entities
+            _.forEach(matchup, function (match) {
+              locations.push(match.location);
+              players.push(match.player);
+              opponents.push(match.opponent);
+            });
+          });
+        // the result is a bunch of data loaded sequentially
+        // exit
+      })
+    }
+
+    var content;
+    // First I want to read the file
+    fs.readFile('./seasons.json', function read(err, data) {
+      if (err) {throw err;}
+      content = data.seasons;
+      console.log(content);
+      loadSeasons(content);
+    });
+
+  }
 
   toString: function() {
     var returned = [];

@@ -1,9 +1,11 @@
-"seasons": [
-	{
-		"label":"Spring Season Example",
-		"matchups": []
-	}
-]
+{
+	"seasons": [
+		{
+			"label":"Spring Season Example",
+			"matchups": []
+		}
+	]
+}
 
 /*
 	label: "the name of the season"
