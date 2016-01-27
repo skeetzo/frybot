@@ -31,4 +31,4 @@ function ping() {
   // bot.ping();
 }
 
-bot = new bot();
+// bot = new bot();
