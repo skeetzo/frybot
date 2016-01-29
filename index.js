@@ -1,8 +1,8 @@
-var bot = new (require('./lib/bot.js'))();
+var botter = require('./lib/bot.js');
 var config = require('./lib/config.js');
 var director = require('director');
 var http = require('http');
-
+var bot = new botter();
 
 var router = new director.http.Router({
   '/' : {
