@@ -1,4 +1,4 @@
-var bot = require('./lib/bot.js');
+var bot = (new require('./lib/bot.js'))();
 var config = require('./lib/config.js');
 var director = require('director');
 var http = require('http');
