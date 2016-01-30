@@ -18,6 +18,8 @@ var util = require('util');
 
 /* To-do
 
+add nico facts
+
 calling recent stats by season etc by name like a real db 
 
 update scores.mvp and scores.lvp to provide a less computerish response
