@@ -1,3 +1,3 @@
 # naivi  
 Pool League Testing Chatbot  
-v0.0.7  
+v0.0.8  

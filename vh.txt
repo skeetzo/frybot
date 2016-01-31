@@ -35,3 +35,7 @@ testing bot merged to frybot
 v.0.0.7  
 1/19/16  
 json updates  
+
+v.0.0.8  
+1/30/16  
+league.js, seasons.json, teamshit.json restructuring  
