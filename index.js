@@ -1,8 +1,9 @@
-var bot = require('./bot.js');
-bot = new bot();
-var config = require('./config.js');
+var bot = require('./lib/bot.js');
+var config = require('./lib/config.js');
 var director = require('director');
 var http = require('http');
+
+bot = new bot();
 
 var router = new director.http.Router({
   '/' : {
@@ -31,3 +32,5 @@ function ping() {
   this.res.end("Hi, I'm "+config.name+" and I totally work.");
   // bot.ping();
 }
+
+bot.boot();

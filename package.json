@@ -1,12 +1,12 @@
 {
-  "name": "frybot",
+  "name": "naivi",
   "author": {
     "name": "Alex Oberg",
-    "email": "brainlessdg13@gmail.com",
+    "email": "alexjoberg@gmail.com",
     "url": ""
     },
-  "version": "0.0.3",
-  "description": "Pool League GroupMe Chatbot",
+  "version": "0.0.6",
+  "description": "Pool League GroupMe test bot",
   "homepage": "https://sites.google.com/site/itiswhatitisleague",
   "main": "index.js",
   "scripts": {
