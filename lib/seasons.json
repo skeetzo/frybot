@@ -14,41 +14,264 @@
 								{
 									"name": "Coco",
 									"team": "It Is... What It Is!",
-									"idNumber": "",
-									"defense": 0,
 									"pointsEarned": 0,
-									"pointsGiven": 0,
-									"SL": 3,
-									"wins": 0,
-									"loses": 0
-								},
-								{
-									"name": "",
-									"team": "",
-									"idNumber": "",
-									"defense": 0,
-									"pointsEarned": 0,
-									"pointsGiven": 0,
-									"SL": 3,
-									"wins": 0,
-									"loses": 0
+									"pointsGiven": 2,
+									"SL": 5
 								}
 							],
-							"winner": "",
-							"race": "",
-							"games": [
+							"winner": "Player Two",
+						},
+						{
+							"matchNumber": 2,
+							"players": [ 
 								{
-									"playerOne": "", 
-					                "playerTwo": "",
-					                "innings": 0, 
-					                "winner": "",
-					                "playerOneTimeouts": 0, 
-					                "playerTwoTimeouts": 0, 
-					                "isEarlyScratchEight": false, 
-					                "isBreakAndRun": false,
-					                "isEightBallBreak":	false								
+									"name": "Civi",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 2,
+									"pointsGiven": 1,
+									"SL": 5
 								}
-
+							],
+							"winner": "Civi",
+						},
+						{
+							"matchNumber": 3,
+							"players": [ 
+								{
+									"name": "Gabe",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 0,
+									"pointsGiven": 2,
+									"SL": 4
+								}
+							],
+							"winner": "Player Two",
+						},
+						{
+							"matchNumber": 4,
+							"players": [ 
+								{
+									"name": "Danny",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 3,
+									"pointsGiven": 0,
+									"SL": 3,
+								}
+							],
+							"winner": "Danny",
+						},
+						{
+							"matchNumber": 5,
+							"players": [ 
+								{
+									"name": "Nico",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 0,
+									"pointsGiven": 2,
+									"SL": 4
+								}
+							],
+							"winner": "Player Two",
+						}
+					]
+				},
+				{
+					"location": "Ujpest Sports Lounge",
+					"versus": "Let It Go!",
+					"date": "1/12/2016",
+					"matches": [ 
+						{
+							"matchNumber": 1,
+							"players": [ 
+								{
+									"name": "Civi",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 3,
+									"pointsGiven": 0,
+									"SL": 5
+								}
+							]
+						},
+						{
+							"matchNumber": 2,
+							"players": [ 
+								{
+									"name": "George",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 2,
+									"pointsGiven": 0,
+									"SL": 6
+								}
+							]
+						},
+						{
+							"matchNumber": 3,
+							"players": [ 
+								{
+									"name": "Oberg",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 1,
+									"pointsGiven": 2,
+									"SL": 3
+								}
+							]
+						},
+						{
+							"matchNumber": 4,
+							"players": [ 
+								{
+									"name": "Coco",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 1,
+									"pointsGiven": 2,
+									"SL": 5
+								}
+							]
+						},
+						{
+							"matchNumber": 5,
+							"players": [ 
+								{
+									"name": "Danny",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 0,
+									"pointsGiven": 3,
+									"SL": 3,
+								}
+							]
+						}
+					]
+				},
+				{
+					"location": "The Copper Bucket",
+					"versus": "Mmhmm",
+					"date": "1/19/2016",
+					"matches": [ 
+						{
+							"matchNumber": 1,
+							"players": [ 
+								{
+									"name": "Oberg",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 0,
+									"pointsGiven": 2,
+									"SL": 3
+								}
+							]
+						},
+						{
+							"matchNumber": 2,
+							"players": [ 
+								{
+									"name": "Gabe",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 0,
+									"pointsGiven": 3,
+									"SL": 4
+								}
+							]
+						},
+						{
+							"matchNumber": 3,
+							"players": [ 
+								{
+									"name": "Coco",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 0,
+									"pointsGiven": 2,
+									"SL": 5
+								}
+							]
+						},
+						{
+							"matchNumber": 4,
+							"players": [ 
+								{
+									"name": "Nico",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 0,
+									"pointsGiven": 3,
+									"SL": 4
+								}
+							]
+						},
+						{
+							"matchNumber": 5,
+							"players": [ 
+								{
+									"name": "George",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 0,
+									"pointsGiven": 2,
+									"SL": 6,
+								}
+							]
+						}
+					]
+				},
+				{
+					"location": "Paladino's Lounge",
+					"versus": "Rail Riders II",
+					"date": "1/26/2016",
+					"matches": [ 
+						{
+							"matchNumber": 1,
+							"players": [ 
+								{
+									"name": "Civi",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 0,
+									"pointsGiven": 2,
+									"SL": 5
+								}
+							]
+						},
+						{
+							"matchNumber": 2,
+							"players": [ 
+								{
+									"name": "Mike",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 3,
+									"pointsGiven": 0,
+									"SL": 5
+								}
+							]
+						},
+						{
+							"matchNumber": 3,
+							"players": [ 
+								{
+									"name": "Danny",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 1,
+									"pointsGiven": 2,
+									"SL": 3
+								}
+							]
+						},
+						{
+							"matchNumber": 4,
+							"players": [ 
+								{
+									"name": "Nico",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 0,
+									"pointsGiven": 2,
+									"SL": 4
+								}
+							]
+						},
+						{
+							"matchNumber": 5,
+							"players": [ 
+								{
+									"name": "Oberg",
+									"team": "It Is... What It Is!",
+									"pointsEarned": 1,
+									"pointsGiven": 2,
+									"SL": 3
+								}
 							]
 						}
 					]
@@ -64,7 +287,20 @@
 
 /*
   season: {
-    label: "the name of the season"
+    label: "the name of the season",
+	"players": [
+		{
+			"name": "",
+			"SL": ""
+		}
+	],
+	"schedule": [
+		{
+			"date": "",
+			"opponent": "",
+			"location": ""
+		}
+	],
     matchups: [
       {
         location: "the name of the bar",
