@@ -55,7 +55,7 @@
 									"team": "It Is... What It Is!",
 									"pointsEarned": 3,
 									"pointsGiven": 0,
-									"SL": 3,
+									"SL": 3
 								}
 							],
 							"winner": "Danny",
@@ -136,7 +136,7 @@
 									"team": "It Is... What It Is!",
 									"pointsEarned": 0,
 									"pointsGiven": 3,
-									"SL": 3,
+									"SL": 3
 								}
 							]
 						}
@@ -203,7 +203,7 @@
 									"team": "It Is... What It Is!",
 									"pointsEarned": 0,
 									"pointsGiven": 2,
-									"SL": 6,
+									"SL": 6
 								}
 							]
 						}
@@ -283,63 +283,3 @@
 }
 
 
-
-
-/*
-  season: {
-    label: "the name of the season",
-	"players": [
-		{
-			"name": "",
-			"SL": ""
-		}
-	],
-	"schedule": [
-		{
-			"date": "",
-			"opponent": "",
-			"location": ""
-		}
-	],
-    matchups: [
-      {
-        location: "the name of the bar",
-        versus: "the name of the opposing team",
-        matches: [
-          match: {
-            matchNumber,
-            players: {
-              name,
-              team,
-              idNumber,
-              defense,
-              pointsEarned,
-              pointsGiven,
-              SL,
-              wins,
-              losses
-            },
-            winner, 
-            race, 
-            games: [ 
-              {
-                playerOne, 
-                playerTwo,
-                innings, 
-                winner,
-                playerOneTimeouts, 
-                playerTwoTimeouts, 
-                isEarlyScratchEight, 
-                isBreakAndRun,
-                isEightBallBreak 
-              }
-            ]
-          }
-        ],
-        date: "the date of the match",
-        earned: "the total number of points earned by the team"
-        given: "the total number of points given by the team"
-      }
-    ]
-  }
-*/  
