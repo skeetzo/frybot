@@ -19,7 +19,7 @@
 									"SL": 5
 								}
 							],
-							"winner": "Player Two",
+							"winner": "Player Two"
 						},
 						{
 							"matchNumber": 2,
@@ -32,7 +32,7 @@
 									"SL": 5
 								}
 							],
-							"winner": "Civi",
+							"winner": "Civi"
 						},
 						{
 							"matchNumber": 3,
@@ -45,7 +45,7 @@
 									"SL": 4
 								}
 							],
-							"winner": "Player Two",
+							"winner": "Player Two"
 						},
 						{
 							"matchNumber": 4,
@@ -58,7 +58,7 @@
 									"SL": 3
 								}
 							],
-							"winner": "Danny",
+							"winner": "Danny"
 						},
 						{
 							"matchNumber": 5,
@@ -71,7 +71,7 @@
 									"SL": 4
 								}
 							],
-							"winner": "Player Two",
+							"winner": "Player Two"
 						}
 					]
 				},
