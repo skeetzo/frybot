@@ -1,8 +1,109 @@
 {
 	"seasons": [
 		{
-			"label":"Spring Season Example",
-			"matchups": []
+			"label":"Spring Season 2016",
+			"matchups": [
+				{
+					"location": "The Copper Bucket",
+					"versus": "Bad News",
+					"date": "1/5/2016",
+					"matches": [ 
+						{
+							"matchNumber": 1,
+							"players": [ 
+								{
+									"name": "Coco",
+									"team": "It Is... What It Is!",
+									"idNumber": "",
+									"defense": 0,
+									"pointsEarned": 0,
+									"pointsGiven": 0,
+									"SL": 3,
+									"wins": 0,
+									"loses": 0
+								},
+								{
+									"name": "",
+									"team": "",
+									"idNumber": "",
+									"defense": 0,
+									"pointsEarned": 0,
+									"pointsGiven": 0,
+									"SL": 3,
+									"wins": 0,
+									"loses": 0
+								}
+							],
+							"winner": "",
+							"race": "",
+							"games": [
+								{
+									"playerOne": "", 
+					                "playerTwo": "",
+					                "innings": 0, 
+					                "winner": "",
+					                "playerOneTimeouts": 0, 
+					                "playerTwoTimeouts": 0, 
+					                "isEarlyScratchEight": false, 
+					                "isBreakAndRun": false,
+					                "isEightBallBreak":	false								
+								}
+
+							]
+						}
+					]
+				}
+
+			]
 		}
 	]
 }
+
+
+
+
+/*
+  season: {
+    label: "the name of the season"
+    matchups: [
+      {
+        location: "the name of the bar",
+        versus: "the name of the opposing team",
+        matches: [
+          match: {
+            matchNumber,
+            players: {
+              name,
+              team,
+              idNumber,
+              defense,
+              pointsEarned,
+              pointsGiven,
+              SL,
+              wins,
+              losses
+            },
+            winner, 
+            race, 
+            games: [ 
+              {
+                playerOne, 
+                playerTwo,
+                innings, 
+                winner,
+                playerOneTimeouts, 
+                playerTwoTimeouts, 
+                isEarlyScratchEight, 
+                isBreakAndRun,
+                isEightBallBreak 
+              }
+            ]
+          }
+        ],
+        date: "the date of the match",
+        earned: "the total number of points earned by the team"
+        given: "the total number of points given by the team"
+      }
+    ]
+  }
+*/  
