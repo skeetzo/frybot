@@ -32,10 +32,14 @@ v0.0.6
 Player level rehaul  
 testing bot merged to frybot  
 
-v.0.0.7  
+v0.0.7  
 1/19/16  
 json updates  
 
-v.0.0.8  
+v0.0.8  
 1/30/16  
 league.js, seasons.json, teamshit.json restructuring  
+  
+v0.0.9  
+2/2/16  
+s3 aws update  

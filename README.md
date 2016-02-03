@@ -1,3 +1,3 @@
-# naivi  
-Pool League Testing Chatbot  
-v0.0.8  
+# frybot  
+Pool League Chatbot  
+v0.0.9  
