@@ -1,3 +1,3 @@
 # frybot  
 Pool League Chatbot  
-v0.0.9  
+v0.1.0  

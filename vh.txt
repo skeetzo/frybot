@@ -43,3 +43,7 @@ league.js, seasons.json, teamshit.json restructuring
 v0.0.9  
 2/2/16  
 s3 aws update  
+
+v0.1.0
+3/3/16
+league data restructuring
