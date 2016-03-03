@@ -1,8 +1,4 @@
 node_modules
-<<<<<<< HEAD
-.env
-=======
 .env
 secret.pem
 localConfig.json
->>>>>>> 297b2e504e580156a7cf805d781a5cd06addfc95
