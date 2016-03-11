@@ -1,9 +1,10 @@
-var bot = require('./lib/bot.js');
-var config = require('./lib/config.js');
-var director = require('director');
-var http = require('http');
+var config = require('./lib/config.js'),
+    Bot = require('./lib/bot.js'),
+    director = require('director'),
+    http = require('http');
 
-bot = new bot();
+var bot = new Bot();
+bot.boot();
 
 var router = new director.http.Router({
   '/' : {
@@ -36,6 +37,5 @@ function ping() {
 // Sleep Delay
 setInterval(function() {
     http.get("http://"+config.name+".herokuapp.com");
+    console.log('*boing*');
 }, 600000); // every 10 minutes
-
-bot.boot();
