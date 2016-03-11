@@ -4,7 +4,6 @@ var config = require('./lib/config.js'),
     http = require('http');
 
 var bot = new Bot();
-bot.boot();
 
 var router = new director.http.Router({
   '/' : {
@@ -39,3 +38,5 @@ setInterval(function() {
     http.get("http://"+config.name+".herokuapp.com");
     console.log('*boing*');
 }, 600000); // every 10 minutes
+
+bot.boot();
