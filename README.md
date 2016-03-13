@@ -14,6 +14,6 @@ Fascilitates proper team dickery and scores management.
   
 ####CronJobs  
   * Pregame - Tuesdays @ 2:00pm, weekly match reminder  
-  * After Party - Wednesdays @ 2:00am, updates scores  
-  * New Season - (needs more data), past season overview and necessary future resets  
-  * Christmas/holidays  
+  * After Party - Wednesdays @ 2:00am, updates scores & announces match results  
+  * New Season - (needs further updates), past season overview and necessary future resets  
+  * Christmas/holidays shout outs
