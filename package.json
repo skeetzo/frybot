@@ -6,7 +6,7 @@
     "url": ""
   },
   "version": "0.0.6",
-  "description": "Pool League GroupMe test bot",
+  "description": "Pool League GroupMe Chatbot",
   "homepage": "https://sites.google.com/site/itiswhatitisleague",
   "main": "index.js",
   "scripts": {
@@ -36,8 +36,7 @@
     "express",
     "groupme",
     "bot",
-    "google",
-    "sheets"
+    "google sheets"
   ],
   "license": "MIT"
 }
