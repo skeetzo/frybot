@@ -51,3 +51,7 @@ league data restructuring
 v0.0.11
 3/11/16
 major callback restructuring, removal of event design
+
+v0.0.12
+6/2/16
+carryover data mechanisms begun, spring to summer season updates
