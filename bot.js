@@ -769,8 +769,8 @@ var bot = function() {
         self_.postThought_('And also...');
         self_.scores('mvp');
         self_.scores('lvp');
-      },
-      start: true,
+      }
+,      start: true,
       timeZone: 'America/Los_Angeles'
   });
 
