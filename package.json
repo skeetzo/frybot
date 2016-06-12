@@ -1,11 +1,11 @@
 {
-  "name": "frybot",
+  "name": "naivi",
   "author": {
     "name": "Alex Oberg",
-    "email": "brainlessdg13@gmail.com",
+    "email": "alexjoberg@gmail.com",
     "url": ""
-    },
-  "version": "0.0.3",
+  },
+  "version": "0.0.6",
   "description": "Pool League GroupMe Chatbot",
   "homepage": "https://sites.google.com/site/itiswhatitisleague",
   "main": "index.js",
@@ -20,7 +20,8 @@
     "moment": "~2.10.3",
     "groupme": "0.5.6",
     "underscore": "",
-    "cron": "1.0.9"
+    "cron": "1.0.9",
+    "aws-sdk": "~2.2.33"
   },
   "engines": {
     "node": "0.10.x"
@@ -35,8 +36,7 @@
     "express",
     "groupme",
     "bot",
-    "google",
-    "sheets"
+    "google sheets"
   ],
   "license": "MIT"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "frybot",
-  "description": "Pool League GroupMe Chatbot",
+  "name": "naivi",
+  "description": "Pool League GroupMe test bot",
   "keywords": [
     "node",
     "heroku",
@@ -8,7 +8,6 @@
     "bot",
     "google",
    ],
-  "website": "https://sites.google.com/site/itiswhatitisleague",
   "repository": "https://github.com/brainlessdg13/frybot",
   "logo": ""
 }
