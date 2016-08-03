@@ -33,9 +33,9 @@ function ping() {
   // bot.ping();
 }
 
-process.on('uncaughtException', function(err) {
-  console.log('Crashed: '+err);
-})
+// process.on('uncaughtException', function(err) {
+//   console.log('Crashed: '+err);
+// })
 
 // Sleep Delay
 setInterval(function() {
