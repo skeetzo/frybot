@@ -3,7 +3,7 @@ var config = require('./lib/config.js'),
     director = require('director'),
     http = require('http');
 
-var bot = new Bot(config);
+var bot = new Bot();
 
 var router = new director.http.Router({
   '/' : {
