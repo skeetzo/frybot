@@ -3,7 +3,7 @@ var config = require('./lib/config.js'),
     director = require('director'),
     http = require('http');
 
-var bot = new Bot();
+var bot = new Bot(config);
 
 var router = new director.http.Router({
   '/' : {
@@ -29,13 +29,13 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hi, I'm "+config.name+" and I totally work.");
+  this.res.end("Hi, I'm "+config.botName+" and I totally work right now.");
   // bot.ping();
 }
 
 // Sleep Delay
 setInterval(function() {
-    http.get("http://"+config.name+".herokuapp.com");
+    http.get("http://"+config.botName+".herokuapp.com");
     console.log('*boing*');
 }, 600000); // every 10 minutes
 
