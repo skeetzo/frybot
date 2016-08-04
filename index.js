@@ -5,6 +5,9 @@ var config = require('./lib/config.js'),
 
 var bot = new Bot();
 
+bot.boot();
+
+
 var router = new director.http.Router({
   '/' : {
     post: bot.post,
@@ -43,4 +46,3 @@ setInterval(function() {
     console.log('*boing*');
 }, 600000); // every 10 minutes
 
-bot.boot();
