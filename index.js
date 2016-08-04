@@ -10,9 +10,7 @@ var bot = new Bot();
 
 var router = new director.http.Router({
   '/' : {
-    post: function() {
-      bot.post();
-    },
+    post: bot.post.call(bot),
     get: ping
   }
 });
