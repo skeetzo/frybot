@@ -5,12 +5,12 @@ var config = require('./lib/config.js'),
 
 var bot = new Bot();
 
-bot.boot();
+// bot.boot();
 
 
 var router = new director.http.Router({
   '/' : {
-    post: bot.post.bind(bot),
+    post: bot.post,
     get: ping
   }
 });
