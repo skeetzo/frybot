@@ -94,7 +94,7 @@ bot.prototype = {
   */
   boot : function() {
     var self = this;
-    console.log('Booting up: '+self.config.botName);
+    self.logger.log('Booting up: '+self.config.botName);
     commands.load.call(self,function onLoad(err) {
       if (err) return self.logger.error(err);
       // loads current league data then syncs with ItIsWhatItIs sheet stats
