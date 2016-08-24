@@ -117,8 +117,8 @@ bot.prototype = {
     if (self.req.chunks == undefined || self.req.chunks == null) return;
     var request = JSON.parse(self.req.chunks[0]);
     if (!request.text || !request.name || !request.id) return;
-    self.logger.log(request.name+": "+request.text);
-    if (request.name===config.botName) return self.logger.debug('Not talking to myself...');
+    logger.log(request.name+": "+request.text);
+    if (request.name===config.botName) return logger.debug('Not talking to myself...');
     if (request.text.search(config.commandsRegex)!=-1) {
       var message = request.text || '',
           command = message.match(config.commandsRegex)[0],
