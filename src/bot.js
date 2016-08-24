@@ -15,7 +15,9 @@ var colors = require("colors"),
                     info : colors.green,
                     warn : colors.yellow,
                     error : [ colors.red, colors.bold ],
-                    say : colors.inverse
+                    {
+                      say : colors.inverse
+                    } 
                   },
                   format : [
                         "{{timestamp}} <{{title}}> {{message}} (in {{file}}:({{method}}):{{line}})", //default format
