@@ -2,7 +2,7 @@ var colors = require("colors"),
     _ = require('underscore'),
     config = require('./config.js'),
     commands = require('./commands.js'),
-    CronJob = require('cron').CronJob,
+    CronJobs = require('./cronjobs.js'),
     HTTPS = require('https'),
     util = require('util'),
     fs = require('fs'),
@@ -33,7 +33,6 @@ var colors = require("colors"),
                                 encoding: "utf8",
                                 mode: 0666
                             }).write(data.output+"\n");
-                        }
                         }]
                 });
 
@@ -65,27 +64,27 @@ var bot = function(config) {
   this.config = config;
   this.thoughts = [];
   this.logger = logger;
+  this.commands = commands;
   this.boot.call(this);
 }
 
 bot.prototype = {
 
-  activate : function(what) {
-    var command = what.command || '',
-        argument = what.argument || '',
-        message = what.text || '',
-        sender = what.name || '';
+  activate : function(request, callback) {
+    // console.log('commands');
+    var command = request.command || '',
+        argument = request.argument || '',
+        message = request.text || '',
+        sender = request.name || '';
+        request.message = message;
+    // console.log('command: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
     if (typeof commands[command] === "function" ) {
-      self.logger.log('Activating: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
-      if (what.id) commands.likeMessage(what.id);
-      var request = {command:command,argument:argument,message:message,sender:sender};
-      commands[command].call(this,request);
-      // likeMessage_(sender);
+      this.logger.log(('Activating: %s[%s] of %s: \'%s\'',command,argument,sender,message);
+      if (request.id) likeMessage_(request.id);
+      this.commands[command].call(this,argument,message,sender);
     }
     else
-      self.logger.debug('No command found');
-
-
+      callback(new Error('No command found'));
   },
 
   /*
@@ -101,7 +100,7 @@ bot.prototype = {
       self.logger.debug('League Loaded');
       // Initial scores update on boot
       self.activate.call(self,{command: "scores",argument:"boot",name:config.botName});
-      if (self.config.cronjobbing) CronJob.start.call(self);
+      if (self.config.cronjobbing) CronJobs.start.call(self);
       if (config.testing) setTimeout(function() {self.test()},20000);
     });
   },
@@ -131,7 +130,7 @@ bot.prototype = {
       request.argument = argument,
       request.text = message;
       // console.log('this: '+self.toString());
-      self.activate.call(self,request);
+      commands.activate.call(self,request);
     }
     self.res.writeHead(200);
     self.res.end();

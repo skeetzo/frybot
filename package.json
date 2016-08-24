@@ -21,6 +21,7 @@
     "edit-google-spreadsheet": "0.2.19",
     "groupme": "0.5.6",
     "moment": "~2.10.3",
+    "tracer": "^0.8.3",
     "underscore": "^1.8.3"
   },
   "engines": {

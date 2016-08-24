@@ -1,3 +1,6 @@
+var _ = require('underscore'),
+    CronJob = require('cron').CronJob;
+
 // CronJobs
 module.exports.start = function() {
   var self = this;
@@ -9,18 +12,18 @@ module.exports.start = function() {
   * started- yes
   */
   self.pregameJob = new CronJob({
-    cronTime: config.pregameJobTime,
+    cronTime: self.config.pregameJobTime,
       onTick: function() {
         self.commands.activate({command:'pregame'},function(err, message) {
-          if (err) return think_(err);
+          if (err) return self.logger.error(err);
           self.say(message);
         });
       },
-      start: config.pregameJob,
+      start: self.config.pregameJob,
       timeZone: 'America/Los_Angeles'
   });
   self.pregameJob.label = 'Pregame';
-  self.pregameJob.started = config.pregameJob;
+  self.pregameJob.started = self.config.pregameJob;
   cronjobs.push(self.pregameJob);
 
   /**
@@ -29,7 +32,7 @@ module.exports.start = function() {
   * started- yes
   */
   self.afterpartyJob = new CronJob({
-    cronTime: config.afterpartyJobTime,
+    cronTime: self.config.afterpartyJobTime,
       onTick: function() {
         // messages about the nights game
         // did we win or lose
@@ -40,23 +43,23 @@ module.exports.start = function() {
           text: "quiet",
           command: "scores",
           argument: "update",
-          name: config.name
+          name: self.config.name
         };
         self.commands.activate(update,function(err, message) {
-          if (err) return think_(err);
+          if (err) return self.logger.error(err);
           self.say(message);
         });
         self.commands.activate({command:'bottle',argument:'next'},function(err, message) {
-          if (err) return think_(err);
+          if (err) return self.logger.error(err);
           self.say(message);
         });
         // scores of all the other people who played
       },
-      start: config.afterpartyJob,
+      start: self.config.afterpartyJob,
       timeZone: 'America/Los_Angeles'
   });
   self.afterpartyJob.label = 'After Party';
-  self.afterpartyJob.started = config.afterpartyJob;
+  self.afterpartyJob.started = self.config.afterpartyJob;
   cronjobs.push(self.afterpartyJob);
 
   /**
@@ -66,7 +69,7 @@ module.exports.start = function() {
   * started- maybe
   */
   self.newSeasonJob = new CronJob({
-    cronTime: config.newSeasonJobTime,   // update to January 2nd, 2016
+    cronTime: self.config.newSeasonJobTime,   // update to January 2nd, 2016
       onTick: function() {
         // to-do; all of this
         // messages about a hopeful new season
@@ -75,11 +78,11 @@ module.exports.start = function() {
         // who is we, introduce all the players
         // create introduce() and timeoutdelay for each player
       },
-      start: config.newSeasonJob,
+      start: self.config.newSeasonJob,
       timeZone: 'America/Los_Angeles'
   });
   self.newSeasonJob.label = 'New Season';
-  self.newSeasonJob.started = config.newSeasonJob;
+  self.newSeasonJob.started = self.config.newSeasonJob;
   cronjobs.push(self.newSeasonJob);
 
   /**
@@ -89,7 +92,7 @@ module.exports.start = function() {
   */
   // this will probably ulimately be an array of cronjobs set to go off on specific holidays
   self.christmasJob = new CronJob({
-    cronTime: config.christmasJobTime,
+    cronTime: self.config.christmasJobTime,
       onTick: function() {
         // to-do; more of this
         self.say('Merry Christmas Bitches!');
@@ -97,17 +100,14 @@ module.exports.start = function() {
         self.say('Don\'t forget- Spring Session starts on 1/2');
         self.say('And also...');
       },
-      start: config.christmasJob,
+      start: self.config.christmasJob,
       timeZone: 'America/Los_Angeles'
   });
   self.christmasJob.label = 'Christmas';
-  self.christmasJob.started = config.christmasJob;
+  self.christmasJob.started = self.config.christmasJob;
   cronjobs.push(self.christmasJob);
 
   // Prints out the started cronjobs
   // job.start not available from outside reference? might change away from self. to just variables, they'd run anyways
-  _.forEach(cronjobs, function(job) {
-    if (job.started)
-      think_('started cronjob - '+job.label);
-  });
+  _.forEach(cronjobs, function(job) { if (job.started) self.logger.debug('started cronjob - '+job.label) });
 }

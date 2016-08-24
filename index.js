@@ -3,7 +3,7 @@ var config = require('./src/config.js'),
     director = require('director'),
     http = require('http');
 
-var bot = new Bot();
+var bot = new Bot(config);
 
 // bot.boot();
 

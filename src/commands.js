@@ -30,23 +30,7 @@ var commands = {
   * @param {Object} request - the request as passed from bot.post(), includes text and id
   * @param {function} callback - the method used to return any messages regarding success/failure
   */
-  activate : function(request, callback) {
-    // console.log('commands');
-    var command = request.command || '',
-        argument = request.argument || '',
-        message = request.text || '',
-        sender = request.name || '';
-        request.message = message;
-    // console.log('command: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
-    if (typeof commands[command] === "function" ) {
-      think_('Activating: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
-      if (request.id) likeMessage_(request.id);
-      this[command](request, callback);
-      // likeMessage_(sender);
-    }
-    else
-      callback(new Error('No command found'));
-  },
+  
 
   // module.exports.activate = activate;
 
@@ -56,26 +40,26 @@ var commands = {
   load : function(callback) {
     var self = this;
     var seasons;
-    think_('Loading Team Shit');
+    self.logger.debug(('Loading Team Shit');
     if (!config.localLoad)
       s3.getObject({Bucket:config.S3_BUCKET,Key:config.AWS_SECRET_KEY}, function(err, data) {
         if (err) return callback(err);
         teamshitData = JSON.parse(data.Body.toString()).teamshitData;
         seasons = JSON.parse(data.Body.toString()).seasons;
         // console.log('team shit: '+JSON.stringify(teamshitData));
-        think_('Team Shit Loaded: s3');
+        self.logger.debug(('Team Shit Loaded: s3');
         onLoad();
       });
     else {
       fs.readFile(localTeamShitPath, function read(err, data) {
         if (err) return callback(new Error('Local teamshit Not Found'));
         teamshitData = JSON.parse(data);
-        think_('Team Shit Loaded: local');
+        self.logger.debug(('Team Shit Loaded: local');
       });
       fs.readFile(localSeasonsPath, function read(err, data) {
         if (err) return callback(new Error('Local seasons Not Found'));
         seasons = JSON.parse(data).seasons;
-        think_('Seasons Loaded: local');
+        self.logger.debug(('Seasons Loaded: local');
         onLoad();
       });
     }
@@ -97,12 +81,12 @@ var commands = {
     Saves the team shit data
   */
   saveTeamShitData : function() {
-    if (!config.saving) return console.log("Not saving.");
+    if (!config.saving) return console.debug("Not saving.");
     
     teamshitData.bottleBitches = this.bottleBitches || teamshitData.bottleBitches || [];
     
     if (!config.localSave) {
-      think_('Saving Data to S3');
+      self.logger.debug(('Saving Data to S3');
       var data = {
             seasons: this.league.seasons,
             teamshitData: teamshitData
@@ -115,19 +99,19 @@ var commands = {
             ContentType: 'application/json',
           };
       s3.putObject(s3_params, function(err, data) {
-        if (err) return think_(err);
-        think_('Data Saved to S3');
+        if (err) return self.logger.debug((err);
+        self.logger.debug(('Data Saved to S3');
       });
     }
     else {
-      think_('Saving Team Shit Locally');
+      self.logger.debug(('Saving Team Shit Locally');
       fs.writeFile(localTeamShitPath, JSON.stringify(teamshitData,null,4), function (err) {
-        if (err) return think_(err);
-        think_('Team Shit (local) Saved');
+        if (err) return self.logger.debug((err);
+        self.logger.debug(('Team Shit (local) Saved');
       });
       fs.writeFile(localSeasonsPath, JSON.stringify({seasons:this.league.seasons},null,4), function (err) {
-        if (err) return think_(err);
-        think_('Seasons (local) Saved');
+        if (err) return self.logger.debug((err);
+        self.logger.debug(('Seasons (local) Saved');
       });
     }
   },
@@ -154,10 +138,10 @@ var commands = {
     if (!self.bottleBitches||self.bottleBitches.length<=0) {
       self.bottleBitches = teamshitData.bottleBitches || [];
       if (self.bottleBitches.length<=0) {
-        think_('Populating Bottle Duty');
+        self.logger.debug(('Populating Bottle Duty');
         var players = self.league.getCurrentSeason().players;
         if (!players||players.length<=0) {
-          think_('Unable to update Bottle Duty: missing Players');
+          self.logger.warn(('Unable to update Bottle Duty: missing Players');
           return;
         }
         _.forEach(players, function addTobottleBitches(player) {
@@ -167,7 +151,7 @@ var commands = {
         self.saveTeamShitData();
       }
       else {
-        think_('Bottle Duty data found.');
+        self.logger.debug(('Bottle Duty data found.');
         self.bottleBitches = teamshitData.bottleBitches;
       }
     }
@@ -184,12 +168,10 @@ var commands = {
       moves bottle duty forward
     */
     function next() {
-      console.log('before: '+teamshitData.bottleBitches);
       var temp = teamshitData.bottleBitches.shift();
       teamshitData.bottleBitches.push(temp);
-      console.log('after: '+teamshitData.bottleBitches);
       self.saveTeamShitData();
-      think_('bottle duty updated');
+      self.logger.debug(('bottle duty updated');
     }
     this.bottle.next = next;
 
@@ -233,9 +215,8 @@ var commands = {
   * @param {string} sender - The sender it's from
   * @param {function} callback - the function used to post messages
   */
-  scores : function(data, callback) {
+  scores : function(argument, message, sender) {
     var self = this;
-
     /*
       adds scores
     */
@@ -306,13 +287,13 @@ var commands = {
             spreadsheet.add(jsonObj); // adds row one by one
           }
           spreadsheet.send(function(err) {
-            if(err) think_(err);
+            if(err) self.logger.log((err);
               callback(null,'Scores added!');
           });
         });
       });
     }
-    this.scores.add = add;
+    // this.scores.add = add;
 
     /*
       called when booted for any necessary score updates
@@ -320,18 +301,18 @@ var commands = {
     function boot() {
       update();
     }
-    this.scores.boot = boot;
+    // this.scores.boot = boot;
 
     /*
       calls out everybody's scores
     */
     function callouts() {
-      think_('Callouts incoming');
+      self.logger.log(('Callouts incoming');
       _.forEach(self.league.getCurrentSeason().players,function (player) {
         scores.streak(player);
       });
     };
-    this.scores.callouts = callouts;
+    // this.scores.callouts = callouts;
 
     /*
       calls out the lowest valuable player
@@ -346,7 +327,7 @@ var commands = {
       });
       callback(null,'Current LVP: '+leastValuablePlayer.toStats());
     }
-    this.scores.lvp = lvp;
+    // this.scores.lvp = lvp;
 
     /*
       calls out the most valuable player
@@ -361,7 +342,7 @@ var commands = {
       });
       callback(null,'Current MVP: '+mostValuablePlayer.toStats());
     }
-    this.scores.mvp = mvp;
+    // this.scores.mvp = mvp;
 
     /*
       returns the scores of the desired player
@@ -372,7 +353,7 @@ var commands = {
           callback(null,'Stats: '+player.toStats());
       });
     }
-    this.scores.of = of;
+    // this.scores.of = of;
 
     /*
       Used in callouts to calculate win/loss streaks
@@ -446,7 +427,7 @@ var commands = {
       Updates from the scores available on the team spreadsheet
     */
     function update() {
-      think_('Updating Players from Scoresheet');
+      self.logger.log(('Updating Players from Scoresheet');
       Spreadsheet.load({
         debug: false,
         spreadsheetId: config.Google_ItIsWhatItIs_Spreadsheet_ID,
@@ -455,9 +436,9 @@ var commands = {
       },
       function sheetReady(err, spreadsheet) {
         if (err) {
-          think_(err);
+          self.logger.warn((err);
           setTimeout(function() {
-            think_('retrying sheet load');
+            self.logger.debug(('retrying sheet load');
             update();
           },5000);
           throw err;
@@ -499,19 +480,19 @@ var commands = {
           self.league.getCurrentSeason().resetPlayers();
           self.league.getCurrentSeason().updateMatchups(matchups); // updates player data
           if (data.quiet)
-            think_('Season scores updated quietly');
+            self.logger.log(('Season scores updated quietly');
           else
             callback(null, 'Season scores updated');
           self.saveTeamShitData();
         });
       });
     }
-    this.scores.update = update;
+    // this.scores.update = update;
 
-    if (data.argument)
-      this.scores[data.argument]();
+    if (argument)
+      self.commands.scores[argument]();
     else
-      callback(null,'What about the scores '+data.sender+'?');
+      callback(null,'What about the scores '+sender+'?');
   },
 
 
@@ -595,7 +576,7 @@ var commands = {
   nicofacts : function(argument, message, sender, callback) {
     var self = this;
     if (!this.nicofactsDB||this.nicofactsDB.length<=0) {
-      think_('Loading Nico Facts');
+      self.logger.log(('Loading Nico Facts');
       Spreadsheet.load({
         debug: true,
         spreadsheetId: config.Google_ItIsWhatItIs_Spreadsheet_ID,
@@ -611,7 +592,7 @@ var commands = {
           rows.shift();
           // console.log("rows: "+rows);
           _.forEach(rows, function(cols) {this.nicofactsDB.push('Nico Fact #'+cols[1]+': '+cols[2]);});
-          think_('Nico Facts Loaded');
+          self.logger.log(('Nico Facts Loaded');
           self.nicofacts(argument, message, sender);
           callback(null,'Uhhh what?');
         });
@@ -757,6 +738,6 @@ function shuffle(array) {
   return array;
 }
 
-function think_(what) {
+function self.logger.log((what) {
   console.log(config.botName+': '+what);
 }
