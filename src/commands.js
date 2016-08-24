@@ -9,8 +9,8 @@ var _ = require('underscore'),
     moment = require ('moment'),
     Spreadsheet = require('edit-google-spreadsheet');
 
-var localTeamShitPath = './lib/teamshit.json',
-    localSeasonsPath = './lib/seasons.json',
+var localTeamShitPath = './dev/teamshit.json',
+    localSeasonsPath = './dev/seasons.json',
     teamshitData = {};
 
 aws.config.update({accessKeyId: config.AWS_ACCESS_KEY, secretAccessKey: config.AWS_SECRET_KEY});

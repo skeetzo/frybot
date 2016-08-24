@@ -4,7 +4,7 @@ var config = {},
     localConfig = {};
 
 try {
-  localConfig = fs.readFileSync('./lib/localConfig.json').toString();
+  localConfig = fs.readFileSync('./dev/localConfig.json').toString();
   localConfig = JSON.parse(localConfig);
   console.log('Local Config Loaded');
 }
@@ -77,7 +77,8 @@ config.responding = true;
 config.responseTime = 9000;
 config.brainfart = 10000;
 
-// CronJobs
+// CronJobs\
+config.cronjobbing = true;
 config.afterpartyJob = false;
 config.afterpartyJobTime = '00 00 2 * * 3';
 config.christmasJob = false;

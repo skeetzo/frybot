@@ -1,5 +1,5 @@
-var config = require('./lib/config.js'),
-    Bot = require('./lib/bot.js'),
+var config = require('./src/config.js'),
+    Bot = require('./src/bot.js'),
     director = require('director'),
     http = require('http');
 
