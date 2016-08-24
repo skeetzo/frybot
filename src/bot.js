@@ -65,6 +65,7 @@ var bot = function(config) {
   this.thoughts = [];
   this.logger = logger;
   this.commands = commands;
+  this.commands.updateAWS.call(this);
   this.boot.call(this);
 }
 
@@ -79,7 +80,7 @@ bot.prototype = {
         request.message = message;
     // console.log('command: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
     if (typeof commands[command] === "function" ) {
-      this.logger.log(('Activating: %s[%s] of %s: \'%s\'',command,argument,sender,message);
+      this.logger.log('Activating: %s[%s] of %s: \'%s\'',command,argument,sender,message);
       if (request.id) likeMessage_(request.id);
       this.commands[command].call(this,argument,message,sender);
     }
@@ -99,6 +100,7 @@ bot.prototype = {
       // loads current league data then syncs with ItIsWhatItIs sheet stats
       self.logger.debug('League Loaded');
       // Initial scores update on boot
+      self.commands.loadModules.call(self);
       self.activate.call(self,{command: "scores",argument:"boot",name:config.botName});
       if (self.config.cronjobbing) CronJobs.start.call(self);
       if (config.testing) setTimeout(function() {self.test()},20000);
@@ -109,7 +111,7 @@ bot.prototype = {
   * Called from index.js upon groupme posts
   * Runs activate(request) upon successful match
   */
-  post : function() {
+  onGroupMePost : function() {
     var self = this;
     if (self.req == undefined || self.req == null) return;
     if (self.req.chunks == undefined || self.req.chunks == null) return;
@@ -140,27 +142,26 @@ bot.prototype = {
   * Posts the given message via the GroupMe bot
   * @param message
   */
-  postMessage : function(message) {
+  postGroupMeMessage : function(message) {
+    if (!message) return self.logger.warn('Missing message to post: %s',message);
     var self = this;
-    var options, body, botReq;
-    options = {
-      hostname: 'api.groupme.com',
-      path: '/v3/bots/post',
-      method: 'POST'
-    };
-    body = {
-      "bot_id" : config.botID,
-      "text" : message
-    };
-    if (message==undefined) return;
     self.logger.log('Sending: \'%s\' to [%s]',message.green,self.config.GroupMe_group_name);
-    botReq = HTTPS.request(options, function(res) {
-        if(res.statusCode == 202) {
-          // neat, why is this even here?
-        } else {
-          self.logger.warn('rejecting bad status code: %s',res.statusCode);
-        }
-    });
+    var options = {
+          hostname: 'api.groupme.com',
+          path: '/v3/bots/post',
+          method: 'POST'
+        },
+        body = {
+          "bot_id" : self.config.botID,
+          "text" : message
+        },
+        botReq = HTTPS.request(options, function(res) {
+          if(res.statusCode == 202) {
+            // neat, why is this even here?
+          } else {
+            self.logger.warn('rejecting bad status code: %s',res.statusCode);
+          }
+        });
     botReq.on('error', function(err) {
       self.logger.warn('error posting message: %s',JSON.stringify(err));
     });

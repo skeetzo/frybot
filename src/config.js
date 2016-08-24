@@ -20,9 +20,8 @@ var commands = [
   'scores',
   'suck',
   'bottle',
-  'jk',
   'nicofacts',
-  'pregame'
+  'season'
 ];
 var arguments = [
   "add",
@@ -44,7 +43,9 @@ var arguments = [
   "next",
   "you",
   "me",
-  "off"
+  "off",
+  "fresh",
+  "pregame"
 ];
 var commandsRegex = "(\/"+commands.join("|\/")+")",
     argumentsRegex = "("+arguments.join("|")+")";

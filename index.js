@@ -10,7 +10,7 @@ var bot = new Bot(config);
 
 var router = new director.http.Router({
   '/' : {
-    post: bot.post,
+    post: bot.onGroupMe,
     get: ping
   }
 });

@@ -7,3 +7,65 @@
 [36m12:08:15.83 <DEBUG> League Loaded (in bot.js:(onLoad):100)[39m
 12:08:15.83 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):78)
 [36m12:08:15.84 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+[36m13:46:28.79 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):43)[39m
+[36m13:46:29.18 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):50)[39m
+[36m13:48:28.55 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):43)[39m
+[36m13:48:28.87 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):50)[39m
+[36m13:48:30.88 <DEBUG> League Loaded (in bot.js:(onLoad):100)[39m
+13:48:30.88 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):82)
+13:48:30.89 <LOG> Updating Players from Scoresheet (in commands.js:(update):430)
+[36m13:53:57.14 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):43)[39m
+[36m13:53:57.42 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):50)[39m
+[36m13:53:59.42 <DEBUG> League Loaded (in bot.js:(onLoad):100)[39m
+13:53:59.42 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):82)
+13:53:59.43 <LOG> Updating Players from Scoresheet (in commands.js:(update):430)
+[36m13:54:18.51 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):43)[39m
+[36m13:54:18.85 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):50)[39m
+[36m13:54:20.86 <DEBUG> League Loaded (in bot.js:(onLoad):100)[39m
+13:54:20.86 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):82)
+13:54:20.86 <LOG> Updating Players from Scoresheet (in commands.js:(update):430)
+[36m13:54:20.88 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+[36m14:01:04.60 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):43)[39m
+[36m14:01:04.90 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):50)[39m
+[36m14:01:06.91 <DEBUG> League Loaded (in bot.js:(onLoad):100)[39m
+14:01:06.91 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):82)
+14:01:06.91 <LOG> Updating Players from Scoresheet (in commands.js:(update):430)
+[36m14:01:06.93 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+[36m15:05:51.42 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):51)[39m
+[36m15:05:51.82 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):58)[39m
+[36m15:07:21.88 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):51)[39m
+[36m15:07:22.24 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):58)[39m
+[36m15:09:54.44 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):51)[39m
+[36m15:09:54.75 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):58)[39m
+[36m15:10:49.75 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):51)[39m
+[36m15:10:50.01 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):58)[39m
+[36m15:11:49.39 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):51)[39m
+[36m15:11:49.69 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):58)[39m
+[36m15:13:01.42 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):51)[39m
+[36m15:13:01.73 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):58)[39m
+[36m15:13:03.74 <DEBUG> League Loaded (in bot.js:(onLoad):103)[39m
+15:13:03.74 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):83)
+15:13:03.74 <LOG> Updating Players from Scoresheet (in scores.js:(update):226)
+[36m15:13:03.76 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+[36m15:13:31.57 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):51)[39m
+[36m15:13:31.88 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):58)[39m
+[36m15:13:33.89 <DEBUG> League Loaded (in bot.js:(onLoad):103)[39m
+15:13:33.89 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):83)
+15:13:33.89 <LOG> Updating Players from Scoresheet (in scores.js:(update):227)
+[36m15:13:33.91 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+15:13:34.87 <LOG> Season scores updated quietly (in scores.js:():280)
+[36m15:13:34.87 <DEBUG> Saving Data to S3 (in commands.js:(Object.commands.saveTeamShitData):97)[39m
+[36m15:13:35.24 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):111)[39m
+[36m15:55:13.81 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):50)[39m
+[36m15:55:14.16 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):57)[39m
+[36m15:55:38.00 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):50)[39m
+[36m15:55:38.30 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):57)[39m
+[36m15:56:15.40 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):50)[39m
+[36m15:56:15.67 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):57)[39m
+[36m15:56:17.68 <DEBUG> League Loaded (in bot.js:(onLoad):101)[39m
+15:56:17.69 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):83)
+15:56:17.69 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[36m15:56:17.70 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+15:56:19.09 <LOG> Season scores updated quietly (in scores.js:():281)
+[36m15:56:19.09 <DEBUG> Saving Data to S3 (in commands.js:(Object.commands.saveTeamShitData):96)[39m
+[36m15:56:19.48 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):110)[39m
