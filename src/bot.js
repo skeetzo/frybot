@@ -8,6 +8,15 @@ var colors = require("colors"),
     fs = require('fs'),
     logger = require('tracer').colorConsole(
                 {
+                   filters : {
+                      say : colors.inverse,
+                      // log : colors.black,
+                      trace : colors.magenta,
+                      debug : colors.blue,
+                      info : colors.green,
+                      warn : colors.yellow,
+                      error : [ colors.red, colors.bold ]
+                    },
                     format : [
                           "{{timestamp}} <{{title}}> {{message}} (in {{file}}:({{method}}):{{line}})", //default format
                           {
@@ -117,7 +126,7 @@ bot.prototype = {
     if (self.req.chunks == undefined || self.req.chunks == null) return;
     var request = JSON.parse(self.req.chunks[0]);
     if (!request.text || !request.name || !request.id) return;
-    logger.log(request.name+": "+request.text);
+    logger.say(request.name+": "+request.text);
     if (request.name===config.botName) return logger.debug('Not talking to myself...');
     if (request.text.search(config.commandsRegex)!=-1) {
       var message = request.text || '',
@@ -132,7 +141,7 @@ bot.prototype = {
       request.argument = argument,
       request.text = message;
       // console.log('this: '+self.toString());
-      commands.activate.call(self,request);
+      self.activate.call(self,request);
     }
     self.res.writeHead(200);
     self.res.end();
