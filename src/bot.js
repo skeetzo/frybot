@@ -8,41 +8,41 @@ var colors = require("colors"),
     fs = require('fs'),
     logger = require('tracer').colorConsole(
                 {
-                   filters : {
-                      say : colors.inverse,
-                      // log : colors.black,
-                      trace : colors.magenta,
-                      debug : colors.blue,
-                      info : colors.green,
-                      warn : colors.yellow,
-                      error : [ colors.red, colors.bold ]
-                    },
-                    format : [
-                          "{{timestamp}} <{{title}}> {{message}} (in {{file}}:({{method}}):{{line}})", //default format
-                          {
-                              error : "{{timestamp}} <{{title}}> {{message}} (in {{file}}:({{method}}):{{line}})\nCall Stack:\n{{stack}}" // error format
-                          }
-                    ],
-                    dateformat : "HH:MM:ss.L",
-                    preprocess :  function(data){
-                        data.title = data.title.toUpperCase();
-                    },
-                    transport : [
-                        function (data) {
-                            console.log(data.output);
-                        },
-                        function (data) {
-                            if (process.NODE_ENV == 'production') return;        
-                            fs.appendFile('./file.log', data.output + '\n');
-                        },
-                        function (data) {
-                            if (process.NODE_ENV != 'production') return;        
-                            var stream = fs.createWriteStream("./stream.log", {
-                                flags: "a",
-                                encoding: "utf8",
-                                mode: 0666
-                            }).write(data.output+"\n");
-                        }]
+                  filters : {
+                    // log : colors.black,
+                    trace : colors.magenta,
+                    debug : colors.blue,
+                    info : colors.green,
+                    warn : colors.yellow,
+                    error : [ colors.red, colors.bold ],
+                    say : colors.inverse
+                  },
+                  format : [
+                        "{{timestamp}} <{{title}}> {{message}} (in {{file}}:({{method}}):{{line}})", //default format
+                        {
+                            error : "{{timestamp}} <{{title}}> {{message}} (in {{file}}:({{method}}):{{line}})\nCall Stack:\n{{stack}}" // error format
+                        }
+                  ],
+                  dateformat : "HH:MM:ss.L",
+                  preprocess : function(data) {
+                      data.title = data.title.toUpperCase();
+                  },
+                  transport : [
+                      function (data) {
+                          console.log(data.output);
+                      },
+                      function (data) {
+                          if (process.NODE_ENV == 'production') return;        
+                          fs.appendFile('./file.log', data.output + '\n');
+                      },
+                      function (data) {
+                          if (process.NODE_ENV != 'production') return;        
+                          var stream = fs.createWriteStream("./stream.log", {
+                              flags: "a",
+                              encoding: "utf8",
+                              mode: 0666
+                          }).write(data.output+"\n");
+                      }]
                 });
 
 /**
