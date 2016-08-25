@@ -1,6 +1,5 @@
 var colors = require("colors"),
     _ = require('underscore'),
-    config = require('./config.js'),
     commands = require('./commands.js'),
     CronJobs = require('./cronjobs.js'),
     HTTPS = require('https'),
@@ -110,9 +109,9 @@ bot.prototype = {
       self.logger.debug('League Loaded');
       // Initial scores update on boot
       self.commands.loadModules.call(self);
-      self.activate.call(self,{command: "scores",argument:"boot",name:config.botName});
+      self.activate.call(self,{command: "scores",argument:"boot",name:self.config.botName});
       if (self.config.cronjobbing) CronJobs.start.call(self);
-      if (config.testing) setTimeout(function() {self.test()},20000);
+      if (self.config.testing) setTimeout(function() {self.test()},20000);
     });
   },
 
@@ -127,11 +126,11 @@ bot.prototype = {
     var request = JSON.parse(self.req.chunks[0]);
     if (!request.text || !request.name || !request.id) return;
     logger.log(request.name+": "+request.text);
-    if (request.name===config.botName) return logger.debug('Not talking to myself...');
-    if (request.text.search(config.commandsRegex)!=-1) {
+    if (request.name===self.config.botName) return logger.debug('Not talking to myself...');
+    if (request.text.search(self.config.commandsRegex)!=-1) {
       var message = request.text || '',
-          command = message.match(config.commandsRegex)[0],
-          argument = message.match(config.argumentsRegex)[0];
+          command = message.match(self.config.commandsRegex)[0],
+          argument = message.match(self.config.argumentsRegex)[0];
       command = command.substring(1); // the first command match minus the slash
       if (argument!=undefined)
         message = message.substring(1+command.length+1+argument.length+1);
