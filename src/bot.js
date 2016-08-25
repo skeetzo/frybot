@@ -132,8 +132,10 @@ bot.prototype = {
           argument = message.match(self.config.argumentsRegex);
       if (argument&&argument.length>0) argument = argument[0];
       command = command.substring(1); // the first command match minus the slash
-      if (argument!=undefined)
+      if (argument!=undefined) {
         message = message.substring(1+command.length+1+argument.length+1);
+        argument = argument.substring(1); // the first argument match minus the dash
+      }
       else
         message = message.substring(1+command.length+1);
       request.command = command,
