@@ -61,8 +61,8 @@ module.exports = function bottle(argument, message, sender, modifier) {
   */
   function random() {
     var players = self.league.getCurrentSeason().players,
-        player = players[Math.floor(Math.random(0,players.length))];
-    self.say('Bottle Duty: '+player);
+        player = players[Math.round(Math.random(0,players.length))];
+    self.say('Bottle Duty: '+player.name);
   }
   this.commands.bottle.random = random;
 
@@ -71,7 +71,7 @@ module.exports = function bottle(argument, message, sender, modifier) {
   */
   function what() {
     var bottles = ['malibu bitchass rum','women\'s vodka','jaeger and redbull','jaeger and redbull','jaeger and redbull','jack and coke','jack and coke','jack and coke, bitch'];
-    self.say('Pick up some: '+bottles[Math.floor(Math.random(0,bottles.length))]);
+    self.say('Pick up some: '+bottles[Math.round(Math.random(0,bottles.length))]);
   }
   this.commands.bottle.what = what;
 
