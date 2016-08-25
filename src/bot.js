@@ -231,5 +231,5 @@ bot.prototype = {
 module.exports = bot;
 
 process.on('uncaughtException', function(err) {
-  logger.error(err);
+  logger.error(err.stack);
 });
