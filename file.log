@@ -69,3 +69,13 @@
 15:56:19.09 <LOG> Season scores updated quietly (in scores.js:():281)
 [36m15:56:19.09 <DEBUG> Saving Data to S3 (in commands.js:(Object.commands.saveTeamShitData):96)[39m
 [36m15:56:19.48 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):110)[39m
+17:10:12.87 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):106)
+[34m17:10:12.87 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):50)[39m
+[34m17:10:13.21 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):57)[39m
+[34m17:10:15.21 <DEBUG> League Loaded (in bot.js:(onLoad):110)[39m
+17:10:15.22 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):92)
+17:10:15.22 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[34m17:10:15.23 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+17:10:16.43 <LOG> Season scores updated quietly (in scores.js:():281)
+[34m17:10:16.43 <DEBUG> Saving Data to S3 (in commands.js:(Object.commands.saveTeamShitData):96)[39m
+[34m17:10:16.80 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):110)[39m

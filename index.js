@@ -5,9 +5,6 @@ var config = require('./src/config.js'),
 
 var bot = new Bot(config);
 
-// bot.boot();
-
-
 var router = new director.http.Router({
   '/' : {
     post: bot.onGroupMePost,
