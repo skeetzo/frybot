@@ -1,0 +1,81 @@
+05:16:08.52 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):106)
+[34m05:16:08.52 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):50)[39m
+[34m05:16:08.84 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):57)[39m
+[34m05:16:10.84 <DEBUG> League Loaded (in bot.js:(onLoad):110)[39m
+05:16:10.85 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):92)
+05:16:10.85 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[34m05:16:10.87 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+[33m05:16:10.87 <WARN> Google OAuth Error: Error: ENOENT: no such file or directory, open './lib/secret.pem' (in scores.js:(sheetReady):237)[39m
+[1m[31m05:16:10.87 <ERROR> Google OAuth Error: Error: ENOENT: no such file or directory, open './lib/secret.pem' (in bot.js:(process.<anonymous>):234)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:234:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+[34m05:16:15.87 <DEBUG> retrying sheet load (in scores.js:(null._onTimeout):239)[39m
+05:16:15.87 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[33m05:16:15.87 <WARN> Google OAuth Error: Error: ENOENT: no such file or directory, open './lib/secret.pem' (in scores.js:(sheetReady):237)[39m
+[1m[31m05:16:15.87 <ERROR> Google OAuth Error: Error: ENOENT: no such file or directory, open './lib/secret.pem' (in bot.js:(process.<anonymous>):234)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:234:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+[34m05:16:20.88 <DEBUG> retrying sheet load (in scores.js:(null._onTimeout):239)[39m
+05:16:20.88 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[33m05:16:20.88 <WARN> Google OAuth Error: Error: ENOENT: no such file or directory, open './lib/secret.pem' (in scores.js:(sheetReady):237)[39m
+[1m[31m05:16:20.88 <ERROR> Google OAuth Error: Error: ENOENT: no such file or directory, open './lib/secret.pem' (in bot.js:(process.<anonymous>):234)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:234:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+[34m05:16:25.88 <DEBUG> retrying sheet load (in scores.js:(null._onTimeout):239)[39m
+05:16:25.88 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[33m05:16:25.88 <WARN> Google OAuth Error: Error: ENOENT: no such file or directory, open './lib/secret.pem' (in scores.js:(sheetReady):237)[39m
+[1m[31m05:16:25.88 <ERROR> Google OAuth Error: Error: ENOENT: no such file or directory, open './lib/secret.pem' (in bot.js:(process.<anonymous>):234)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:234:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+[34m05:16:30.89 <DEBUG> retrying sheet load (in scores.js:(null._onTimeout):239)[39m
+05:16:30.89 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[33m05:16:30.89 <WARN> Google OAuth Error: Error: ENOENT: no such file or directory, open './lib/secret.pem' (in scores.js:(sheetReady):237)[39m
+[1m[31m05:16:30.89 <ERROR> Google OAuth Error: Error: ENOENT: no such file or directory, open './lib/secret.pem' (in bot.js:(process.<anonymous>):234)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:234:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+05:16:55.22 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):106)
+[34m05:16:55.22 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):50)[39m
+[34m05:16:55.50 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):57)[39m
+[34m05:16:57.50 <DEBUG> League Loaded (in bot.js:(onLoad):110)[39m
+05:16:57.51 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):92)
+05:16:57.51 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[34m05:16:57.53 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+05:16:58.80 <LOG> Season scores updated quietly (in scores.js:():281)
+[34m05:16:58.80 <DEBUG> Saving Data to S3 (in commands.js:(Object.commands.saveTeamShitData):96)[39m
+[34m05:16:59.18 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):110)[39m
+05:44:51.03 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):106)
+[34m05:44:51.04 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):50)[39m
+[1m[31m05:44:51.08 <ERROR> { [Error: listen EACCES 0.0.0.0:977.8550988994539]
+  code: 'EACCES',
+  errno: 'EACCES',
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 977.8550988994539 } (in bot.js:(process.<anonymous>):234)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:234:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+[34m05:44:51.32 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):57)[39m
+[34m05:44:53.33 <DEBUG> League Loaded (in bot.js:(onLoad):110)[39m
+05:44:53.33 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):92)
+05:44:53.33 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[34m05:44:53.36 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+05:44:55.55 <LOG> Season scores updated quietly (in scores.js:():281)
+[34m05:44:55.55 <DEBUG> Saving Data to S3 (in commands.js:(Object.commands.saveTeamShitData):96)[39m
+[34m05:44:55.89 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):110)[39m
