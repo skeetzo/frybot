@@ -61,7 +61,7 @@ module.exports = function nicofacts(argument, message, sender, callback) {
     clearInterval(this.nicoFactTimer);
     this.nicoFactPrimed = false;
   }
-  this.commands.FUCKOFF = FUCKOFF;
+  this.commands.nicofacts.FUCKOFF = FUCKOFF;
 
   function YES() {
     if (this.nicoFactCounter<=0) {
@@ -71,17 +71,17 @@ module.exports = function nicofacts(argument, message, sender, callback) {
     else
       self.say('You are all already subscribed to Nico Facts, bitchass '+sender+'...');
   }
-  this.commands.YES = YES;
+  this.commands.nicofacts.YES = YES;
 
   function NO() {
     self.say('Nico Fact #846: No one tells Nico Facts when to stop.');
   }
-  this.commands.NO = NO;
+  this.commands.nicofacts.NO = NO;
 
   function START() {
     self.say('Nico Fact #847: No one tells Nico Facts what to do.');
   }
-  this.commands.START = START;
+  this.commands.nicofacts.START = START;
 
   if (argument)
     this.commands.nicofacts[argument]();

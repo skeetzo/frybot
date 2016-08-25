@@ -17,7 +17,7 @@ module.exports = function season(argument, message, sender, modifier) {
     self.commands.bottle('duty');
     self.commands.scores('lvp');
    }
-   this.commands.pregame = pregame;
+  this.commands.season.pregame = pregame;
 
   if (argument)
     this.commands.season[argument]();

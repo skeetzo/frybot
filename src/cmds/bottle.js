@@ -43,7 +43,7 @@ module.exports = function bottle(argument, message, sender, modifier) {
   function duty() {
     self.say('Bottle Duty: '+self.bottleBitches[0]);
   }
-  this.bottle.duty = duty;
+  this.commands.bottle.duty = duty;
 
   /*
     moves bottle duty forward
@@ -54,7 +54,7 @@ module.exports = function bottle(argument, message, sender, modifier) {
     self.saveTeamShitData();
     self.logger.debug('bottle duty updated');
   }
-  this.bottle.next = next;
+  this.commands.bottle.next = next;
 
   /*
     randomly decides a liquor
@@ -63,7 +63,7 @@ module.exports = function bottle(argument, message, sender, modifier) {
     var bottles = ['malibu bitchass rum','women\'s vodka','jaeger and redbull','jaeger and redbull','jaeger and redbull','jack and coke','jack and coke','jack and coke, bitch'];
     self.say('Pick up some: '+bottles[Math.random(0,bottles.length)]);
   }
-  this.bottle.what = what;
+  this.commands.bottle.what = what;
 
   if (argument)
     this.commands.bottle[argument]();

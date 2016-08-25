@@ -9,7 +9,7 @@ module.exports = function fuck(argument, message, sender, modifier) {
     }
     self.say('Yeah fuck you '+message+'!');
   }
-  this.commands.fuck.off = you;
+  this.commands.fuck.you = you;
 
   function me() {
     if (!message||(message!='Frybot'&&message!='frybot'))
@@ -17,7 +17,7 @@ module.exports = function fuck(argument, message, sender, modifier) {
     else
       self.say('Yeah fuck him '+message+'!');
   }
-  this.commands.fuck.off = me;
+  this.commands.fuck.me = me;
 
   function off() {
     if (message==='Frybot'||message==='frybot')
