@@ -1,4 +1,5 @@
 var config = require('./src/config.js'),
+    bodyParser = require('body-parser'),
     Bot = require('./src/bot.js'),
     express = require('express'),
     app = express(),
@@ -6,17 +7,26 @@ var config = require('./src/config.js'),
 
 var bot = new Bot(config);
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use(function (req, res) {
+  console.log("Received a chat message:")
+  console.log(req.body)
+  bot.onGroupMePost.call(bot, req, res);
+  // if (req.body.name != BOT_NAME) 
+});
 
 app.get('/', function (req, res) {
   ping.call(this);
 });
 
-app.post('/', function (req, res) {
-  // res.send('Hello World!');
-  console.log('stuff is about to happen yo');
-  bot.onGroupMePost(req, res);
+// app.post('/', function (req, res) {
+//   // res.send('Hello World!');
+//   console.log('stuff is about to happen yo');
+//   bot.onGroupMePost(req, res);
 
-});
+// });
 
 
 var port = Number(process.env.PORT || config.port);
