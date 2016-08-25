@@ -14,42 +14,8 @@ catch (err) {
 
 
 // Commands, Arguments, & Regex 
-var commands = [
-  'fuck',
-  'coolguy',
-  'scores',
-  'suck',
-  'bottle',
-  'nicofacts',
-  'season'
-];
-var arguments = [
-  "add",
-  "undo",
-  "my",
-  "his",
-  "duty",
-  "who",
-  "what",
-  "mvp",
-  "lvp",
-  "callouts",
-  "of",
-  "update",
-  "FUCKOFF",
-  "YES",
-  "NO",
-  "START",
-  "next",
-  "you",
-  "me",
-  "off",
-  "fresh",
-  "pregame"
-];
-var commandsRegex = "(\/"+commands.join("|\/")+")",
-    argumentsRegex = "("+arguments.join("|")+")";
-// console.log('regex: '+commandsRegex);
+var commandsRegex = "\/[a-z]*",
+    argumentsRegex = "-[a-z]*";
 config.commandsRegex = new RegExp(commandsRegex, "i");
 config.argumentsRegex = new RegExp(argumentsRegex, "i");
 
