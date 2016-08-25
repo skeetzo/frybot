@@ -125,10 +125,10 @@ bot.prototype = {
     // console.log(req);
     // console.log(JSON.stringify(res));
     if (!req) return console.log('nothing');
-    if (!req.text) return console.log('nothing2');
+    if (!req.body.text) return console.log('nothing2');
     console.log('stuff is still happening');
     // var request = JSON.parse(req.chunks[0]);
-    var request = req;
+    var request = req.body;
     if (!request.text || !request.name || !request.id) return;
     logger.log(request.name+": "+request.text);
     if (request.name===self.config.botName) return logger.debug('Not talking to myself...');
