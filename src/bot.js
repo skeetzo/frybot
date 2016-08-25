@@ -121,6 +121,7 @@ bot.prototype = {
   */
   onGroupMePost : function(req, res) {
     var self = this;
+    console.log('stuff is happening');
     if (req == undefined || req == null) return;
     if (req.chunks == undefined || req.chunks == null) return;
     var request = JSON.parse(req.chunks[0]);

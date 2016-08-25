@@ -8,12 +8,13 @@ var bot = new Bot(config);
 
 
 app.get('/', function (req, res) {
-  ping();
+  ping.call(this);
 });
 
 app.post('/', function (req, res) {
   // res.send('Hello World!');
-  bot.onGroupMePost(req,res);
+  console.log('stuff is about to happen yo');
+  bot.onGroupMePost();
 
 });
 
