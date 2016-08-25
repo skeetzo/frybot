@@ -256,6 +256,8 @@ Player.prototype = {
     this.pointsGiven = 0;
     this.matchesWon = 0;
     this.matchesLost = 0;
+    this.skunks = 0;
+    this.skunked = 0;
     this.mvp = (this.pointsEarned/(this.matchesWon+this.matchesLost));
     this.skunkCheck();
   },

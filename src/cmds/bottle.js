@@ -65,7 +65,7 @@ module.exports = function bottle(argument, message, sender, modifier) {
   }
   this.commands.bottle.what = what;
 
-  if (argument)
+  if (this.commands.bottle[argument])
     this.commands.bottle[argument]();
   else
     this.say('Wtf about a bottle?');
