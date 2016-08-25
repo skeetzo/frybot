@@ -25,7 +25,7 @@ module.exports = function suck(argument, message, sender, modifier) {
   }
   this.commands.suck.his = his;
 
-  if (argument)
+  if (this.commands.suck[argument])
     this.commands.suck[argument]();
   else
     self.say('What about sucking '+sender+'\'s '+message+'?');

@@ -27,7 +27,7 @@ module.exports = function fuck(argument, message, sender, modifier) {
   }
   this.commands.fuck.off = off;
 
-  if (argument)
+  if (this.commands.fuck[argument])
     this.commands.fuck[argument]();
   else
     self.say('Fuck off '+sender+'?');

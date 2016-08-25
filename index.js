@@ -11,30 +11,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-  ping(res);
+  res.writeHead(200);
+  res.end("Hi, I'm "+config.botName+" and I totally work right now.");
 });
 
 app.post('/', function (req, res) {
   bot.onGroupMePost.call(bot, req, res);
 });
 
-
 var port = Number(process.env.PORT || config.port);
-
 app.listen(port, function () {
   console.log('App listening on port %s!',port);
 });
-
-
-function ping(res) {
-  res.writeHead(200);
-  res.end("Hi, I'm "+config.botName+" and I totally work right now.");
-  // bot.ping();
-}
-
-// process.on('uncaughtException', function(err) {
-//   console.log('Crashed: '+err);
-// })
 
 // Sleep Delay
 setInterval(function() {

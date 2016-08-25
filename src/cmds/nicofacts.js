@@ -83,7 +83,7 @@ module.exports = function nicofacts(argument, message, sender, callback) {
   }
   this.commands.nicofacts.START = START;
 
-  if (argument)
+  if (this.commands.nicofacts[argument])
     this.commands.nicofacts[argument]();
   else if (!argument&&!this.nicoFactPrimed) {
     this.nicoFactPrimed = true;

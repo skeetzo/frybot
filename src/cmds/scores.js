@@ -287,7 +287,7 @@ module.exports = function scores(argument, message, sender, modifier) {
   }
   this.commands.scores.update = update;
 
-  if (argument)
+  if (this.commands.scores[argument])
     this.commands.scores[argument]();
   else
     this.say('What about the scores '+sender+'?');

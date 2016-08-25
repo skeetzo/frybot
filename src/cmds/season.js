@@ -19,7 +19,7 @@ module.exports = function season(argument, message, sender, modifier) {
    }
   this.commands.season.pregame = pregame;
 
-  if (argument)
+  if (this.commands.season[argument])
     this.commands.season[argument]();
   else
     self.say('Season?');
