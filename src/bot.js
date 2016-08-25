@@ -119,11 +119,11 @@ bot.prototype = {
   * Called from index.js upon groupme posts
   * Runs activate(request) upon successful match
   */
-  onGroupMePost : function() {
+  onGroupMePost : function(req, res) {
     var self = this;
-    if (self.req == undefined || self.req == null) return;
-    if (self.req.chunks == undefined || self.req.chunks == null) return;
-    var request = JSON.parse(self.req.chunks[0]);
+    if (req == undefined || req == null) return;
+    if (req.chunks == undefined || req.chunks == null) return;
+    var request = JSON.parse(req.chunks[0]);
     if (!request.text || !request.name || !request.id) return;
     logger.log(request.name+": "+request.text);
     if (request.name===self.config.botName) return logger.debug('Not talking to myself...');
@@ -142,8 +142,8 @@ bot.prototype = {
       // console.log('this: '+self.toString());
       self.activate.call(self,request);
     }
-    self.res.writeHead(200);
-    self.res.end();
+    res.writeHead(200);
+    res.end();
   },
 
   /**
