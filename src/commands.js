@@ -8,7 +8,6 @@ var _ = require('underscore'),
     moment = require ('moment'),
     Spreadsheet = require('edit-google-spreadsheet');
 
-var teamshitData = {};
 
 var lastMatchNum_ = 0;
 
@@ -49,7 +48,7 @@ module.exports.load = function(callback) {
   if (!self.config.localLoad)
     self.s3.getObject({Bucket:self.config.S3_BUCKET,Key:self.config.AWS_SECRET_KEY}, function(err, data) {
       if (err) return callback(err);
-      teamshitData = JSON.parse(data.Body.toString()).teamshitData;
+      self.teamshitData = JSON.parse(data.Body.toString()).teamshitData;
       seasons = JSON.parse(data.Body.toString()).seasons;
       // console.log('team shit: '+JSON.stringify(teamshitData));
       self.logger.debug('Team Shit Loaded: s3');
@@ -58,7 +57,7 @@ module.exports.load = function(callback) {
   else {
     fs.readFile(self.config.localTeamShitPath, function read(err, data) {
       if (err) return callback(new Error('Local teamshit Not Found'));
-      teamshitData = JSON.parse(data);
+      self.teamshitData = JSON.parse(data);
       self.logger.debug('Team Shit Loaded: local');
     });
     fs.readFile(self.config.localSeasonsPath, function read(err, data) {
@@ -69,7 +68,7 @@ module.exports.load = function(callback) {
     });
   }
   function onLoad() {
-    self.bottleBitches = teamshitData.bottleBitches;
+    self.bottleBitches = self.teamshitData.bottleBitches;
     self.league = new League(seasons, function(err) {
       if (err) return callback(err);
       setTimeout(function slightDelay() {
@@ -91,13 +90,13 @@ module.exports.nicofacts = require('./cmds/nicofacts.js');
 module.exports.saveTeamShitData = function() {
   var self = this;
   if (!self.config.saving) return console.debug("Not saving.");
-  teamshitData.bottleBitches = this.bottleBitches || teamshitData.bottleBitches || [];
+  self.teamshitData.bottleBitches = this.bottleBitches || self.teamshitData.bottleBitches || [];
   
   if (!self.config.localSave) {
     self.logger.debug('Saving Data to S3');
     var data = {
           seasons: this.league.seasons,
-          teamshitData: teamshitData
+          teamshitData: self.teamshitData
         },
         s3_params = {
           Bucket: self.config.S3_BUCKET,
@@ -113,7 +112,7 @@ module.exports.saveTeamShitData = function() {
   }
   else {
     self.logger.debug('Saving Team Shit Locally');
-    fs.writeFile(self.config.localTeamShitPath, JSON.stringify(teamshitData,null,4), function (err) {
+    fs.writeFile(self.config.localTeamShitPath, JSON.stringify(self.teamshitData,null,4), function (err) {
       if (err) return self.logger.debug(err);
       self.logger.debug('Team Shit (local) Saved');
     });

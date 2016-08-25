@@ -17,7 +17,7 @@ module.exports = function bottle(argument, message, sender, modifier) {
   // load bitches
   // loads from config.bottleBitches if supplied, will overwrite existing
   if (!self.bottleBitches||self.bottleBitches.length<=0) {
-    self.bottleBitches = teamshitData.bottleBitches || [];
+    self.bottleBitches = self.teamshitData.bottleBitches || [];
     if (self.bottleBitches.length<=0) {
       self.logger.debug('Populating Bottle Duty');
       var players = self.league.getCurrentSeason().players;
@@ -33,7 +33,7 @@ module.exports = function bottle(argument, message, sender, modifier) {
     }
     else {
       self.logger.debug('Bottle Duty data found.');
-      self.bottleBitches = teamshitData.bottleBitches;
+      self.bottleBitches = self.teamshitData.bottleBitches;
     }
   }
 
@@ -49,8 +49,8 @@ module.exports = function bottle(argument, message, sender, modifier) {
     moves bottle duty forward
   */
   function next() {
-    var temp = teamshitData.bottleBitches.shift();
-    teamshitData.bottleBitches.push(temp);
+    var temp = self.teamshitData.bottleBitches.shift();
+    self.teamshitData.bottleBitches.push(temp);
     self.saveTeamShitData();
     self.logger.debug('bottle duty updated');
   }
