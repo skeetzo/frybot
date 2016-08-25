@@ -62,6 +62,13 @@ module.exports = function bottle(argument, message, sender, modifier) {
   function random() {
     var players = self.league.getCurrentSeason().players,
         player = players[Math.round(Math.random(0,players.length))];
+
+        console.log(Math.random(0,players.length));
+        console.log(Math.round(Math.random(0,players.length)));
+        console.log(Math.floor(Math.random(0,players.length)));
+
+
+
     self.say('Bottle Duty: '+player.name);
   }
   this.commands.bottle.random = random;
