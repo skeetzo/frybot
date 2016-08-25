@@ -124,6 +124,7 @@ bot.prototype = {
     console.log('stuff is happening');
     if (req == undefined || req == null) return;
     if (req.chunks == undefined || req.chunks == null) return;
+    console.log('stuff is still happening');
     var request = JSON.parse(req.chunks[0]);
     if (!request.text || !request.name || !request.id) return;
     logger.log(request.name+": "+request.text);

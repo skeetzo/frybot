@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
   // res.send('Hello World!');
   console.log('stuff is about to happen yo');
-  bot.onGroupMePost();
+  bot.onGroupMePost(req, res);
 
 });
 
