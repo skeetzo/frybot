@@ -63,6 +63,9 @@ config.saving = true;
 config.saveOnLoad = false;
 config.localLoad = false;
 config.localSave = false;
+config.localTeamShitPath = './dev/teamshit.json';
+config.localSeasonsPath = './dev/seasons.json';
+
 
 // Misc
 // if (config.debugging)

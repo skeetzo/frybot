@@ -88,8 +88,8 @@ bot.prototype = {
         request.message = message;
     // console.log('command: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
     if (typeof commands[command] === "function" ) {
-      this.logger.log('Activating: %s[%s] of %s: \'%s\'',command.blue,argument.red,sender.yellow,message);
-      if (request.id) likeMessage_(request.id);
+      this.logger.log('Activating: %s[%s] of %s: \'%s\'',command.green,argument.cyan,sender.yellow,message);
+      if (request.id) this.commands.likeMessage(request.id);
       this.commands[command].call(this,argument,message,sender);
     }
     else
@@ -108,7 +108,7 @@ bot.prototype = {
       // loads current league data then syncs with ItIsWhatItIs sheet stats
       self.logger.debug('League Loaded');
       // Initial scores update on boot
-      self.commands.loadModules.call(self);
+      // self.commands.loadModules.call(self);
       self.activate.call(self,{command: "scores",argument:"boot",name:self.config.botName});
       if (self.config.cronjobbing) CronJobs.start.call(self);
       if (self.config.testing) setTimeout(function() {self.test()},20000);

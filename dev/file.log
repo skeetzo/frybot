@@ -134,3 +134,36 @@ Call Stack:
 06:25:48.07 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):91)
 06:25:48.07 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
 [34m06:25:48.09 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+07:46:49.68 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):105)
+[34m07:46:49.68 <DEBUG> Loading Team Shit (in commands.js:(Object.module.exports.load):40)[39m
+[34m07:46:50.05 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):47)[39m
+[34m07:46:52.06 <DEBUG> League Loaded (in bot.js:(onLoad):109)[39m
+[1m[31m07:46:52.06 <ERROR> TypeError: Cannot read property 'call' of undefined
+    at onLoad (/home/schizo/Projects/frybot/src/bot.js:111:32)
+    at slightDelay [as _onTimeout] (/home/schizo/Projects/frybot/src/commands.js:68:11)
+    at Timer.listOnTimeout (timers.js:92:15) (in bot.js:(process.<anonymous>):230)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:230:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+07:47:03.36 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):105)
+[34m07:47:03.37 <DEBUG> Loading Team Shit (in commands.js:(Object.module.exports.load):40)[39m
+[34m07:47:03.63 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):47)[39m
+[34m07:47:05.63 <DEBUG> League Loaded (in bot.js:(onLoad):109)[39m
+07:47:05.63 <LOG> Activating: [34mscores[39m[[31mboot[39m] of [33mNaivi[39m: '' (in bot.js:(Object.bot.activate):91)
+07:47:05.64 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[34m07:47:05.66 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+07:47:06.92 <LOG> Season scores updated quietly (in scores.js:():281)
+[34m07:47:06.92 <DEBUG> Saving Data to S3 (in commands.js:(Object.module.exports.saveTeamShitData):86)[39m
+[34m07:47:07.29 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):100)[39m
+07:56:00.20 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):105)
+[34m07:56:00.20 <DEBUG> Loading Team Shit (in commands.js:(Object.module.exports.load):48)[39m
+[34m07:56:00.56 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):55)[39m
+[34m07:56:02.57 <DEBUG> League Loaded (in bot.js:(onLoad):109)[39m
+07:56:02.57 <LOG> Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: '' (in bot.js:(Object.bot.activate):91)
+07:56:02.57 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[34m07:56:02.59 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+07:56:03.64 <LOG> Season scores updated quietly (in scores.js:():281)
+[34m07:56:03.64 <DEBUG> Saving Data to S3 (in commands.js:(Object.module.exports.saveTeamShitData):97)[39m
+[34m07:56:04.03 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):111)[39m
