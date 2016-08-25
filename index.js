@@ -1,33 +1,28 @@
 var config = require('./src/config.js'),
     Bot = require('./src/bot.js'),
-    director = require('director'),
-    http = require('http');
+    express = require('express'),
+    app = express();
 
 var bot = new Bot(config);
 
-var router = new director.http.Router({
-  '/' : {
-    post: function() {
-      bot.onGroupMePost.call(bot)
-    },
-    get: ping
-  }
+
+app.get('/', function (req, res) {
+  ping();
 });
 
-var server = http.createServer(function (req, res) {
-  req.chunks = [];
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-  });
+app.post('/', function (req, res) {
+  // res.send('Hello World!');
+  bot.onGroupMePost.call(this);
 
-  router.dispatch(req, res, function(err) {
-    res.writeHead(err.status, {"Content-Type": "text/plain"});
-    res.end(err.message);
-  });
 });
+
 
 var port = Number(process.env.PORT || config.port);
-server.listen(port);
+
+app.listen(port, function () {
+  console.log('App listening on port %s!',port);
+});
+
 
 function ping() {
   this.res.writeHead(200);
