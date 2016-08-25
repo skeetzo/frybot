@@ -55,7 +55,7 @@ config.christmasJob = false;
 config.christmasJobTime = '00 00 09 25 11 *';
 config.newSeasonJob = false;
 config.newSeasonJobTime = '00 05 21 * * 3';
-config.pregameJob = true;
+config.pregameJob = false;
 config.pregameJobTime = '00 00 12 * * 2';
 
 
