@@ -10,23 +10,12 @@ var bot = new Bot(config);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// app.use(function (req, res) {
-//   console.log("Received a chat message:")
-//   console.log(req.body)
-//   bot.onGroupMePost.call(bot, req, res);
-//   // if (req.body.name != BOT_NAME) 
-// });
-
 app.get('/', function (req, res) {
-  ping.call(this);
+  ping(res);
 });
 
 app.post('/', function (req, res) {
-  // res.send('Hello World!');
-  console.log('stuff is about to happen yo');
-  console.log(req);
   bot.onGroupMePost.call(bot, req, res);
-
 });
 
 
@@ -37,9 +26,9 @@ app.listen(port, function () {
 });
 
 
-function ping() {
-  this.res.writeHead(200);
-  this.res.end("Hi, I'm "+config.botName+" and I totally work right now.");
+function ping(res) {
+  res.writeHead(200);
+  res.end("Hi, I'm "+config.botName+" and I totally work right now.");
   // bot.ping();
 }
 

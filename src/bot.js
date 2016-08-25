@@ -88,7 +88,7 @@ bot.prototype = {
         request.message = message;
     // console.log('command: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
     if (typeof commands[command] === "function" ) {
-      this.logger.log('Activating: %s[%s] of %s: \'%s\'',command,argument,sender,message);
+      this.logger.log('Activating: %s[%s] of %s: \'%s\'',command.blue,argument.red,sender.yellow,message);
       if (request.id) likeMessage_(request.id);
       this.commands[command].call(this,argument,message,sender);
     }
@@ -121,17 +121,10 @@ bot.prototype = {
   */
   onGroupMePost : function(req, res) {
     var self = this;
-    console.log('stuff is happening');
-    // console.log(req);
-    // console.log(JSON.stringify(res));
-    if (!req) return console.log('nothing');
-    if (!req.body.text) return console.log('nothing2');
-    console.log('stuff is still happening');
-    // var request = JSON.parse(req.chunks[0]);
+    if (!req||!req.body) return self.logger.warn('Missing GroupMe message data');
     var request = req.body;
-    if (!request.text || !request.name || !request.id) return;
-    logger.log(request.name+": "+request.text);
     if (request.name===self.config.botName) return logger.debug('Not talking to myself...');
+    logger.log(request.name.yellow+": "+request.text);
     if (request.text.search(self.config.commandsRegex)!=-1) {
       var message = request.text || '',
           command = message.match(self.config.commandsRegex)[0],
@@ -144,7 +137,6 @@ bot.prototype = {
       request.command = command,
       request.argument = argument,
       request.text = message;
-      // console.log('this: '+self.toString());
       self.activate.call(self,request);
     }
     res.writeHead(200);
