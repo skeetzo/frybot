@@ -11,11 +11,8 @@ app.get('/', function (req, res) {
   ping();
 });
 
-app.post('/', function (req, res) {
-  // res.send('Hello World!');
-  bot.onGroupMePost.call(this);
 
-});
+app.post('/', bot.onGroupMePost);
 
 
 var port = Number(process.env.PORT || config.port);
