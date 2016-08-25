@@ -15,7 +15,7 @@ app.post('/', function (req, res) {
   // res.send('Hello World!');
   bot.req = req;
   bot.res = res;
-  bot.onGroupMePost();
+  bot.onGroupMePost.call(bot);
 
 });
 
