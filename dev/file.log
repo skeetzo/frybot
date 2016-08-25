@@ -86,3 +86,28 @@ Call Stack:
 06:11:13.100 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):91)
 06:11:13.100 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
 [34m06:11:14.02 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+06:13:53.42 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):105)
+[34m06:13:53.43 <DEBUG> Loading Team Shit (in commands.js:(Object.commands.load):50)[39m
+[1m[31m06:13:53.48 <ERROR> Error: listen EACCES 0.0.0.0:973.27018273063
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1224:19)
+    at listen (net.js:1273:10)
+    at Server.listen (net.js:1369:5)
+    at Object.<anonymous> (/home/schizo/Projects/frybot/index.js:30:8)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12) (in bot.js:(process.<anonymous>):233)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:233:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+[34m06:13:53.85 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):57)[39m
+[34m06:13:55.86 <DEBUG> League Loaded (in bot.js:(onLoad):109)[39m
+06:13:55.86 <LOG> Activating: scores[boot] of Naivi: '' (in bot.js:(Object.bot.activate):91)
+06:13:55.86 <LOG> Updating Players from Scoresheet (in scores.js:(update):228)
+[34m06:13:55.88 <DEBUG> started cronjob - Pregame (in cronjobs.js:():112)[39m
+06:13:56.75 <LOG> Season scores updated quietly (in scores.js:():281)
+[34m06:13:56.75 <DEBUG> Saving Data to S3 (in commands.js:(Object.commands.saveTeamShitData):96)[39m
