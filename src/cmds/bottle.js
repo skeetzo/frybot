@@ -13,7 +13,6 @@ var _ = require('underscore');
 */
 module.exports = function bottle(argument, message, sender, modifier) {
   var self = this;
-  // config.bottleBitches
 
   // load bitches
   // loads from config.bottleBitches if supplied, will overwrite existing
@@ -42,7 +41,7 @@ module.exports = function bottle(argument, message, sender, modifier) {
     who's on duty
   */
   function duty() {
-    callback(null,'Bottle Duty: '+self.bottleBitches[0]);
+    self.say('Bottle Duty: '+self.bottleBitches[0]);
   }
   this.bottle.duty = duty;
 
@@ -62,7 +61,7 @@ module.exports = function bottle(argument, message, sender, modifier) {
   */
   function what() {
     var bottles = ['malibu bitchass rum','women\'s vodka','jaeger and redbull','jaeger and redbull','jaeger and redbull','jack and coke','jack and coke','jack and coke, bitch'];
-    callback(null,'Pick up some: '+bottles[Math.random(0,bottles.length)]);
+    self.say('Pick up some: '+bottles[Math.random(0,bottles.length)]);
   }
   this.bottle.what = what;
 
