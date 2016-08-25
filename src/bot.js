@@ -32,11 +32,11 @@ var colors = require("colors"),
                       },
                       function (data) {
                           if (process.NODE_ENV == 'production') return;        
-                          fs.appendFile('./file.log', data.output + '\n');
+                          fs.appendFile('./dev/file.log', data.output + '\n');
                       },
                       function (data) {
                           if (process.NODE_ENV != 'production') return;        
-                          var stream = fs.createWriteStream("./stream.log", {
+                          var stream = fs.createWriteStream("./dev/stream.log", {
                               flags: "a",
                               encoding: "utf8",
                               mode: 0666
