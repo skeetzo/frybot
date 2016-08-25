@@ -187,7 +187,7 @@ bot.prototype = {
     self.thoughts.push(thought);
     clearInterval(self.postman);
     self.postman = setInterval(function() {
-      self.postMessage(self.thoughts.shift());
+      self.postGroupMeMessage(self.thoughts.shift());
       if (self.thoughts.length===0) clearInterval(self.postman);
     }, self.config.responseTime);
   },
