@@ -29,7 +29,7 @@ module.exports = function bottle(argument, message, sender, modifier) {
         self.bottleBitches.push(player.name);
       });
       self.bottleBitches = shuffle(self.bottleBitches);
-      self.commands.saveTeamShitData();
+      self.commands.saveTeamShitData.call(self);
     }
     else {
       self.logger.debug('Bottle Duty data found.');
@@ -51,7 +51,7 @@ module.exports = function bottle(argument, message, sender, modifier) {
   function next() {
     var temp = self.teamshitData.bottleBitches.shift();
     self.teamshitData.bottleBitches.push(temp);
-    self.commands.saveTeamShitData();
+    self.commands.saveTeamShitData.call(self);
     self.logger.debug('bottle duty updated');
   }
   this.commands.bottle.next = next;
