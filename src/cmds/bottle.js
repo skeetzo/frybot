@@ -57,11 +57,21 @@ module.exports = function bottle(argument, message, sender, modifier) {
   this.commands.bottle.next = next;
 
   /*
+    random player
+  */
+  function random() {
+    var players = self.league.getCurrentSeason().players,
+        player = players[Math.floor(Math.random(0,players.length))];
+    self.say('Bottle Duty: '+player);
+  }
+  this.commands.bottle.random = random;
+
+  /*
     randomly decides a liquor
   */
   function what() {
     var bottles = ['malibu bitchass rum','women\'s vodka','jaeger and redbull','jaeger and redbull','jaeger and redbull','jack and coke','jack and coke','jack and coke, bitch'];
-    self.say('Pick up some: '+bottles[Math.random(0,bottles.length)]);
+    self.say('Pick up some: '+bottles[Math.floor(Math.random(0,bottles.length))]);
   }
   this.commands.bottle.what = what;
 
@@ -69,4 +79,20 @@ module.exports = function bottle(argument, message, sender, modifier) {
     this.commands.bottle[argument]();
   else
     this.say('Wtf about a bottle?');
+}
+
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
 }

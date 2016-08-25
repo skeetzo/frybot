@@ -14,8 +14,9 @@ module.exports = function season(argument, message, sender, modifier) {
     var maybes = ['It\'s League night bitch niggas!','It\'s League night meatbags!'];
     self.say(maybes[Math.floor(Math.random()*maybes.length)]);
     self.say('Playing @ '+self.league.getCurrentSeason().getTodaysMatchup().location);
-    self.commands.bottle.call(self,'duty',message,sender);
-    self.commands.scores.call(self,'lvp',message,sender);
+    self.commands.bottle.call(self,'next');
+    self.commands.bottle.call(self,'duty');
+    self.commands.scores.call(self,'lvp');
    }
   this.commands.season.pregame = pregame;
 
