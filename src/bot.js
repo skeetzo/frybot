@@ -89,7 +89,7 @@ bot.prototype = {
     // console.log('command: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
     if (typeof commands[command] === "function" ) {
       this.logger.log('Activating: %s[%s] of %s: \'%s\'',command.green,argument.cyan,sender.yellow,message);
-      if (request.id) this.commands.likeMessage(request.id);
+      if (request.id) this.commands.likeMessage.call(this,request.id);
       this.commands[command].call(this,argument,message,sender);
     }
     else
@@ -128,7 +128,8 @@ bot.prototype = {
     if (request.text.search(self.config.commandsRegex)!=-1) {
       var message = request.text || '',
           command = message.match(self.config.commandsRegex)[0],
-          argument = message.match(self.config.argumentsRegex)[0];
+          argument = message.match(self.config.argumentsRegex);
+      if (argument.length>0) argument = argument[0];
       command = command.substring(1); // the first command match minus the slash
       if (argument!=undefined)
         message = message.substring(1+command.length+1+argument.length+1);
