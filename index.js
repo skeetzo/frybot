@@ -12,6 +12,7 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   // res.send('Hello World!');
+  console.log('this is totally doing stuff');
   bot.onGroupMePost();
 
 });
