@@ -1,7 +1,8 @@
 var config = require('./src/config.js'),
     Bot = require('./src/bot.js'),
     express = require('express'),
-    app = express();
+    app = express(),
+    http = require('http');
 
 var bot = new Bot(config);
 
@@ -12,7 +13,8 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   // res.send('Hello World!');
-  console.log('this is totally doing stuff');
+  bot.req = req;
+  bot.res = res;
   bot.onGroupMePost();
 
 });
