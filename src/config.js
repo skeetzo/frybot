@@ -15,7 +15,7 @@ catch (err) {
 
 // Commands, Arguments, & Regex 
 var commandsRegex = "\/[a-z]*",
-    argumentsRegex = "-[a-z]*";
+    argumentsRegex = "\-[a-z]*";
 config.commandsRegex = new RegExp(commandsRegex, "i");
 config.argumentsRegex = new RegExp(argumentsRegex, "i");
 
