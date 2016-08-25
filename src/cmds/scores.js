@@ -86,7 +86,7 @@ module.exports = function scores(argument, message, sender, modifier) {
         }
         spreadsheet.send(function(err) {
           if(err) self.logger.log(err);
-            callback(null,'Scores added!');
+            self.say('Scores added!');
         });
       });
     });
@@ -107,7 +107,7 @@ module.exports = function scores(argument, message, sender, modifier) {
   function callouts() {
     self.logger.log('Callouts incoming');
     _.forEach(self.league.getCurrentSeason().players,function (player) {
-      scores.streak(player);
+      streak(player);
     });
   };
   this.commands.scores.callouts = callouts;
@@ -123,7 +123,7 @@ module.exports = function scores(argument, message, sender, modifier) {
       else if (player.mvp<leastValuablePlayer.mvp)
         leastValuablePlayer = player;
     });
-    callback(null,'Current LVP: '+leastValuablePlayer.toStats());
+    self.say('Current LVP: '+leastValuablePlayer.toStats());
   }
   this.commands.scores.lvp = lvp;
 
@@ -138,7 +138,7 @@ module.exports = function scores(argument, message, sender, modifier) {
       else if (player.mvp>mostValuablePlayer.mvp)
         mostValuablePlayer = player;
     });
-    callback(null,'Current MVP: '+mostValuablePlayer.toStats());
+    self.say(self,'Current MVP: '+mostValuablePlayer.toStats());
   }
   this.commands.scores.mvp = mvp;
 
@@ -147,8 +147,8 @@ module.exports = function scores(argument, message, sender, modifier) {
   */
   function of() {
     _.forEach(self.league.getCurrentSeason().players, function (player) {
-      if (data.message.indexOf(player.name)>-1)
-        callback(null,'Stats: '+player.toStats());
+      if (message.indexOf(player.name)>-1)
+        self.say(self,'Stats: '+player.toStats());
     });
   }
   this.commands.scores.of = of;
@@ -217,7 +217,7 @@ module.exports = function scores(argument, message, sender, modifier) {
       else
         streak = 'enh';
     }
-    callback(null,player.name+' is '+streak+' with ('+mod+streakN+')');
+    self.say(self,player.name+' is '+streak+' with ('+mod+streakN+')');
   }
   this.commands.scores.streak = streak;
 
@@ -290,5 +290,5 @@ module.exports = function scores(argument, message, sender, modifier) {
   if (argument)
     this.commands.scores[argument]();
   else
-    this.say(null,'What about the scores '+sender+'?');
+    this.say('What about the scores '+sender+'?');
 }
