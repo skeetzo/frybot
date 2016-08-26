@@ -38,7 +38,7 @@ module.exports = function season(data) {
   }
   this.commands.season.newseason = newseason;
 
-  if (typeof this.commands.season[argument] === "function")
+  if (argument)
     argument();
   // if (this.commands.season[argument])
   //   this.commands.season[argument]();
