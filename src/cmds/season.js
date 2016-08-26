@@ -35,7 +35,7 @@ module.exports = function season(data) {
 
   function preseason() {
     self.say('Start getting ready bitches, the new season is starting next week!');
-    var lvp = self.commands.scores.call(self,{argument:'lvp',modifiers:{get:true}});
+    var lvp = JSON.parse(self.commands.scores.call(self,{argument:'lvp',modifiers:{get:true}}));
     self.say('Looking at you '+lvp.name+', the least valuable player.');
   }
   this.commands.season.preseason = preseason;

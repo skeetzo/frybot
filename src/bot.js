@@ -126,7 +126,7 @@ bot.prototype = {
     if (request.name===self.config.botName) return logger.debug('Not talking to myself...');
     logger.log(request.name.yellow+": "+request.text);
 
-    if (request.text.search(self.config.commandsRegex)!=-1) {
+    if (request.text.search(self.config.commandsRegex)!=-1&&request.text.charAt(0)=='/') {
       var message = request.text || '',
           command = message.match(self.config.commandsRegex)[0],
           argument = message.match(self.config.argumentsRegex);
