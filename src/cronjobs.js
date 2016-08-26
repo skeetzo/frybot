@@ -18,18 +18,6 @@ module.exports.start = function() {
   self.pregameJob.started = self.config.pregameJob;
   cronjobs.push(self.pregameJob);
 
-  self.preseasonJob = new CronJob({
-    cronTime: self.config.preseasonJobTime,
-      onTick: function() {
-        self.commands.activate.call(self,{command:'season',argument:'preseason'});
-      },
-      start: self.config.preseasonJob,
-      timeZone: 'America/Los_Angeles'
-  });
-  self.preseasonJob.label = 'preSeason';
-  self.preseasonJob.started = self.config.preseasonJob;
-  cronjobs.push(self.preseasonJob);
-
   self.afterpartyJob = new CronJob({
     cronTime: self.config.afterpartyJobTime,
       onTick: function() {
@@ -42,17 +30,17 @@ module.exports.start = function() {
   self.afterpartyJob.started = self.config.afterpartyJob;
   cronjobs.push(self.afterpartyJob);
 
-  self.newSeasonJob = new CronJob({
-    cronTime: self.config.newSeasonJobTime,   // update to January 2nd, 2016
+  self.newseasonJob = new CronJob({
+    cronTime: self.config.newseasonJobTime,   // update to January 2nd, 2016
       onTick: function() {
         self.commands.activate.call(self,{command:'season',argument:'newseason'});
       },
-      start: self.config.newSeasonJob,
+      start: self.config.newseasonJob,
       timeZone: 'America/Los_Angeles'
   });
-  self.newSeasonJob.label = 'New Season';
-  self.newSeasonJob.started = self.config.newSeasonJob;
-  cronjobs.push(self.newSeasonJob);
+  self.newseasonJob.label = 'New Season';
+  self.newseasonJob.started = self.config.newseasonJob;
+  cronjobs.push(self.newseasonJob);
 
   /**
   * Called once per season to start the new season off
