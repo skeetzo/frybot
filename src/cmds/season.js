@@ -35,9 +35,14 @@ module.exports = function season(data) {
 
   function preseason() {
     self.say('Start getting ready bitches, the new season is starting next week!');
-    var lvp = self.commands.scores.call(self,{argument:'lvp',modifiers:{get:true}});
-    console.log(JSON.stringify(lvp));
-    self.say('Looking at you '+lvp.name+', the least valuable player.');
+    var leastValuablePlayer = 'Nico';
+    _.forEach(self.league.getCurrentSeason().players, function (player) {
+      if (leastValuablePlayer=='Nico')
+        leastValuablePlayer = player;
+      else if (player.mvp<leastValuablePlayer.mvp)
+        leastValuablePlayer = player;
+    });
+    self.say('Looking at you '+leastValuablePlayer.name+', the least valuable player.');
   }
   this.commands.season.preseason = preseason;
 
