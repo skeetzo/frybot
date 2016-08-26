@@ -24,7 +24,7 @@ module.exports = function nicofacts(data) {
         // console.log("rows: "+rows);
         _.forEach(rows, function(cols) {self.nicofactsDB.push('Nico Fact #'+cols[1]+': '+cols[2]);});
         self.logger.log('Nico Facts Loaded');
-        self.commands.nicofacts(argument, message, sender);
+        self.commands.nicofacts.call(self,data);
         self.say('Uhhh what?');
       });
     });

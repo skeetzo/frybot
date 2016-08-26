@@ -20,7 +20,7 @@ config.commandsRegex = new RegExp(commandsRegex, "i");
 config.argumentsRegex = new RegExp(argumentsRegex, "i");
 
 // Debugging sets personality switch
-config.debugging = false;
+config.debugging = true;
 // config.debugging_Bot = 
 config.debugging_League = false;
 
