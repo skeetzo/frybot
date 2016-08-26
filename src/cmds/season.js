@@ -9,8 +9,7 @@ module.exports = function season(data) {
     self.say('...Syncing Game Results...');
     self.commands.scores.call(self,{argument:'update',modifiers:{quietly:true}})
     self.commands.bottle.call(self,{argument:'next'});
-    var  duty = self.commands.bottle.call(self,{argument:'duty',modifiers:{get:true}});
-    self.say('Next Week\'s Bottle Duty- '+duty.name);
+    self.commands.bottle.call(self,{argument:'duty',modifiers:{text:'Next Week\'s Bottle Duty- '}});
     // self.commands.bottle.call(self,{argument:'duty'});
   }
   this.commands.season.afterparty = afterparty;
