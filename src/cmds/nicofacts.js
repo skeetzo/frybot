@@ -1,8 +1,11 @@
 var _ = require('underscore'),
     Spreadsheet = require('edit-google-spreadsheet');
 
-module.exports = function nicofacts(argument, message, sender, callback) {
+module.exports = function nicofacts(data) {
   var self = this;
+  var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
+
+
   if (!this.nicofactsDB||this.nicofactsDB.length<=0) {
     self.logger.log('Loading Nico Facts');
     Spreadsheet.load({

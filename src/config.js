@@ -57,6 +57,8 @@ config.newSeasonJob = false;
 config.newSeasonJobTime = '00 05 21 * * 3';
 config.pregameJob = false;
 config.pregameJobTime = '00 00 12 * * 2';
+config.preseasonJob = false;
+config.preseasonJobTime = '00 00 12 17 9 *';
 
 
 // Amazon S3

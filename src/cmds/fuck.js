@@ -1,7 +1,8 @@
 
-module.exports = function fuck(argument, message, sender, modifier) {
+module.exports = function fuck(data) {
   var self = this;
-  
+  var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
+
   function you() {
     if (message==='frybot'||message==='Frybot') {
       self.say('Fuck you '+sender+'!');

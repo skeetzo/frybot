@@ -79,21 +79,21 @@ var bot = function(config) {
 
 bot.prototype = {
 
-  activate : function(request, callback) {
+  activate : function(request) {
     // console.log('commands');
     var command = request.command || '',
         argument = request.argument || '',
         message = request.text || '',
-        sender = request.name || '';
+        sender = request.name || '',
+        modifiers = request.modifiers || {};
         request.message = message;
     // console.log('command: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
     if (typeof commands[command] === "function" ) {
       this.logger.log('Activating: %s[%s] of %s: \'%s\'',command.green,argument.cyan,sender.yellow,message);
       if (request.id) this.commands.likeMessage.call(this,request.id);
-      this.commands[command].call(this,argument,message,sender);
+      this.commands[command].call(this,{argument:argument,message:message,sender:sender,modifiers:modifiers});
     }
-    else
-      callback(new Error('No command found'));
+    else self.logger.warn('No command found');
   },
 
   /*

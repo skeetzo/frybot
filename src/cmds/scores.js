@@ -12,8 +12,9 @@ var _ = require('underscore'),
 * @param {string} sender - The sender it's from
 * @param {function} callback - the function used to post messages
 */
-module.exports = function scores(argument, message, sender, modifier) {
+module.exports = function scores(data) {
   var self = this;
+  var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
 
   /*
     adds scores
@@ -123,6 +124,7 @@ module.exports = function scores(argument, message, sender, modifier) {
       else if (player.mvp<leastValuablePlayer.mvp)
         leastValuablePlayer = player;
     });
+    if (modifiers&&modifiers.get) return leastValuablePlayer;
     self.say('Current LVP: '+leastValuablePlayer.toStats());
   }
   this.commands.scores.lvp = lvp;
@@ -138,6 +140,7 @@ module.exports = function scores(argument, message, sender, modifier) {
       else if (player.mvp>mostValuablePlayer.mvp)
         mostValuablePlayer = player;
     });
+    if (modifiers&&modifiers.get) return mostValuablePlayer;
     self.say(self,'Current MVP: '+mostValuablePlayer.toStats());
   }
   this.commands.scores.mvp = mvp;

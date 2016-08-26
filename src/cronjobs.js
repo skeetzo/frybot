@@ -5,55 +5,35 @@ var _ = require('underscore'),
 module.exports.start = function() {
   var self = this;
   var cronjobs = [];
-  /**
-  * Called weekly on Tuesday at 6:00 PM before 7:30 PM league match
-  *  by index.js  
-  *  
-  * started- yes
-  */
+
   self.pregameJob = new CronJob({
     cronTime: self.config.pregameJobTime,
       onTick: function() {
-        self.commands.activate({command:'pregame'},function(err, message) {
-          if (err) return self.logger.error(err);
-          self.say(message);
-        });
+        self.commands.activate.call(self,{command:'season',argument:'pregame'});
       },
       start: self.config.pregameJob,
       timeZone: 'America/Los_Angeles'
   });
-  self.pregameJob.label = 'Pregame';
+  self.pregameJob.label = 'preGame';
   self.pregameJob.started = self.config.pregameJob;
   cronjobs.push(self.pregameJob);
 
-  /**
-  * Called weekly on Wednesday at 12:00 PM
-  *
-  * started- yes
-  */
+  self.preseasonJob = new CronJob({
+    cronTime: self.config.preseasonJobTime,
+      onTick: function() {
+        self.commands.activate.call(self,{command:'season',argument:'preseason'});
+      },
+      start: self.config.preseasonJob,
+      timeZone: 'America/Los_Angeles'
+  });
+  self.preseasonJob.label = 'preSeason';
+  self.preseasonJob.started = self.config.preseasonJob;
+  cronjobs.push(self.preseasonJob);
+
   self.afterpartyJob = new CronJob({
     cronTime: self.config.afterpartyJobTime,
       onTick: function() {
-        // messages about the nights game
-        // did we win or lose
-        // who did the best for the night
-        // who did the worst for the night
-        // commands.activate({command:'afterParty'});
-        var update = {
-          text: "quiet",
-          command: "scores",
-          argument: "update",
-          name: self.config.name
-        };
-        self.commands.activate(update,function(err, message) {
-          if (err) return self.logger.error(err);
-          self.say(message);
-        });
-        self.commands.activate({command:'bottle',argument:'next'},function(err, message) {
-          if (err) return self.logger.error(err);
-          self.say(message);
-        });
-        // scores of all the other people who played
+        self.commands.activate.call(self,{command:'season',argument:'afterParty'});
       },
       start: self.config.afterpartyJob,
       timeZone: 'America/Los_Angeles'

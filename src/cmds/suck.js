@@ -6,8 +6,9 @@
   * @param {string} message - The message it's from
   * @param {string} sender - The sender it's from
   */
-module.exports = function suck(argument, message, sender, modifier) {
+module.exports = function suck(data) {
   var self = this;
+  var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
 
   function my() {
     if (sender.indexOf('Alex')>-1)

@@ -11,8 +11,9 @@ var _ = require('underscore');
 * @param {string} sender - The sender it's from
 * @param {function} callback - the function used to post messages
 */
-module.exports = function bottle(argument, message, sender, modifier) {
+module.exports = function bottle(data) {
   var self = this;
+  var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
 
   // load bitches
   // loads from config.bottleBitches if supplied, will overwrite existing
