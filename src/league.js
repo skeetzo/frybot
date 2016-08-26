@@ -43,7 +43,7 @@ League.prototype = {
   },
   fresh: function(data, callback) {
     this.seasons.splice(0,0,new Season({label:data.label},function(err) {
-      if (err) return err;
+      if (err) return callback(err);
       return callback(null);
     }));
   }

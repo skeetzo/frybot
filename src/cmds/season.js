@@ -10,11 +10,11 @@ module.exports = function season(data) {
     self.commands.scores.call(self,{argument:'update',modifiers:{quietly:true}})
     self.commands.bottle.call(self,{argument:'next'});
     self.commands.bottle.call(self,{argument:'duty',modifiers:{text:'Next Week\'s Bottle Duty- '}});
-    // self.commands.bottle.call(self,{argument:'duty'});
   }
-  // this.commands.season.afterparty = afterparty;
+  this.commands.season.afterparty = afterparty;
 
   function fresh() {
+    self.say('Creating New Season: '+message);
     self.league.fresh({label:message},function(err) {
       if (err) return err;
       return self.say("Season Created");  
@@ -38,10 +38,8 @@ module.exports = function season(data) {
   }
   this.commands.season.newseason = newseason;
 
-  if (argument)
+  if (this.commands.season[argument])
     this.commands.season[argument]();
-  // if (this.commands.season[argument])
-  //   this.commands.season[argument]();
   else
     self.say('Season?');
 }
