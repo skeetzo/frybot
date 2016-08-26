@@ -44,7 +44,7 @@ module.exports = function season(data) {
       else if (player.mvp<leastValuablePlayer.mvp)
         leastValuablePlayer = player;
     });
-    self.say('Looking at you '+leastValuablePlayer.name+', the least valuable player.');
+    self.say('Try to suck less this time around '+leastValuablePlayer.name+' (lvp).');
   }
   this.commands.season.preseason = preseason;
 
