@@ -49,8 +49,8 @@ config.brainfart = 10000;
 
 // CronJobs\
 config.cronjobbing = true;
-config.afterpartyJob = false;
-config.afterpartyJobTime = '00 00 2 * * 3';
+config.afterpartyJob = true;
+config.afterpartyJobTime = '00 00 12 * 9-12 3';
 config.christmasJob = false;
 config.christmasJobTime = '00 00 09 25 11 *';
 config.newseasonJob = true;

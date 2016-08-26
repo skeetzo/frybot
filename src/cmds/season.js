@@ -6,8 +6,8 @@ module.exports = function season(data) {
   var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
 
   function afterparty() {
-    self.say('...Syncing Game Results...');
-    self.commands.scores.call(self,{argument:'update',modifiers:{quietly:true}})
+    self.say('...Syncing Yesterday\'s Game Results...');
+    self.commands.scores.call(self,{argument:'update'})
     self.commands.bottle.call(self,{argument:'next'});
     self.commands.bottle.call(self,{argument:'duty',modifiers:{text:'Next Week\'s Bottle Duty- '}});
   }
