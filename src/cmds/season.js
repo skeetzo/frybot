@@ -12,7 +12,7 @@ module.exports = function season(data) {
     self.commands.bottle.call(self,{argument:'duty',modifiers:{text:'Next Week\'s Bottle Duty- '}});
     // self.commands.bottle.call(self,{argument:'duty'});
   }
-  this.commands.season.afterparty = afterparty;
+  // this.commands.season.afterparty = afterparty;
 
   function fresh() {
     self.league.fresh({label:message},function(err) {
@@ -38,7 +38,7 @@ module.exports = function season(data) {
   }
   this.commands.season.newseason = newseason;
 
-  if (typeof argument === "function")
+  if (typeof this.commands.season[argument] === "function")
     argument();
   // if (this.commands.season[argument])
   //   this.commands.season[argument]();
