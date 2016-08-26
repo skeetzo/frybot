@@ -98,7 +98,9 @@ module.exports = function scores(data) {
     called when booted for any necessary score updates
   */
   function boot() {
-    update(true);
+    if (!modifiers) modifiers = {};
+    modifiers.quietly = true;
+    update();
   }
   this.commands.scores.boot = boot;
 
@@ -227,7 +229,7 @@ module.exports = function scores(data) {
   /*
     Updates from the scores available on the team spreadsheet
   */
-  function update(quietly) {
+  function update() {
     self.logger.log('Updating Players from Scoresheet');
     Spreadsheet.load({
       debug: false,
@@ -280,7 +282,7 @@ module.exports = function scores(data) {
         }
         self.league.getCurrentSeason().resetPlayers();
         self.league.getCurrentSeason().updateMatchups(matchups); // updates player data
-        if (quietly)
+        if (modifiers&&modifiers.quietly)
           self.logger.log('Season scores updated quietly');
         else
           self.say('Season scores updated');

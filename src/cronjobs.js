@@ -33,7 +33,7 @@ module.exports.start = function() {
   self.afterpartyJob = new CronJob({
     cronTime: self.config.afterpartyJobTime,
       onTick: function() {
-        self.commands.activate.call(self,{command:'season',argument:'afterParty'});
+        self.commands.activate.call(self,{command:'season',argument:'afterparty'});
       },
       start: self.config.afterpartyJob,
       timeZone: 'America/Los_Angeles'
@@ -42,21 +42,10 @@ module.exports.start = function() {
   self.afterpartyJob.started = self.config.afterpartyJob;
   cronjobs.push(self.afterpartyJob);
 
-  /**
-  * Called once per season to start the new season off
-  *     auto start for x weeks after end of previous season
-        end of previous season determined by # of weeks?
-  * started- maybe
-  */
   self.newSeasonJob = new CronJob({
     cronTime: self.config.newSeasonJobTime,   // update to January 2nd, 2016
       onTick: function() {
-        // to-do; all of this
-        // messages about a hopeful new season
-        // did we win last season
-        // are we going to win this season
-        // who is we, introduce all the players
-        // create introduce() and timeoutdelay for each player
+        self.commands.activate.call(self,{command:'season',argument:'newseason'});
       },
       start: self.config.newSeasonJob,
       timeZone: 'America/Los_Angeles'

@@ -5,17 +5,15 @@ module.exports = function season(data) {
   var self = this;
   var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
 
-  function afterParty() {
-    self.commands.activate(update,function(err, message) {
-          if (err) return self.logger.error(err);
-          self.say(message);
-        });
-        self.commands.activate({command:'bottle',argument:'next'},function(err, message) {
-          if (err) return self.logger.error(err);
-          self.say(message);
-        });
+  function afterparty() {
+    self.say('...Syncing Game Results...');
+    self.commands.scores.call(self,{argument:'update',modifiers:{quietly:true}})
+    self.commands.bottle.call(self,{argument:'next'});
+    var  duty = self.commands.bottle.call(self,{argument:'duty',modifiers:{get:true}});
+    self.say('Next Week\'s Bottle Duty- '+duty.name);
+    // self.commands.bottle.call(self,{argument:'duty'});
   }
-  this.commands.season.afterParty = afterParty;
+  this.commands.season.afterparty = afterparty;
 
   function fresh() {
     self.league.fresh({label:message},function(err) {
@@ -35,7 +33,7 @@ module.exports = function season(data) {
   }
   this.commands.season.pregame = pregame;
 
-  function preseason() {
+  function newseason() {
     self.say('Start getting ready bitches, the new season is starting next week!');
     var leastValuablePlayer = 'Nico';
     _.forEach(self.league.getCurrentSeason().players, function (player) {
@@ -46,7 +44,7 @@ module.exports = function season(data) {
     });
     self.say('Try to suck less this time around '+leastValuablePlayer.name+' (lvp).');
   }
-  this.commands.season.preseason = preseason;
+  this.commands.season.newseason = newseason;
 
   if (this.commands.season[argument])
     this.commands.season[argument]();

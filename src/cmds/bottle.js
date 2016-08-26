@@ -42,6 +42,7 @@ module.exports = function bottle(data) {
     who's on duty
   */
   function duty() {
+    if (modifiers&&modifiers.get) return self.bottleBitches[0];
     self.say('Bottle Duty: '+self.bottleBitches[0]);
   }
   this.commands.bottle.duty = duty;

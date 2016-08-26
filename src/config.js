@@ -53,12 +53,10 @@ config.afterpartyJob = false;
 config.afterpartyJobTime = '00 00 2 * * 3';
 config.christmasJob = false;
 config.christmasJobTime = '00 00 09 25 11 *';
-config.newSeasonJob = false;
-config.newSeasonJobTime = '00 05 21 * * 3';
-config.pregameJob = false;
-config.pregameJobTime = '00 00 12 * * 2';
-config.preseasonJob = false;
-config.preseasonJobTime = '00 00 12 17 9 *';
+config.newSeasonJob = true;
+config.newSeasonJobTime = '00 00 12 * 9-12 2';
+config.pregameJob = true;
+config.pregameJobTime = '00 00 12 * 9-12 2';
 
 
 // Amazon S3
