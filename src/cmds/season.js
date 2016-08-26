@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 // season stuff
 module.exports = function season(data) {
   var self = this;
