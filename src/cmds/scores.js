@@ -124,6 +124,8 @@ module.exports = function scores(data) {
       else if (player.mvp<leastValuablePlayer.mvp)
         leastValuablePlayer = player;
     });
+    console.log('get: 'modifiers.get);
+    console.log(JSON.stringify(leastValuablePlayer));
     if (modifiers&&modifiers.get) return leastValuablePlayer;
     self.say('Current LVP: '+leastValuablePlayer.toStats());
   }
