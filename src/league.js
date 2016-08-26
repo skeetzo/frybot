@@ -270,7 +270,7 @@ Player.prototype = {
     // if (this.name=="Danny")
       // this.addSkunk();
   },
-  toStats : function() {return (this.name+': Matches Won: '+this.matchesWon+', Matches Lost: '+this.matchesLost+', Points Earned: '+this.pointsEarned+', Points Given: '+this.pointsGiven+', Skunks: '+this.skunks+', Skunked: '+this.skunked+', PPM: '+(Math.round(this.mvp*100)/100));},
+  toStats : function() {return (this.name+'; Matches Won: '+this.matchesWon+', Matches Lost: '+this.matchesLost+', Points Earned: '+this.pointsEarned+', Points Given: '+this.pointsGiven+', Skunks: '+this.skunks+', Skunked: '+this.skunked+', PPM: '+(Math.round(this.mvp*100)/100));},
   toString : function() {
     var returned = [];
     returned.push("{ Name: "+this.name);

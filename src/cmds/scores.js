@@ -127,7 +127,7 @@ module.exports = function scores(data) {
     console.log('get: '+modifiers.get);
     console.log(JSON.stringify(leastValuablePlayer));
     if (modifiers&&modifiers.get) return leastValuablePlayer;
-    self.say('Current LVP: '+leastValuablePlayer.toStats());
+    self.say('Current LVP- '+leastValuablePlayer.toStats());
   }
   this.commands.scores.lvp = lvp;
 
@@ -143,7 +143,7 @@ module.exports = function scores(data) {
         mostValuablePlayer = player;
     });
     if (modifiers&&modifiers.get) return mostValuablePlayer;
-    self.say(self,'Current MVP: '+mostValuablePlayer.toStats());
+    self.say(self,'Current MVP- '+mostValuablePlayer.toStats());
   }
   this.commands.scores.mvp = mvp;
 
@@ -153,7 +153,7 @@ module.exports = function scores(data) {
   function of() {
     _.forEach(self.league.getCurrentSeason().players, function (player) {
       if (message.indexOf(player.name)>-1)
-        self.say(self,'Stats: '+player.toStats());
+        self.say(self,'Stats- '+player.toStats());
     });
   }
   this.commands.scores.of = of;

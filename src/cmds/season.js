@@ -29,7 +29,7 @@ module.exports = function season(data) {
     self.say('Playing @ '+self.league.getCurrentSeason().getTodaysMatchup().location);
     self.commands.bottle.call(self,{argument:'next'});
     self.commands.bottle.call(self,{argument:'duty'});
-    self.commands.bottle.call(self,{argument:'lvp'}).name;
+    self.commands.bottle.call(self,{argument:'lvp'});
   }
   this.commands.season.pregame = pregame;
 
