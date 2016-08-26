@@ -53,8 +53,8 @@ config.afterpartyJob = false;
 config.afterpartyJobTime = '00 00 2 * * 3';
 config.christmasJob = false;
 config.christmasJobTime = '00 00 09 25 11 *';
-config.newSeasonJob = true;
-config.newSeasonJobTime = '00 00 12 * 9-12 2';
+config.newseasonJob = true;
+config.newseasonJobTime = '00 00 12 * 9-12 2';
 config.pregameJob = true;
 config.pregameJobTime = '00 00 12 * 9-12 2';
 
