@@ -29,13 +29,14 @@ module.exports = function season(data) {
     self.say('Playing @ '+self.league.getCurrentSeason().getTodaysMatchup().location);
     self.commands.bottle.call(self,{argument:'next'});
     self.commands.bottle.call(self,{argument:'duty'});
-    self.commands.bottle.call(self,{argument:'lvp'});
+    self.commands.scores.call(self,{argument:'lvp'});
   }
   this.commands.season.pregame = pregame;
 
   function preseason() {
     self.say('Start getting ready bitches, the new season is starting next week!');
-    var lvp = JSON.parse(self.commands.scores.call(self,{argument:'lvp',modifiers:{get:true}}));
+    var lvp = self.commands.scores.call(self,{argument:'lvp',modifiers:{get:true}});
+    console.log(JSON.stringify(lvp));
     self.say('Looking at you '+lvp.name+', the least valuable player.');
   }
   this.commands.season.preseason = preseason;
