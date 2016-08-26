@@ -126,7 +126,7 @@ module.exports = function scores(data) {
       else if (player.mvp<leastValuablePlayer.mvp)
         leastValuablePlayer = player;
     });
-    if (modifiers&&modifiers.get) return leastValuablePlayer;
+    if (modifiers&&modifiers.text) return self.say(modifiers.text+leastValuablePlayer.toStats());
     self.say('Current LVP- '+leastValuablePlayer.toStats());
   }
   this.commands.scores.lvp = lvp;

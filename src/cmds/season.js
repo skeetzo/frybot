@@ -34,19 +34,14 @@ module.exports = function season(data) {
 
   function newseason() {
     self.say('Start getting ready bitches, the new season is starting next week!');
-    var leastValuablePlayer = 'Nico';
-    _.forEach(self.league.getCurrentSeason().players, function (player) {
-      if (leastValuablePlayer=='Nico')
-        leastValuablePlayer = player;
-      else if (player.mvp<leastValuablePlayer.mvp)
-        leastValuablePlayer = player;
-    });
-    self.say('Try to suck less this time around '+leastValuablePlayer.name+' (lvp).');
+    self.commands.scores.call(self,{argument:'lvp',modifiers:{text:'Try to suck less this time around '}});
   }
   this.commands.season.newseason = newseason;
 
-  if (this.commands.season[argument])
-    this.commands.season[argument]();
+  if (argument typeof "function")
+    argument();
+  // if (this.commands.season[argument])
+  //   this.commands.season[argument]();
   else
     self.say('Season?');
 }
