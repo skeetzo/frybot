@@ -1,4 +1,4 @@
 node_modules
 .env
 secret.pem
-localConfig.json
+localKeys.json

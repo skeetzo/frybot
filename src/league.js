@@ -1,20 +1,10 @@
 var _ = require('underscore'),
-    config = require('./config.js'),
+    config = require('./config/index.js'),
     fs = require('fs'),
     Spreadsheet = require('edit-google-spreadsheet');
 
-var aws = require('aws-sdk');
-aws.config.update({accessKeyId: config.AWS_ACCESS_KEY, secretAccessKey: config.AWS_SECRET_KEY});
-var s3 = new aws.S3();
-
-
-var localSeasonsPath = './lib/seasons.json';
-
-
 /*
   League Constructor
-
-  Loads from S3 or locally
 */
 function League(seasons, callback) {
   think_('League Created');
