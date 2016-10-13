@@ -31,7 +31,8 @@ On the starting of a new season, do newSeasonStuff() {
 var bot = function(config) {
   this.config = config;
   this.logger = config.logger;
-  this.thoughts = [];
+  this.thinking = [];
+  this.saying = [];
 
   this.commands = require('./commands.js');
   // Commands
@@ -146,18 +147,53 @@ bot.prototype = {
     botReq.end(JSON.stringify(body));
   },
 
+  postGroupMeMessageDev : function(message) {
+    if (!message) return self.logger.warn('Missing message to post: %s',message);
+    var self = this;
+    self.logger.log('Sending: \'%s\' to [%s]',message.green,self.config.GroupMe_group_name);
+    var options = {
+          hostname: 'api.groupme.com',
+          path: '/v3/bots/post',
+          method: 'POST'
+        },
+        body = {
+          "bot_id" : self.config.GroupMe_devbot_ID,
+          "text" : message
+        },
+        botReq = HTTPS.request(options, function(res) {
+          if(res.statusCode == 202) {
+            // neat, why is this even here?
+          } else {
+            self.logger.warn('rejecting bad status code: %s',res.statusCode);
+          }
+        });
+    botReq.on('error', function(err) {
+      self.logger.warn('error posting message: %s',JSON.stringify(err));
+    });
+    botReq.on('timeout', function(err) {
+      self.logger.warn('timeout posting message: %s',JSON.stringify(err));
+    });
+    botReq.end(JSON.stringify(body));
+  },
+
   /**
-  * Adds a thought {string} to the this.thoughts {array} that will be POSTed
+  * Adds a thought {string} to the this.saying {array} that will be POSTed
   * @param thought {string} what will be POSTed 
   */
-  say : function(thought) {
+  say : function(message) {
     var self = this;
-    if (!self.config.responding) return self.logger.debug('Not responding w/: '+thought);
-    self.thoughts.push(thought);
+    if (!self.config.responding) return self.logger.debug('Not responding w/: '+message);
+    if (self.config.debugging) {
+      // send through debugging instead
+      self.logger.debug('redirecting say output: %s',message);
+      self.think.call(self,message);
+      return;
+    }
+    self.saying.push(message);
     clearInterval(self.postman);
     self.postman = setInterval(function() {
-      self.postGroupMeMessage(self.thoughts.shift());
-      if (self.thoughts.length===0) clearInterval(self.postman);
+      self.postGroupMeMessage(self.saying.shift());
+      if (self.saying.length===0) clearInterval(self.postman);
     }, self.config.responseTime);
   },
 
@@ -184,6 +220,17 @@ bot.prototype = {
         })
       },10000);
     });
+  },
+
+  think : function(message) {
+    var self = this;
+    if (!self.config.responding) return self.logger.debug('Not responding thought w/: '+message);
+    self.thinking.push(message);
+    clearInterval(self.postman);
+    self.postman = setInterval(function() {
+      self.postGroupMeMessageDev(self.thinking.shift());
+      if (self.thinking.length===0) clearInterval(self.postman);
+    }, self.config.responseTime);
   }
 
 }

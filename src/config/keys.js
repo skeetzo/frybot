@@ -46,4 +46,5 @@ module.exports = function() {
       this.botID = localConfig.Naivi_botID || process.env.GroupMe_bot_ID;
       this.GroupMe_group_name = 'Talking to Myself';
     }
+    this.GroupMe_devbot_ID = localConfig.GroupMe_devbot_ID || process.env.GroupMe_devbot_ID;
 }
