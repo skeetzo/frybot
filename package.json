@@ -1,10 +1,6 @@
 {
-  "name": "naivi",
-  "author": {
-    "name": "Alex Oberg",
-    "email": "alexjoberg@gmail.com",
-    "url": ""
-  },
+  "name": "frybot",
+  "author": "Alex Oberg <alexjoberg@gmail.com>",
   "version": "0.0.6",
   "description": "Pool League GroupMe Chatbot",
   "homepage": "https://sites.google.com/site/itiswhatitisleague",
@@ -28,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/brainlessdg13/frybot"
+    "url": "git+https://github.com/brainlessdg13/frybot.git"
   },
   "keywords": [
     "node",
@@ -38,5 +34,8 @@
     "bot",
     "google sheets"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brainlessdg13/frybot/issues"
+  }
 }
