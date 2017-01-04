@@ -7,7 +7,7 @@ module.exports = function season(data) {
 
   function afterparty() {
     self.say('...Syncing Yesterday\'s Game Results...');
-    self.commands.scores.call(self,{argument:'update'})
+    self.commands.scores.call(self,{argument:'update',text:"quiet"});
     self.commands.bottle.call(self,{argument:'next'});
     self.commands.bottle.call(self,{argument:'duty',modifiers:{text:'Next Week\'s Bottle Duty- '}});
   }
@@ -17,7 +17,8 @@ module.exports = function season(data) {
     self.say('Creating New Season: '+message);
     self.league.fresh({label:message},function(err) {
       if (err) return err;
-      return self.say("Season Created");  
+      self.say("Season Created");  
+      // self.commands.saveTeamShitData.call(self);
     }); 
   }
   this.commands.season.fresh = fresh;

@@ -63,7 +63,7 @@ module.exports.loadLeague = function(callback) {
       if (err) return callback(err);
       setTimeout(function slightDelay() {
         callback(null);
-        if (self.config.saveOnLoad) self.saveTeamShitData();
+        if (self.config.saveOnLoad) self.commands.saveTeamShitData.call(self);
       },2000);
     });
   }
@@ -74,7 +74,7 @@ module.exports.loadLeague = function(callback) {
 */
 module.exports.saveTeamShitData = function() {
   var self = this;
-  if (!self.config.saving) return console.debug("Not saving.");
+  if (!self.config.saving) return self.logger.debug("Not saving.");
   self.teamshitData.bottleBitches = this.bottleBitches || self.teamshitData.bottleBitches || [];
   
   if (!self.config.localSave) {
