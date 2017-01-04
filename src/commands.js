@@ -16,21 +16,11 @@ var lastMatchNum_ = 0;
 */
 
 /*
-  Bottle
-*/
-module.exports.bottle = require('./cmds/bottle.js');
-
-/*
   Cool Guy
 */
 module.exports.coolguy = function(data, callback) {
   this.say(cool());
 }
-
-/*
-  Fuck
-*/
-module.exports.fuck = require('./cmds/fuck.js');
 
 /*
   Likes the message with the given id
@@ -41,7 +31,7 @@ module.exports.likeMessage = function(message_id) {GroupMe_API.Likes.create(this
 /*
   Loads the necessary league data
 */
-module.exports.load = function(callback) {
+module.exports.loadLeague = function(callback) {
   var self = this;
   var seasons;
   self.logger.debug('Loading Team Shit');
@@ -73,23 +63,18 @@ module.exports.load = function(callback) {
       if (err) return callback(err);
       setTimeout(function slightDelay() {
         callback(null);
-        if (self.config.saveOnLoad) self.saveTeamShitData();
+        if (self.config.saveOnLoad) self.commands.saveTeamShitData.call(self);
       },2000);
     });
   }
 }
 
 /*
-  Nico Facts
-*/
-module.exports.nicofacts = require('./cmds/nicofacts.js');
-
-/*
   Saves the team shit data
 */
 module.exports.saveTeamShitData = function() {
   var self = this;
-  if (!self.config.saving) return console.debug("Not saving.");
+  if (!self.config.saving) return self.logger.debug("Not saving.");
   self.teamshitData.bottleBitches = this.bottleBitches || self.teamshitData.bottleBitches || [];
   
   if (!self.config.localSave) {
@@ -124,21 +109,6 @@ module.exports.saveTeamShitData = function() {
 }
 
 /*
-  Scores
-*/
-module.exports.scores = require('./cmds/scores.js');
-
-/*
-  Season
-*/
-module.exports.season = require('./cmds/season.js');
-
-/*
-  Suck
-*/
-module.exports.suck = require('./cmds/suck.js');
-
-/*
   Dickeater
 */
 module.exports.dickeater = function(data, callback) {
@@ -155,8 +125,6 @@ module.exports.updateAWS = function() {
   aws.config.update({accessKeyId: this.config.AWS_ACCESS_KEY, secretAccessKey: this.config.AWS_SECRET_KEY});
   this.s3 = new aws.S3();
 }
-
-
 
 
 

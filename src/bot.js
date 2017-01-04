@@ -1,48 +1,9 @@
 var colors = require("colors"),
     _ = require('underscore'),
-    commands = require('./commands.js'),
-    CronJobs = require('./cronjobs.js'),
     HTTPS = require('https'),
     util = require('util'),
-    fs = require('fs'),
-    logger = require('tracer').colorConsole(
-                {
-                  filters : {
-                    // log : colors.black,
-                    trace : colors.magenta,
-                    debug : colors.blue,
-                    info : colors.green,
-                    warn : colors.yellow,
-                    error : [ colors.red, colors.bold ]
-                  },
-                  format : [
-                        "{{timestamp}} <{{title}}> {{message}} (in {{file}}:({{method}}):{{line}})", //default format
-                        {
-                            error : "{{timestamp}} <{{title}}> {{message}} (in {{file}}:({{method}}):{{line}})\nCall Stack:\n{{stack}}" // error format
-                        }
-                  ],
-                  dateformat : "HH:MM:ss.L",
-                  preprocess : function(data) {
-                      data.title = data.title.toUpperCase();
-                  },
-                  transport : [
-                      function (data) {
-                          console.log(data.output);
-                      },
-                      function (data) {
-                          if (process.NODE_ENV == 'production') return;        
-                          fs.appendFile('./dev/file.log', data.output + '\n');
-                      },
-                      function (data) {
-                          if (process.NODE_ENV != 'production') return;        
-                          var stream = fs.createWriteStream("./dev/stream.log", {
-                              flags: "a",
-                              encoding: "utf8",
-                              mode: 0666
-                          }).write(data.output+"\n");
-                      }]
-                });
-
+    fs = require('fs');
+    
 /**
  * @title Frybot
  * @author Schizo
@@ -69,10 +30,15 @@ On the starting of a new season, do newSeasonStuff() {
 
 var bot = function(config) {
   this.config = config;
+  this.logger = config.logger;
   this.thoughts = [];
-  this.logger = logger;
-  this.commands = commands;
+
+  this.commands = require('./commands.js');
+  // Commands
+  require('./cmds/index.js').load.call(this);
+
   this.commands.updateAWS.call(this);
+
   this.boot.call(this);
 
 }
@@ -88,7 +54,7 @@ bot.prototype = {
         modifiers = request.modifiers || {};
         request.message = message;
     // console.log('command: '+command+'['+argument+'] of '+sender+': \''+message+'\'');
-    if (typeof commands[command] === "function" ) {
+    if (typeof this.commands[command] === "function" ) {
       this.logger.log('Activating: %s[%s] of %s: \'%s\'',command.green,argument.cyan,sender.yellow,message);
       if (request.id) this.commands.likeMessage.call(this,request.id);
       this.commands[command].call(this,{argument:argument,message:message,sender:sender,modifiers:modifiers});
@@ -103,14 +69,14 @@ bot.prototype = {
   boot : function() {
     var self = this;
     self.logger.log('Booting up: '+self.config.botName);
-    commands.load.call(self,function onLoad(err) {
+    self.commands.loadLeague.call(self,function onLoad(err) {
       if (err) return self.logger.error(err);
       // loads current league data then syncs with ItIsWhatItIs sheet stats
       self.logger.debug('League Loaded');
       // Initial scores update on boot
       // self.commands.loadModules.call(self);
-      self.activate.call(self,{command: "scores",argument:"boot",name:self.config.botName});
-      if (self.config.cronjobbing) CronJobs.start.call(self);
+      self.activate.call(self,{command:"scores",argument:"boot",name:self.config.botName});
+      if (self.config.cronjobbing) require('./cronjobs.js').start.call(self);
       if (self.config.testing) setTimeout(function() {self.test()},20000);
     });
   },
@@ -154,7 +120,7 @@ bot.prototype = {
   postGroupMeMessage : function(message) {
     if (!message) return self.logger.warn('Missing message to post: %s',message);
     var self = this;
-    self.logger.log('Sending: \'%s\' to [%s]',message.green,self.config.GroupMe_group_name);
+    self.logger.log('Sending: \'%s\' to [%s]',message.green,self.config.GroupMe_group_name.yellow);
     var options = {
           hostname: 'api.groupme.com',
           path: '/v3/bots/post',
@@ -198,38 +164,41 @@ bot.prototype = {
   test : function() {
     var self = this;
     self.logger.log('Running tests...');
-    var tests = {
-          text: "Summer Season 2016",
+    // var newSeasonTests = [{
+    //       text: "Spring Season 2017",
+    //       command: "season",
+    //       argument: "fresh",
+    //       name: self.config.name
+    //     },
+    //     roundTwo = {
+    //       text: "quiet",
+    //       command: "scores",
+    //       argument: "update",
+    //       name: self.config.name
+    //     }];
+
+    var tests = [{
+          text: "",
           command: "season",
-          argument: "fresh",
+          argument: "pregame",
           name: self.config.name
         },
         roundTwo = {
-          text: "quiet",
-          command: "scores",
-          argument: "update",
+          text: "",
+          command: "season",
+          argument: "afterparty",
           name: self.config.name
-        };
-    self.commands.activate.call(self,tests,function(err, message) {
-      if (err) return think_(err);
-      self.say(message);
+        }];
 
-
-      self.commands.activate.call(self,roundTwo,function(err, message) {
-        if (err) return think_(err);
-        self.say.call(self,message);
-
-        // self.saveTeamShitData();
-
-      });
-
+    _.forEach(tests, function(test) {
+      setTimeout(function lazyDelay() {
+        self.activate.call(self,test,function(err) {
+          if (err) return self.logger.warn(err);
+        })
+      },10000);
     });
   }
 
 }
 
 module.exports = bot;
-
-process.on('uncaughtException', function(err) {
-  logger.error(err.stack);
-});
