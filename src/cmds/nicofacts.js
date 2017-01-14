@@ -30,7 +30,7 @@ module.exports = function nicofacts(data) {
     });
     return;
   }  
-  if (sender.indexOf('Nico')>=0) {
+  if (sender&&sender.indexOf('Nico')>=0) {
     self.say('What do you think you\'re doing, bitchass Nico?');
     return;
   }
