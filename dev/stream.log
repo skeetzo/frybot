@@ -581,3 +581,62 @@ Call Stack:
 13:41:09.86 Naivi: Sending: '[32mNext Week's Bottle Duty- George[39m' to [Talking to Myself]
 13:41:18.87 Naivi: Sending: '[32mSeason scores updated[39m' to [Talking to Myself]
 [33m13:41:34.53 Naivi: error posting message: {"code":"ECONNRESET","errno":"ECONNRESET","syscall":"read"}[39m
+[36m11:53:12.84 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m11:53:17.12 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m11:53:17.14 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m11:53:17.14 Adding command: scores <debug> (in index.js:():8)[39m
+[36m11:53:17.16 Adding command: suck <debug> (in index.js:():8)[39m
+[36m11:53:17.15 Adding command: season <debug> (in index.js:():8)[39m
+[36m11:53:17.22 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m11:53:17.14 Adding command: fuck <debug> (in index.js:():8)[39m
+11:53:17.22 Naivi: Booting up: Naivi
+[31m[1m11:53:17.87 <error> { [NoSuchKey: The specified key does not exist.]
+  message: 'The specified key does not exist.',
+  code: 'NoSuchKey',
+  region: null,
+  time: Sat Jan 14 2017 11:53:17 GMT-0800 (Pacific Standard Time),
+  requestId: '0BB05B3D9B7C6E75',
+  extendedRequestId: 'OaY3PkBgmWimBGbyW4wC5r6lIgOLRNal6gTPbSbcFyNvvt8lTk79/r5XsG4ESfVzaHQI59D3OjI=',
+  statusCode: 404,
+  retryable: false,
+  retryDelay: 81.58337255008519 } (in bot.js:(onLoad):74)
+Call Stack:
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\bot.js:74:35)
+    at Response.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\src\commands.js:40:23)
+    at Request.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\request.js:354:18)
+    at Request.callListeners (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\sequential_executor.js:105:20)
+    at Request.emit (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\sequential_executor.js:77:10)
+    at Request.emit (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\request.js:596:14)
+    at Request.transition (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\request.js:21:10)
+    at AcceptorStateMachine.runTo (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\state_machine.js:14:12)[22m[39m
+[36m11:55:01.41 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m11:55:03.13 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m11:55:03.13 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m11:55:03.13 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m11:55:03.13 Adding command: scores <debug> (in index.js:():8)[39m
+[36m11:55:03.14 Adding command: season <debug> (in index.js:():8)[39m
+[36m11:55:03.14 Adding command: suck <debug> (in index.js:():8)[39m
+11:55:03.16 Naivi: Booting up: Naivi
+[36m11:55:03.16 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m11:55:03.62 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m11:55:05.64 League Loaded <debug> (in bot.js:(onLoad):76)[39m
+11:55:05.64 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+11:55:05.65 Naivi: Updating Players from Scoresheet
+11:55:05.84 Naivi: started cronjob - Afterparty
+11:55:05.84 Naivi: started cronjob - Pregame
+[33m11:55:05.84 Naivi: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+[31m[1m11:55:05.84 <error> undefined (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+[36m11:55:10.84 retrying sheet load <debug> (in scores.js:(null._onTimeout):244)[39m
+11:55:10.85 Naivi: Updating Players from Scoresheet
+[33m11:55:10.85 Naivi: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+[31m[1m11:55:10.85 <error> undefined (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m

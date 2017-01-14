@@ -90,8 +90,8 @@ bot.prototype = {
     var self = this;
     if (!req||!req.body) return self.logger.warn('Missing GroupMe message data');
     var request = req.body;
-    if (request.name===self.config.botName) return logger.debug('Not talking to myself...');
-    logger.log(request.name.yellow+": "+request.text);
+    if (request.name===self.config.botName) return self.logger.debug('Not talking to myself...');
+    self.logger.log(request.name.yellow+": "+request.text);
 
     if (request.text.search(self.config.commandsRegex)!=-1&&request.text.charAt(0)=='/') {
       var message = request.text || '',
