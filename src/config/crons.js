@@ -28,8 +28,8 @@ module.exports = function() {
 			start : true,
 			command : 'nicofacts',
 			argument : 'spitnicofact',
-			cronTime : '00 00 10 * 0-5 2', 
-			cronTime : '00 54 12 * * *', 
+			cronTime : '00 0-60/10 19-23 * * *', 
+			cronTime : '00 12 15 * * *', 
 	        timeZone: 'America/Los_Angeles'	
 		},
 
