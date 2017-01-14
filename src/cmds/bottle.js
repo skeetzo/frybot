@@ -27,6 +27,7 @@ module.exports = function bottle(data) {
         return;
       }
       _.forEach(players, function addTobottleBitches(player) {
+        if (player.name=='Coco') return; // Legacy privelages
         self.bottleBitches.push(player.name);
       });
       self.bottleBitches = shuffle(self.bottleBitches);

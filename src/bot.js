@@ -185,7 +185,6 @@ bot.prototype = {
     if (!self.config.responding) return self.logger.debug('Not responding w/: '+message);
     if (self.config.debugging) {
       // send through debugging instead
-      self.logger.debug('redirecting say output: %s',message);
       self.think.call(self,message);
       return;
     }

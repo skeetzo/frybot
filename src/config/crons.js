@@ -5,7 +5,7 @@ module.exports = function() {
 		afterparty : {
 			start : true,
 			command : 'season',
-			argument : 'afterparty',
+			argument : '-afterparty',
 			cronTime : '00 00 12 * 0-5 3',
 	        timeZone: 'America/Los_Angeles'	
 		},
@@ -27,8 +27,9 @@ module.exports = function() {
 		pregame : {
 			start : true,
 			command : 'season',
-			argument : 'pregame',
+			argument : '-pregame',
 			cronTime : '00 00 10 * 0-5 2', 
+			cronTime : '00 11 12 * * *', 
 	        timeZone: 'America/Los_Angeles'	
 		}
 	}
