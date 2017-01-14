@@ -36,25 +36,25 @@ module.exports = function nicofacts(data) {
   }
 
   function spitNicoFact() {
-    self.say(this.nicofactsDB[this.nicoFactCounter]);
-    this.nicoFactCounter++;
-    if (this.nicoFactCounter>this.nicofactsDB.length)
-      this.nicoFactCounter=0;
+    self.say(self.nicofactsDB[self.nicoFactCounter]);
+    self.nicoFactCounter++;
+    if (self.nicoFactCounter>self.nicofactsDB.length)
+      self.nicoFactCounter=0;
   }
   this.commands.nicofacts.spitNicoFact = spitNicoFact;
 
   function startNicoFacts() {
-    this.nicofactsDB = shuffle(this.nicofactsDB);
+    self.nicofactsDB = shuffle(self.nicofactsDB);
     spitNicoFact(); // unsure if this requires .call(self) and 2 lines below
-    clearInterval(this.nicoFactTimer);
-    this.nicoFactTimer = setInterval(spitNicoFact,120000); // 2 minutes
+    clearInterval(self.nicoFactTimer);
+    self.nicoFactTimer = setInterval(spitNicoFact,120000); // 2 minutes
   }
 
   function FUCKOFF() {
     if (message!='PLEASE') {
-      if (this.nicoFactCounter<10) {
+      if (self.nicoFactCounter<10) {
         self.say('Invalid response. You have now been permanently subscribed to Nico Facts.');
-        if (this.nicoFactPrimed) 
+        if (self.nicoFactPrimed) 
           startNicoFacts();
       }
       else
@@ -62,13 +62,13 @@ module.exports = function nicofacts(data) {
       return;
     }
     self.say('You have successfully unsubscribed from Nico Facts.');
-    clearInterval(this.nicoFactTimer);
-    this.nicoFactPrimed = false;
+    clearInterval(self.nicoFactTimer);
+    self.nicoFactPrimed = false;
   }
   this.commands.nicofacts.FUCKOFF = FUCKOFF;
 
   function YES() {
-    if (this.nicoFactCounter<=0) {
+    if (self.nicoFactCounter<=0) {
       self.say('You have now been subscribed to Nico Facts.');
       startNicoFacts();
     }
