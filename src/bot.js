@@ -121,7 +121,7 @@ bot.prototype = {
   postGroupMeMessage : function(message) {
     if (!message) return self.logger.warn('Missing message to post: %s',message);
     var self = this;
-    self.logger.log('Sending: \'%s\' to [%s]',message.green,self.config.GroupMe_group_name);
+    self.logger.log('Sending: \'%s\' to [%s]',message.green,self.config.GroupMe_group_name.yellow);
     var options = {
           hostname: 'api.groupme.com',
           path: '/v3/bots/post',
@@ -200,18 +200,31 @@ bot.prototype = {
   test : function() {
     var self = this;
     self.logger.log('Running tests...');
+    // var newSeasonTests = [{
+    //       text: "Spring Season 2017",
+    //       command: "season",
+    //       argument: "fresh",
+    //       name: self.config.name
+    //     },
+    //     roundTwo = {
+    //       text: "quiet",
+    //       command: "scores",
+    //       argument: "update",
+    //       name: self.config.name
+    //     }];
+
     var tests = [{
-          text: "Fall Season 2016",
+          text: "",
           command: "season",
-          argument: "fresh",
+          argument: "pregame",
           name: self.config.name
         },
         roundTwo = {
-          text: "quiet",
-          command: "scores",
-          argument: "update",
+          text: "",
+          command: "season",
+          argument: "afterparty",
           name: self.config.name
-        }]
+        }];
 
     _.forEach(tests, function(test) {
       setTimeout(function lazyDelay() {

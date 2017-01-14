@@ -123,7 +123,7 @@ function Match(data) {
   this.race = data.race || '2:2'; // todo: add race calculations
   this.games = data.games || [];
   this.winner = data.winner || this.determineWinner();
-  think_('Match #'+this.matchNumber+': '+this.players[0].name+' vs '+this.players[1].name);
+  // think_('Match #'+this.matchNumber+': '+this.players[0].name+' vs '+this.players[1].name);
 }
 
 Match.prototype = {

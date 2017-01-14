@@ -1,36 +1,2312 @@
 {
     "seasons": [
         {
+            "label": "Spring Season 2017",
+            "schedule": [
+                {
+                    "date": "01/03/17",
+                    "opponent": "Bad News",
+                    "location": "The Copper Bucket "
+                },
+                {
+                    "date": "01/10/17",
+                    "opponent": "The Canby",
+                    "location": "The Copper Bucket "
+                },
+                {
+                    "date": "01/17/17",
+                    "opponent": "Suzie's Q's",
+                    "location": "The Copper Bucket "
+                },
+                {
+                    "date": "01/24/17",
+                    "opponent": "Nothing On The Break",
+                    "location": "Plush Pocket Billiards"
+                },
+                {
+                    "date": "01/31/17",
+                    "opponent": "Let It Go!",
+                    "location": "Ujpest Sports Lounge "
+                },
+                {
+                    "date": "02/07/17",
+                    "opponent": "Team USA",
+                    "location": "The Copper Bucket "
+                },
+                {
+                    "date": "02/14/17",
+                    "opponent": "Anything Cold",
+                    "location": "Ujpest Sports Lounge "
+                },
+                {
+                    "date": "02/21/17",
+                    "opponent": "Rail Riders",
+                    "location": "The Copper Bucket "
+                },
+                {
+                    "date": "02/28/17",
+                    "opponent": "Stay & Play",
+                    "location": "The Copper Bucket "
+                },
+                {
+                    "date": "03/07/17",
+                    "opponent": "Bad News",
+                    "location": "The Copper Bucket "
+                },
+                {
+                    "date": "03/14/17",
+                    "opponent": "The Canby",
+                    "location": "The Canby "
+                },
+                {
+                    "date": "03/21/17",
+                    "opponent": "Suzie's Q's",
+                    "location": "Ujpest Sports Lounge "
+                },
+                {
+                    "date": "03/28/17",
+                    "opponent": "Nothing On The Break",
+                    "location": "The Copper Bucket "
+                },
+                {
+                    "date": "04/04/17",
+                    "opponent": "Let It Go!",
+                    "location": "The Copper Bucket "
+                },
+                {
+                    "date": "04/11/17",
+                    "opponent": "Team USA",
+                    "location": "Ujpest Sports Lounge "
+                },
+                {
+                    "date": "04/18/17",
+                    "opponent": "Anything Cold",
+                    "location": "The Copper Bucket "
+                }
+            ],
+            "players": [
+                {
+                    "name": "Coop",
+                    "matches": [],
+                    "pointsEarned": 0,
+                    "pointsGiven": 0,
+                    "matchesWon": 0,
+                    "matchesLost": 0,
+                    "mvp": null,
+                    "skunks": 0,
+                    "skunked": 0,
+                    "sl": 3,
+                    "team": "Free Agent"
+                },
+                {
+                    "name": "Coco",
+                    "matches": [],
+                    "pointsEarned": 0,
+                    "pointsGiven": 0,
+                    "matchesWon": 0,
+                    "matchesLost": 0,
+                    "mvp": null,
+                    "skunks": 0,
+                    "skunked": 0,
+                    "sl": 3,
+                    "team": "Free Agent"
+                },
+                {
+                    "name": "Nicole",
+                    "matches": [],
+                    "pointsEarned": 0,
+                    "pointsGiven": 0,
+                    "matchesWon": 0,
+                    "matchesLost": 0,
+                    "mvp": null,
+                    "skunks": 0,
+                    "skunked": 0,
+                    "sl": 3,
+                    "team": "Free Agent"
+                },
+                {
+                    "name": "George",
+                    "matches": [],
+                    "pointsEarned": 0,
+                    "pointsGiven": 0,
+                    "matchesWon": 0,
+                    "matchesLost": 0,
+                    "mvp": null,
+                    "skunks": 0,
+                    "skunked": 0,
+                    "sl": 3,
+                    "team": "Free Agent"
+                },
+                {
+                    "name": "Mike",
+                    "matches": [],
+                    "pointsEarned": 0,
+                    "pointsGiven": 0,
+                    "matchesWon": 0,
+                    "matchesLost": 0,
+                    "mvp": null,
+                    "skunks": 0,
+                    "skunked": 0,
+                    "sl": 3,
+                    "team": "Free Agent"
+                },
+                {
+                    "name": "Oberg",
+                    "matches": [],
+                    "pointsEarned": 0,
+                    "pointsGiven": 0,
+                    "matchesWon": 0,
+                    "matchesLost": 0,
+                    "mvp": null,
+                    "skunks": 0,
+                    "skunked": 0,
+                    "sl": 3,
+                    "team": "Free Agent"
+                }
+            ],
+            "matchups": [
+                {
+                    "date": "01/03/17",
+                    "location": "The Copper Bucket ",
+                    "opponent": "Bad News",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "01/10/17",
+                    "location": "The Copper Bucket ",
+                    "opponent": "The Canby",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "01/17/17",
+                    "location": "The Copper Bucket ",
+                    "opponent": "Suzie's Q's",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "01/24/17",
+                    "location": "Plush Pocket Billiards",
+                    "opponent": "Nothing On The Break",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "01/31/17",
+                    "location": "Ujpest Sports Lounge ",
+                    "opponent": "Let It Go!",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "02/07/17",
+                    "location": "The Copper Bucket ",
+                    "opponent": "Team USA",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "02/14/17",
+                    "location": "Ujpest Sports Lounge ",
+                    "opponent": "Anything Cold",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "02/21/17",
+                    "location": "The Copper Bucket ",
+                    "opponent": "Rail Riders",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "02/28/17",
+                    "location": "The Copper Bucket ",
+                    "opponent": "Stay & Play",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "03/07/17",
+                    "location": "The Copper Bucket ",
+                    "opponent": "Bad News",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "03/14/17",
+                    "location": "The Canby ",
+                    "opponent": "The Canby",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "03/21/17",
+                    "location": "Ujpest Sports Lounge ",
+                    "opponent": "Suzie's Q's",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "03/28/17",
+                    "location": "The Copper Bucket ",
+                    "opponent": "Nothing On The Break",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "04/04/17",
+                    "location": "The Copper Bucket ",
+                    "opponent": "Let It Go!",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "04/11/17",
+                    "location": "Ujpest Sports Lounge ",
+                    "opponent": "Team USA",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                },
+                {
+                    "date": "04/18/17",
+                    "location": "The Copper Bucket ",
+                    "opponent": "Anything Cold",
+                    "teams": "Empty MatchUp Teams",
+                    "matches": [
+                        {
+                            "matchNumber": 1,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 2,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 3,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 4,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        },
+                        {
+                            "matchNumber": 5,
+                            "players": [
+                                {
+                                    "name": "Player One",
+                                    "team": "Team One",
+                                    "idNumber": 1,
+                                    "defenses": 0,
+                                    "pointsEarned": 1,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                },
+                                {
+                                    "name": "Player Two",
+                                    "team": "Team Two",
+                                    "idNumber": 2,
+                                    "defenses": 0,
+                                    "pointsEarned": 0,
+                                    "pointsGiven": 0,
+                                    "SL": 3
+                                }
+                            ],
+                            "race": "2:2",
+                            "games": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "label": "Fall Season 2016",
             "players": [
                 {
                     "name": "Civi",
-                    "matches": [
-                        [
-                            2,
-                            1,
-                            "9/6/2016",
-                            0
-                        ],
-                        [
-                            3,
-                            0,
-                            "9/20/2016",
-                            0
-                        ],
-                        [
-                            0,
-                            2,
-                            "9/27/2016",
-                            0
-                        ]
-                    ],
-                    "pointsEarned": 5,
-                    "pointsGiven": 3,
-                    "matchesWon": 2,
-                    "matchesLost": 1,
-                    "mvp": 1.6666666666666667,
-                    "skunks": 1,
+                    "matches": [],
+                    "pointsEarned": 0,
+                    "pointsGiven": 0,
+                    "matchesWon": 0,
+                    "matchesLost": 0,
+                    "mvp": null,
+                    "skunks": 0,
                     "skunked": 0,
                     "sl": 3,
                     "team": "Free Agent"
@@ -39,28 +2315,16 @@
                     "name": "Coco",
                     "matches": [
                         [
-                            0,
-                            2,
-                            "9/6/2016",
-                            0
-                        ],
-                        [
                             1,
-                            2,
-                            "9/20/2016",
-                            0
-                        ],
-                        [
-                            2,
                             0,
-                            "9/27/2016",
+                            "1/3/2017",
                             0
                         ]
                     ],
-                    "pointsEarned": 3,
-                    "pointsGiven": 4,
+                    "pointsEarned": 1,
+                    "pointsGiven": 0,
                     "matchesWon": 1,
-                    "matchesLost": 2,
+                    "matchesLost": 0,
                     "mvp": 1,
                     "skunks": 0,
                     "skunked": 0,
@@ -69,33 +2333,14 @@
                 },
                 {
                     "name": "Danny",
-                    "matches": [
-                        [
-                            3,
-                            0,
-                            "9/6/2016",
-                            0
-                        ],
-                        [
-                            1,
-                            2,
-                            "9/13/2016",
-                            0
-                        ],
-                        [
-                            0,
-                            3,
-                            "9/27/2016",
-                            0
-                        ]
-                    ],
-                    "pointsEarned": 4,
-                    "pointsGiven": 5,
-                    "matchesWon": 1,
-                    "matchesLost": 2,
-                    "mvp": 1.3333333333333333,
-                    "skunks": 1,
-                    "skunked": 1,
+                    "matches": [],
+                    "pointsEarned": 0,
+                    "pointsGiven": 0,
+                    "matchesWon": 0,
+                    "matchesLost": 0,
+                    "mvp": null,
+                    "skunks": 0,
+                    "skunked": 0,
                     "sl": 3,
                     "team": "Free Agent"
                 },
@@ -103,23 +2348,17 @@
                     "name": "George",
                     "matches": [
                         [
-                            2,
-                            0,
-                            "9/13/2016",
-                            0
-                        ],
-                        [
                             0,
                             2,
-                            "9/20/2016",
+                            "1/3/2017",
                             0
                         ]
                     ],
-                    "pointsEarned": 2,
+                    "pointsEarned": 0,
                     "pointsGiven": 2,
-                    "matchesWon": 1,
+                    "matchesWon": 0,
                     "matchesLost": 1,
-                    "mvp": 1,
+                    "mvp": 0,
                     "skunks": 0,
                     "skunked": 0,
                     "sl": 3,
@@ -127,19 +2366,12 @@
                 },
                 {
                     "name": "Mike",
-                    "matches": [
-                        [
-                            1,
-                            2,
-                            "9/13/2016",
-                            0
-                        ]
-                    ],
-                    "pointsEarned": 1,
-                    "pointsGiven": 2,
+                    "matches": [],
+                    "pointsEarned": 0,
+                    "pointsGiven": 0,
                     "matchesWon": 0,
-                    "matchesLost": 1,
-                    "mvp": 1,
+                    "matchesLost": 0,
+                    "mvp": null,
                     "skunks": 0,
                     "skunked": 0,
                     "sl": 3,
@@ -147,77 +2379,27 @@
                 },
                 {
                     "name": "Nico",
-                    "matches": [
-                        [
-                            1,
-                            2,
-                            "9/6/2016",
-                            0
-                        ],
-                        [
-                            1,
-                            2,
-                            "9/13/2016",
-                            0
-                        ],
-                        [
-                            2,
-                            0,
-                            "9/20/2016",
-                            0
-                        ],
-                        [
-                            0,
-                            3,
-                            "9/27/2016",
-                            0
-                        ]
-                    ],
-                    "pointsEarned": 4,
-                    "pointsGiven": 7,
-                    "matchesWon": 1,
-                    "matchesLost": 3,
-                    "mvp": 1,
+                    "matches": [],
+                    "pointsEarned": 0,
+                    "pointsGiven": 0,
+                    "matchesWon": 0,
+                    "matchesLost": 0,
+                    "mvp": null,
                     "skunks": 0,
-                    "skunked": 1,
+                    "skunked": 0,
                     "sl": 3,
                     "team": "Free Agent"
                 },
                 {
                     "name": "Oberg",
-                    "matches": [
-                        [
-                            0,
-                            3,
-                            "9/6/2016",
-                            0
-                        ],
-                        [
-                            0,
-                            3,
-                            "9/13/2016",
-                            0
-                        ],
-                        [
-                            2,
-                            1,
-                            "9/20/2016",
-                            0
-                        ],
-                        [
-                            2,
-                            0,
-                            "9/27/2016",
-                            0
-                        ]
-                    ],
-                    "pointsEarned": 4,
-                    "pointsGiven": 7,
-                    "matchesWon": 2,
-                    "matchesLost": 2,
-                    "mvp": 1,
+                    "matches": [],
+                    "pointsEarned": 0,
+                    "pointsGiven": 0,
+                    "matchesWon": 0,
+                    "matchesLost": 0,
+                    "mvp": null,
                     "skunks": 0,
-                    "skunked": 2,
+                    "skunked": 0,
                     "sl": 3,
                     "team": "Free Agent"
                 }
