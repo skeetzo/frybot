@@ -18,7 +18,7 @@ module.exports.start = function() {
       var cro = self.config.crons[key];
       var cron = new CronJob({
           cronTime: cro.cronTime,
-          onTick: function() {if (self.commands[cro.command] && typeof self.commands[cro.command] == 'function') self.commands[cro.command].call(self,cro),
+          onTick: function() {if (self.commands[cro.command] && typeof self.commands[cro.command] == 'function') self.commands[cro.command].call(self,cro)},
           start: cro.start,
           timeZone: cro.timeZone
       });
