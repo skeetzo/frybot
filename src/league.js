@@ -179,7 +179,7 @@ function MatchUp(data) {
         this.matches.push(new Match({matchNumber:i}));
       blip = ' and Prepped';
     }
-    think_('MatchUp ('+this.date+') Loaded'+blip);
+    // think_('MatchUp ('+this.date+') Loaded'+blip);
   }
   else {
     for (var i=1;i<=5;i++) 

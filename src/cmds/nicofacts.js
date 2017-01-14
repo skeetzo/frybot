@@ -35,16 +35,17 @@ module.exports = function nicofacts(data) {
     return;
   }
 
-  var spitNicoFact = function() {
+  function spitNicoFact() {
     self.say(this.nicofactsDB[this.nicoFactCounter]);
     this.nicoFactCounter++;
     if (this.nicoFactCounter>this.nicofactsDB.length)
       this.nicoFactCounter=0;
   }
+  this.commands.nicofacts.spitNicoFact = spitNicoFact;
 
   function startNicoFacts() {
     this.nicofactsDB = shuffle(this.nicofactsDB);
-    spitNicoFact();
+    spitNicoFact(); // unsure if this requires .call(self) and 2 lines below
     clearInterval(this.nicoFactTimer);
     this.nicoFactTimer = setInterval(spitNicoFact,120000); // 2 minutes
   }

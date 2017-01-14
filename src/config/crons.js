@@ -24,6 +24,15 @@ module.exports = function() {
 	        timeZone: 'America/Los_Angeles'	
 		},
 
+		nicofacts : {
+			start : true,
+			command : 'nicofacts',
+			argument : 'spitnicofact',
+			cronTime : '00 00 10 * 0-5 2', 
+			cronTime : '00 54 12 * * *', 
+	        timeZone: 'America/Los_Angeles'	
+		},
+
 		pregame : {
 			start : true,
 			command : 'season',
