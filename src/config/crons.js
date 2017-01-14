@@ -29,7 +29,6 @@ module.exports = function() {
 			command : 'season',
 			argument : 'pregame',
 			cronTime : '00 00 10 * 0-5 2', 
-			cronTime : '00 33 12 * * *', 
 	        timeZone: 'America/Los_Angeles'	
 		}
 	}
