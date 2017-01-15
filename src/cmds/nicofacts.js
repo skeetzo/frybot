@@ -23,6 +23,7 @@ module.exports = function nicofacts(data) {
         rows.shift();
         // console.log("rows: "+rows);
         _.forEach(rows, function(cols) {self.nicofactsDB.push('Nico Fact #'+cols[1]+': '+cols[2]);});
+        self.nicoFactCounter = 0;
         self.logger.log('Nico Facts Loaded');
         self.commands.nicofacts.call(self,data);
         // self.say('Uhhh what?');
