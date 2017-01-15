@@ -25,7 +25,7 @@ module.exports = function nicofacts(data) {
         _.forEach(rows, function(cols) {self.nicofactsDB.push('Nico Fact #'+cols[1]+': '+cols[2]);});
         self.logger.log('Nico Facts Loaded');
         self.commands.nicofacts.call(self,data);
-        self.say('Uhhh what?');
+        // self.say('Uhhh what?');
       });
     });
     return;
@@ -36,6 +36,7 @@ module.exports = function nicofacts(data) {
   }
 
   function spitNicoFact() {
+    console.log('spitting nico fact');
     self.say(self.nicofactsDB[self.nicoFactCounter]);
     self.nicoFactCounter++;
     if (self.nicoFactCounter>self.nicofactsDB.length)
