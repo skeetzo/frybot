@@ -182,13 +182,7 @@ bot.prototype = {
   */
   say : function(message) {
     var self = this;
-    if (!self.config.responding) {
-      if (self.logger)
-        self.logger.debug('Not responding w/: %s',message);
-      else
-        console.log('Not responding w/: %s',message)
-      return;
-    }
+    if (!self.config.responding) return self.logger.debug('Not responding w/: '+message);
     if (self.config.debugging) {
       // send through debugging instead
       self.think.call(self,message);
@@ -242,13 +236,7 @@ bot.prototype = {
 
   think : function(message) {
     var self = this;
-    if (!self.config.responding) {
-      if (self.logger)
-        self.logger.debug('Not responding thought w/: %s',message);
-      else
-        console.log('Not responding thought w/: %s',message)
-      return;
-    }
+    if (!self.config.responding) return self.logger.debug('Not responding thought w/: '+message);
     self.thinking.push(message);
     clearInterval(self.postman);
     self.postman = setInterval(function() {

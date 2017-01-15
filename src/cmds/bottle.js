@@ -43,8 +43,8 @@ module.exports = function bottle(data) {
     who's on duty
   */
   function duty() {
-    if (modifiers&&modifiers.text) return self.say(modifiers.text+self.bottleBitches[0]);
-    self.say('Bottle Duty: '+self.bottleBitches[0]);
+    if (modifiers&&modifiers.text) return self.say.call(self,modifiers.text+self.bottleBitches[0]);
+    self.say.call(self,'Bottle Duty: '+self.bottleBitches[0]);
   }
   this.commands.bottle.duty = duty;
 
@@ -65,7 +65,7 @@ module.exports = function bottle(data) {
   function random() {
     var players = self.league.getCurrentSeason().players,
         player = players[Math.floor(Math.random()*players.length)];
-    self.say('Bottle Duty: '+player.name);
+    self.say.call(self,'Bottle Duty: '+player.name);
   }
   this.commands.bottle.random = random;
 
@@ -74,7 +74,7 @@ module.exports = function bottle(data) {
   */
   function what() {
     var bottles = ['malibu bitchass rum','women\'s vodka','jaeger and redbull','jaeger and redbull','jaeger and redbull','jack and coke','jack and coke','jack and coke, bitch'];
-    self.say('Pick up some: '+bottles[Math.floor(Math.random()*bottles.length)]);
+    self.say.call(self,'Pick up some: '+bottles[Math.floor(Math.random()*bottles.length)]);
   }
   this.commands.bottle.what = what;
 
