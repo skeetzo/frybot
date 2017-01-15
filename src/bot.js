@@ -148,8 +148,8 @@ bot.prototype = {
   },
 
   postGroupMeMessageDev : function(message) {
-    if (!message) return self.logger.warn('Missing message to post: %s',message);
     var self = this;
+    if (!message) return self.logger.warn('Missing message to post: %s',message);
     self.logger.log('Sending: \'%s\' to [%s]',message.green,self.config.GroupMe_group_name);
     var options = {
           hostname: 'api.groupme.com',

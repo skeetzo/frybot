@@ -25,18 +25,18 @@ module.exports = function nicofacts(data) {
         _.forEach(rows, function(cols) {self.nicofactsDB.push('Nico Fact #'+cols[1]+': '+cols[2]);});
         self.logger.log('Nico Facts Loaded');
         self.commands.nicofacts.call(self,data);
-        self.say.call(self,'Uhhh what?');
+        self.say('Uhhh what?');
       });
     });
     return;
   }  
   if (sender&&sender.indexOf('Nico')>=0) {
-    self.say.call(self,'What do you think you\'re doing, bitchass Nico?');
+    self.say('What do you think you\'re doing, bitchass Nico?');
     return;
   }
 
   function spitNicoFact() {
-    self.say.call(self,self.nicofactsDB[self.nicoFactCounter]);
+    self.say(self.nicofactsDB[self.nicoFactCounter]);
     self.nicoFactCounter++;
     if (self.nicoFactCounter>self.nicofactsDB.length)
       self.nicoFactCounter=0;
@@ -53,15 +53,15 @@ module.exports = function nicofacts(data) {
   function FUCKOFF() {
     if (message!='PLEASE') {
       if (self.nicoFactCounter<10) {
-        self.say.call(self,'Invalid response. You have now been permanently subscribed to Nico Facts.');
+        self.say('Invalid response. You have now been permanently subscribed to Nico Facts.');
         if (self.nicoFactPrimed) 
           startNicoFacts();
       }
       else
-        self.say.call(self,'Invalid response, motherfucker. Do you even Nico Fact?');
+        self.say('Invalid response, motherfucker. Do you even Nico Fact?');
       return;
     }
-    self.say.call(self,'You have successfully unsubscribed from Nico Facts.');
+    self.say('You have successfully unsubscribed from Nico Facts.');
     clearInterval(self.nicoFactTimer);
     self.nicoFactPrimed = false;
   }
@@ -69,21 +69,21 @@ module.exports = function nicofacts(data) {
 
   function YES() {
     if (self.nicoFactCounter<=0) {
-      self.say.call(self,'You have now been subscribed to Nico Facts.');
+      self.say('You have now been subscribed to Nico Facts.');
       startNicoFacts();
     }
     else
-      self.say.call(self,'You are all already subscribed to Nico Facts, bitchass '+sender+'...');
+      self.say('You are all already subscribed to Nico Facts, bitchass '+sender+'...');
   }
   this.commands.nicofacts.YES = YES;
 
   function NO() {
-    self.say.call(self,'Nico Fact #846: No one tells Nico Facts when to stop.');
+    self.say('Nico Fact #846: No one tells Nico Facts when to stop.');
   }
   this.commands.nicofacts.NO = NO;
 
   function START() {
-    self.say.call(self,'Nico Fact #847: No one tells Nico Facts what to do.');
+    self.say('Nico Fact #847: No one tells Nico Facts what to do.');
   }
   this.commands.nicofacts.START = START;
 
@@ -92,10 +92,10 @@ module.exports = function nicofacts(data) {
   else if (!argument&&!this.nicoFactPrimed) {
     this.nicoFactPrimed = true;
     this.nicoFactCounter = 0;
-    self.say.call(self,'Reply \'/nicofacts YES\' to subscribe to Nico Facts for a weekly charge of 1 Jäger Bomb. Standard msg and data rates will apply. You can cancel at anytime by replying \'/nicofacts FUCKOFF\'');
+    self.say('Reply \'/nicofacts YES\' to subscribe to Nico Facts for a weekly charge of 1 Jäger Bomb. Standard msg and data rates will apply. You can cancel at anytime by replying \'/nicofacts FUCKOFF\'');
   }
   else {
-    self.say.call(self,'Invalid response.');
+    self.say('Invalid response.');
     this.commands.nicofacts.YES();
   }
 }
