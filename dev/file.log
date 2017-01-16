@@ -1,0 +1,777 @@
+10:47:57.83 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):105)
+[34m10:47:57.83 <DEBUG> Loading Team Shit (in commands.js:(Object.module.exports.load):47)[39m
+[34m10:47:58.22 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):54)[39m
+[34m10:48:00.22 <DEBUG> League Loaded (in bot.js:(onLoad):109)[39m
+10:48:00.23 <LOG> Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: '' (in bot.js:(Object.bot.activate):92)
+10:48:00.23 <LOG> Updating Players from Scoresheet (in scores.js:(update):231)
+[34m10:48:01.57 <DEBUG> Saving Data to S3 (in commands.js:(Object.module.exports.saveTeamShitData):96)[39m
+10:48:01.56 <LOG> Season scores updated quietly (in scores.js:():284)
+[34m10:48:01.91 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):110)[39m
+[1m[31m09:44:07.20 <ERROR> Error: Cannot find module '../cmds/index.js'
+    at Function.Module._resolveFilename (module.js:326:15)
+    at Function.Module._load (module.js:277:25)
+    at Module.require (module.js:354:17)
+    at require (internal/module.js:12:17)
+    at Object.bot (/home/schizo/Projects/frybot/src/bot.js:77:3)
+    at Object.<anonymous> (/home/schizo/Projects/frybot/index.js:8:11)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32)
+    at Function.Module._load (module.js:301:12) (in bot.js:(process.<anonymous>):239)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:239:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+09:44:38.68 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):110)
+[34m09:44:38.69 <DEBUG> Loading Team Shit (in commands.js:(Object.module.exports.load):37)[39m
+[34m09:44:39.69 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):44)[39m
+09:44:41.70 <LOG> Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: '' (in bot.js:(Object.bot.activate):97)
+[34m09:44:41.70 <DEBUG> League Loaded (in bot.js:(onLoad):114)[39m
+09:44:41.70 <LOG> Updating Players from Scoresheet (in scores.js:(update):233)
+[34m09:44:41.73 <DEBUG> started cronjob - preGame (in cronjobs.js:():69)[39m
+[34m09:44:41.73 <DEBUG> started cronjob - After Party (in cronjobs.js:():69)[39m
+[34m09:44:41.73 <DEBUG> started cronjob - New Season (in cronjobs.js:():69)[39m
+09:44:50.35 <LOG> Season scores updated quietly (in scores.js:():286)
+[34m09:44:50.35 <DEBUG> Saving Data to S3 (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[34m09:44:50.70 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):95)[39m
+[36m10:12:47.40 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+10:12:48.15 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):110)
+[34m10:12:48.15 <DEBUG> Loading Team Shit (in commands.js:(Object.module.exports.load):37)[39m
+[34m10:12:49.73 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):44)[39m
+[34m10:12:51.74 <DEBUG> League Loaded (in bot.js:(onLoad):114)[39m
+[1m[31m10:12:51.74 <ERROR> ReferenceError: commands is not defined
+    at Object.bot.activate (/home/schizo/Projects/frybot/src/bot.js:96:16)
+    at onLoad (/home/schizo/Projects/frybot/src/bot.js:117:21)
+    at slightDelay [as _onTimeout] (/home/schizo/Projects/frybot/src/commands.js:65:9)
+    at Timer.listOnTimeout (timers.js:92:15) (in bot.js:(process.<anonymous>):239)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:239:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+[36m10:13:32.63 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+10:13:33.36 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):110)
+[34m10:13:33.37 <DEBUG> Loading Team Shit (in commands.js:(Object.module.exports.load):37)[39m
+[34m10:13:33.88 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):44)[39m
+[34m10:13:35.89 <DEBUG> League Loaded (in bot.js:(onLoad):114)[39m
+10:13:35.89 <LOG> Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: '' (in bot.js:(Object.bot.activate):97)
+10:13:35.89 <LOG> Updating Players from Scoresheet (in scores.js:(update):233)
+10:13:37.61 <LOG> Season scores updated quietly (in scores.js:():286)
+[34m10:13:37.61 <DEBUG> Saving Data to S3 (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[34m10:13:37.93 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):95)[39m
+[36m10:16:56.57 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+10:16:57.30 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):110)
+[34m10:16:57.31 <DEBUG> Loading Team Shit (in commands.js:(Object.module.exports.load):37)[39m
+[1m[31m10:16:57.36 <ERROR> Error: listen EACCES 0.0.0.0:786.5991280414164
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1224:19)
+    at listen (net.js:1273:10)
+    at Server.listen (net.js:1369:5)
+    at EventEmitter.listen (/home/schizo/Projects/frybot/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/home/schizo/Projects/frybot/index.js:23:5)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32) (in bot.js:(process.<anonymous>):239)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:239:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+[34m10:16:57.61 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):44)[39m
+[34m10:16:59.61 <DEBUG> League Loaded (in bot.js:(onLoad):114)[39m
+10:16:59.62 <LOG> Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: '' (in bot.js:(Object.bot.activate):97)
+10:16:59.62 <LOG> Updating Players from Scoresheet (in scores.js:(update):233)
+[34m10:17:00.51 <DEBUG> Saving Data to S3 (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+10:17:00.51 <LOG> Season scores updated quietly (in scores.js:():286)
+[34m10:17:00.81 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):95)[39m
+[36m10:19:03.69 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+10:19:04.47 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):110)
+[34m10:19:04.47 <DEBUG> Loading Team Shit (in commands.js:(Object.module.exports.load):37)[39m
+[1m[31m10:19:04.51 <ERROR> Error: listen EACCES 0.0.0.0:758.3353447262198
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1224:19)
+    at listen (net.js:1273:10)
+    at Server.listen (net.js:1369:5)
+    at EventEmitter.listen (/home/schizo/Projects/frybot/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/home/schizo/Projects/frybot/index.js:23:5)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32) (in bot.js:(process.<anonymous>):239)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:239:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+[34m10:19:04.74 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):44)[39m
+[34m10:19:06.75 <DEBUG> League Loaded (in bot.js:(onLoad):114)[39m
+10:19:06.75 <LOG> Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: '' (in bot.js:(Object.bot.activate):97)
+10:19:06.75 <LOG> Updating Players from Scoresheet (in scores.js:(update):233)
+10:19:07.58 <LOG> Season scores updated quietly (in scores.js:():286)
+[34m10:19:07.58 <DEBUG> Saving Data to S3 (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[34m10:19:08.21 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):95)[39m
+[36m10:19:25.95 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+10:19:26.69 <LOG> Booting up: Naivi (in bot.js:(Object.bot.boot):110)
+[34m10:19:26.69 <DEBUG> Loading Team Shit (in commands.js:(Object.module.exports.load):37)[39m
+[1m[31m10:19:26.74 <ERROR> Error: listen EACCES 0.0.0.0:237.48827865347266
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1224:19)
+    at listen (net.js:1273:10)
+    at Server.listen (net.js:1369:5)
+    at EventEmitter.listen (/home/schizo/Projects/frybot/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/home/schizo/Projects/frybot/index.js:23:5)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32) (in bot.js:(process.<anonymous>):239)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/src/bot.js:239:10)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[39m[22m
+[34m10:19:27.01 <DEBUG> Team Shit Loaded: s3 (in commands.js:(Response.<anonymous>):44)[39m
+[34m10:19:29.02 <DEBUG> League Loaded (in bot.js:(onLoad):114)[39m
+10:19:29.02 <LOG> Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: '' (in bot.js:(Object.bot.activate):97)
+10:19:29.02 <LOG> Updating Players from Scoresheet (in scores.js:(update):233)
+10:19:30.14 <LOG> Season scores updated quietly (in scores.js:():286)
+[34m10:19:30.14 <DEBUG> Saving Data to S3 (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[34m10:19:30.44 <DEBUG> Data Saved to S3 (in commands.js:(Response.<anonymous>):95)[39m
+[36m10:22:02.10 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+10:22:02.77 Naivi: Booting up: Naivi
+[36m10:22:02.78 Loading Team Shit <debug> (in commands.js:(Object.module.exports.load):37)[39m
+[36m10:22:03.08 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m10:22:05.08 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+10:22:05.08 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+10:22:05.08 Naivi: Updating Players from Scoresheet
+10:22:05.91 Naivi: Season scores updated quietly
+[36m10:22:05.91 Saving Data to S3 <debug> (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[36m10:22:06.59 Data Saved to S3 <debug> (in commands.js:(Response.<anonymous>):95)[39m
+[36m10:25:26.23 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+10:25:26.90 Naivi: Booting up: Naivi
+[36m10:25:26.90 Loading Team Shit <debug> (in commands.js:(Object.module.exports.load):37)[39m
+[36m10:25:27.74 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m10:25:29.75 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+10:25:29.75 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+10:25:29.75 Naivi: Updating Players from Scoresheet
+10:25:29.85 Naivi: hi
+10:25:29.87 Naivi: started cronjob - Afterparty
+10:25:29.87 Naivi: started cronjob - Pregame
+10:25:31.71 Naivi: Season scores updated quietly
+[36m10:25:31.71 Saving Data to S3 <debug> (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[36m10:25:31.97 Data Saved to S3 <debug> (in commands.js:(Response.<anonymous>):95)[39m
+[36m10:30:50.25 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m10:30:50.92 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m10:30:50.93 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m10:30:50.93 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m10:30:50.93 Adding command: scores <debug> (in index.js:():8)[39m
+[36m10:30:50.93 Adding command: season <debug> (in index.js:():8)[39m
+[36m10:30:50.93 Adding command: suck <debug> (in index.js:():8)[39m
+10:30:50.93 Naivi: Booting up: Naivi
+[36m10:30:50.93 Loading Team Shit <debug> (in commands.js:(Object.module.exports.load):37)[39m
+[36m10:30:51.21 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m10:30:53.23 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+10:30:53.23 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+10:30:53.23 Naivi: Updating Players from Scoresheet
+10:30:53.36 Naivi: started cronjob - Afterparty
+10:30:53.36 Naivi: started cronjob - Pregame
+[36m10:41:49.76 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m10:41:50.43 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m10:41:50.44 Adding command: scores <debug> (in index.js:():8)[39m
+[36m10:41:50.44 Adding command: season <debug> (in index.js:():8)[39m
+[36m10:41:50.44 Adding command: suck <debug> (in index.js:():8)[39m
+10:41:50.45 Naivi: Booting up: Naivi
+[36m10:41:50.45 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m10:41:50.44 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m10:41:50.44 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m10:41:50.74 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m10:41:52.76 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+10:41:52.76 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+10:41:52.77 Naivi: Updating Players from Scoresheet
+10:41:52.90 Naivi: started cronjob - Afterparty
+10:41:52.90 Naivi: started cronjob - Pregame
+10:41:54.41 Naivi: Season scores updated quietly
+[36m10:41:54.41 Saving Team Shit Locally <debug> (in commands.js:(Object.module.exports.saveTeamShitData):99)[39m
+[36m10:41:54.42 Seasons (local) Saved <debug> (in commands.js:():106)[39m
+[36m10:41:54.43 Team Shit (local) Saved <debug> (in commands.js:():102)[39m
+[36m10:47:53.55 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m10:47:54.23 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m10:47:54.23 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m10:47:54.23 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m10:47:54.23 Adding command: scores <debug> (in index.js:():8)[39m
+[36m10:47:54.23 Adding command: season <debug> (in index.js:():8)[39m
+[36m10:47:54.23 Adding command: suck <debug> (in index.js:():8)[39m
+10:47:54.24 Naivi: Booting up: Naivi
+[36m10:47:54.24 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m10:47:54.52 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m10:47:56.54 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+10:47:56.54 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+10:47:56.55 Naivi: Updating Players from Scoresheet
+10:47:56.66 Naivi: started cronjob - Afterparty
+10:47:56.66 Naivi: started cronjob - Pregame
+10:47:58.53 Naivi: Season scores updated quietly
+[36m10:47:58.53 Saving Team Shit Locally <debug> (in commands.js:(Object.module.exports.saveTeamShitData):99)[39m
+[36m10:47:58.54 Seasons (local) Saved <debug> (in commands.js:():106)[39m
+[36m10:47:58.54 Team Shit (local) Saved <debug> (in commands.js:():102)[39m
+10:48:16.68 Naivi: Running tests...
+[31m[1m10:48:16.68 <error> TypeError: Cannot read property 'call' of undefined
+    at /home/schizo/Projects/frybot/src/bot.js:181:29
+    at Function._.each._.forEach (/home/schizo/Projects/frybot/node_modules/underscore/underscore.js:153:9)
+    at Object.bot.test (/home/schizo/Projects/frybot/src/bot.js:180:7)
+    at null._onTimeout (/home/schizo/Projects/frybot/src/bot.js:80:60)
+    at Timer.listOnTimeout (timers.js:92:15) (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+[36m10:50:21.74 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m10:50:22.49 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m10:50:22.50 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m10:50:22.50 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m10:50:22.50 Adding command: scores <debug> (in index.js:():8)[39m
+[36m10:50:22.50 Adding command: season <debug> (in index.js:():8)[39m
+[36m10:50:22.50 Adding command: suck <debug> (in index.js:():8)[39m
+10:50:22.51 Naivi: Booting up: Naivi
+[36m10:50:22.51 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m10:50:22.56 <error> Error: listen EACCES 0.0.0.0:790.9941801335663
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1224:19)
+    at listen (net.js:1273:10)
+    at Server.listen (net.js:1369:5)
+    at EventEmitter.listen (/home/schizo/Projects/frybot/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/home/schizo/Projects/frybot/index.js:27:5)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32) (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+[36m10:50:22.84 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m10:50:24.86 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+10:50:24.86 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+10:50:24.86 Naivi: Updating Players from Scoresheet
+10:50:24.98 Naivi: started cronjob - Afterparty
+10:50:24.98 Naivi: started cronjob - Pregame
+10:50:26.07 Naivi: Season scores updated quietly
+[36m10:50:26.07 Saving Team Shit Locally <debug> (in commands.js:(Object.module.exports.saveTeamShitData):99)[39m
+[36m10:50:26.08 Seasons (local) Saved <debug> (in commands.js:():106)[39m
+[36m10:50:26.08 Team Shit (local) Saved <debug> (in commands.js:():102)[39m
+10:50:44.100 Naivi: Running tests...
+10:50:55.01 Naivi: Activating: [32mseason[39m[[36mfresh[39m] of [33m[39m: 'Fall Season 2016'
+10:50:55.01 Naivi: Activating: [32mscores[39m[[36mupdate[39m] of [33m[39m: 'quiet'
+10:50:55.01 Naivi: Updating Players from Scoresheet
+[36m10:50:55.90 Saving Team Shit Locally <debug> (in commands.js:(Object.module.exports.saveTeamShitData):99)[39m
+[36m10:50:55.94 Team Shit (local) Saved <debug> (in commands.js:():102)[39m
+[36m10:50:55.94 Seasons (local) Saved <debug> (in commands.js:():106)[39m
+10:51:04.90 Naivi: Sending: '[32mCreating New Season: Fall Season 2016[39m' to [Talking to Myself]
+10:51:13.92 Naivi: Sending: '[32mSeason Created[39m' to [Talking to Myself]
+10:51:22.93 Naivi: Sending: '[32mSeason scores updated[39m' to [Talking to Myself]
+[36m10:53:48.88 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m10:53:49.56 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m10:53:49.56 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m10:53:49.56 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m10:53:49.56 Adding command: season <debug> (in index.js:():8)[39m
+[36m10:53:49.56 Adding command: suck <debug> (in index.js:():8)[39m
+10:53:49.58 Naivi: Booting up: Naivi
+[36m10:53:49.58 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m10:53:49.56 Adding command: scores <debug> (in index.js:():8)[39m
+[36m10:53:49.60 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m10:53:49.60 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m10:53:51.61 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+10:53:51.61 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+10:53:51.62 Naivi: Updating Players from Scoresheet
+10:53:51.73 Naivi: started cronjob - Afterparty
+10:53:51.73 Naivi: started cronjob - Pregame
+10:53:53.42 Naivi: Season scores updated quietly
+[36m10:53:53.42 Saving Data to S3 <debug> (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[36m10:53:54.27 Data Saved to S3 <debug> (in commands.js:(Response.<anonymous>):95)[39m
+[36m10:54:44.78 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m10:54:45.47 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m10:54:45.47 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m10:54:45.47 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m10:54:45.47 Adding command: scores <debug> (in index.js:():8)[39m
+[36m10:54:45.47 Adding command: season <debug> (in index.js:():8)[39m
+[36m10:54:45.47 Adding command: suck <debug> (in index.js:():8)[39m
+10:54:45.48 Naivi: Booting up: Naivi
+[36m10:54:45.48 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m10:54:46.60 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m10:54:48.63 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+10:54:48.63 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+10:54:48.63 Naivi: Updating Players from Scoresheet
+10:54:48.75 Naivi: started cronjob - Afterparty
+10:54:48.75 Naivi: started cronjob - Pregame
+10:54:49.58 Naivi: Season scores updated quietly
+[36m10:54:49.58 Saving Team Shit Locally <debug> (in commands.js:(Object.module.exports.saveTeamShitData):99)[39m
+[36m10:54:49.60 Team Shit (local) Saved <debug> (in commands.js:():102)[39m
+[36m10:54:49.60 Seasons (local) Saved <debug> (in commands.js:():106)[39m
+[36m13:08:57.36 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m13:08:58.21 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m13:08:58.22 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m13:08:58.22 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m13:08:58.22 Adding command: scores <debug> (in index.js:():8)[39m
+[36m13:08:58.22 Adding command: season <debug> (in index.js:():8)[39m
+[36m13:08:58.22 Adding command: suck <debug> (in index.js:():8)[39m
+13:08:58.25 Naivi: Booting up: Naivi
+[36m13:08:58.25 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m13:08:58.66 <error> { [InvalidAccessKeyId: The AWS Access Key Id you provided does not exist in our records.]
+  message: 'The AWS Access Key Id you provided does not exist in our records.',
+  code: 'InvalidAccessKeyId',
+  region: null,
+  time: Wed Jan 04 2017 13:08:58 GMT-0800 (PST),
+  requestId: '077D8B8A290CEEE3',
+  extendedRequestId: 'yg8q3uen+mo3gWjc0WDoFyf5tB18IMeuXgXq+lDHFsn/KtFpYwR+13NTjXaxy14f7WkFmxLUFqE=',
+  statusCode: 403,
+  retryable: false,
+  retryDelay: 34.81015914585441 } (in bot.js:(onLoad):73)
+Call Stack:
+    at onLoad (/home/schizo/Projects/frybot/src/bot.js:73:35)
+    at Response.<anonymous> (/home/schizo/Projects/frybot/src/commands.js:40:23)
+    at Request.<anonymous> (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/request.js:354:18)
+    at Request.callListeners (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/sequential_executor.js:105:20)
+    at Request.emit (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/sequential_executor.js:77:10)
+    at Request.emit (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/request.js:596:14)
+    at Request.transition (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/request.js:21:10)
+    at AcceptorStateMachine.runTo (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/state_machine.js:14:12)[22m[39m
+[36m13:09:49.57 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m13:09:50.27 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m13:09:50.27 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m13:09:50.27 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m13:09:50.27 Adding command: scores <debug> (in index.js:():8)[39m
+[36m13:09:50.27 Adding command: season <debug> (in index.js:():8)[39m
+[36m13:09:50.27 Adding command: suck <debug> (in index.js:():8)[39m
+13:09:50.29 Naivi: Booting up: Naivi
+[36m13:09:50.29 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m13:09:50.54 <error> { [NoSuchKey: The specified key does not exist.]
+  message: 'The specified key does not exist.',
+  code: 'NoSuchKey',
+  region: null,
+  time: Wed Jan 04 2017 13:09:50 GMT-0800 (PST),
+  requestId: 'F17F2C142EEBFDD1',
+  extendedRequestId: 'sRqbfPOzWulcwfrlQN8Dmm6TbTfzJH4cosyeOCuojpeOY9RoDsrJeB1MMene1s7aa5E7Vjpb/5w=',
+  statusCode: 404,
+  retryable: false,
+  retryDelay: 8.764931955374777 } (in bot.js:(onLoad):73)
+Call Stack:
+    at onLoad (/home/schizo/Projects/frybot/src/bot.js:73:35)
+    at Response.<anonymous> (/home/schizo/Projects/frybot/src/commands.js:40:23)
+    at Request.<anonymous> (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/request.js:354:18)
+    at Request.callListeners (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/sequential_executor.js:105:20)
+    at Request.emit (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/sequential_executor.js:77:10)
+    at Request.emit (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/request.js:596:14)
+    at Request.transition (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/request.js:21:10)
+    at AcceptorStateMachine.runTo (/home/schizo/Projects/frybot/node_modules/aws-sdk/lib/state_machine.js:14:12)[22m[39m
+[36m13:17:45.93 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m13:17:46.61 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m13:17:46.61 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m13:17:46.61 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m13:17:46.61 Adding command: scores <debug> (in index.js:():8)[39m
+[36m13:17:46.61 Adding command: season <debug> (in index.js:():8)[39m
+[36m13:17:46.61 Adding command: suck <debug> (in index.js:():8)[39m
+13:17:46.62 Naivi: Booting up: Naivi
+[36m13:17:46.63 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m13:17:46.64 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m13:17:46.66 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m13:17:48.68 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+13:17:48.68 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+13:17:48.68 Naivi: Updating Players from Scoresheet
+13:17:48.82 Naivi: started cronjob - Afterparty
+13:17:48.82 Naivi: started cronjob - Pregame
+13:17:49.65 Naivi: Season scores updated quietly
+[36m13:17:49.65 Saving Team Shit Locally <debug> (in commands.js:(Object.module.exports.saveTeamShitData):99)[39m
+[36m13:17:49.67 Team Shit (local) Saved <debug> (in commands.js:():102)[39m
+[36m13:17:49.67 Seasons (local) Saved <debug> (in commands.js:():106)[39m
+13:18:08.84 Naivi: Running tests...
+13:18:18.84 Naivi: Activating: [32mseason[39m[[36mfresh[39m] of [33m[39m: 'Spring Season 2017'
+13:18:18.84 Naivi: Activating: [32mscores[39m[[36mupdate[39m] of [33m[39m: 'quiet'
+13:18:18.84 Naivi: Updating Players from Scoresheet
+[31m[1m13:18:19.51 <error> TypeError: Cannot read property 'length' of undefined
+    at Object.Season.updateMatchups (/home/schizo/Projects/frybot/src/league.js:404:29)
+    at /home/schizo/Projects/frybot/src/cmds/scores.js:284:40
+    at /home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:519:5
+    at Request._callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:124:12)
+    at Request.self.callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:198:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:1035:10)
+    at emitOne (events.js:82:20)
+    at Request.emit (events.js:169:7) (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+13:18:28.61 Naivi: Sending: '[32mCreating New Season: Spring Season 2017[39m' to [Talking to Myself]
+13:18:37.62 Naivi: Sending: '[32mSeason Created[39m' to [Talking to Myself]
+[36m13:25:19.88 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m13:25:20.58 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m13:25:20.58 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m13:25:20.58 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m13:25:20.58 Adding command: scores <debug> (in index.js:():8)[39m
+[36m13:25:20.58 Adding command: season <debug> (in index.js:():8)[39m
+[36m13:25:20.59 Adding command: suck <debug> (in index.js:():8)[39m
+13:25:20.60 Naivi: Booting up: Naivi
+[36m13:25:20.60 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m13:25:20.62 <error> Error: listen EACCES 0.0.0.0:112.99369856715202
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1224:19)
+    at listen (net.js:1273:10)
+    at Server.listen (net.js:1369:5)
+    at EventEmitter.listen (/home/schizo/Projects/frybot/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/home/schizo/Projects/frybot/index.js:27:5)
+    at Module._compile (module.js:410:26)
+    at Object.Module._extensions..js (module.js:417:10)
+    at Module.load (module.js:344:32) (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+[36m13:25:20.62 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m13:25:20.62 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m13:25:22.63 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+13:25:22.63 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+13:25:22.63 Naivi: Updating Players from Scoresheet
+13:25:22.74 Naivi: started cronjob - Afterparty
+13:25:22.74 Naivi: started cronjob - Pregame
+13:25:23.68 Naivi: Season scores updated quietly
+[36m13:25:23.68 Saving Team Shit Locally <debug> (in commands.js:(Object.module.exports.saveTeamShitData):99)[39m
+[36m13:25:23.70 Seasons (local) Saved <debug> (in commands.js:():106)[39m
+[36m13:25:23.70 Team Shit (local) Saved <debug> (in commands.js:():102)[39m
+13:25:42.75 Naivi: Running tests...
+13:25:52.76 Naivi: Activating: [32mseason[39m[[36mfresh[39m] of [33m[39m: 'Spring Season 2017'
+13:25:52.76 Naivi: Activating: [32mscores[39m[[36mupdate[39m] of [33m[39m: 'quiet'
+13:25:52.76 Naivi: Updating Players from Scoresheet
+[31m[1m13:25:53.48 <error> TypeError: Cannot read property 'length' of undefined
+    at Object.Season.updateMatchups (/home/schizo/Projects/frybot/src/league.js:404:29)
+    at /home/schizo/Projects/frybot/src/cmds/scores.js:284:40
+    at /home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:519:5
+    at Request._callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:124:12)
+    at Request.self.callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:198:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:1035:10)
+    at emitOne (events.js:82:20)
+    at Request.emit (events.js:169:7) (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+[31m[1m13:25:53.58 <error> TypeError: self.saveTeamShitData is not a function
+    at /home/schizo/Projects/frybot/src/cmds/season.js:21:12
+    at /home/schizo/Projects/frybot/src/league.js:37:14
+    at continue_ (/home/schizo/Projects/frybot/src/league.js:352:5)
+    at /home/schizo/Projects/frybot/src/league.js:330:9
+    at /home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:519:5
+    at Request._callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:124:12)
+    at Request.self.callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:198:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:1035:10) (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+13:26:02.59 Naivi: Sending: '[32mCreating New Season: Spring Season 2017[39m' to [Talking to Myself]
+13:26:11.60 Naivi: Sending: '[32mSeason Created[39m' to [Talking to Myself]
+[36m13:26:39.33 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m13:26:40.02 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m13:26:40.02 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m13:26:40.02 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m13:26:40.02 Adding command: scores <debug> (in index.js:():8)[39m
+[36m13:26:40.02 Adding command: season <debug> (in index.js:():8)[39m
+[36m13:26:40.03 Adding command: suck <debug> (in index.js:():8)[39m
+13:26:40.04 Naivi: Booting up: Naivi
+[36m13:26:40.04 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m13:26:40.06 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m13:26:40.06 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m13:26:42.07 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+13:26:42.07 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+13:26:42.07 Naivi: Updating Players from Scoresheet
+13:26:42.19 Naivi: started cronjob - Afterparty
+13:26:42.19 Naivi: started cronjob - Pregame
+13:26:42.81 Naivi: Season scores updated quietly
+[36m13:26:42.81 Saving Team Shit Locally <debug> (in commands.js:(Object.module.exports.saveTeamShitData):99)[39m
+[36m13:26:42.83 Team Shit (local) Saved <debug> (in commands.js:():102)[39m
+[36m13:26:42.83 Seasons (local) Saved <debug> (in commands.js:():106)[39m
+13:27:02.21 Naivi: Running tests...
+13:27:12.22 Naivi: Activating: [32mseason[39m[[36mfresh[39m] of [33m[39m: 'Spring Season 2017'
+13:27:12.22 Naivi: Activating: [32mscores[39m[[36mupdate[39m] of [33m[39m: 'quiet'
+13:27:12.23 Naivi: Updating Players from Scoresheet
+[31m[1m13:27:12.72 <error> TypeError: Cannot read property 'length' of undefined
+    at Object.Season.updateMatchups (/home/schizo/Projects/frybot/src/league.js:404:29)
+    at /home/schizo/Projects/frybot/src/cmds/scores.js:284:40
+    at /home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:519:5
+    at Request._callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:124:12)
+    at Request.self.callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:198:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:1035:10)
+    at emitOne (events.js:82:20)
+    at Request.emit (events.js:169:7) (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+[36m13:27:12.76 Saving Team Shit Locally <debug> (in commands.js:(Object.module.exports.saveTeamShitData):99)[39m
+[36m13:27:12.82 Seasons (local) Saved <debug> (in commands.js:():106)[39m
+[36m13:27:12.82 Team Shit (local) Saved <debug> (in commands.js:():102)[39m
+13:27:21.77 Naivi: Sending: '[32mCreating New Season: Spring Season 2017[39m' to [Talking to Myself]
+13:27:30.78 Naivi: Sending: '[32mSeason Created[39m' to [Talking to Myself]
+[36m13:28:59.80 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m13:29:00.49 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m13:29:00.49 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m13:29:00.49 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m13:29:00.49 Adding command: scores <debug> (in index.js:():8)[39m
+[36m13:29:00.50 Adding command: season <debug> (in index.js:():8)[39m
+[36m13:29:00.50 Adding command: suck <debug> (in index.js:():8)[39m
+13:29:00.51 Naivi: Booting up: Naivi
+[36m13:29:00.51 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m13:29:00.53 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m13:29:00.53 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m13:29:02.54 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+13:29:02.54 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+13:29:02.54 Naivi: Updating Players from Scoresheet
+13:29:02.66 Naivi: started cronjob - Afterparty
+13:29:02.66 Naivi: started cronjob - Pregame
+[31m[1m13:29:02.67 <error> TypeError: self.saveTeamShitData is not a function
+    at slightDelay [as _onTimeout] (/home/schizo/Projects/frybot/src/commands.js:66:42)
+    at Timer.listOnTimeout (timers.js:92:15) (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+13:29:04.91 Naivi: Season scores updated quietly
+[36m13:29:04.91 Saving Data to S3 <debug> (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[36m13:29:05.65 Data Saved to S3 <debug> (in commands.js:(Response.<anonymous>):95)[39m
+[36m13:29:46.51 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m13:29:47.20 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m13:29:47.20 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m13:29:47.20 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m13:29:47.20 Adding command: scores <debug> (in index.js:():8)[39m
+[36m13:29:47.20 Adding command: season <debug> (in index.js:():8)[39m
+[36m13:29:47.20 Adding command: suck <debug> (in index.js:():8)[39m
+13:29:47.21 Naivi: Booting up: Naivi
+[36m13:29:47.21 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m13:29:47.23 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m13:29:47.24 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m13:29:49.24 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+13:29:49.24 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+13:29:49.25 Naivi: Updating Players from Scoresheet
+13:29:49.36 Naivi: started cronjob - Afterparty
+13:29:49.36 Naivi: started cronjob - Pregame
+[36m13:29:49.36 Saving Data to S3 <debug> (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[36m13:29:49.75 Data Saved to S3 <debug> (in commands.js:(Response.<anonymous>):95)[39m
+13:29:50.24 Naivi: Season scores updated quietly
+[36m13:29:50.24 Saving Data to S3 <debug> (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[36m13:29:50.58 Data Saved to S3 <debug> (in commands.js:(Response.<anonymous>):95)[39m
+13:30:09.37 Naivi: Running tests...
+13:30:19.38 Naivi: Activating: [32mseason[39m[[36mfresh[39m] of [33m[39m: 'Spring Season 2017'
+13:30:19.38 Naivi: Activating: [32mscores[39m[[36mupdate[39m] of [33m[39m: 'quiet'
+13:30:19.38 Naivi: Updating Players from Scoresheet
+[31m[1m13:30:20.14 <error> TypeError: Cannot read property 'length' of undefined
+    at Object.Season.updateMatchups (/home/schizo/Projects/frybot/src/league.js:404:29)
+    at /home/schizo/Projects/frybot/src/cmds/scores.js:284:40
+    at /home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:519:5
+    at Request._callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:124:12)
+    at Request.self.callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:198:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:1035:10)
+    at emitOne (events.js:82:20)
+    at Request.emit (events.js:169:7) (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+[36m13:30:41.62 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m13:30:42.31 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m13:30:42.31 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m13:30:42.31 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m13:30:42.32 Adding command: scores <debug> (in index.js:():8)[39m
+[36m13:30:42.32 Adding command: season <debug> (in index.js:():8)[39m
+[36m13:30:42.32 Adding command: suck <debug> (in index.js:():8)[39m
+13:30:42.33 Naivi: Booting up: Naivi
+[36m13:30:42.33 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m13:30:42.35 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m13:30:42.35 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m13:30:44.36 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+13:30:44.36 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+13:30:44.36 Naivi: Updating Players from Scoresheet
+13:30:44.49 Naivi: started cronjob - Afterparty
+13:30:44.49 Naivi: started cronjob - Pregame
+[36m13:30:44.49 Saving Data to S3 <debug> (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[36m13:30:44.87 Data Saved to S3 <debug> (in commands.js:(Response.<anonymous>):95)[39m
+13:30:45.33 Naivi: Season scores updated quietly
+[36m13:30:45.33 Saving Data to S3 <debug> (in commands.js:(Object.module.exports.saveTeamShitData):81)[39m
+[36m13:30:45.64 Data Saved to S3 <debug> (in commands.js:(Response.<anonymous>):95)[39m
+[36m13:31:11.90 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m13:31:12.60 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m13:31:12.60 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m13:31:12.60 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m13:31:12.60 Adding command: scores <debug> (in index.js:():8)[39m
+[36m13:31:12.60 Adding command: season <debug> (in index.js:():8)[39m
+[36m13:31:12.60 Adding command: suck <debug> (in index.js:():8)[39m
+13:31:12.61 Naivi: Booting up: Naivi
+[36m13:31:12.62 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m13:31:12.97 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m13:31:14.98 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+13:31:14.98 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+13:31:14.99 Naivi: Updating Players from Scoresheet
+13:31:15.11 Naivi: started cronjob - Afterparty
+13:31:15.11 Naivi: started cronjob - Pregame
+13:31:15.85 Naivi: Season scores updated quietly
+[31m[1m13:31:15.85 <error> TypeError: console.debug is not a function
+    at Object.module.exports.saveTeamShitData (/home/schizo/Projects/frybot/src/commands.js:77:43)
+    at /home/schizo/Projects/frybot/src/cmds/scores.js:289:40
+    at /home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:519:5
+    at Request._callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/lib/spreadsheet.js:124:12)
+    at Request.self.callback (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:198:22)
+    at emitTwo (events.js:87:13)
+    at Request.emit (events.js:172:7)
+    at Request.<anonymous> (/home/schizo/Projects/frybot/node_modules/edit-google-spreadsheet/node_modules/request/request.js:1035:10)
+    at emitOne (events.js:82:20)
+    at Request.emit (events.js:169:7) (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+[36m13:34:05.92 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m13:34:06.62 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m13:34:06.63 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m13:34:06.63 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m13:34:06.63 Adding command: scores <debug> (in index.js:():8)[39m
+[36m13:34:06.63 Adding command: season <debug> (in index.js:():8)[39m
+[36m13:34:06.63 Adding command: suck <debug> (in index.js:():8)[39m
+13:34:06.64 Naivi: Booting up: Naivi
+[36m13:34:06.64 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m13:34:06.66 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m13:34:06.66 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m13:34:08.67 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+13:34:08.67 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+13:34:08.67 Naivi: Updating Players from Scoresheet
+13:34:08.80 Naivi: started cronjob - Afterparty
+13:34:08.80 Naivi: started cronjob - Pregame
+13:34:09.62 Naivi: Season scores updated quietly
+[36m13:34:09.62 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):77)[39m
+13:34:28.81 Naivi: Running tests...
+13:34:38.81 Naivi: Activating: [32mseason[39m[[36mpregame[39m] of [33m[39m: ''
+[36m13:34:38.82 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):77)[39m
+[36m13:34:38.82 bottle duty updated <debug> (in bottle.js:(Function.next):57)[39m
+13:34:38.82 Naivi: Activating: [32mseason[39m[[36mafterparty[39m] of [33m[39m: ''
+13:34:38.82 Naivi: Updating Players from Scoresheet
+[36m13:34:38.82 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):77)[39m
+[36m13:34:38.82 bottle duty updated <debug> (in bottle.js:(Function.next):57)[39m
+[36m13:34:39.52 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):77)[39m
+13:34:48.53 Naivi: Sending: '[32mIt's League night bitch niggas![39m' to [Talking to Myself]
+13:34:57.54 Naivi: Sending: '[32mPlaying @ The Copper Bucket [39m' to [Talking to Myself]
+13:35:06.55 Naivi: Sending: '[32mBottle Duty: Coco[39m' to [Talking to Myself]
+13:35:15.56 Naivi: Sending: '[32mCurrent LVP- George; Matches Won: 0, Matches Lost: 1, Points Earned: 0, Points Given: 2, Skunks: 0, Skunked: 0, PPM: 0[39m' to [Talking to Myself]
+13:35:24.58 Naivi: Sending: '[32m...Syncing Yesterday's Game Results...[39m' to [Talking to Myself]
+13:35:33.58 Naivi: Sending: '[32mNext Week's Bottle Duty- Mike[39m' to [Talking to Myself]
+13:35:42.59 Naivi: Sending: '[32mSeason scores updated[39m' to [Talking to Myself]
+[36m13:39:42.05 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m13:39:42.78 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m13:39:42.79 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m13:39:42.79 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m13:39:42.79 Adding command: scores <debug> (in index.js:():8)[39m
+[36m13:39:42.79 Adding command: season <debug> (in index.js:():8)[39m
+[36m13:39:42.79 Adding command: suck <debug> (in index.js:():8)[39m
+13:39:42.80 Naivi: Booting up: Naivi
+[36m13:39:42.80 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m13:39:42.82 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m13:39:42.82 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m13:39:44.83 League Loaded <debug> (in bot.js:(onLoad):75)[39m
+13:39:44.83 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+13:39:44.83 Naivi: Updating Players from Scoresheet
+13:39:44.95 Naivi: started cronjob - Afterparty
+13:39:44.95 Naivi: started cronjob - Pregame
+13:39:45.81 Naivi: Season scores updated quietly
+[36m13:39:45.82 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):77)[39m
+13:40:04.96 Naivi: Running tests...
+13:40:14.97 Naivi: Activating: [32mseason[39m[[36mpregame[39m] of [33m[39m: ''
+[36m13:40:14.97 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):77)[39m
+[36m13:40:14.97 bottle duty updated <debug> (in bottle.js:(Function.next):57)[39m
+13:40:14.97 Naivi: Activating: [32mseason[39m[[36mafterparty[39m] of [33m[39m: ''
+13:40:14.97 Naivi: Updating Players from Scoresheet
+[36m13:40:14.98 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):77)[39m
+[36m13:40:14.98 bottle duty updated <debug> (in bottle.js:(Function.next):57)[39m
+[36m13:40:15.81 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):77)[39m
+13:40:24.82 Naivi: Sending: '[32mIt's League night bitch niggas![39m' to [Talking to Myself]
+13:40:33.82 Naivi: Sending: '[32mPlaying @ The Copper Bucket [39m' to [Talking to Myself]
+13:40:42.84 Naivi: Sending: '[32mBottle Duty: Oberg[39m' to [Talking to Myself]
+13:40:51.85 Naivi: Sending: '[32mCurrent LVP- George; Matches Won: 0, Matches Lost: 1, Points Earned: 0, Points Given: 2, Skunks: 0, Skunked: 0, PPM: 0[39m' to [Talking to Myself]
+13:41:00.85 Naivi: Sending: '[32m...Syncing Yesterday's Game Results...[39m' to [Talking to Myself]
+13:41:09.86 Naivi: Sending: '[32mNext Week's Bottle Duty- George[39m' to [Talking to Myself]
+13:41:18.87 Naivi: Sending: '[32mSeason scores updated[39m' to [Talking to Myself]
+[33m13:41:34.53 Naivi: error posting message: {"code":"ECONNRESET","errno":"ECONNRESET","syscall":"read"}[39m
+[36m11:53:12.84 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m11:53:17.12 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m11:53:17.14 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m11:53:17.14 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m11:53:17.14 Adding command: scores <debug> (in index.js:():8)[39m
+[36m11:53:17.15 Adding command: season <debug> (in index.js:():8)[39m
+[36m11:53:17.16 Adding command: suck <debug> (in index.js:():8)[39m
+11:53:17.22 Naivi: Booting up: Naivi
+[36m11:53:17.22 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m11:53:17.87 <error> { [NoSuchKey: The specified key does not exist.]
+  message: 'The specified key does not exist.',
+  code: 'NoSuchKey',
+  region: null,
+  time: Sat Jan 14 2017 11:53:17 GMT-0800 (Pacific Standard Time),
+  requestId: '0BB05B3D9B7C6E75',
+  extendedRequestId: 'OaY3PkBgmWimBGbyW4wC5r6lIgOLRNal6gTPbSbcFyNvvt8lTk79/r5XsG4ESfVzaHQI59D3OjI=',
+  statusCode: 404,
+  retryable: false,
+  retryDelay: 81.58337255008519 } (in bot.js:(onLoad):74)
+Call Stack:
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\bot.js:74:35)
+    at Response.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\src\commands.js:40:23)
+    at Request.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\request.js:354:18)
+    at Request.callListeners (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\sequential_executor.js:105:20)
+    at Request.emit (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\sequential_executor.js:77:10)
+    at Request.emit (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\request.js:596:14)
+    at Request.transition (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\request.js:21:10)
+    at AcceptorStateMachine.runTo (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\aws-sdk\lib\state_machine.js:14:12)[22m[39m
+[36m11:55:01.41 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+[36m11:55:03.13 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m11:55:03.13 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m11:55:03.13 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m11:55:03.13 Adding command: scores <debug> (in index.js:():8)[39m
+[36m11:55:03.14 Adding command: season <debug> (in index.js:():8)[39m
+[36m11:55:03.14 Adding command: suck <debug> (in index.js:():8)[39m
+11:55:03.16 Naivi: Booting up: Naivi
+[36m11:55:03.16 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m11:55:03.62 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m11:55:05.64 League Loaded <debug> (in bot.js:(onLoad):76)[39m
+11:55:05.64 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+11:55:05.65 Naivi: Updating Players from Scoresheet
+11:55:05.84 Naivi: started cronjob - Afterparty
+11:55:05.84 Naivi: started cronjob - Pregame
+[33m11:55:05.84 Naivi: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+[31m[1m11:55:05.84 <error> undefined (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+[36m11:55:10.84 retrying sheet load <debug> (in scores.js:(null._onTimeout):244)[39m
+11:55:10.85 Naivi: Updating Players from Scoresheet
+[31m[1m11:55:10.85 <error> undefined (in index.js:(process.<anonymous>):11)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:11:14)
+    at emitOne (events.js:77:13)
+    at process.emit (events.js:169:7)
+    at process._fatalException (node.js:223:26)[22m[39m
+[33m11:55:10.85 Naivi: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m

@@ -1,42 +1,37 @@
-var config = require('./lib/config.js'),
-    Bot = require('./lib/bot.js'),
-    director = require('director'),
+var config = require('./src/config/index.js'),
+    bodyParser = require('body-parser'),
+    Bot = require('./src/bot.js'),
+    express = require('express'),
+    app = express(),
     http = require('http');
 
-var bot = new Bot();
+var bot = new Bot(config);
 
-var router = new director.http.Router({
-  '/' : {
-    post: bot.post,
-    get: ping
-  }
+process.on('uncaughtException', function(err) {
+  bot.logger.error(err.stack);
 });
 
-var server = http.createServer(function (req, res) {
-  req.chunks = [];
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-  });
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-  router.dispatch(req, res, function(err) {
-    res.writeHead(err.status, {"Content-Type": "text/plain"});
-    res.end(err.message);
-  });
+app.get('/', function (req, res) {
+  res.writeHead(200);
+  res.end("Hi, I'm "+config.botName+" and I totally work right now.");
+});
+
+app.post('/', function (req, res) {
+  bot.onGroupMePost.call(bot, req, res);
 });
 
 var port = Number(process.env.PORT || config.port);
-server.listen(port);
-
-function ping() {
-  this.res.writeHead(200);
-  this.res.end("Hi, I'm "+config.name+" and I totally work.");
-  // bot.ping();
-}
+app.listen(port, function () {
+  console.log('App listening on port %s',port);
+});
 
 // Sleep Delay
+// does this even work?
 setInterval(function() {
-    http.get("http://"+config.name+".herokuapp.com");
+    http.get("http://"+config.botName+".herokuapp.com");
     console.log('*boing*');
 }, 600000); // every 10 minutes
 
-bot.boot();

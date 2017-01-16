@@ -1,20 +1,10 @@
 var _ = require('underscore'),
-    config = require('./config.js'),
+    config = require('./config/index.js'),
     fs = require('fs'),
     Spreadsheet = require('edit-google-spreadsheet');
 
-var aws = require('aws-sdk');
-aws.config.update({accessKeyId: config.AWS_ACCESS_KEY, secretAccessKey: config.AWS_SECRET_KEY});
-var s3 = new aws.S3();
-
-
-var localSeasonsPath = './lib/seasons.json';
-
-
 /*
   League Constructor
-
-  Loads from S3 or locally
 */
 function League(seasons, callback) {
   think_('League Created');
@@ -43,7 +33,7 @@ League.prototype = {
   },
   fresh: function(data, callback) {
     this.seasons.splice(0,0,new Season({label:data.label},function(err) {
-      if (err) return err;
+      if (err) return callback(err);
       return callback(null);
     }));
   }
@@ -133,7 +123,7 @@ function Match(data) {
   this.race = data.race || '2:2'; // todo: add race calculations
   this.games = data.games || [];
   this.winner = data.winner || this.determineWinner();
-  think_('Match #'+this.matchNumber+': '+this.players[0].name+' vs '+this.players[1].name);
+  // think_('Match #'+this.matchNumber+': '+this.players[0].name+' vs '+this.players[1].name);
 }
 
 Match.prototype = {
@@ -189,7 +179,7 @@ function MatchUp(data) {
         this.matches.push(new Match({matchNumber:i}));
       blip = ' and Prepped';
     }
-    think_('MatchUp ('+this.date+') Loaded'+blip);
+    // think_('MatchUp ('+this.date+') Loaded'+blip);
   }
   else {
     for (var i=1;i<=5;i++) 
@@ -256,6 +246,8 @@ Player.prototype = {
     this.pointsGiven = 0;
     this.matchesWon = 0;
     this.matchesLost = 0;
+    this.skunks = 0;
+    this.skunked = 0;
     this.mvp = (this.pointsEarned/(this.matchesWon+this.matchesLost));
     this.skunkCheck();
   },
@@ -268,7 +260,7 @@ Player.prototype = {
     // if (this.name=="Danny")
       // this.addSkunk();
   },
-  toStats : function() {return (this.name+': Matches Won: '+this.matchesWon+', Matches Lost: '+this.matchesLost+', Points Earned: '+this.pointsEarned+', Points Given: '+this.pointsGiven+', Skunks: '+this.skunks+', Skunked: '+this.skunked+', PPM: '+(Math.round(this.mvp*100)/100));},
+  toStats : function() {return (this.name+'; Matches Won: '+this.matchesWon+', Matches Lost: '+this.matchesLost+', Points Earned: '+this.pointsEarned+', Points Given: '+this.pointsGiven+', Skunks: '+this.skunks+', Skunked: '+this.skunked+', PPM: '+(Math.round(this.mvp*100)/100));},
   toString : function() {
     var returned = [];
     returned.push("{ Name: "+this.name);
