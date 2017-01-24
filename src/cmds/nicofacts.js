@@ -123,6 +123,12 @@ module.exports = function nicofacts(data) {
 
   console.log('argument: %s',argument);
 
+  if (argument=='addNicoFact') {
+    addNicoFact();
+    return;
+  }
+
+
   if (this.commands.nicofacts[argument])
     this.commands.nicofacts[argument]();
   else if (!argument&&!this.nicoFactPrimed) {
