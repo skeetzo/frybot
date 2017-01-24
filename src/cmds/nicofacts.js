@@ -41,7 +41,7 @@ module.exports = function nicofacts(data) {
     var number = message.match(/([0-9]*):/gi);
     self.logger.debug('number: %s',number);
     var newFact = message.substring(message.indexOf(':')+1);
-    while (newFact.indexOf(' ')<=2) newFact.substring(1);
+    while (newFact.charAt(0)==' ') newFact = newFact.substring(1);
     self.logger.debug('newFact: %s',newFact);
     self.logger.debug('Nico Fact #%s: %s',number,newFact);
     // add to spreadsheet
