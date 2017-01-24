@@ -38,13 +38,9 @@ module.exports = function nicofacts(data) {
   function addNicoFact() {
     // parse for the fact
     self.logger.debug('Adding Nico Fact');
-    var newFact = message.match(/nico\s*fact\s*#/gi);
-    self.logger.debug('newFact: %s',newFact);
-    newFact = message.substring(newFact.length);
-    self.logger.debug('newFact: %s',newFact);
-    var number = newFact.match(/([0-9]):/gi);
+    var number = message.match(/([0-9]*):/gi);
     self.logger.debug('number: %s',number);
-    newFact = newFact.substring(number);
+    var newFact = message.substring(message.indexOf(':'));
     self.logger.debug('newFact: %s',newFact);
     self.logger.debug('Nico Fact #%s: %s',number,newFact);
     // add to spreadsheet
