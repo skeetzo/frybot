@@ -36,6 +36,39 @@ module.exports = function nicofacts(data) {
     return;
   }
 
+  function addNicoFact() {
+    // parse for the fact
+    self.logger.debug('Adding Nico Fact');
+    var newFact = message.match(/nico\s*fact\s*#/gi);
+    self.logger.debug('newFact: %s',newFact);
+    newFact = message.substring(newFact.length);
+    self.logger.debug('newFact: %s',newFact);
+    var number = newFact.match(/([0-9]):/gi);
+    self.logger.debug('number: %s',number);
+    newFact = newFact.substring(number);
+    self.logger.debug('newFact: %s',newFact);
+    self.logger.debug('Nico Fact #%s: %s',number,newFact);
+    // add to spreadsheet
+    Spreadsheet.load({
+      debug: true,
+      spreadsheetId: self.config.Google_ItIsWhatItIs_Spreadsheet_ID,
+      worksheetId: self.config.ItIsWhatItIs_nicofactsSheetID,
+      oauth : self.config.Google_Oauth_Opts
+    },
+    function sheetReady(err, spreadsheet) {
+      if(err) throw err;
+      spreadsheet.receive(function(err, rows, info) {
+        if(err) throw err;
+        rows = _.toArray(rows);
+        var jsonObj = "{\""+(rows.length+1)+"\":"+newFact+"}";
+        jsonObj = JSON.parse(jsonObj);
+        spreadsheet.add(jsonObj);
+        self.logger.log('Nico Fact Added');
+      });
+    });
+  }
+  this.commands.addNicoFact = addNicoFact;
+
   function spitNicoFact() {
     console.log('spitting nico fact');
     self.say(self.nicofactsDB[self.nicoFactCounter]);
