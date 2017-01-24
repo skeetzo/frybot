@@ -5,7 +5,6 @@ module.exports = function nicofacts(data) {
   var self = this;
   var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
 
-
   if (!this.nicofactsDB||this.nicofactsDB.length<=0) {
     self.logger.log('Loading Nico Facts');
     Spreadsheet.load({
@@ -121,6 +120,8 @@ module.exports = function nicofacts(data) {
     self.say('Nico Fact #847: No one tells Nico Facts what to do.');
   }
   this.commands.nicofacts.START = START;
+
+  console.log('argument: %s',argument);
 
   if (this.commands.nicofacts[argument])
     this.commands.nicofacts[argument]();
