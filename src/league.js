@@ -32,6 +32,7 @@ League.prototype = {
     return this.seasons;
   },
   fresh: function(data, callback) {
+    if (!data.label) data.label = "Fresh_Season"
     this.seasons.splice(0,0,new Season({label:data.label},function(err) {
       if (err) return callback(err);
       return callback(null);
