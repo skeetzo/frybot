@@ -40,10 +40,10 @@ module.exports = function nicofacts(data) {
     self.logger.debug('Adding Nico Fact');
     var number = message.match(/([0-9]*):/gi)[0];
     number = number.toString().substring(0,number.toString().length-1);
-    self.logger.debug('number: %s',number);
+    // self.logger.debug('number: %s',number);
     var newFact = message.substring(message.indexOf(':')+1);
     while (newFact.charAt(0)==' ') newFact = newFact.substring(1);
-    self.logger.debug('newFact: %s',newFact);
+    // self.logger.debug('newFact: %s',newFact);
     self.logger.debug('Nico Fact #%s: %s',number,newFact);
     // add to spreadsheet
     Spreadsheet.load({
@@ -58,7 +58,7 @@ module.exports = function nicofacts(data) {
         if(err) throw err;
         rows = _.toArray(rows);
         var jsonObj = "{\""+(rows.length+1)+"\": {\"1\": \""+number+"\",\"2\": \""+newFact+"\"}}";
-        console.log('nicoFactObj: '+jsonObj);
+        // console.log('nicoFactObj: '+jsonObj);
         jsonObj = JSON.parse(jsonObj);
         spreadsheet.add(jsonObj);
         spreadsheet.send(function(err) {
