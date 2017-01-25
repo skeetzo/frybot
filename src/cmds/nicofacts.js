@@ -39,8 +39,8 @@ module.exports = function nicofacts(data) {
     // parse for the fact
     self.logger.debug('Adding Nico Fact');
     var number = message.match(/([0-9]*):/gi);
-    self.logger.debug('number: %s',number);
     number.toString().replace(':','');
+    self.logger.debug('number: %s',number);
     var newFact = message.substring(message.indexOf(':')+1);
     while (newFact.charAt(0)==' ') newFact = newFact.substring(1);
     self.logger.debug('newFact: %s',newFact);
@@ -57,7 +57,7 @@ module.exports = function nicofacts(data) {
       spreadsheet.receive(function(err, rows, info) {
         if(err) throw err;
         rows = _.toArray(rows);
-        var jsonObj = "{\""+(rows.length+1)+"\":\""+newFact+"\"}";
+        var jsonObj = "{\""+(rows.length+1)+"\": {\"1\": \""+number+"\",\"2\": \""+newFact+"\"}}";
         console.log('obj: '+jsonObj);
         jsonObj = JSON.parse(jsonObj);
         spreadsheet.add(jsonObj);
@@ -123,7 +123,7 @@ module.exports = function nicofacts(data) {
   }
   this.commands.nicofacts.START = START;
 
-  console.log('argument: %s',argument);
+  // console.log('argument: %s',argument);
 
   if (argument=='addNicoFact') {
     addNicoFact();
