@@ -39,7 +39,7 @@ module.exports = function nicofacts(data) {
     // parse for the fact
     self.logger.debug('Adding Nico Fact');
     var number = message.match(/([0-9]*):/gi)[0];
-    // number = number.substring(0,number.length-1);
+    number = number.toString().substring(0,number.toString().length-1);
     self.logger.debug('number: %s',number);
     var newFact = message.substring(message.indexOf(':')+1);
     while (newFact.charAt(0)==' ') newFact = newFact.substring(1);
