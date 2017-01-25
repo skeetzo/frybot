@@ -57,6 +57,7 @@ module.exports = function nicofacts(data) {
       spreadsheet.receive(function(err, rows, info) {
         if(err) throw err;
         rows = _.toArray(rows);
+        newFact = newFact.replace('\"','\\\"')
         var jsonObj = "{\""+(rows.length+1)+"\": {\"1\": \""+number+"\",\"2\": \""+newFact+"\"}}";
         // console.log('nicoFactObj: '+jsonObj);
         jsonObj = JSON.parse(jsonObj);

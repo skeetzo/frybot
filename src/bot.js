@@ -93,7 +93,7 @@ bot.prototype = {
     self.logger.log(request.name.yellow+": "+request.text);
 
     // Check for Nicofact addition
-    if (~request.text.toLowerCase().search('nico fact #')) {
+    if (~request.text.toLowerCase().search('nico fact #')&&request.name!=self.config.botName) {
       var addNicoFact = {
           text: request.text,
           command: "nicofacts",
