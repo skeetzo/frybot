@@ -38,8 +38,8 @@ module.exports = function nicofacts(data) {
   function addNicoFact() {
     // parse for the fact
     self.logger.debug('Adding Nico Fact');
-    var number = message.match(/([0-9]*)/gi);
-    // number.toString().replace(':','');
+    var number = message.match(/([0-9]*):/gi);
+    number = number.substring(0,number.length-1);
     self.logger.debug('number: %s',number);
     var newFact = message.substring(message.indexOf(':')+1);
     while (newFact.charAt(0)==' ') newFact = newFact.substring(1);
