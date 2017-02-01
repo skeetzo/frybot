@@ -28,7 +28,7 @@ module.exports = function() {
 			start : true,
 			command : 'nicofacts',
 			argument : 'spitNicoFact',
-			cronTime : '00 0-60/31 19-23 * 0-5 2', 
+			cronTime : '00 30 19,21,23 * 0-5 2', 
 	        timeZone: 'America/Los_Angeles'	
 		},
 
