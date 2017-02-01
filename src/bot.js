@@ -41,7 +41,6 @@ var bot = function(config) {
   this.commands.updateAWS.call(this);
 
   this.boot.call(this);
-
 }
 
 bot.prototype = {
@@ -60,7 +59,7 @@ bot.prototype = {
       if (request.id) this.commands.likeMessage.call(this,request.id);
       this.commands[command].call(this,{argument:argument,message:message,sender:sender,modifiers:modifiers});
     }
-    else self.logger.warn('No command found');
+    else this.logger.warn('No command found');
   },
 
   /*
@@ -93,6 +92,20 @@ bot.prototype = {
     if (request.name===self.config.botName) return self.logger.debug('Not talking to myself...');
     self.logger.log(request.name.yellow+": "+request.text);
 
+    // Check for Nicofact addition
+    if (~request.text.toLowerCase().search('nico fact #')) {
+      var addNicoFact = {
+          text: request.text,
+          command: "nicofacts",
+          argument: "addNicoFact",
+          name: self.config.name
+        }
+      self.activate.call(self,addNicoFact,function(err) {
+        if (err) return self.logger.warn(err);
+      });
+    }
+
+    // Check for commands
     if (request.text.search(self.config.commandsRegex)!=-1&&request.text.charAt(0)=='/') {
       var message = request.text || '',
           command = message.match(self.config.commandsRegex)[0],
