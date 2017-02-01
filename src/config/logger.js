@@ -14,6 +14,7 @@ module.exports = function() {
 	                    format : [
 	                          "{{timestamp}} "+self.botName+": {{message}}",
 	                          {
+	                          	  chat  : "{{timestamp}} {{mesage}}",
 	                              error : "{{timestamp}} <{{title}}> {{message}} (in {{file}}:({{method}}):{{line}})\nCall Stack:\n{{stack}}",
 	                              debug : "{{timestamp}} {{message}} <{{title}}> (in {{file}}:({{method}}):{{line}})"
 	                          }
