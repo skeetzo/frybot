@@ -89,11 +89,11 @@ bot.prototype = {
     var self = this;
     if (!req||!req.body) return self.logger.warn('Missing GroupMe message data');
     var request = req.body;
-    if (request.name===self.config.botName) return self.logger.debug('Not talking to myself...');
+    if (request.name.toLowerCase()===self.config.botName.toLowerCase()) return self.logger.debug('Not talking to myself...');
     self.logger.log(request.name.yellow+": "+request.text);
 
     // Check for Nicofact addition
-    if (~request.text.toLowerCase().search('nico fact #')&&request.name!=self.config.botName) {
+    if (~request.text.toLowerCase().search('nico fact #')) {
       var addNicoFact = {
           text: request.text,
           command: "nicofacts",

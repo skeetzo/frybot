@@ -73,7 +73,8 @@ module.exports = function nicofacts(data) {
 
   function spitNicoFact() {
     console.log('spitting nico fact');
-    self.say(self.nicofactsDB[self.nicoFactCounter]);
+    var random = Math.floor(Math.random() * self.nicofactsDB.length);
+    self.say(self.nicofactsDB[random]);
     self.nicoFactCounter++;
     if (self.nicoFactCounter>self.nicofactsDB.length)
       self.nicoFactCounter=0;
