@@ -73,6 +73,7 @@ module.exports = {
             	self.logger.debug('Random tweet delay: %s - %s',self.twitter.tweetQueue[0],((randomDelay/1000)/2)); 
                 self.twitter.tweeting_ = setTimeout(function delayedTweet() {
                     var tweet_ = self.twitter.tweetQueue.shift();
+                    tweet_ = "Frybot: "+tweet_;
                     if (tweet_.length>140) {
                         self.twitter.tweetQueue.splice(1,tweet_.substring(140));
                         tweet_ = tweet_.substring(0,140);

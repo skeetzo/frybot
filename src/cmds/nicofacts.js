@@ -129,7 +129,7 @@ module.exports = function nicofacts(data) {
     var random = Math.floor(Math.random() * self.nicofactsDB.length);
     var randomNicoFact = self.nicofactsDB[random];
     self.logger.log('Tweeting Random Nico Fact: %s',randomNicoFact);
-    self.twitter.tweet(randomNicoFact);
+    self.twitter.tweet.call(self,randomNicoFact);
   }
   this.commands.tweetnicofact = tweetnicofact;
 
