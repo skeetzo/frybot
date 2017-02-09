@@ -139,6 +139,10 @@ module.exports = function nicofacts(data) {
     addNicoFact();
     return;
   }
+  else if (argument=="tweetnicofact") {
+    tweetnicofact();
+    return;
+  }
 
 
   if (this.commands.nicofacts[argument])

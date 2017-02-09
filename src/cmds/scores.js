@@ -238,9 +238,9 @@ module.exports = function scores(data) {
       oauth : self.config.Google_Oauth_Opts
     },
     function sheetReady(err, spreadsheet) {
-      if (err&~err.indexOf('Missing'))
-        return self.logger.warn(err);
       if (err) {
+        if (err.indexOf('Missing'))
+          return self.logger.warn(err);
         self.logger.warn(err);
         setTimeout(function() {
           self.logger.debug('retrying sheet load');
