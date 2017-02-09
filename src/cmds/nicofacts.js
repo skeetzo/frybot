@@ -131,7 +131,7 @@ module.exports = function nicofacts(data) {
     self.logger.log('Tweeting Random Nico Fact: %s',randomNicoFact);
     self.tweeter.tweet(randomNicoFact);
   }
-  this.commands.nicofacts = tweetnicofact;
+  this.commands.tweetnicofact = tweetnicofact;
 
   // console.log('argument: %s',argument);
 

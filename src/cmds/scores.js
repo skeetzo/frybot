@@ -238,7 +238,7 @@ module.exports = function scores(data) {
       oauth : self.config.Google_Oauth_Opts
     },
     function sheetReady(err, spreadsheet) {
-      if (~err.indexOf('Missing'))
+      if (err&~err.indexOf('Missing'))
         return self.logger.warn(err);
       if (err) {
         self.logger.warn(err);
@@ -249,7 +249,7 @@ module.exports = function scores(data) {
         throw err;
       }
       spreadsheet.receive(function(err, rows, info) {
-        if(err) throw err;
+        if (err) throw err;
         // header pickoff
         // var once = true;
         var keys = '{"name":"","pointsEarned":"","pointsGiven":"","matchNumber":"","matchDate":""}';
