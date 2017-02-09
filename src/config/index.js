@@ -15,15 +15,15 @@ config.debugging = true;
 config.debugging_League = true;
 
 config.testing = false;
-config.saving = false;
+config.saving = true;
 config.saveOnLoad = false;
-config.localLoad = true;
+config.localLoad = false;
 config.localSave = false;
-config.cronjobbing = false;
+config.cronjobbing = true;
 
 // Twitter
 config.Twitter_On = true;
-config.tweeting = false;
+config.tweeting = true;
 
 config.botName = "Frybot";
 if (config.debugging)
