@@ -238,6 +238,8 @@ module.exports = function scores(data) {
       oauth : self.config.Google_Oauth_Opts
     },
     function sheetReady(err, spreadsheet) {
+      if (~err.indexOf('Missing'))
+        return self.logger.warn(err);
       if (err) {
         self.logger.warn(err);
         setTimeout(function() {
@@ -284,6 +286,8 @@ module.exports = function scores(data) {
         self.league.getCurrentSeason().updateMatchups(matchups); // updates player data
         if (modifiers&&modifiers.quietly)
           self.logger.log('Season scores updated quietly');
+        else if (modifiers&&modifiers.think)
+          self.think('Season scores updated');
         else
           self.say('Season scores updated');
         self.commands.saveTeamShitData.call(self);

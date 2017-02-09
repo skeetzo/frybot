@@ -775,3 +775,243 @@ Call Stack:
     at process.emit (events.js:169:7)
     at process._fatalException (node.js:223:26)[22m[39m
 [33m11:55:10.85 Naivi: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+[36m07:58:57.79 Local Keys Not Found; Loading Production Environment <debug> (in keys.js:(Object.module.exports):12)[39m
+07:58:57.88 Naivi: Booting up: Naivi
+[36m07:58:57.88 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m07:58:57.88 attaching core: commands <debug> (in index.js:():9)[39m
+[36m07:58:58.54 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m07:58:58.59 attaching core: league <debug> (in index.js:():9)[39m
+[36m07:58:58.60 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m07:58:58.60 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m07:58:58.79 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m07:58:58.82 <error> Error: listen EACCES
+    at errnoException (net.js:901:11)
+    at Server._listen2 (net.js:1020:19)
+    at listen (net.js:1061:10)
+    at Server.listen (net.js:1135:5)
+    at EventEmitter.listen (/home/skeetzo/Downloads/code/frybot/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/home/skeetzo/Downloads/code/frybot/index.js:28:5)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3 (in index.js:(process.app.use.bodyParser.urlencoded.extended):12)
+Call Stack:
+    at process.app.use.bodyParser.urlencoded.extended (/home/skeetzo/Downloads/code/frybot/index.js:12:14)
+    at process.EventEmitter.emit (events.js:95:17)
+    at process._fatalException (node.js:272:26)[22m[39m
+[36m07:58:58.83 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m07:58:58.83 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m07:59:00.83 League Loaded <debug> (in bot.js:(onLoad):78)[39m
+[33m07:59:00.83 Naivi: No command found[39m
+07:59:00.83 Naivi: Connecting to Twitter...
+[31m[1m07:59:00.84 <error> TypeError: Cannot read property 'consumer_key' of undefined
+    at new Twitter (/home/skeetzo/Downloads/code/frybot/node_modules/twit/lib/twitter.js:46:33)
+    at Object.module.exports.connect (/home/skeetzo/Downloads/code/frybot/src/mods/twitter.js:35:20)
+    at onLoad (/home/skeetzo/Downloads/code/frybot/src/bot.js:86:30)
+    at slightDelay [as _onTimeout] (/home/skeetzo/Downloads/code/frybot/src/core/commands.js:65:9)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15) (in index.js:(process.app.use.bodyParser.urlencoded.extended):12)
+Call Stack:
+    at process.app.use.bodyParser.urlencoded.extended (/home/skeetzo/Downloads/code/frybot/index.js:12:14)
+    at process.EventEmitter.emit (events.js:95:17)
+    at process._fatalException (node.js:272:26)[22m[39m
+[36m08:05:31.05 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+08:05:31.14 Naivi: Booting up: Naivi
+[36m08:05:31.14 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:05:31.14 attaching core: commands <debug> (in index.js:():9)[39m
+[36m08:05:31.79 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m08:05:31.84 attaching core: league <debug> (in index.js:():9)[39m
+[36m08:05:31.84 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:05:31.84 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m08:05:32.03 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m08:05:32.07 <error> Error: listen EACCES
+    at errnoException (net.js:901:11)
+    at Server._listen2 (net.js:1020:19)
+    at listen (net.js:1061:10)
+    at Server.listen (net.js:1135:5)
+    at EventEmitter.listen (/home/skeetzo/Downloads/code/frybot/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/home/skeetzo/Downloads/code/frybot/index.js:28:5)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3 (in index.js:(process.app.use.bodyParser.urlencoded.extended):12)
+Call Stack:
+    at process.app.use.bodyParser.urlencoded.extended (/home/skeetzo/Downloads/code/frybot/index.js:12:14)
+    at process.EventEmitter.emit (events.js:95:17)
+    at process._fatalException (node.js:272:26)[22m[39m
+[36m08:05:32.07 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m08:05:32.07 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m08:05:34.07 League Loaded <debug> (in bot.js:(onLoad):78)[39m
+[33m08:05:34.07 Naivi: No command found[39m
+08:05:34.07 Naivi: Connecting to Twitter...
+[31m[1m08:05:34.08 <error> TypeError: Cannot read property 'consumer_key' of undefined
+    at new Twitter (/home/skeetzo/Downloads/code/frybot/node_modules/twit/lib/twitter.js:46:33)
+    at Object.module.exports.connect (/home/skeetzo/Downloads/code/frybot/src/mods/twitter.js:35:20)
+    at onLoad (/home/skeetzo/Downloads/code/frybot/src/bot.js:86:30)
+    at slightDelay [as _onTimeout] (/home/skeetzo/Downloads/code/frybot/src/core/commands.js:65:9)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15) (in index.js:(process.app.use.bodyParser.urlencoded.extended):12)
+Call Stack:
+    at process.app.use.bodyParser.urlencoded.extended (/home/skeetzo/Downloads/code/frybot/index.js:12:14)
+    at process.EventEmitter.emit (events.js:95:17)
+    at process._fatalException (node.js:272:26)[22m[39m
+[36m08:06:37.44 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+08:06:37.53 Naivi: Booting up: Naivi
+[36m08:06:37.53 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:06:37.53 attaching core: commands <debug> (in index.js:():9)[39m
+[36m08:06:38.19 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m08:06:38.25 attaching core: league <debug> (in index.js:():9)[39m
+[36m08:06:38.25 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:06:38.25 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m08:06:38.44 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m08:06:38.47 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m08:06:38.47 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m08:06:40.47 League Loaded <debug> (in bot.js:(onLoad):78)[39m
+[33m08:06:40.48 Naivi: No command found[39m
+08:06:40.48 Naivi: Connecting to Twitter...
+[31m[1m08:06:40.48 <error> TypeError: Cannot set property 'T' of undefined
+    at Object.module.exports.connect (/home/skeetzo/Downloads/code/frybot/src/mods/twitter.js:35:18)
+    at onLoad (/home/skeetzo/Downloads/code/frybot/src/bot.js:86:30)
+    at slightDelay [as _onTimeout] (/home/skeetzo/Downloads/code/frybot/src/core/commands.js:65:9)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15) (in index.js:(process.app.use.bodyParser.urlencoded.extended):12)
+Call Stack:
+    at process.app.use.bodyParser.urlencoded.extended (/home/skeetzo/Downloads/code/frybot/index.js:12:14)
+    at process.EventEmitter.emit (events.js:95:17)
+    at process._fatalException (node.js:272:26)[22m[39m
+[36m08:07:15.92 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+08:07:16.01 Naivi: Booting up: Naivi
+[36m08:07:16.01 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:07:16.01 attaching core: commands <debug> (in index.js:():9)[39m
+[36m08:07:16.66 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m08:07:16.71 attaching core: league <debug> (in index.js:():9)[39m
+[36m08:07:16.71 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:07:16.71 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m08:07:16.89 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m08:07:16.92 <error> Error: listen EACCES
+    at errnoException (net.js:901:11)
+    at Server._listen2 (net.js:1020:19)
+    at listen (net.js:1061:10)
+    at Server.listen (net.js:1135:5)
+    at EventEmitter.listen (/home/skeetzo/Downloads/code/frybot/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/home/skeetzo/Downloads/code/frybot/index.js:28:5)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3 (in index.js:(process.app.use.bodyParser.urlencoded.extended):12)
+Call Stack:
+    at process.app.use.bodyParser.urlencoded.extended (/home/skeetzo/Downloads/code/frybot/index.js:12:14)
+    at process.EventEmitter.emit (events.js:95:17)
+    at process._fatalException (node.js:272:26)[22m[39m
+[36m08:07:16.93 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m08:07:16.93 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m08:07:18.93 League Loaded <debug> (in bot.js:(onLoad):78)[39m
+[33m08:07:18.93 Naivi: No command found[39m
+08:07:18.93 Naivi: Connecting to Twitter...
+08:07:19.14 Naivi: Connected to Twitter: Alex D
+08:07:38.95 Naivi: Running tests...
+[33m08:07:48.96 Naivi: No command found[39m
+[36m08:12:23.60 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+08:12:23.69 Naivi: Booting up: Naivi
+[36m08:12:23.69 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:12:23.69 attaching core: commands <debug> (in index.js:():9)[39m
+[36m08:12:24.38 attaching core: league <debug> (in index.js:():9)[39m
+[36m08:12:24.38 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:12:24.38 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m08:12:24.56 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m08:12:24.56 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m08:12:24.56 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m08:12:24.56 Adding command: scores <debug> (in index.js:():8)[39m
+[36m08:12:24.56 Adding command: season <debug> (in index.js:():8)[39m
+[36m08:12:24.56 Adding command: suck <debug> (in index.js:():8)[39m
+[36m08:12:24.57 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m08:12:24.33 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m08:12:24.61 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m08:12:24.61 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m08:12:26.61 League Loaded <debug> (in bot.js:(onLoad):80)[39m
+08:12:26.61 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+08:12:26.62 Naivi: Updating Players from Scoresheet
+[33m08:12:26.62 Naivi: Missing 'spreadsheetId' or 'spreadsheetName'[39m
+[31m[1m08:12:26.62 <error> undefined (in index.js:(process.app.use.bodyParser.urlencoded.extended):12)
+Call Stack:
+    at process.app.use.bodyParser.urlencoded.extended (/home/skeetzo/Downloads/code/frybot/index.js:12:14)
+    at process.EventEmitter.emit (events.js:95:17)
+    at process._fatalException (node.js:272:26)[22m[39m
+[36m08:12:31.62 retrying sheet load <debug> (in scores.js:(null._onTimeout):244)[39m
+08:12:31.62 Naivi: Updating Players from Scoresheet
+[33m08:12:31.62 Naivi: Missing 'spreadsheetId' or 'spreadsheetName'[39m
+[31m[1m08:12:31.62 <error> undefined (in index.js:(process.app.use.bodyParser.urlencoded.extended):12)
+Call Stack:
+    at process.app.use.bodyParser.urlencoded.extended (/home/skeetzo/Downloads/code/frybot/index.js:12:14)
+    at process.EventEmitter.emit (events.js:95:17)
+    at process._fatalException (node.js:272:26)[22m[39m
+[36m08:12:36.62 retrying sheet load <debug> (in scores.js:(null._onTimeout):244)[39m
+08:12:36.62 Naivi: Updating Players from Scoresheet
+[33m08:12:36.62 Naivi: Missing 'spreadsheetId' or 'spreadsheetName'[39m
+[31m[1m08:12:36.62 <error> undefined (in index.js:(process.app.use.bodyParser.urlencoded.extended):12)
+Call Stack:
+    at process.app.use.bodyParser.urlencoded.extended (/home/skeetzo/Downloads/code/frybot/index.js:12:14)
+    at process.EventEmitter.emit (events.js:95:17)
+    at process._fatalException (node.js:272:26)[22m[39m
+[36m08:15:08.58 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+08:15:08.67 Naivi: Booting up: Naivi
+[36m08:15:08.67 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:15:08.67 attaching core: commands <debug> (in index.js:():9)[39m
+[36m08:15:09.31 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m08:15:09.37 attaching core: league <debug> (in index.js:():9)[39m
+[36m08:15:09.37 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:15:09.37 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m08:15:09.56 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m08:15:09.56 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m08:15:09.56 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m08:15:09.56 Adding command: scores <debug> (in index.js:():8)[39m
+[36m08:15:09.56 Adding command: season <debug> (in index.js:():8)[39m
+[36m08:15:09.56 Adding command: suck <debug> (in index.js:():8)[39m
+[36m08:15:09.57 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m08:15:09.60 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m08:15:09.60 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m08:15:11.60 League Loaded <debug> (in bot.js:(onLoad):80)[39m
+08:15:11.60 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+08:15:11.61 Naivi: Updating Players from Scoresheet
+[33m08:15:11.61 Naivi: Missing 'spreadsheetId' or 'spreadsheetName'[39m
+08:15:11.61 Naivi: Connecting to Twitter...
+08:15:11.85 Naivi: Connected to Twitter: Alex D
+08:15:31.62 Naivi: Running tests...
+[33m08:15:41.63 Naivi: No command found[39m
+[36m08:16:05.95 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+08:16:06.06 Naivi: Booting up: Naivi
+[36m08:16:06.06 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:16:06.06 attaching core: commands <debug> (in index.js:():9)[39m
+[36m08:16:06.81 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m08:16:06.87 attaching core: league <debug> (in index.js:():9)[39m
+[36m08:16:06.87 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m08:16:06.87 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m08:16:07.05 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m08:16:07.05 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m08:16:07.05 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m08:16:07.06 Adding command: scores <debug> (in index.js:():8)[39m
+[36m08:16:07.06 Adding command: season <debug> (in index.js:():8)[39m
+[36m08:16:07.06 Adding command: suck <debug> (in index.js:():8)[39m
+[36m08:16:07.06 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m08:16:07.10 Team Shit Loaded: local <debug> (in commands.js:(read):51)[39m
+[36m08:16:07.10 Seasons Loaded: local <debug> (in commands.js:(read):56)[39m
+[36m08:16:09.10 League Loaded <debug> (in bot.js:(onLoad):80)[39m
+08:16:09.10 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+08:16:09.10 Naivi: Updating Players from Scoresheet
+[33m08:16:09.10 Naivi: Missing 'spreadsheetId' or 'spreadsheetName'[39m
+08:16:09.10 Naivi: Connecting to Twitter...
+08:16:09.33 Naivi: Connected to Twitter: Alex D
+08:16:29.11 Naivi: Running tests...
+08:16:39.12 Naivi: Activating: [32mnicofacts[39m[[36mtweetnicofact[39m] of [33m[39m: ''
+08:16:39.12 Naivi: Loading Nico Facts
+[31m[1m08:16:39.12 <error> undefined (in index.js:(process.app.use.bodyParser.urlencoded.extended):12)
+Call Stack:
+    at process.app.use.bodyParser.urlencoded.extended (/home/skeetzo/Downloads/code/frybot/index.js:12:14)
+    at process.EventEmitter.emit (events.js:95:17)
+    at process._fatalException (node.js:272:26)[22m[39m

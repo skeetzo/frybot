@@ -34,6 +34,17 @@ module.exports = function() {
     // GroupMe API
     this.GroupMe_AccessToken = localConfig.GroupMe_AccessToken || process.env.GroupMe_AccessToken;
 
+    this.Twitter_access_token = localConfig.Twitter_access_token || process.env.Twitter_access_token;
+    this.Twitter_access_token_secret = localConfig.Twitter_access_token_secret || process.env.Twitter_access_token_secret;
+    this.Twitter_consumer_key = localConfig.Twitter_consumer_key || process.env.Twitter_consumer_key;
+    this.Twitter_consumer_secret = localConfig.Twitter_consumer_secret || process.env.Twitter_consumer_secret;
+    this.TwitterConfig = {
+        consumer_key: this.Twitter_consumer_key, 
+        consumer_secret: this.Twitter_consumer_secret,
+        access_token: this.Twitter_access_token,
+        access_token_secret: this.Twitter_access_token_secret
+    };
+
     if (!this.debugging) {
       this.botName = "Frybot";
       this.GroupMe_group_ID = localConfig.Frybot_GroupMe_group_ID  || process.env.GroupMe_group_ID;

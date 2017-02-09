@@ -11,15 +11,19 @@ config.localTeamShitPath = './dev/teamshit.json';
 config.localSeasonsPath = './dev/seasons.json';
 
 // Debugging sets personality switch
-config.debugging = false;
+config.debugging = true;
 config.debugging_League = true;
 
-config.testing = false;
-config.saving = true;
+config.testing = true;
+config.saving = false;
 config.saveOnLoad = false;
-config.localLoad = false;
+config.localLoad = true;
 config.localSave = false;
-config.cronjobbing = true;
+config.cronjobbing = false;
+
+// Twitter
+config.Twitter_On = true;
+config.tweeting = false;
 
 config.botName = "Frybot";
 if (config.debugging)

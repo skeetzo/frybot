@@ -6,6 +6,7 @@ var config = require('./src/config/index.js'),
     http = require('http');
 
 var bot = new Bot(config);
+bot.boot();
 
 process.on('uncaughtException', function(err) {
   bot.logger.error(err.stack);

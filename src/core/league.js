@@ -1,5 +1,4 @@
 var _ = require('underscore'),
-    config = require('./config/index.js'),
     fs = require('fs'),
     Spreadsheet = require('edit-google-spreadsheet');
 
@@ -7,7 +6,7 @@ var _ = require('underscore'),
   League Constructor
 */
 function League(seasons, callback) {
-  think_('League Created');
+  console.log('League Created');
   var self = this;
   self.seasons = [];
   // Data initialization
@@ -124,7 +123,7 @@ function Match(data) {
   this.race = data.race || '2:2'; // todo: add race calculations
   this.games = data.games || [];
   this.winner = data.winner || this.determineWinner();
-  // think_('Match #'+this.matchNumber+': '+this.players[0].name+' vs '+this.players[1].name);
+  // console.log('Match #'+this.matchNumber+': '+this.players[0].name+' vs '+this.players[1].name);
 }
 
 Match.prototype = {
@@ -180,12 +179,12 @@ function MatchUp(data) {
         this.matches.push(new Match({matchNumber:i}));
       blip = ' and Prepped';
     }
-    // think_('MatchUp ('+this.date+') Loaded'+blip);
+    // console.log('MatchUp ('+this.date+') Loaded'+blip);
   }
   else {
     for (var i=1;i<=5;i++) 
       this.matches.push(new Match({matchNumber:i}));
-    think_('MatchUp ('+this.date+') Prepped');
+    console.log('MatchUp ('+this.date+') Prepped');
   }
 }
 
@@ -209,7 +208,7 @@ MatchUp.prototype = {
 * @param stats {data} the data of the player in the format of {"name":name,"sl":sl,etc}
 */
 function Player(data) {
-  // think_("New Player: "+data.name+' - '+data.sl);
+  // console.log("New Player: "+data.name+' - '+data.sl);
   this.name = data.name || 'Schizo';
   this.matches = data.matches || []; // [[pointsEarned,pointsGiven,when]]
   this.pointsEarned = data.pointsEarned || 0;
@@ -241,7 +240,7 @@ Player.prototype = {
     this.mvp = (this.pointsEarned/(this.matchesWon+this.matchesLost));
   },
   resetStats : function() {
-    think_('resetting player: '+this.name);
+    console.log('resetting player: '+this.name);
     this.matches = []; // [[pointsEarned,pointsGiven,when]]
     this.pointsEarned = 0;
     this.pointsGiven = 0;
@@ -283,7 +282,7 @@ module.exports.Player = Player;
 var Season = function(data,callback) {
   var self = this;
   self.label = data.label || 'Blank';
-  think_('Loading Season: '+self.label);
+  console.log('Loading Season: '+self.label);
   // Players are recorded individually and within corresponding matches
   // loads available players from data.players
   // does not always already contain all participating players
@@ -296,7 +295,7 @@ var Season = function(data,callback) {
   // Build from empty Player list or Schedule
   // todo: add ifSeasonIsCurrent when >1 season data
   if (!self.players||!self.schedule) {
-    think_('Loading Players & Schedule');
+    console.log('Loading Players & Schedule');
     Spreadsheet.load({
       debug: false,
       spreadsheetId: config.Google_ItIsWhatItIs_Spreadsheet_ID,
@@ -327,7 +326,7 @@ var Season = function(data,callback) {
         });
         self.players = playersAndSLs;
         self.schedule = weeks;
-        think_('Players & Schedule Loaded');
+        console.log('Players & Schedule Loaded');
         continue_();
       });
     });
@@ -349,7 +348,7 @@ var Season = function(data,callback) {
       for (var i=matchups.length;i<self.schedule.length;i++)
         matchups.push(new MatchUp(self.schedule[i]));
     self.matchups = matchups;
-    think_('Season - '+self.label+' - Loaded');
+    console.log('Season - '+self.label+' - Loaded');
     callback(null);
   }
 }
@@ -364,11 +363,11 @@ Season.prototype = {
   */
   getPlayersByNames : function() {
     var playersTemp = [];
-    // think_('players: '+JSON.stringify(this.players));
+    // console.log('players: '+JSON.stringify(this.players));
     _.forEach(this.players, function (player) {
       playersTemp.push(player.name);
     });
-    // think_('players: '+playersTemp);
+    // console.log('players: '+playersTemp);
     return playersTemp;
   },
   /*
@@ -434,10 +433,6 @@ Team.prototype = {
 }
 
 
-
-function think_(what) {
-  if (config.debugging_League) console.log('League: '+what);
-}
 
 
 

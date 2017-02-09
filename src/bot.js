@@ -33,14 +33,6 @@ var bot = function(config) {
   this.logger = config.logger;
   this.thinking = [];
   this.saying = [];
-
-  this.commands = require('./commands.js');
-  // Commands
-  require('./cmds/index.js').load.call(this);
-
-  this.commands.updateAWS.call(this);
-
-  this.boot.call(this);
 }
 
 bot.prototype = {
@@ -69,6 +61,19 @@ bot.prototype = {
   boot : function() {
     var self = this;
     self.logger.log('Booting up: '+self.config.botName);
+
+    // Core
+    require('./core/index.js').load.call(this);
+    // Mods
+    require('./mods/index.js').load.call(this);
+    // Cmds
+    require('./cmds/index.js').load.call(this);
+
+    // update AWS config
+    this.commands.updateAWS.call(this);
+
+    if (!this.commands) return console.log("Error- missing critical Commands module");  
+
     self.commands.loadLeague.call(self,function onLoad(err) {
       if (err) return self.logger.error(err);
       // loads current league data then syncs with ItIsWhatItIs sheet stats
@@ -76,7 +81,14 @@ bot.prototype = {
       // Initial scores update on boot
       // self.commands.loadModules.call(self);
       self.activate.call(self,{command:"scores",argument:"boot",name:self.config.botName});
-      if (self.config.cronjobbing) require('./cronjobs.js').start.call(self);
+      if (self.config.cronjobbing) self.cronjobs.start.call(self);
+      
+      
+      if (self.twitter)
+        self.twitter.connect.call(self,function(err) {
+          if (err) return self.logger.warn(err);
+
+        });
       if (self.config.testing) setTimeout(function() {self.test()},20000);
     });
   },
@@ -227,16 +239,17 @@ bot.prototype = {
 
     var tests = [{
           text: "",
-          command: "season",
-          argument: "pregame",
-          name: self.config.name
-        },
-        roundTwo = {
-          text: "",
-          command: "season",
-          argument: "afterparty",
+          command: "nicofacts",
+          argument: "tweetnicofact",
           name: self.config.name
         }];
+        // ,
+        // roundTwo = {
+        //   text: "",
+        //   command: "season",
+        //   argument: "afterparty",
+        //   name: self.config.name
+        // }];
 
     _.forEach(tests, function(test) {
       setTimeout(function lazyDelay() {

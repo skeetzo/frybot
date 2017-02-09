@@ -38,6 +38,14 @@ module.exports = function() {
 			argument : 'pregame',
 			cronTime : '00 00 10 * 0-5 2', 
 	        timeZone: 'America/Los_Angeles'	
+		},
+
+		tweetnicofact : {
+			start : true,
+			command : 'nicofacts',
+			argument : 'tweetnicofact',
+			cronTime : '00 00 19-24 * 0-5 2', 
+	        timeZone: 'America/Los_Angeles'	
 		}
 	}
 }

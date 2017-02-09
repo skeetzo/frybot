@@ -125,6 +125,14 @@ module.exports = function nicofacts(data) {
   }
   this.commands.nicofacts.START = START;
 
+  function tweetnicofact() {
+    var random = Math.floor(Math.random() * self.nicofactsDB.length);
+    var randomNicoFact = self.nicofactsDB[random];
+    self.logger.log('Tweeting Random Nico Fact: %s',randomNicoFact);
+    self.tweeter.tweet(randomNicoFact);
+  }
+  this.commands.nicofacts = tweetnicofact;
+
   // console.log('argument: %s',argument);
 
   if (argument=='addNicoFact') {
