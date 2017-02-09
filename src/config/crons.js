@@ -44,7 +44,7 @@ module.exports = function() {
 			start : true,
 			command : 'nicofacts',
 			argument : 'tweetnicofact',
-			cronTime : '00 00 19-24 * 0-5 2', 
+			cronTime : '00 10 19-24 * 0-5 2', 
 	        timeZone: 'America/Los_Angeles'	
 		}
 	}
