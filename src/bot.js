@@ -82,6 +82,7 @@ bot.prototype = {
       // self.commands.loadModules.call(self);
       self.activate.call(self,{command:"scores",argument:"boot",name:self.config.botName});
       if (self.config.cronjobbing) self.cronjobs.start.call(self);
+      else self.logger.debug('Crons Disabled');
       
       
       if (self.twitter)
