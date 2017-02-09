@@ -66,10 +66,12 @@ module.exports = {
         if (!self.twitter.tweetQueue) self.twitter.tweetQueue = [];
         if (!self.recent_tweets) self.recent_tweets = [];
         if (_.contains(self.recent_tweets,status)) return self.logger.debug('-- Ignoring Repeat Tweet --\n%s',status);
+        status = "Frybot: "+status;
         self.twitter.tweetQueue.push(status);
         if (!self.twitter.tweeting_)
             (function cueTweet() {
             	var randomDelay = (TWO_MINUTES+(Math.random()*TEN_MINUTES));
+            	randomDelay = 3000;
             	self.logger.debug('Random tweet delay: %s - %s',self.twitter.tweetQueue[0],((randomDelay/1000)/2)); 
                 self.twitter.tweeting_ = setTimeout(function delayedTweet() {
                     var tweet_ = self.twitter.tweetQueue.shift();
