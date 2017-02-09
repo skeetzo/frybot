@@ -60,3 +60,7 @@ carryover data mechanisms begun, spring to summer season updates
 v0.0.13
 8/24/16
 updated .call, commands to cmd
+
+v0.1.0
+2/9/17
+updated to core/mods, added twitter functionality
