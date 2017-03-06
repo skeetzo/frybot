@@ -41,7 +41,7 @@ module.exports = function() {
 		},
 
 		tweetnicofact : {
-			start : true,
+			start : false,
 			command : 'nicofacts',
 			argument : 'tweetnicofact',
 			cronTime : '00 10 19-24 * 0-5 2', 

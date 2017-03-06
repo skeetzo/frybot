@@ -57,10 +57,17 @@ module.exports = function nicofacts(data) {
       spreadsheet.receive(function(err, rows, info) {
         if(err) throw err;
         rows = _.toArray(rows);
-        newFact = newFact.replace('\"','\\\"')
+        newFact = newFact.replace('\"','\\\"');
+        // newFact = newFact.replace('\'','\\\'');
         var jsonObj = "{\""+(rows.length+1)+"\": {\"1\": \""+number+"\",\"2\": \""+newFact+"\"}}";
         // console.log('nicoFactObj: '+jsonObj);
-        jsonObj = JSON.parse(jsonObj);
+        try {
+          jsonObj = JSON.parse(jsonObj);
+        }
+        catch(e) {
+          if (e) self.logger.warn(e);
+          jsonObj = "{\""+(rows.length+1)+"\": {\"1\": \"-666\",\"2\": \"faulty json bro\"}}";
+        }
         spreadsheet.add(jsonObj);
         spreadsheet.send(function(err) {
           if(err) self.logger.log(err);
