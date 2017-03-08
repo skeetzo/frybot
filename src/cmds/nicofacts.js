@@ -58,7 +58,8 @@ module.exports = function nicofacts(data) {
         if(err) throw err;
         rows = _.toArray(rows);
         self.logger.debug('newFact: %s',newFact);
-        newFact = newFact.replaceAll('\"','\\\"');
+        var reggie = new RegExp('\"','g');
+        newFact = newFact.replace(reggie,'\\\"');
         self.logger.debug('newFact2: %s',newFact);
         // newFact = newFact.replace('\'','\\\'');
         var jsonObj = "{\""+(rows.length+1)+"\": {\"1\": \""+number+"\",\"2\": \""+newFact+"\"}}";
