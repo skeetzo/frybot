@@ -13,10 +13,6 @@ module.exports = function() {
         this.localConfig = {};
     }
 
-    // Amazon S3
-    this.AWS_ACCESS_KEY = localConfig.AWS_ACCESS_KEY || process.env.AWS_ACCESS_KEY;
-    this.AWS_SECRET_KEY = localConfig.AWS_SECRET_KEY || process.env.AWS_SECRET_KEY;
-    this.S3_BUCKET = localConfig.S3_BUCKET || process.env.S3_BUCKET;
     // Google
     this.Google_service_email = localConfig.Google_service_email || process.env.Google_service_email;
     this.Google_keyFile = localConfig.Google_keyFile || process.env.Google_keyFile;
@@ -34,6 +30,11 @@ module.exports = function() {
     // GroupMe API
     this.GroupMe_AccessToken = localConfig.GroupMe_AccessToken || process.env.GroupMe_AccessToken;
 
+    // Mongo
+    this.MONGODB_URI = localConfig.MONGODB_URI || process.env.MONGODB_URI;
+    if (process.env.NODE_ENV!='production') this.MONGODB_URI = localConfig.MONGODB_URI_dev;
+
+    // Twitter
     this.Twitter_access_token = localConfig.Twitter_access_token || process.env.Twitter_access_token;
     this.Twitter_access_token_secret = localConfig.Twitter_access_token_secret || process.env.Twitter_access_token_secret;
     this.Twitter_consumer_key = localConfig.Twitter_consumer_key || process.env.Twitter_consumer_key;

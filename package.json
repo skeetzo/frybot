@@ -20,11 +20,12 @@
     "groupme": "~0.5.6",
     "moment": "~2.10.6",
     "mongodb": "~2.2.22",
+    "mongoose": "^4.11.3",
     "mongoskin": "~2.1.0",
     "request": "~2.79.0",
     "tracer": "~0.8.7",
-    "underscore": "~1.8.3",
-    "twit": "~2.2.5"
+    "twit": "~2.2.5",
+    "underscore": "~1.8.3"
   },
   "engines": {
     "node": "0.10.x"

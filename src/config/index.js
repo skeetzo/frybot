@@ -21,6 +21,10 @@ config.localLoad = false;
 config.localSave = false;
 config.cronjobbing = true;
 
+// Models
+config.homeLocation = '17715 Vanowen St, Reseda, CA 91335';
+config.homeLocationName = 'Copper Bucket';
+
 // Twitter
 config.Twitter_On = true;
 config.tweeting = false;
