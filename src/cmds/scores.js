@@ -1,4 +1,6 @@
 var _ = require('underscore'),
+    config = require('../config/index'),
+    logger = config.logger,
     Spreadsheet = require('edit-google-spreadsheet');
 
 /**
@@ -34,9 +36,9 @@ module.exports = function scores(data) {
 
     Spreadsheet.load({
       debug: true,
-      spreadsheetId: self.config.Google_ItIsWhatItIs_Spreadsheet_ID,
-      worksheetId: self.config.ItIsWhatItIs_statsSheetID,
-      oauth : self.config.Google_Oauth_Opts
+      spreadsheetId: config.Google_ItIsWhatItIs_Spreadsheet_ID,
+      worksheetId: config.ItIsWhatItIs_statsSheetID,
+      oauth : config.Google_Oauth_Opts
     },
     function sheetReady(err, spreadsheet) {
       if(err) throw err;
@@ -86,7 +88,7 @@ module.exports = function scores(data) {
           spreadsheet.add(jsonObj); // adds row one by one
         }
         spreadsheet.send(function(err) {
-          if(err) self.logger.log(err);
+          if(err) logger.log(err);
             self.say('Scores added!');
         });
       });
@@ -108,7 +110,7 @@ module.exports = function scores(data) {
     calls out everybody's scores
   */
   function callouts() {
-    self.logger.log('Callouts incoming');
+    logger.log('Callouts incoming');
     _.forEach(self.league.getCurrentSeason().players,function (player) {
       streak(player);
     });
@@ -230,20 +232,20 @@ module.exports = function scores(data) {
     Updates from the scores available on the team spreadsheet
   */
   function update() {
-    self.logger.log('Updating Players from Scoresheet');
+    logger.log('Updating Players from Scoresheet');
     Spreadsheet.load({
       debug: false,
-      spreadsheetId: self.config.Google_ItIsWhatItIs_Spreadsheet_ID,
-      worksheetId: self.config.ItIsWhatItIs_statsSheetID,
-      oauth : self.config.Google_Oauth_Opts
+      spreadsheetId: config.Google_ItIsWhatItIs_Spreadsheet_ID,
+      worksheetId: config.ItIsWhatItIs_statsSheetID,
+      oauth : config.Google_Oauth_Opts
     },
     function sheetReady(err, spreadsheet) {
       if (err) {
         if (err.indexOf('Missing'))
-          return self.logger.warn(err);
-        self.logger.warn(err);
+          return logger.warn(err);
+        logger.warn(err);
         setTimeout(function() {
-          self.logger.debug('retrying sheet load');
+          logger.debug('retrying sheet load');
           update();
         },5000);
         throw err;
@@ -285,7 +287,7 @@ module.exports = function scores(data) {
         self.league.getCurrentSeason().resetPlayers();
         self.league.getCurrentSeason().updateMatchups(matchups); // updates player data
         if (modifiers&&modifiers.quietly)
-          self.logger.log('Season scores updated quietly');
+          logger.log('Season scores updated quietly');
         else if (modifiers&&modifiers.think)
           self.think('Season scores updated');
         else

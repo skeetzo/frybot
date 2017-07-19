@@ -1015,3 +1015,315 @@ Call Stack:
     at process.app.use.bodyParser.urlencoded.extended (/home/skeetzo/Downloads/code/frybot/index.js:12:14)
     at process.EventEmitter.emit (events.js:95:17)
     at process._fatalException (node.js:272:26)[22m[39m
+[36m22:37:31.12 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+22:37:32.25 Frybot: Booting up: Frybot
+[36m22:37:32.25 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:37:32.26 attaching core: commands <debug> (in index.js:():9)[39m
+[36m22:37:33.31 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m22:37:33.36 attaching core: league <debug> (in index.js:():9)[39m
+[36m22:37:33.36 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:37:33.36 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m22:37:33.43 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m22:37:33.59 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m22:37:33.66 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m22:37:33.67 Adding command: scores <debug> (in index.js:():8)[39m
+[36m22:37:33.67 Adding command: suck <debug> (in index.js:():8)[39m
+[36m22:37:34.08 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m22:37:33.67 Adding command: season <debug> (in index.js:():8)[39m
+[31m[1m22:37:34.24 <error> RangeError: "port" argument must be >= 0 and < 65536
+    at assertPort (internal/net.js:17:11)
+    at Server.listen (net.js:1389:5)
+    at EventEmitter.listen (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\express\lib\application.js:617:24)
+    at Object.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:28:5)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.runMain (module.js:604:10)
+    at run (bootstrap_node.js:389:7)
+    at startup (bootstrap_node.js:149:9)
+    at bootstrap_node.js:504:3 (in index.js:(process.<anonymous>):12)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:12:14)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[36m22:37:34.82 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m22:37:44.70 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+22:37:44.85 Frybot: Booting up: Frybot
+[36m22:37:44.86 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:37:44.86 attaching core: commands <debug> (in index.js:():9)[39m
+[36m22:37:45.82 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m22:37:45.87 attaching core: league <debug> (in index.js:():9)[39m
+[36m22:37:45.87 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:37:45.87 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m22:37:45.93 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m22:37:45.93 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m22:37:45.93 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m22:37:45.94 Adding command: scores <debug> (in index.js:():8)[39m
+[36m22:37:45.94 Adding command: season <debug> (in index.js:():8)[39m
+[36m22:37:45.94 Adding command: suck <debug> (in index.js:():8)[39m
+[36m22:37:45.96 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m22:37:46.01 <error> RangeError: "port" argument must be >= 0 and < 65536
+    at assertPort (internal/net.js:17:11)
+    at Server.listen (net.js:1389:5)
+    at EventEmitter.listen (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\express\lib\application.js:617:24)
+    at Object.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:28:5)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.runMain (module.js:604:10)
+    at run (bootstrap_node.js:389:7)
+    at startup (bootstrap_node.js:149:9)
+    at bootstrap_node.js:504:3 (in index.js:(process.<anonymous>):12)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:12:14)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[36m22:37:46.42 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m22:38:21.54 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+22:38:21.69 Frybot: Booting up: Frybot
+[36m22:38:21.69 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:38:21.69 attaching core: commands <debug> (in index.js:():9)[39m
+[36m22:38:22.66 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m22:38:22.71 attaching core: league <debug> (in index.js:():9)[39m
+[36m22:38:22.71 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:38:22.71 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m22:38:22.77 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m22:38:22.78 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m22:38:22.78 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m22:38:22.78 Adding command: scores <debug> (in index.js:():8)[39m
+[36m22:38:22.78 Adding command: season <debug> (in index.js:():8)[39m
+[36m22:38:22.79 Adding command: suck <debug> (in index.js:():8)[39m
+[36m22:38:22.80 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m22:38:22.86 <error> RangeError: "port" argument must be >= 0 and < 65536
+    at assertPort (internal/net.js:17:11)
+    at Server.listen (net.js:1389:5)
+    at EventEmitter.listen (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\express\lib\application.js:617:24)
+    at Object.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:28:5)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.runMain (module.js:604:10)
+    at run (bootstrap_node.js:389:7)
+    at startup (bootstrap_node.js:149:9)
+    at bootstrap_node.js:504:3 (in index.js:(process.<anonymous>):12)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:12:14)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[36m22:38:23.35 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m22:38:36.26 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+22:38:36.41 Frybot: Booting up: Frybot
+[36m22:38:36.41 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:38:36.41 attaching core: commands <debug> (in index.js:():9)[39m
+[36m22:38:37.39 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m22:38:37.44 attaching core: league <debug> (in index.js:():9)[39m
+[36m22:38:37.44 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:38:37.44 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m22:38:37.51 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m22:38:37.51 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m22:38:37.51 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m22:38:37.51 Adding command: scores <debug> (in index.js:():8)[39m
+[36m22:38:37.52 Adding command: season <debug> (in index.js:():8)[39m
+[36m22:38:37.52 Adding command: suck <debug> (in index.js:():8)[39m
+[36m22:38:37.53 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m22:38:37.58 <error> RangeError: "port" argument must be >= 0 and < 65536
+    at assertPort (internal/net.js:17:11)
+    at Server.listen (net.js:1389:5)
+    at EventEmitter.listen (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\express\lib\application.js:617:24)
+    at Object.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:28:5)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.runMain (module.js:604:10)
+    at run (bootstrap_node.js:389:7)
+    at startup (bootstrap_node.js:149:9)
+    at bootstrap_node.js:504:3 (in index.js:(process.<anonymous>):12)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:12:14)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[36m22:46:30.100 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+22:46:31.21 Frybot: Booting up: Frybot
+[36m22:46:31.21 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:46:31.21 attaching core: commands <debug> (in index.js:():9)[39m
+[36m22:46:32.26 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m22:46:32.32 attaching core: league <debug> (in index.js:():9)[39m
+[36m22:46:32.32 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:46:32.32 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m22:46:32.39 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m22:46:32.39 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m22:46:32.39 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m22:46:32.39 Adding command: scores <debug> (in index.js:():8)[39m
+[36m22:46:32.39 Adding command: season <debug> (in index.js:():8)[39m
+[36m22:46:32.40 Adding command: suck <debug> (in index.js:():8)[39m
+[36m22:46:32.41 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[31m[1m22:46:32.48 <error> RangeError: "port" argument must be >= 0 and < 65536
+    at assertPort (internal/net.js:17:11)
+    at Server.listen (net.js:1389:5)
+    at EventEmitter.listen (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\express\lib\application.js:617:24)
+    at Object.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:28:5)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.runMain (module.js:604:10)
+    at run (bootstrap_node.js:389:7)
+    at startup (bootstrap_node.js:149:9)
+    at bootstrap_node.js:504:3 (in index.js:(process.<anonymous>):12)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:12:14)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[36m22:46:32.90 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m22:47:29.55 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+22:47:29.69 Frybot: Booting up: Frybot
+[36m22:47:29.70 Loading Core <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:47:29.70 attaching core: commands <debug> (in index.js:():9)[39m
+[36m22:47:30.70 attaching core: cronjobs <debug> (in index.js:():9)[39m
+[36m22:47:30.76 attaching core: league <debug> (in index.js:():9)[39m
+[36m22:47:30.76 Loading Mods <debug> (in index.js:(Object.module.exports.load):6)[39m
+[36m22:47:30.76 attaching mod: twitter <debug> (in index.js:():9)[39m
+[36m22:47:30.84 Adding command: bottle <debug> (in index.js:():8)[39m
+[36m22:47:30.84 Adding command: fuck <debug> (in index.js:():8)[39m
+[36m22:47:30.84 Adding command: nicofacts <debug> (in index.js:():8)[39m
+[36m22:47:30.84 Adding command: scores <debug> (in index.js:():8)[39m
+[36m22:47:30.85 Adding command: season <debug> (in index.js:():8)[39m
+[36m22:47:30.85 Adding command: suck <debug> (in index.js:():8)[39m
+[36m22:47:30.86 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):37)[39m
+[36m22:47:31.27 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):44)[39m
+[36m22:47:33.27 League Loaded <debug> (in bot.js:(onLoad):80)[39m
+22:47:33.28 Frybot: Activating: [32mscores[39m[[36mboot[39m] of [33mFrybot[39m: ''
+22:47:33.28 Frybot: Updating Players from Scoresheet
+22:47:33.33 Frybot: started cronjob - Afterparty
+22:47:33.33 Frybot: started cronjob - Nicofacts
+22:47:33.33 Frybot: started cronjob - Pregame
+22:47:33.33 Frybot: started cronjob - Match
+22:47:33.34 Frybot: started cronjob - Tweetnicofact
+22:47:33.34 Frybot: Connecting to Twitter...
+[31m[1m22:47:33.34 <error> Error: Twit config must include `consumer_key` when using user auth.
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\twit\lib\twitter.js:491:13
+    at Array.forEach (native)
+    at Twitter._validateConfigOrThrow (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\twit\lib\twitter.js:488:17)
+    at new Twitter (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\twit\lib\twitter.js:58:8)
+    at Object.connect (C:\Users\Schizo\Documents\GitHub\frybot\src\mods\twitter.js:35:20)
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\bot.js:89:30)
+    at Timeout.slightDelay [as _onTimeout] (C:\Users\Schizo\Documents\GitHub\frybot\src\core\commands.js:65:9)
+    at ontimeout (timers.js:386:14)
+    at tryOnTimeout (timers.js:250:5)
+    at Timer.listOnTimeout (timers.js:214:5) (in index.js:(process.<anonymous>):12)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:12:14)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[33m22:47:33.34 Frybot: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+[36m22:57:32.01 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+22:57:32.18 Frybot: Booting up: Frybot
+[36m22:57:32.18 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m22:57:32.18 attaching core: commands <debug> (in index.js:():11)[39m
+[36m22:57:33.14 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m22:57:33.20 attaching core: league <debug> (in index.js:():11)[39m
+[36m22:57:33.20 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m22:57:33.20 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m22:57:33.27 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m22:57:33.28 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m22:57:33.28 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m22:57:33.28 Adding command: scores <debug> (in index.js:():9)[39m
+[36m22:57:33.28 Adding command: season <debug> (in index.js:():9)[39m
+[36m22:57:33.28 Adding command: suck <debug> (in index.js:():9)[39m
+[36m22:57:33.29 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):39)[39m
+[36m22:57:33.68 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):46)[39m
+[36m22:57:35.68 League Loaded <debug> (in bot.js:(onLoad):80)[39m
+22:57:35.68 Frybot: Activating: [32mscores[39m[[36mboot[39m] of [33mFrybot[39m: ''
+22:57:35.69 Frybot: Updating Players from Scoresheet
+22:57:35.71 Frybot: started cronjob - Afterparty
+22:57:35.71 Frybot: started cronjob - Nicofacts
+22:57:35.71 Frybot: started cronjob - Pregame
+22:57:35.71 Frybot: started cronjob - Match
+22:57:35.71 Frybot: started cronjob - Tweetnicofact
+22:57:35.71 Frybot: Connecting to Twitter...
+[31m[1m22:57:35.71 <error> Error: Twit config must include `consumer_key` when using user auth.
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\twit\lib\twitter.js:491:13
+    at Array.forEach (native)
+    at Twitter._validateConfigOrThrow (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\twit\lib\twitter.js:488:17)
+    at new Twitter (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\twit\lib\twitter.js:58:8)
+    at Object.connect (C:\Users\Schizo\Documents\GitHub\frybot\src\mods\twitter.js:37:20)
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\bot.js:89:30)
+    at Timeout.slightDelay [as _onTimeout] (C:\Users\Schizo\Documents\GitHub\frybot\src\core\commands.js:67:9)
+    at ontimeout (timers.js:386:14)
+    at tryOnTimeout (timers.js:250:5)
+    at Timer.listOnTimeout (timers.js:214:5) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[33m22:57:35.72 Frybot: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+[36m23:24:06.37 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+23:24:06.70 Frybot: Booting up: Frybot
+[36m23:24:06.71 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m23:24:06.71 attaching core: commands <debug> (in index.js:():11)[39m
+[36m23:24:08.96 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m23:24:09.10 attaching core: league <debug> (in index.js:():11)[39m
+[36m23:24:09.10 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m23:24:09.11 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m23:24:09.27 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m23:24:09.27 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m23:24:09.27 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m23:24:09.28 Adding command: scores <debug> (in index.js:():9)[39m
+[36m23:24:09.30 Adding command: season <debug> (in index.js:():9)[39m
+[36m23:24:09.30 Adding command: suck <debug> (in index.js:():9)[39m
+[36m23:24:09.34 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):39)[39m
+[36m23:24:09.92 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):46)[39m
+[36m23:24:11.93 League Loaded <debug> (in bot.js:(onLoad):80)[39m
+23:24:11.94 Frybot: Activating: [32mscores[39m[[36mboot[39m] of [33mFrybot[39m: ''
+23:24:11.94 Frybot: Updating Players from Scoresheet
+23:24:11.98 Frybot: started cronjob - Afterparty
+23:24:11.98 Frybot: started cronjob - Nicofacts
+23:24:11.98 Frybot: started cronjob - Pregame
+23:24:11.99 Frybot: started cronjob - Match
+23:24:11.99 Frybot: started cronjob - Tweetnicofact
+23:24:11.99 Frybot: Connecting to Twitter...
+[33m23:24:12.01 Frybot: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+23:24:12.37 Frybot: Connected to Twitter: Alex D
+[36m23:24:48.91 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+23:24:49.40 Naivi: Booting up: Naivi
+[36m23:24:49.41 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m23:24:49.42 attaching core: commands <debug> (in index.js:():11)[39m
+[36m23:24:53.16 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m23:24:53.40 attaching core: league <debug> (in index.js:():11)[39m
+[36m23:24:53.41 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m23:24:53.43 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m23:24:53.80 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m23:24:53.82 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m23:24:53.83 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m23:24:53.86 Adding command: scores <debug> (in index.js:():9)[39m
+[36m23:24:53.89 Adding command: season <debug> (in index.js:():9)[39m
+[36m23:24:53.92 Adding command: suck <debug> (in index.js:():9)[39m
+[36m23:24:54.01 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):39)[39m
+[36m23:24:54.89 Team Shit Loaded: s3 <debug> (in commands.js:(Response.<anonymous>):46)[39m
+[36m23:24:56.95 League Loaded <debug> (in bot.js:(onLoad):80)[39m
+23:24:56.95 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+23:24:56.96 Naivi: Updating Players from Scoresheet
+23:24:57.03 Naivi: started cronjob - Afterparty
+23:24:57.03 Naivi: started cronjob - Nicofacts
+23:24:57.03 Naivi: started cronjob - Pregame
+23:24:57.03 Naivi: started cronjob - Match
+23:24:57.04 Naivi: started cronjob - Tweetnicofact
+23:24:57.04 Naivi: Connecting to Twitter...
+[33m23:24:57.09 Naivi: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+23:24:57.29 Naivi: Connected to Twitter: Alex D

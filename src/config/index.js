@@ -11,7 +11,7 @@ config.localTeamShitPath = './dev/teamshit.json';
 config.localSeasonsPath = './dev/seasons.json';
 
 // Debugging sets personality switch
-config.debugging = false;
+config.debugging = true;
 config.debugging_League = true;
 
 config.testing = false;
@@ -28,7 +28,7 @@ config.tweeting = false;
 config.botName = "Frybot";
 if (config.debugging)
   config.botName = "Naivi";
-config.port = Number(process.env.PORT || Math.random()*5000);
+config.port = Number(process.env.PORT || Math.floor(Math.random()+3000));
 config.responding = true;
 config.responseTime = 9000;
 config.brainfart = 10000;

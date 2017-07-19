@@ -1,5 +1,7 @@
 var _ = require('underscore'),
     fs = require('fs'),
+    config = require('../config/index'),
+    logger = config.logger,
     Spreadsheet = require('edit-google-spreadsheet');
 
 /*
@@ -298,10 +300,10 @@ var Season = function(data,callback) {
     console.log('Loading Players & Schedule');
     Spreadsheet.load({
       debug: false,
-      spreadsheetId: self.config.Google_ItIsWhatItIs_Spreadsheet_ID,
-      worksheetId: self.config.ItIsWhatItIs_referencesSheetID,
+      spreadsheetId: config.Google_ItIsWhatItIs_Spreadsheet_ID,
+      worksheetId: config.ItIsWhatItIs_referencesSheetID,
       worksheetName: 'references',
-      oauth : self.config.Google_Oauth_Opts
+      oauth : config.Google_Oauth_Opts
     },
     function sheetReady(err, spreadsheet) {
       if(err) throw err;

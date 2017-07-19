@@ -1,4 +1,6 @@
-var _ = require('underscore');
+var _ = require('underscore'),
+    config = require('../config/index'),
+    logger = config.logger;
 
 // season stuff
 module.exports = function season(data) {
@@ -35,13 +37,17 @@ module.exports = function season(data) {
   function pregame() {   
     var maybes = ['bitch niggas','meatbags','homos','losers','dolts','morons','dirtbags','noobs','scrubs','ladies'];
     self.say('It\'s League night '+maybes[Math.floor(Math.random()*maybes.length)]+'!');
-    maybes
     self.say('Playing @ '+self.league.getCurrentSeason().getTodaysMatchup().location);
     self.commands.bottle.call(self,{argument:'next'});
     self.commands.bottle.call(self,{argument:'duty'});
     self.commands.scores.call(self,{argument:'lvp'});
   }
   this.commands.season.pregame = pregame;
+
+  function match() {
+    self.say('Good luck tonight bitches! League is starting in 10 minutes.');
+  }
+  this.commands.season.match = match;
 
   function newseason() {
     self.say('Start getting ready bitches, the new season is starting next week!');

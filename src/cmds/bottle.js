@@ -1,4 +1,6 @@
-var _ = require('underscore');
+var _ = require('underscore'),
+    config = require('../config/index'),
+    logger = config.logger;
 
 /**
 * Bottle command functions
@@ -20,10 +22,10 @@ module.exports = function bottle(data) {
   if (!self.bottleBitches||self.bottleBitches.length<=0) {
     self.bottleBitches = self.teamshitData.bottleBitches || [];
     if (self.bottleBitches.length<=0) {
-      self.logger.debug('Populating Bottle Duty');
+      logger.debug('Populating Bottle Duty');
       var players = self.league.getCurrentSeason().players;
       if (!players||players.length<=0) {
-        self.logger.warn('Unable to update Bottle Duty: missing Players');
+        logger.warn('Unable to update Bottle Duty: missing Players');
         return;
       }
       _.forEach(players, function addTobottleBitches(player) {
@@ -34,7 +36,7 @@ module.exports = function bottle(data) {
       self.commands.saveTeamShitData.call(self);
     }
     else {
-      self.logger.debug('Bottle Duty data found.');
+      logger.debug('Bottle Duty data found.');
       self.bottleBitches = self.teamshitData.bottleBitches;
     }
   }
@@ -55,7 +57,7 @@ module.exports = function bottle(data) {
     var temp = self.teamshitData.bottleBitches.shift();
     self.teamshitData.bottleBitches.push(temp);
     self.commands.saveTeamShitData.call(self);
-    self.logger.debug('bottle duty updated');
+    logger.debug('bottle duty updated');
   }
   this.commands.bottle.next = next;
 

@@ -1,4 +1,6 @@
 var _ = require('underscore'),
+    config = require('../config/index'),
+    logger = config.logger,
     Spreadsheet = require('edit-google-spreadsheet');
 
 module.exports = function nicofacts(data) {
@@ -6,12 +8,12 @@ module.exports = function nicofacts(data) {
   var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
 
   if (!this.nicofactsDB||this.nicofactsDB.length<=0) {
-    self.logger.log('Loading Nico Facts');
+    logger.log('Loading Nico Facts');
     Spreadsheet.load({
       debug: true,
-      spreadsheetId: self.config.Google_ItIsWhatItIs_Spreadsheet_ID,
-      worksheetId: self.config.ItIsWhatItIs_nicofactsSheetID,
-      oauth : self.config.Google_Oauth_Opts
+      spreadsheetId: config.Google_ItIsWhatItIs_Spreadsheet_ID,
+      worksheetId: config.ItIsWhatItIs_nicofactsSheetID,
+      oauth : config.Google_Oauth_Opts
     },
     function sheetReady(err, spreadsheet) {
       if(err) throw err;
@@ -23,7 +25,7 @@ module.exports = function nicofacts(data) {
         // console.log("rows: "+rows);
         _.forEach(rows, function(cols) {self.nicofactsDB.push('Nico Fact #'+cols[1]+': '+cols[2]);});
         self.nicoFactCounter = 0;
-        self.logger.log('Nico Facts Loaded');
+        logger.log('Nico Facts Loaded');
         self.commands.nicofacts.call(self,data);
         // self.say('Uhhh what?');
       });
@@ -37,20 +39,20 @@ module.exports = function nicofacts(data) {
 
   function addNicoFact() {
     // parse for the fact
-    self.logger.debug('Adding Nico Fact');
+    logger.debug('Adding Nico Fact');
     var number = message.match(/([0-9]*):/gi)[0];
     number = number.toString().substring(0,number.toString().length-1);
-    // self.logger.debug('number: %s',number);
+    // logger.debug('number: %s',number);
     var newFact = message.substring(message.indexOf(':')+1);
     while (newFact.charAt(0)==' ') newFact = newFact.substring(1);
-    // self.logger.debug('newFact: %s',newFact);
-    self.logger.debug('Nico Fact #%s: %s',number,newFact);
+    // logger.debug('newFact: %s',newFact);
+    logger.debug('Nico Fact #%s: %s',number,newFact);
     // add to spreadsheet
     Spreadsheet.load({
       debug: true,
-      spreadsheetId: self.config.Google_ItIsWhatItIs_Spreadsheet_ID,
-      worksheetId: self.config.ItIsWhatItIs_nicofactsSheetID,
-      oauth : self.config.Google_Oauth_Opts
+      spreadsheetId: config.Google_ItIsWhatItIs_Spreadsheet_ID,
+      worksheetId: config.ItIsWhatItIs_nicofactsSheetID,
+      oauth : config.Google_Oauth_Opts
     },
     function sheetReady(err, spreadsheet) {
       if(err) throw err;
@@ -64,13 +66,13 @@ module.exports = function nicofacts(data) {
           jsonObj = JSON.parse(jsonObj);
         }
         catch(e) {
-          if (e) self.logger.warn(e);
+          if (e) logger.warn(e);
           jsonObj = "{\""+(rows.length+1)+"\": {\"1\": \"-666\",\"2\": \"faulty json bro\"}}";
         }
         spreadsheet.add(jsonObj);
         spreadsheet.send(function(err) {
-          if(err) self.logger.log(err);
-          self.logger.log('Nico Fact Added');
+          if(err) logger.log(err);
+          logger.log('Nico Fact Added');
         });
       });
     });
@@ -134,7 +136,7 @@ module.exports = function nicofacts(data) {
   function tweetnicofact() {
     var random = Math.floor(Math.random() * self.nicofactsDB.length);
     var randomNicoFact = self.nicofactsDB[random];
-    self.logger.log('Tweeting Random Nico Fact: %s',randomNicoFact);
+    logger.log('Tweeting Random Nico Fact: %s',randomNicoFact);
     self.twitter.tweet.call(self,randomNicoFact);
   }
   this.commands.tweetnicofact = tweetnicofact;
