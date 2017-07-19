@@ -40,11 +40,19 @@ module.exports = function() {
 	        timeZone: 'America/Los_Angeles'	
 		},
 
+		match : {
+			start : true,
+			command : 'season',
+			argument : 'match',
+			cronTime : '00 50 18 * 6-8 2',
+	        timeZone: 'America/Los_Angeles'
+		},
+
 		tweetnicofact : {
 			start : true,
 			command : 'nicofacts',
 			argument : 'tweetnicofact',
-			cronTime : '00 10 19-24 * 0-5 2', 
+			cronTime : '00 10 19,21,23 * 6-8 2', 
 	        timeZone: 'America/Los_Angeles'	
 		}
 	}

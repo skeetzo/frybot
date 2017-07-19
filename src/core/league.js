@@ -298,10 +298,10 @@ var Season = function(data,callback) {
     console.log('Loading Players & Schedule');
     Spreadsheet.load({
       debug: false,
-      spreadsheetId: config.Google_ItIsWhatItIs_Spreadsheet_ID,
-      worksheetId: config.ItIsWhatItIs_referencesSheetID,
+      spreadsheetId: self.config.Google_ItIsWhatItIs_Spreadsheet_ID,
+      worksheetId: self.config.ItIsWhatItIs_referencesSheetID,
       worksheetName: 'references',
-      oauth : config.Google_Oauth_Opts
+      oauth : self.config.Google_Oauth_Opts
     },
     function sheetReady(err, spreadsheet) {
       if(err) throw err;
