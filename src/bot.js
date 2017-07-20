@@ -69,17 +69,23 @@ bot.prototype = {
     // Cmds
     require('./cmds/index.js').load.call(this);
 
-    // update AWS config
-    this.commands.updateAWS.call(this);
-
     if (!this.commands) return console.log("Error- missing critical Commands module");  
 
     self.commands.loadLeague.call(self,function onLoad(err) {
-      if (err) return logger.error(err);
+      if (err) return logger.warn(err);
       // loads current league data then syncs with ItIsWhatItIs sheet stats
       logger.debug('League Loaded');
+      self.league.getTeamByName(config.teamName,function (err, team) {
+        if (err) return logger.warn(err);
+        self.team = team;
+      });
       // Initial scores update on boot
       // self.commands.loadModules.call(self);
+
+
+
+
+
       self.activate.call(self,{command:"scores",argument:"boot",name:config.botName});
       if (config.cronjobbing) self.cronjobs.start.call(self);
       else logger.debug('Crons Disabled');

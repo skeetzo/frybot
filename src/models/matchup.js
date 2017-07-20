@@ -20,7 +20,7 @@ var matchUpSchema = new Schema({
   matches: { type: Array, default: [] },
 },options);
 
-matchSchema.pre('save', function(next) {
+matchUpSchema.pre('save', function(next) {
   logger.debug('matchup saved: %s vs %s (%s)',this.teamOne,this.teamTwo,this.date);
   next();
 });

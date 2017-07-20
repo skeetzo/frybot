@@ -17,9 +17,9 @@ var gameSchema = new Schema({
   loser: { type: Schema.Types.ObjectId, ref: 'player', required: true },
   playerOneTimeouts: { type: Number, default: 0 },
   playerTwoTimeouts: { type: Number, default: 0 },
-  isEarlyScratchEight: { type: boolean, default: 0 },
-  isBreakAndRun: { type: boolean, default: 0 },
-  isEightBallBreak: { type: boolean, default: 3 },
+  isEarlyScratchEight: { type: Boolean, default: 0 },
+  isBreakAndRun: { type: Boolean, default: 0 },
+  isEightBallBreak: { type: Boolean, default: 3 },
   mvp: { type: Number, default: 0 },
 
 },options);

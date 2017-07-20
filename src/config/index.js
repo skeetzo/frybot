@@ -15,7 +15,7 @@ config.debugging = true;
 config.debugging_League = true;
 
 config.testing = false;
-config.saving = true;
+config.saving = false;
 config.saveOnLoad = false;
 config.localLoad = false;
 config.localSave = false;
@@ -26,7 +26,7 @@ config.homeLocation = '17715 Vanowen St, Reseda, CA 91335';
 config.homeLocationName = 'Copper Bucket';
 
 // Twitter
-config.Twitter_On = true;
+config.Twitter_On = false;
 config.tweeting = false;
 
 config.botName = "Frybot";

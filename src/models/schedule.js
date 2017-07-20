@@ -11,7 +11,7 @@ var options = { discriminatorKey: 'kind' };
 
 // Schedule Schema
 var scheduleSchema = new Schema({
-  date: { type: String, default: ('_____ Season '+moment('YYYY')) },
+  date: { type: String, default: ('_____ Season '+moment('DD/MM/YYYY')) },
   length: { type: Number, default: 10 },
   // teams: { type: Array, default: [(),(new Team())] },
   location: { type: Schema.Types.ObjectId, ref: 'location', default: new Location() },

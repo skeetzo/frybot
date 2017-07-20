@@ -9,24 +9,27 @@ var _ = require('underscore'),
 /*
   League Constructor
 */
-function League(seasons, callback) {
+function League(seasons) {
   console.log('League Created');
   var self = this;
   self.seasons = [];
   // Data initialization
   var count = 0; // counts loaded seasons for completion
   _.forEach(seasons, function (season) {
-    var newSeason = new Season(season, function(err) {
-      if (err) return logger.warn(err);
-      count++;
-      if (count===seasons.length)
-        callback(null);
-    });
+    var newSeason = new Season(season);
     self.seasons.push(newSeason);
   });
 }
 
 League.prototype = {
+  getTeamByName: function(name, callback) {
+    var season = this.getCurrentSeason();
+    for (var i=0;i<season.teams.length;i++)
+      if (season.teams[i].name==name)
+        return callback(null,season.teams[i]);
+    return callback('No Team by that name: %s'+name);
+    
+  },
   getCurrentSeason: function() {
     return this.seasons[0];
     // return this.seasons.getCurrent();
