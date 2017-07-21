@@ -1,4 +1,6 @@
 var _ = require('underscore'),
+    config = require('../config/index'),
+    logger = config.logger,
     CronJob = require('cron').CronJob;
 
 // CronJobs
@@ -12,13 +14,13 @@ module.exports.start = function() {
       });
   }
 
-  var keys = _.keys(self.config.crons);
+  var keys = _.keys(config.crons);
 
   _.forEach(keys,function(key) {
-      var cro = self.config.crons[key];
+      var cro = config.crons[key];
       var cron = new CronJob({
           cronTime: cro.cronTime,
-          onTick: function() {if (self.commands[cro.command] && typeof self.commands[cro.command] == 'function') self.commands[cro.command].call(self,cro.argument)},
+          onTick: function() {if (self.commands[cro.command] && typeof self.commands[cro.command] == 'function') self.commands[cro.command].call(self,cro)},
           start: cro.start,
           timeZone: cro.timeZone
       });
@@ -29,6 +31,6 @@ module.exports.start = function() {
 
   // Prints out the started cronjobs
   _.forEach(crons, function(job) {
-      if (job.started) self.logger.log('started cronjob - %s',job.label);
+      if (job.started) logger.log('started cronjob - %s',job.label);
   });
 }

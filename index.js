@@ -1,4 +1,5 @@
 var config = require('./src/config/index.js'),
+    logger = config.logger,
     bodyParser = require('body-parser'),
     Bot = require('./src/bot.js'),
     express = require('express'),
@@ -6,9 +7,10 @@ var config = require('./src/config/index.js'),
     http = require('http');
 
 var bot = new Bot(config);
+bot.boot();
 
 process.on('uncaughtException', function(err) {
-  bot.logger.error(err.stack);
+  logger.error(err.stack);
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,7 +25,7 @@ app.post('/', function (req, res) {
   bot.onGroupMePost.call(bot, req, res);
 });
 
-var port = Number(process.env.PORT || config.port);
+var port = Number(config.port);
 app.listen(port, function () {
   console.log('App listening on port %s',port);
 });

@@ -1,10 +1,6 @@
 {
-  "name": "naivi",
-  "author": {
-    "name": "Alex Oberg",
-    "email": "alexjoberg@gmail.com",
-    "url": ""
-  },
+  "name": "frybot",
+  "author": "Alex Oberg <alexjoberg@gmail.com>",
   "version": "0.0.6",
   "description": "Pool League GroupMe Chatbot",
   "homepage": "https://sites.google.com/site/itiswhatitisleague",
@@ -13,27 +9,31 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "aws-sdk": "~2.2.33",
-    "body-parser": "^1.15.2",
-    "colors": "^1.1.2",
-    "cool-ascii-faces": "~1.3.x",
-    "cron": "1.0.9",
-    "director": "*",
-    "edit-google-spreadsheet": "0.2.19",
-    "express": "^4.14.0",
-    "groupme": "0.5.6",
-    "moment": "~2.10.3",
-    "mongodb": "^2.2.10",
-    "mongoskin": "^2.1.0",
-    "tracer": "^0.8.3",
-    "underscore": "^1.8.3"
+    "aws-sdk": "~2.2.48",
+    "body-parser": "~1.16.0",
+    "colors": "~1.1.2",
+    "cool-ascii-faces": "~1.3.4",
+    "cron": "~1.0.9",
+    "director": "~1.2.8",
+    "edit-google-spreadsheet": "~0.2.21",
+    "express": "~4.14.1",
+    "google-spreadsheet": "^2.0.4",
+    "groupme": "~0.5.6",
+    "moment": "~2.10.6",
+    "mongodb": "~2.2.22",
+    "mongoose": "^4.11.3",
+    "mongoskin": "~2.1.0",
+    "request": "~2.79.0",
+    "tracer": "~0.8.7",
+    "twit": "~2.2.5",
+    "underscore": "~1.8.3"
   },
   "engines": {
     "node": "0.10.x"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/brainlessdg13/frybot"
+    "url": "git+https://github.com/brainlessdg13/frybot.git"
   },
   "keywords": [
     "node",
@@ -43,5 +43,8 @@
     "bot",
     "google sheets"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brainlessdg13/frybot/issues"
+  }
 }
