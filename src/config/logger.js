@@ -3,12 +3,7 @@ var fs = require('fs'),
 
 module.exports = function() {
 	var self = this;
-	//  w/ Mongo
-	this.MONGODB_URI = process.env.MONGODB_URI || false;
-	var db = false;
 
-	if (process.env.NODE_ENV=='production')
-	    db = mongo.db(this.MONGODB_URI);
 	this.logger = require('tracer').colorConsole(
 	                {
 	                    format : [
@@ -42,6 +37,15 @@ module.exports = function() {
 	                        },
 	                        function (data) {
 	                            // Mongo
+								if (process.env.NODE_ENV!='production') return;
+								var db = mongo.db(this.MONGODB_URI),
+									loginfo = db.collection("loginfo");
+					            loginfo.insert( data, function(err, log) {
+					                if (err) {
+					                    console.error(err);
+					                }
+					            });
+								   
 	                        }
 	                        ]
 	                });
