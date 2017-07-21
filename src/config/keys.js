@@ -16,7 +16,7 @@ module.exports = function() {
     // Google
     this.Google_service_email = localConfig.Google_service_email || process.env.Google_service_email;
     this.Google_keyFile = localConfig.Google_keyFile || process.env.Google_keyFile;
-    this.Google_key = process.env.Google_key;
+    this.Google_key = localConfig.Google_key || process.env.Google_key;
     this.Google_Oauth_Opts = {
         "email": this.Google_service_email,
         "key": this.Google_key,

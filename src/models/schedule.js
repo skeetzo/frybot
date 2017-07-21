@@ -3,7 +3,9 @@ var mongoose = require('mongoose'),
     moment = require('moment'),
     config = require('../config/index'),
     logger = config.logger,
+    Sheets = require('../mods/sheets'),
     Location = require('../models/location'),
+    Matchup = require('../models/matchup'),
     Team = require('../models/team'),
     _ = require('underscore');
 
@@ -11,15 +13,10 @@ var options = { discriminatorKey: 'kind' };
 
 // Schedule Schema
 var scheduleSchema = new Schema({
-  date: { type: String, default: ('_____ Season '+moment('DD/MM/YYYY')) },
-  length: { type: Number, default: 10 },
-  // teams: { type: Array, default: [(),(new Team())] },
-  location: { type: Schema.Types.ObjectId, ref: 'location', default: new Location() },
-  matchNum: { type: Number, default: 0 },
-
-  teamOne: { type: Schema.Types.ObjectId, ref: 'team', default: new Team() },
-  teamTwo: { type: Schema.Types.ObjectId, ref: 'team', default: new Team() },
-
+  label: { type: String, default: ('_____ Season '+moment().format('YYYY')) },
+  matchups: { type: Array, default: [] },
+  locations: { type: Array, default: [] },
+  teams: { type: Array, default: [] },
 },options);
 
 scheduleSchema.pre('save', function(next) {
@@ -34,16 +31,42 @@ scheduleSchema.methods.getPlayersByNames = function() {
   var playersTemp = [];
   _.forEach(this.teamOne, function (team) {
   	_.forEach(team.players, function (player) {
-		playersTemp.push(player.name);
+  		playersTemp.push(player.name);
   	});
   });
   _.forEach(this.teamTwo, function (team) {
   	_.forEach(team.players, function (player) {
-		playersTemp.push(player.name);
+  		playersTemp.push(player.name);
   	});
   });
   return playersTemp;
 };
+
+scheduleSchema.methods.loadCurrentSchedule = function(callback) {
+  var self = this;
+  logger.debug('loading current schedule');
+  Sheets.loadSchedule(function (err, weeks) {
+    if (err) {
+      logger.warn(err);
+      return callback(err);
+    }
+    self.matchups = [];
+    self.teams = [];
+    self.locations = [];
+    _.forEach(weeks, function (week) {
+      self.matchups.push(new Matchup(week));
+      if (!_.contains(self.teams,week.teamTwo))
+        self.teams.push(week.teamTwo);
+      if (!_.contains(self.locations,week.location))
+        self.locations.push(week.location);
+    });
+    self.save(function (err) {
+      if (err) logger.warn(err);
+      logger.debug('current schedule updated');
+      callback(null);
+    });
+  });
+}
 
 var Schedule = mongoose.model('schedule', scheduleSchema,'schedule');
 module.exports = Schedule;

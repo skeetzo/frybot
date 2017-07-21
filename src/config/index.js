@@ -22,6 +22,7 @@ config.localSave = false;
 config.cronjobbing = true;
 
 // Models
+config.homeTeam = "It Is What It Is";
 config.homeLocation = '17715 Vanowen St, Reseda, CA 91335';
 config.homeLocationName = 'Copper Bucket';
 

@@ -21,7 +21,7 @@ var matchSchema = new Schema({
 
   games: { type: Array, default: [] },
   // Info
-  matchDate: { type: Date, default: moment('DD/MM/YYYY') },
+  matchDate: { type: Date, default: moment().format('DD/MM/YYYY') },
   matchNum: { type: Number, default: 0 },
   race: { type: String, default: '2:2' },
   totalInnings: { type: Number, default: 0 },

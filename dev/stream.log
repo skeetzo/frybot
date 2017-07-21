@@ -1432,3 +1432,690 @@ Call Stack:
     at emitOne (events.js:96:13)
     at process.emit (events.js:188:7)
     at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[36m15:29:16.32 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:29:16.47 Naivi: Booting up: Naivi
+[36m15:29:16.48 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:29:16.48 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:29:23.24 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:29:23.24 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:29:23.16 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:29:23.24 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:29:23.33 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:29:23.26 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:29:23.34 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:29:23.26 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:29:23.34 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:29:23.34 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:29:23.34 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:29:23.34 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:29:23.35 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:29:23.98 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+[36m15:29:24.09 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[31m[1m15:29:24.10 <error> TypeError: Cannot read property 'teams' of undefined
+    at Object.getTeamByName (C:\Users\Schizo\Documents\GitHub\frybot\src\core\league.js:29:26)
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\bot.js:78:19)
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\core\commands.js:65:5)
+    at C:\Users\Schizo\Documents\GitHub\frybot\src\core\commands.js:57:7
+    at Query.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\mongoose\lib\model.js:3805:16)
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:277:21
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:131:16
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[36m15:31:03.58 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:31:03.73 Naivi: Booting up: Naivi
+[36m15:31:03.74 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:31:03.74 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:31:05.26 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:31:05.30 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:31:05.31 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:31:05.31 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:31:05.32 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:31:05.32 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:31:05.38 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:31:05.38 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:31:05.38 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:31:05.38 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:31:05.39 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:31:05.39 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:31:05.39 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:31:06.31 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+[36m15:31:06.41 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[31m[1m15:31:06.41 <error> TypeError: Cannot read property 'teams' of undefined
+    at Object.getTeamByName (C:\Users\Schizo\Documents\GitHub\frybot\src\core\league.js:29:26)
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\bot.js:78:19)
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\core\commands.js:67:5)
+    at C:\Users\Schizo\Documents\GitHub\frybot\src\core\commands.js:59:7
+    at Query.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\mongoose\lib\model.js:3805:16)
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:277:21
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:131:16
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[36m15:31:36.35 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:31:36.49 Naivi: Booting up: Naivi
+[36m15:31:36.49 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:31:36.49 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:31:37.96 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:31:38.01 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:31:38.01 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:31:38.01 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:31:38.03 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:31:38.03 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:31:38.09 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:31:38.09 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:31:38.09 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:31:38.10 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:31:38.10 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:31:38.10 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:31:38.10 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:31:38.77 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:31:38.87 Naivi: []
+[36m15:31:38.87 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[31m[1m15:31:38.88 <error> TypeError: Cannot read property 'teams' of undefined
+    at Object.getTeamByName (C:\Users\Schizo\Documents\GitHub\frybot\src\core\league.js:29:26)
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\bot.js:78:19)
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\core\commands.js:69:5)
+    at C:\Users\Schizo\Documents\GitHub\frybot\src\core\commands.js:61:7
+    at Query.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\mongoose\lib\model.js:3805:16)
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:277:21
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:131:16
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[36m15:32:04.67 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:32:04.81 Naivi: Booting up: Naivi
+[36m15:32:04.82 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:32:04.82 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:32:06.28 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:32:06.34 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:32:06.34 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:32:06.34 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:32:06.35 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:32:06.36 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:32:06.41 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:32:06.41 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:32:06.42 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:32:06.42 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:32:06.42 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:32:06.42 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:32:06.42 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:32:07.04 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:32:07.14 Naivi: starting new season
+15:32:07.14 Naivi: League Created
+[36m15:32:07.15 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:32:07.16 Naivi: No Team by that name: undefinedundefined[39m
+15:32:07.18 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:32:07.18 Naivi: Updating Players from Scoresheet
+15:32:07.21 Naivi: started cronjob - Afterparty
+15:32:07.22 Naivi: started cronjob - Nicofacts
+15:32:07.22 Naivi: started cronjob - Pregame
+15:32:07.22 Naivi: started cronjob - Match
+15:32:07.22 Naivi: started cronjob - Tweetnicofact
+15:32:07.22 Naivi: Connecting to Twitter...
+[33m15:32:07.22 Naivi: Twitter Disabled[39m
+[33m15:32:07.22 Naivi: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+[36m15:33:10.28 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:33:10.43 Naivi: Booting up: Naivi
+[36m15:33:10.43 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:33:10.43 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:33:11.89 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:33:11.94 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:33:11.94 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:33:11.94 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:33:11.96 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:33:11.96 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:33:12.02 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:33:12.02 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:33:12.02 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:33:12.02 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:33:12.03 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:33:12.03 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:33:12.03 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:33:12.67 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:33:12.78 Naivi: starting new season
+15:33:12.78 Naivi: League Created
+[36m15:33:12.78 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:33:12.78 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+15:33:12.78 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:33:12.78 Naivi: Updating Players from Scoresheet
+15:33:12.81 Naivi: started cronjob - Afterparty
+15:33:12.81 Naivi: started cronjob - Nicofacts
+15:33:12.81 Naivi: started cronjob - Pregame
+15:33:12.81 Naivi: started cronjob - Match
+15:33:12.81 Naivi: started cronjob - Tweetnicofact
+15:33:12.81 Naivi: Connecting to Twitter...
+[33m15:33:12.81 Naivi: Twitter Disabled[39m
+[33m15:33:12.82 Naivi: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+[36m15:35:02.92 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:35:03.08 Naivi: Booting up: Naivi
+[36m15:35:03.08 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:35:03.09 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:35:04.64 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:35:04.69 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:35:04.69 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:35:04.69 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:35:04.71 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:35:04.71 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:35:04.77 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:35:04.77 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:35:04.78 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:35:04.78 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:35:04.78 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:35:04.78 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:35:04.78 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:35:05.41 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:35:05.51 Naivi: starting new season
+15:35:05.52 Naivi: League Created
+[36m15:35:05.52 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:35:05.52 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+15:35:05.52 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:35:05.53 Naivi: Updating Players from Scoresheet
+15:35:05.56 Naivi: started cronjob - Afterparty
+15:35:05.56 Naivi: started cronjob - Nicofacts
+15:35:05.56 Naivi: started cronjob - Pregame
+15:35:05.57 Naivi: started cronjob - Match
+15:35:05.57 Naivi: started cronjob - Tweetnicofact
+15:35:05.57 Naivi: Connecting to Twitter...
+[33m15:35:05.57 Naivi: Twitter Disabled[39m
+[33m15:35:05.57 Naivi: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+[36m15:37:03.42 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:37:03.56 Naivi: Booting up: Naivi
+[36m15:37:03.56 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:37:03.56 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:37:05.06 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:37:05.11 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:37:05.11 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:37:05.11 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:37:05.13 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:37:05.13 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:37:05.19 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:37:05.19 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:37:05.19 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:37:05.19 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:37:05.20 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:37:05.20 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:37:05.20 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:37:05.83 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:37:05.93 Naivi: starting new season
+15:37:05.93 Naivi: League Created
+[36m15:37:05.93 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:37:05.94 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+15:37:05.94 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:37:05.94 Naivi: Updating Players from Scoresheet
+15:37:05.98 Naivi: started cronjob - Afterparty
+15:37:05.98 Naivi: started cronjob - Nicofacts
+15:37:05.98 Naivi: started cronjob - Pregame
+15:37:05.98 Naivi: started cronjob - Match
+15:37:05.98 Naivi: started cronjob - Tweetnicofact
+15:37:05.98 Naivi: Connecting to Twitter...
+[33m15:37:05.98 Naivi: Twitter Disabled[39m
+[33m15:37:05.99 Naivi: Google OAuth Error: Error: ENOENT: no such file or directory, open 'C:\Users\Schizo\Documents\GitHub\frybot\lib\secret.pem'[39m
+[36m15:37:11.94 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:37:12.08 Naivi: Booting up: Naivi
+[36m15:37:12.09 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:37:12.09 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:37:13.52 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:37:13.57 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:37:13.57 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:37:13.57 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:37:13.59 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:37:13.59 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:37:13.64 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:37:13.65 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:37:13.65 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:37:13.65 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:37:13.65 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:37:13.65 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:37:13.66 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:37:14.33 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:37:14.43 Naivi: starting new season
+15:37:14.44 Naivi: League Created
+[36m15:37:14.45 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:37:14.45 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+15:37:14.45 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:37:14.46 Naivi: Updating Players from Scoresheet
+15:37:14.50 Naivi: started cronjob - Afterparty
+15:37:14.50 Naivi: started cronjob - Nicofacts
+15:37:14.50 Naivi: started cronjob - Pregame
+15:37:14.50 Naivi: started cronjob - Match
+15:37:14.50 Naivi: started cronjob - Tweetnicofact
+15:37:14.50 Naivi: Connecting to Twitter...
+[33m15:37:14.50 Naivi: Twitter Disabled[39m
+15:37:15.45 Naivi: Season scores updated quietly
+[36m15:37:15.45 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):78)[39m
+[36m15:44:29.32 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:44:29.46 Naivi: Booting up: Naivi
+[36m15:44:29.46 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:44:29.46 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:44:30.92 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:44:30.97 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:44:30.97 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:44:30.97 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:44:30.99 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:44:30.99 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:44:31.05 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:44:31.05 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:44:31.05 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:44:31.06 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:44:31.06 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:44:31.06 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:44:31.06 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:44:31.69 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:44:31.78 Naivi: starting new season
+15:44:31.78 Naivi: League Created
+[36m15:44:31.78 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:44:31.79 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+15:44:31.79 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:44:31.80 Naivi: Updating Players from Scoresheet
+15:44:31.83 Naivi: started cronjob - Afterparty
+15:44:31.83 Naivi: started cronjob - Nicofacts
+15:44:31.83 Naivi: started cronjob - Pregame
+15:44:31.83 Naivi: started cronjob - Match
+15:44:31.83 Naivi: started cronjob - Tweetnicofact
+15:44:31.83 Naivi: Connecting to Twitter...
+[33m15:44:31.83 Naivi: Twitter Disabled[39m
+15:44:32.44 Naivi: Season scores updated quietly
+[36m15:44:32.44 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):78)[39m
+[36m15:47:32.78 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:47:32.94 Naivi: Booting up: Naivi
+[36m15:47:32.94 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:47:32.94 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:47:34.43 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:47:34.47 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:47:34.48 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:47:34.48 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:47:34.49 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:47:34.49 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:47:34.56 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:47:34.56 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:47:34.56 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:47:34.56 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:47:34.56 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:47:34.57 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:47:34.57 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:47:35.18 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:47:35.28 Naivi: starting new season
+15:47:35.29 Naivi: League Created
+[36m15:47:35.29 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:47:35.30 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+15:47:35.30 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:47:35.30 Naivi: Updating Players from Scoresheet
+15:47:35.33 Naivi: started cronjob - Afterparty
+15:47:35.33 Naivi: started cronjob - Nicofacts
+15:47:35.33 Naivi: started cronjob - Pregame
+15:47:35.33 Naivi: started cronjob - Match
+15:47:35.33 Naivi: started cronjob - Tweetnicofact
+15:47:35.33 Naivi: Connecting to Twitter...
+[33m15:47:35.33 Naivi: Twitter Disabled[39m
+15:47:35.100 Naivi: Season scores updated quietly
+[36m15:47:35.100 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):79)[39m
+[36m15:48:22.98 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:48:23.13 Naivi: Booting up: Naivi
+[36m15:48:23.13 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:48:23.13 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:48:24.60 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:48:24.66 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:48:24.66 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:48:24.66 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:48:24.67 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:48:24.67 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:48:24.72 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:48:24.73 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:48:24.73 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:48:24.73 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:48:24.73 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:48:24.74 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:48:24.74 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:48:25.37 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:48:25.46 Naivi: starting new season
+[36m15:48:25.47 season saved: _____ Season NaN <debug> (in season.js:(model.<anonymous>):24)[39m
+[31m[1m15:48:25.48 <error> ReferenceError: self is not defined
+    at model.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\src\models\season.js:26:7)
+    at _next (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\hooks-fixed\hooks.js:62:30)
+    at fnWrapper (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\hooks-fixed\hooks.js:186:8)
+    at model.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\mongoose\lib\plugins\saveSubdocs.js:20:7)
+    at _next (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\hooks-fixed\hooks.js:62:30)
+    at fnWrapper (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\hooks-fixed\hooks.js:186:8)
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\mongoose\lib\plugins\validateBeforeSave.js:33:13
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:131:16
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[36m15:48:53.36 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:48:53.50 Naivi: Booting up: Naivi
+[36m15:48:53.50 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:48:53.50 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:48:54.94 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:48:54.99 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:48:54.99 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:48:54.99 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:48:55.00 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:48:55.00 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:48:55.06 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:48:55.06 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:48:55.07 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:48:55.07 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:48:55.07 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:48:55.07 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:48:55.07 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:48:55.69 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:48:55.80 Naivi: starting new season
+[36m15:48:55.80 season saved: _____ Season NaN <debug> (in season.js:(model.<anonymous>):24)[39m
+15:48:56.02 Naivi: League Created
+[36m15:48:56.02 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:48:56.03 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+15:48:56.03 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:48:56.03 Naivi: Updating Players from Scoresheet
+15:48:56.07 Naivi: started cronjob - Afterparty
+15:48:56.07 Naivi: started cronjob - Nicofacts
+15:48:56.07 Naivi: started cronjob - Pregame
+15:48:56.07 Naivi: started cronjob - Match
+15:48:56.07 Naivi: started cronjob - Tweetnicofact
+15:48:56.07 Naivi: Connecting to Twitter...
+[33m15:48:56.07 Naivi: Twitter Disabled[39m
+15:48:56.76 Naivi: Season scores updated quietly
+[36m15:48:56.76 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):83)[39m
+[36m15:49:36.94 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:49:37.09 Naivi: Booting up: Naivi
+[36m15:49:37.09 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:49:37.09 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:49:38.55 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:49:38.60 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:49:38.60 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:49:38.60 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:49:38.62 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:49:38.62 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:49:38.67 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:49:38.67 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:49:38.67 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:49:38.67 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:49:38.68 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:49:38.68 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:49:38.68 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:49:39.33 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:49:39.44 Naivi: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+15:49:39.44 Naivi: League Created
+[36m15:49:39.44 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:49:39.44 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+15:49:39.44 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:49:39.45 Naivi: Updating Players from Scoresheet
+15:49:39.48 Naivi: started cronjob - Afterparty
+15:49:39.48 Naivi: started cronjob - Nicofacts
+15:49:39.48 Naivi: started cronjob - Pregame
+15:49:39.49 Naivi: started cronjob - Match
+15:49:39.49 Naivi: started cronjob - Tweetnicofact
+15:49:39.49 Naivi: Connecting to Twitter...
+[33m15:49:39.49 Naivi: Twitter Disabled[39m
+15:49:40.17 Naivi: Season scores updated quietly
+[36m15:49:40.17 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):83)[39m
+[36m15:49:49.64 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:49:49.78 Naivi: Booting up: Naivi
+[36m15:49:49.78 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:49:49.78 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:49:51.27 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:49:51.32 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:49:51.32 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:49:51.32 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:49:51.33 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:49:51.34 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:49:51.39 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:49:51.40 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:49:51.40 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:49:51.40 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:49:51.40 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:49:51.40 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:49:51.40 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:49:52.04 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:49:52.14 Naivi: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+15:49:52.15 Naivi: League Created
+[33m15:49:52.15 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+[36m15:49:52.15 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+15:49:52.15 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:49:52.16 Naivi: Updating Players from Scoresheet
+15:49:52.20 Naivi: started cronjob - Afterparty
+15:49:52.20 Naivi: started cronjob - Nicofacts
+15:49:52.20 Naivi: started cronjob - Pregame
+15:49:52.20 Naivi: started cronjob - Match
+15:49:52.20 Naivi: started cronjob - Tweetnicofact
+15:49:52.20 Naivi: Connecting to Twitter...
+[33m15:49:52.20 Naivi: Twitter Disabled[39m
+15:49:52.82 Naivi: Season scores updated quietly
+[36m15:49:52.82 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):83)[39m
+[36m15:50:01.79 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:50:01.94 Naivi: Booting up: Naivi
+[36m15:50:01.94 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:50:01.94 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:50:03.46 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:50:03.52 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:50:03.52 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:50:03.52 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:50:03.54 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:50:03.54 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:50:03.60 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:50:03.60 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:50:03.61 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:50:03.61 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:50:03.61 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:50:03.61 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:50:03.61 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:50:04.26 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:50:04.36 Naivi: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+15:50:04.36 Naivi: League Created
+[36m15:50:04.37 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:50:04.37 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+15:50:04.37 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:50:04.37 Naivi: Updating Players from Scoresheet
+15:50:04.40 Naivi: started cronjob - Afterparty
+15:50:04.41 Naivi: started cronjob - Nicofacts
+15:50:04.41 Naivi: started cronjob - Pregame
+15:50:04.41 Naivi: started cronjob - Match
+15:50:04.41 Naivi: started cronjob - Tweetnicofact
+15:50:04.41 Naivi: Connecting to Twitter...
+[33m15:50:04.41 Naivi: Twitter Disabled[39m
+15:50:05.02 Naivi: Season scores updated quietly
+[36m15:50:05.02 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):83)[39m
+[36m15:50:16.14 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:50:16.29 Naivi: Booting up: Naivi
+[36m15:50:16.30 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:50:16.30 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:50:17.77 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:50:17.82 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:50:17.83 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:50:17.83 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:50:17.84 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:50:17.84 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:50:17.90 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:50:17.91 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:50:17.91 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:50:17.91 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:50:17.91 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:50:17.91 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:50:17.91 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:50:18.53 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:50:18.63 Naivi: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+15:50:18.64 Naivi: League Created
+[36m15:50:18.64 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:50:18.64 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+15:50:18.64 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+15:50:18.65 Naivi: Updating Players from Scoresheet
+15:50:18.69 Naivi: started cronjob - Afterparty
+15:50:18.69 Naivi: started cronjob - Nicofacts
+15:50:18.69 Naivi: started cronjob - Pregame
+15:50:18.69 Naivi: started cronjob - Match
+15:50:18.69 Naivi: started cronjob - Tweetnicofact
+15:50:18.69 Naivi: Connecting to Twitter...
+[33m15:50:18.69 Naivi: Twitter Disabled[39m
+15:50:19.37 Naivi: Season scores updated quietly
+[36m15:50:19.37 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):83)[39m
+[36m15:59:19.15 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+15:59:19.31 Naivi: Booting up: Naivi
+[36m15:59:19.31 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m15:59:19.31 attaching core: commands <debug> (in index.js:():11)[39m
+[36m15:59:20.72 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m15:59:20.77 attaching core: league <debug> (in index.js:():11)[39m
+[36m15:59:20.77 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m15:59:20.77 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m15:59:20.79 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m15:59:20.80 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m15:59:20.85 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m15:59:20.86 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m15:59:20.86 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m15:59:20.86 Adding command: scores <debug> (in index.js:():9)[39m
+[36m15:59:20.86 Adding command: season <debug> (in index.js:():9)[39m
+[36m15:59:20.86 Adding command: suck <debug> (in index.js:():9)[39m
+[36m15:59:20.86 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m15:59:21.49 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+15:59:21.60 Naivi: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+15:59:21.60 Naivi: League Created
+[36m15:59:21.60 League Loaded <debug> (in bot.js:(onLoad):77)[39m
+[33m15:59:21.60 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+[36m15:59:21.60 adding home team <debug> (in bot.js:():81)[39m
+[31m[1m15:59:21.61 <error> ReferenceError: Team is not defined
+    at C:\Users\Schizo\Documents\GitHub\frybot\src\bot.js:82:11
+    at Object.getTeamByName (C:\Users\Schizo\Documents\GitHub\frybot\src\core\league.js:32:12)
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\bot.js:78:19)
+    at onLoad (C:\Users\Schizo\Documents\GitHub\frybot\src\core\commands.js:74:5)
+    at C:\Users\Schizo\Documents\GitHub\frybot\src\core\commands.js:66:7
+    at Query.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\mongoose\lib\model.js:3805:16)
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:277:21
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:131:16
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+[36m16:00:00.45 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+16:00:00.94 Naivi: Booting up: Naivi
+[36m16:00:00.94 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m16:00:00.94 attaching core: commands <debug> (in index.js:():11)[39m
+[36m16:00:02.09 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m16:00:02.14 attaching core: league <debug> (in index.js:():11)[39m
+[36m16:00:02.14 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m16:00:02.14 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m16:00:02.16 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m16:00:02.16 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m16:00:02.21 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m16:00:02.22 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m16:00:02.22 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m16:00:02.22 Adding command: scores <debug> (in index.js:():9)[39m
+[36m16:00:02.22 Adding command: season <debug> (in index.js:():9)[39m
+[36m16:00:02.22 Adding command: suck <debug> (in index.js:():9)[39m
+[36m16:00:02.23 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m16:00:02.84 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+16:00:03.03 Naivi: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+16:00:03.03 Naivi: League Created
+[36m16:00:03.03 League Loaded <debug> (in bot.js:(onLoad):79)[39m
+[33m16:00:03.04 Naivi: No Team by that name: undefinedIt Is What It Is[39m
+[36m16:00:03.04 adding home team <debug> (in bot.js:():83)[39m
+16:00:03.04 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+16:00:03.05 Naivi: Updating Players from Scoresheet
+16:00:03.09 Naivi: started cronjob - Afterparty
+16:00:03.09 Naivi: started cronjob - Nicofacts
+16:00:03.09 Naivi: started cronjob - Pregame
+16:00:03.09 Naivi: started cronjob - Match
+16:00:03.09 Naivi: started cronjob - Tweetnicofact
+16:00:03.09 Naivi: Connecting to Twitter...
+[33m16:00:03.09 Naivi: Twitter Disabled[39m
+[31m[1m16:00:03.17 <error> ReferenceError: Sheets is not defined
+    at C:\Users\Schizo\Documents\GitHub\frybot\src\bot.js:90:13
+    at Query.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\mongoose\lib\model.js:3805:16)
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:277:21
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:131:16
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[22m[39m
+16:00:03.98 Naivi: Season scores updated quietly
+[36m16:00:03.98 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):83)[39m
+[36m16:02:38.96 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+16:02:39.98 Naivi: Booting up: Naivi
+[36m16:02:39.98 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m16:02:39.99 attaching core: commands <debug> (in index.js:():11)[39m
+[36m16:02:40.53 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m16:02:40.58 attaching core: league <debug> (in index.js:():11)[39m
+[36m16:02:40.58 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m16:02:40.58 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m16:02:40.60 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m16:02:40.60 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m16:02:40.65 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m16:02:40.65 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m16:02:40.66 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m16:02:40.66 Adding command: scores <debug> (in index.js:():9)[39m
+[36m16:02:40.66 Adding command: season <debug> (in index.js:():9)[39m
+[36m16:02:40.66 Adding command: suck <debug> (in index.js:():9)[39m
+[36m16:02:40.66 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m16:02:41.29 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+16:02:41.39 Naivi: seasons found: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+16:02:41.39 Naivi: League Created
+[36m16:02:41.40 League Loaded <debug> (in bot.js:(onLoad):80)[39m
+[33m16:02:41.40 Naivi: No Team by that name: undefined[39m
+[36m16:02:41.40 adding home team <debug> (in bot.js:():84)[39m
+16:02:41.40 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+16:02:41.41 Naivi: Updating Players from Scoresheet
+16:02:41.44 Naivi: started cronjob - Afterparty
+16:02:41.44 Naivi: started cronjob - Nicofacts
+16:02:41.44 Naivi: started cronjob - Pregame
+16:02:41.44 Naivi: started cronjob - Match
+16:02:41.44 Naivi: started cronjob - Tweetnicofact
+16:02:41.44 Naivi: Connecting to Twitter...
+[33m16:02:41.44 Naivi: Twitter Disabled[39m
+16:02:41.53 Naivi: Loading Players
+16:02:42.13 Naivi: Season scores updated quietly
+[36m16:02:42.13 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):83)[39m
+[36m16:04:52.12 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+16:04:53.17 Naivi: Booting up: Naivi
+[36m16:04:53.17 Loading Core <debug> (in index.js:(Object.module.exports.load):8)[39m
+[36m16:04:53.17 attaching core: commands <debug> (in index.js:():11)[39m
+[36m16:04:53.76 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m16:04:53.82 attaching core: league <debug> (in index.js:():11)[39m
+[36m16:04:53.82 Loading Mods <debug> (in index.js:(Object.module.exports.load):7)[39m
+[36m16:04:53.82 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m16:04:53.84 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m16:04:53.84 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m16:04:53.89 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m16:04:53.89 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m16:04:53.90 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m16:04:53.90 Adding command: scores <debug> (in index.js:():9)[39m
+[36m16:04:53.90 Adding command: season <debug> (in index.js:():9)[39m
+[36m16:04:53.90 Adding command: suck <debug> (in index.js:():9)[39m
+[36m16:04:53.90 Loading Team Shit <debug> (in commands.js:(Object.module.exports.loadLeague):38)[39m
+[36m16:04:54.56 Mongoose connection open <debug> (in mongo.js:(NativeConnection.<anonymous>):21)[39m
+16:04:54.68 Naivi: seasons found: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+16:04:54.68 Naivi: League Created
+[36m16:04:54.68 League Loaded <debug> (in bot.js:(onLoad):80)[39m
+[33m16:04:54.68 Naivi: No Team by that name: It Is What It Is[39m
+[36m16:04:54.68 adding home team: It Is What It Is <debug> (in bot.js:():84)[39m
+16:04:54.69 Naivi: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+16:04:54.69 Naivi: Updating Players from Scoresheet
+16:04:54.73 Naivi: started cronjob - Afterparty
+16:04:54.73 Naivi: started cronjob - Nicofacts
+16:04:54.73 Naivi: started cronjob - Pregame
+16:04:54.73 Naivi: started cronjob - Match
+16:04:54.73 Naivi: started cronjob - Tweetnicofact
+16:04:54.73 Naivi: Connecting to Twitter...
+[33m16:04:54.73 Naivi: Twitter Disabled[39m
+16:04:54.82 Naivi: Loading Players
+16:04:55.37 Naivi: Season scores updated quietly
+[36m16:04:55.37 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):83)[39m

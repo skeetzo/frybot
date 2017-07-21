@@ -13,19 +13,17 @@ var options = { discriminatorKey: 'kind' };
 
 // Match Schema
 var seasonSchema = new Schema({
-  label: { type: String, default: ('_____ Season '+moment('YYYY')) },
-  teams: { type: Array, default: [
-    (new Team()),(new Team()),(new Team()),(new Team()),(new Team()),
-    (new Team()),(new Team()),(new Team()),(new Team()),(new Team())] },
+  label: { type: String, default: ('_____ Season '+moment().format('YYYY')) },
+  teams: { type: Array, default: [] },
 
-  schedule: { type: Schema.Types.ObjectId, ref: 'schedule' },
-  matchups: { type: Array },
+  schedule: { type: Schema.Types.ObjectId, ref: 'schedule', default: new Schedule({'label':('_____ Season '+moment().format('YYYY'))}) },
+  matchups: { type: Array, default: [] },
 },options);
 
 seasonSchema.pre('save', function(next) {
   logger.debug('season saved: %s',this.label);
 
-  if (self.isModified('matchups')) 
+  if (this.isModified('matchups')) 
     for (var i=1;i<=this.schedule.length;i++) {
       var matchup = new Matchup({'matchNum':i});
       this.matchups.push(matchup);
@@ -35,53 +33,45 @@ seasonSchema.pre('save', function(next) {
   next();
 });
 
-seasonSchema.pre('init', function(next) {
-  logger.debug('season created: %s',this.label);
+// seasonSchema.pre('init', function(next) {
+//   logger.debug('season created: %s',this.label);
 
-  var self = this;
-  async.series([
-    function(callback) {
-      if (!this.schedule) 
-        Sheets.loadSchedule(function (err, matchups) {
-          if (err) logger.warn(err);
-          var matchups_ = [];
-          _.forEach(matchups, function (matchup) {
-            matchups_.push(new Matchup({
-              'teamOne': matchup.teamOne,
-              'teamTwo': matchup.teamTwo,
-              'location': matchup.location,
-              'date': matchup.date,
-            }));
-          });
-          self.matchups = matchups_;
-        });
-      else
-        callback(null);
+  // var self = this;
+  // async.series([
+  //   function(callback) {
+  //     if (!this.schedule) 
+  //       Sheets.loadSchedule(function (err, matchups) {
+  //         if (err) logger.warn(err);
+  //         var matchups_ = [];
+  //         _.forEach(matchups, function (matchup) {
+  //           matchups_.push(new Matchup({
+  //             'teamOne': matchup.teamOne,
+  //             'teamTwo': matchup.teamTwo,
+  //             'location': matchup.location,
+  //             'date': matchup.date,
+  //           }));
+  //         });
+  //         self.matchups = matchups_;
+  //       });
+  //     else
+  //       callback(null);
 
-    },
-    function(callback) {
-      if (!this.matchups) 
-        for (var i=1;i<=this.schedule.length;i++) {
-          var matchup = new Matchup({'matchNum':i});
-          this.matchups.push(matchup);
-          logger.log('MatchUp ('+matchup.matchNum+'/'+this.schedule.length+') Prepped');
-        }
-      else
-        callback(null);
-    },
-    function(callback) {
-      next();
-    },
-  ]);
-
-
-
-
-  
-
-
-  
-});
+  //   },
+  //   function(callback) {
+  //     if (!this.matchups) 
+  //       for (var i=1;i<=this.schedule.length;i++) {
+  //         var matchup = new Matchup({'matchNum':i});
+  //         this.matchups.push(matchup);
+  //         logger.log('MatchUp ('+matchup.matchNum+'/'+this.schedule.length+') Prepped');
+  //       }
+  //     else
+  //       callback(null);
+  //   },
+  //   function(callback) {
+  //     next();
+  //   },
+  // ]); 
+// });
 
 /*
   Returns players names

@@ -52,8 +52,17 @@ module.exports.loadLeague = function(callback) {
   else {
     Season.find({},function (err, seasons) {
       if (err) logger.warn(err);
-      if (!seasons)
-        seasons = [new Season()];
+      if (!seasons||seasons.length==0) {
+        logger.log('starting new season');
+        var newSeason = new Season();
+        return newSeason.save(function (err) {
+          if (err) logger.warn(err);
+          seasons = [newSeason];
+          onLoad(seasons);
+        })
+      }
+      else
+        logger.log('seasons found: %s',JSON.stringify(seasons));
       onLoad(seasons);
     });
   }

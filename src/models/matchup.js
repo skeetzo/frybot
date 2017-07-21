@@ -11,7 +11,7 @@ var options = { discriminatorKey: 'kind' };
 
 // Match Schema
 var matchUpSchema = new Schema({
-  date: { type: Date, default: moment('DD/MM/YYYY') },
+  date: { type: Date, default: moment().format('DD/MM/YYYY') },
   location: { type: Schema.Types.ObjectId, ref: 'location', default: new Location() },
   teamOne: { type: Schema.Types.ObjectId, ref: 'team', default: new Team() },
   teamTwo: { type: Schema.Types.ObjectId, ref: 'team', default: new Team() },

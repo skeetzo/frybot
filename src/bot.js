@@ -4,6 +4,9 @@ var colors = require("colors"),
     util = require('util'),
     config = require('./config/index'),
     logger = config.logger,
+    Player = require('./models/player'),
+    Team = require('./models/team'),
+    Sheets = require('./mods/sheets'),
     fs = require('fs');
     
 /**
@@ -75,21 +78,38 @@ bot.prototype = {
       if (err) return logger.warn(err);
       // loads current league data then syncs with ItIsWhatItIs sheet stats
       logger.debug('League Loaded');
-      self.league.getTeamByName(config.teamName,function (err, team) {
-        if (err) return logger.warn(err);
-        self.team = team;
+      self.league.getTeamByName(config.homeTeam,function (err, team) {
+        if (err) {
+          logger.warn(err);
+          logger.debug('adding home team: %s',config.homeTeam);
+          Team.findOne({'name':config.homeTeam},function (err, team) {
+            if (err) logger.warn(err);
+            if (team)
+              self.team = team;
+            else
+              self.team = new Team({'name':config.homeTeam});
+            Sheets.getCurrentPlayers(function (err, players) {
+              if (err) logger.warn(err);
+              _.forEach(players, function (player) {
+                self.team.players.push(new Player(player));
+              });
+              self.team.save(function (err) {
+                if (err) logger.warn(err);
+                logger.debug('current team updated');
+              });
+            });
+          });
+        }
+        else
+          self.team = team;
       });
+
       // Initial scores update on boot
       // self.commands.loadModules.call(self);
-
-
-
-
 
       self.activate.call(self,{command:"scores",argument:"boot",name:config.botName});
       if (config.cronjobbing) self.cronjobs.start.call(self);
       else logger.debug('Crons Disabled');
-      
       
       if (self.twitter)
         self.twitter.connect.call(self,function(err) {
