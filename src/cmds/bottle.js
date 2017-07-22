@@ -69,9 +69,9 @@ module.exports = function bottle(data) {
   this.commands.bottle.what = what;
 
   function process() {
-    if (this.commands.bottle[argument])
-      this.commands.bottle[argument]();
+    if (self.commands.bottle[argument])
+      self.commands.bottle[argument]();
     else
-      this.say('Wtf about a bottle?');
+      self.say('Wtf about a bottle?');
   }
 }
