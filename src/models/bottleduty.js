@@ -26,7 +26,7 @@ bottleDutySchema.methods.addPlayers = function(players, callback) {
   this.save(function (err) {
     if (err) logger.warn(err);
     if (callback) callback(null);
-  })
+  });
 }
 
 bottleDutySchema.methods.getDuty = function() {

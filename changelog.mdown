@@ -7,6 +7,9 @@
 	- finished mongo integreation
 
 **0.0.2 : ??/??/?? : **
+	- update nicofact tweeting behavior
+	- update cron based seasonal behavior- start, end
+
 **0.0.3 : ??/??/?? : **
 
 **0.0.4 : ??/??/?? : **
