@@ -269,7 +269,7 @@ module.exports.getCurrentPlayers = function(callback) {
         // Reads 'references' sheet for existing Players and Matchup Schedule
         _.forEach(rows, function(row) {
           if (row.players)
-            playersAndSLs.push({'name': row.players, 'sl': row.SL});
+            playersAndSLs.push({'name': row.players, 'sl': row.sl});
         });
         logger.debug('Players: %s',JSON.stringify(playersAndSLs,null,4));
         logger.log('Players Loaded');

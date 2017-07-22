@@ -19,27 +19,15 @@ module.exports = function bottle(data) {
   var self = this;
   var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
 
-  if (!this.bottleDuty) {
-    BottleDuty.findOne({},function (err, bottleDuty) {
-      if (err) logger.warn(err);
-      self.bottleDuty = bottleDuty;
-      process.call(self);
-    });
-  }
-  else {
-    this.bottleDuty = new BottleDuty({'players':self.team.players});
-    this.bottleDuty.save(function(err) {
-      if (err) logger.warn(err);
-      process.call(self);
-    })
-  }
-
   /*
     who's on duty
   */
   function duty() {
-    if (modifiers&&modifiers.text) return self.say.call(self,modifiers.text+self.bottleDuty.getDuty());
-    self.say.call(self,'Bottle Duty: '+self.bottleDuty.getDuty());
+    BottleDuty.findOne({},function(err, bottleDuty) {
+      if (err) return logger.warn(err);
+      if (modifiers&&modifiers.text) return self.say.call(self,modifiers.text+bottleDuty.getDuty());
+      self.say.call(self,'Bottle Duty: '+bottleDuty.getDuty());
+    });
   }
   this.commands.bottle.duty = duty;
 
@@ -47,7 +35,10 @@ module.exports = function bottle(data) {
     random player
   */
   function random() {
-    self.say.call(self,'Bottle Duty: '+self.bottleDuty.getRandomDuty());
+    BottleDuty.findOne({},function(err, bottleDuty) {
+      if (err) return logger.warn(err);
+      self.say.call(self,'Bottle Duty: '+bottleDuty.getRandomDuty());
+    });
   }
   this.commands.bottle.random = random;
 
@@ -55,7 +46,10 @@ module.exports = function bottle(data) {
     randomly decides a liquor
   */
   function what() {
-    self.say.call(self,'Pick up some: '+self.bottleDuty.getBottle());
+    BottleDuty.findOne({},function(err, bottleDuty) {
+      if (err) return logger.warn(err);
+      self.say.call(self,'Pick up some: '+bottleDuty.getBottle());
+    });
   }
   this.commands.bottle.what = what;
 

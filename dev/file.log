@@ -3156,3 +3156,334 @@ Call Stack:
 [34m[37m18:25:44.44 [34m[33mNaivi[34m: player saved: Brian[39m
 [34m[37m18:25:44.44 [34m[33mNaivi[34m: team saved: It Is What It Is[39m
 [34m[37m18:25:45.94 [34m[33mNaivi[34m: current team updated[39m
+[34m[37m18:30:15.14 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m18:30:15.14 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m18:30:15.15 [34m[33mNaivi[34m: Mongoose connection disconnected through app termination[39m
+[34m[37m18:30:16.09 [34m[33mNaivi[34m: Local Keys Loaded; Loading Development Environment[39m
+[37m18:30:16.79 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m18:30:16.79 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m18:30:16.79 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m18:30:16.86 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m18:30:16.92 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m18:30:16.92 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m18:30:16.92 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m18:30:16.93 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m18:30:16.93 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m18:30:16.99 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m18:30:16.99 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m18:30:16.99 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m18:30:16.99 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m18:30:16.99 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m18:30:16.99 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m18:30:16.100 [34m[33mNaivi[34m: Loading Team Shit[39m
+[34m[37m18:30:17.65 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m18:30:17.76 [39m[33mNaivi[39m: seasons found: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+[37m18:30:17.76 [39m[33mNaivi[39m: League Created
+[34m[37m18:30:17.76 [34m[33mNaivi[34m: League Loaded[39m
+[1m[33m[37m18:30:17.76 [33m No Team by that name: It Is What It Is[39m[22m
+[34m[37m18:30:17.76 [34m[33mNaivi[34m: adding home team: It Is What It Is[39m
+[37m18:30:17.76 [39m[33mNaivi[39m: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+[37m18:30:17.76 [39m[33mNaivi[39m: Updating Scores From Scoresheet
+[37m18:30:17.76 [39m[33mNaivi[39m: Loading Players from Scoresheet
+[37m18:30:17.82 [39m[33mNaivi[39m: started cronjob - Afterparty
+[37m18:30:17.82 [39m[33mNaivi[39m: started cronjob - Nicofacts
+[37m18:30:17.82 [39m[33mNaivi[39m: started cronjob - Pregame
+[37m18:30:17.82 [39m[33mNaivi[39m: started cronjob - Match
+[37m18:30:17.82 [39m[33mNaivi[39m: started cronjob - Tweetnicofact
+[37m18:30:17.82 [39m[33mNaivi[39m: Connecting to Twitter...
+[1m[33m[37m18:30:17.82 [33m Twitter Disabled[39m[22m
+[37m18:30:17.91 [39m[33mNaivi[39m: Loading Players
+[34m[37m18:30:18.64 [34m[33mNaivi[34m: Loaded sheet: It Is What It Is - Tracker[39m
+[34m[37m18:30:18.68 [34m[33mNaivi[34m: Loaded sheet: It Is What It Is - Tracker[39m
+[37m18:30:19.17 [39m[33mNaivi[39m: Season scores updated quietly
+[34m[37m18:30:19.17 [34m[33mNaivi[34m: Not saving.[39m
+[34m[37m18:30:19.22 [34m[33mNaivi[34m: Players: [
+    {
+        "name": "Dustin"
+    },
+    {
+        "name": "Coco"
+    },
+    {
+        "name": "Nicole"
+    },
+    {
+        "name": "George"
+    },
+    {
+        "name": "Mike"
+    },
+    {
+        "name": "Oberg"
+    },
+    {
+        "name": "Brandon"
+    },
+    {
+        "name": "Brian"
+    }
+][39m
+[37m18:30:19.22 [39m[33mNaivi[39m: Players Loaded
+[34m[37m18:30:19.24 [34m[33mNaivi[34m: player saved: Dustin[39m
+[34m[37m18:30:19.25 [34m[33mNaivi[34m: player saved: Coco[39m
+[34m[37m18:30:19.25 [34m[33mNaivi[34m: player saved: Nicole[39m
+[34m[37m18:30:19.25 [34m[33mNaivi[34m: player saved: George[39m
+[34m[37m18:30:19.25 [34m[33mNaivi[34m: player saved: Mike[39m
+[34m[37m18:30:19.25 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m18:30:19.25 [34m[33mNaivi[34m: player saved: Brandon[39m
+[34m[37m18:30:19.25 [34m[33mNaivi[34m: player saved: Brian[39m
+[34m[37m18:30:19.25 [34m[33mNaivi[34m: team saved: It Is What It Is[39m
+[34m[37m18:30:20.80 [34m[33mNaivi[34m: current team updated[39m
+[34m[37m18:30:42.17 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m18:30:42.17 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m18:30:42.18 [34m[33mNaivi[34m: Mongoose connection disconnected through app termination[39m
+[34m[37m18:30:43.04 [34m[33mNaivi[34m: Local Keys Loaded; Loading Development Environment[39m
+[37m18:30:43.74 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m18:30:43.74 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m18:30:43.74 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m18:30:43.80 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m18:30:43.87 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m18:30:43.87 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m18:30:43.87 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m18:30:43.88 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m18:30:43.88 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m18:30:43.94 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m18:30:43.94 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m18:30:43.94 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m18:30:43.95 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m18:30:43.95 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m18:30:43.95 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m18:30:43.95 [34m[33mNaivi[34m: Loading Team Shit[39m
+[34m[37m18:30:44.58 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m18:30:44.69 [39m[33mNaivi[39m: seasons found: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+[37m18:30:44.69 [39m[33mNaivi[39m: League Created
+[34m[37m18:30:44.69 [34m[33mNaivi[34m: League Loaded[39m
+[1m[33m[37m18:30:44.69 [33m No Team by that name: It Is What It Is[39m[22m
+[34m[37m18:30:44.69 [34m[33mNaivi[34m: adding home team: It Is What It Is[39m
+[37m18:30:44.69 [39m[33mNaivi[39m: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+[37m18:30:44.69 [39m[33mNaivi[39m: Updating Scores From Scoresheet
+[37m18:30:44.69 [39m[33mNaivi[39m: Loading Players from Scoresheet
+[37m18:30:44.75 [39m[33mNaivi[39m: started cronjob - Afterparty
+[37m18:30:44.76 [39m[33mNaivi[39m: started cronjob - Nicofacts
+[37m18:30:44.76 [39m[33mNaivi[39m: started cronjob - Pregame
+[37m18:30:44.76 [39m[33mNaivi[39m: started cronjob - Match
+[37m18:30:44.76 [39m[33mNaivi[39m: started cronjob - Tweetnicofact
+[37m18:30:44.76 [39m[33mNaivi[39m: Connecting to Twitter...
+[1m[33m[37m18:30:44.76 [33m Twitter Disabled[39m[22m
+[37m18:30:44.86 [39m[33mNaivi[39m: Loading Players
+[34m[37m18:30:45.76 [34m[33mNaivi[34m: Loaded sheet: It Is What It Is - Tracker[39m
+[34m[37m18:30:45.80 [34m[33mNaivi[34m: Loaded sheet: It Is What It Is - Tracker[39m
+[37m18:30:46.31 [39m[33mNaivi[39m: Season scores updated quietly
+[34m[37m18:30:46.31 [34m[33mNaivi[34m: Not saving.[39m
+[34m[37m18:30:46.36 [34m[33mNaivi[34m: Rows: [
+    {
+        "_xml": "<entry xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='&quot;EltEI2MnMyt7ImA-DElRQUkJ&quot;'><id>https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/cokwr</id><updated>2017-07-19T13:35:00.860Z</updated><app:edited xmlns:app='http://www.w3.org/2007/app'>2017-07-19T13:35:00.860Z</app:edited><category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/><title>Dustin</title><content>sl: 2, week: 1, date: 05/16/17, opponent: Bad News, homeaway: Home, location: The Copper Bucket (map), map: Copper Bucket, 17715 Vanowen St, Reseda, CA 91335, locations: The Canby, _cssly: 19312 Vanowen St, Reseda, California, 91335</content><link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/cokwr'/><link rel='edit' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/cokwr'/><gsx:players>Dustin</gsx:players><gsx:sl>2</gsx:sl><gsx:week>1</gsx:week><gsx:date>05/16/17</gsx:date><gsx:opponent>Bad News</gsx:opponent><gsx:homeaway>Home</gsx:homeaway><gsx:location>The Copper Bucket (map)</gsx:location><gsx:map>Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</gsx:map><gsx:locations>The Canby</gsx:locations><gsx:_cssly>19312 Vanowen St, Reseda, California, 91335</gsx:_cssly></entry>",
+        "id": "https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/cokwr",
+        "app:edited": "2017-07-19T13:35:00.860Z",
+        "_links": [],
+        "players": "Dustin",
+        "sl": "2",
+        "week": "1",
+        "date": "05/16/17",
+        "opponent": "Bad News",
+        "homeaway": "Home",
+        "location": "The Copper Bucket (map)",
+        "map": "Copper Bucket, 17715 Vanowen St, Reseda, CA 91335",
+        "locations": "The Canby",
+        "_cssly": "19312 Vanowen St, Reseda, California, 91335"
+    },
+    {
+        "_xml": "<entry xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='&quot;XwdTQSlsLCt7ImBlDRNbGA0.&quot;'><id>https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/cpzh4</id><updated>2017-07-19T13:35:00.860Z</updated><app:edited xmlns:app='http://www.w3.org/2007/app'>2017-07-19T13:35:00.860Z</app:edited><category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/><title>Coco</title><content>sl: 5, week: 2, date: 05/23/17, opponent: Stay &amp; Play, homeaway: Away, location: Paul's Tavern, map: 15425 Chatsworth St, Mission Hills, California, 91345, locations: Paul's Tavern, _cssly: 15425 Chatsworth St, Mission Hills, California, 91345</content><link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/cpzh4'/><link rel='edit' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/cpzh4'/><gsx:players>Coco</gsx:players><gsx:sl>5</gsx:sl><gsx:week>2</gsx:week><gsx:date>05/23/17</gsx:date><gsx:opponent>Stay &amp; Play</gsx:opponent><gsx:homeaway>Away</gsx:homeaway><gsx:location>Paul's Tavern</gsx:location><gsx:map>15425 Chatsworth St, Mission Hills, California, 91345</gsx:map><gsx:locations>Paul's Tavern</gsx:locations><gsx:_cssly>15425 Chatsworth St, Mission Hills, California, 91345</gsx:_cssly></entry>",
+        "id": "https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/cpzh4",
+        "app:edited": "2017-07-19T13:35:00.860Z",
+        "_links": [],
+        "players": "Coco",
+        "sl": "5",
+        "week": "2",
+        "date": "05/23/17",
+        "opponent": "Stay & Play",
+        "homeaway": "Away",
+        "location": "Paul's Tavern",
+        "map": "15425 Chatsworth St, Mission Hills, California, 91345",
+        "locations": "Paul's Tavern",
+        "_cssly": "15425 Chatsworth St, Mission Hills, California, 91345"
+    },
+    {
+        "_xml": "<entry xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='&quot;GgNCIDNwYSt7ImA_AURTSRlY&quot;'><id>https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/cre1l</id><updated>2017-07-19T13:35:00.860Z</updated><app:edited xmlns:app='http://www.w3.org/2007/app'>2017-07-19T13:35:00.860Z</app:edited><category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/><title>Nicole</title><content>sl: 5, week: 3, date: 05/30/17, opponent: Let It Go!, homeaway: Home, location: The Copper Bucket (map), map: Copper Bucket, 17715 Vanowen St, Reseda, CA 91335, locations: Ujpest Sports Lounge, _cssly: 14034 Vanowen St., Van Nuys, California, 91405</content><link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/cre1l'/><link rel='edit' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/cre1l'/><gsx:players>Nicole</gsx:players><gsx:sl>5</gsx:sl><gsx:week>3</gsx:week><gsx:date>05/30/17</gsx:date><gsx:opponent>Let It Go!</gsx:opponent><gsx:homeaway>Home</gsx:homeaway><gsx:location>The Copper Bucket (map)</gsx:location><gsx:map>Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</gsx:map><gsx:locations>Ujpest Sports Lounge</gsx:locations><gsx:_cssly>14034 Vanowen St., Van Nuys, California, 91405</gsx:_cssly></entry>",
+        "id": "https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/cre1l",
+        "app:edited": "2017-07-19T13:35:00.860Z",
+        "_links": [],
+        "players": "Nicole",
+        "sl": "5",
+        "week": "3",
+        "date": "05/30/17",
+        "opponent": "Let It Go!",
+        "homeaway": "Home",
+        "location": "The Copper Bucket (map)",
+        "map": "Copper Bucket, 17715 Vanowen St, Reseda, CA 91335",
+        "locations": "Ujpest Sports Lounge",
+        "_cssly": "14034 Vanowen St., Van Nuys, California, 91405"
+    },
+    {
+        "_xml": "<entry xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='&quot;Hl8SK2N7bCt7ImA9BkwHQxMC&quot;'><id>https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/chk2m</id><updated>2017-07-19T13:35:00.860Z</updated><app:edited xmlns:app='http://www.w3.org/2007/app'>2017-07-19T13:35:00.860Z</app:edited><category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/><title>George</title><content>sl: 6, week: 4, date: 06/06/17, opponent: Nothing On The Break, homeaway: Away, location: Theory, map: 6101 Reseda Blvd., Tarzana, California, 91335, locations: The Copper Bucket, _cssly: Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</content><link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/chk2m'/><link rel='edit' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/chk2m'/><gsx:players>George</gsx:players><gsx:sl>6</gsx:sl><gsx:week>4</gsx:week><gsx:date>06/06/17</gsx:date><gsx:opponent>Nothing On The Break</gsx:opponent><gsx:homeaway>Away</gsx:homeaway><gsx:location>Theory</gsx:location><gsx:map>6101 Reseda Blvd., Tarzana, California, 91335</gsx:map><gsx:locations>The Copper Bucket</gsx:locations><gsx:_cssly>Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</gsx:_cssly></entry>",
+        "id": "https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/chk2m",
+        "app:edited": "2017-07-19T13:35:00.860Z",
+        "_links": [],
+        "players": "George",
+        "sl": "6",
+        "week": "4",
+        "date": "06/06/17",
+        "opponent": "Nothing On The Break",
+        "homeaway": "Away",
+        "location": "Theory",
+        "map": "6101 Reseda Blvd., Tarzana, California, 91335",
+        "locations": "The Copper Bucket",
+        "_cssly": "Copper Bucket, 17715 Vanowen St, Reseda, CA 91335"
+    },
+    {
+        "_xml": "<entry xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='&quot;RF4BfGMrayt7ImA9BFYIFhRd&quot;'><id>https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/ciyn3</id><updated>2017-07-19T13:35:00.860Z</updated><app:edited xmlns:app='http://www.w3.org/2007/app'>2017-07-19T13:35:00.860Z</app:edited><category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/><title>Mike</title><content>sl: 5, week: 5, date: 06/13/17, opponent: Who's That Kid, homeaway: Home, location: The Copper Bucket (map), map: Copper Bucket, 17715 Vanowen St, Reseda, CA 91335, locations: Theory, _cssly: 6101 Reseda Blvd., Tarzana, California, 91335</content><link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/ciyn3'/><link rel='edit' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/ciyn3'/><gsx:players>Mike</gsx:players><gsx:sl>5</gsx:sl><gsx:week>5</gsx:week><gsx:date>06/13/17</gsx:date><gsx:opponent>Who's That Kid</gsx:opponent><gsx:homeaway>Home</gsx:homeaway><gsx:location>The Copper Bucket (map)</gsx:location><gsx:map>Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</gsx:map><gsx:locations>Theory</gsx:locations><gsx:_cssly>6101 Reseda Blvd., Tarzana, California, 91335</gsx:_cssly></entry>",
+        "id": "https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/ciyn3",
+        "app:edited": "2017-07-19T13:35:00.860Z",
+        "_links": [],
+        "players": "Mike",
+        "sl": "5",
+        "week": "5",
+        "date": "06/13/17",
+        "opponent": "Who's That Kid",
+        "homeaway": "Home",
+        "location": "The Copper Bucket (map)",
+        "map": "Copper Bucket, 17715 Vanowen St, Reseda, CA 91335",
+        "locations": "Theory",
+        "_cssly": "6101 Reseda Blvd., Tarzana, California, 91335"
+    },
+    {
+        "_xml": "<entry xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='&quot;RwAQd2IpMyt7ImA9XEpUREVZ&quot;'><id>https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/ckd7g</id><updated>2017-07-19T13:35:00.860Z</updated><app:edited xmlns:app='http://www.w3.org/2007/app'>2017-07-19T13:35:00.860Z</app:edited><category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/><title>Oberg</title><content>sl: 4, week: 6, date: 06/20/17, opponent: Team USA, homeaway: Home, location: The Copper Bucket (map), map: Copper Bucket, 17715 Vanowen St, Reseda, CA 91335, locations: Plush Pocket Billiards, _cssly: 16950 Parthenia St., Northridge, California, 91343</content><link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/ckd7g'/><link rel='edit' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/ckd7g'/><gsx:players>Oberg</gsx:players><gsx:sl>4</gsx:sl><gsx:week>6</gsx:week><gsx:date>06/20/17</gsx:date><gsx:opponent>Team USA</gsx:opponent><gsx:homeaway>Home</gsx:homeaway><gsx:location>The Copper Bucket (map)</gsx:location><gsx:map>Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</gsx:map><gsx:locations>Plush Pocket Billiards</gsx:locations><gsx:_cssly>16950 Parthenia St., Northridge, California, 91343</gsx:_cssly></entry>",
+        "id": "https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/ckd7g",
+        "app:edited": "2017-07-19T13:35:00.860Z",
+        "_links": [],
+        "players": "Oberg",
+        "sl": "4",
+        "week": "6",
+        "date": "06/20/17",
+        "opponent": "Team USA",
+        "homeaway": "Home",
+        "location": "The Copper Bucket (map)",
+        "map": "Copper Bucket, 17715 Vanowen St, Reseda, CA 91335",
+        "locations": "Plush Pocket Billiards",
+        "_cssly": "16950 Parthenia St., Northridge, California, 91343"
+    },
+    {
+        "_xml": "<entry xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='&quot;HABBPmgqMit7ImA9DxMTEhQC&quot;'><id>https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/clrrx</id><updated>2017-07-19T13:35:00.860Z</updated><app:edited xmlns:app='http://www.w3.org/2007/app'>2017-07-19T13:35:00.860Z</app:edited><category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/><title>Brandon</title><content>sl: 2, week: 7, date: 06/27/17, opponent: Anything Cold, homeaway: Away, location: Ujpest Sports Lounge (map), map: 14034 Vanowen St., Van Nuys, California, 91405</content><link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/clrrx'/><link rel='edit' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/clrrx'/><gsx:players>Brandon</gsx:players><gsx:sl>2</gsx:sl><gsx:week>7</gsx:week><gsx:date>06/27/17</gsx:date><gsx:opponent>Anything Cold</gsx:opponent><gsx:homeaway>Away</gsx:homeaway><gsx:location>Ujpest Sports Lounge (map)</gsx:location><gsx:map>14034 Vanowen St., Van Nuys, California, 91405</gsx:map><gsx:locations></gsx:locations></entry>",
+        "id": "https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/clrrx",
+        "app:edited": "2017-07-19T13:35:00.860Z",
+        "_links": [],
+        "players": "Brandon",
+        "sl": "2",
+        "week": "7",
+        "date": "06/27/17",
+        "opponent": "Anything Cold",
+        "homeaway": "Away",
+        "location": "Ujpest Sports Lounge (map)",
+        "map": "14034 Vanowen St., Van Nuys, California, 91405",
+        "locations": ""
+    },
+    {
+        "_xml": "<entry xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='&quot;RQVCd2ktbyt7ImA9XUsATBdb&quot;'><id>https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/cyevm</id><updated>2017-07-19T13:35:00.860Z</updated><app:edited xmlns:app='http://www.w3.org/2007/app'>2017-07-19T13:35:00.860Z</app:edited><category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/><title>Brian</title><content>sl: 4, week: 8, date: 07/11/17, opponent: The Disfunctionals, homeaway: Home, location: The Copper Bucket (map), map: Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</content><link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/cyevm'/><link rel='edit' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/cyevm'/><gsx:players>Brian</gsx:players><gsx:sl>4</gsx:sl><gsx:week>8</gsx:week><gsx:date>07/11/17</gsx:date><gsx:opponent>The Disfunctionals</gsx:opponent><gsx:homeaway>Home</gsx:homeaway><gsx:location>The Copper Bucket (map)</gsx:location><gsx:map>Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</gsx:map><gsx:locations></gsx:locations></entry>",
+        "id": "https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/cyevm",
+        "app:edited": "2017-07-19T13:35:00.860Z",
+        "_links": [],
+        "players": "Brian",
+        "sl": "4",
+        "week": "8",
+        "date": "07/11/17",
+        "opponent": "The Disfunctionals",
+        "homeaway": "Home",
+        "location": "The Copper Bucket (map)",
+        "map": "Copper Bucket, 17715 Vanowen St, Reseda, CA 91335",
+        "locations": ""
+    },
+    {
+        "_xml": "<entry xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='&quot;EAQedzsmayt7ImA9DhVTQxEP&quot;'><id>https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/cztg3</id><updated>2017-07-19T13:35:00.860Z</updated><app:edited xmlns:app='http://www.w3.org/2007/app'>2017-07-19T13:35:00.860Z</app:edited><category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/><title>Row: 10</title><content>week: 9, date: 07/18/17, opponent: Suzie's Q's, homeaway: Away, location: Ujpest Sports Lounge (map), map: 14034 Vanowen St., Van Nuys, California, 91405</content><link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/cztg3'/><link rel='edit' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/cztg3'/><gsx:players></gsx:players><gsx:sl></gsx:sl><gsx:week>9</gsx:week><gsx:date>07/18/17</gsx:date><gsx:opponent>Suzie's Q's</gsx:opponent><gsx:homeaway>Away</gsx:homeaway><gsx:location>Ujpest Sports Lounge (map)</gsx:location><gsx:map>14034 Vanowen St., Van Nuys, California, 91405</gsx:map><gsx:locations></gsx:locations></entry>",
+        "id": "https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/cztg3",
+        "app:edited": "2017-07-19T13:35:00.860Z",
+        "_links": [],
+        "players": "",
+        "sl": "",
+        "week": "9",
+        "date": "07/18/17",
+        "opponent": "Suzie's Q's",
+        "homeaway": "Away",
+        "location": "Ujpest Sports Lounge (map)",
+        "map": "14034 Vanowen St., Van Nuys, California, 91405",
+        "locations": ""
+    },
+    {
+        "_xml": "<entry xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='&quot;QlUffmwtZit7ImA9Wk0GERBW&quot;'><id>https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/d180g</id><updated>2017-07-19T13:35:00.860Z</updated><app:edited xmlns:app='http://www.w3.org/2007/app'>2017-07-19T13:35:00.860Z</app:edited><category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/><title>Row: 11</title><content>week: 10, date: 07/25/17, opponent: Bad News, homeaway: Home, location: The Copper Bucket (map), map: Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</content><link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/d180g'/><link rel='edit' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/d180g'/><gsx:players></gsx:players><gsx:sl></gsx:sl><gsx:week>10</gsx:week><gsx:date>07/25/17</gsx:date><gsx:opponent>Bad News</gsx:opponent><gsx:homeaway>Home</gsx:homeaway><gsx:location>The Copper Bucket (map)</gsx:location><gsx:map>Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</gsx:map><gsx:locations></gsx:locations></entry>",
+        "id": "https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/d180g",
+        "app:edited": "2017-07-19T13:35:00.860Z",
+        "_links": [],
+        "players": "",
+        "sl": "",
+        "week": "10",
+        "date": "07/25/17",
+        "opponent": "Bad News",
+        "homeaway": "Home",
+        "location": "The Copper Bucket (map)",
+        "map": "Copper Bucket, 17715 Vanowen St, Reseda, CA 91335",
+        "locations": ""
+    },
+    {
+        "_xml": "<entry xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='&quot;GQdHJG8iNit7ImA9XxcOQhVQ&quot;'><id>https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/d2mkx</id><updated>2017-07-19T13:35:00.860Z</updated><app:edited xmlns:app='http://www.w3.org/2007/app'>2017-07-19T13:35:00.860Z</app:edited><category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/><title>Row: 12</title><content>week: 11, date: 08/01/17, opponent: Stay &amp; Play, homeaway: Home, location: The Copper Bucket (map), map: Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</content><link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/d2mkx'/><link rel='edit' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/private/full/d2mkx'/><gsx:players></gsx:players><gsx:sl></gsx:sl><gsx:week>11</gsx:week><gsx:date>08/01/17</gsx:date><gsx:opponent>Stay &amp; Play</gsx:opponent><gsx:homeaway>Home</gsx:homeaway><gsx:location>The Copper Bucket (map)</gsx:location><gsx:map>Copper Bucket, 17715 Vanowen St, Reseda, CA 91335</gsx:map><gsx:locations></gsx:locations></entry>",
+        "id": "https://spreadsheets.google.com/feeds/list/1AlMc7BtyOkSbnHQ8nP6G6PqU19ZBEQ0G5Fmkb4OsT08/ofz9sxs/d2mkx",
+        "app:edited": "2017-07-19T13:35:00.860Z",
+        "_links": [],
+        "players": "",
+        "sl": "",
+        "week": "11",
+        "date": "08/01/17",
+        "opponent": "Stay & Play",
+        "homeaway": "Home",
+        "location": "The Copper Bucket (map)",
+        "map": "Copper Bucket, 17715 Vanowen St, Reseda, CA 91335",
+        "locations": ""
+    }
+][39m
+[34m[37m18:30:46.36 [34m[33mNaivi[34m: Players: [
+    {
+        "name": "Dustin"
+    },
+    {
+        "name": "Coco"
+    },
+    {
+        "name": "Nicole"
+    },
+    {
+        "name": "George"
+    },
+    {
+        "name": "Mike"
+    },
+    {
+        "name": "Oberg"
+    },
+    {
+        "name": "Brandon"
+    },
+    {
+        "name": "Brian"
+    }
+][39m
+[37m18:30:46.36 [39m[33mNaivi[39m: Players Loaded
+[34m[37m18:30:46.38 [34m[33mNaivi[34m: player saved: Dustin[39m
+[34m[37m18:30:46.39 [34m[33mNaivi[34m: player saved: Coco[39m
+[34m[37m18:30:46.39 [34m[33mNaivi[34m: player saved: Nicole[39m
+[34m[37m18:30:46.39 [34m[33mNaivi[34m: player saved: George[39m
+[34m[37m18:30:46.39 [34m[33mNaivi[34m: player saved: Mike[39m
+[34m[37m18:30:46.40 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m18:30:46.40 [34m[33mNaivi[34m: player saved: Brandon[39m
+[34m[37m18:30:46.40 [34m[33mNaivi[34m: player saved: Brian[39m
+[34m[37m18:30:46.40 [34m[33mNaivi[34m: team saved: It Is What It Is[39m
+[34m[37m18:30:46.73 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m18:30:46.73 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m18:30:46.74 [34m[33mNaivi[34m: Mongoose connection disconnected through app termination[39m
