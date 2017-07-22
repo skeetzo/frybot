@@ -131,7 +131,7 @@ module.exports.addScores = function(scores,callback) {
   ]);
 }
 
-module.exports.updateScores = function(scores,callback) {
+module.exports.updateScores = function(callback) {
   logger.log('Loading Players from Scoresheet');
   var doc = new GoogleSpreadsheet(config.Google_ItIsWhatItIs_Spreadsheet_ID),
       sheet;
