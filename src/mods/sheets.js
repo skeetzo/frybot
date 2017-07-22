@@ -263,16 +263,15 @@ module.exports.getCurrentPlayers = function(callback) {
         orderby: 'col1'
       }, function( err, rows ){
         if (err) return callback(err);
-        // self.logger.debug('Rows: %s',JSON.stringify(rows,null,4));
+        // logger.debug('Rows: %s',JSON.stringify(rows,null,4));
         rows = _.toArray(rows);
-        rows.shift();
         var playersAndSLs = [];
         // Reads 'references' sheet for existing Players and Matchup Schedule
-        _.forEach(rows, function(cols) {
-          if (cols[1])
-            playersAndSLs.push(new Player({name: cols[1],SL: cols[2]}));
+        _.forEach(rows, function(row) {
+          if (row.players)
+            playersAndSLs.push({'name': row.players, 'sl': row.SL});
         });
-        logger.log('Players: %s',playersAndSLs);
+        logger.debug('Players: %s',JSON.stringify(playersAndSLs,null,4));
         logger.log('Players Loaded');
         callback(null,playersAndSLs);
       });

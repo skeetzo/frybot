@@ -91,7 +91,12 @@ bot.prototype = {
             Sheets.getCurrentPlayers(function (err, players) {
               if (err) logger.warn(err);
               _.forEach(players, function (player) {
-                self.team.players.push(new Player(player));
+                player.team = self.team;
+                player = new Player(player);
+                player.save(function(err) {
+                  if (err) logger.warn(err);
+                });
+                self.team.players.push(player);
               });
               self.team.save(function (err) {
                 if (err) logger.warn(err);
