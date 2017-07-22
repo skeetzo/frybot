@@ -9,7 +9,6 @@ Fascilitates proper team dickery and score management.
   * nicofacts (NO, START, YES)  
   * scores (callouts, lvp, mvp, of, update)  
   
-### CronJobs  
+### Shout Outs  
   * Pregame - Tuesdays @ 2:00pm, weekly match reminder  
-  * After Party - Wednesdays @ 2:00am, updates scores & announces match results  
-  * Christmas/holidays shout outs  
+  * After Party - Wednesdays @ 12:00pm, updates scores & announces match results  
