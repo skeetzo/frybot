@@ -3,6 +3,8 @@
 **0.0.1 : 7/20/2017 : **
 	- mongodb setup
 	- season reorginization
+	**7/22/2017**
+	- finished mongo integreation
 
 **0.0.2 : ??/??/?? : **
 **0.0.3 : ??/??/?? : **
