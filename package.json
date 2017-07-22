@@ -8,6 +8,9 @@
   "scripts": {
     "start": "node index.js"
   },
+  "engines": {
+    "node": "7.10.0"
+  },
   "dependencies": {
     "async": "^2.5.0",
     "aws-sdk": "~2.2.48",
@@ -27,9 +30,6 @@
     "tracer": "~0.8.7",
     "twit": "~2.2.5",
     "underscore": "~1.8.3"
-  },
-  "engines": {
-    "node": "0.10.x"
   },
   "repository": {
     "type": "git",

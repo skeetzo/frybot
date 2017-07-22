@@ -2370,3 +2370,23 @@ Call Stack:
 [36m17:18:27.38 Adding command: season <debug> (in index.js:():9)[39m
 [36m17:18:27.38 Adding command: suck <debug> (in index.js:():9)[39m
 [36m17:18:27.38 Loading Team Shit <debug> (in commands.js:(bot.module.exports.loadLeague):36)[39m
+[36m17:20:34.71 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:20:34.71 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:20:34.72 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connect ETIMEDOUT 198.105.254.228:27017] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:20:44.94 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+17:20:45.58 Naivi: Booting up: Naivi
+[36m17:20:45.58 Loading Core <debug> (in index.js:(bot.module.exports.load):8)[39m
+[36m17:20:45.58 attaching core: commands <debug> (in index.js:():11)[39m
+[36m17:20:45.65 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m17:20:45.72 attaching core: league <debug> (in index.js:():11)[39m
+[36m17:20:45.72 Loading Mods <debug> (in index.js:(bot.module.exports.load):7)[39m
+[36m17:20:45.72 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m17:20:45.73 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m17:20:45.73 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m17:20:45.78 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m17:20:45.79 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m17:20:45.79 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m17:20:45.79 Adding command: scores <debug> (in index.js:():9)[39m
+[36m17:20:45.79 Adding command: season <debug> (in index.js:():9)[39m
+[36m17:20:45.79 Adding command: suck <debug> (in index.js:():9)[39m
+[36m17:20:45.79 Loading Team Shit <debug> (in commands.js:(bot.module.exports.loadLeague):36)[39m
