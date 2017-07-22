@@ -3,7 +3,7 @@ var _ = require('underscore'),
     BottleDuty = require('../models/bottleduty'),
     logger = config.logger;
 
-
+var bottleDuty = false;
 /**
 * Bottle command functions
 *  who, what
@@ -18,6 +18,21 @@ var _ = require('underscore'),
 module.exports = function bottle(data) {
   var self = this;
   var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
+
+  if (!bottleDuty) {
+    return BottleDuty.findOne({},function (err, bottleDuty_) {
+      if (err) logger.warn(err);
+      if (!bottleDuty_||bottleDuty_.length==0) {
+        bottleDuty = new BottleDuty({'players':self.team.players});
+        return bottleDuty.save(function(err) {
+          if (err) logger.warn(err);
+          process.call(self);
+        })
+      }
+      bottleDuty = bottleDuty_;
+      process.call(self);
+    });
+  }
 
   /*
     who's on duty
