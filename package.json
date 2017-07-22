@@ -9,6 +9,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "async": "^2.5.0",
     "aws-sdk": "~2.2.48",
     "body-parser": "~1.16.0",
     "colors": "~1.1.2",
