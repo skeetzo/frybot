@@ -20,7 +20,9 @@ module.exports = function() {
     this.Google_Oauth_Opts = {
         "email": this.Google_service_email,
         "key": this.Google_key,
-        "keyFile": this.Google_keyFile
+        "keyFile": this.Google_keyFile,
+        "client_email": this.Google_service_email,
+        "private_key": this.Google_key
     };
     // It Is What It Is Google Sheet
     this.Google_ItIsWhatItIs_Spreadsheet_ID = localConfig.Google_ItIsWhatItIs_Spreadsheet_ID || process.env.Google_ItIsWhatItIs_Spreadsheet_ID;
