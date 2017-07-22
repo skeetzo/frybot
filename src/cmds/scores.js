@@ -165,7 +165,7 @@ module.exports = function scores(data) {
     Updates from the scores available on the team spreadsheet
   */
   function update() {
-    logger.log('Updating Players from Scoresheet');
+    logger.log('Updating Scores From Scoresheet');
     Sheets.updateScores(function(err, matchups) {
       if (err) logger.warn(err);
       self.league.getCurrentSeason().resetPlayers();

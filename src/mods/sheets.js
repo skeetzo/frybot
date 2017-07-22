@@ -132,7 +132,7 @@ module.exports.addScores = function(scores) {
 }
 
 module.exports.updateScores = function(scores) {
-  logger.log('Updating Players from Scoresheet');
+  logger.log('Loading Players from Scoresheet');
   var doc = new GoogleSpreadsheet(config.Google_ItIsWhatItIs_Spreadsheet_ID),
       sheet;
   async.series([

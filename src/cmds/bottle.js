@@ -28,7 +28,10 @@ module.exports = function bottle(data) {
   }
   else {
     this.bottleDuty = new BottleDuty({'players':self.team.players});
-    process.call(self);
+    this.bottleDuty.save(function(err) {
+      if (err) logger.warn(err);
+      process.call(self);
+    })
   }
 
   /*
