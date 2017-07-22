@@ -52,7 +52,7 @@ module.exports.loadSchedule = function(callback) {
   ]);
 }
 
-module.exports.addScores = function(scores) {
+module.exports.addScores = function(scores,callback) {
   // Regex patterns used for parsing stat info
     //   only currently used in scores
   var statsRegex = new RegExp('([A-Za-z]+\\s*\\d{1}\\D*\\d{1})', "g"),
@@ -131,7 +131,7 @@ module.exports.addScores = function(scores) {
   ]);
 }
 
-module.exports.updateScores = function(scores) {
+module.exports.updateScores = function(scores,callback) {
   logger.log('Loading Players from Scoresheet');
   var doc = new GoogleSpreadsheet(config.Google_ItIsWhatItIs_Spreadsheet_ID),
       sheet;
@@ -195,7 +195,7 @@ module.exports.updateScores = function(scores) {
 
 
 
-module.exports.addNicoFact = function(nicoFact) {
+module.exports.addNicoFact = function(nicoFact,callback) {
   logger.log('Updating Players from Scoresheet');
 
   var doc = new GoogleSpreadsheet(config.Google_ItIsWhatItIs_Spreadsheet_ID),
@@ -239,7 +239,7 @@ module.exports.addNicoFact = function(nicoFact) {
 }
 
 
-module.exports.getCurrentPlayers = function() {
+module.exports.getCurrentPlayers = function(callback) {
   logger.log('Loading Players');
   var doc = new GoogleSpreadsheet(config.Google_ItIsWhatItIs_Spreadsheet_ID),
       sheet;
