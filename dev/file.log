@@ -2390,3 +2390,20 @@ Call Stack:
 [36m17:20:45.79 Adding command: season <debug> (in index.js:():9)[39m
 [36m17:20:45.79 Adding command: suck <debug> (in index.js:():9)[39m
 [36m17:20:45.79 Loading Team Shit <debug> (in commands.js:(bot.module.exports.loadLeague):36)[39m
+[34m[37m17:22:51.33 [34m[33mNaivi[34m: Local Keys Loaded; Loading Development Environment[39m
+[37m17:22:51.96 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m17:22:51.96 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m17:22:51.97 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m17:22:52.03 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m17:22:52.10 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m17:22:52.10 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m17:22:52.10 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m17:22:52.11 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m17:22:52.11 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m17:22:52.16 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m17:22:52.17 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m17:22:52.17 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m17:22:52.17 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m17:22:52.17 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m17:22:52.17 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m17:22:52.17 [34m[33mNaivi[34m: Loading Team Shit[39m
