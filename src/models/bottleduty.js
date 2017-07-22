@@ -38,7 +38,6 @@ bottleDutySchema.methods.getDuty = function() {
   this.index++;
   if (this.index>this.players.length)
     this.index = 0;
-  logger.log('player: %s',JSON.stringify(player,null,4));
   this.save(function (err) {
     if (err) logger.warn(err);
   })
