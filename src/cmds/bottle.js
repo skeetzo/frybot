@@ -23,15 +23,13 @@ module.exports = function bottle(data) {
     BottleDuty.findOne({},function (err, bottleDuty) {
       if (err) logger.warn(err);
       self.bottleDuty = bottleDuty;
-      process();
+      process.call(self);
     });
   }
   else {
     this.bottleDuty = new BottleDuty({'players':self.team.players});
-    process();
+    process.call(self);
   }
-
-
 
   /*
     who's on duty
