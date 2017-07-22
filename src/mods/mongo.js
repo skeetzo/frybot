@@ -7,9 +7,7 @@ mongoose.Promise = global.Promise;
 
 // const connection = mongoose.createConnection(config.MONGODB_URI);
 
-mongoose.connect(config.MONGODB_URI,{
-  promiseLibrary: global.Promise
-});
+mongoose.connect(config.MONGODB_URI);
 
 // CONNECTION EVENTS
 // When successfully connected

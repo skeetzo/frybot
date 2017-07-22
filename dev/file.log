@@ -2592,3 +2592,109 @@ Call Stack:
 [37m17:35:38.33 [39m[33mNaivi[39m: Connecting to Twitter...
 [1m[33m[37m17:35:38.33 [33m Twitter Disabled[39m[22m
 [37m17:35:38.42 [39m[33mNaivi[39m: Loading Players
+[34m[37m17:47:12.82 [34m[33mNaivi[34m: Local Keys Loaded; Loading Development Environment[39m
+[37m17:47:13.45 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m17:47:13.46 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m17:47:13.46 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m17:47:13.52 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m17:47:13.60 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m17:47:13.60 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m17:47:13.60 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m17:47:13.61 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m17:47:13.61 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m17:47:13.66 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m17:47:13.66 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m17:47:13.66 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m17:47:13.67 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m17:47:13.67 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m17:47:13.67 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m17:47:13.67 [34m[33mNaivi[34m: Loading Team Shit[39m
+[34m[37m17:47:14.87 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m17:47:15.11 [39m[33mNaivi[39m: seasons found: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+[37m17:47:15.11 [39m[33mNaivi[39m: League Created
+[34m[37m17:47:15.11 [34m[33mNaivi[34m: League Loaded[39m
+[1m[33m[37m17:47:15.11 [33m No Team by that name: It Is What It Is[39m[22m
+[34m[37m17:47:15.11 [34m[33mNaivi[34m: adding home team: It Is What It Is[39m
+[37m17:47:15.12 [39m[33mNaivi[39m: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+[37m17:47:15.12 [39m[33mNaivi[39m: Updating Players from Scoresheet
+[37m17:47:15.12 [39m[33mNaivi[39m: Updating Players from Scoresheet
+[37m17:47:15.16 [39m[33mNaivi[39m: started cronjob - Afterparty
+[37m17:47:15.16 [39m[33mNaivi[39m: started cronjob - Nicofacts
+[37m17:47:15.16 [39m[33mNaivi[39m: started cronjob - Pregame
+[37m17:47:15.16 [39m[33mNaivi[39m: started cronjob - Match
+[37m17:47:15.16 [39m[33mNaivi[39m: started cronjob - Tweetnicofact
+[37m17:47:15.16 [39m[33mNaivi[39m: Connecting to Twitter...
+[1m[33m[37m17:47:15.16 [33m Twitter Disabled[39m[22m
+[37m17:47:36.88 [39m[33mNaivi[39m: Loading Players
+[34m[37m17:48:13.09 [34m[33mNaivi[34m: Local Keys Loaded; Loading Development Environment[39m
+[37m17:48:13.76 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m17:48:13.76 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m17:48:13.76 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m17:48:13.83 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m17:48:13.90 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m17:48:13.90 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m17:48:13.90 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m17:48:13.91 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m17:48:13.91 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m17:48:13.96 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m17:48:13.96 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m17:48:13.96 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m17:48:13.97 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m17:48:13.97 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m17:48:13.97 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m17:48:13.97 [34m[33mNaivi[34m: Loading Team Shit[39m
+[34m[37m17:48:14.61 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m17:48:14.71 [39m[33mNaivi[39m: starting new season
+[34m[37m17:48:14.72 [34m[33mNaivi[34m: season saved: _____ Season 2017[39m
+[37m17:48:15.18 [39m[33mNaivi[39m: League Created
+[34m[37m17:48:15.18 [34m[33mNaivi[34m: League Loaded[39m
+[1m[33m[37m17:48:15.18 [33m No Team by that name: It Is What It Is[39m[22m
+[34m[37m17:48:15.18 [34m[33mNaivi[34m: adding home team: It Is What It Is[39m
+[37m17:48:15.18 [39m[33mNaivi[39m: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+[37m17:48:15.19 [39m[33mNaivi[39m: Updating Players from Scoresheet
+[37m17:48:15.19 [39m[33mNaivi[39m: Updating Players from Scoresheet
+[37m17:48:15.23 [39m[33mNaivi[39m: started cronjob - Afterparty
+[37m17:48:15.23 [39m[33mNaivi[39m: started cronjob - Nicofacts
+[37m17:48:15.23 [39m[33mNaivi[39m: started cronjob - Pregame
+[37m17:48:15.23 [39m[33mNaivi[39m: started cronjob - Match
+[37m17:48:15.23 [39m[33mNaivi[39m: started cronjob - Tweetnicofact
+[37m17:48:15.23 [39m[33mNaivi[39m: Connecting to Twitter...
+[1m[33m[37m17:48:15.23 [33m Twitter Disabled[39m[22m
+[37m17:48:15.32 [39m[33mNaivi[39m: Loading Players
+[34m[37m17:48:21.32 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:48:21.32 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:48:21.32 [34m[33mNaivi[34m: Mongoose connection disconnected through app termination[39m
+[34m[37m17:49:07.99 [34m[33mNaivi[34m: Local Keys Loaded; Loading Development Environment[39m
+[37m17:49:08.69 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m17:49:08.69 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m17:49:08.69 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m17:49:08.80 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m17:49:08.88 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m17:49:08.88 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m17:49:08.88 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m17:49:08.89 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m17:49:08.89 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m17:49:08.95 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m17:49:08.95 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m17:49:08.96 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m17:49:08.96 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m17:49:08.96 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m17:49:08.96 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m17:49:08.96 [34m[33mNaivi[34m: Loading Team Shit[39m
+[34m[37m17:49:09.62 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m17:49:09.72 [39m[33mNaivi[39m: seasons found: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+[37m17:49:09.73 [39m[33mNaivi[39m: League Created
+[34m[37m17:49:09.73 [34m[33mNaivi[34m: League Loaded[39m
+[1m[33m[37m17:49:09.73 [33m No Team by that name: It Is What It Is[39m[22m
+[34m[37m17:49:09.73 [34m[33mNaivi[34m: adding home team: It Is What It Is[39m
+[37m17:49:09.73 [39m[33mNaivi[39m: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+[37m17:49:09.73 [39m[33mNaivi[39m: Updating Players from Scoresheet
+[37m17:49:09.73 [39m[33mNaivi[39m: Updating Players from Scoresheet
+[37m17:49:09.78 [39m[33mNaivi[39m: started cronjob - Afterparty
+[37m17:49:09.78 [39m[33mNaivi[39m: started cronjob - Nicofacts
+[37m17:49:09.78 [39m[33mNaivi[39m: started cronjob - Pregame
+[37m17:49:09.78 [39m[33mNaivi[39m: started cronjob - Match
+[37m17:49:09.78 [39m[33mNaivi[39m: started cronjob - Tweetnicofact
+[37m17:49:09.78 [39m[33mNaivi[39m: Connecting to Twitter...
+[1m[33m[37m17:49:09.78 [33m Twitter Disabled[39m[22m
+[37m17:49:09.87 [39m[33mNaivi[39m: Loading Players
