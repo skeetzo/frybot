@@ -20,17 +20,18 @@ module.exports = function bottle(data) {
   var argument = data.argument, message = data.message, sender = data.sender, modifiers = data.modifiers;
 
   if (!bottleDuty) {
-    return BottleDuty.findOne({},function (err, bottleDuty_) {
+    BottleDuty.findOne({},function (err, bottleDuty_) {
       if (err) logger.warn(err);
       if (!bottleDuty_||bottleDuty_.length==0) {
         bottleDuty = new BottleDuty({'players':self.team.players});
-        return bottleDuty.save(function(err) {
+        bottleDuty.save(function(err) {
           if (err) logger.warn(err);
           process();
         })
+      } else {
+        bottleDuty = bottleDuty_;
+        process();
       }
-      bottleDuty = bottleDuty_;
-      process();
     });
   }
 
@@ -38,11 +39,11 @@ module.exports = function bottle(data) {
     who's on duty
   */
   function duty() {
-    BottleDuty.findOne({},function(err, bottleDuty) {
-      if (err) return logger.warn(err);
+    // BottleDuty.findOne({},function(err, bottleDuty) {
+      // if (err) return logger.warn(err);
       if (modifiers&&modifiers.text) return self.say.call(self,modifiers.text+bottleDuty.getDuty());
       self.say.call(self,'Bottle Duty: '+bottleDuty.getDuty());
-    });
+    // });
   }
   this.commands.bottle.duty = duty;
 
@@ -50,10 +51,10 @@ module.exports = function bottle(data) {
     random player
   */
   function random() {
-    BottleDuty.findOne({},function(err, bottleDuty) {
-      if (err) return logger.warn(err);
+    // BottleDuty.findOne({},function(err, bottleDuty) {
+      // if (err) return logger.warn(err);
       self.say.call(self,'Bottle Duty: '+bottleDuty.getRandomDuty());
-    });
+    // });
   }
   this.commands.bottle.random = random;
 
@@ -61,10 +62,10 @@ module.exports = function bottle(data) {
     randomly decides a liquor
   */
   function what() {
-    BottleDuty.findOne({},function(err, bottleDuty) {
-      if (err) return logger.warn(err);
+    // BottleDuty.findOne({},function(err, bottleDuty) {
+      // if (err) return logger.warn(err);
       self.say.call(self,'Pick up some: '+bottleDuty.getBottle());
-    });
+    // });
   }
   this.commands.bottle.what = what;
 
