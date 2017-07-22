@@ -2407,3 +2407,188 @@ Call Stack:
 [34m[37m17:22:52.17 [34m[33mNaivi[34m: Adding command: season[39m
 [34m[37m17:22:52.17 [34m[33mNaivi[34m: Adding command: suck[39m
 [34m[37m17:22:52.17 [34m[33mNaivi[34m: Loading Team Shit[39m
+[34m[37m17:24:59.41 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:24:59.41 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:24:59.42 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connect ETIMEDOUT 198.105.254.228:27017][39m
+[34m[37m17:25:29.44 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:25:29.44 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:25:29.45 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 1 to undefined:27017 timed out][39m
+[34m[37m17:25:52.15 [34m[33mNaivi[34m: Local Keys Loaded; Loading Development Environment[39m
+[37m17:25:52.78 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m17:25:52.78 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m17:25:52.78 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m17:25:52.84 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m17:25:52.91 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m17:25:52.91 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m17:25:52.91 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m17:25:52.93 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m17:25:52.93 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m17:25:52.98 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m17:25:52.98 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m17:25:52.98 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m17:25:52.99 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m17:25:52.99 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m17:25:52.99 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m17:25:52.99 [34m[33mNaivi[34m: Loading Team Shit[39m
+[34m[37m17:26:08.53 [34m[33mNaivi[34m: Local Keys Loaded; Loading Development Environment[39m
+[37m17:26:09.18 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m17:26:09.18 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m17:26:09.18 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m17:26:09.24 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m17:26:09.31 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m17:26:09.31 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m17:26:09.31 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m17:26:09.33 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m17:26:09.33 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m17:26:09.38 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m17:26:09.38 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m17:26:09.38 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m17:26:09.38 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m17:26:09.39 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m17:26:09.39 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m17:26:09.39 [34m[33mNaivi[34m: Loading Team Shit[39m
+[1m[31m[37m17:26:39.42 [31m <error> MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 0 to undefined:27017 timed out]
+    at Pool.<anonymous> (/home/schizo/Projects/frybot/node_modules/mongoose/node_modules/mongodb-core/lib/topologies/server.js:328:35)
+    at emitOne (events.js:96:13)
+    at Pool.emit (events.js:191:7)
+    at Connection.<anonymous> (/home/schizo/Projects/frybot/node_modules/mongoose/node_modules/mongodb-core/lib/connection/pool.js:280:12)
+    at Object.onceWrapper (events.js:293:19)
+    at emitTwo (events.js:106:13)
+    at Connection.emit (events.js:194:7)
+    at Socket.<anonymous> (/home/schizo/Projects/frybot/node_modules/mongoose/node_modules/mongodb-core/lib/connection/connection.js:187:10)
+    at Object.onceWrapper (events.js:293:19)
+    at emitNone (events.js:86:13)
+    at Socket.emit (events.js:188:7)
+    at Socket._onTimeout (net.js:352:8)
+    at ontimeout (timers.js:386:14)
+    at tryOnTimeout (timers.js:250:5)
+    at Timer.listOnTimeout (timers.js:214:5) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (/home/schizo/Projects/frybot/index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:191:7)
+    at process._fatalException (bootstrap_node.js:304:26)[39m[22m
+[34m[37m17:28:16.65 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:28:16.65 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:28:16.66 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connect ETIMEDOUT 198.105.254.228:27017][39m
+[34m[37m17:28:46.69 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:28:46.69 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:28:46.69 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 2 to undefined:27017 timed out][39m
+[34m[37m17:29:16.72 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:29:16.72 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:29:16.72 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3 to undefined:27017 timed out][39m
+[34m[37m17:29:45.52 [34m[33mNaivi[34m: Local Keys Loaded; Loading Development Environment[39m
+[37m17:29:46.16 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m17:29:46.16 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m17:29:46.16 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m17:29:46.22 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m17:29:46.30 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m17:29:46.30 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m17:29:46.30 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m17:29:46.31 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m17:29:46.31 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m17:29:46.36 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m17:29:46.36 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m17:29:46.36 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m17:29:46.37 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m17:29:46.37 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m17:29:46.37 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m17:29:46.37 [34m[33mNaivi[34m: Loading Team Shit[39m
+[34m[37m17:30:16.40 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:30:16.40 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:30:16.40 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 0 to undefined:27017 timed out][39m
+[34m[37m17:30:46.43 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:30:46.43 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:30:46.43 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 1 to undefined:27017 timed out][39m
+[34m[37m17:31:16.46 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:31:16.46 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:31:16.46 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 2 to undefined:27017 timed out][39m
+[34m[37m17:31:46.76 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:31:46.76 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:31:46.76 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3 to undefined:27017 timed out][39m
+[34m[37m17:32:16.79 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:32:16.79 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:32:16.79 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 4 to undefined:27017 timed out][39m
+[34m[37m17:32:46.82 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:32:46.82 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:32:46.82 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 5 to undefined:27017 timed out][39m
+[34m[37m17:33:16.85 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:33:16.85 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:33:16.85 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 6 to undefined:27017 timed out][39m
+[34m[37m17:33:46.88 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:33:46.88 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:33:46.88 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 7 to undefined:27017 timed out][39m
+[34m[37m17:34:16.90 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:34:16.91 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:34:16.91 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 8 to undefined:27017 timed out][39m
+[34m[37m17:34:46.93 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m17:34:46.93 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m17:34:46.94 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 9 to undefined:27017 timed out][39m
+[34m[37m17:34:50.51 [34m[33mNaivi[34m: Local Keys Loaded; Loading Development Environment[39m
+[37m17:34:51.17 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m17:34:51.17 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m17:34:51.17 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m17:34:51.23 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m17:34:51.30 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m17:34:51.30 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m17:34:51.30 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m17:34:51.32 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m17:34:51.32 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m17:34:51.37 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m17:34:51.37 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m17:34:51.37 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m17:34:51.37 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m17:34:51.37 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m17:34:51.37 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m17:34:51.37 [34m[33mNaivi[34m: Loading Team Shit[39m
+[34m[37m17:34:52.03 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m17:34:52.15 [39m[33mNaivi[39m: seasons found: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+[37m17:34:52.15 [39m[33mNaivi[39m: League Created
+[34m[37m17:34:52.15 [34m[33mNaivi[34m: League Loaded[39m
+[1m[33m[37m17:34:52.15 [33m No Team by that name: It Is What It Is[39m[22m
+[34m[37m17:34:52.15 [34m[33mNaivi[34m: adding home team: It Is What It Is[39m
+[37m17:34:52.15 [39m[33mNaivi[39m: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+[37m17:34:52.15 [39m[33mNaivi[39m: Updating Players from Scoresheet
+[37m17:34:52.15 [39m[33mNaivi[39m: Updating Players from Scoresheet
+[37m17:34:52.19 [39m[33mNaivi[39m: started cronjob - Afterparty
+[37m17:34:52.19 [39m[33mNaivi[39m: started cronjob - Nicofacts
+[37m17:34:52.19 [39m[33mNaivi[39m: started cronjob - Pregame
+[37m17:34:52.19 [39m[33mNaivi[39m: started cronjob - Match
+[37m17:34:52.19 [39m[33mNaivi[39m: started cronjob - Tweetnicofact
+[37m17:34:52.19 [39m[33mNaivi[39m: Connecting to Twitter...
+[1m[33m[37m17:34:52.20 [33m Twitter Disabled[39m[22m
+[37m17:34:52.29 [39m[33mNaivi[39m: Loading Players
+[34m[37m17:35:36.63 [34m[33mNaivi[34m: Local Keys Loaded; Loading Development Environment[39m
+[37m17:35:37.31 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m17:35:37.31 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m17:35:37.31 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m17:35:37.38 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m17:35:37.45 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m17:35:37.45 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m17:35:37.45 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m17:35:37.46 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m17:35:37.46 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m17:35:37.51 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m17:35:37.52 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m17:35:37.52 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m17:35:37.52 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m17:35:37.52 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m17:35:37.52 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m17:35:37.52 [34m[33mNaivi[34m: Loading Team Shit[39m
+[34m[37m17:35:38.18 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m17:35:38.28 [39m[33mNaivi[39m: seasons found: [{"_id":"597284d784591c1cf44be81b","__v":0,"matchups":[],"schedule":"597284d684591c1cf44be81a","teams":[],"label":"_____ Season NaN"}]
+[37m17:35:38.28 [39m[33mNaivi[39m: League Created
+[34m[37m17:35:38.28 [34m[33mNaivi[34m: League Loaded[39m
+[1m[33m[37m17:35:38.28 [33m No Team by that name: It Is What It Is[39m[22m
+[34m[37m17:35:38.29 [34m[33mNaivi[34m: adding home team: It Is What It Is[39m
+[37m17:35:38.29 [39m[33mNaivi[39m: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+[37m17:35:38.29 [39m[33mNaivi[39m: Updating Players from Scoresheet
+[37m17:35:38.29 [39m[33mNaivi[39m: Updating Players from Scoresheet
+[37m17:35:38.33 [39m[33mNaivi[39m: started cronjob - Afterparty
+[37m17:35:38.33 [39m[33mNaivi[39m: started cronjob - Nicofacts
+[37m17:35:38.33 [39m[33mNaivi[39m: started cronjob - Pregame
+[37m17:35:38.33 [39m[33mNaivi[39m: started cronjob - Match
+[37m17:35:38.33 [39m[33mNaivi[39m: started cronjob - Tweetnicofact
+[37m17:35:38.33 [39m[33mNaivi[39m: Connecting to Twitter...
+[1m[33m[37m17:35:38.33 [33m Twitter Disabled[39m[22m
+[37m17:35:38.42 [39m[33mNaivi[39m: Loading Players
