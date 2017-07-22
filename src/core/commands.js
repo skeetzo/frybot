@@ -7,9 +7,7 @@ var _ = require('underscore'),
     League = require('./league.js').League,
     config = require('../config/index'),
     logger = config.logger,
-    moment = require ('moment'),
-    Spreadsheet = require('edit-google-spreadsheet');
-
+    moment = require ('moment');
 
 var lastMatchNum_ = 0;
 

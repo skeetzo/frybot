@@ -2254,3 +2254,102 @@ Call Stack:
 16:04:54.82 Naivi: Loading Players
 16:04:55.37 Naivi: Season scores updated quietly
 [36m16:04:55.37 Not saving. <debug> (in commands.js:(Object.module.exports.saveTeamShitData):83)[39m
+[36m17:04:54.81 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+17:04:55.50 Naivi: Booting up: Naivi
+[36m17:04:55.51 Loading Core <debug> (in index.js:(bot.module.exports.load):8)[39m
+[36m17:04:55.51 attaching core: commands <debug> (in index.js:():11)[39m
+[36m17:04:55.57 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m17:04:55.64 attaching core: league <debug> (in index.js:():11)[39m
+[36m17:04:55.64 Loading Mods <debug> (in index.js:(bot.module.exports.load):7)[39m
+[36m17:04:55.64 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m17:04:55.65 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m17:04:55.65 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m17:04:55.70 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m17:04:55.70 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m17:04:55.71 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m17:04:55.71 Adding command: scores <debug> (in index.js:():9)[39m
+[36m17:04:55.72 Adding command: season <debug> (in index.js:():9)[39m
+[36m17:04:55.72 Adding command: suck <debug> (in index.js:():9)[39m
+[36m17:04:55.72 Loading Team Shit <debug> (in commands.js:(bot.module.exports.loadLeague):36)[39m
+[36m17:06:33.82 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+17:06:34.46 Naivi: Booting up: Naivi
+[36m17:06:34.47 Loading Core <debug> (in index.js:(bot.module.exports.load):8)[39m
+[36m17:06:34.47 attaching core: commands <debug> (in index.js:():11)[39m
+[36m17:06:34.53 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m17:06:34.60 attaching core: league <debug> (in index.js:():11)[39m
+[36m17:06:34.60 Loading Mods <debug> (in index.js:(bot.module.exports.load):7)[39m
+[36m17:06:34.61 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m17:06:34.62 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m17:06:34.62 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m17:06:34.67 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m17:06:34.67 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m17:06:34.67 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m17:06:34.67 Adding command: scores <debug> (in index.js:():9)[39m
+[36m17:06:34.67 Adding command: season <debug> (in index.js:():9)[39m
+[36m17:06:34.68 Adding command: suck <debug> (in index.js:():9)[39m
+[36m17:06:34.68 Loading Team Shit <debug> (in commands.js:(bot.module.exports.loadLeague):36)[39m
+[36m17:08:42.02 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:08:42.02 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:08:42.03 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connect ETIMEDOUT 198.105.254.228:27017] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:09:12.06 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:09:12.06 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:09:12.06 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 1 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:09:42.08 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:09:42.08 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:09:42.09 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 2 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:10:12.12 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:10:12.12 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:10:12.12 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:10:42.15 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:10:42.15 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:10:42.16 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 4 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:11:12.18 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:11:12.18 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:11:12.19 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 5 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:11:42.26 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:11:42.26 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:11:42.27 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 6 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:12:12.31 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:12:12.31 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:12:12.31 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 7 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:12:42.34 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:12:42.34 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:12:42.35 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 8 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:13:12.37 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:13:12.37 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:13:12.38 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 9 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:13:42.61 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:13:42.61 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:13:42.61 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 10 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:14:12.66 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:14:12.66 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:14:12.66 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 11 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:14:42.69 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:14:42.69 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:14:42.69 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 12 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:15:12.72 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:15:12.72 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:15:12.73 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 13 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:15:42.100 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:15:42.100 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:15:42.100 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 14 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:16:13.03 Mongoose connection disconnected <debug> (in mongo.js:(NativeConnection.<anonymous>):31)[39m
+[36m17:16:13.03 Reconnecting to MongoDB... <debug> (in mongo.js:(NativeConnection.<anonymous>):32)[39m
+[36m17:16:13.03 Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 15 to undefined:27017 timed out] <debug> (in mongo.js:(NativeConnection.<anonymous>):26)[39m
+[36m17:16:40.30 Local Keys Loaded; Loading Development Environment <debug> (in keys.js:(Object.module.exports):9)[39m
+17:16:40.96 Naivi: Booting up: Naivi
+[36m17:16:40.96 Loading Core <debug> (in index.js:(bot.module.exports.load):8)[39m
+[36m17:16:40.96 attaching core: commands <debug> (in index.js:():11)[39m
+[36m17:16:41.03 attaching core: cronjobs <debug> (in index.js:():11)[39m
+[36m17:16:41.10 attaching core: league <debug> (in index.js:():11)[39m
+[36m17:16:41.10 Loading Mods <debug> (in index.js:(bot.module.exports.load):7)[39m
+[36m17:16:41.10 attaching mod: mongo <debug> (in index.js:():10)[39m
+[36m17:16:41.11 attaching mod: sheets <debug> (in index.js:():10)[39m
+[36m17:16:41.11 attaching mod: twitter <debug> (in index.js:():10)[39m
+[36m17:16:41.16 Adding command: bottle <debug> (in index.js:():9)[39m
+[36m17:16:41.17 Adding command: fuck <debug> (in index.js:():9)[39m
+[36m17:16:41.17 Adding command: nicofacts <debug> (in index.js:():9)[39m
+[36m17:16:41.17 Adding command: scores <debug> (in index.js:():9)[39m
+[36m17:16:41.17 Adding command: season <debug> (in index.js:():9)[39m
+[36m17:16:41.17 Adding command: suck <debug> (in index.js:():9)[39m
+[36m17:16:41.17 Loading Team Shit <debug> (in commands.js:(bot.module.exports.loadLeague):36)[39m
