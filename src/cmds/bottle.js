@@ -69,6 +69,7 @@ module.exports = function bottle(data) {
   this.commands.bottle.what = what;
 
   function process() {
+    logger.log('argument: %s',argument);
     if (this.commands.bottle[argument])
       this.commands.bottle[argument]();
     else
