@@ -26,11 +26,11 @@ module.exports = function bottle(data) {
         bottleDuty = new BottleDuty({'players':self.team.players});
         return bottleDuty.save(function(err) {
           if (err) logger.warn(err);
-          process.call(self);
+          process();
         })
       }
       bottleDuty = bottleDuty_;
-      process.call(self);
+      process();
     });
   }
 
@@ -69,7 +69,6 @@ module.exports = function bottle(data) {
   this.commands.bottle.what = what;
 
   function process() {
-    logger.log('argument: %s',argument);
     if (this.commands.bottle[argument])
       this.commands.bottle[argument]();
     else
