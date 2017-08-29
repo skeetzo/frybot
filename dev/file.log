@@ -205,3 +205,149 @@
 [34m[37m12:09:41.67 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
 [34m[37m12:09:41.67 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
 [34m[37m12:09:41.67 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 36 to undefined:27017 timed out][39m
+[34m[37m12:10:02.25 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:10:02.25 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:10:02.25 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3632 to undefined:27017 timed out][39m
+[34m[37m12:10:06.39 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:10:06.39 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:10:06.40 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 35 to undefined:27017 timed out][39m
+[34m[37m12:10:11.70 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:10:11.70 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:10:11.70 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 37 to undefined:27017 timed out][39m
+[34m[37m12:10:32.28 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:10:32.28 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:10:32.28 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3633 to undefined:27017 timed out][39m
+[34m[37m12:10:36.42 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:10:36.42 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:10:36.43 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 36 to undefined:27017 timed out][39m
+[34m[37m12:10:41.73 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:10:41.73 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:10:41.73 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 38 to undefined:27017 timed out][39m
+[34m[37m12:11:02.31 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:11:02.31 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:11:02.32 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3634 to undefined:27017 timed out][39m
+[34m[37m12:11:06.45 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:11:06.45 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:11:06.46 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 37 to undefined:27017 timed out][39m
+[34m[37m12:11:11.76 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:11:11.76 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:11:11.76 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 39 to undefined:27017 timed out][39m
+[34m[37m12:11:32.34 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:11:32.34 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:11:32.35 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3635 to undefined:27017 timed out][39m
+[34m[37m12:11:36.49 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:11:36.49 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:11:36.49 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 38 to undefined:27017 timed out][39m
+[34m[37m12:11:41.79 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:11:41.79 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:11:41.80 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 40 to undefined:27017 timed out][39m
+[34m[37m12:12:02.37 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:12:02.37 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:12:02.37 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3636 to undefined:27017 timed out][39m
+[34m[37m12:12:06.51 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:12:06.51 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:12:06.52 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 39 to undefined:27017 timed out][39m
+[34m[37m12:12:11.83 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:12:11.83 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:12:11.83 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 41 to undefined:27017 timed out][39m
+[34m[37m12:12:32.40 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:12:32.40 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:12:32.40 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3637 to undefined:27017 timed out][39m
+[34m[37m12:12:36.55 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:12:36.55 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:12:36.55 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 40 to undefined:27017 timed out][39m
+[34m[37m12:12:41.86 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:12:41.86 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:12:41.86 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 42 to undefined:27017 timed out][39m
+[34m[37m12:13:02.43 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:13:02.43 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:13:02.44 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3638 to undefined:27017 timed out][39m
+[34m[37m12:13:06.58 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:13:06.58 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:13:06.58 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 41 to undefined:27017 timed out][39m
+[34m[37m12:13:11.89 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:13:11.89 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:13:11.89 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 43 to undefined:27017 timed out][39m
+[34m[37m12:13:32.46 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:13:32.46 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:13:32.47 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3639 to undefined:27017 timed out][39m
+[34m[37m12:13:36.60 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:13:36.60 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:13:36.61 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 42 to undefined:27017 timed out][39m
+[34m[37m12:13:41.92 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:13:41.92 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:13:41.92 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 44 to undefined:27017 timed out][39m
+[34m[37m12:14:02.49 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:14:02.49 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:14:02.49 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3640 to undefined:27017 timed out][39m
+[34m[37m12:14:06.63 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:14:06.63 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:14:06.63 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 43 to undefined:27017 timed out][39m
+[34m[37m12:14:11.95 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:14:11.95 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:14:11.95 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 45 to undefined:27017 timed out][39m
+[34m[37m12:14:32.52 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:14:32.52 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:14:32.52 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3641 to undefined:27017 timed out][39m
+[34m[37m12:14:36.66 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:14:36.66 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:14:36.66 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 44 to undefined:27017 timed out][39m
+[34m[37m12:14:41.98 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:14:41.98 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:14:41.98 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 46 to undefined:27017 timed out][39m
+[34m[37m12:15:02.55 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:15:02.55 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:15:02.55 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3642 to undefined:27017 timed out][39m
+[34m[37m12:15:06.69 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:15:06.69 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:15:06.69 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 45 to undefined:27017 timed out][39m
+[34m[37m12:15:09.82 [34m[33mFrybot[34m: Local Keys Not Found; Loading Production Environment[39m
+[37m12:15:10.25 [39m[33mFrybot[39m: Booting up: Frybot
+[34m[37m12:15:10.25 [34m[33mFrybot[34m: Loading Core[39m
+[34m[37m12:15:10.25 [34m[33mFrybot[34m: attaching core: commands[39m
+[34m[37m12:15:10.30 [34m[33mFrybot[34m: attaching core: cronjobs[39m
+[34m[37m12:15:10.34 [34m[33mFrybot[34m: attaching core: league[39m
+[34m[37m12:15:10.34 [34m[33mFrybot[34m: Loading Mods[39m
+[34m[37m12:15:10.34 [34m[33mFrybot[34m: attaching mod: mongo[39m
+[34m[37m12:15:10.35 [34m[33mFrybot[34m: attaching mod: sheets[39m
+[34m[37m12:15:10.35 [34m[33mFrybot[34m: attaching mod: twitter[39m
+[34m[37m12:15:10.39 [34m[33mFrybot[34m: Adding command: bottle[39m
+[34m[37m12:15:10.39 [34m[33mFrybot[34m: Adding command: fuck[39m
+[34m[37m12:15:10.39 [34m[33mFrybot[34m: Adding command: nicofacts[39m
+[34m[37m12:15:10.39 [34m[33mFrybot[34m: Adding command: scores[39m
+[34m[37m12:15:10.39 [34m[33mFrybot[34m: Adding command: season[39m
+[34m[37m12:15:10.39 [34m[33mFrybot[34m: Adding command: suck[39m
+[34m[37m12:15:10.39 [34m[33mFrybot[34m: Loading Team Shit[39m
+[1m[31m[37m12:15:10.41 [31m <error> Error: listen EADDRINUSE :::3000
+    at Object.exports._errnoException (util.js:1024:11)
+    at exports._exceptionWithHostPort (util.js:1047:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1319:14)
+    at listenInCluster (net.js:1367:12)
+    at Server.listen (net.js:1467:7)
+    at Function.listen (/home/skeetzo/Projects/frybot/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/home/skeetzo/Projects/frybot/index.js:29:5)
+    at Module._compile (module.js:569:30)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:503:32)
+    at tryModuleLoad (module.js:466:12)
+    at Function.Module._load (module.js:458:3)
+    at Function.Module.runMain (module.js:605:10)
+    at startup (bootstrap_node.js:158:16)
+    at bootstrap_node.js:575:3 (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (/home/skeetzo/Projects/frybot/index.js:13:10)
+    at emitOne (events.js:115:13)
+    at process.emit (events.js:210:7)
+    at process._fatalException (bootstrap_node.js:329:26)[39m[22m
+[34m[37m12:15:12.01 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:15:12.01 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:15:12.01 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 47 to undefined:27017 timed out][39m
+[34m[37m12:15:35.49 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:15:35.49 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:15:35.49 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3643 to undefined:27017 timed out][39m
+[34m[37m12:15:36.72 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:15:36.72 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:15:36.73 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 46 to undefined:27017 timed out][39m
+[34m[37m12:15:42.04 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:15:42.04 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:15:42.05 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 48 to undefined:27017 timed out][39m
