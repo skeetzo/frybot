@@ -3,9 +3,7 @@ var _ = require('underscore'),
     config = require('../config/index'),
     logger = config.logger,
     Season = require('../models/season'),
-    Player = require('../models/player'),
-    Spreadsheet = require('edit-google-spreadsheet');
-
+    Player = require('../models/player');
 /*
   League Constructor
 */

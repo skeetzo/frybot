@@ -15,13 +15,12 @@ module.exports = function() {
 
     // Google
     this.Google_service_email = localConfig.Google_service_email || process.env.Google_service_email;
-    this.Google_keyFile = localConfig.Google_keyFile || process.env.Google_keyFile;
     this.Google_key = localConfig.Google_key || process.env.Google_key;
     this.Google_Oauth_Opts = {
-        "email": this.Google_service_email,
-        "key": this.Google_key,
-        "keyFile": this.Google_keyFile
+        "client_email": this.Google_service_email,
+        "private_key": this.Google_key
     };
+    
     // It Is What It Is Google Sheet
     this.Google_ItIsWhatItIs_Spreadsheet_ID = localConfig.Google_ItIsWhatItIs_Spreadsheet_ID || process.env.Google_ItIsWhatItIs_Spreadsheet_ID;
     this.ItIsWhatItIs_statsSheetID = 'ot3ufy3';
@@ -32,7 +31,7 @@ module.exports = function() {
 
     // Mongo
     this.MONGODB_URI = localConfig.MONGODB_URI || process.env.MONGODB_URI;
-    if (process.env.NODE_ENV!='production') this.MONGODB_URI = localConfig.MONGODB_URI_dev;
+    if (process.env.NODE_ENV==='local') this.MONGODB_URI = localConfig.MONGODB_URI_dev;
 
     // Twitter
     this.Twitter_access_token = localConfig.Twitter_access_token || process.env.Twitter_access_token;

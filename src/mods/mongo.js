@@ -5,15 +5,9 @@ var mongoose = require('mongoose'),
 // squelch mpromise is deprecated warning
 mongoose.Promise = global.Promise;
 
-mongoose.connect(config.MONGODB_URI,{
-  server: {
-    socketOptions: {
-      ssl: 'prefer',
-      socketTimeoutMS: 0,
-      connectionTimeout: 0
-    }
-  }
-});
+// const connection = mongoose.createConnection(config.MONGODB_URI);
+
+mongoose.connect(config.MONGODB_URI);
 
 // CONNECTION EVENTS
 // When successfully connected

@@ -26,7 +26,7 @@ bottleDutySchema.methods.addPlayers = function(players, callback) {
   this.save(function (err) {
     if (err) logger.warn(err);
     if (callback) callback(null);
-  })
+  });
 }
 
 bottleDutySchema.methods.getDuty = function() {
@@ -36,10 +36,12 @@ bottleDutySchema.methods.getDuty = function() {
     return null;
   }
   this.index++;
+  if (this.index>this.players.length)
+    this.index = 0;
   this.save(function (err) {
     if (err) logger.warn(err);
-    return player;
   })
+  return player.name;
 }
 
 bottleDutySchema.methods.getRandomDuty = function() {
