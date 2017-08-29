@@ -31,6 +31,7 @@ module.exports = function() {
 
     // Mongo
     this.MONGODB_URI = localConfig.MONGODB_URI || process.env.MONGODB_URI;
+    this.logger.log('mongodb: %s',this.MONGODB_URI);
     if (process.env.NODE_ENV==='local') this.MONGODB_URI = localConfig.MONGODB_URI_dev;
 
     // Twitter
