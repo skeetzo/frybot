@@ -49,3 +49,9 @@
 [34m[37m12:01:05.70 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
 [34m[37m12:01:05.70 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
 [34m[37m12:01:05.70 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 17 to undefined:27017 timed out][39m
+[34m[37m12:01:11.02 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:01:11.02 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:01:11.02 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 19 to undefined:27017 timed out][39m
+[34m[37m12:01:30.71 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m12:01:30.71 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m12:01:30.72 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: connection 3615 to undefined:27017 timed out][39m
