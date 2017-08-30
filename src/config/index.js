@@ -44,9 +44,8 @@ var commandsRegex = "\/[a-z]*",
 config.commandsRegex = new RegExp(commandsRegex, "i");
 config.argumentsRegex = new RegExp(argumentsRegex, "i");
 
-
+keys.call(config);
 logger.call(config);
 crons.call(config);
-keys.call(config);
 
 module.exports = config;
