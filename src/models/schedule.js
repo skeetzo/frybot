@@ -13,14 +13,28 @@ var options = { discriminatorKey: 'kind' };
 
 // Schedule Schema
 var scheduleSchema = new Schema({
-  label: { type: String, default: ('_____ Season '+moment().format('YYYY')) },
+  label: { type: String },
+  date: {
+    start: { type: Date, default: moment() },
+    end: { type: Date },
+  }
   matchups: { type: Array, default: [] },
   locations: { type: Array, default: [] },
   teams: { type: Array, default: [] },
 },options);
 
 scheduleSchema.pre('save', function(next) {
-  logger.debug('season saved: %s vs %s',this.teamOne.name,this.teamTwo.name);
+
+  if (!this.label) {
+    if (this.date.start.month()<3)
+      this.label = 'Spring Season '+this.date.start.year();
+    else if (this.date.start.month()<6)
+      this.label = 'Summer Season '+this.date.start.year();
+    else
+      this.label = 'Winter Season '+this.date.start.year();
+  }
+
+  logger.debug('season saved: %s',this.label);
   next();
 });
 
