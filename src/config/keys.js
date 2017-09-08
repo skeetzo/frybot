@@ -6,10 +6,10 @@ module.exports = function() {
     try {
         localConfig = fs.readFileSync(this.local_keys_path).toString();
         localConfig = JSON.parse(localConfig);
-        this.logger.debug('Local Keys Loaded; Loading Development Environment');
+        console.log('Local Keys Loaded; Loading Development Environment');
     }
     catch (err) {
-        this.logger.debug('Local Keys Not Found; Loading Production Environment');
+        console.log('Local Keys Not Found; Loading Production Environment');
         this.localConfig = {};
     }
 

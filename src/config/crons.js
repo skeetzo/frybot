@@ -6,7 +6,7 @@ module.exports = function() {
 			start : true,
 			command : 'season',
 			argument : 'afterparty',
-			cronTime : '00 00 12 * 0-5 3',
+			cronTime : '00 00 12 * * 3',
 	        timeZone: 'America/Los_Angeles'	
 		},
 
@@ -36,7 +36,7 @@ module.exports = function() {
 			start : true,
 			command : 'season',
 			argument : 'pregame',
-			cronTime : '00 00 10 * 0-5 2', 
+			cronTime : '00 00 10 * * 2', 
 	        timeZone: 'America/Los_Angeles'	
 		},
 
@@ -44,12 +44,12 @@ module.exports = function() {
 			start : true,
 			command : 'season',
 			argument : 'match',
-			cronTime : '00 50 18 * 6-8 2',
+			cronTime : '00 50 18 * * 2',
 	        timeZone: 'America/Los_Angeles'
 		},
 
 		tweetnicofact : {
-			start : true,
+			start : false,
 			command : 'nicofacts',
 			argument : 'tweetnicofact',
 			cronTime : '00 10 19,21,23 * 6-8 2', 
