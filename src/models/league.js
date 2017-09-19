@@ -19,7 +19,7 @@ var leagueSchema = new Schema({
 
 },options);
 
-leagueSchema.pre('save', function(next) {
+leagueSchema.pre('save', function(next) { 
   var self = this;
   logger.debug('league saved: %s',this.name);
 
@@ -37,7 +37,7 @@ leagueSchema.pre('save', function(next) {
     _.forEach(self.teams, function (team) {
       _.forEach(team.players, function(player) {
         // players stored as Players ids
-        if (!_.contains(self.players, player)
+        if (!_.contains(self.players, player))
           self.players.push(player);
       });
     });
