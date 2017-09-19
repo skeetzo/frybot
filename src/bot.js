@@ -11,7 +11,7 @@ var colors = require("colors"),
     
 /**
  * @title Frybot
- * @author Schizo
+ * @author Skeetzo
  * @version 0.0.11
  */
 

@@ -24,7 +24,7 @@ mongoose.connection.on('error',function (err) {
 mongoose.connection.on('disconnected', function () {  
   logger.debug('Mongoose connection disconnected'); 
   logger.debug('Reconnecting to MongoDB...');
-  mongoose.connect(config.MONGODB_URI);
+  // mongoose.connect(config.MONGODB_URI);
 });
 
 // If the Node process ends, close the Mongoose connection 
