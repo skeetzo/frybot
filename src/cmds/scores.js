@@ -45,8 +45,11 @@ module.exports = function scores(data) {
   */
   function callouts() {
     logger.log('Callouts incoming');
-    _.forEach(League.getCurrentSeason().players,function (player) {
-      streak(player);
+    League.getCurrentSeason(function(err, season) {
+      if (err) logger.warn(err);
+      _.forEach(season.players,function (player) {
+        streak(player);
+      });
     });
   };
   this.commands.scores.callouts = callouts;
@@ -56,14 +59,17 @@ module.exports = function scores(data) {
   */
   function lvp() {
     var leastValuablePlayer = 'Nico';
-    _.forEach(League.getCurrentSeason().players, function (player) {
-      if (leastValuablePlayer=='Nico')
-        leastValuablePlayer = player;
-      else if (player.mvp<leastValuablePlayer.mvp)
-        leastValuablePlayer = player;
+    League.getCurrentSeason(function(err, season) {
+      if (err) logger.warn(err);
+      _.forEach(season.players, function (player) {
+        if (leastValuablePlayer=='Nico')
+          leastValuablePlayer = player;
+        else if (player.mvp<leastValuablePlayer.mvp)
+          leastValuablePlayer = player;
+      });
+      if (modifiers&&modifiers.text) return self.say(modifiers.text+leastValuablePlayer.toStats());
+      self.say('Current LVP- '+leastValuablePlayer.toStats());
     });
-    if (modifiers&&modifiers.text) return self.say(modifiers.text+leastValuablePlayer.toStats());
-    self.say('Current LVP- '+leastValuablePlayer.toStats());
   }
   this.commands.scores.lvp = lvp;
 
@@ -72,14 +78,17 @@ module.exports = function scores(data) {
   */
   function mvp() {
     var mostValuablePlayer = 'Oberg';
-    _.forEach(League.getCurrentSeason().players, function (player) {
-      if (mostValuablePlayer=='Oberg')
-        mostValuablePlayer = player;
-      else if (player.mvp>mostValuablePlayer.mvp)
-        mostValuablePlayer = player;
+    League.getCurrentSeason(function(err, season) {
+      if (err) logger.warn(err);
+      _.forEach(season.players, function (player) {
+        if (mostValuablePlayer=='Oberg')
+          mostValuablePlayer = player;
+        else if (player.mvp>mostValuablePlayer.mvp)
+          mostValuablePlayer = player;
+      });
+      if (modifiers&&modifiers.get) return mostValuablePlayer;
+      self.say(self,'Current MVP- '+mostValuablePlayer.toStats());
     });
-    if (modifiers&&modifiers.get) return mostValuablePlayer;
-    self.say(self,'Current MVP- '+mostValuablePlayer.toStats());
   }
   this.commands.scores.mvp = mvp;
 
@@ -87,9 +96,12 @@ module.exports = function scores(data) {
     returns the scores of the desired player
   */
   function of() {
-    _.forEach(League.getCurrentSeason().players, function (player) {
-      if (message.indexOf(player.name)>-1)
-        self.say(self,'Stats- '+player.toStats());
+    League.getCurrentSeason(function(err, season) {
+      if (err) logger.warn(err);
+      _.forEach(season.players, function (player) {
+        if (message.indexOf(player.name)>-1)
+          self.say(self,'Stats- '+player.toStats());
+      });
     });
   }
   this.commands.scores.of = of;
@@ -99,11 +111,14 @@ module.exports = function scores(data) {
   */
   function streak(player) {
     // forces player from string to obj
-    if (typeof player != Object)
-      _.forEach(League.getCurrentSeason().players, function (players) {
-        if (typeof player != Object)
-          if (players.name==player)
-            player = players;
+    if (typeof player != Object) 
+      League.getCurrentSeason(function(err, season) {
+        if (err) logger.warn(err);
+        _.forEach(season.players, function (players) {
+          if (typeof player != Object)
+            if (players.name==player)
+              player = players;
+        });
       });
     var matches = player.matches;
     var streak = '';
@@ -169,14 +184,17 @@ module.exports = function scores(data) {
     logger.log('Updating Scores From Scoresheet');
     Sheets.updateScores(function(err, matchups) {
       if (err) logger.warn(err);
-      League.getCurrentSeason().resetPlayers();
-      League.getCurrentSeason().updateMatchups(matchups); // updates player data
-      if (modifiers&&modifiers.quietly)
-        logger.log('Season scores updated quietly');
-      else if (modifiers&&modifiers.think)
-        self.think('Season scores updated');
-      else
-        self.say('Season scores updated');
+      League.getCurrentSeason(function(err, season) {
+        if (err) logger.warn(err);
+        season.resetPlayers();
+        season.updateMatchups(matchups);
+        if (modifiers&&modifiers.quietly)
+          logger.log('Season scores updated quietly');
+        else if (modifiers&&modifiers.think)
+          self.think('Season scores updated');
+        else
+          self.say('Season scores updated');
+      });
     });
   }
   this.commands.scores.update = update;
