@@ -17,7 +17,7 @@ var scheduleSchema = new Schema({
   date: {
     start: { type: Date, default: moment() },
     end: { type: Date },
-  }
+  },
   matchups: { type: Array, default: [] },
   locations: { type: Array, default: [] },
   teams: { type: Array, default: [] },
