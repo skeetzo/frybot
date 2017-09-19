@@ -176,7 +176,6 @@ module.exports = function scores(data) {
         self.think('Season scores updated');
       else
         self.say('Season scores updated');
-      self.commands.saveTeamShitData.call(self);
     });
   }
   this.commands.scores.update = update;

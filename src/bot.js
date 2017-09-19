@@ -271,8 +271,8 @@ bot.prototype = {
 
     var tests = [{
           text: "",
-          command: "nicofacts",
-          argument: "tweetnicofact",
+          command: "season",
+          argument: "pregame",
           name: config.name
         }];
         // ,

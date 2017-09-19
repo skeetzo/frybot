@@ -44,7 +44,7 @@ leagueSchema.pre('save', function(next) {
   next();
 });
 
-leagueSchema.statics.getCurrentSeason = function(callback) {
+leagueSchema.methods.getCurrentSeason = function(callback) {
   logger.log('league- getting current season');
   for (var i=0;i<this.seasons.length;i++)
     if (this.seasons[i].active)

@@ -11,10 +11,10 @@ config.localTeamShitPath = './dev/teamshit.json';
 config.localSeasonsPath = './dev/seasons.json';
 
 // Debugging sets personality switch
-config.debugging = false;
+config.debugging = true;
 config.debugging_League = true;
 
-config.testing = false;
+config.testing = true;
 config.saving = false;
 config.saveOnLoad = false;
 config.localLoad = false;
