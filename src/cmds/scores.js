@@ -1,6 +1,7 @@
 var _ = require('underscore'),
     config = require('../config/index'),
     logger = config.logger,
+    League = require('../models/league'),
     Sheets = require('../mods/sheets');
 
 /**

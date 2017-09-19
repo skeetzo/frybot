@@ -2,6 +2,7 @@ var config = require('../config/index.js'),
     logger = config.logger,
     _ = require('underscore'),
     async = require('async'),
+    League = require('../models/league'),
     GoogleSpreadsheet = require('google-spreadsheet');
 
 module.exports.loadSchedule = function(callback) {
