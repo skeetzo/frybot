@@ -33,6 +33,7 @@ leagueSchema.pre('save', function(next) {
   }
   if (!this.players) {
     logger.debug('league- updating players');
+    this.players = [];
     _.forEach(self.teams, function (team) {
       _.forEach(team.players, function(player) {
         // players stored as Players ids
