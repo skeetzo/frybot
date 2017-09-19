@@ -44,7 +44,7 @@ module.exports = function scores(data) {
   */
   function callouts() {
     logger.log('Callouts incoming');
-    _.forEach(self.league.getCurrentSeason().players,function (player) {
+    _.forEach(League.getCurrentSeason().players,function (player) {
       streak(player);
     });
   };
@@ -55,7 +55,7 @@ module.exports = function scores(data) {
   */
   function lvp() {
     var leastValuablePlayer = 'Nico';
-    _.forEach(self.league.getCurrentSeason().players, function (player) {
+    _.forEach(League.getCurrentSeason().players, function (player) {
       if (leastValuablePlayer=='Nico')
         leastValuablePlayer = player;
       else if (player.mvp<leastValuablePlayer.mvp)
@@ -71,7 +71,7 @@ module.exports = function scores(data) {
   */
   function mvp() {
     var mostValuablePlayer = 'Oberg';
-    _.forEach(self.league.getCurrentSeason().players, function (player) {
+    _.forEach(League.getCurrentSeason().players, function (player) {
       if (mostValuablePlayer=='Oberg')
         mostValuablePlayer = player;
       else if (player.mvp>mostValuablePlayer.mvp)
@@ -86,7 +86,7 @@ module.exports = function scores(data) {
     returns the scores of the desired player
   */
   function of() {
-    _.forEach(self.league.getCurrentSeason().players, function (player) {
+    _.forEach(League.getCurrentSeason().players, function (player) {
       if (message.indexOf(player.name)>-1)
         self.say(self,'Stats- '+player.toStats());
     });
@@ -99,7 +99,7 @@ module.exports = function scores(data) {
   function streak(player) {
     // forces player from string to obj
     if (typeof player != Object)
-      _.forEach(self.league.getCurrentSeason().players, function (players) {
+      _.forEach(League.getCurrentSeason().players, function (players) {
         if (typeof player != Object)
           if (players.name==player)
             player = players;
@@ -168,8 +168,8 @@ module.exports = function scores(data) {
     logger.log('Updating Scores From Scoresheet');
     Sheets.updateScores(function(err, matchups) {
       if (err) logger.warn(err);
-      self.league.getCurrentSeason().resetPlayers();
-      self.league.getCurrentSeason().updateMatchups(matchups); // updates player data
+      League.getCurrentSeason().resetPlayers();
+      League.getCurrentSeason().updateMatchups(matchups); // updates player data
       if (modifiers&&modifiers.quietly)
         logger.log('Season scores updated quietly');
       else if (modifiers&&modifiers.think)

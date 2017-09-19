@@ -44,13 +44,17 @@ leagueSchema.pre('save', function(next) {
   next();
 });
 
-leagueSchema.methods.getCurrentSeason = function(callback) {
+leagueSchema.statics.getCurrentSeason = function(callback) {
   logger.log('league- getting current season');
-  for (var i=0;i<this.seasons.length;i++)
-    if (this.seasons[i].active)
-      return this.seasons[i];
-  logger.warn('no seasons found');
-  return null;
+  this.find({}, function(err, league) {
+    if (err) logger.warn(err);
+    for (var i=0;i<league.seasons.length;i++)
+      if (league.seasons[i].active)
+        return league.seasons[i];
+    logger.warn('no seasons found');
+    return null;
+  });
+  
 }
 
 
