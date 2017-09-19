@@ -11,7 +11,7 @@ config.localTeamShitPath = './dev/teamshit.json';
 config.localSeasonsPath = './dev/seasons.json';
 
 // Debugging sets personality switch
-config.debugging = true;
+config.debugging = false;
 config.debugging_League = true;
 
 config.testing = false;
@@ -44,9 +44,8 @@ var commandsRegex = "\/[a-z]*",
 config.commandsRegex = new RegExp(commandsRegex, "i");
 config.argumentsRegex = new RegExp(argumentsRegex, "i");
 
-
+keys.call(config);
 logger.call(config);
 crons.call(config);
-keys.call(config);
 
 module.exports = config;

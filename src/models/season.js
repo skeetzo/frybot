@@ -13,15 +13,35 @@ var options = { discriminatorKey: 'kind' };
 
 // Match Schema
 var seasonSchema = new Schema({
-  label: { type: String, default: ('_____ Season '+moment().format('YYYY')) },
+  label: { type: String },
   teams: { type: Array, default: [] },
-
-  schedule: { type: Schema.Types.ObjectId, ref: 'schedule', default: new Schedule({'label':('_____ Season '+moment().format('YYYY'))}) },
+  date: {
+    start: { type: Date, default: moment() },
+    end: { type: Date },
+  },
+  schedule: { type: Schema.Types.ObjectId, ref: 'schedule', default: new Schedule() },
   matchups: { type: Array, default: [] },
 },options);
 
 seasonSchema.pre('save', function(next) {
   logger.debug('season saved: %s',this.label);
+
+  if (!this.label) {
+    if (this.date.start.month()<3)
+      this.label = 'Spring Season '+this.date.start.year();
+    else if (this.date.start.month()<6)
+      this.label = 'Summer Season '+this.date.start.year();
+    else
+      this.label = 'Winter Season '+this.date.start.year();
+  }
+
+  if (!this.date.end) {
+    this.date.end = moment(this.date.start);
+    if (this.date.end.month()==0||this.date.end.month()>=8)
+      this.date.end.weeks(this.date.end.weeks()+16);
+    else if (this.date.end.month()>=4)
+      this.date.end.weeks(this.date.end.weeks()+11);
+  }
 
   if (this.isModified('matchups')) 
     for (var i=1;i<=this.schedule.length;i++) {

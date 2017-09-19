@@ -1,17 +1,33 @@
 ## Changelog
 
-**1.0.0 : 7/20/2017 : **
+**1.0.0 : 7/20/2017 : reSetup **
 	- mongodb setup
 	- season reorginization
-	**7/22/2017**
+
+	**1.0.1 : 7/22/2017**
 	- finished mongo integreation
 
-**1.0.1 : ??/??/?? : **
+
+
+	**1.0.2 : 8/28/2017**
+	- Fall Season prep
+	- cron adjustments
+
+
+
+**1.0.3 : ??/??/?? : **
 	- update nicofact tweeting behavior
 	- update cron based seasonal behavior- start, end
 
-**0.0.2 : ??/??/?? : **
-
-**0.0.3 : ??/??/?? : **
 
 **0.0.4 : ??/??/?? : **
+
+**0.0.5 : ??/??/?? : **
+
+**0.0.6 : ??/??/?? : **
+
+
+Dev:
+
+**0.0.2**
+- Leage: new Season() constructor call
