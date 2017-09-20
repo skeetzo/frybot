@@ -51,9 +51,8 @@ leagueSchema.statics.getCurrentSeason = function(callback) {
     if (err) logger.warn(err);
     for (var i=0;i<league.seasons.length;i++)
       if (league.seasons[i].active)
-        return callback(league.seasons[i]);
-    logger.warn('no seasons found');
-    callback(null);
+        return callback(null, league.seasons[i]);
+    callback('no seasons found');
   });
   
 }

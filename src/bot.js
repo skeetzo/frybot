@@ -74,6 +74,8 @@ bot.prototype = {
 
     if (!this.commands) return console.log("Error- missing critical Commands module");  
 
+
+    // load active league
     self.commands.loadLeague.call(self,function onLoad(err) {
       if (err) return logger.warn(err);
       // loads current league data then syncs with ItIsWhatItIs sheet stats
