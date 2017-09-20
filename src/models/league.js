@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
     config = require('../config/index.js'),
     logger = config.logger,
     async = require('async'),
+    Season = require('../models/season.js'),
     _ = require('underscore');
 
 var options = { discriminatorKey: 'kind' };
@@ -12,7 +13,7 @@ var options = { discriminatorKey: 'kind' };
 var leagueSchema = new Schema({
   name: { type: String, default: '' },
   division: { type: String, default: '' },
-  seasons: { type: Array, default: [] },
+  seasons: { type: Array },
   players: { type: Array },
   teams: { type: Array },
   locations: { type: Array, default: [] },
@@ -24,8 +25,8 @@ leagueSchema.pre('save', function(next) {
   logger.debug('league saved: %s',this.name);
 
   if (!this.seasons) {
-    logger.debug('league- no seasons found')
-    return next();
+    logger.debug('league- no seasons found');
+    this.seasons = [new Season()];
   }
   if (!this.teams) {
     logger.debug('league- updating teams');
@@ -55,6 +56,16 @@ leagueSchema.statics.getCurrentSeason = function(callback) {
     callback('no seasons found');
   });
   
+}
+
+leagueSchema.statics.getTeamByName = function(name, callback) {
+  this.find({}, function(err, league) {
+    if (err) logger.warn(err);
+    for (var i=0;i<league.teams.length;i++)
+      if (league.teams[i].name.toLowerCase()==name.toLowerCase())
+        return callback(null, league.teams[i]);
+    callback('No Team by that name: '+name);
+  });
 }
 
 
