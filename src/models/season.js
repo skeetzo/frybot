@@ -37,12 +37,12 @@ seasonSchema.pre('save', function(next) {
       this.label = 'Winter Season '+year;
   }
 
-  if (!end) {
-    end = moment(this.date.start);
-    if (end.month()==0||end.month()>=8)
-      end.weeks(end.weeks()+16);
-    else if (end>=4)
-      end.weeks(end.weeks()+11);
+  if (!this.date.end) {
+    this.date.end = moment(this.date.start);
+    if (this.date.end.month()==0||this.date.end.month()>=8)
+      this.date.end.weeks(this.date.end.weeks()+16);
+    else if (this.date.end>=4)
+      this.date.end.weeks(this.date.end.weeks()+11);
   }
 
   if (this.isModified('matchups')) 
