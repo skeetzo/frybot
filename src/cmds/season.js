@@ -35,12 +35,15 @@ module.exports = function season(data) {
   this.commands.season.fresh = fresh;
 
   function pregame() {   
-    var maybes = ['bitch niggas','meatbags','homos','losers','dolts','morons','dirtbags','noobs','scrubs','ladies'];
-    self.say('It\'s League night '+maybes[Math.floor(Math.random()*maybes.length)]+'!');
-    self.say('Playing @ '+self.league.getCurrentSeason().getTodaysMatchup().location);
-    self.commands.bottle.call(self,{argument:'next'});
-    self.commands.bottle.call(self,{argument:'duty'});
-    self.commands.scores.call(self,{argument:'lvp'});
+    League.getCurrentSeason(function(err, season) {
+      if (err) logger.warn(err);      
+      var maybes = ['bitch niggas','meatbags','homos','losers','dolts','morons','dirtbags','noobs','scrubs','ladies'];
+      self.say('It\'s League night '+maybes[Math.floor(Math.random()*maybes.length)]+'!');
+      self.say('Playing @ '+season.getTodaysMatchup().location);
+      self.commands.bottle.call(self,{argument:'next'});
+      self.commands.bottle.call(self,{argument:'duty'});
+      self.commands.scores.call(self,{argument:'lvp'});
+    });
   }
   this.commands.season.pregame = pregame;
 

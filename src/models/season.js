@@ -25,22 +25,24 @@ var seasonSchema = new Schema({
 
 seasonSchema.pre('save', function(next) {
   logger.debug('season saved: %s',this.label);
-
+  var date = moment(this.date.start),
+      month = date.month(),
+      year = date.year();
   if (!this.label) {
-    if (this.date.start.month()<3)
-      this.label = 'Spring Season '+this.date.start.year();
-    else if (this.date.start.month()<6)
-      this.label = 'Summer Season '+this.date.start.year();
+    if (month<3)
+      this.label = 'Spring Season '+year;
+    else if (month<6)
+      this.label = 'Summer Season '+year;
     else
-      this.label = 'Winter Season '+this.date.start.year();
+      this.label = 'Winter Season '+year;
   }
 
-  if (!this.date.end) {
-    this.date.end = moment(this.date.start);
-    if (this.date.end.month()==0||this.date.end.month()>=8)
-      this.date.end.weeks(this.date.end.weeks()+16);
-    else if (this.date.end.month()>=4)
-      this.date.end.weeks(this.date.end.weeks()+11);
+  if (!end) {
+    end = moment(this.date.start);
+    if (end.month()==0||end.month()>=8)
+      end.weeks(end.weeks()+16);
+    else if (end>=4)
+      end.weeks(end.weeks()+11);
   }
 
   if (this.isModified('matchups')) 
