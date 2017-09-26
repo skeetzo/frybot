@@ -1,6 +1,7 @@
 var _ = require('underscore'),
     config = require('../config/index'),
     Season = require('../models/season'),
+    Schedule = require('../models/schedule'),
     logger = config.logger;
 
 // season stuff
@@ -36,11 +37,11 @@ module.exports = function season(data) {
   this.commands.season.fresh = fresh;
 
   function pregame() {   
-    Season.getTodaysMatchup(function(err, matchup) {
+    Schedule.getTodaysLocation(function(err, location) {
       if (err) return logger.warn(err);      
       var maybes = ['bitch niggas','meatbags','homos','losers','dolts','morons','dirtbags','noobs','scrubs','ladies'];
       self.say('It\'s League night '+maybes[Math.floor(Math.random()*maybes.length)]+'!');
-      self.say('Playing @ '+matchup.location);
+      self.say('Playing @ '+location);
       self.commands.bottle.call(self,{argument:'next'});
       self.commands.bottle.call(self,{argument:'duty'});
       self.commands.scores.call(self,{argument:'lvp'});

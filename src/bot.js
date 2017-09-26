@@ -96,10 +96,25 @@ bot.prototype = {
       function(season, next) {
         if (season.schedule) return next(null, season);
         logger.log('Configuring Season Schedule');
-        season.schedule = new Schedule({'label':season.label});
-        season.schedule.save(function(err) {
+        Sheets.loadSchedule(function(err, schedule) {
           if (err) logger.warn(err);
-          next(null, season);
+          var finished;
+          season.schedule = new Schedule({'label':season.label});
+          _.forEach(schedule,function (week) {
+            Matchup.findOneAndUpdate({'date':week.matchDate},week,{'upsert':true,'new':true}, function (err, matchup) {
+              if (err) logger.warn(err);
+              logger.log('Matchup Prepped: %s',matchup.date)
+              season.schedule.matchups.push(matchup);
+              clearTimeout(finished);
+              finished = setTimeout(finish,3000);
+            });
+          });
+          var finish = function() {
+            season.schedule.save(function(err) {
+              if (err) logger.warn(err);
+              next(null, season);
+            });
+          }
         });
       },
       function(season, next) {

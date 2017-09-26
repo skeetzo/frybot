@@ -54,6 +54,18 @@ scheduleSchema.methods.getPlayersByNames = function() {
   return playersTemp;
 };
 
+scheduleSchema.statics.getTodaysLocation = function(callback) {
+  this.findOne({},function(err, schedule) {
+    if (err) logger.warn(err);
+    var date = moment(new Date()).format('MM/DD/YYYY');
+    if (schedule.matchups.length==0) return logger.log('Missing Matchups');
+    for (var i=0;i<schedule.matchups.length;i++)
+      if (schedule.matchups[i].date==date)
+        return callback(null,schedule.matchups[i].location);
+    return callback('Missing Matchup');
+  })
+}
+
 scheduleSchema.methods.loadCurrentSchedule = function(callback) {
   var self = this;
   logger.debug('loading current schedule');
