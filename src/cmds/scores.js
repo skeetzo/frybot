@@ -2,6 +2,7 @@ var _ = require('underscore'),
     config = require('../config/index'),
     logger = config.logger,
     Season = require('../models/season'),
+    Match = require('../models/match'),
     Sheets = require('../mods/sheets');
 
 /**
@@ -188,7 +189,8 @@ module.exports = function scores(data) {
       Season.getCurrentSeason(function(err, season) {
         if (err) return logger.warn(err);
         season.resetPlayers();
-        season.updateMatchups(matchups);
+        // season.updateMatchups(matchups);
+        Match.sync(matchups);
         if (modifiers&&modifiers.quietly)
           logger.log('Season scores updated quietly');
         else if (modifiers&&modifiers.think)

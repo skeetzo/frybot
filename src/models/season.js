@@ -143,29 +143,43 @@ seasonSchema.methods.resetPlayers = function() {
 /*
   Updates match data from a provided array of matches
 */
-seasonSchema.methods.updateMatchups = function(matchups) {
-  // matchups is an array of arrays of 1-5 matches
-  for (i=0;i<this.matchups.length&&i<matchups.length;i++) 
-    for (j=0;j<matchups.length;j++) {
-      // console.log(this.matchups[i].date+' vs '+matchups[j][0].matchDate);
-      if (this.matchups[i].date===matchups[j][0].matchDate) {
-        // console.log('match found: '+this.matchups[i].date+' vs '+matchups[j][0].matchDate);
-        this.matchups[i].updateMatches(matchups[j]);
-        break;
-      }
-    }
-  // update players from new matchup data
-  var players = [];
-  _.forEach(this.teams, function (team) {
-    _.forEach(team.players, function (player) {
-      players.push(player);
-    });
-  });
-  for (p=0;p<players.length;p++)
-    for (i=0;i<matchups.length;i++)
-      for (j=0;j<matchups[i].length;j++)
-        if (matchups[i][j].name===players[p].name) 
-          players[p].addMatch(matchups[i][j]);
+seasonSchema.methods.updateMatchups = function(newMatchups) {
+  var self = this;
+
+  // for (var i=0;i<newMatchups.length;i++) {
+  //   Matchup.findOneAndUpdate({'date':newMatchups[i].matchDate},newMatchups[i],{'upsert':true},function(err) {
+  //     if (err) logger.warn(err);
+  //   });
+  // }
+
+
+
+  // Matchup.find({'_id':{'$in':self.matchups}},function(err, matchups) {
+  //   if (err) logger.warn(err);
+  //   // matchups is an array of arrays of 1-5 matches
+  //   for (i=0;i<matchups.length;i++) 
+  //     for (j=0;j<newMatchups.length;j++) {
+  //       // console.log(this.matchups[i].date+' vs '+matchups[j][0].matchDate);
+  //       if (matchups[i].date===newMatchups[j].matchDate) {
+  //         // console.log('match found: '+this.matchups[i].date+' vs '+matchups[j][0].matchDate);
+  //         matchups[i].updateMatches(newMatchups[j]);
+  //         break;
+  //       }
+  //     }
+  //   // update players from new matchup data
+  //   var players = [];
+  //   _.forEach(this.teams, function (team) {
+  //     _.forEach(team.players, function (player) {
+  //       players.push(player);
+  //     });
+  //   });
+  //   for (p=0;p<players.length;p++)
+  //     for (i=0;i<matchups.length;i++)
+  //       for (j=0;j<matchups[i].length;j++)
+  //         if (matchups[i][j].name===players[p].name) 
+  //           players[p].addMatch(matchups[i][j]);  
+  // });
+  
 }
 
 var Season = mongoose.model('seasons', seasonSchema,'seasons');

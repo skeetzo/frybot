@@ -47,6 +47,14 @@ matchSchema.pre('save', function(next) {
 });
 
 // Statics
+matchSchema.statics.sync = function(matches) {
+  var self = this;
+  _.forEach(matches, function (match) {
+    self.findOneAndUpdate({'date':match.matchDate,'playerOne':match.name},match,{'upsert':true},function (err) {
+      if (err) logger.warn(err);
+    });
+  });
+}
 // Methods
 /*
   Compares score to determine winner

@@ -25,5 +25,18 @@ matchUpSchema.pre('save', function(next) {
   next();
 });
 
+matchUpSchema.method.updateMatches = function(matches, callback) {
+  var self = this;
+  for (var i=0;i<self.matches.length;i++) 
+    for (var j=0;j<matches.length;j++) {
+    if (self.matches[i].playerOne==matches[j].name||self.matches[i].playerTwo==matches[j].name) {
+      self.matches[i].playerOnePointsEarned = matches[j].pointsEarned;
+      self.matches[i].playerOnePointsGiven = matches[j].pointsGiven;
+      self.matches[i].playerOnePointsEarned = matches[j].pointsEarned;
+
+    }
+  }
+}
+
 var Matchup = mongoose.model('matchups', matchUpSchema,'matchups');
 module.exports = Matchup;
