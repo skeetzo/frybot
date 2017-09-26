@@ -96,7 +96,6 @@ bot.prototype = {
         })
       },
       function(season, next) {
-        // taco
         if (season.schedule) return next(null, season);
         logger.log('Configuring Season Schedule');
         Sheets.loadSchedule(function(err, schedule) {
