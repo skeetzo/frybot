@@ -75,7 +75,7 @@ bot.prototype = {
     if (!this.commands) return console.log("Error- missing critical Commands module");  
 
     // loads current season data then syncs with ItIsWhatItIs sheet stats
-    async.series([
+    async.waterfall([
       function(next) {
         logger.debug('Configuring Teams');
         Team.findOne({'name':config.homeTeam},function (err, team) {
@@ -94,7 +94,7 @@ bot.prototype = {
         team.save(function (err) {
           if (err) logger.warn(err);
           logger.log('Home Team: %s',team.name);
-          next();
+          next(null);
         });
       },
       function(next) {
