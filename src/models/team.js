@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
     logger = config.logger,
     async = require('async'),
     Sheets = require('../mods/sheets.js'),
+    Player = require('../models/player.js'),
     _ = require('underscore');
 
 var options = { discriminatorKey: 'kind' };
