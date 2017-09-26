@@ -158,17 +158,16 @@ module.exports.updateScores = function(callback) {
         if (err) return callback(err);
         // header pickoff
         // var once = true;
-        logger.log('rows: %s',JSON.stringify(rows,null,4));
-        var keys = '{"name":"","pointsEarned":"","pointsGiven":"","matchNumber":"","matchDate":""}';
+        // logger.log('rows: %s',JSON.stringify(rows,null,4));
         var matches = [];
         _.forEach(rows, function(row) {
-            var match = JSON.parse(keys);
-            match.name = row[1];
-            match.pointsEarned = row[2];
-            match.pointsGiven = row[3];
-            match.matchNumber = row[4];
-            lastMatchNum_ = row[4]; // laziness
-            match.matchDate = row[5];
+            var match = {};
+            match.name = row.player;
+            match.pointsEarned = row.pointsearned;
+            match.pointsGiven = row.pointsgiven;
+            match.matchNumber = row.match;
+            lastMatchNum_ = row.match; // laziness
+            match.matchDate = row.matchdate;
             match.players = [
               match.name,
               'Player Two' // todo: update when recording opponent names

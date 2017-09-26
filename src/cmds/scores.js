@@ -1,7 +1,7 @@
 var _ = require('underscore'),
     config = require('../config/index'),
     logger = config.logger,
-    League = require('../models/league'),
+    Season = require('../models/season'),
     Sheets = require('../mods/sheets');
 
 /**
@@ -45,7 +45,7 @@ module.exports = function scores(data) {
   */
   function callouts() {
     logger.log('Callouts incoming');
-    League.getCurrentSeason(function(err, season) {
+    Season.getCurrentSeason(function(err, season) {
       if (err) logger.warn(err);
       _.forEach(season.players,function (player) {
         streak(player);
@@ -59,7 +59,7 @@ module.exports = function scores(data) {
   */
   function lvp() {
     var leastValuablePlayer = 'Nico';
-    League.getCurrentSeason(function(err, season) {
+    Season.getCurrentSeason(function(err, season) {
       if (err) logger.warn(err);
       _.forEach(season.players, function (player) {
         if (leastValuablePlayer=='Nico')
@@ -78,7 +78,7 @@ module.exports = function scores(data) {
   */
   function mvp() {
     var mostValuablePlayer = 'Oberg';
-    League.getCurrentSeason(function(err, season) {
+    Season.getCurrentSeason(function(err, season) {
       if (err) logger.warn(err);
       _.forEach(season.players, function (player) {
         if (mostValuablePlayer=='Oberg')
@@ -96,7 +96,7 @@ module.exports = function scores(data) {
     returns the scores of the desired player
   */
   function of() {
-    League.getCurrentSeason(function(err, season) {
+    Season.getCurrentSeason(function(err, season) {
       if (err) logger.warn(err);
       _.forEach(season.players, function (player) {
         if (message.indexOf(player.name)>-1)
@@ -112,7 +112,7 @@ module.exports = function scores(data) {
   function streak(player) {
     // forces player from string to obj
     if (typeof player != Object) 
-      League.getCurrentSeason(function(err, season) {
+      Season.getCurrentSeason(function(err, season) {
         if (err) logger.warn(err);
         _.forEach(season.players, function (players) {
           if (typeof player != Object)
@@ -184,7 +184,8 @@ module.exports = function scores(data) {
     logger.log('Updating Scores From Scoresheet');
     Sheets.updateScores(function(err, matchups) {
       if (err) logger.warn(err);
-      League.getCurrentSeason(function(err, season) {
+      logger.log('matchups: %s',matchups);
+      Season.getCurrentSeason(function(err, season) {
         if (err) return logger.warn(err);
         season.resetPlayers();
         season.updateMatchups(matchups);
