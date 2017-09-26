@@ -5,7 +5,7 @@ var colors = require("colors"),
     config = require('./config/index'),
     logger = config.logger,
     Player = require('./models/player'),
-    League = require('./models/league'),
+    Season = require('./models/season'),
     Team = require('./models/team'),
     Sheets = require('./mods/sheets'),
     async = require('async'),
@@ -69,67 +69,32 @@ bot.prototype = {
 
     // Core
     require('./core/index.js').load.call(this);
-    // Mods
-    require('./mods/index.js').load.call(this);
     // Cmds
     require('./cmds/index.js').load.call(this);
 
     if (!this.commands) return console.log("Error- missing critical Commands module");  
 
-
-    // load active league
-    // self.commands.loadLeague.call(self,function onLoad(err) {
-      // if (err) return logger.warn(err);
-      // loads current league data then syncs with ItIsWhatItIs sheet stats
+    // loads current season data then syncs with ItIsWhatItIs sheet stats
     async.series([
-      function loadLeague(next) {
-        League.findOne({},function(err, league) {
-          if (err) logger.warn(err);
-          if (!league) {
-            logger.log('League Missing: Creating New');
-            league = new League();
-            league.save(function(err) {
-              if (err) logger.warn(err);
-              next();
-            });
-          }
-          else next();
+      function(next) {
+        logger.debug('Configuring Teams');
+        Team.findOne({'name':config.homeTeam},function (err, team) {
+          if (err) return next(err);
+          // home team found
+          if (team) return next(null, team);
+          // if missing home team
+          Team.addHome(config.homeTeam, function(err, team) {
+            if (err) return next(err);
+            next(null, team);
+          });
         });
       },
-      function(next) {
-        logger.debug('League Loaded');
-        League.getTeamByName(config.homeTeam,function (err, team) {
-          if (err) {
-            logger.warn(err);
-            logger.debug('adding home team: %s',config.homeTeam);
-            Team.findOne({'name':config.homeTeam},function (err, team) {
-              if (err) logger.warn(err);
-              if (team)
-                self.team = team;
-              else
-                self.team = new Team({'name':config.homeTeam});
-              Sheets.getCurrentPlayers(function (err, players) {
-                if (err) logger.warn(err);
-                _.forEach(players, function (player) {
-                  player.team = self.team;
-                  player = new Player(player);
-                  player.save(function(err) {
-                    if (err) logger.warn(err);
-                  });
-                  self.team.players.push(player);
-                });
-                self.team.save(function (err) {
-                  if (err) logger.warn(err);
-                  logger.debug('current team updated');
-                  next();
-                });
-              });
-            });
-          }
-          else {
-            self.team = team;
-            next();
-          }
+      function(team, next) {
+        team.home = true;
+        team.save(function (err) {
+          if (err) logger.warn(err);
+          logger.log('Home Team: %s',team.name);
+          next();
         });
       },
       function(next) {
@@ -142,7 +107,9 @@ bot.prototype = {
           });
         if (config.testing) setTimeout(function() {self.test()},20000);
       }
-    ]);
+    ], function(err) {
+      if (err) logger.warn(err);
+    });
     
 },
 

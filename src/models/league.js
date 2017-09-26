@@ -26,6 +26,7 @@ leagueSchema.pre('save', function(next) {
 
   if (!this.seasons) {
     logger.debug('league- no seasons found');
+
     this.seasons = [new Season()];
   }
   if (!this.teams) {
@@ -56,7 +57,6 @@ leagueSchema.statics.getCurrentSeason = function(callback) {
         return callback(null, league.seasons[i]);
     callback('no seasons found');
   });
-  
 }
 
 leagueSchema.statics.getTeamByName = function(name, callback) {

@@ -1,6 +1,6 @@
 var _ = require('underscore'),
     config = require('../config/index'),
-    League = require('../models/league'),
+    Season = require('../models/season'),
     logger = config.logger;
 
 // season stuff
@@ -27,16 +27,16 @@ module.exports = function season(data) {
 
   function fresh() {
     self.say('Creating New Season: '+message);
-    self.league.fresh({label:message},function(err) {
-      if (err) return err;
+    // self.league.fresh({label:message},function(err) {
+      // if (err) return err;
       self.say("Season Created");  
       // self.commands.saveTeamShitData.call(self);
-    }); 
+    // }); 
   }
   this.commands.season.fresh = fresh;
 
   function pregame() {   
-    League.getCurrentSeason(function(err, season) {
+    Seague.getCurrentSeason(function(err, season) {
       if (err) logger.warn(err);      
       var maybes = ['bitch niggas','meatbags','homos','losers','dolts','morons','dirtbags','noobs','scrubs','ladies'];
       self.say('It\'s League night '+maybes[Math.floor(Math.random()*maybes.length)]+'!');

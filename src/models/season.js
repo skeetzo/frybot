@@ -94,6 +94,14 @@ seasonSchema.pre('save', function(next) {
   // ]); 
 // });
 
+seasonSchema.statics.getCurrentSeason = function(callback) {
+  this.findOne({'active':true}, function(err, season) {
+    if (err) logger.warn(err);
+    if (season) return callback(null, season);
+    callback('no active season found');
+  });
+}
+
 /*
   Returns players names
 */

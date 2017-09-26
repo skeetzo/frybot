@@ -185,7 +185,7 @@ module.exports = function scores(data) {
     Sheets.updateScores(function(err, matchups) {
       if (err) logger.warn(err);
       League.getCurrentSeason(function(err, season) {
-        if (err) logger.warn(err);
+        if (err) return logger.warn(err);
         season.resetPlayers();
         season.updateMatchups(matchups);
         if (modifiers&&modifiers.quietly)
