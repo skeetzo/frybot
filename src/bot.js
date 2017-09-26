@@ -94,7 +94,7 @@ bot.prototype = {
           else next();
         });
       },
-      function(league, next) {
+      function(next) {
         logger.debug('League Loaded');
         League.getTeamByName(config.homeTeam,function (err, team) {
           if (err) {
@@ -138,7 +138,8 @@ bot.prototype = {
             if (err) return logger.warn(err);
           });
         if (config.testing) setTimeout(function() {self.test()},20000);
-      }]);
+      }
+    ]);
     
 },
 
