@@ -82,7 +82,7 @@ bot.prototype = {
         Season.getCurrentSeason(function(err, season) {
           if (err) logger.warn(err);
           if (!season) {
-            logger.warn('Configuring New Season');
+            logger.log('Configuring New Season');
             season = new Season({'active':true})
             season.save(function(err) {
               if (err) logger.warn(err);
@@ -94,7 +94,15 @@ bot.prototype = {
         })
       },
       function(season, next) {
-        logger.debug('Configuring Teams');
+        if (season.schedule) return next(null);
+        logger.log('Configuring Season Schedule');
+        season.schedule = new Schedule({'label':season.label});
+        season.schedule.save(function(err) {
+          if (err) logger.warn(err);
+        });
+      },
+      function(season, next) {
+        logger.log('Configuring Teams');
         Team.findOne({'name':config.homeTeam},function (err, team) {
           if (err) return next(err);
           // home team found

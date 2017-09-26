@@ -50,6 +50,7 @@ matchSchema.pre('save', function(next) {
 matchSchema.statics.sync = function(matches) {
   var self = this;
   _.forEach(matches, function (match) {
+    logger.log('match: %s on %s',match.matchDate,match.name)
     self.findOneAndUpdate({'matchDate':match.matchDate,'playerOne':match.name},match,{'upsert':true},function (err) {
       if (err) logger.warn(err);
     });
