@@ -35,14 +35,14 @@ module.exports.loadSchedule = function(callback) {
         var weeks = [];
         // Reads 'references' sheet for existing Players and Matchup Schedule
         _.forEach(rows, function(cols) {
-          logger.log('row: %s',JSON.stringify(cols,null,4));
-          if (cols[3])
+          // logger.log('row: %s',JSON.stringify(cols,null,4));
+          if (cols.date)
             weeks.push(
               {
-                date: cols[4],
+                date: cols.date,
                 teamOne: config.homeTeam,
-                teamTwo: cols[5],
-                location: cols[7]
+                teamTwo: cols.opponent,
+                location: cols.location
               }
             );
         });

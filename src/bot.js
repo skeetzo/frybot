@@ -100,7 +100,7 @@ bot.prototype = {
         logger.log('Configuring Season Schedule');
         Sheets.loadSchedule(function(err, schedule) {
           if (err) logger.warn(err);
-          var finished;
+          var finished = setTimeout(finish,3000);
           season.schedule = new Schedule({'label':season.label});
           _.forEach(schedule,function (week) {
             Matchup.findOneAndUpdate({'date':week.matchDate},week,{'upsert':true,'new':true}, function (err, matchup) {
