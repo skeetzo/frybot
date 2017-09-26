@@ -94,11 +94,12 @@ bot.prototype = {
         })
       },
       function(season, next) {
-        if (season.schedule) return next(null);
+        if (season.schedule) return next(null, season);
         logger.log('Configuring Season Schedule');
         season.schedule = new Schedule({'label':season.label});
         season.schedule.save(function(err) {
           if (err) logger.warn(err);
+          next(null, season);
         });
       },
       function(season, next) {
