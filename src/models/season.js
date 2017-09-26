@@ -24,7 +24,6 @@ var seasonSchema = new Schema({
 },options);
 
 seasonSchema.pre('save', function(next) {
-  logger.debug('season saved: %s',this.label);
   var date = moment(this.date.start),
       month = date.month(),
       year = date.year();
@@ -39,10 +38,10 @@ seasonSchema.pre('save', function(next) {
 
   if (!this.date.end) {
     this.date.end = moment(this.date.start);
-    if (this.date.end.month()==0||this.date.end.month()>=8)
-      this.date.end.weeks(this.date.end.weeks()+16);
+    if (this.date.end.month==0||this.date.end.month>=8)
+      this.date.end.weeks(this.date.end.weeks+16);
     else if (this.date.end>=4)
-      this.date.end.weeks(this.date.end.weeks()+11);
+      this.date.end.weeks(this.date.end.weeks+11);
   }
 
   if (this.isModified('matchups')) 
@@ -51,7 +50,7 @@ seasonSchema.pre('save', function(next) {
       this.matchups.push(matchup);
       logger.log('MatchUp ('+matchup.matchNum+'/'+this.schedule.length+') Loaded');
     }
-
+  logger.debug('season saved: %s',this.label);
   next();
 });
 
