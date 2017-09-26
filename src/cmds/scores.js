@@ -3,6 +3,7 @@ var _ = require('underscore'),
     logger = config.logger,
     Season = require('../models/season'),
     Match = require('../models/match'),
+    Player = require('../models/player'),
     Sheets = require('../mods/sheets');
 
 /**
@@ -59,11 +60,11 @@ module.exports = function scores(data) {
     calls out the lowest valuable player
   */
   function lvp() {
-    var leastValuablePlayer = 'Nico';
     Season.getCurrentSeason(function(err, season) {
       if (err) logger.warn(err);
+      var leastValuablePlayer;
       _.forEach(season.players, function (player) {
-        if (leastValuablePlayer=='Nico')
+        if (!leastValuablePlayer)
           leastValuablePlayer = new Player(player);
         else if (player.mvp<leastValuablePlayer.mvp)
           leastValuablePlayer = new Player(player);
@@ -78,11 +79,11 @@ module.exports = function scores(data) {
     calls out the most valuable player
   */
   function mvp() {
-    var mostValuablePlayer = 'Oberg';
     Season.getCurrentSeason(function(err, season) {
       if (err) logger.warn(err);
+      var mostValuablePlayer;
       _.forEach(season.players, function (player) {
-        if (mostValuablePlayer=='Oberg')
+        if (!mostValuablePlayer)
           mostValuablePlayer = new Player(player);
         else if (player.mvp>mostValuablePlayer.mvp)
           mostValuablePlayer = new Player(player);
