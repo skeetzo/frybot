@@ -19,7 +19,7 @@ var seasonSchema = new Schema({
     start: { type: Date, default: moment().format('MM/DD/YYYY') },
     end: { type: Date },
   },
-  schedule: { type: Schema.Types.ObjectId, ref: 'schedule', default: new Schedule() },
+  schedule: { type: Schema.Types.ObjectId, ref: 'schedule' },
   matchups: { type: Array, default: [] },
   active: { type: Boolean, default: false },
 },options);
