@@ -61,8 +61,8 @@ scheduleSchema.statics.getTodaysLocation = function(callback) {
     logger.log('date: %s',date);
     if (schedule.matchups.length==0) return logger.log('Missing Matchups');
     for (var i=0;i<schedule.matchups.length;i++) {
-      logger.log('matchup: %s',JSON.stringify(schedule.matchups[i],null,4));
-      if (schedule.matchups[i].date==date)
+      // logger.log('matchup: %s',JSON.stringify(schedule.matchups[i],null,4));
+      if (moment(new Date(schedule.matchups[i].date)).format('MM/DD/YYYY')==date)
         return callback(null,schedule.matchups[i].location);
     }
     return callback('Missing Matchup');
