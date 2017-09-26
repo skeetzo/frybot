@@ -135,7 +135,7 @@ seasonSchema.methods.getPlayersByNames = function() {
 */
 seasonSchema.statics.getTodaysMatchup = function(callback) {
   var today = moment(new Date()).format('MM/DD/YYYY');
-  today.add(1,'day');
+  today.date = today.date++;
   this.findOne({'date.start':today},function(err, matchup) {
     if (err) return callback(err);
     if (!matchup) return callback('Missing Matchup');
