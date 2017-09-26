@@ -79,24 +79,42 @@ bot.prototype = {
     // loads current season data then syncs with ItIsWhatItIs sheet stats
     async.waterfall([
       function(next) {
+        Season.getCurrentSeason(function(err, season) {
+          if (err) logger.warn(err);
+          if (!season) {
+            logger.warn('Configuring New Season');
+            season = new Season({'active':true})
+            season.save(function(err) {
+              if (err) logger.warn(err);
+              next(null, season);
+            });
+          }
+          else
+            next(null, season);
+        })
+      },
+      function(season, next) {
         logger.debug('Configuring Teams');
         Team.findOne({'name':config.homeTeam},function (err, team) {
           if (err) return next(err);
           // home team found
-          if (team) return next(null, team);
+          if (team) return next(null, season, team);
           // if missing home team
           Team.addHome(config.homeTeam, function(err, team) {
             if (err) return next(err);
-            next(null, team);
+            next(null, season, team);
           });
         });
       },
-      function(team, next) {
+      function(season, team, next) {
         team.home = true;
         team.save(function (err) {
           if (err) logger.warn(err);
           logger.log('Home Team: %s',team.name);
-          next(null);
+          season.addTeam(team, function(err) {
+            if (err) logger.warn(err);
+            next(null);
+          });
         });
       },
       function(next) {
