@@ -31,7 +31,7 @@ module.exports = function() {
 
     // Mongo
     this.MONGODB_URI = localConfig.MONGODB_URI || process.env.MONGODB_URI;
-    if (process.env.NODE_ENV!='production') this.MONGODB_URI = localConfig.MONGODB_URI_dev;
+    if (process.env.NODE_ENV==='local') this.MONGODB_URI = localConfig.MONGODB_URI_dev;
 
     // Twitter
     this.Twitter_access_token = localConfig.Twitter_access_token || process.env.Twitter_access_token;
