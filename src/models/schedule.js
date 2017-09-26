@@ -58,10 +58,13 @@ scheduleSchema.statics.getTodaysLocation = function(callback) {
   this.findOne({},function(err, schedule) {
     if (err) logger.warn(err);
     var date = moment(new Date()).format('MM/DD/YYYY');
+    logger.log('date: %s',date);
     if (schedule.matchups.length==0) return logger.log('Missing Matchups');
-    for (var i=0;i<schedule.matchups.length;i++)
+    for (var i=0;i<schedule.matchups.length;i++) {
+      logger.log('matchup: %s',JSON.stringify(schedule.matchups[i],null,4));
       if (schedule.matchups[i].date==date)
         return callback(null,schedule.matchups[i].location);
+    }
     return callback('Missing Matchup');
   })
 }
