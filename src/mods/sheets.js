@@ -158,7 +158,7 @@ module.exports.updateScores = function(callback) {
         if (err) return callback(err);
         // header pickoff
         // var once = true;
-        logger.log('rows: %s',rows);
+        logger.log('rows: %s',JSON.stringify(rows,null,4));
         var keys = '{"name":"","pointsEarned":"","pointsGiven":"","matchNumber":"","matchDate":""}';
         var matches = [];
         _.forEach(rows, function(row) {

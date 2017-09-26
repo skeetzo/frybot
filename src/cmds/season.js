@@ -36,7 +36,7 @@ module.exports = function season(data) {
   this.commands.season.fresh = fresh;
 
   function pregame() {   
-    Seague.getCurrentSeason(function(err, season) {
+    Season.getCurrentSeason(function(err, season) {
       if (err) logger.warn(err);      
       var maybes = ['bitch niggas','meatbags','homos','losers','dolts','morons','dirtbags','noobs','scrubs','ladies'];
       self.say('It\'s League night '+maybes[Math.floor(Math.random()*maybes.length)]+'!');
