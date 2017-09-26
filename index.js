@@ -29,3 +29,9 @@ var port = Number(config.port);
 app.listen(port, function () {
   console.log('App listening on port %s',port);
 });
+
+// Sleep Delay
+setInterval(function() {
+    http.get("http://"+config.botName+".herokuapp.com");
+    console.log('*boing*');
+}, 600000); // every 10 minutes
