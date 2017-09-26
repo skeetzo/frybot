@@ -42,7 +42,6 @@ module.exports = function season(data) {
       var maybes = ['bitch niggas','meatbags','homos','losers','dolts','morons','dirtbags','noobs','scrubs','ladies'];
       self.say('It\'s League night '+maybes[Math.floor(Math.random()*maybes.length)]+'!');
       self.say('Playing @ '+location);
-      self.commands.bottle.call(self,{argument:'next'});
       self.commands.bottle.call(self,{argument:'duty'});
       self.commands.scores.call(self,{argument:'lvp'});
     });

@@ -64,7 +64,7 @@ module.exports = function scores(data) {
       if (err) logger.warn(err);
       _.forEach(season.players, function (player) {
         if (leastValuablePlayer=='Nico')
-          leastValuablePlayer = player;
+          leastValuablePlayer = new Player(player);
         else if (player.mvp<leastValuablePlayer.mvp)
           leastValuablePlayer = player;
       });
@@ -83,7 +83,7 @@ module.exports = function scores(data) {
       if (err) logger.warn(err);
       _.forEach(season.players, function (player) {
         if (mostValuablePlayer=='Oberg')
-          mostValuablePlayer = player;
+          mostValuablePlayer = new Player(player);
         else if (player.mvp>mostValuablePlayer.mvp)
           mostValuablePlayer = player;
       });
