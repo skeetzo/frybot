@@ -191,7 +191,7 @@ module.exports = function scores(data) {
       if (err) logger.warn(err);
       Season.getCurrentSeason(function(err, season) {
         if (err) return logger.warn(err);
-        season.resetPlayers();
+        // season.resetPlayers();
         // season.updateMatchups(matchups);
         var matches = [];
         for (var i=0;i<matchups.length;i++)
