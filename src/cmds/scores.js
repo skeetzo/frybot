@@ -185,7 +185,6 @@ module.exports = function scores(data) {
     logger.log('Updating Scores From Scoresheet');
     Sheets.updateScores(function(err, matchups) {
       if (err) logger.warn(err);
-      logger.log('matchups: %s',matchups);
       Season.getCurrentSeason(function(err, season) {
         if (err) return logger.warn(err);
         season.resetPlayers();

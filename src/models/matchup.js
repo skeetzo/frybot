@@ -36,6 +36,10 @@ matchUpSchema.method.updateMatches = function(matches, callback) {
 
     }
   }
+  self.save(function(err) {
+    if (err) return callback(err);
+    callback(null);
+  })
 }
 
 var Matchup = mongoose.model('matchups', matchUpSchema,'matchups');

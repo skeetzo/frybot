@@ -105,11 +105,11 @@ seasonSchema.statics.getCurrentSeason = function(callback) {
 
 seasonSchema.methods.addTeam = function(team, callback) {
   if (!_.contains(_.pluck(this.teams,'name'),team.name)) {
-    logger.log('team %s added to %s',this.name,team.name);
+    logger.log('team %s added to %s',team.name,this.label);
     this.teams.push(team);
   }
   else
-    logger.log('team %s already exists in %s',team.name,this.name);
+    logger.log('team %s already exists in %s',team.name,this.label);
   this.save(function(err) {
     if (err) return callback(err);
     callback(null);
