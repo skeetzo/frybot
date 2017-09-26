@@ -175,7 +175,7 @@ module.exports.updateScores = function(callback) {
             // todo: update when recording opponents sl & game scores, default implied
             // match.race = '2:2';
             // match.games = [];
-            logger.debug('match: %s vs %s',players[0],players[1]);
+            logger.debug('match: %s vs %s',match.players[0],match.players[1]);
             matches.push(match);
         });
         var matchups = [];
