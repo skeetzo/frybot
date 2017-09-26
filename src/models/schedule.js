@@ -15,7 +15,7 @@ var options = { discriminatorKey: 'kind' };
 var scheduleSchema = new Schema({
   label: { type: String },
   date: {
-    start: { type: Date, default: moment() },
+    start: { type: Date, default: moment().format('MM/DD/YYYY') },
     end: { type: Date },
   },
   matchups: { type: Array, default: [] },

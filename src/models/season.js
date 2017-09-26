@@ -16,7 +16,7 @@ var seasonSchema = new Schema({
   label: { type: String },
   teams: { type: Array, default: [] },
   date: {
-    start: { type: Date, default: moment() },
+    start: { type: Date, default: moment().format('MM/DD/YYYY') },
     end: { type: Date },
   },
   schedule: { type: Schema.Types.ObjectId, ref: 'schedule', default: new Schedule() },
@@ -133,14 +133,13 @@ seasonSchema.methods.getPlayersByNames = function() {
 /*
   Returns the matchup for this week
 */
-seasonSchema.methods.getTodaysMatchup = function() {
-  var today = new Date();
-  for (i=0;i<this.matchups.length;i++) {
-    var matchDate = new Date(this.matchups[i].date);
-    if (today.getDate()===matchDate.getDate()&&today.getMonth()===matchDate.getMonth())
-      return this.matchups[i];
-  }
-  return this.matchups[0];
+seasonSchema.statics.getTodaysMatchup = function(callback) {
+  var today = moment(new Date()).format('MM/DD/YYYY');
+  this.findOne({'date.start':today},function(err, matchup) {
+    if (err) return callback(err);
+    if (!matchup) return callback('Missing Matchups');
+    return callback(null, matchup);
+  });
 };
 
 /*
