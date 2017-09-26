@@ -35,3 +35,83 @@ Call Stack:
     at emitOne (events.js:115:13)
     at process.emit (events.js:210:7)
     at process._fatalException (bootstrap_node.js:332:26)[39m[22m
+[37m19:07:52.94 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m19:07:52.94 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m19:07:52.94 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m19:07:52.98 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m19:07:53.03 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m19:07:53.03 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m19:07:53.03 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m19:07:53.03 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m19:07:53.03 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m19:07:53.03 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m19:07:53.03 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m19:07:53.04 [34m[33mNaivi[34m: Configuring Teams[39m
+[37m19:10:27.15 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m19:10:27.16 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m19:10:27.16 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m19:10:27.20 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m19:10:27.24 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m19:10:27.24 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m19:10:27.25 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m19:10:27.25 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m19:10:27.25 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m19:10:27.25 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m19:10:27.25 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m19:10:27.25 [34m[33mNaivi[34m: Configuring Teams[39m
+[37m19:11:01.62 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m19:11:01.62 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m19:11:01.62 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m19:11:01.66 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m19:11:01.70 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m19:11:01.70 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m19:11:01.70 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m19:11:01.70 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m19:11:01.71 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m19:11:01.71 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m19:11:01.71 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m19:11:01.71 [34m[33mNaivi[34m: Configuring Teams[39m
+[37m19:12:11.74 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m19:12:11.74 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m19:12:11.74 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m19:12:11.78 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m19:12:11.82 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m19:12:11.82 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m19:12:11.82 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m19:12:11.82 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m19:12:11.82 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m19:12:11.83 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m19:12:11.83 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m19:12:11.83 [34m[33mNaivi[34m: Configuring Teams[39m
+[37m19:14:45.62 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m19:14:45.63 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m19:14:45.63 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m19:14:45.66 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m19:14:45.70 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m19:14:45.71 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m19:14:45.71 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m19:14:45.71 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m19:14:45.71 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m19:14:45.71 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m19:14:45.71 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m19:14:45.71 [34m[33mNaivi[34m: Configuring Teams[39m
+[37m19:15:48.14 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m19:15:48.15 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m19:15:48.15 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m19:15:48.18 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m19:15:48.23 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m19:15:48.23 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m19:15:48.23 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m19:15:48.24 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m19:15:48.24 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m19:15:48.27 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m19:15:48.27 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m19:15:48.27 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m19:15:48.27 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m19:15:48.27 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m19:15:48.28 [34m[33mNaivi[34m: Adding command: suck[39m
+[34m[37m19:15:48.28 [34m[33mNaivi[34m: Configuring Teams[39m
+[34m[37m19:15:48.29 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m19:15:48.29 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m19:15:48.30 [34m[33mNaivi[34m: Mongoose connection error: MongoError: failed to connect to server [undefined:27017] on first connect [MongoError: getaddrinfo ENOTFOUND undefined undefined:27017][39m
+[34m[37m19:16:02.16 [34m[33mNaivi[34m: Mongoose connection disconnected through app termination[39m

@@ -24,11 +24,14 @@ teamSchema.pre('save', function(next) {
 
 teamSchema.statics.addHome = function(name, callback) {
   logger.debug('Adding Home Team: %s',name);
-  var team = new Team({'name':name,'home':true});
-  team.resetPlayersFromSheet(function(err) {
-    if (err) return callback(err);
-    team.save(function(err) {
+  this.findOneAndUpdate({'name':name},{'home':true},{'upsert':true},function(err, team) {
+    if (err) logger.warn(err);
+    team.resetPlayersFromSheet(function(err) {
       if (err) return callback(err);
+      team.save(function(err) {
+        if (err) return callback(err);
+        callback(null, team);
+      });
     });
   });
 }

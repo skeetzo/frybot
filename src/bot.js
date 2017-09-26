@@ -69,6 +69,8 @@ bot.prototype = {
 
     // Core
     require('./core/index.js').load.call(this);
+    // Mods
+    require('./mods/index.js').load.call(this);
     // Cmds
     require('./cmds/index.js').load.call(this);
 
