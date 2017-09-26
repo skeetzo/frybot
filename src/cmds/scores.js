@@ -66,7 +66,7 @@ module.exports = function scores(data) {
         if (leastValuablePlayer=='Nico')
           leastValuablePlayer = new Player(player);
         else if (player.mvp<leastValuablePlayer.mvp)
-          leastValuablePlayer = player;
+          leastValuablePlayer = new Player(player);
       });
       if (modifiers&&modifiers.text) return self.say(modifiers.text+leastValuablePlayer.toStats());
       self.say('Current LVP- '+leastValuablePlayer.toStats());
@@ -85,7 +85,7 @@ module.exports = function scores(data) {
         if (mostValuablePlayer=='Oberg')
           mostValuablePlayer = new Player(player);
         else if (player.mvp>mostValuablePlayer.mvp)
-          mostValuablePlayer = player;
+          mostValuablePlayer = new Player(player);
       });
       if (modifiers&&modifiers.get) return mostValuablePlayer;
       self.say(self,'Current MVP- '+mostValuablePlayer.toStats());
