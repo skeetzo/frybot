@@ -49,7 +49,7 @@ teamSchema.methods.resetPlayersFromSheet = function(callback) {
   Sheets.getCurrentPlayers(function (err, players) {
     if (err) return callback(err);
     _.forEach(players, function (player) {
-      player.team = self.team;
+      player.team = self.name;
       Player.findOneAndUpdate({'name':player.name}, player, {'upsert':true},function(err) {
         if (err) logger.warn(err);
       });

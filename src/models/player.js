@@ -22,7 +22,7 @@ var playerSchema = new Schema({
   sl: { type: Number, default: 3 },
   mvp: { type: Number, default: 0 },
 
-  team: { type: String },
+  team: { type: String, default: '' },
 },options);
 
 playerSchema.pre('save', function(next) {

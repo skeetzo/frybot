@@ -62,6 +62,7 @@ module.exports = function scores(data) {
   function lvp() {
     Player.find({'team':config.homeTeam},function(err, players) {
       if (err) logger.warn(err);
+      if (players.length==0) return logger.warn('Missing Players');
       logger.log('players: %s',JSON.stringify(players,null,4));
       var leastValuablePlayer;
       _.forEach(players, function (player) {
@@ -82,6 +83,7 @@ module.exports = function scores(data) {
   function mvp() {
     Player.find({'team':config.homeTeam},function(err, players) {
       if (err) logger.warn(err);
+      if (players.length==0) return logger.warn('Missing Players');
       var mostValuablePlayer;
       _.forEach(players, function (player) {
         if (!mostValuablePlayer)
