@@ -49,7 +49,7 @@ leagueSchema.pre('save', function(next) {
 
 leagueSchema.statics.getCurrentSeason = function(callback) {
   logger.log('league- getting current season');
-  this.find({}, function(err, league) {
+  this.findOne({}, function(err, league) {
     if (err) logger.warn(err);
     for (var i=0;i<league.seasons.length;i++)
       if (league.seasons[i].active)
@@ -60,7 +60,7 @@ leagueSchema.statics.getCurrentSeason = function(callback) {
 }
 
 leagueSchema.statics.getTeamByName = function(name, callback) {
-  this.find({}, function(err, league) {
+  this.findOne({}, function(err, league) {
     if (err) logger.warn(err);
     for (var i=0;i<league.teams.length;i++)
       if (league.teams[i].name.toLowerCase()==name.toLowerCase())
