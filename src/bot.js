@@ -7,6 +7,7 @@ var colors = require("colors"),
     Player = require('./models/player'),
     Team = require('./models/team'),
     Sheets = require('./mods/sheets'),
+    async = require('async'),
     fs = require('fs');
     
 /**
