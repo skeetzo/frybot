@@ -35,6 +35,7 @@ module.exports.loadSchedule = function(callback) {
         var weeks = [];
         // Reads 'references' sheet for existing Players and Matchup Schedule
         _.forEach(rows, function(cols) {
+          logger.log('row: %s',JSON.stringify(cols,null,4));
           if (cols[3])
             weeks.push(
               {
