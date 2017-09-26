@@ -21,6 +21,7 @@ var seasonSchema = new Schema({
   },
   schedule: { type: Schema.Types.ObjectId, ref: 'schedule', default: new Schedule() },
   matchups: { type: Array, default: [] },
+  active: { type: Boolean, default: false },
 },options);
 
 seasonSchema.pre('save', function(next) {
