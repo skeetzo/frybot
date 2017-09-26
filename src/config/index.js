@@ -14,7 +14,7 @@ config.localSeasonsPath = './dev/seasons.json';
 config.debugging = true;
 config.debugging_League = true;
 
-config.testing = true;
+config.testing = false;
 config.saving = false;
 config.saveOnLoad = false;
 config.localLoad = false;

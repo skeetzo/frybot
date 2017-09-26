@@ -1,6 +1,7 @@
 var _ = require('underscore'),
     config = require('../config/index'),
     BottleDuty = require('../models/bottleduty'),
+    Team = require('../models/team'),
     logger = config.logger;
 
 var bottleDuty = false;
@@ -23,11 +24,14 @@ module.exports = function bottle(data) {
     BottleDuty.findOne({},function (err, bottleDuty_) {
       if (err) logger.warn(err);
       if (!bottleDuty_||bottleDuty_.length==0) {
-        bottleDuty = new BottleDuty({'players':self.team.players});
-        bottleDuty.save(function(err) {
+        Team.findOne({'name':config.homeTeam},function (err, team) {
           if (err) logger.warn(err);
-          process();
-        })
+          bottleDuty = new BottleDuty({'players':team.players});
+          bottleDuty.save(function(err) {
+            if (err) logger.warn(err);
+            process();
+          });
+        });
       } else {
         bottleDuty = bottleDuty_;
         process();

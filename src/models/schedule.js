@@ -25,12 +25,12 @@ var scheduleSchema = new Schema({
 
 scheduleSchema.pre('save', function(next) {
   if (!this.label) {
-    if (this.date.start.month()<3)
-      this.label = 'Spring Season '+this.date.start.year();
-    else if (this.date.start.month()<6)
-      this.label = 'Summer Season '+this.date.start.year();
+    if (this.date.start.month<3)
+      this.label = 'Spring Season '+this.date.start.year;
+    else if (this.date.start.month<6)
+      this.label = 'Summer Season '+this.date.start.year;
     else
-      this.label = 'Winter Season '+this.date.start.year();
+      this.label = 'Winter Season '+this.date.start.year;
   }
   logger.debug('schedule saved: %s',this.label);
   next();

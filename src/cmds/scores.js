@@ -63,7 +63,6 @@ module.exports = function scores(data) {
     Player.find({'team':config.homeTeam},function(err, players) {
       if (err) logger.warn(err);
       if (players.length==0) return logger.warn('Missing Players');
-      logger.log('players: %s',JSON.stringify(players,null,4));
       var leastValuablePlayer;
       _.forEach(players, function (player) {
         if (!leastValuablePlayer)
@@ -191,19 +190,22 @@ module.exports = function scores(data) {
       if (err) logger.warn(err);
       Season.getCurrentSeason(function(err, season) {
         if (err) return logger.warn(err);
-        // season.resetPlayers();
-        // season.updateMatchups(matchups);
-        var matches = [];
-        for (var i=0;i<matchups.length;i++)
-          for (var j=0;j<matchups[i].length;j++)
-            matches.push(matchups[i][j]);
-        Match.sync(matches);
-        if (modifiers&&modifiers.quietly)
-          logger.log('Season scores updated quietly');
-        else if (modifiers&&modifiers.think)
-          self.think('Season scores updated');
-        else
-          self.say('Season scores updated');
+        Player.resetHomeTeam(function (err) {
+          if (err) logger.warn(err);
+          season.updateMatchups(matchups);
+          // var matches = [];
+          // for (var i=0;i<matchups.length;i++)
+          //   for (var j=0;j<matchups[i].length;j++)
+          //     matches.push(matchups[i][j]);
+          // Match.sync(matches);
+          if (modifiers&&modifiers.quietly)
+            logger.log('Season scores updated quietly');
+          else if (modifiers&&modifiers.think)
+            self.think('Season scores updated');
+          else
+            self.say('Season scores updated');
+        });
+        
       });
     });
   }

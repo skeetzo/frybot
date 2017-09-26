@@ -80,26 +80,37 @@ bot.prototype = {
 
     // loads current season data then syncs with ItIsWhatItIs sheet stats
     async.waterfall([
-      function(next) {
-        Season.getCurrentSeason(function(err, season) {
+      function season(next) {
+        Season.getCurrentSeason(function (err, season) {
           if (err) logger.warn(err);
           if (!season) {
             logger.log('Configuring New Season');
             season = new Season({'active':true})
             season.save(function(err) {
-              if (err) logger.warn(err);
+              if (err) {
+                logger.warn(err);
+                return next(null, season);
+              }
               next(null, season);
             });
           }
-          else
+          else {
+            logger.log('Season Loaded: %s',season.label);
             next(null, season);
+          }
         })
       },
-      function(season, next) {
-        if (season.schedule) return next(null, season);
+      function schedule(season, next) {
+        if (season.schedule) {
+          logger.log('Schedule Loaded');
+          return next(null, season);
+        }
         logger.log('Configuring Season Schedule');
         Sheets.loadSchedule(function(err, schedule) {
-          if (err) logger.warn(err);
+          if (err) {
+            logger.warn(err);
+            return next(null);
+          }
           var finish = function() {
             season.schedule.save(function(err) {
               if (err) logger.warn(err);
@@ -117,44 +128,45 @@ bot.prototype = {
               finished = setTimeout(finish,3000);
             });
           });
-          
         });
       },
-      function(season, next) {
+      function teams(season, next) {
         logger.log('Configuring Teams');
         Team.findOne({'name':config.homeTeam},function (err, team) {
-          if (err) return next(err);
+          if (err) {
+            logger.warn(err);
+            return next(null, season);
+          }
           // home team found
-          if (team) return next(null, season, team);
+          if (team) {
+            logger.log('Home Team found: %s', team.name);
+            return next(null, season, team);
+          }
           // if missing home team
-          Team.addHome(config.homeTeam, function(err, team) {
+          Team.addHome(config.homeTeam, function (err, team) {
             if (err) return next(err);
             next(null, season, team);
           });
         });
       },
-      function(season, team, next) {
-        team.home = true;
-        team.save(function (err) {
+      function addHomeTeamIfMissing(season, team, next) {
+        logger.log('Home Team: %s',team.name);
+        season.addTeam(team, function (err) {
           if (err) logger.warn(err);
-          logger.log('Home Team: %s',team.name);
-          season.addTeam(team, function(err) {
-            if (err) logger.warn(err);
-            next(null);
-          });
+          next(null);
         });
       },
-      function(next) {
+      function mods(next) {
         self.activate.call(self,{command:"scores",argument:"boot",name:config.botName});
         if (config.cronjobbing) self.cronjobs.start.call(self);
         else logger.debug('Crons Disabled');
         if (self.twitter)
           self.twitter.connect.call(self,function(err) {
-            if (err) return logger.warn(err);
+            if (err) return next(err);
           });
         if (config.testing) setTimeout(function() {self.test()},20000);
       }
-    ], function(err) {
+    ], function ifError(err) {
       if (err) logger.warn(err);
     });
     

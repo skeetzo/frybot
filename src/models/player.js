@@ -32,13 +32,13 @@ playerSchema.pre('save', function(next) {
 
 // Statics
 // Methods
-playerSchema.methods.addMatch = function(data, callback) {
-  var pointsEarned = data.pointsEarned,
-      pointsGiven = data.pointsGiven,
-      matchDate = data.matchDate,
-      matchNum = data.matchNum,
-      player = this.name,
-      opponent = data.opponent;
+playerSchema.methods.addMatch = function(match, callback) {
+  var pointsEarned = match.pointsEarned,
+      pointsGiven = match.pointsGiven,
+      matchDate = match.matchDate,
+      matchNum = match.matchNum,
+      player = match.name,
+      opponent = match.opponent;
   this.matches.push(new Match({
     'pointsEarned': pointsEarned, 
     'pointsGiven': pointsGiven, 
@@ -54,14 +54,14 @@ playerSchema.methods.addMatch = function(data, callback) {
   else
     this.matchesLost++;
   this.skunkCheck(pointsEarned,pointsGiven);
-  this.mvp = this.pointsEarned/(this.matchesWon+this.matchesLost);
+  this.mvp = this.pointsEarned/(this.matchesWon+this.matchesLost) || 0;
   this.save(function (err) {
-    if (err) logger.warn(err);
-    if (callback) callback(null);
+    if (err) return callback(err);
+    callback(null);
   });
 };
 
-playerSchema.methods.resetStats = function() {
+playerSchema.methods.resetStats = function(callback) {
   logger.debug('resetting player: '+this.name);
   this.matches = []; // [[pointsEarned,pointsGiven,when]]
   this.pointsEarned = 0;
@@ -70,11 +70,12 @@ playerSchema.methods.resetStats = function() {
   this.matchesLost = 0;
   this.skunks = 0;
   this.skunked = 0;
-  this.mvp = (this.pointsEarned/(this.matchesWon+this.matchesLost));
+  this.mvp = (this.pointsEarned/(this.matchesWon+this.matchesLost)) || 0;
   this.skunkCheck();
   this.save(function (err) {
-    if (err) logger.warn(err);
-  })
+    if (err) return callback(err);
+    callback(null);
+  });
 };
 
 playerSchema.methods.skunkCheck = function(earned, given) {
@@ -108,6 +109,33 @@ playerSchema.methods.toStats = function() {
   returned.push(this.skunks);
   returned.push(this.skunked);
   return returned;
+}
+
+playerSchema.statics.findOneAndAddMatch = function(match, callback) {
+  this.findOne({'name':match.name}, function (err, player) {
+    if (err) return callback(err);
+    player.addMatch(match, function (err) {
+      if (err) return callback(err);
+      callback(null, player);
+    });
+  });
+}
+
+playerSchema.statics.resetHomeTeam = function(callback) {
+  this.find({'team':config.homeTeam},function (err, players) {
+    if (err) return callback(err);
+    var finish = function() {
+      callback(null);
+    }
+    var finished = setTimeout(finish,3000);
+    _.forEach(players, function (player) {
+      player.resetStats(function (err) {
+        if (err) logger.warn(err);
+        clearTimeout(finished);
+        finished = setTimeout(finish,3000);
+      });
+    });
+  });
 }
 
 var Player = mongoose.model('players', playerSchema,'players');

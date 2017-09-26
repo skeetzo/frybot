@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
     config = require('../config/index.js'),
     logger = config.logger,
     Location = require('../models/location'),
+    Match = require('../models/match'),
     Team = require('../models/team'),
     _ = require('underscore');
 
@@ -40,6 +41,35 @@ matchUpSchema.method.updateMatches = function(matches, callback) {
     if (err) return callback(err);
     callback(null);
   })
+}
+
+
+matchUpSchema.statics.findOneAndUpdateMatches = function(matches, callback) {
+  this.findOne({'date':matches[0].matchDate}, function (err, matchup) {
+    if (err) return callback(err);
+    if (!matchup) matchup = new Matchup(matchup);
+    var finish = function() {
+      matchup.save(function(err) {
+        if (err) logger.warn(err);
+        callback(null, matchup);
+      });
+    }
+    var finished = setTimeout(finish,3000);
+    _.forEach(matches,function (match) {
+      Match.findOne({'matchDate':match.matchDate,'playerOne':match.players[0]},function (err, match_) {
+        if (err) return logger.warn(err);
+        if (!match_) match_ = new Match({'playerOne':match.players[0],'matchDate':match.matchDate});
+        match_.playerOnePointsEarned = match.pointsEarned;
+        match_.playerOnePointsGiven = match.pointsGiven;
+        match_.save(function(err) {
+          if (err) logger.warn(err);
+          matchup.matches.push(match_);
+          clearTimeout(finished);
+          finished = setTimeout(finish,3000);
+        });
+      });
+    });
+  });
 }
 
 var Matchup = mongoose.model('matchups', matchUpSchema,'matchups');

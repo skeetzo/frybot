@@ -11,8 +11,8 @@ var options = { discriminatorKey: 'kind' };
 // Match Schema
 var matchSchema = new Schema({
   // Players
-  playerOne: { type: String, default: '' },
-  playerTwo: { type: String, default: '' },
+  playerOne: { type: String, default: 'Player One' },
+  playerTwo: { type: String, default: 'Player Two' },
   // Points
   playerOnePointsEarned: { type: Number, default: 0 },
   playerOnePointsGiven: { type: Number, default: 0 },
@@ -30,7 +30,7 @@ var matchSchema = new Schema({
 },options);
 
 matchSchema.pre('save', function(next) {
-  logger.debug('match saved: %s vs %s',this.playerOne.name,this.playerTwo.name);
+  logger.debug('match saved: %s vs %s (%s)',this.playerOne,this.playerTwo,this.matchDate);
 
   if ( this.isModified('playerOne')
     || this.isModified('playerTwo')
@@ -62,7 +62,7 @@ matchSchema.statics.sync = function(matches) {
   Compares score to determine winner
 */
 matchSchema.methods.determineWinner = function() {
-  if (this.playerOne.pointsEarned>this.playerTwo.pointsEarned) {
+  if (this.playerOnePointsEarned>this.playerTwoPointsEarned) {
     this.winner = this.playerOne;
     this.loser = this.playerTwo;
   }
