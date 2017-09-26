@@ -78,7 +78,7 @@ bot.prototype = {
     async.waterfall([
       function(next) {
         logger.debug('Configuring Teams');
-        Team.findOne({'name':config.homeTeam},function (err, team) {
+        Team.find({'name':config.homeTeam},function (err, team) {
           if (err) return next(err);
           logger.log('team: %s',team);
           // home team found
