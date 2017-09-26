@@ -53,7 +53,7 @@ matchSchema.statics.sync = function(matches) {
   _.forEach(matches, function (match) {
     self.findOneAndUpdate({'matchDate':match.matchDate,'playerOne':match.name},match,{'upsert':true,'new':true},function (err, match_) {
       if (err) logger.warn(err);
-      logger.log('synced match: %s on %s',match_.playerOne,match_.matchDate)
+      logger.log('match synced: %s on %s',match_.playerOne,match_.matchDate)
     });
   });
 }
