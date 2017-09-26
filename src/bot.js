@@ -82,7 +82,6 @@ bot.prototype = {
         logger.debug('Configuring Teams');
         Team.findOne({'name':config.homeTeam},function (err, team) {
           if (err) return next(err);
-          logger.log('team: %s',team);
           // home team found
           if (team) return next(null, team);
           // if missing home team

@@ -142,7 +142,7 @@ module.exports.updateScores = function(callback) {
     },
     function getInfoAndWorksheets(step) {
       doc.getInfo(function(err, info) {
-        logger.debug('Loaded sheet: '+info.title);
+        logger.debug('Loading sheet: Current Season Stats');
         for (var i=0;i<info.worksheets.length;i++)
           if (info.worksheets[i].title=='Current Season Stats') 
             sheet = info.worksheets[i];
@@ -158,6 +158,7 @@ module.exports.updateScores = function(callback) {
         if (err) return callback(err);
         // header pickoff
         // var once = true;
+        logger.log('rows: %s',rows);
         var keys = '{"name":"","pointsEarned":"","pointsGiven":"","matchNumber":"","matchDate":""}';
         var matches = [];
         _.forEach(rows, function(row) {
@@ -168,7 +169,6 @@ module.exports.updateScores = function(callback) {
             match.matchNumber = row[4];
             lastMatchNum_ = row[4]; // laziness
             match.matchDate = row[5];
-            logger.debug('match: '+JSON.stringify(match));
             match.players = [
               match.name,
               'Player Two' // todo: update when recording opponent names
@@ -176,6 +176,7 @@ module.exports.updateScores = function(callback) {
             // todo: update when recording opponents sl & game scores, default implied
             // match.race = '2:2';
             // match.games = [];
+            logger.debug('match: '+JSON.stringify(match));
             matches.push(match);
         });
         var matchups = [];
