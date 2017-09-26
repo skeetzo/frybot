@@ -14,6 +14,7 @@ var teamSchema = new Schema({
   name: { type: String, default: '' },
   players: { type: Array, default: [] },
   idNumber: { type: Number, default: 0 },
+  home: { type: Boolean, default: false },
 },options);
 
 teamSchema.pre('save', function(next) {
