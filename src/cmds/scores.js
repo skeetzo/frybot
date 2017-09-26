@@ -60,10 +60,10 @@ module.exports = function scores(data) {
     calls out the lowest valuable player
   */
   function lvp() {
-    Season.getCurrentSeason(function(err, season) {
+    Player.find({'team':config.homeTeam},function(err, players) {
       if (err) logger.warn(err);
       var leastValuablePlayer;
-      _.forEach(season.players, function (player) {
+      _.forEach(players, function (player) {
         if (!leastValuablePlayer)
           leastValuablePlayer = new Player(player);
         else if (player.mvp<leastValuablePlayer.mvp)
@@ -79,10 +79,10 @@ module.exports = function scores(data) {
     calls out the most valuable player
   */
   function mvp() {
-    Season.getCurrentSeason(function(err, season) {
+    Player.find({'team':config.homeTeam},function(err, players) {
       if (err) logger.warn(err);
       var mostValuablePlayer;
-      _.forEach(season.players, function (player) {
+      _.forEach(players, function (player) {
         if (!mostValuablePlayer)
           mostValuablePlayer = new Player(player);
         else if (player.mvp>mostValuablePlayer.mvp)
