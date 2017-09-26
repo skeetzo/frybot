@@ -20,7 +20,7 @@ var teamSchema = new Schema({
 
 teamSchema.pre('save', function(next) {
   var self = this;
-  _.forEach(players, function(player) {
+  _.forEach(self.players, function(player) {
     player.team = self.name;
     Player.findOneAndUpdate({'name':player.name},player,{'upsert':true},function(err) {
       if (err) logger.warn(err);
