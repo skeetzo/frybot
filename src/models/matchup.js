@@ -13,8 +13,8 @@ var options = { discriminatorKey: 'kind' };
 var matchUpSchema = new Schema({
   date: { type: Date, default: moment().format('MM/DD/YYYY') },
   location: { type: String, default: config.homeLocation },
-  teamOne: { type: Schema.Types.ObjectId, ref: 'team', default: new Team() },
-  teamTwo: { type: Schema.Types.ObjectId, ref: 'team', default: new Team() },
+  teamOne: { type: String, default: '' },
+  teamTwo: { type: String, default: '' },
   matchupNum: { type: Number, default: 0 },
   // teams: { type: Array, default: [(new Team()),(new Team())] },
   matches: { type: Array, default: [] },

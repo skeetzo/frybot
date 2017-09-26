@@ -11,8 +11,8 @@ var options = { discriminatorKey: 'kind' };
 // Match Schema
 var matchSchema = new Schema({
   // Players
-  playerOne: { type: Schema.Types.ObjectId, ref: 'player', required: true },
-  playerTwo: { type: Schema.Types.ObjectId, ref: 'player', required: true },
+  playerOne: { type: String, default: '' },
+  playerTwo: { type: String, default: '' },
   // Points
   playerOnePointsEarned: { type: Number, default: 0 },
   playerOnePointsGiven: { type: Number, default: 0 },
@@ -25,8 +25,8 @@ var matchSchema = new Schema({
   matchNum: { type: Number, default: 0 },
   race: { type: String, default: '2:2' },
   totalInnings: { type: Number, default: 0 },
-  winner: { type: Schema.Types.ObjectId, ref: 'player' },
-  loser: { type: Schema.Types.ObjectId, ref: 'player' },
+  winner: { type: String, default: '' },
+  loser: { type: String, default: '' },
 },options);
 
 matchSchema.pre('save', function(next) {
@@ -49,7 +49,7 @@ matchSchema.pre('save', function(next) {
 // Statics
 matchSchema.statics.sync = function(matches) {
   var self = this;
-  logger.log('syncing: %s',JSON.stringify(matches,null,4));
+  // logger.log('syncing: %s',JSON.stringify(matches,null,4));
   _.forEach(matches, function (match) {
     logger.log('match: %s on %s',match.name,match.matchDate)
     self.findOneAndUpdate({'matchDate':match.matchDate,'playerOne':match.name},match,{'upsert':true},function (err) {

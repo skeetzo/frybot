@@ -10,11 +10,11 @@ var options = { discriminatorKey: 'kind' };
 
 // User Schema
 var gameSchema = new Schema({
-  playerOne: { type: Schema.Types.ObjectId, ref: 'player', required: true },
-  playerTwo: { type: Schema.Types.ObjectId, ref: 'player', required: true },
+  playerOne: { type: String, default: '' },
+  playerTwo: { type: String, default: '' },
   innings: { type: Number, default: 0 },
-  winner: { type: Schema.Types.ObjectId, ref: 'player', required: true },
-  loser: { type: Schema.Types.ObjectId, ref: 'player', required: true },
+  winner: { type: String, default: '' },
+  loser: { type: String, default: '' },
   playerOneTimeouts: { type: Number, default: 0 },
   playerTwoTimeouts: { type: Number, default: 0 },
   isEarlyScratchEight: { type: Boolean, default: 0 },
