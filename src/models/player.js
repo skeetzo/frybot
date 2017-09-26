@@ -98,7 +98,7 @@ playerSchema.methods.toString = function() {
   return returned.toString();
 };
 
-playerSchema.methods.statsToRow = function() {
+playerSchema.methods.toStats = function() {
   var returned = [];
   returned.push(this.name);
   returned.push(this.pointsEarned);
