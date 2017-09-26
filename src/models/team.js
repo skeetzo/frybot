@@ -24,7 +24,7 @@ teamSchema.pre('save', function(next) {
 
 teamSchema.statics.addHome = function(name, callback) {
   logger.debug('Adding Home Team: %s',name);
-  this.findOneAndUpdate({'name':name},{'home':true},{'upsert':true},function(err, team) {
+  this.findOneAndUpdate({'name':name},{'home':true},{'upsert':true,'new':true},function(err, team) {
     if (err) logger.warn(err);
     team.resetPlayersFromSheet(function(err) {
       if (err) return callback(err);
