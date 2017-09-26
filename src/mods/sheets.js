@@ -46,7 +46,7 @@ module.exports.loadSchedule = function(callback) {
               }
             );
         });
-        logger.log('Schedule: %s',weeks);
+        logger.log('Schedule: %s',_.pluck(weeks,'date'));
         logger.log('Schedule Loaded');
         callback(null,weeks);
       });

@@ -46,7 +46,7 @@ teamSchema.methods.resetPlayersFromSheet = function(callback) {
       Player.findOneAndUpdate({'name':player.name}, player, {'upsert':true},function(err) {
         if (err) logger.warn(err);
       });
-      self.team.players.push(player);
+      self.players.push(player);
     });
     self.save(function (err) {
       if (err) return callback(err);
