@@ -100,6 +100,12 @@ bot.prototype = {
         logger.log('Configuring Season Schedule');
         Sheets.loadSchedule(function(err, schedule) {
           if (err) logger.warn(err);
+          var finish = function() {
+            season.schedule.save(function(err) {
+              if (err) logger.warn(err);
+              next(null, season);
+            });
+          }
           var finished = setTimeout(finish,3000);
           season.schedule = new Schedule({'label':season.label});
           _.forEach(schedule,function (week) {
@@ -111,12 +117,7 @@ bot.prototype = {
               finished = setTimeout(finish,3000);
             });
           });
-          var finish = function() {
-            season.schedule.save(function(err) {
-              if (err) logger.warn(err);
-              next(null, season);
-            });
-          }
+          
         });
       },
       function(season, next) {
