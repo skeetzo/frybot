@@ -11,8 +11,8 @@ var options = { discriminatorKey: 'kind' };
 
 // Match Schema
 var leagueSchema = new Schema({
-  name: { type: String, default: '' },
-  division: { type: String, default: '' },
+  name: { type: String, default: 'APA League' },
+  division: { type: String, default: 'Division Red' },
   seasons: { type: Array },
   players: { type: Array },
   teams: { type: Array },
@@ -45,6 +45,7 @@ leagueSchema.pre('save', function(next) {
   }
   next();
 });
+
 
 leagueSchema.statics.getCurrentSeason = function(callback) {
   logger.log('league- getting current season');

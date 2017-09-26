@@ -1,5 +1,6 @@
 var _ = require('underscore'),
     config = require('../config/index'),
+    League = require('../models/league'),
     logger = config.logger;
 
 // season stuff
