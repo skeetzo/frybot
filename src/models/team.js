@@ -27,7 +27,7 @@ teamSchema.statics.addHome = function(name, callback) {
   var team = new Team({'name':name,'home':true});
   team.resetPlayersFromSheet(function(err) {
     if (err) return callback(err);
-    self.save(function(err) {
+    team.save(function(err) {
       if (err) return callback(err);
     });
   });
