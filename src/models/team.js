@@ -19,6 +19,13 @@ var teamSchema = new Schema({
 },options);
 
 teamSchema.pre('save', function(next) {
+  var self = this;
+  _.forEach(players, function(player) {
+    player.team = self.name;
+    Player.findOneAndUpdate({'name':player.name},player,{'upsert':true},function(err) {
+      if (err) logger.warn(err);
+    });
+  });
   logger.debug('team saved: %s',this.name);
   next();
 });

@@ -19,6 +19,9 @@
 	- update nicofact tweeting behavior
 	- update cron based seasonal behavior- start, end
 
+9/25/2017
+- more mongo season adjustments
+
 
 **0.0.4 : ??/??/?? : **
 
