@@ -129,6 +129,7 @@ bot.prototype = {
             self.team = team;
             next();
           }
+        });
       },
       function(next) {
         self.activate.call(self,{command:"scores",argument:"boot",name:config.botName});
