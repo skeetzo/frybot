@@ -189,7 +189,11 @@ module.exports = function scores(data) {
         if (err) return logger.warn(err);
         season.resetPlayers();
         // season.updateMatchups(matchups);
-        Match.sync(matchups);
+        var matches = [];
+        for (var i=0;i<matchups.length;i++)
+          for (var j=0;j<matchups[i].length;j++)
+            matches.push(matchups[i][j]);
+        Match.sync(matches);
         if (modifiers&&modifiers.quietly)
           logger.log('Season scores updated quietly');
         else if (modifiers&&modifiers.think)
