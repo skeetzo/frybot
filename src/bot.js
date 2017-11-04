@@ -76,7 +76,7 @@ bot.prototype = {
     // Cmds
     require('./cmds/index.js').load.call(this);
 
-    self.commands.getMessages()
+    // self.commands.getAllNicoFacts()
     // return;
     if (!this.commands) return console.log("Error- missing critical Commands module");  
 

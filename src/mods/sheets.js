@@ -233,7 +233,9 @@ module.exports.addNicoFact = function(nicoFact,callback) {
           if (e) logger.warn(e);
           jsonObj = "{\""+(sheet.rowCount+1)+"\": {\"1\": \"-666\",\"2\": \"faulty json bro\"}}";
         }
-        sheet.addRow(jsonObj);
+        sheet.addRow(jsonObj,function(err) {
+          if (err) logger.warn(err);
+        });
         callback(null);
       });
     }

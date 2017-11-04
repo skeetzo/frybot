@@ -5,6 +5,7 @@ var _ = require('underscore'),
     GroupMe_API = require('groupme').Stateless,
     HTTPS = require('https'),
     League = require('./league.js').League,
+    NicoFact = require('../models/nicofact'),
     config = require('../config/index'),
     logger = config.logger,
     moment = require ('moment');
@@ -120,14 +121,58 @@ function shuffle(array) {
 }
 
 
-
-
-
-module.exports.getMessages = function() {
-  GroupMe_API.Messages.index(config.GroupMe_AccessToken, config.GroupMe_group_ID, {before_id:''},
-    function(err,ret) {
-      // if (err) return logger.warn(err);
-      logger.log(JSON.stringify(ret));
-      // callback(null);
-  })
+module.exports.getAllNicoFacts = function(callback) {
+  var nicoFacts = [];
+  var regex = new RegExp('Nico Fact #','gi');
+  function repeat(before) {
+    GroupMe_API.Messages.index(config.GroupMe_AccessToken, config.GroupMe_group_ID, {'before_id':before},
+      function (err,ret) {
+        if (err) {
+          // logger.warn(err.message);
+          logger.log('end of messages');
+          logger.log('nicoFacts: %s',nicoFacts.length);
+          return;
+        }
+        // logger.log(JSON.stringify(ret,null,4));
+        // return;
+        var lastMessage;
+        for (var i=0;i<ret.messages.length;i++) {
+          lastMessage = ret.messages[i].id; // last and oldest message in the array
+          if (regex.test(ret.messages[i].text)&&!_.contains(nicoFacts,ret.messages[i].text)) {
+            logger.log(ret.messages[i].text);
+            nicoFacts.push(ret.messages[i].text);
+            var number = null;
+            try {
+              number = ret.messages[i].text.match(/#([0-9]*)(:|\s|\.)/gi)[0].replace('#','').trim();
+              number = number.toString().substring(0,number.toString().length-1);
+            }
+            catch (er) {
+              number = -1;
+            }
+            var fact = ret.messages[i].text.substring(ret.messages[i].text.indexOf(':')+1).trim();
+            // logger.debug('number: %s',number);
+            var newFact = {
+              'fact': fact,
+              'number': number,
+              'author': ret.messages[i].name,
+              'like_count': ret.messages[i].favorited_by.length
+            };
+            NicoFact.findOneAndUpdate({'fact':fact}, newFact, {'upsert':true}, function (err) {
+            // newFact.save(function(err) {
+              if (err) logger.warn(err);
+            });
+          }
+        }
+        logger.log('searching...');
+        if (lastMessage)
+          repeat(lastMessage);
+        else {
+          logger.log('nicoFacts: %s',nicoFacts.length);
+          return;
+        }
+        // get message id of last one in array of messages
+        // repeat until all messages are found
+    })
+  }
+  repeat(null);
 };
