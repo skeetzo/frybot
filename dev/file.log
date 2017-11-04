@@ -21314,3 +21314,1209 @@ Call Stack:
 [34m[37m02:04:19.76 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
 [34m[37m02:04:19.76 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
 [34m[37m02:04:19.77 [34m[33mNaivi[34m: Mongoose connection disconnected through app termination[39m
+[37m11:33:29.04 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m11:33:29.06 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m11:33:29.07 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m11:33:30.27 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m11:33:30.44 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m11:33:30.45 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m11:33:30.45 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m11:33:30.50 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m11:33:30.50 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m11:33:30.98 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m11:33:31.01 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m11:33:31.02 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m11:33:31.05 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m11:33:31.07 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m11:33:31.08 [34m[33mNaivi[34m: Adding command: suck[39m
+[1m[31m[37m11:33:31.87 [31m <error> TypeError: callback is not a function
+    at Request._callback (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\lib\Stateless.js:54:9)
+    at Request.self.callback (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\node_modules\request\main.js:122:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\node_modules\request\main.js:661:16)
+    at emitOne (events.js:101:20)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\node_modules\request\main.js:623:14)
+    at emitNone (events.js:91:20)
+    at IncomingMessage.emit (events.js:185:7)
+    at endReadableNT (_stream_readable.js:974:12)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[39m[22m
+[34m[37m11:33:31.93 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m11:34:53.67 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m11:34:53.67 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m11:34:53.68 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m11:34:53.78 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m11:34:53.84 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m11:34:53.84 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m11:34:53.84 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m11:34:53.86 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m11:34:53.86 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m11:34:53.92 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m11:34:53.93 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m11:34:53.93 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m11:34:53.94 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m11:34:53.94 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m11:34:53.94 [34m[33mNaivi[34m: Adding command: suck[39m
+[37m11:35:23.28 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m11:35:23.29 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m11:35:23.29 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m11:35:23.39 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m11:35:23.44 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m11:35:23.44 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m11:35:23.45 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m11:35:23.46 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m11:35:23.46 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m11:35:23.53 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m11:35:23.53 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m11:35:23.53 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m11:35:23.54 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m11:35:23.54 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m11:35:23.55 [34m[33mNaivi[34m: Adding command: suck[39m
+[1m[31m[37m11:35:24.08 [31m <error> TypeError: callback is not a function
+    at Request._callback (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\lib\Stateless.js:54:9)
+    at Request.self.callback (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\node_modules\request\main.js:122:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\node_modules\request\main.js:661:16)
+    at emitOne (events.js:101:20)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\node_modules\request\main.js:623:14)
+    at emitNone (events.js:91:20)
+    at IncomingMessage.emit (events.js:185:7)
+    at endReadableNT (_stream_readable.js:974:12)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[39m[22m
+[34m[37m11:35:24.15 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m11:35:34.82 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m11:35:34.83 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m11:35:34.83 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m11:35:34.93 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m11:35:34.98 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m11:35:34.98 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m11:35:34.99 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m11:35:35.00 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m11:35:35.00 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m11:35:35.06 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m11:35:35.07 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m11:35:35.07 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m11:35:35.07 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m11:35:35.08 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m11:35:35.08 [34m[33mNaivi[34m: Adding command: suck[39m
+[1m[31m[37m11:35:35.54 [31m <error> TypeError: callback is not a function
+    at Request._callback (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\lib\Stateless.js:54:9)
+    at Request.self.callback (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\node_modules\request\main.js:122:22)
+    at emitTwo (events.js:106:13)
+    at Request.emit (events.js:191:7)
+    at Request.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\node_modules\request\main.js:661:16)
+    at emitOne (events.js:101:20)
+    at Request.emit (events.js:188:7)
+    at IncomingMessage.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\groupme\node_modules\request\main.js:623:14)
+    at emitNone (events.js:91:20)
+    at IncomingMessage.emit (events.js:185:7)
+    at endReadableNT (_stream_readable.js:974:12)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[39m[22m
+[34m[37m11:35:35.71 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m11:36:24.25 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m11:36:24.26 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m11:36:24.27 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m11:36:24.37 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m11:36:24.43 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m11:36:24.43 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m11:36:24.43 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m11:36:24.45 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m11:36:24.45 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m11:36:24.51 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m11:36:24.52 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m11:36:24.52 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m11:36:24.52 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m11:36:24.53 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m11:36:24.53 [34m[33mNaivi[34m: Adding command: suck[39m
+[1m[33m[37m11:36:25.09 [33m IncomingMessage {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 16384,
+     buffer: BufferList { head: null, tail: null, length: 0 },
+     length: 0,
+     pipes: null,
+     pipesCount: 0,
+     flowing: true,
+     ended: true,
+     endEmitted: true,
+     reading: false,
+     sync: true,
+     needReadable: false,
+     emittedReadable: false,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: false,
+  domain: null,
+  _events: 
+   { end: [ [Function: responseOnEnd], [Function] ],
+     close: [ [Function], [Function] ],
+     data: [Function] },
+  _eventsCount: 3,
+  _maxListeners: undefined,
+  socket: 
+   TLSSocket {
+     _tlsOptions: 
+      { pipe: null,
+        secureContext: [Object],
+        isServer: false,
+        requestCert: true,
+        rejectUnauthorized: true,
+        session: undefined,
+        NPNProtocols: undefined,
+        ALPNProtocols: undefined,
+        requestOCSP: undefined },
+     _secureEstablished: true,
+     _securePending: false,
+     _newSessionPending: false,
+     _controlReleased: true,
+     _SNICallback: null,
+     servername: null,
+     npnProtocol: undefined,
+     alpnProtocol: false,
+     authorized: true,
+     authorizationError: null,
+     encrypted: true,
+     _events: 
+      { close: [Object],
+        end: [Object],
+        finish: [Function: onSocketFinish],
+        _socketEnd: [Function: onSocketEnd],
+        secure: [Function],
+        free: [Function: onFree],
+        agentRemove: [Function: onRemove],
+        drain: [Function: ondrain],
+        error: [Object] },
+     _eventsCount: 9,
+     connecting: false,
+     _hadError: false,
+     _handle: null,
+     _parent: null,
+     _host: 'api.groupme.com',
+     _readableState: 
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: [Object],
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        defaultEncoding: 'utf8',
+        ranOut: false,
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: false,
+     domain: null,
+     _maxListeners: undefined,
+     _writableState: 
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        needDrain: false,
+        ending: true,
+        ended: true,
+        finished: true,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: false,
+        bufferProcessing: false,
+        onwrite: [Function],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: true,
+        errorEmitted: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: false,
+     allowHalfOpen: false,
+     destroyed: true,
+     _bytesDispatched: 159,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server: undefined,
+     _server: null,
+     ssl: null,
+     _requestCert: true,
+     _rejectUnauthorized: true,
+     parser: null,
+     _httpMessage: 
+      ClientRequest {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 3,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: true,
+        upgrading: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: false,
+        sendDate: false,
+        _removedHeader: {},
+        _contentLength: 0,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        socket: [Circular],
+        connection: [Circular],
+        _header: 'GET /v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d& HTTP/1.1\r\nContent-Type: application/json\r\nhost: api.groupme.com\r\nConnection: close\r\n\r\n',
+        _headers: [Object],
+        _headerNames: [Object],
+        _onPendingData: null,
+        agent: [Object],
+        socketPath: undefined,
+        timeout: undefined,
+        method: 'GET',
+        path: '/v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d&',
+        _ended: true,
+        parser: null,
+        res: [Circular] },
+     read: [Function],
+     _consuming: true,
+     _idleNext: null,
+     _idlePrev: null,
+     _idleTimeout: -1 },
+  connection: 
+   TLSSocket {
+     _tlsOptions: 
+      { pipe: null,
+        secureContext: [Object],
+        isServer: false,
+        requestCert: true,
+        rejectUnauthorized: true,
+        session: undefined,
+        NPNProtocols: undefined,
+        ALPNProtocols: undefined,
+        requestOCSP: undefined },
+     _secureEstablished: true,
+     _securePending: false,
+     _newSessionPending: false,
+     _controlReleased: true,
+     _SNICallback: null,
+     servername: null,
+     npnProtocol: undefined,
+     alpnProtocol: false,
+     authorized: true,
+     authorizationError: null,
+     encrypted: true,
+     _events: 
+      { close: [Object],
+        end: [Object],
+        finish: [Function: onSocketFinish],
+        _socketEnd: [Function: onSocketEnd],
+        secure: [Function],
+        free: [Function: onFree],
+        agentRemove: [Function: onRemove],
+        drain: [Function: ondrain],
+        error: [Object] },
+     _eventsCount: 9,
+     connecting: false,
+     _hadError: false,
+     _handle: null,
+     _parent: null,
+     _host: 'api.groupme.com',
+     _readableState: 
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: [Object],
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        defaultEncoding: 'utf8',
+        ranOut: false,
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: false,
+     domain: null,
+     _maxListeners: undefined,
+     _writableState: 
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        needDrain: false,
+        ending: true,
+        ended: true,
+        finished: true,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: false,
+        bufferProcessing: false,
+        onwrite: [Function],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: true,
+        errorEmitted: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: false,
+     allowHalfOpen: false,
+     destroyed: true,
+     _bytesDispatched: 159,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server: undefined,
+     _server: null,
+     ssl: null,
+     _requestCert: true,
+     _rejectUnauthorized: true,
+     parser: null,
+     _httpMessage: 
+      ClientRequest {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 3,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: true,
+        upgrading: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: false,
+        sendDate: false,
+        _removedHeader: {},
+        _contentLength: 0,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        socket: [Circular],
+        connection: [Circular],
+        _header: 'GET /v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d& HTTP/1.1\r\nContent-Type: application/json\r\nhost: api.groupme.com\r\nConnection: close\r\n\r\n',
+        _headers: [Object],
+        _headerNames: [Object],
+        _onPendingData: null,
+        agent: [Object],
+        socketPath: undefined,
+        timeout: undefined,
+        method: 'GET',
+        path: '/v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d&',
+        _ended: true,
+        parser: null,
+        res: [Circular] },
+     read: [Function],
+     _consuming: true,
+     _idleNext: null,
+     _idlePrev: null,
+     _idleTimeout: -1 },
+  httpVersionMajor: 1,
+  httpVersionMinor: 1,
+  httpVersion: '1.1',
+  complete: true,
+  headers: 
+   { 'content-type': 'application/json;charset=utf-8',
+     date: 'Sat, 04 Nov 2017 18:36:14 GMT',
+     server: 'nginx/1.12.1',
+     'content-length': '64',
+     connection: 'Close' },
+  rawHeaders: 
+   [ 'Content-Type',
+     'application/json;charset=utf-8',
+     'Date',
+     'Sat, 04 Nov 2017 18:36:14 GMT',
+     'Server',
+     'nginx/1.12.1',
+     'Content-Length',
+     '64',
+     'Connection',
+     'Close' ],
+  trailers: {},
+  rawTrailers: [],
+  upgrade: false,
+  url: '',
+  method: null,
+  statusCode: 401,
+  statusMessage: 'Unauthorized',
+  client: 
+   TLSSocket {
+     _tlsOptions: 
+      { pipe: null,
+        secureContext: [Object],
+        isServer: false,
+        requestCert: true,
+        rejectUnauthorized: true,
+        session: undefined,
+        NPNProtocols: undefined,
+        ALPNProtocols: undefined,
+        requestOCSP: undefined },
+     _secureEstablished: true,
+     _securePending: false,
+     _newSessionPending: false,
+     _controlReleased: true,
+     _SNICallback: null,
+     servername: null,
+     npnProtocol: undefined,
+     alpnProtocol: false,
+     authorized: true,
+     authorizationError: null,
+     encrypted: true,
+     _events: 
+      { close: [Object],
+        end: [Object],
+        finish: [Function: onSocketFinish],
+        _socketEnd: [Function: onSocketEnd],
+        secure: [Function],
+        free: [Function: onFree],
+        agentRemove: [Function: onRemove],
+        drain: [Function: ondrain],
+        error: [Object] },
+     _eventsCount: 9,
+     connecting: false,
+     _hadError: false,
+     _handle: null,
+     _parent: null,
+     _host: 'api.groupme.com',
+     _readableState: 
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: [Object],
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        defaultEncoding: 'utf8',
+        ranOut: false,
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: false,
+     domain: null,
+     _maxListeners: undefined,
+     _writableState: 
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        needDrain: false,
+        ending: true,
+        ended: true,
+        finished: true,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: false,
+        bufferProcessing: false,
+        onwrite: [Function],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: true,
+        errorEmitted: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: false,
+     allowHalfOpen: false,
+     destroyed: true,
+     _bytesDispatched: 159,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server: undefined,
+     _server: null,
+     ssl: null,
+     _requestCert: true,
+     _rejectUnauthorized: true,
+     parser: null,
+     _httpMessage: 
+      ClientRequest {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 3,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: true,
+        upgrading: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: false,
+        sendDate: false,
+        _removedHeader: {},
+        _contentLength: 0,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        socket: [Circular],
+        connection: [Circular],
+        _header: 'GET /v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d& HTTP/1.1\r\nContent-Type: application/json\r\nhost: api.groupme.com\r\nConnection: close\r\n\r\n',
+        _headers: [Object],
+        _headerNames: [Object],
+        _onPendingData: null,
+        agent: [Object],
+        socketPath: undefined,
+        timeout: undefined,
+        method: 'GET',
+        path: '/v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d&',
+        _ended: true,
+        parser: null,
+        res: [Circular] },
+     read: [Function],
+     _consuming: true,
+     _idleNext: null,
+     _idlePrev: null,
+     _idleTimeout: -1 },
+  _consuming: true,
+  _dumped: false,
+  req: 
+   ClientRequest {
+     domain: null,
+     _events: 
+      { error: [Function],
+        drain: [Function],
+        prefinish: [Function: requestOnPrefinish] },
+     _eventsCount: 3,
+     _maxListeners: undefined,
+     output: [],
+     outputEncodings: [],
+     outputCallbacks: [],
+     outputSize: 0,
+     writable: true,
+     _last: true,
+     upgrading: false,
+     chunkedEncoding: false,
+     shouldKeepAlive: false,
+     useChunkedEncodingByDefault: false,
+     sendDate: false,
+     _removedHeader: {},
+     _contentLength: 0,
+     _hasBody: true,
+     _trailer: '',
+     finished: true,
+     _headerSent: true,
+     socket: 
+      TLSSocket {
+        _tlsOptions: [Object],
+        _secureEstablished: true,
+        _securePending: false,
+        _newSessionPending: false,
+        _controlReleased: true,
+        _SNICallback: null,
+        servername: null,
+        npnProtocol: undefined,
+        alpnProtocol: false,
+        authorized: true,
+        authorizationError: null,
+        encrypted: true,
+        _events: [Object],
+        _eventsCount: 9,
+        connecting: false,
+        _hadError: false,
+        _handle: null,
+        _parent: null,
+        _host: 'api.groupme.com',
+        _readableState: [Object],
+        readable: false,
+        domain: null,
+        _maxListeners: undefined,
+        _writableState: [Object],
+        writable: false,
+        allowHalfOpen: false,
+        destroyed: true,
+        _bytesDispatched: 159,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: undefined,
+        _server: null,
+        ssl: null,
+        _requestCert: true,
+        _rejectUnauthorized: true,
+        parser: null,
+        _httpMessage: [Circular],
+        read: [Function],
+        _consuming: true,
+        _idleNext: null,
+        _idlePrev: null,
+        _idleTimeout: -1 },
+     connection: 
+      TLSSocket {
+        _tlsOptions: [Object],
+        _secureEstablished: true,
+        _securePending: false,
+        _newSessionPending: false,
+        _controlReleased: true,
+        _SNICallback: null,
+        servername: null,
+        npnProtocol: undefined,
+        alpnProtocol: false,
+        authorized: true,
+        authorizationError: null,
+        encrypted: true,
+        _events: [Object],
+        _eventsCount: 9,
+        connecting: false,
+        _hadError: false,
+        _handle: null,
+        _parent: null,
+        _host: 'api.groupme.com',
+        _readableState: [Object],
+        readable: false,
+        domain: null,
+        _maxListeners: undefined,
+        _writableState: [Object],
+        writable: false,
+        allowHalfOpen: false,
+        destroyed: true,
+        _bytesDispatched: 159,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: undefined,
+        _server: null,
+        ssl: null,
+        _requestCert: true,
+        _rejectUnauthorized: true,
+        parser: null,
+        _httpMessage: [Circular],
+        read: [Function],
+        _consuming: true,
+        _idleNext: null,
+        _idlePrev: null,
+        _idleTimeout: -1 },
+     _header: 'GET /v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d& HTTP/1.1\r\nContent-Type: application/json\r\nhost: api.groupme.com\r\nConnection: close\r\n\r\n',
+     _headers: { 'content-type': 'application/json', host: 'api.groupme.com' },
+     _headerNames: { 'content-type': 'Content-Type', host: 'host' },
+     _onPendingData: null,
+     agent: 
+      Agent {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 1,
+        _maxListeners: undefined,
+        defaultPort: 443,
+        protocol: 'https:',
+        options: [Object],
+        requests: {},
+        sockets: [Object],
+        freeSockets: {},
+        keepAliveMsecs: 1000,
+        keepAlive: false,
+        maxSockets: Infinity,
+        maxFreeSockets: 256,
+        maxCachedSessions: 100,
+        _sessionCache: [Object] },
+     socketPath: undefined,
+     timeout: undefined,
+     method: 'GET',
+     path: '/v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d&',
+     _ended: true,
+     parser: null,
+     res: [Circular] },
+  request: 
+   Request {
+     domain: null,
+     _events: 
+      { error: [Function: bound ],
+        complete: [Function: bound ],
+        pipe: [Object],
+        end: [Object],
+        data: [Function] },
+     _eventsCount: 5,
+     _maxListeners: undefined,
+     readable: true,
+     writable: true,
+     uri: 
+      Url {
+        protocol: 'https:',
+        slashes: true,
+        auth: null,
+        host: 'api.groupme.com',
+        port: 443,
+        hostname: 'api.groupme.com',
+        hash: null,
+        search: '?token=2f738e5005bc0133e1287ef6bffc9e1d&',
+        query: 'token=2f738e5005bc0133e1287ef6bffc9e1d&',
+        pathname: '/v3/groups/14734775/messages',
+        path: '/v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d&',
+        href: 'https://api.groupme.com/v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d&' },
+     method: 'GET',
+     headers: { 'Content-Type': 'application/json' },
+     callback: [Function],
+     pool: {},
+     dests: [],
+     __isRequestRequest: true,
+     _callback: [Function],
+     _redirectsFollowed: 0,
+     maxRedirects: 10,
+     followRedirect: true,
+     followAllRedirects: false,
+     redirects: [],
+     setHost: true,
+     originalCookieHeader: undefined,
+     _jar: undefined,
+     port: 443,
+     host: 'api.groupme.com',
+     clientErrorHandler: [Function],
+     _parserErrorHandler: [Function],
+     path: '/v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d&',
+     httpModule: 
+      { Server: [Object],
+        createServer: [Function],
+        globalAgent: [Object],
+        Agent: [Object],
+        request: [Function],
+        get: [Function] },
+     agentClass: { [Function: Agent] super_: [Object] },
+     agent: 
+      Agent {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 1,
+        _maxListeners: undefined,
+        defaultPort: 443,
+        protocol: 'https:',
+        options: [Object],
+        requests: {},
+        sockets: [Object],
+        freeSockets: {},
+        keepAliveMsecs: 1000,
+        keepAlive: false,
+        maxSockets: Infinity,
+        maxFreeSockets: 256,
+        maxCachedSessions: 100,
+        _sessionCache: [Object] },
+     _started: true,
+     href: 'https://api.groupme.com/v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d&',
+     req: 
+      ClientRequest {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 3,
+        _maxListeners: undefined,
+        output: [],
+        outputEncodings: [],
+        outputCallbacks: [],
+        outputSize: 0,
+        writable: true,
+        _last: true,
+        upgrading: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: false,
+        sendDate: false,
+        _removedHeader: {},
+        _contentLength: 0,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        socket: [Object],
+        connection: [Object],
+        _header: 'GET /v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d& HTTP/1.1\r\nContent-Type: application/json\r\nhost: api.groupme.com\r\nConnection: close\r\n\r\n',
+        _headers: [Object],
+        _headerNames: [Object],
+        _onPendingData: null,
+        agent: [Object],
+        socketPath: undefined,
+        timeout: undefined,
+        method: 'GET',
+        path: '/v3/groups/14734775/messages?token=2f738e5005bc0133e1287ef6bffc9e1d&',
+        _ended: true,
+        parser: null,
+        res: [Circular] },
+     ntick: true,
+     response: [Circular],
+     _destdata: true,
+     _ended: true },
+  toJSON: [Function: toJSON],
+  read: [Function],
+  body: '{"response":null,"meta":{"code":401,"errors":["unauthorized"]}}\n' }[39m[22m
+[34m[37m11:36:25.26 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m11:36:49.07 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m11:36:49.08 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m11:36:49.09 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m11:36:49.19 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m11:36:49.25 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m11:36:49.25 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m11:36:49.26 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m11:36:49.27 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m11:36:49.28 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m11:36:49.35 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m11:36:49.36 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m11:36:49.36 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m11:36:49.36 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m11:36:49.37 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m11:36:49.37 [34m[33mNaivi[34m: Adding command: suck[39m
+[37m11:36:49.92 [39m[33mNaivi[39m: undefined
+[34m[37m11:36:49.99 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m11:40:32.13 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m11:40:32.13 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m11:40:32.14 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m11:40:32.25 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m11:40:32.31 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m11:40:32.31 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m11:40:32.31 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m11:40:32.32 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m11:40:32.33 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m11:40:32.39 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m11:40:32.40 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m11:40:32.40 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m11:40:32.40 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m11:40:32.40 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m11:40:32.41 [34m[33mNaivi[34m: Adding command: suck[39m
+[37m11:40:32.97 [39m[33mNaivi[39m: undefined
+[34m[37m11:40:33.04 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m11:42:51.86 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m11:42:51.87 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m11:42:51.87 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m11:42:51.99 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m11:42:52.09 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m11:42:52.09 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m11:42:52.09 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m11:42:52.11 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m11:42:52.11 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m11:42:52.21 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m11:42:52.22 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m11:42:52.22 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m11:42:52.22 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m11:42:52.22 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m11:42:52.23 [34m[33mNaivi[34m: Adding command: suck[39m
+[37m11:42:52.81 [39m[33mNaivi[39m: undefined
+[34m[37m11:42:52.89 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m11:42:53.05 [39m[33mNaivi[39m: Season Loaded: Winter Season 2017
+[37m11:42:53.05 [39m[33mNaivi[39m: Schedule Loaded
+[37m11:42:53.05 [39m[33mNaivi[39m: Configuring Teams
+[37m11:42:53.17 [39m[33mNaivi[39m: Home Team found: It Is What It Is
+[37m11:42:53.17 [39m[33mNaivi[39m: Home Team: It Is What It Is
+[37m11:42:53.17 [39m[33mNaivi[39m: team It Is What It Is already exists in Winter Season 2017
+[34m[37m11:42:53.19 [34m[33mNaivi[34m: season saved: Winter Season 2017[39m
+[37m11:42:53.19 [39m[33mNaivi[39m: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+[37m11:42:53.20 [39m[33mNaivi[39m: Updating Scores From Scoresheet
+[37m11:42:53.20 [39m[33mNaivi[39m: Loading Players from Scoresheet
+[37m11:42:53.26 [39m[33mNaivi[39m: started cronjob - Afterparty
+[37m11:42:53.26 [39m[33mNaivi[39m: started cronjob - Nicofacts
+[37m11:42:53.26 [39m[33mNaivi[39m: started cronjob - Pregame
+[37m11:42:53.26 [39m[33mNaivi[39m: started cronjob - Match
+[37m11:42:53.26 [39m[33mNaivi[39m: Connecting to Twitter...
+[1m[33m[37m11:42:53.26 [33m Twitter Disabled[39m[22m
+[34m[37m11:42:54.21 [34m[33mNaivi[34m: Loading sheet: Current Season Stats[39m
+[34m[37m11:42:55.34 [34m[33mNaivi[34m: resetting player: Coco[39m
+[34m[37m11:42:55.35 [34m[33mNaivi[34m: resetting player: Brian[39m
+[34m[37m11:42:55.35 [34m[33mNaivi[34m: resetting player: Nicole[39m
+[34m[37m11:42:55.36 [34m[33mNaivi[34m: resetting player: Oberg[39m
+[34m[37m11:42:55.37 [34m[33mNaivi[34m: resetting player: George[39m
+[34m[37m11:42:55.37 [34m[33mNaivi[34m: resetting player: Dustin[39m
+[34m[37m11:42:55.37 [34m[33mNaivi[34m: resetting player: Mike[39m
+[34m[37m11:42:55.37 [34m[33mNaivi[34m: resetting player: Chris[39m
+[34m[37m11:42:55.38 [34m[33mNaivi[34m: player saved: Coco[39m
+[34m[37m11:42:55.38 [34m[33mNaivi[34m: player saved: Brian[39m
+[34m[37m11:42:55.39 [34m[33mNaivi[34m: player saved: Nicole[39m
+[34m[37m11:42:55.39 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m11:42:55.39 [34m[33mNaivi[34m: player saved: George[39m
+[34m[37m11:42:55.39 [34m[33mNaivi[34m: player saved: Dustin[39m
+[34m[37m11:42:55.40 [34m[33mNaivi[34m: player saved: Mike[39m
+[34m[37m11:42:55.40 [34m[33mNaivi[34m: player saved: Chris[39m
+[37m11:42:59.85 [39m[33mNaivi[39m: Season scores updated quietly
+[34m[37m11:42:59.97 [34m[33mNaivi[34m: player saved: George[39m
+[34m[37m11:42:59.98 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m11:42:59.99 [34m[33mNaivi[34m: player saved: Coco[39m
+[34m[37m11:43:00.42 [34m[33mNaivi[34m: player saved: Brian[39m
+[34m[37m11:43:00.42 [34m[33mNaivi[34m: player saved: Brian[39m
+[34m[37m11:43:00.47 [34m[33mNaivi[34m: player saved: Nicole[39m
+[34m[37m11:43:00.47 [34m[33mNaivi[34m: player saved: Mike[39m
+[34m[37m11:43:00.47 [34m[33mNaivi[34m: player saved: Chris[39m
+[34m[37m11:43:00.48 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m11:43:00.48 [34m[33mNaivi[34m: player saved: Mike[39m
+[34m[37m11:43:00.48 [34m[33mNaivi[34m: player saved: George[39m
+[34m[37m11:43:00.48 [34m[33mNaivi[34m: player saved: Nicole[39m
+[34m[37m11:43:00.53 [34m[33mNaivi[34m: player saved: Dustin[39m
+[34m[37m11:43:00.53 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m11:43:00.53 [34m[33mNaivi[34m: player saved: Nicole[39m
+[34m[37m11:43:00.53 [34m[33mNaivi[34m: player saved: Chris[39m
+[34m[37m11:43:00.54 [34m[33mNaivi[34m: player saved: Chris[39m
+[34m[37m11:43:00.54 [34m[33mNaivi[34m: player saved: Mike[39m
+[34m[37m11:43:00.54 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m11:43:00.54 [34m[33mNaivi[34m: player saved: George[39m
+[34m[37m11:43:00.55 [34m[33mNaivi[34m: player saved: Coco[39m
+[34m[37m11:43:00.55 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m11:43:00.56 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m11:43:00.56 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m11:43:00.56 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m11:43:00.57 [34m[33mNaivi[34m: player saved: Nicole[39m
+[34m[37m11:43:00.57 [34m[33mNaivi[34m: player saved: Chris[39m
+[34m[37m11:43:00.57 [34m[33mNaivi[34m: player saved: Mike[39m
+[34m[37m11:43:00.58 [34m[33mNaivi[34m: player saved: Dustin[39m
+[34m[37m11:43:00.58 [34m[33mNaivi[34m: player saved: Chris[39m
+[34m[37m11:43:00.58 [34m[33mNaivi[34m: player saved: George[39m
+[34m[37m11:43:00.59 [34m[33mNaivi[34m: player saved: George[39m
+[34m[37m11:43:00.59 [34m[33mNaivi[34m: player saved: Mike[39m
+[34m[37m11:43:00.59 [34m[33mNaivi[34m: player saved: Dustin[39m
+[34m[37m11:43:00.59 [34m[33mNaivi[34m: player saved: George[39m
+[34m[37m11:43:00.59 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m11:43:00.60 [34m[33mNaivi[34m: player saved: Mike[39m
+[34m[37m11:43:00.60 [34m[33mNaivi[34m: player saved: George[39m
+[34m[37m11:43:00.60 [34m[33mNaivi[34m: player saved: Nicole[39m
+[34m[37m11:43:00.60 [34m[33mNaivi[34m: player saved: Chris[39m
+[34m[37m11:43:00.60 [34m[33mNaivi[34m: player saved: Brian[39m
+[34m[37m11:43:00.60 [34m[33mNaivi[34m: player saved: George[39m
+[34m[37m11:43:00.61 [34m[33mNaivi[34m: player saved: Chris[39m
+[34m[37m11:43:00.61 [34m[33mNaivi[34m: player saved: Mike[39m
+[34m[37m11:43:00.61 [34m[33mNaivi[34m: player saved: George[39m
+[37m11:43:00.62 [39m[33mNaivi[39m: player updated: Brian
+[37m11:43:00.62 [39m[33mNaivi[39m: player updated: Oberg
+[37m11:43:00.62 [39m[33mNaivi[39m: player updated: George
+[37m11:43:00.62 [39m[33mNaivi[39m: player updated: Nicole
+[37m11:43:00.62 [39m[33mNaivi[39m: player updated: George
+[37m11:43:00.62 [39m[33mNaivi[39m: player updated: Oberg
+[37m11:43:00.62 [39m[33mNaivi[39m: player updated: Mike
+[37m11:43:00.62 [39m[33mNaivi[39m: player updated: Nicole
+[37m11:43:00.63 [39m[33mNaivi[39m: player updated: Brian
+[37m11:43:00.63 [39m[33mNaivi[39m: player updated: Mike
+[37m11:43:00.63 [39m[33mNaivi[39m: player updated: Coco
+[37m11:43:00.63 [39m[33mNaivi[39m: player updated: Chris
+[37m11:43:00.63 [39m[33mNaivi[39m: player updated: Dustin
+[1m[31m[37m11:43:00.64 [31m <error> TypeError: Cannot read property 'addMatch' of null
+    at C:\Users\Schizo\Documents\GitHub\frybot\src\models\player.js:117:11
+    at Query.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\mongoose\lib\model.js:3805:16)
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:277:21
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:131:16
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[39m[22m
+[1m[31m[37m11:43:00.65 [31m <error> TypeError: Cannot read property 'addMatch' of null
+    at C:\Users\Schizo\Documents\GitHub\frybot\src\models\player.js:117:11
+    at Query.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\node_modules\mongoose\lib\model.js:3805:16)
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:277:21
+    at C:\Users\Schizo\Documents\GitHub\frybot\node_modules\kareem\index.js:131:16
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9) (in index.js:(process.<anonymous>):13)
+Call Stack:
+    at process.<anonymous> (C:\Users\Schizo\Documents\GitHub\frybot\index.js:13:10)
+    at emitOne (events.js:96:13)
+    at process.emit (events.js:188:7)
+    at process._fatalException (bootstrap_node.js:296:26)[39m[22m
+[34m[37m11:43:00.66 [34m[33mNaivi[34m: match saved: Coco vs Player Two (Tue Aug 29 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.67 [34m[33mNaivi[34m: match saved: George vs Player Two (Tue Sep 05 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.67 [34m[33mNaivi[34m: match saved: Oberg vs Player Two (Tue Sep 12 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.67 [34m[33mNaivi[34m: match saved: Mike vs Player Two (Tue Sep 19 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.68 [34m[33mNaivi[34m: match saved: Oberg vs Player Two (Tue Aug 29 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.69 [34m[33mNaivi[34m: match saved: Mike vs Player Two (Tue Sep 05 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.69 [34m[33mNaivi[34m: match saved: Mike vs Player Two (Tue Sep 12 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.69 [34m[33mNaivi[34m: match saved: George vs Player Two (Tue Sep 19 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.69 [34m[33mNaivi[34m: match saved: Chris vs Player Two (Tue Oct 17 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.70 [34m[33mNaivi[34m: match saved: Chris vs Player Two (Tue Oct 24 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.70 [34m[33mNaivi[34m: match saved: Chris vs Player Two (Tue Oct 10 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.71 [34m[33mNaivi[34m: match saved: Nicole vs Player Two (Tue Sep 26 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.71 [34m[33mNaivi[34m: match saved: Mike vs Player Two (Tue Oct 03 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.72 [34m[33mNaivi[34m: player saved: Oberg[39m
+[34m[37m11:43:00.73 [34m[33mNaivi[34m: match saved: Brian vs Player Two (Tue Aug 29 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.73 [34m[33mNaivi[34m: match saved: Oberg vs Player Two (Tue Sep 05 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.74 [34m[33mNaivi[34m: match saved: Chris vs Player Two (Tue Sep 12 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.74 [34m[33mNaivi[34m: match saved: Chris vs Player Two (Tue Sep 19 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.74 [34m[33mNaivi[34m: match saved: Nicole vs Player Two (Tue Oct 24 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.75 [34m[33mNaivi[34m: match saved: George vs Player Two (Tue Oct 31 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.75 [34m[33mNaivi[34m: match saved: George vs Player Two (Tue Aug 29 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.75 [34m[33mNaivi[34m: match saved: Coco vs Player Two (Tue Sep 12 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.76 [34m[33mNaivi[34m: match saved: Nicole vs Player Two (Tue Sep 19 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.76 [34m[33mNaivi[34m: match saved: George vs Player Two (Tue Sep 26 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.76 [34m[33mNaivi[34m: match saved: Mike vs Player Two (Tue Oct 17 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.77 [34m[33mNaivi[34m: match saved: Mike vs Player Two (Tue Oct 24 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.77 [34m[33mNaivi[34m: match saved: Dustin vs Player Two (Tue Oct 10 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.78 [34m[33mNaivi[34m: match saved: Chris vs Player Two (Tue Sep 26 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.78 [34m[33mNaivi[34m: match saved: Chris vs Player Two (Tue Oct 03 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.79 [34m[33mNaivi[34m: player saved: Dustin[39m
+[34m[37m11:43:00.79 [34m[33mNaivi[34m: match saved: Brian vs Player Two (Tue Sep 05 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.79 [34m[33mNaivi[34m: match saved: Dustin vs Player Two (Tue Sep 05 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.79 [34m[33mNaivi[34m: match saved: Nicole vs Player Two (Tue Sep 12 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.80 [34m[33mNaivi[34m: match saved: Oberg vs Player Two (Tue Sep 19 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.80 [34m[33mNaivi[34m: match saved: Oberg vs Player Two (Tue Oct 17 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.80 [34m[33mNaivi[34m: match saved: Oberg vs Player Two (Tue Oct 24 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.80 [34m[33mNaivi[34m: match saved: Oberg vs Player Two (Tue Oct 10 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.80 [34m[33mNaivi[34m: match saved: Brian vs Player Two (Tue Sep 26 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.81 [34m[33mNaivi[34m: match saved: Oberg vs Player Two (Tue Oct 03 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[37m11:43:00.81 [39m[33mNaivi[39m: player updated: Oberg
+[37m11:43:00.81 [39m[33mNaivi[39m: player updated: Oberg
+[37m11:43:00.81 [39m[33mNaivi[39m: player updated: Chris
+[34m[37m11:43:00.82 [34m[33mNaivi[34m: match saved: George vs Player Two (Tue Oct 17 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.82 [34m[33mNaivi[34m: match saved: George vs Player Two (Tue Oct 24 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.82 [34m[33mNaivi[34m: match saved: Mike vs Player Two (Tue Oct 10 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.82 [34m[33mNaivi[34m: match saved: Oberg vs Player Two (Tue Sep 26 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.83 [34m[33mNaivi[34m: match saved: Dustin vs Player Two (Tue Oct 03 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.83 [34m[33mNaivi[34m: match saved: Nicole vs Player Two (Tue Oct 17 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.83 [34m[33mNaivi[34m: match saved: George vs Player Two (Tue Oct 03 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.83 [34m[33mNaivi[34m: match saved: George vs Player Two (Tue Oct 10 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[37m11:43:00.84 [39m[33mNaivi[39m: player updated: Oberg
+[37m11:43:00.84 [39m[33mNaivi[39m: player updated: Chris
+[37m11:43:00.84 [39m[33mNaivi[39m: player updated: George
+[37m11:43:00.84 [39m[33mNaivi[39m: player updated: Mike
+[37m11:43:00.84 [39m[33mNaivi[39m: player updated: George
+[37m11:43:00.84 [39m[33mNaivi[39m: player updated: Nicole
+[37m11:43:00.84 [39m[33mNaivi[39m: player updated: George
+[37m11:43:00.85 [39m[33mNaivi[39m: player updated: Oberg
+[37m11:43:00.85 [39m[33mNaivi[39m: player updated: Chris
+[37m11:43:00.85 [39m[33mNaivi[39m: player updated: George
+[37m11:43:00.85 [39m[33mNaivi[39m: player updated: Chris
+[37m11:43:00.85 [39m[33mNaivi[39m: player updated: George
+[37m11:43:00.85 [39m[33mNaivi[39m: player updated: Chris
+[37m11:43:00.86 [39m[33mNaivi[39m: player updated: Coco
+[37m11:43:00.86 [39m[33mNaivi[39m: player updated: Nicole
+[37m11:43:00.86 [39m[33mNaivi[39m: player updated: George
+[37m11:43:00.86 [39m[33mNaivi[39m: player updated: Oberg
+[37m11:43:00.86 [39m[33mNaivi[39m: player updated: Brian
+[37m11:43:00.87 [39m[33mNaivi[39m: player updated: Mike
+[37m11:43:00.87 [39m[33mNaivi[39m: player updated: Oberg
+[37m11:43:00.87 [39m[33mNaivi[39m: player updated: Mike
+[37m11:43:00.87 [39m[33mNaivi[39m: player updated: Mike
+[37m11:43:00.87 [39m[33mNaivi[39m: player updated: George
+[37m11:43:00.87 [39m[33mNaivi[39m: player updated: Chris
+[37m11:43:00.87 [39m[33mNaivi[39m: player updated: Oberg
+[37m11:43:00.87 [39m[33mNaivi[39m: player updated: Dustin
+[37m11:43:00.88 [39m[33mNaivi[39m: player updated: Dustin
+[37m11:43:00.88 [39m[33mNaivi[39m: player updated: Nicole
+[37m11:43:00.88 [39m[33mNaivi[39m: player updated: Mike
+[34m[37m11:43:00.88 [34m[33mNaivi[34m: match saved: Dustin vs Player Two (Tue Oct 31 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.89 [34m[33mNaivi[34m: match saved: Oberg vs Player Two (Tue Oct 31 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.89 [34m[33mNaivi[34m: match saved: forfeit vs Player Two (Tue Oct 31 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:00.89 [34m[33mNaivi[34m: match saved: forfeit vs Player Two (Tue Oct 31 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[37m11:43:00.90 [39m[33mNaivi[39m: player updated: Oberg
+[37m11:43:00.92 [39m[33mNaivi[39m: player updated: Dustin
+[34m[37m11:43:03.91 [34m[33mNaivi[34m: matchup saved:  vs  (Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:03.92 [34m[33mNaivi[34m: matchup saved:  vs  (Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:03.92 [34m[33mNaivi[34m: matchup saved:  vs  (Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:03.93 [34m[33mNaivi[34m: matchup saved:  vs  (Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:03.94 [34m[33mNaivi[34m: matchup saved:  vs  (Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:03.95 [34m[33mNaivi[34m: matchup saved:  vs  (Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:03.96 [34m[33mNaivi[34m: matchup saved:  vs  (Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:03.96 [34m[33mNaivi[34m: matchup saved:  vs  (Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:03.97 [34m[33mNaivi[34m: matchup saved:  vs  (Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[34m[37m11:43:03.98 [34m[33mNaivi[34m: matchup saved:  vs  (Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time))[39m
+[37m11:43:04.01 [39m[33mNaivi[39m: matchup updated: Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time)
+[37m11:43:04.02 [39m[33mNaivi[39m: matchup updated: Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time)
+[37m11:43:04.03 [39m[33mNaivi[39m: matchup updated: Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time)
+[37m11:43:04.03 [39m[33mNaivi[39m: matchup updated: Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time)
+[37m11:43:04.07 [39m[33mNaivi[39m: matchup updated: Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time)
+[37m11:43:04.07 [39m[33mNaivi[39m: matchup updated: Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time)
+[37m11:43:04.07 [39m[33mNaivi[39m: matchup updated: Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time)
+[37m11:43:04.07 [39m[33mNaivi[39m: matchup updated: Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time)
+[37m11:43:04.08 [39m[33mNaivi[39m: matchup updated: Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time)
+[37m11:43:04.08 [39m[33mNaivi[39m: matchup updated: Sat Nov 04 2017 00:00:00 GMT-0700 (Pacific Daylight Time)
+[37m11:45:23.56 [39m[33mNaivi[39m: Booting up: Naivi
+[34m[37m11:45:23.57 [34m[33mNaivi[34m: Loading Core[39m
+[34m[37m11:45:23.57 [34m[33mNaivi[34m: attaching core: commands[39m
+[34m[37m11:45:23.68 [34m[33mNaivi[34m: attaching core: cronjobs[39m
+[34m[37m11:45:23.75 [34m[33mNaivi[34m: attaching core: league[39m
+[34m[37m11:45:23.75 [34m[33mNaivi[34m: Loading Mods[39m
+[34m[37m11:45:23.76 [34m[33mNaivi[34m: attaching mod: mongo[39m
+[34m[37m11:45:23.77 [34m[33mNaivi[34m: attaching mod: sheets[39m
+[34m[37m11:45:23.77 [34m[33mNaivi[34m: attaching mod: twitter[39m
+[34m[37m11:45:23.84 [34m[33mNaivi[34m: Adding command: bottle[39m
+[34m[37m11:45:23.85 [34m[33mNaivi[34m: Adding command: fuck[39m
+[34m[37m11:45:23.85 [34m[33mNaivi[34m: Adding command: nicofacts[39m
+[34m[37m11:45:23.85 [34m[33mNaivi[34m: Adding command: scores[39m
+[34m[37m11:45:23.86 [34m[33mNaivi[34m: Adding command: season[39m
+[34m[37m11:45:23.86 [34m[33mNaivi[34m: Adding command: suck[39m
+[37m11:45:24.41 [39m[33mNaivi[39m: undefined
+[34m[37m11:45:24.48 [34m[33mNaivi[34m: Mongoose connection open[39m
+[37m11:45:24.60 [39m[33mNaivi[39m: Season Loaded: Winter Season 2017
+[37m11:45:24.60 [39m[33mNaivi[39m: Schedule Loaded
+[37m11:45:24.60 [39m[33mNaivi[39m: Configuring Teams
+[37m11:45:24.69 [39m[33mNaivi[39m: Home Team found: It Is What It Is
+[37m11:45:24.69 [39m[33mNaivi[39m: Home Team: It Is What It Is
+[37m11:45:24.69 [39m[33mNaivi[39m: team It Is What It Is already exists in Winter Season 2017
+[34m[37m11:45:24.70 [34m[33mNaivi[34m: season saved: Winter Season 2017[39m
+[37m11:45:24.70 [39m[33mNaivi[39m: Activating: [32mscores[39m[[36mboot[39m] of [33mNaivi[39m: ''
+[37m11:45:24.72 [39m[33mNaivi[39m: Updating Scores From Scoresheet
+[37m11:45:24.72 [39m[33mNaivi[39m: Loading Players from Scoresheet
+[37m11:45:24.76 [39m[33mNaivi[39m: started cronjob - Afterparty
+[37m11:45:24.76 [39m[33mNaivi[39m: started cronjob - Nicofacts
+[37m11:45:24.76 [39m[33mNaivi[39m: started cronjob - Pregame
+[37m11:45:24.76 [39m[33mNaivi[39m: started cronjob - Match
+[37m11:45:24.76 [39m[33mNaivi[39m: Connecting to Twitter...
+[1m[33m[37m11:45:24.76 [33m Twitter Disabled[39m[22m
+[34m[37m11:45:25.44 [34m[33mNaivi[34m: Loading sheet: Current Season Stats[39m
+[34m[37m11:45:25.51 [34m[33mNaivi[34m: Mongoose connection disconnected[39m
+[34m[37m11:45:25.51 [34m[33mNaivi[34m: Reconnecting to MongoDB...[39m
+[34m[37m11:45:25.51 [34m[33mNaivi[34m: Mongoose connection disconnected through app termination[39m

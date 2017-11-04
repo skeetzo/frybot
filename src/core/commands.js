@@ -118,3 +118,16 @@ function shuffle(array) {
   }
   return array;
 }
+
+
+
+
+
+module.exports.getMessages = function() {
+  GroupMe_API.Messages.index(config.GroupMe_AccessToken, config.GroupMe_group_ID, {before_id:''},
+    function(err,ret) {
+      // if (err) return logger.warn(err);
+      logger.log(JSON.stringify(ret));
+      // callback(null);
+  })
+};

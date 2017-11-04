@@ -76,6 +76,8 @@ bot.prototype = {
     // Cmds
     require('./cmds/index.js').load.call(this);
 
+    self.commands.getMessages()
+    // return;
     if (!this.commands) return console.log("Error- missing critical Commands module");  
 
     // loads current season data then syncs with ItIsWhatItIs sheet stats
@@ -179,6 +181,7 @@ bot.prototype = {
   onGroupMePost : function(req, res) {
     var self = this;
     if (!req||!req.body) return logger.warn('Missing GroupMe message data');
+    logger.log(JSON.stringify(req.body,null,4));
     var request = req.body;
     if (request.name.toLowerCase()===config.botName.toLowerCase()) return logger.debug('Not talking to myself...');
     logger.log(request.name.yellow+": "+request.text);
